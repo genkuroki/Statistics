@@ -10,13 +10,13 @@
 
 ● [3種の簡単な統計モデルのベイズ統計の比較 n=128](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Comparison%20the%20mixnormal%2C%20normal1%2C%20and%20normal%20models%20by%20samples%20of%20size%20128.ipynb): N(x|μ,σ) は平均 μ, 分散 σ の正規分布の密度函数であるとする. 
 
-1. mixnormal(x|a,b)=(1-a)N(x|0,1)+aN(x|b,1),
-2. normal(x|\mu,\sigma)=N(x|\mu,\sigma),
-3. normal1(x|\mu)=N(x|\mu,1)
+1. mixnormal(x|a,b) = (1-a) N(x|0,1) + a N(x|b,1),
+2. normal(x|μ,σ) = N(x|μ,σ),
+3. normal1(x|μ) = N(x|μ,1)
 
 の3つのモデルで母集団分布 q(x)=N(x|0,1) のサンプルをBayes推定した結果の比較.  この状況ではmixnormalモデルは特異モデルになっている.
 
-● [DynamicHMCExamples for DynamicHMC.jl v2.0.0](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/DynamicHMCExamples%20for%20DynamicHMC.jl%20v2.0.0.ipynb): [Julia言語](https://julialang.org/)でのNUTSの実装例である[DynamicHMC.jl](https://github.com/tpapp/DynamicHMC.jl)の使用例.
+● [DynamicHMCExamples for DynamicHMC.jl v2.0.0](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/DynamicHMCExamples%20for%20DynamicHMC.jl%20v2.0.0.ipynb): [Julia言語](https://julialang.org/)でのNUTSの実装の1つである [DynamicHMC.jl](https://github.com/tpapp/DynamicHMC.jl) の使用例.
 
 ## 雑多なノート
 
