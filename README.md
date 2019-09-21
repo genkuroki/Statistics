@@ -4,6 +4,8 @@
 
 ## Bayse統計関連のノート
 
+● [三項分布の尤度函数 2019-09-21](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/likelihood%20functions%20of%20trinomial%20distributions.ipynb): 三項分布の尤度函数のGIFアニメーション. nを大きくすると尤度函数の広がり方は狭くなる.
+
 ● [ベイズ統計の枠組みと解釈について (2019-09-16)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Introduction%20to%20Bayesian%20Statistics.ipynb): 2019年9月17日(火)午後のセミナーのために準備したJupyterノートブック
 
 ● [3種の簡単な統計モデルのベイズ統計の比較 n=128 (2019-09-08)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Comparison%20the%20mixnormal%2C%20normal1%2C%20and%20normal%20models%20by%20samples%20of%20size%20128.ipynb): N(x|μ,σ) は平均 μ, 分散 σ の正規分布の密度函数であるとする. 
