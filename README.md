@@ -6,7 +6,7 @@
 
 ● [三項分布の尤度函数 2019-09-21](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/likelihood%20functions%20of%20trinomial%20distributions.ipynb): 三項分布の尤度函数のGIFアニメーション. nを大きくすると尤度函数の広がり方は狭くなる.
 
-● [ベイズ統計の枠組みと解釈について (2019-09-16)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Introduction%20to%20Bayesian%20Statistics.ipynb): 2019年9月17日(火)午後のセミナーのために準備したJupyterノートブック
+● [ベイズ統計の枠組みと解釈について (2019-09-16)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Introduction%20to%20Bayesian%20Statistics.ipynb) ([PDF版](https://genkuroki.github.io/documents/Statistics/Introduction%20to%20Bayesian%20Statistics.pdf)): 2019年9月17日(火)午後のセミナーのために準備したJupyterノートブック
 
 ● [3種の簡単な統計モデルのベイズ統計の比較 n=128 (2019-09-08)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Comparison%20the%20mixnormal%2C%20normal1%2C%20and%20normal%20models%20by%20samples%20of%20size%20128.ipynb): N(x|μ,σ) は平均 μ, 分散 σ の正規分布の密度函数であるとする. 
 
@@ -16,7 +16,7 @@
 
 の3つのモデルで母集団分布 q(x)=N(x|0,1) のサンプルをBayes推定した結果の比較.  この状況ではmixnormalモデルは特異モデルになっている.
 
-● [ベイズ統計の手書きのノート (2019-09-03)](https://genkuroki.github.io/documents/2019-09-03_BayesianStatistics.pdf) ([MetaMojiNote形式](2019-09-03_BayesianStatistics.atdoc)): 2019年9月17日(火)午後のセミナーのために準備した手書きのノート
+● [ベイズ統計に関する手書きのノート (2019-09-03)](https://genkuroki.github.io/documents/2019-09-03_BayesianStatistics.pdf) ([MetaMojiNote形式](2019-09-03_BayesianStatistics.atdoc)): 2019年9月17日(火)午後のセミナーのために準備した手書きのノート
 
 ● [DynamicHMCExamples for DynamicHMC.jl v2.0.0 (2019-08-26～2019-09-03)](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/DynamicHMCExamples%20for%20DynamicHMC.jl%20v2.0.0.ipynb): [Julia言語](https://julialang.org/)でのNUTSの実装の1つである [DynamicHMC.jl](https://github.com/tpapp/DynamicHMC.jl) の使用例.
 
@@ -26,7 +26,7 @@
 
 ● [母平均の仮説検定と区間推定 2019-09-14](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Hypothesis%20test%20and%20interval%20estimation%20for%20population%20mean.ipynb): 現実の母集団分布が正規分布になっているという仮定は要注意である.
 
-● [Kullback-Leibler情報量と記述統計 2019-09-13](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/KL%20information%20and%20descriptive%20statistics.ipynb): 任意の正規分布になっているとは限らない母集団分布のサンプルへの正規分布モデルの最尤法の適用はサンプルの平均と分散を記述することに一致する. Laplace分布モデルの最尤法を適用はサンプルの中央値を求めることを含む.
+● [Kullback-Leibler情報量と記述統計 2019-09-13](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/KL%20information%20and%20descriptive%20statistics.ipynb) ([PDF版]()): 任意の正規分布になっているとは限らない母集団分布のサンプルへの正規分布モデルの最尤法の適用はサンプルの平均と分散を記述することに一致する. Laplace分布モデルの最尤法を適用はサンプルの中央値を求めることを含む.
 
 ● [混合正規分布について正規分布モデルで信頼区間を求めた場合 2019-08-17～2019-08-19](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/%E6%B7%B7%E5%90%88%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A7%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%82%92%E6%B1%82%E3%82%81%E3%81%9F%E5%A0%B4%E5%90%88.ipynb): 母集団の中に含まれる小さな割合の部分集団が全体の平均に影響を与えるくらい飛び離れた値を持っている場合には, 正規分布モデルによる区間推定が失敗する確率は非常に高くなる.
 
