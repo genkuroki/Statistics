@@ -459,5 +459,20 @@ se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
 ```
 
 ```julia
+mu0 = 10 .+ randn(10)
+se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+```
+
+```julia
+mu0 = 10 .+ randn(100)
+se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+```
+
+```julia
+mu0 = 10 .+ randn(1000)
+se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+```
+
+```julia
 
 ```
