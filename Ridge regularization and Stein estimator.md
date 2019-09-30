@@ -19,6 +19,9 @@ jupyter:
 
 2019-09-30
 
+* [ipynb版](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Ridge%20regularization%20and%20Stein%20estimator.ipynb)
+* [pdf版](https://genkuroki.github.io/documents/Statistics/Ridge%20regularization%20and%20Stein%20estimator.pdf)
+
 $
 \newcommand\eps{\varepsilon}
 \newcommand\ds{\displaystyle}
@@ -40,7 +43,7 @@ $
 \newcommand\PROD{\mathop{\coprod\kern-1.35em\prod}}
 $
 
-Ridge正則化とはパラメーター $w$ の対数尤度函数の $-1$ 倍 $L(w)$ そのものを最小化する最尤法を実行するのではなく, パラメーターの $L^2$ ノルムの2乗に比例する罰則項 $\lambda\|w\|^2$ を加えた $L(w) + \lambda\|w\|^2$ の最小化によってパラメーターの推定値を決定する方法である.
+Ridge正則化とはパラメーター $w$ の対数尤度函数の $-1$ 倍 $L(w)$ そのものを最小化する最尤法を実行するのではなく, パラメーターの $\ell^2$ ノルムの2乗に比例する罰則項 $\lambda\|w\|^2$ を加えた $L(w) + \lambda\|w\|^2$ の最小化によってパラメーターの推定値を決定する方法である.
 
 Ridge正則化を非常にシンプルな場合に適用することによって, 最尤推定量よりも平均二乗誤差が小さいStein推定量が得られることを示す.
 
