@@ -22,6 +22,8 @@
 
 ## 統計学関連のノート
 
+● [Ridge正則化とStein推定量 2019-09-30](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Ridge%20regularization%20and%20Stein%20estimator.ipynb): 非常にシンプルなケースにRidge正則化を適用することによって, 最尤推定量よりも平均二乗誤差が小さなStein推定量が得られることを示す.  Ridge正則化は事前分布を正規分布としたときのMAP法に等しい.  これは, 事前分布を利用することによって, 平均予測誤差が改善される場合があることを示すシンプルな実例になっている.
+
 ● [尤度函数のプロット 2019-09-17](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/likelihood%20functions%20of%20mixture%20normal%20distributions.ipynb): 簡単な1次元の混合正規分布モデルの尤度函数をプロット. 特異モデルに近い正則モデルの尤度函数はまるで特異モデルであるかのような形状になる.
 
 ● [母平均の仮説検定と区間推定 2019-09-14](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Hypothesis%20test%20and%20interval%20estimation%20for%20population%20mean.ipynb): 現実の母集団分布が正規分布になっているという仮定は要注意である.
