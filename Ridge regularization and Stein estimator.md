@@ -368,19 +368,46 @@ $$
 $n\geqq 3$ であると仮定する.  Stein推定量 $\tilde\mu_i = (1-(n-2)/X^2)X_i$ を少しモディファイした推定量
 
 $$
-\check\mu_i = \max\left(0, 1-\frac{(n-2)}{X^2}\right)X_i
+\check\mu_i = \max\left(0, 1-\frac{n-2}{X^2}\right)X_i
 $$
 
-も定義しておこう. 以下では最尤推定量 $\hat\mu_i=X_i$ とこれらの推定量を比較する.
+も定義しておこう. さらに, $X^2$ を $X_i$ 達の平均との差の二乗和で置き換えた以下の推定量も考える:
+
+$$
+\begin{aligned}
+&
+\overline{\tilde{\mu}}_i = 
+\overline{X} + \left(1 - \frac{n-3}{(X - \overline{X})^2}\right)
+(X_i - \overline{X}),
+\\ &
+\overline{\check{\mu}}_i = 
+\overline{X} + \max\left(0, 1 - \frac{n-3}{(X - \overline{X})^2}\right)
+(X_i - \overline{X})
+\end{aligned}
+$$
+
+ここで,
+
+$$
+\overline{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+(X - \overline{X})^2 = \sum_{i=1}^n (X_i - \overline{X})^2.
+$$
+
+以下では最尤推定量 $\hat\mu_i=X_i$ とこれらの推定量を比較する.
 
 ```julia
 using Distributions
 using LinearAlgebra
+using Printf
 
 mu_hat(X) = X
-alpha(X) = (length(X)-2)/dot(X,X)
+norm2(X) = dot(X,X)
+alpha(X) = (length(X) - 2)/norm2(X)
 mu_tilde(X) = (1 - alpha(X))*X
 mu_check(X) = max(0, 1 - alpha(X))*X
+alpha(X, c) = c/norm2(X)
+mu_tilde_bar(X) = let M = mean(X), Y = X .- M; M .+ (1 - alpha(Y,length(X)-3))*Y end
+mu_check_bar(X) = let M = mean(X), Y = X .- M; M .+ max(0, 1 - alpha(Y,length(X)-3))*Y end
 square_error(mu, mu0) = sum((mu[i] - mu0[i])^2 for i in 1:length(mu))
 
 function sim_stein(;
@@ -391,24 +418,68 @@ function sim_stein(;
     square_error_mu_hat   = Array{Float64, 1}(undef, niters)
     square_error_mu_tilde = Array{Float64, 1}(undef, niters)
     square_error_mu_check = Array{Float64, 1}(undef, niters)
+    square_error_mu_tilde_bar = Array{Float64, 1}(undef, niters)
+    square_error_mu_check_bar = Array{Float64, 1}(undef, niters)
     for l in 1:niters
         X = rand(MvNormal(mu0, I))
         square_error_mu_hat[l]   = square_error(mu_hat(X),   mu0)
         square_error_mu_tilde[l] = square_error(mu_tilde(X), mu0)
         square_error_mu_check[l] = square_error(mu_check(X), mu0)
+        square_error_mu_tilde_bar[l] = square_error(mu_tilde_bar(X), mu0)
+        square_error_mu_check_bar[l] = square_error(mu_check_bar(X), mu0)
     end
+    
     @show mean(square_error_mu_hat)
     @show mean(square_error_mu_tilde)
     @show mean(square_error_mu_check)
-    @show mean(square_error_mu_tilde .< square_error_mu_hat)
-    @show mean(square_error_mu_hat .< square_error_mu_tilde)
-    @show mean(square_error_mu_check .< square_error_mu_hat)
-    @show mean(square_error_mu_hat .< square_error_mu_check)
-    @show mean(square_error_mu_check .< square_error_mu_tilde)
-    @show mean(square_error_mu_tilde .< square_error_mu_check)
-    square_error_mu_hat, square_error_mu_tilde, square_error_mu_check
+    @show mean(square_error_mu_tilde_bar)
+    @show mean(square_error_mu_check_bar)
+    println()
+   
+    s = (
+        square_error_mu_hat, 
+        square_error_mu_tilde, 
+        square_error_mu_check, 
+        square_error_mu_tilde_bar, 
+        square_error_mu_check_bar
+    )
+    
+    c = comparison(s)
+    @printf("%-12s | %-12s | %-12s | %-12s | %-12s | %-12s |\n", "count(<)/n", "mu_hat", "mu_tilde", "mu_check", "mu_tilde_bar", "mu_check_bar")
+    println("-"^13 * ("+"*"-"^14)^5 * "|")
+    @printf("%-12s | %12s | %12.5f | %12.5f | %12.5f | %12.5f |\n", "mu_hat", "  ---  ", c[1,2], c[1,3], c[1,4], c[1,5])
+    @printf("%-12s | %12.5f | %12s | %12.5f | %12.5f | %12.5f |\n", "mu_tilde", c[2,1], "  ---  ", c[2,3], c[2,4], c[2,5])
+    @printf("%-12s | %12.5f | %12.5f | %12s | %12.5f | %12.5f |\n", "mu_check", c[3,1], c[3,2], "  ---  ", c[3,4], c[3,5])
+    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12s | %12.5f |\n", "mu_tilde_bar", c[4,1], c[4,2], c[4,3], "  ---  ", c[4,5])
+    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12.5f | %12s |\n", "mu_check_bar", c[5,1], c[5,2], c[5,3], c[5,4], "  ---  ")
+    
+    s
+end
+
+function comparison(s)
+    n = length(s)
+    c = zeros(n, n)
+    for i in 1:n, j in 1:n
+        if i != j
+            c[i,j] = mean(s[i] .< s[j])
+        end
+    end
+    c
 end
 ```
+
+```julia
+s = sim_stein();
+```
+
+例えば, 以上の表の mu_hat の行の数値(muhat の右側の数値)は, 最尤推定量 $\hat\mu$ の方が他の推定量よりも二乗誤差が小さい場合の割合である.  その割合は大きいほどよい.  この場合には(サンプルが標準正規分布のサイズ $10$ ), 最尤推定量 $\hat\mu$ は他の推定量よりも二乗誤差が大きな場合の割合がどれも88%を超えている.
+
+* mu_hat = $\hat\mu$ = 最尤推定量
+* mu_tilde = $\tilde\mu$ = Stein推定量
+* mu_check = $\check\mu$ = $1-\alpha$ を $\max(0, 1-\alpha)$ に置き換えたStein推定量
+* mu_tilde_bar = $\overline{\tilde\mu}$ = 平均の方向に縮小するStein推定量
+* mu_check_bar = $\overline{\hat\mu}$ = 平均の方法に縮小するStein推定量で$1-\alpha$ を $\max(0, 1-\alpha)$ に置き換えたもの
+
 
 ### すべての $\mu_{i0}$ が0の場合
 
@@ -416,64 +487,79 @@ end
 
 ```julia
 n = 3
-se_hat, se_tilde, se_check = sim_stein(mu0 = zeros(n));
+sim_stein(mu0 = zeros(n));
 ```
 
 ```julia
 n = 4
-se_hat, se_tilde, se_check = sim_stein(mu0 = zeros(n));
+sim_stein(mu0 = zeros(n));
 ```
 
 ```julia
 n = 10
-se_hat, se_tilde, se_check = sim_stein(mu0 = zeros(n));
+sim_stein(mu0 = zeros(n));
 ```
 
 ```julia
 n = 100
-se_hat, se_tilde, se_check = sim_stein(mu0 = zeros(n));
+sim_stein(mu0 = zeros(n));
 ```
 
 ```julia
 n = 1000
-se_hat, se_tilde, se_check = sim_stein(mu0 = zeros(n));
+sim_stein(mu0 = zeros(n));
 ```
 
 ### 雑多な場合
 
 ```julia
-mu0 = rand(100)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+mu0 = 3ones(100)
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
-mu0 = collect(range(-1, 1, length=100))
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+mu0 = 3 .+ randn(100)
+sim_stein(mu0 = mu0);
+```
+
+```julia
+mu0 = collect(range(0, 6, length=100))
+sim_stein(mu0 = mu0);
+```
+
+```julia
+mu0 = collect(range(-3, 3, length=100))
+sim_stein(mu0 = mu0);
+```
+
+```julia
+mu0 = randn(10)
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
 mu0 = randn(100)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
 mu0 = randn(1000)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
 mu0 = 10 .+ randn(10)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
 mu0 = 10 .+ randn(100)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
 mu0 = 10 .+ randn(1000)
-se_hat, se_tilde, se_check = sim_stein(mu0 = mu0);
+sim_stein(mu0 = mu0);
 ```
 
 ```julia
