@@ -49,7 +49,7 @@ Ridge正則化を非常にシンプルな場合に適用することによって
 
 <!-- #region {"toc": true} -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#設定" data-toc-modified-id="設定-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>設定</a></span><ul class="toc-item"><li><span><a href="#平均汎化誤差と平均二乗誤差の関係" data-toc-modified-id="平均汎化誤差と平均二乗誤差の関係-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均汎化誤差と平均二乗誤差の関係</a></span></li></ul></li><li><span><a href="#最尤推定量" data-toc-modified-id="最尤推定量-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>最尤推定量</a></span></li><li><span><a href="#Ridge正則化とStein推定量" data-toc-modified-id="Ridge正則化とStein推定量-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Ridge正則化とStein推定量</a></span><ul class="toc-item"><li><span><a href="#$n\geqq-3$-という仮定からの帰結" data-toc-modified-id="$n\geqq-3$-という仮定からの帰結-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>$n\geqq 3$ という仮定からの帰結</a></span></li><li><span><a href="#第1項" data-toc-modified-id="第1項-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>第1項</a></span></li><li><span><a href="#第2項" data-toc-modified-id="第2項-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>第2項</a></span></li><li><span><a href="#第3項" data-toc-modified-id="第3項-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>第3項</a></span></li><li><span><a href="#Stein推定量" data-toc-modified-id="Stein推定量-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Stein推定量</a></span></li><li><span><a href="#すべての-$\mu_{i0}$-が0の場合の平均二乗誤差" data-toc-modified-id="すべての-$\mu_{i0}$-が0の場合の平均二乗誤差-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>すべての $\mu_{i0}$ が0の場合の平均二乗誤差</a></span></li><li><span><a href="#正則化と事前分布の関係" data-toc-modified-id="正則化と事前分布の関係-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>正則化と事前分布の関係</a></span></li></ul></li><li><span><a href="#数値的検証" data-toc-modified-id="数値的検証-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数値的検証</a></span><ul class="toc-item"><li><span><a href="#すべての-$\mu_{i0}$-が0の場合" data-toc-modified-id="すべての-$\mu_{i0}$-が0の場合-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>すべての $\mu_{i0}$ が0の場合</a></span></li><li><span><a href="#雑多な場合" data-toc-modified-id="雑多な場合-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>雑多な場合</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#設定" data-toc-modified-id="設定-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>設定</a></span><ul class="toc-item"><li><span><a href="#平均汎化誤差と平均二乗誤差の関係" data-toc-modified-id="平均汎化誤差と平均二乗誤差の関係-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均汎化誤差と平均二乗誤差の関係</a></span></li></ul></li><li><span><a href="#最尤推定量" data-toc-modified-id="最尤推定量-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>最尤推定量</a></span></li><li><span><a href="#Ridge正則化とStein推定量" data-toc-modified-id="Ridge正則化とStein推定量-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Ridge正則化とStein推定量</a></span><ul class="toc-item"><li><span><a href="#$n\geqq-3$-という仮定からの帰結" data-toc-modified-id="$n\geqq-3$-という仮定からの帰結-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>$n\geqq 3$ という仮定からの帰結</a></span></li><li><span><a href="#第1項" data-toc-modified-id="第1項-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>第1項</a></span></li><li><span><a href="#第2項" data-toc-modified-id="第2項-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>第2項</a></span></li><li><span><a href="#第3項" data-toc-modified-id="第3項-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>第3項</a></span></li><li><span><a href="#Stein推定量" data-toc-modified-id="Stein推定量-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Stein推定量</a></span></li><li><span><a href="#すべての-$\mu_{i0}$-が0の場合の平均二乗誤差" data-toc-modified-id="すべての-$\mu_{i0}$-が0の場合の平均二乗誤差-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>すべての $\mu_{i0}$ が0の場合の平均二乗誤差</a></span></li><li><span><a href="#正則化と事前分布の関係" data-toc-modified-id="正則化と事前分布の関係-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>正則化と事前分布の関係</a></span></li><li><span><a href="#平均に向けて縮小するタイプのStein推定量" data-toc-modified-id="平均に向けて縮小するタイプのStein推定量-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>平均に向けて縮小するタイプのStein推定量</a></span></li></ul></li><li><span><a href="#数値的検証" data-toc-modified-id="数値的検証-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数値的検証</a></span><ul class="toc-item"><li><span><a href="#すべての-$\mu_{i0}$-が0の場合" data-toc-modified-id="すべての-$\mu_{i0}$-が0の場合-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>すべての $\mu_{i0}$ が0の場合</a></span></li><li><span><a href="#雑多な場合" data-toc-modified-id="雑多な場合-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>雑多な場合</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ## 設定
@@ -363,22 +363,93 @@ $$
 このような事実は「事前分布は主観や確信や信念を表す」と信じ込んで疑わない人達には思いもよらないことだと思われる.  事前分布は予測誤差を小さくするためにも有効に利用可能である.
 
 
+### 平均に向けて縮小するタイプのStein推定量
+
+以上においては, 原点 $0$ に寄せて縮小するタイプのStein推定量
+
+$$
+\tilde\mu_i = \left(1 - \frac{n-2}{X^2}\right)X_i, \quad X^2 = \sum_{i=1}^n X_i^2
+$$
+
+を扱った.  これは $0$ に向けて縮小するタイプの推定量である.  $X_1,\ldots,X_n$ の平均と平均との差の二乗和を
+
+$$
+\overline{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+(X - \overline{X})^2 = \sum_{i=1}^n (X_i - \overline{X})^2.
+$$
+
+と書くことにする.  $0$ ではなく, 平均 $\overline{X}$ に向けて縮小するタイプのStein推定量が
+
+$$
+\overline{\tilde{\mu}}_i = 
+\overline{X} + \left(1 - \frac{n-3}{(X - \overline{X})^2}\right)
+(X_i - \overline{X})
+$$
+
+と定義される. 以下ではこれが上の $0$ に向けて寄せるタイプのStein推定量から導かれることを説明しよう.  ポイントは二乗和分母に対する分子が $n-2$ から $n-3$ に下がる理由が「自由度が1減ったこと」によって説明できることである.
+
+$A=[a_{ij}]$ は任意の $n\times n$ の直交行列であるとし, $Y_j = \sum_{i=1}^n X_i a_{ij}$ とおく. このとき, 直交行列の定義とサンプルの分散と二乗和の関係より, 
+
+$$
+\sum_{i=1}^n Y_i^2 = \sum_{i=1}^n X_i^2 = 
+\sum_{i=1}^n (X_i - \overline{X})^2 + n\overline{X}^2 =
+(X - \overline{X})^2 + n\overline{X}^2.
+$$
+
+さらに, $Y_j$ 達は独立な確率変数になり, 各 $Y_j$ は平均 $\sum_{i=1}^n \mu_{i0}a_{ij}$, 分散 $1$ の正規分布に従う. 
+
+直交行列 $A$ の第 $n$ 列のすべての成分を $1/\sqrt{n}$ にする.  このとき, $Y_n = \sqrt{n}\;\overline{X}$ となるので, 上の計算結果より,
+
+$$
+(X - \overline{X})^2 = \sum_{i=1}^{n-1} Y_i^2.
+$$
+
+$Y_1,\ldots,Y_{n-1}$ 達の平均に関する $0$ に向けて縮小するタイプのStein推定量は
+
+$$
+\left(1 - \frac{n-3}{\sum_{i=1}^{n-2} Y_i^2}\right) Y_i = 
+\left(1 - \frac{n-3}{(X - \overline{X})^2}\right) Y_i
+\quad (i=1,\ldots,n-1).
+$$
+
+分子が $n-3$ になる理由は $Y_1,\ldots,Y_{n-1}$ が $n-1$ 個しかないからである.  $Y_n$ の平均の推定量としては $Y_n$ 自身を採用しよう. このとき,  $\alpha=1-(n-3)/(X - \overline{X})^2$ とおくと, $j=1,\ldots,n-1$ のとき, $\sum_{i=1}^n a_{ij}=0$ より, 
+
+$$
+\sum_{i=1}^n\left(\overline{X}+(1-\alpha(X_i-\overline{X})\right)a_{ij} =
+\sum_{i=1}^n\left((1-\alpha)X_i + \alpha\overline{X}\right)a_{ij} = (1-\alpha)Y_j.
+$$
+
+そして, $a_{in}=1/\sqrt{n}$ より, 
+
+$$
+\sum_{i=1}^n \left((1-\alpha)X_i + \alpha\overline{X}\right)a_{in} =
+(1-\alpha)\sqrt{n}\,\overline{X} + \alpha\overline{X}\sqrt{n} = \sqrt{n}\,\overline{X} = Y_n.
+$$
+
+これで, $Y_1,\ldots,Y_{n-1},Y_n$ の平均のStein推定量にちょうど上の $\overline{\tilde\mu}_i$ が対応していることがわかる.
+
+
 ## 数値的検証
 
-$n\geqq 3$ であると仮定する.  Stein推定量 $\tilde\mu_i = (1-(n-2)/X^2)X_i$ を少しモディファイした推定量
-
-$$
-\check\mu_i = \max\left(0, 1-\frac{n-2}{X^2}\right)X_i
-$$
-
-も定義しておこう. さらに, $X^2$ を $X_i$ 達の平均との差の二乗和で置き換えた以下の推定量も考える:
+$n\geqq 3$ であると仮定する. 以上で扱ったStein推定量
 
 $$
 \begin{aligned}
 &
+\tilde\mu_i = \left(1-\frac{n-2}{X^2}\right)X_i,
+\\ &
 \overline{\tilde{\mu}}_i = 
 \overline{X} + \left(1 - \frac{n-3}{(X - \overline{X})^2}\right)
-(X_i - \overline{X}),
+(X_i - \overline{X})
+\end{aligned}
+$$
+
+を少しモディファイした推定量
+
+$$
+\begin{aligned}
+&
+\check\mu_i = \max\left(0, 1-\frac{n-2}{X^2}\right)X_i,
 \\ &
 \overline{\check{\mu}}_i = 
 \overline{X} + \max\left(0, 1 - \frac{n-3}{(X - \overline{X})^2}\right)
@@ -386,12 +457,7 @@ $$
 \end{aligned}
 $$
 
-ここで,
-
-$$
-\overline{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
-(X - \overline{X})^2 = \sum_{i=1}^n (X_i - \overline{X})^2.
-$$
+も定義しておこう. 
 
 以下では最尤推定量 $\hat\mu_i=X_i$ とこれらの推定量を比較する.
 
@@ -399,7 +465,9 @@ $$
 using Distributions
 using LinearAlgebra
 using Printf
+```
 
+```julia
 mu_hat(X) = X
 norm2(X) = dot(X,X)
 alpha(X) = (length(X) - 2)/norm2(X)
@@ -409,7 +477,9 @@ alpha(X, c) = c/norm2(X)
 mu_tilde_bar(X) = let M = mean(X), Y = X .- M; M .+ (1 - alpha(Y,length(X)-3))*Y end
 mu_check_bar(X) = let M = mean(X), Y = X .- M; M .+ max(0, 1 - alpha(Y,length(X)-3))*Y end
 square_error(mu, mu0) = sum((mu[i] - mu0[i])^2 for i in 1:length(mu))
+```
 
+```julia
 function sim_stein(;
         mu0 = rand(Normal(), 10),
         niters = 10^5,
@@ -429,13 +499,6 @@ function sim_stein(;
         square_error_mu_check_bar[l] = square_error(mu_check_bar(X), mu0)
     end
     
-    @show mean(square_error_mu_hat)
-    @show mean(square_error_mu_tilde)
-    @show mean(square_error_mu_check)
-    @show mean(square_error_mu_tilde_bar)
-    @show mean(square_error_mu_check_bar)
-    println()
-   
     s = (
         square_error_mu_hat, 
         square_error_mu_tilde, 
@@ -443,19 +506,25 @@ function sim_stein(;
         square_error_mu_tilde_bar, 
         square_error_mu_check_bar
     )
-    
-    c = comparison(s)
-    @printf("%-12s | %-12s | %-12s | %-12s | %-12s | %-12s |\n", "count(<)/n", "mu_hat", "mu_tilde", "mu_check", "mu_tilde_bar", "mu_check_bar")
-    println("-"^13 * ("+"*"-"^14)^5 * "|")
-    @printf("%-12s | %12s | %12.5f | %12.5f | %12.5f | %12.5f |\n", "mu_hat", "  ---  ", c[1,2], c[1,3], c[1,4], c[1,5])
-    @printf("%-12s | %12.5f | %12s | %12.5f | %12.5f | %12.5f |\n", "mu_tilde", c[2,1], "  ---  ", c[2,3], c[2,4], c[2,5])
-    @printf("%-12s | %12.5f | %12.5f | %12s | %12.5f | %12.5f |\n", "mu_check", c[3,1], c[3,2], "  ---  ", c[3,4], c[3,5])
-    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12s | %12.5f |\n", "mu_tilde_bar", c[4,1], c[4,2], c[4,3], "  ---  ", c[4,5])
-    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12.5f | %12s |\n", "mu_check_bar", c[5,1], c[5,2], c[5,3], c[5,4], "  ---  ")
-    
+
+    print_estimator(s)
+    println()
+    print_comparison(s)
     s
 end
+```
 
+```julia
+function print_estimator(s)
+    @printf("average of square errors of mu_hat       = %10.3f\n", mean(s[1]))
+    @printf("average of square errors of mu_tilde     = %10.3f\n", mean(s[2]))
+    @printf("average of square errors of mu_check     = %10.3f\n", mean(s[3]))
+    @printf("average of square errors of mu_tilde_bar = %10.3f\n", mean(s[4]))
+    @printf("average of square errors of mu_check_bar = %10.3f\n", mean(s[5]))
+end
+```
+
+```julia
 function comparison(s)
     n = length(s)
     c = zeros(n, n)
@@ -465,6 +534,19 @@ function comparison(s)
         end
     end
     c
+end
+```
+
+```julia
+function print_comparison(s)
+    c = comparison(s)
+    @printf("%-12s | %-12s | %-12s | %-12s | %-12s | %-12s |\n", "count(<)/n", "mu_hat", "mu_tilde", "mu_check", "mu_tilde_bar", "mu_check_bar")
+    println("-"^13 * ("+"*"-"^14)^5 * "|")
+    @printf("%-12s | %12s | %12.5f | %12.5f | %12.5f | %12.5f |\n", "mu_hat", "  ---  ", c[1,2], c[1,3], c[1,4], c[1,5])
+    @printf("%-12s | %12.5f | %12s | %12.5f | %12.5f | %12.5f |\n", "mu_tilde", c[2,1], "  ---  ", c[2,3], c[2,4], c[2,5])
+    @printf("%-12s | %12.5f | %12.5f | %12s | %12.5f | %12.5f |\n", "mu_check", c[3,1], c[3,2], "  ---  ", c[3,4], c[3,5])
+    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12s | %12.5f |\n", "mu_tilde_bar", c[4,1], c[4,2], c[4,3], "  ---  ", c[4,5])
+    @printf("%-12s | %12.5f | %12.5f | %12.5f | %12.5f | %12s |\n", "mu_check_bar", c[5,1], c[5,2], c[5,3], c[5,4], "  ---  ")
 end
 ```
 
