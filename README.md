@@ -88,8 +88,8 @@
 
 ● 2×2の独立性検定の比較: Fisher's exact test が実際には「正確な検定」ではないことがわかる.
 
-* [複数の確率分布でカイ二乗検定とG検定とFisherの正確検定を比較 2017-09-19～20](https://nbviewer.jupyter.org/gist/genkuroki/7c52b10fc6cdb254c8227f4fb0a47e0d)
-* [2x2の分割表での独立性検定の比較 2017-09-26](https://nbviewer.jupyter.org/gist/genkuroki/1dd6d1ee5b473435a2027d221c560640): カイ二乗検定とG検定とFisher検定の詳細な比較, (補正無しの)カイ二乗検定がかなりrobustであることがわかる.
+* [複数の確率分布でカイ二乗検定とG検定とFisherの正確検定を比較 2017-09-19～20, 2019-10-10](https://nbviewer.jupyter.org/gist/genkuroki/6924d68e12c87f3bbc10745ff0a183a6): カイ二乗検定とG検定とFisher検定の詳細な比較. 2019-10-10頃にmid-p版のFisher検定を追加. 
+* [2x2の分割表での独立性検定の比較 2017-09-26, 2019-10-14](https://nbviewer.jupyter.org/gist/genkuroki/67f03274960dca00e73d5498ead138b7): カイ二乗検定とG検定とFisher検定の詳細な比較, (補正無しの)カイ二乗検定がかなりrobustであることがわかる. 2019-10-14にmid-p版のFisher検定を追加. 
 * [2×2の分割表における尤度函数 2017-09-26](https://nbviewer.jupyter.org/gist/genkuroki/a3034d25a429b590d96c486064e53c8b): 尤度函数のプロット
 * [2×2の分割表の独立性に関する様々な検定法の比較 2017-11-02](https://nbviewer.jupyter.org/gist/genkuroki/3935a24dcfcb0fa4da46a0a3955158d8): カイ二乗検定とG検定とFisher検定以外に, Barnard検定とBoschloo検定も比較してみた. 単純なカイ二乗検定で十分だと思われる.
 
