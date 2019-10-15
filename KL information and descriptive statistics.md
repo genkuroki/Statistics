@@ -17,7 +17,7 @@ jupyter:
 
 黒木玄
 
-2019-09-13～2019-09-23
+2019-09-13～2019-09-23, 2019-10-15
 
 このファイルのJupyter notebook版は
 
@@ -52,7 +52,7 @@ $
 
 <!-- #region {"toc": true} -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Kullback-Leibler情報量とSanovの定理" data-toc-modified-id="Kullback-Leibler情報量とSanovの定理-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Kullback-Leibler情報量とSanovの定理</a></span><ul class="toc-item"><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#KL情報量" data-toc-modified-id="KL情報量-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>KL情報量</a></span></li><li><span><a href="#汎化誤差" data-toc-modified-id="汎化誤差-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>汎化誤差</a></span></li><li><span><a href="#尤度函数と汎化誤差の関係と最尤法の定義" data-toc-modified-id="尤度函数と汎化誤差の関係と最尤法の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>尤度函数と汎化誤差の関係と最尤法の定義</a></span></li></ul></li><li><span><a href="#平均と分散" data-toc-modified-id="平均と分散-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均と分散</a></span><ul class="toc-item"><li><span><a href="#平均と分散の特徴付け" data-toc-modified-id="平均と分散の特徴付け-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均と分散の特徴付け</a></span></li><li><span><a href="#平均と分散の推定は正規分布モデルによる推定に等しい" data-toc-modified-id="平均と分散の推定は正規分布モデルによる推定に等しい-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均と分散の推定は正規分布モデルによる推定に等しい</a></span></li><li><span><a href="#平均と分散の正規分布モデルによる最尤推定" data-toc-modified-id="平均と分散の正規分布モデルによる最尤推定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>平均と分散の正規分布モデルによる最尤推定</a></span></li><li><span><a href="#平均と分散の推定の例" data-toc-modified-id="平均と分散の推定の例-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>平均と分散の推定の例</a></span></li></ul></li><li><span><a href="#中央値" data-toc-modified-id="中央値-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中央値</a></span><ul class="toc-item"><li><span><a href="#中央値の特徴付け" data-toc-modified-id="中央値の特徴付け-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中央値の特徴付け</a></span></li><li><span><a href="#中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定" data-toc-modified-id="中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定</a></span></li><li><span><a href="#Laplace分布モデルによる最尤推定" data-toc-modified-id="Laplace分布モデルによる最尤推定-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Laplace分布モデルによる最尤推定</a></span></li><li><span><a href="#中央値の推定の例" data-toc-modified-id="中央値の推定の例-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中央値の推定の例</a></span></li></ul></li><li><span><a href="#最頻値" data-toc-modified-id="最頻値-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最頻値</a></span><ul class="toc-item"><li><span><a href="#最頻値の特徴付け" data-toc-modified-id="最頻値の特徴付け-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>最頻値の特徴付け</a></span></li><li><span><a href="#最頻値の近似的な推定" data-toc-modified-id="最頻値の近似的な推定-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>最頻値の近似的な推定</a></span></li><li><span><a href="#最頻値の近似的な推定の例" data-toc-modified-id="最頻値の近似的な推定の例-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>最頻値の近似的な推定の例</a></span></li></ul></li><li><span><a href="#加法平均と乗法平均" data-toc-modified-id="加法平均と乗法平均-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>加法平均と乗法平均</a></span><ul class="toc-item"><li><span><a href="#ガンマ分布モデルの汎化誤差" data-toc-modified-id="ガンマ分布モデルの汎化誤差-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>ガンマ分布モデルの汎化誤差</a></span></li><li><span><a href="#ガンマ分布モデルの最尤推定" data-toc-modified-id="ガンマ分布モデルの最尤推定-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>ガンマ分布モデルの最尤推定</a></span></li><li><span><a href="#ガンマ分布モデルによる推定の例" data-toc-modified-id="ガンマ分布モデルによる推定の例-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>ガンマ分布モデルによる推定の例</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Kullback-Leibler情報量とSanovの定理" data-toc-modified-id="Kullback-Leibler情報量とSanovの定理-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Kullback-Leibler情報量とSanovの定理</a></span><ul class="toc-item"><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#KL情報量" data-toc-modified-id="KL情報量-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>KL情報量</a></span></li><li><span><a href="#汎化誤差" data-toc-modified-id="汎化誤差-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>汎化誤差</a></span></li><li><span><a href="#尤度函数と汎化誤差の関係と最尤法の定義" data-toc-modified-id="尤度函数と汎化誤差の関係と最尤法の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>尤度函数と汎化誤差の関係と最尤法の定義</a></span></li></ul></li><li><span><a href="#平均と分散" data-toc-modified-id="平均と分散-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均と分散</a></span><ul class="toc-item"><li><span><a href="#平均と分散の特徴付け" data-toc-modified-id="平均と分散の特徴付け-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均と分散の特徴付け</a></span></li><li><span><a href="#平均と分散の推定は正規分布モデルによる推定に等しい" data-toc-modified-id="平均と分散の推定は正規分布モデルによる推定に等しい-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均と分散の推定は正規分布モデルによる推定に等しい</a></span></li><li><span><a href="#平均と分散の正規分布モデルによる最尤推定" data-toc-modified-id="平均と分散の正規分布モデルによる最尤推定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>平均と分散の正規分布モデルによる最尤推定</a></span></li><li><span><a href="#平均と分散の推定の例" data-toc-modified-id="平均と分散の推定の例-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>平均と分散の推定の例</a></span></li></ul></li><li><span><a href="#中央値" data-toc-modified-id="中央値-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中央値</a></span><ul class="toc-item"><li><span><a href="#中央値の特徴付け" data-toc-modified-id="中央値の特徴付け-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中央値の特徴付け</a></span><ul class="toc-item"><li><span><a href="#中央値の特徴付けのより正確な証明" data-toc-modified-id="中央値の特徴付けのより正確な証明-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>中央値の特徴付けのより正確な証明</a></span></li></ul></li><li><span><a href="#中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定" data-toc-modified-id="中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定</a></span></li><li><span><a href="#Laplace分布モデルによる最尤推定" data-toc-modified-id="Laplace分布モデルによる最尤推定-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Laplace分布モデルによる最尤推定</a></span></li><li><span><a href="#中央値の推定の例" data-toc-modified-id="中央値の推定の例-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中央値の推定の例</a></span></li></ul></li><li><span><a href="#最頻値" data-toc-modified-id="最頻値-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最頻値</a></span><ul class="toc-item"><li><span><a href="#最頻値の特徴付け" data-toc-modified-id="最頻値の特徴付け-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>最頻値の特徴付け</a></span></li><li><span><a href="#最頻値の近似的な推定" data-toc-modified-id="最頻値の近似的な推定-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>最頻値の近似的な推定</a></span></li><li><span><a href="#最頻値の近似的な推定の例" data-toc-modified-id="最頻値の近似的な推定の例-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>最頻値の近似的な推定の例</a></span></li></ul></li><li><span><a href="#加法平均と乗法平均" data-toc-modified-id="加法平均と乗法平均-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>加法平均と乗法平均</a></span><ul class="toc-item"><li><span><a href="#ガンマ分布モデルの汎化誤差" data-toc-modified-id="ガンマ分布モデルの汎化誤差-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>ガンマ分布モデルの汎化誤差</a></span></li><li><span><a href="#ガンマ分布モデルの最尤推定" data-toc-modified-id="ガンマ分布モデルの最尤推定-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>ガンマ分布モデルの最尤推定</a></span></li><li><span><a href="#ガンマ分布モデルによる推定の例" data-toc-modified-id="ガンマ分布モデルによる推定の例-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>ガンマ分布モデルによる推定の例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -531,6 +531,41 @@ $$
 ここで, $1_{X>a}$ は $X>a$ のときに $1$ になり, そうでないとき $0$ になる函数であり, $1_{X<a}$ も同様である. これより, $P(X>a)=P(X<a)$ のとき, すなわち $a$ が $X$ の中央値のとき $E[|X-a|]$ が最小になることがわかる.
 
 $E[|X-a|]$ の最小値は中央値を中心として $X$ の値がどれだけばらついているかを表す指標になっており, 中央値にかんする平均の場合の分散の役目を果たす量だと考えられる.
+
+
+#### 中央値の特徴付けのより正確な証明
+
+**定理:** 実数 $a_0$ が $P(X<a_0) = P(X>a_0)$ を満たすとき, $E[|X-a|]$ は $a=a_0$ で最小になる.
+
+**証明:** $P(X<a_0) = P(X>a_0)$ と仮定する. $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を $1_A$ と書くと, その仮定は $E[1_{X>a_0}] = E[1_{X<a_0}]$ と書き直される.
+
+$$
+E[|X-a_0|] = E[(X-a_0)1_{X>a_0}] - E[(X-a_0)1_{X<a_0}]
+$$
+
+から $0=(a-a_0)(E[1_{X>a_0}] - E[1_{X<a_0}])$ を引くと,
+
+$$
+E[|X-a_0|] = E[(X-a)1_{X>a_0}] - E[(X-a)1_{X<a_0}].
+$$
+
+これを
+
+$$
+E[|X-a|] = E[(X-a)1_{X>a}] - E[(X-a)1_{X<a}]
+$$
+
+から引くと,
+
+$$
+E[|X-a|] - E[|X-a_0|] = E[(X-a)(1_{X>a}-1_{X>a_0})] - E[(X-a)(1_{X<a}-1_{X<a_0})].
+$$
+
+$a\geqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = -1_{a_0<X\leqq a} \leqq 0$ となり, $a_0<X\leqq a$ のとき $X-a\leqq 0$ となり, $1_{X<a}-1_{X<a_0}=1_{a_0\leqq X<a}\geqq 0$ となり, $a_0\leqq X<a$ のとき $X-a\leqq 0$ となるので, すぐ上の公式より, $E[|X-a|] - E[|X-a_0|]\geqq 0$ となることがわかる.
+
+$a\leqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = 1_{a<X\leqq a_0} \geqq 0$ となり, $a0<X\leqq a_0$ のとき $X-a\geqq 0$ となり, $1_{X<a}-1_{X<a_0}=-1_{a\leqq X<a_0}\leqq 0$ となり, $a\leqq X<a_0$ のとき $X-a\geqq 0$ となるので, 上の公式より, $E[|X-a|] - E[|X-a_0|]\geqq 0$ となることがわかる.
+
+以上によって常に $E[|X-a|] \geqq E[|X-a_0|]$ となることがわかった. これで $E[|X-a|]$ は $a=a_0$ のとき最小になることが示された. $|QED$
 
 
 ### 中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定
