@@ -22,6 +22,8 @@
 
 ## 統計学関連のノート
 
+● [分割表のPearsonのχ²統計量 2019-10-31](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Pearson%27s%20%CF%87%C2%B2-statistics%20of%20contingency%20tables.ipynb): r×cの分割表において, 周辺度数をすべて固定した場合にPearsonのχ²統計量が漸近的に自由度(r-1)(c-1)のχ²分布に従うことは容易に示せる. 周辺度数をすべて固定するという不自然な仮定をしていなくても, Pearsonのχ²統計量が漸近的に自由度(r-1)(c-1)のχ²分布に従うことはWilksの定理から出る. このノートではそのことを数値的に確認している.
+
 ● [Ridge正則化とStein推定量 2019-09-30](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Ridge%20regularization%20and%20Stein%20estimator.ipynb) ([pdf版](https://genkuroki.github.io/documents/Statistics/Ridge%20regularization%20and%20Stein%20estimator.pdf)): 非常にシンプルなケースにRidge正則化を適用することによって, 最尤推定量よりも平均二乗誤差が小さなStein推定量が得られることを示す.  Ridge正則化は事前分布を正規分布としたときのMAP法に等しい.  これは, 事前分布を利用することによって, 平均予測誤差が改善される場合があることを示すシンプルな実例になっている.
 
 ● [尤度函数のプロット 2019-09-17](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/likelihood%20functions%20of%20mixture%20normal%20distributions.ipynb): 簡単な1次元の混合正規分布モデルの尤度函数をプロット. 特異モデルに近い正則モデルの尤度函数はまるで特異モデルであるかのような形状になる.
