@@ -8,16 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.2.1
   kernelspec:
-    display_name: Julia 1.1.1
+    display_name: Julia 1.3.1
     language: julia
-    name: julia-1.1
+    name: julia-1.3
 ---
 
 # Kullback-Leibler情報量と記述統計
 
 黒木玄
 
-2019-09-13～2019-09-23, 2019-10-15
+2019-09-13～2019-09-23, 2019-10-15, 2020-01-03
+
+* Copyright 2019, 2020 Gen Kuroki
+* License: [MIT](https://opensource.org/licenses/MIT)
 
 このファイルのJupyter notebook版は
 
@@ -64,14 +67,50 @@ end
 using Distributions
 using Statistics
 using StatsBase
+using LaTeXStrings
 
 using StatsPlots
 using Plots
-gr(size=(400, 250), titlefontsize=10)
+default(:bglegend, plot_color(default(:bg), 0.5))
+default(:fglegend, plot_color(ifelse(isdark(plot_color(default(:bg))), :white, :black), 0.6));
+pal = palette(:default)
+
+pyplotclf() = if backend() == Plots.PyPlotBackend(); PyPlot.clf(); end 
+
+function retina(P::Plots.Plot; scale=3)
+    Q = deepcopy(P)
+    Q[:dpi] = round(Int, scale*P[:dpi])
+    base64 = base64encode(show, MIME("image/png"), Q)
+    mime = "image/png"
+    width = P[:size][1]
+    display("text/html", """<img width=$(width) src="data:$(mime);base64,$(base64)"/>""")
+    pyplotclf()
+end
+
+retina(; scale=3) = (P -> retina(P; scale=scale))
+
+function retinasavefig(P::Plots.Plot, fn::AbstractString; scale=3)
+    Q = deepcopy(P)
+    Q[:dpi] = round(Int, scale*P[:dpi])
+    savefig(Q, fn)
+    pyplotclf()
+end
+
+function retinasavedisp(P::Plots.Plot, fn::AbstractString; scale=3)
+    retinasavefig(P, fn; scale=scale)
+    displayfile("image/png", fn; tag="img width=$(P[:size][1])")
+    pyplotclf()
+end
+
+retinasavedisp(fn::AbstractString; scale=3) = (P -> retinasavedisp(P, fn; scale=scale))
+
+pyplot(fmt=:auto, size=(400, 250), titlefontsize=10)
 
 using Random
 using QuadGK
+
 using SpecialFunctions
+SpecialFunctions.lgamma(x::Real) = logabsgamma(x)[1]
 ```
 
 ## Kullback-Leibler情報量とSanovの定理
@@ -143,9 +182,9 @@ n = 1000
 f(x) = n*log(x) - x
 g(y) = n*log(n) - n - y^2/2
 y = range(-3, 3, length=400)
-plot(title="\$n = $n\$", legend=:bottom)
-plot!(y, @.(f(n + √n*y)), label="\$f(n+\\sqrt{n}\\,y)\$", lw=2)
-plot!(y, g.(y), label="\$n\\log n - n - y^2/2\$", lw=2, ls=:dash)
+plot(title="\$n = $n\$", ylim=(5901, 5911), ytick=5901:5911)
+plot!(y, @.(f(n + √n*y)), label=L"f(n+\sqrt{n}\,y)", lw=1.5)
+plot!(y, g.(y), label=L"n\,\log\,n - n - y^2/2\$", lw=1.5, ls=:dash) |> retina
 ```
 
 確かによく一致している. $y<0$ で $f$ より $n\log n - n - y^2/2$ が大きく, $y>0$ ではその逆になる.  実際に積分すると, その違いが互いに打ち消し合うことによって精度が上がる仕組みになっている.
@@ -163,18 +202,18 @@ $$
 logfact(n) = lgamma(n+1)
 logstirling(n) = n*log(n) - n + 1/2*log(n) + log(√(2π))
 x = range(0.1, 100, length=400)
-plot(legend=:topleft)
-plot!(x, logfact.(x), label="log factorial", lw=2)
-plot!(x, logstirling.(x), label="log Stirling", lw=2, ls=:dash)
+plot(title="log Stirling's approximation")
+plot!(x, logfact.(x), label="log factorial", lw=1.5)
+plot!(x, logstirling.(x), label="log Stirling", lw=1.5, ls=:dash) |> retina
 ```
 
 このようにStirlingの公式による近似の精度は非常に高く, ほとんどぴったり一致しているように見える. 
 
 ```julia
 x = range(0.1, 6, length=400)
-plot(legend=:topleft)
-plot!(x, logfact.(x), label="log factorial", lw=2)
-plot!(x, logstirling.(x), label="log Stirling", lw=2, ls=:dash)
+plot(title="log Stirling's approximation")
+plot!(x, logfact.(x), label="log factorial", lw=1.5)
+plot!(x, logstirling.(x), label="log Stirling", lw=1.5, ls=:dash) |> retina
 ```
 
 階乗とStirlingの公式による近似があまり一致しないのは $n$ が小さな場合だけである.
@@ -265,9 +304,9 @@ kl_bin(q, p) = q*log(q/p) + (1-q)*log((1-q)/(1-p))
 n = 200
 p = 0.4
 q = range(0.01, 0.99, step=0.005)
-plot(legend=:topleft, xlabel="q", title="\$n = $n, \\quad p = $p\$")
-plot!(q, logprob_bin.(n, n*q, p), label="(-1/n)log prob", lw=2)
-plot!(q, kl_bin.(q, p), label="KL information", lw=2, ls=:dash)
+plot(xlabel="q", title="\$n = $n, \\quad p = $p\$")
+plot!(q, logprob_bin.(n, n*q, p), label=L"(-1/n)\log\,\mathrm{prob}", lw=1.5)
+plot!(q, kl_bin.(q, p), label="KL information", lw=1.5, ls=:dash) |> retina
 ```
 
 確かに2つはよく一致している.
@@ -479,8 +518,9 @@ X = rand(gdist, 1000)
 
 @show normal_gdist = fit_mle(Normal, X)
 
+sleep(0.1)
 histogram(X; normed=true, bins=range(0, 5, step=0.1), alpha=0.5, label="sample")
-plot!(x -> pdf(normal_gdist, x); label="normal approx", lw=2)
+plot!(x -> pdf(normal_gdist, x); label="normal approx") |> retina
 ```
 
 ```julia
@@ -498,7 +538,7 @@ ns = [10;10;10;10;10:3:300;300;300;300;300]
 
     normal_gdist = fit_mle(Normal, X)
     P1 = histogram(X; normed=true, bins=range(0, 5, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(normal_gdist, x); label="normal approx", lw=2)
+    plot!(x -> pdf(normal_gdist, x); label="normal approx")
     plot!(legend=false, xlim=(-0.5, 5), ylim=(0, 1.2))
 
     loglik(μ, σ) = sum(logpdf(Normal(μ, σ), x) for x in X)
@@ -509,7 +549,8 @@ ns = [10;10;10;10;10:3:300;300;300;300;300]
     
     plot(P1, P2, size=(600, 250))
 end
-@time gif(anim, "images/lik_normal.gif", fps=10)
+pyplotclf()
+gif(anim, "images/lik_normal.gif", fps=10)
 displayfile("image/gif", "images/lik_normal.gif")
 ```
 
@@ -537,7 +578,7 @@ $E[|X-a|]$ の最小値は中央値を中心として $X$ の値がどれだけ�
 
 **定理:** 実数 $a_0$ が $P(X<a_0) = P(X>a_0)$ を満たすとき, $E[|X-a|]$ は $a=a_0$ で最小になる.
 
-**証明:** $P(X<a_0) = P(X>a_0)$ と仮定する. $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を $1_A$ と書くと, その仮定は $E[1_{X>a_0}] = E[1_{X<a_0}]$ と書き直される.
+**証明:** $P(X<a_0) = P(X>a_0)$ と仮定する. $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を $1_A$ と書くと, 定理の仮定は $E[1_{X>a_0}] = E[1_{X<a_0}]$ と書き直される.
 
 $$
 E[|X-a_0|] = E[(X-a_0)1_{X>a_0}] - E[(X-a_0)1_{X<a_0}]
@@ -565,7 +606,7 @@ $a\geqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = -1_{a_0<X\leqq a} \leqq 0$ とな
 
 $a\leqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = 1_{a<X\leqq a_0} \geqq 0$ となり, $a0<X\leqq a_0$ のとき $X-a\geqq 0$ となり, $1_{X<a}-1_{X<a_0}=-1_{a\leqq X<a_0}\leqq 0$ となり, $a\leqq X<a_0$ のとき $X-a\geqq 0$ となるので, 上の公式より, $E[|X-a|] - E[|X-a_0|]\geqq 0$ となることがわかる.
 
-以上によって常に $E[|X-a|] \geqq E[|X-a_0|]$ となることがわかった. これで $E[|X-a|]$ は $a=a_0$ のとき最小になることが示された. $|QED$
+以上によって常に $E[|X-a|] \geqq E[|X-a_0|]$ となることがわかった. これで $E[|X-a|]$ は $a=a_0$ のとき最小になることが示された. $\QED$
 
 
 ### 中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定
@@ -631,8 +672,9 @@ X = rand(gdist, 1000)
 
 @show laplace_gdist = Laplace(a_hat, b_hat)
 
+sleep(0.1)
 histogram(X; bins=range(0, 4, step=0.1), normed=true, alpha=0.5, label="sample")
-plot!(x -> pdf(laplace_gdist, x); label="Laplace approx", lw=2)
+plot!(x -> pdf(laplace_gdist, x); label="Laplace approx") |> retina
 ```
 
 ```julia
@@ -652,7 +694,7 @@ ns = [10;10;10;10;10;10:10:1000;1000;1000;1000;1000]
     b_hat = mean(abs(x - a_hat) for x in X)
     laplace_gdist = Laplace(a_hat, b_hat)
     P1 = histogram(X; bins=range(0, 4, step=0.2), normed=true, alpha=0.5, label="sample")
-    plot!(x -> pdf(laplace_gdist, x); label="Laplace approx", lw=2)
+    plot!(x -> pdf(laplace_gdist, x); label="Laplace approx")
     plot!(legend=false, xlim=(-0.5, 4), ylim=(0, 1.5))
 
     loglik(a, b) = sum(logpdf(Laplace(a, b), x) for x in X)
@@ -663,7 +705,8 @@ ns = [10;10;10;10;10;10:10:1000;1000;1000;1000;1000]
     
     plot(P1, P2, size=(600, 250))
 end
-@time gif(anim, "images/lik_laplace.gif", fps=10)
+pyplotclf()
+gif(anim, "images/lik_laplace.gif", fps=10)
 displayfile("image/gif", "images/lik_laplace.gif")
 ```
 
@@ -721,7 +764,7 @@ noise1 = 0.4randn(r)
 noise2 = 0.2randn(r)
 dist = MixtureModel([Normal(2k+noise1[k], 1.0+noise2[k]) for k in 1:r], [1/10 for k in 1:r])
 x = range(-5, 2r+5, length=2000)
-plot(x, pdf.(dist, x), legend=:topleft, label="pdf")
+plot(x, pdf.(dist, x), legend=:topleft, label="pdf") |> retina
 ```
 
 ```julia
@@ -736,7 +779,7 @@ X = rand(dist, 1000)
 @show mean(X), std(X)
 @show median(X), StatsBase.mad(X; normalize=false)
 @show mode(X)
-histogram(X; bin=40, legend=false, alpha=0.5)
+histogram(X; bin=40, legend=false, alpha=0.5) |> retina
 ```
 
 ```julia
@@ -744,14 +787,14 @@ f(x, ε) = pdf(Normal(0, ε), x)
 L(a; ε=0.3) = mean(f(x-a, ε) for x in X)
 
 a = range(extrema(X)..., length=2000)
-plot(a, L.(a), legend=false) |> display
+plot(a, L.(a), legend=false) |> retina
 a_hat = a[findmax(L.(a))[2]]
 ```
 
 ```julia
 ε = range(0.1, 3.0, step=0.1)
 y = [a[findmax(L.(a; ε=ε))[2]] for ε in ε]
-plot(ε, y; size=(400, 300), legend=false, ylim=(0, 24), xlabel="epsilon", ylabel="estimate of mode")
+plot(ε, y; size=(400, 300), legend=false, ylim=(0, 24), xlabel="epsilon", ylabel="estimate of mode") |> retina
 ```
 
 サンプルの分布を丸めるために使った正規分布の標準偏差を $0.1$ から $2.0$ まで動かして, 最頻値に推定値がどのように変化するかをプロットすると, 上のサンプルの例では, $0.1$ から $1.0$ までは最頻値の推定値が $11$ 程度になっているが、それより大きくなると突然 $16$ 程度に最頻値の推定値がジャンプする.
@@ -764,7 +807,8 @@ a = range(extrema(X)..., length=2000)
     vline!([a_hat], label="a_hat")
     title!("epsilon = $ε")
 end
-@time gif(anim, "images/mode_estimation.gif", fps=5)
+pyplotclf()
+gif(anim, "images/mode_estimation.gif", fps=5)
 displayfile("image/gif", "images/mode_estimation.gif")
 ```
 
@@ -836,7 +880,7 @@ $$
 
 f(α) = log(α) - digamma(α)
 α = range(0.1, 3, length=200)
-plot(α, f.(α), xlabel="\$\\alpha\$", label="\$\\log\\alpha - \\psi(\\alpha)\$")
+plot(α, f.(α), xlabel="\$\\alpha\$", label="\$\\log\\alpha - \\psi(\\alpha)\$") |> retina
 ```
 
 ### ガンマ分布モデルの最尤推定
@@ -880,7 +924,7 @@ $$
 ```julia
 dist_mg = MixtureModel([Gamma(8,0.3), Gamma(50, 0.1)], [0.7, 0.3])
 x = range(0, 8, length=200)
-plot(x, pdf.(dist_mg, x), label="true dist")
+plot(x, pdf.(dist_mg, x), label="true dist") |> retina
 ```
 
 ```julia
@@ -889,7 +933,7 @@ Random.seed!(37346491)
 X = rand(dist_mg, 1000)
 @show dist_g = fit_mle(Gamma, X)
 histogram(X, norm=true, bins=range(0, 8, step=0.2), label="sample", alpha=0.5)
-plot!(x, pdf.(dist_g, x), label="Gamma approx", lw=2)
+plot!(x, pdf.(dist_g, x), label="Gamma approx") |> retina
 ```
 
 ```julia
@@ -906,7 +950,7 @@ ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx", lw=2)
+    plot!(x -> pdf(dist_g, x); label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, θ) = sum(logpdf(Gamma(α, θ), x) for x in X)
@@ -917,7 +961,8 @@ ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
     
     plot(P1, P2, size=(600, 250))
 end
-@time gif(anim, "images/lik_gamma.gif", fps=10)
+pyplotclf()
+gif(anim, "images/lik_gamma.gif", fps=10)
 displayfile("image/gif", "images/lik_gamma.gif")
 ```
 
@@ -935,7 +980,7 @@ ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx", lw=2)
+    plot!(x -> pdf(dist_g, x); label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
@@ -946,7 +991,8 @@ ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
     
     plot(P1, P2, size=(600, 250))
 end
-@time gif(anim, "images/lik_gamma2.gif", fps=10)
+pyplotclf()
+gif(anim, "images/lik_gamma2.gif", fps=10)
 displayfile("image/gif", "images/lik_gamma2.gif")
 ```
 
@@ -964,7 +1010,7 @@ ns = [fill(3, 6); 4;4;4;4;5;5;5;6;6;6;7;7;8;8;9;9; 10:20; 23:3:100; 110:10:300 ;
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx", lw=2)
+    plot!(x -> pdf(dist_g, x); label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 1.4))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
@@ -975,10 +1021,7 @@ ns = [fill(3, 6); 4;4;4;4;5;5;5;6;6;6;7;7;8;8;9;9; 10:20; 23:3:100; 110:10:300 ;
     
     plot(P1, P2, size=(600, 250))
 end
-@time gif(anim, "images/lik_gamma3.gif", fps=3)
+pyplotclf()
+gif(anim, "images/lik_gamma3.gif", fps=3)
 displayfile("image/gif", "images/lik_gamma3.gif")
-```
-
-```julia
-
 ```
