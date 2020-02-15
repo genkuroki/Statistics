@@ -34,7 +34,55 @@
 
 ● [混合正規分布について正規分布モデルで信頼区間を求めた場合 2019-08-17～2019-08-19](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/%E6%B7%B7%E5%90%88%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A7%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%82%92%E6%B1%82%E3%82%81%E3%81%9F%E5%A0%B4%E5%90%88.ipynb): 母集団の中に含まれる小さな割合の部分集団が全体の平均に影響を与えるくらい飛び離れた値を持っている場合には, 正規分布モデルによる区間推定が失敗する確率は非常に高くなる.
 
-## このリポジトリ外に置いてある昔のノート
+## このリポジトリ外に置いてあるノート
+
+● [Bernoulli分布モデル 2020-02-11～2020-02-14](https://nbviewer.jupyter.org/gist/genkuroki/38b9f0b80320675d7ac23c6745ebc344?flush_cache=true): Bernoulli分布モデルの最尤法およびベイズ法による推定. AICやWAICやBICやベイズ自由エネルギーの計算を含む.
+
+● [Julia言語のDistributions.jlにおけるvon Mises分布の実装の不具合の修正](https://nbviewer.jupyter.org/gist/genkuroki/f876fc00256161f07da374f2defe4359)
+
+● [線形補間版と文科省版の四分位数の比較](https://nbviewer.jupyter.org/gist/genkuroki/3082fa499b22d7f161f87afa45fdb432)
+
+● [Hypothesis Tests and Confidence Intervals 2020-01-01～2020-01-04](https://nbviewer.jupyter.org/gist/genkuroki/693d96f5a9fe7443f94d111ef6649d95): 連続分布と有限離散分布の両側検定と信頼区間.
+
+● [両側二項検定に関する様々なプロット 2020-01-01～2020-01-03](https://nbviewer.jupyter.org/gist/genkuroki/7c0220859f0bfb2f4aabfcb08bc6e6a6)
+
+● [有限離散分布での両側検定 2020-01-01～2020-01-03](https://nbviewer.jupyter.org/gist/genkuroki/ed0bf562732def23d4ca7a7d4300b766): 二項検定と超幾何検定. 信頼区間を計算する函数. 離散非対称分布の両側検定には複数の流儀がある.
+
+● [r×cの分割表の独立性検定](https://nbviewer.jupyter.org/gist/genkuroki/afbefd162b58775ef9a9150ff6033702)
+
+● [χ²検定とG検定とFisher検定の比較 2019-11-24](https://nbviewer.jupyter.org/gist/genkuroki/53668ae52916cb2cc187a6ec6f61aac4)
+
+● [超幾何分布から積Poisson分布におけるPearson's χ²の分布の変化¶ 2019-11-23](https://nbviewer.jupyter.org/gist/genkuroki/a25138769afdb17ac9d07977b8c44645)
+
+● 2×2の分割表の独立性検定とオッズ比の信頼区間
+
+* [2×2の分割表のχ²検定の信頼区間 2019-11-17～2019-11-18](https://nbviewer.jupyter.org/gist/genkuroki/19adb161b3f7894d6746010ed7bc6abe)
+* [2×2の分割表の独立性検定とオッズ比の信頼区間 Part 2 2019-11-28～2019-12-04](https://nbviewer.jupyter.org/gist/genkuroki/c28ac2f8c0160f6b25f15e371b584afb): Williams補正版G検定の追加
+* [2×2の分割表の独立性検定とオッズ比の信頼区間 Part 3 2019-11-28～2019-12-08](https://nbviewer.jupyter.org/gist/genkuroki/439ebb4dffd7116e225554c4383e7476): 男女の合格率に差があるか
+* [2×2の分割表の独立性検定とオッズ比の信頼区間 Part 4 2019-11-28～2019-12-17](https://nbviewer.jupyter.org/gist/genkuroki/39189803badb7b2a7805d50a0421645e): Rのfmsbパッケージとの比較
+* [2×2の分割表の独立性検定とオッズ比の信頼区間 Part 5 2019-11-28～2019-12-31～2020-01-02](https://nbviewer.jupyter.org/gist/genkuroki/236a027dc9177b612d015b1066e5768c): mid-P Fisher検定のP値のよりシンプルな計算の仕方, 二項分布×2と超幾何分布の比較, 4種の分布を比較
+
+● [χ²検定, そのYates補正, Fisher検定, そのmid-p補正の比較 2019-11-15](https://nbviewer.jupyter.org/gist/genkuroki/d0e8cef65d62f62041b15ff63a37880f)
+
+● [Maximum exact Pearson's χ² test for 2x2 tables 2019-11-11](https://nbviewer.jupyter.org/gist/genkuroki/e1c482ef162b4a29343817ffef08f510)
+
+● [連続性補正の例 2019-11-09](https://nbviewer.jupyter.org/gist/genkuroki/bb6117277ff9c2a00eb6c0abd8032f0e): 二項分布と超幾何分布の正規分布近似の補正.
+
+● [Pearsonのχ²統計量 2019-11-09](https://nbviewer.jupyter.org/gist/genkuroki/e1c482ef162b4a29343817ffef08f510): Pearsonのχ²統計量の導出に関するノート.
+
+● [r×cの分割表におけるPearsonのχ²統計量 2019-10-29～2019-11-04](https://nbviewer.jupyter.org/gist/genkuroki/142510f19179ea7a49e98ba67a125a45): 分割表の独立性検定のためのPearsonのχ²統計量の導出の非常に詳しいノート.
+
+● [2×2の分割表でのχ²検定とG検定とFisher検定の比較 2019-11-05](https://nbviewer.jupyter.org/gist/genkuroki/c94807574656a2fd8c0e39a8d497eed4)
+
+● [2×2の分割表の独立性検定 2019-11-03](https://nbviewer.jupyter.org/gist/genkuroki/6532e6b5cfb9dc77afe70301dae48178)
+
+● [Wasserstein metric 2019-10-27](https://nbviewer.jupyter.org/gist/genkuroki/a5fbcd5b38e478070650caf79367ca4c)
+
+● [Fisher検定とカイ二乗検定のR言語による比較 2019-10-10](https://nbviewer.jupyter.org/gist/genkuroki/973d7d48e9db5127731cff65df129232): Fisher検定が正確ではないことのR言語を使った証明.
+
+● [超幾何検定のP値函数のアニメーション](https://nbviewer.jupyter.org/gist/genkuroki/e4c4595462d1c246c3e4d8fe91d99684)
+
+● [2×2の分割表の独立性検定とオッズ比の信頼区間 2019-11-28](https://nbviewer.jupyter.org/gist/genkuroki/b4775b869870ac8e5b4dbd7806f3c9d7)
 
 ● [正規分布の共役事前分布(正規ガンマ分布) 2017-11-28～2018-10-11](https://nbviewer.jupyter.org/gist/genkuroki/8a342d0b7b249e279dd8ad6ae283c5db): 1次元の正規分布モデルの場合の共役事前分布を用いたベイズ統計に関するWAICやWBICを丸め誤差を除いて正確に計算する函数を含む. 何もかもexactな公式を計算できる正規分布モデルの場合を扱いたい人は必見!
 
