@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.2.1
   kernelspec:
-    display_name: Julia 1.1.1
+    display_name: Julia 1.4.1
     language: julia
-    name: julia-1.1
+    name: julia-1.4
 ---
 
 # 母平均の仮説検定と区間推定
@@ -44,7 +44,7 @@ $
 
 <!-- #region {"toc": true} -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#母平均の仮説検定" data-toc-modified-id="母平均の仮説検定-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>母平均の仮説検定</a></span><ul class="toc-item"><li><span><a href="#設定" data-toc-modified-id="設定-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>設定</a></span></li><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定</a></span><ul class="toc-item"><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定の設定" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定の設定-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定の設定</a></span></li><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定の作成" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定の作成-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定の作成</a></span></li></ul></li></ul></li><li><span><a href="#母平均の信頼区間" data-toc-modified-id="母平均の信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>母平均の信頼区間</a></span></li><li><span><a href="#仮説検定や区間推定がモデルに強く依存していることの重要性" data-toc-modified-id="仮説検定や区間推定がモデルに強く依存していることの重要性-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>仮説検定や区間推定がモデルに強く依存していることの重要性</a></span><ul class="toc-item"><li><span><a href="#全体の平均値に大きな影響を与える小集団が母集団に含まれている場合" data-toc-modified-id="全体の平均値に大きな影響を与える小集団が母集団に含まれている場合-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>全体の平均値に大きな影響を与える小集団が母集団に含まれている場合</a></span></li><li><span><a href="#それではどうすればよいのか？" data-toc-modified-id="それではどうすればよいのか？-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>それではどうすればよいのか？</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#母平均の仮説検定" data-toc-modified-id="母平均の仮説検定-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>母平均の仮説検定</a></span><ul class="toc-item"><li><span><a href="#設定" data-toc-modified-id="設定-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>設定</a></span></li><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定</a></span><ul class="toc-item"><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定の設定" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定の設定-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定の設定</a></span></li><li><span><a href="#正規分布モデルによる母集団平均に関する両側検定の作成" data-toc-modified-id="正規分布モデルによる母集団平均に関する両側検定の作成-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>正規分布モデルによる母集団平均に関する両側検定の作成</a></span></li></ul></li></ul></li><li><span><a href="#母平均の信頼区間" data-toc-modified-id="母平均の信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>母平均の信頼区間</a></span></li><li><span><a href="#仮説検定や区間推定がモデルに強く依存していることの重要性" data-toc-modified-id="仮説検定や区間推定がモデルに強く依存していることの重要性-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>仮説検定や区間推定がモデルに強く依存していることの重要性</a></span><ul class="toc-item"><li><span><a href="#全体の平均値に大きな影響を与える小集団が母集団に含まれている場合" data-toc-modified-id="全体の平均値に大きな影響を与える小集団が母集団に含まれている場合-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>全体の平均値に大きな影響を与える小集団が母集団に含まれている場合</a></span></li><li><span><a href="#それではどうすればよいのか？" data-toc-modified-id="それではどうすればよいのか？-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>それではどうすればよいのか？</a></span></li></ul></li><li><span><a href="#他の計算例" data-toc-modified-id="他の計算例-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>他の計算例</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -53,14 +53,8 @@ displayfile(mime, file; tag="img") = open(file) do f
     display("text/html", """<$tag src="data:$mime;base64,$(base64encode(f))">""")
 end
 using Distributions
-#using StatsBase
-#using Statistics
 using Plots
-gr(size=(400, 250), titlefontsize=10, fmt=:png)
-#using Random
-#using QuadGK
-#using SpecialFunctions
-#using LinearAlgebra
+pyplot(size=(400, 250), titlefontsize=10, fmt=:svg)
 ```
 
 ## 母平均の仮説検定
@@ -72,7 +66,7 @@ gr(size=(400, 250), titlefontsize=10, fmt=:png)
 以下において, 母集団分布を $q(x)$ と書く. 母集団分布は未知ではあるが任意の分布であると考える. ただし, 母集団分布 $q(x)$ は平均と有限の分散を持つと仮定する(現実にはこの仮定が適切であるかどうかはわからないのだが, 簡単のためこのように仮定しておく). 母集団分布 $q(x)$ の平均と分散をそれぞれ $\mu_0$, $\sigma_0^2$ と書くことにする:
 
 $$
-\mu_0 = \int q(x)x\,dx, \quad \sigma_0^2 = \int q(x)(x-\mu_0^2)^2\,dx.
+\mu_0 = \int x\,q(x)\,dx, \quad \sigma_0^2 = \int (x-\mu_0)^2\,q(x)\,dx.
 $$
 
 ここで $\int$ は実数全体での積分 $\int_\R$ を意味するものとする.  以下でも同様とする.
@@ -251,12 +245,19 @@ function is_in_confidence_interval(α, X, μ)
     a ≤ μ ≤ b
 end
 
-α = 0.05
+function prob_of_true_val_is_in_confint(
+        dist;
+        n = 30,
+        L = 10^6,
+        α = 0.05
+    )
+    X = rand(dist, n, L)
+    μ₀ = mean(dist)
+    count(is_in_confidence_interval(α, @view(X[:,j]), μ₀) for j in 1:L)/L
+end
+
 μ₀, σ₀ = 2.0, 0.5
-n = 10
-L = 10^5
-X = rand(Normal(μ₀, σ₀), n, L)
-count(is_in_confidence_interval(α, @view(X[:,j]), μ₀) for j in 1:size(X,2))/L
+prob_of_true_val_is_in_confint(Normal(μ₀, σ₀); n=30, α=0.05)
 ```
 
 **グラフ:** 以下は, 母集団分布が平均 $\mu_0$, 分散 $\sigma_0^2$ の正規分布のとき, そのサンプルを1000個生成し, その各々の95%信頼区間を計算して, その区間が $\mu_0$ を含むものを薄い青色, 含まないものを赤色でプロットしたものである.
@@ -273,7 +274,7 @@ function plot_CIs(μ₀, α, X; indices=1:500)
     plot!(xlim=(minimum(indices)-10, maximum(indices)+5))
 end
 
-function plot1000CIs(population_dist, n, α)
+function plot1000CIs(population_dist; n=30, α=0.05)
     L = 1000
     μ₀ = mean(population_dist)
     X = rand(population_dist, n, L)
@@ -282,7 +283,7 @@ function plot1000CIs(population_dist, n, α)
     plot(P1, P2, size=(1000, 300), layout=grid(2,1))
 end
 
-plot1000CIs(Normal(), 10, 0.05)
+plot1000CIs(Normal(); n=10, α=0.05)
 ```
 
 ## 仮説検定や区間推定がモデルに強く依存していることの重要性
@@ -313,18 +314,13 @@ plot(x, pdf.(mixnormal, x), label="mixnormal")
 以下のセルでは, 上の設定の母集団のサイズ30のサンプルを100万個生成し, その各々について95%信頼区間を計算し, 信頼区間に母集団分布の平均が含まれる割合を計算している.  95%には程遠い78%程度の割合になる.
 
 ```julia
-n = 30
-L = 10^6
-α = 0.05
-X = rand(mixnormal, n, L)
-μ₀ = mean(mixnormal)
-@time count(is_in_confidence_interval(α, @view(X[:,j]), μ₀) for j in 1:L)/L
+@time prob_of_true_val_is_in_confint(mixnormal; n=30, α=0.05)
 ```
 
 次のセルでは, 上の母集団のサイズ30のサンプルを1000個生成して, 各々の95%信頼区間プロットしている. 赤線は母集団の平均を含まない信頼区間である.  例外の5%をサンプルが1つも含まないケースが結構多いせいで, 信頼区間が狭くなってしまって, 区間推定に完全に失敗するケースが無視できないだけ大量に発生していることがわかる.
 
 ```julia
-plot1000CIs(mixnormal, n, α)
+plot1000CIs(mixnormal; n=30, α=0.05)
 ```
 
 以下では以上と同じことをサイズ $n=100$ のサンプルで行っている. 95%信頼区間に母集団の平均が含まれる割合は90%に届かない. そうなってしまう理由はサイズ $n=100$ のサンプルに5%の例外が1つも含まれないことはまれだが(0.6%弱), 5%の例外の含まれる確率が5%よりも小さ過ぎると, 信頼区間が小さい方に偏り過ぎてしまうことになってしまうからだ. 
@@ -336,12 +332,11 @@ plot1000CIs(mixnormal, n, α)
 ```
 
 ```julia
-X = rand(mixnormal, 100, L)
-@time count(is_in_confidence_interval(α, @view(X[:,j]), μ₀) for j in 1:L)/L
+@time prob_of_true_val_is_in_confint(mixnormal; n=100, α=0.05)
 ```
 
 ```julia
-plot1000CIs(mixnormal, 100, α)
+plot1000CIs(mixnormal; n=100, α=0.05)
 ```
 
 ### それではどうすればよいのか？
@@ -357,6 +352,34 @@ plot1000CIs(mixnormal, 100, α)
 結果的に母集団分布に正規分布モデルを適用することが不適切だとわかった場合には当然他のより適切なモデルを探して推定に役に立てるべきだろう.
 
 統計学入門書ではこの点について十分な説明がないようなので, みんな注意するべきだと思う.
+
+
+## 他の計算例
+
+```julia
+@show prob_of_true_val_is_in_confint(Uniform(); n=30, α=0.05)
+plot1000CIs(Uniform(0, 1); n=30, α=0.05)
+```
+
+```julia
+@show prob_of_true_val_is_in_confint(Gamma(10, 0.1); n=30, α=0.05)
+plot1000CIs(Gamma(10, 0.1); n=30, α=0.05)
+```
+
+```julia
+@show prob_of_true_val_is_in_confint(Exponential(); n=30, α=0.05)
+plot1000CIs(Exponential(); n=30, α=0.05)
+```
+
+```julia
+@show prob_of_true_val_is_in_confint(LogNormal(); n=30, α=0.05)
+plot1000CIs(LogNormal(); n=30, α=0.05)
+```
+
+```julia
+@show prob_of_true_val_is_in_confint(Beta(0.1, 10); n=30, α=0.05)
+plot1000CIs(Beta(0.1, 10); n=30, α=0.05)
+```
 
 ```julia
 
