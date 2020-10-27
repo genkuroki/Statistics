@@ -13,11 +13,18 @@ jupyter:
     name: julia-depwarn--o3-1.6
 ---
 
-# 最小二乗法
+# 最小二乗法の信頼区間と予測区間
 
 黒木玄
 
 2020-06-11, 2020-10-26
+
+* [Jupyterノートブック版](https://nbviewer.jupyter.org/github/genkuroki/Statistics/blob/master/Least%20squares%20estimates.ipynb)
+* [PDF版](https://genkuroki.github.io/documents/Statistics/Least%20squares%20estimates.pdf)
+
+**以下の説明では直交射影が本質的な役割を果たす.**
+
+**最小二乗法は直交射影の言い換えに過ぎない.**
 
 $
 \newcommand\eps{\varepsilon}
@@ -27,12 +34,8 @@ $
 \newcommand\T{{\mathtt T}}
 \newcommand\x{{\boldsymbol x}}
 \newcommand\E{{\mathbb E}}
-\newcommand\tr{{\mathbb }
+\newcommand\tr{\operatorname{tr}}
 $
-
-**以下の説明では直交射影が本質的な役割を果たす.**
-
-**最小二乗法は直交射影の言い換えに過ぎない.**
 
 
 ## 解説
@@ -164,7 +167,9 @@ $$
 となる.  分散の不偏推定量はこれを $n-1$ で割ることによって得られるのであった. この場合には $r=1$ なので $n-r=n-1$ になっていることに注意せよ.  $r=1$ でない場合にも $\|y-\hat{y}\|^2$ を $n-r$ で割れば $\sigma^2$ の不偏推定量が得られる.  $\square$
 
 
-**補足:** $y = Xb + \eps$ における $\eps$ の成分達 $\eps_i = \eps(x_i)$ ($i=1,\ldots,n$) の分布が独立で, 各々の $\eps_i$ は平均 $0$ と同一の分散 $\sigma^2$ を持つと仮定する. このとき, 
+### $\sigma^2$ の不偏推定量の構成の詳細
+
+$y = Xb + \eps$ における $\eps$ の成分達 $\eps_i = \eps(x_i)$ ($i=1,\ldots,n$) の分布が独立で, 各々の $\eps_i$ は平均 $0$ と同一の分散 $\sigma^2$ を持つと仮定する. このとき, 
 
 $$
 \hat{y} = X (X^\T X)^{-1}X^\T y
@@ -177,23 +182,32 @@ y - \hat{y} = (E - X (X^\T X)^{-1}X^\T) y =
 (E - X (X^\T X)^{-1}X^\T)(Xb + \eps) = (E - X (X^\T X)^{-1}X^\T)\eps.
 $$
 
-ゆえに, $y - \hat{y}$ の成分達の分散共分散行列は $X (X^\T X)^{-1}X^\T$ が $\Image X$ への直交射影変換の表現行列であることより, $E - X (X^\T X)^{-1}X^\T$ は $\Image X$ の直交補空間への直交射影変換の表現行列になるので, 
+ゆえに, $y - \hat{y}$ の成分達の分散共分散行列は $X (X^\T X)^{-1}X^\T$ が $\Image X$ ($r$ 次元)への直交射影変換の表現行列であることより, $E - X (X^\T X)^{-1}X^\T$ は $\Image X$ の直交補空間($n-r$ 次元)への直交射影変換の表現行列になるので, 
 
 $$
 \begin{aligned}
 \E[(y - \hat{y})(y - \hat{y})^\T] &= 
 \E[(E - X (X^\T X)^{-1}X^\T)\eps\eps^\T(E - X (X^\T X)^{-1}X^\T)] 
 \\ & =
-(E - X (X^\T X)^{-1}X^\T)\E[\eps\eps^\T](E - X (X^\T X)^{-1}X^\T) =
+(E - X (X^\T X)^{-1}X^\T)\E[\eps\eps^\T](E - X (X^\T X)^{-1}X^\T) 
+\\ & =
 \sigma^2(E - X (X^\T X)^{-1}X^\T).
 \end{aligned}
 $$
 
-となることがわかる. ゆえに 
+となることがわかる. ここで $\E[\ ]$ は確率変数にその期待値を与える汎函数である. ゆえに 
 
 $$
-\E[\|y - \hat{y}\|^2] = 
+\E[\|y - \hat{y}\|^2] = \tr\E[(y - \hat{y})(y - \hat{y})^\T] = (n-r)\sigma^2.
 $$
+
+これより, 
+
+$$
+\hat{u}^2 = \frac{1}{n-r}\|y - \hat{y}\|^2, \quad \hat{u}>0
+$$
+
+が $\sigma^2$ の不偏推定量になっていることがわかる. $\square$
 
 
 ### データが正規分布に従うという仮定のもとでの結論
@@ -210,13 +224,13 @@ $$
 
 このとき, 成分が $y_i$ の $n$ 次元列(縦)ベクトル $y$ は多変量正規分布に従う確率変数になり, $\hat{b}=(X^\T T)^{-1}X^\T y$ と $\hat{y}=X\hat{b}$ も多変量正規分布に従う確率変数になる. 
 
-ベクトル値の確率変数 $y - X\hat{b}$ は平均が0で分散共分散行列がランク $n-r$ の $n\times n$ 行列
+ベクトル値の確率変数 $y - \hat{y} = y - X\hat{b}$ は平均が0で分散共分散行列がランク $n-r$ の $n\times n$ 行列
 
 $$
 \sigma^2(E - X(X^\T X)^{-1}X^\T)
 $$
 
-の多変量正規分布に従い, $\hat{y}$ の各成分と $y-X\hat{b}$ の各成分の共分散は0になる.
+の多変量正規分布に従い, $\hat{y}$ の各成分と $y-X\hat{b}$ の各成分の共分散は0になる. (このことは前節の計算よりわかる.)
 
 
 ### サンプルを生成した未知の回帰曲線上の値の信頼区間
