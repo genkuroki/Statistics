@@ -8,16 +8,16 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.2.1
   kernelspec:
-    display_name: Julia 1.3.1
+    display_name: Julia depwarn -O3 1.6.0-DEV
     language: julia
-    name: julia-1.3
+    name: julia-depwarn--o3-1.6
 ---
 
 # Kullback-Leibler情報量と記述統計
 
 黒木玄
 
-2019-09-13～2019-09-23, 2019-10-15, 2020-01-03
+2019-09-13～2019-09-23, 2019-10-15, 2020-01-03, 2020-11-02
 
 * Copyright 2019, 2020 Gen Kuroki
 * License: [MIT](https://opensource.org/licenses/MIT)
@@ -55,7 +55,7 @@ $
 
 <!-- #region {"toc": true} -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Kullback-Leibler情報量とSanovの定理" data-toc-modified-id="Kullback-Leibler情報量とSanovの定理-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Kullback-Leibler情報量とSanovの定理</a></span><ul class="toc-item"><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#KL情報量" data-toc-modified-id="KL情報量-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>KL情報量</a></span></li><li><span><a href="#汎化誤差" data-toc-modified-id="汎化誤差-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>汎化誤差</a></span></li><li><span><a href="#尤度函数と汎化誤差の関係と最尤法の定義" data-toc-modified-id="尤度函数と汎化誤差の関係と最尤法の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>尤度函数と汎化誤差の関係と最尤法の定義</a></span></li></ul></li><li><span><a href="#平均と分散" data-toc-modified-id="平均と分散-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均と分散</a></span><ul class="toc-item"><li><span><a href="#平均と分散の特徴付け" data-toc-modified-id="平均と分散の特徴付け-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均と分散の特徴付け</a></span></li><li><span><a href="#平均と分散の推定は正規分布モデルによる推定に等しい" data-toc-modified-id="平均と分散の推定は正規分布モデルによる推定に等しい-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均と分散の推定は正規分布モデルによる推定に等しい</a></span></li><li><span><a href="#平均と分散の正規分布モデルによる最尤推定" data-toc-modified-id="平均と分散の正規分布モデルによる最尤推定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>平均と分散の正規分布モデルによる最尤推定</a></span></li><li><span><a href="#平均と分散の推定の例" data-toc-modified-id="平均と分散の推定の例-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>平均と分散の推定の例</a></span></li></ul></li><li><span><a href="#中央値" data-toc-modified-id="中央値-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中央値</a></span><ul class="toc-item"><li><span><a href="#中央値の特徴付け" data-toc-modified-id="中央値の特徴付け-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中央値の特徴付け</a></span><ul class="toc-item"><li><span><a href="#中央値の特徴付けのより正確な証明" data-toc-modified-id="中央値の特徴付けのより正確な証明-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>中央値の特徴付けのより正確な証明</a></span></li></ul></li><li><span><a href="#中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定" data-toc-modified-id="中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定</a></span></li><li><span><a href="#Laplace分布モデルによる最尤推定" data-toc-modified-id="Laplace分布モデルによる最尤推定-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Laplace分布モデルによる最尤推定</a></span></li><li><span><a href="#中央値の推定の例" data-toc-modified-id="中央値の推定の例-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中央値の推定の例</a></span></li></ul></li><li><span><a href="#最頻値" data-toc-modified-id="最頻値-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最頻値</a></span><ul class="toc-item"><li><span><a href="#最頻値の特徴付け" data-toc-modified-id="最頻値の特徴付け-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>最頻値の特徴付け</a></span></li><li><span><a href="#最頻値の近似的な推定" data-toc-modified-id="最頻値の近似的な推定-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>最頻値の近似的な推定</a></span></li><li><span><a href="#最頻値の近似的な推定の例" data-toc-modified-id="最頻値の近似的な推定の例-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>最頻値の近似的な推定の例</a></span></li></ul></li><li><span><a href="#加法平均と乗法平均" data-toc-modified-id="加法平均と乗法平均-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>加法平均と乗法平均</a></span><ul class="toc-item"><li><span><a href="#ガンマ分布モデルの汎化誤差" data-toc-modified-id="ガンマ分布モデルの汎化誤差-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>ガンマ分布モデルの汎化誤差</a></span></li><li><span><a href="#ガンマ分布モデルの最尤推定" data-toc-modified-id="ガンマ分布モデルの最尤推定-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>ガンマ分布モデルの最尤推定</a></span></li><li><span><a href="#ガンマ分布モデルによる推定の例" data-toc-modified-id="ガンマ分布モデルによる推定の例-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>ガンマ分布モデルによる推定の例</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Kullback-Leibler情報量とSanovの定理" data-toc-modified-id="Kullback-Leibler情報量とSanovの定理-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Kullback-Leibler情報量とSanovの定理</a></span><ul class="toc-item"><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#KL情報量" data-toc-modified-id="KL情報量-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>KL情報量</a></span></li><li><span><a href="#汎化誤差" data-toc-modified-id="汎化誤差-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>汎化誤差</a></span></li><li><span><a href="#尤度函数と汎化誤差の関係と最尤法の定義" data-toc-modified-id="尤度函数と汎化誤差の関係と最尤法の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>尤度函数と汎化誤差の関係と最尤法の定義</a></span></li></ul></li><li><span><a href="#平均と分散" data-toc-modified-id="平均と分散-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均と分散</a></span><ul class="toc-item"><li><span><a href="#平均と分散の特徴付け" data-toc-modified-id="平均と分散の特徴付け-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均と分散の特徴付け</a></span></li><li><span><a href="#平均と分散の推定は正規分布モデルによる推定に等しい" data-toc-modified-id="平均と分散の推定は正規分布モデルによる推定に等しい-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均と分散の推定は正規分布モデルによる推定に等しい</a></span></li><li><span><a href="#平均と分散の正規分布モデルによる最尤推定" data-toc-modified-id="平均と分散の正規分布モデルによる最尤推定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>平均と分散の正規分布モデルによる最尤推定</a></span></li><li><span><a href="#平均と分散の推定の例" data-toc-modified-id="平均と分散の推定の例-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>平均と分散の推定の例</a></span></li></ul></li><li><span><a href="#中央値" data-toc-modified-id="中央値-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中央値</a></span><ul class="toc-item"><li><span><a href="#中央値の定義" data-toc-modified-id="中央値の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中央値の定義</a></span></li><li><span><a href="#中央値の性質" data-toc-modified-id="中央値の性質-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中央値の性質</a></span></li><li><span><a href="#中央値の特徴付け" data-toc-modified-id="中央値の特徴付け-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中央値の特徴付け</a></span></li><li><span><a href="#中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定" data-toc-modified-id="中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定</a></span></li><li><span><a href="#Laplace分布モデルによる最尤推定" data-toc-modified-id="Laplace分布モデルによる最尤推定-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Laplace分布モデルによる最尤推定</a></span></li><li><span><a href="#中央値の推定の例" data-toc-modified-id="中央値の推定の例-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中央値の推定の例</a></span></li></ul></li><li><span><a href="#最頻値" data-toc-modified-id="最頻値-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最頻値</a></span><ul class="toc-item"><li><span><a href="#最頻値の特徴付け" data-toc-modified-id="最頻値の特徴付け-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>最頻値の特徴付け</a></span></li><li><span><a href="#最頻値の近似的な推定" data-toc-modified-id="最頻値の近似的な推定-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>最頻値の近似的な推定</a></span></li><li><span><a href="#最頻値の近似的な推定の例" data-toc-modified-id="最頻値の近似的な推定の例-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>最頻値の近似的な推定の例</a></span></li></ul></li><li><span><a href="#加法平均と乗法平均" data-toc-modified-id="加法平均と乗法平均-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>加法平均と乗法平均</a></span><ul class="toc-item"><li><span><a href="#ガンマ分布モデルの汎化誤差" data-toc-modified-id="ガンマ分布モデルの汎化誤差-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>ガンマ分布モデルの汎化誤差</a></span></li><li><span><a href="#ガンマ分布モデルの最尤推定" data-toc-modified-id="ガンマ分布モデルの最尤推定-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>ガンマ分布モデルの最尤推定</a></span></li><li><span><a href="#ガンマ分布モデルによる推定の例" data-toc-modified-id="ガンマ分布モデルによる推定の例-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>ガンマ分布モデルによる推定の例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -520,7 +520,7 @@ X = rand(gdist, 1000)
 
 sleep(0.1)
 histogram(X; normed=true, bins=range(0, 5, step=0.1), alpha=0.5, label="sample")
-plot!(x -> pdf(normal_gdist, x); label="normal approx") |> retina
+plot!(x -> pdf(normal_gdist, x), -1, 5; label="normal approx") |> retina
 ```
 
 ```julia
@@ -557,37 +557,49 @@ displayfile("image/gif", "images/lik_normal.gif")
 ## 中央値
 
 
-### 中央値の特徴付け
+### 中央値の定義
 
-確率変数 $X$ の中央値 $a_0$ は $P(X < a_0) = P(X > a_0)$ という条件で特徴付けられる. $X$ の分布が離散的な場合には中央値が一意的に決まるとは限らない. 例えば $1,2,3,4,5,6$ の値に等確率でなる確率変数 $X$ の中央値 $a_0$ は $3<a_0<4$ で特徴付けられる.
+確率変数 $X$ の中央値 $a_0$ は $P(X \leqq a_0)\geqq 1/2$ かつ $P(X \geqq a_0)\geqq 1/2$ という条件で定義される.
 
-確率変数 $X$ の中央値は $X-a$ の絶対値の平均 $E[|X-a|]$ を最小にする $a$ になっていることを示そう. 
+例えば, $P(X < a_0) = 0.3$, $P(X = a_0) = 0.3$, $P(X > a_0)=0.4$ のとき, $a_0$ は確率変数 $X$ の中央値になる.
 
-$E[|X-a|]$ が $a$ について微分可能な点で微分すると, 
+中央値は一意的に決まるとは限らない. 例えば $1,2,3,4,5,6$ のどれかの値に等確率でなる確率変数 $X$ の中央値に $a_0$ がなるための必要十分条件は $3\leqq a_0\leqq 4$ である.  $a_0=3$ のとき $P(X\leqq a_0) = 3/6 = 1/2$ かつ $P(X\geqq a_0) = 4/6 > 1/2$ となる.
 
-$$
-\frac{\partial}{\partial a}E[|X-a|] = E[1_{X>a} - 1_{X<a}] = P(X>a) - P(X<a).
-$$
-
-ここで, $1_{X>a}$ は $X>a$ のときに $1$ になり, そうでないとき $0$ になる函数であり, $1_{X<a}$ も同様である. これより, $P(X>a)=P(X<a)$ のとき, すなわち $a$ が $X$ の中央値のとき $E[|X-a|]$ が最小になることがわかる.
-
-$E[|X-a|]$ の最小値は中央値を中心として $X$ の値がどれだけばらついているかを表す指標になっており, 中央値にかんする平均の場合の分散の役目を果たす量だと考えられる.
+確率変数 $X$ の中央値 $a_0$ について $P(X=a_0) = 0$ ならば, $P(X < a_0) = P(X > a_0) = 1/2$ となる.  逆にこの条件が満たされるとき, $a_0$ は $P(X=a_0)=0$ となるような $X$ の中央値になる.
 
 
-#### 中央値の特徴付けのより正確な証明
+### 中央値の性質
 
-**定理:** 実数 $a_0$ が $P(X<a_0) = P(X>a_0)$ を満たすとき, $E[|X-a|]$ は $a=a_0$ で最小になる.
+**定理:** 確率変数 $X$ の中央値 $a_0$ は $a$ の函数 $E[|X-a|]$ を $a=a_0$ で最小化する.
 
-**証明:** $P(X<a_0) = P(X>a_0)$ と仮定する. $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を $1_A$ と書くと, 定理の仮定は $E[1_{X>a_0}] = E[1_{X<a_0}]$ と書き直される.
+**証明:** 実数 $a_0$ は確率変数 $X$ の中央値であると仮定する. すなわち, $P(X\leqq a_0)\geqq 1/2$ かつ $P(X\geqq a_0)\geqq 1/2$ であると仮定する. 
+
+$P(X=a_0)=0$ ならば $r = 1/2$ とおき, $P(x=a_0)>0$ ならば $P(X < a_0) + r P(X = a_0) = 1/2$ となるように実数 $r$ を定める. このとき, $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ となる.  さらに, $P(X < a_0) + P(X = a_0) \geqq 1/2$ と $P(X < a_0) + r P(X = a_0) = 1/2$ の差を考えることによって, $(1 - r)P(X = a_0)\geqq 0$ を得るので, $r\leqq 1$ となることがわかる.  同様に, $P(X > a_0) + P(X = a_0) \geqq 1/2$ と $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ の差を考えることによって, $r P(X = a_0)\geqq 0$ を得るので, $r\geqq 0$ となることもわかる.  これで,
 
 $$
-E[|X-a_0|] = E[(X-a_0)1_{X>a_0}] - E[(X-a_0)1_{X<a_0}]
+0\leqq r \leqq 1, \quad
+P(X < a_0) + r P(X = a_0) = 1/2, \quad
+P(X > a_0) + (1 - r)P(X = a_0) = 1/2
 $$
 
-から $0=(a-a_0)(E[1_{X>a_0}] - E[1_{X<a_0}])$ を引くと,
+が成立するようにできた.  $r=1$ ならば $P(X\geqq a_0)=P(X<a_0)=1/2$ となり, $r=0$ ならば $P(X\leqq a_0)=P(X>a_0)=1/2$ となることにも注意せよ.
+
+記号 $1_A$ で $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を表す.  このとき, 上の段落の結果より, 
 
 $$
-E[|X-a_0|] = E[(X-a)1_{X>a_0}] - E[(X-a)1_{X<a_0}].
+0  = E[1_{X<a_0} + r 1_{X=a_0}] - E[1_{X>a_0} + (1-r)1_{X=a_0}].
+$$
+
+これの両辺に $a-a_0$ をかけたものを
+
+$$
+E[|X - a_0|] = E[(X - a_0)(1_{X>a_0} + r 1_{X=a_0})] - E[(X - a_0)(1_{X<a_0} + (1-r)1_{X=a_0})]
+$$
+
+の両辺から引くと次が得られる:
+
+$$
+E[|X - a_0|] = E[(X - a)(1_{X>a_0} + r 1_{X=a_0})] - E[(X - a)(1_{X<a_0} + (1-r)1_{X=a_0})].
 $$
 
 これを
@@ -596,17 +608,183 @@ $$
 E[|X-a|] = E[(X-a)1_{X>a}] - E[(X-a)1_{X<a}]
 $$
 
-から引くと,
+の両辺から引くと,
 
 $$
-E[|X-a|] - E[|X-a_0|] = E[(X-a)(1_{X>a}-1_{X>a_0})] - E[(X-a)(1_{X<a}-1_{X<a_0})].
+\begin{aligned}
+E[|X-a|] - E[|X - a_0|] &=
+E[(X - a)(1_{X>a} - 1_{X>a_0} - r 1_{X=a_0})] 
+\\ &\, -
+E[(X - a)(1_{X<a} - 1_{X<a_0} - (1-r) 1_{X=a_0})].
+\end{aligned}
 $$
 
-$a\geqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = -1_{a_0<X\leqq a} \leqq 0$ となり, $a_0<X\leqq a$ のとき $X-a\leqq 0$ となり, $1_{X<a}-1_{X<a_0}=1_{a_0\leqq X<a}\geqq 0$ となり, $a_0\leqq X<a$ のとき $X-a\leqq 0$ となるので, すぐ上の公式より, $E[|X-a|] - E[|X-a_0|]\geqq 0$ となることがわかる.
+(i) $a < a_0$ と仮定する. このとき
 
-$a\leqq a_0$ のとき, $1_{X>a} - 1_{X>a_0} = 1_{a<X\leqq a_0} \geqq 0$ となり, $a0<X\leqq a_0$ のとき $X-a\geqq 0$ となり, $1_{X<a}-1_{X<a_0}=-1_{a\leqq X<a_0}\leqq 0$ となり, $a\leqq X<a_0$ のとき $X-a\geqq 0$ となるので, 上の公式より, $E[|X-a|] - E[|X-a_0|]\geqq 0$ となることがわかる.
+$$
+1_{X>a} - 1_{X>a_0} = 1_{a<X<a_0} + 1_{X=a_0}, \quad
+1_{X<a} - 1_{X<a_0} = - 1_{a<X<a_0} - 1_{X=a}
+$$
 
-以上によって常に $E[|X-a|] \geqq E[|X-a_0|]$ となることがわかった. これで $E[|X-a|]$ は $a=a_0$ のとき最小になることが示された. $\QED$
+なので
+
+$$
+\begin{aligned}
+(X - a)(1_{X>0} - 1_{X>a_0} - r 1_{X=a_0}) &= 
+(X - a)(1_{a<X<a_0} + (1-r)1_{X=a_0}),
+\\ -
+(X - a)(1_{X<0} - 1_{X<a_0} - (1-r) 1_{X=a_0}) &=
+(X - a)(1_{a<X<a_0} + (1-r) 1_{X=a_0}).
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+E[|X-a|] - E[|X - a_0|] = 2E[(X - a)(1_{a<X<a_0} + (1-r) 1_{X=a_0})] \geqq 0.
+$$
+
+(ii) $a > a_0$ と仮定する. このとき
+
+$$
+1_{X>a} - 1_{X>a_0} = -1_{a_0<X<a} - 1_{X=a}, \quad
+1_{X<a} - 1_{X<a_0} = 1_{a_0<X<a} + 1_{X=a_0}
+$$
+
+なので
+
+$$
+\begin{aligned}
+(X - a)(1_{X>0} - 1_{X>a_0} - r 1_{X=a_0}) &= -
+(X - a)(1_{a_0<X<a} + r 1_{X=a_0}),
+\\ -
+(X - a)(1_{X<0} - 1_{X<a_0} - (1-r) 1_{X=a_0}) &= -
+(X - a)(1_{a_0<X<a} + r 1_{X=a_0}).
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+E[|X-a|] - E[|X - a_0|] = 2E[-(X - a)(1_{a_0<X<a} + r 1_{X=a_0})] \geqq 0.
+$$
+
+以上によって,  実数 $a_0$ が確率変数 $X$ の中央値ならば $a$ の函数 $E[|X-a|]$ が $a=a_0$ で最小になることがわかった. $\QED$
+
+
+### 中央値の特徴付け
+
+上の議論は初等的だが煩雑である. この節では前節の結果の逆も成立することを示す. そのために以下の補題を用いる.
+
+**補題:** 可積分な確率変数 $X$ について, 任意の実数 $a,b$ について次の公式が成立する:
+
+$$
+E[|X-b|] - E[|X-a|] = \int_a^b (P(X\leqq t) - P(X\geqq t))\,dt.
+$$
+
+**証明:** $t, X$ に関する条件 $A$ が成立するときに $1$, そうでないとき $0$ になる $t, X$ の函数を $1_A$ と書くことにする.
+
+$$
+P(X\leqq t) - P(X\geqq t) = E[1_{X\leqq t} - 1_{X\geqq t}]
+$$
+
+であることと, $x$ が正, 負のときそれぞれ $1$, $-1$ になる $\sign(x)$ について, 
+
+$$
+|X - a| = \int_X^a \sign(t - X)\,dt
+$$
+
+が成立していることより, 
+
+$$
+\begin{aligned}
+|X - b| - |X - a| &= \int_a^b \sign(t - X)\,dt = \int_a^b(1_{X\leqq t} - 1_{X\geqq t})\,dt
+\end
+{aligned}
+$$
+
+より, $X$ について期待値を取る操作と $t$ に関する積分を交換すれば欲しい公式が得られる. $\QED$
+
+
+**定理:**  可積分な確率変数 $X$ について, $X$ の中央値であることと, $a$ の函数 $E[|X-a|]$ を最小化することは同値である.
+
+**証明:** 補題より, 
+
+$$
+E[|X-b|] - E[|X-a|] = 
+\int_a^b (P(X\leqq t) - P(X\geqq t))\,dt =
+\int_b^a (P(X\geqq t) - P(X\leqq t))\,dt.
+$$
+
+$t$ の函数として $f(t) = P(X\leqq t) - P(X\geqq t)$ は広義単調増加函数であり, $-f(t)=P(X\geqq t) - P(X\leqq t)$ は広義単調減少函数であることに注意せよ.
+
+$a$ は $X$ の中央値だと仮定する: $P(X\leqq a)\geqq 1/2$, $P(X\geqq a)\geqq 1/2$. 
+
+(i) $a<b$ のとき, $a<t<b$ ならば
+
+$$
+P(X\leqq t) \geqq P(X\leqq a) \geqq 1/2, \quad
+P(X\geqq t) \leqq P(X > a) \leqq 1/2
+$$
+
+なので
+
+$$
+f(t) = P(X\leqq t) - P(X\geqq t) \geqq 1/2 - 1/2 = 0
+$$
+
+となるから, $E[|X-b|] - E[|X-a|] = \int_a^b (P(X\leqq t) - P(X\geqq t))\,dt \geqq 0$ となる. 
+
+(ii) $b<a$ のとき, $b<t<a$ ならば
+
+$$
+P(X\geqq t) \geqq P(X\geqq a) \geqq 1/2, \quad
+P(X\leqq t) \leqq P(X < a) \leqq 1/2
+$$
+
+なので
+
+$$ -
+f(t) = P(X\geqq t) - P(X\leqq t) \geqq 1/2 - 1/2 = 0
+$$
+
+となるから, $E[|X-b|] - E[|X-a|] = \int_b^a (P(X\geqq t) - P(X\leqq t))\,dt \geqq 0$ となる. 
+
+これで, 中央値 $a$ に関する $E[|X-a|]$ が $E[|X-b|]$ の中で最小になることがわかった.
+
+逆の対偶を証明するために, $a$ は $X$ の中央値ではないと仮定する. 
+
+$t$ の函数として $P(X\leqq t)$ は右連続であり(右から $t$ に近付くときに連続), $P(X\geqq t)$ は左連続であることに注意せよ.
+
+(i) $P(X\leqq a)<1/2$ と仮定する. このとき, 
+
+$$
+f(t) = P(X\leqq t) - P(X\geqq t) \leqq P(X\leqq t) - P(X > t) = 2P(X\leqq t) - 1
+$$
+
+より, $f(a) < 0$ となる. さらに $P(X\leqq t)$ の $t$ に関する右連続性より, ある実数 $b > a$ で $f(b) < 0$ となるものが存在することがわかる. $f(t)$ は広義単調増加函数なので, そのとき,
+
+$$
+E[|X-b|] - E[|X-a|] = \int_a^b f(t)\,dt \leqq (b-a)f(b) < 0
+$$
+
+となり, $E[|X-a|]$ は $E[|X-b|]$ 達の中で最小にならない.
+
+(ii) $P(X\geqq a)<1/2$ と仮定する. このとき, 
+
+$$ -
+f(t) = P(X\geqq t) - P(X\leqq t) \leqq P(X\geqq t) - P(X < t) = 2P(X\geqq t) - 1
+$$
+
+より, $-f(a) < 0$ となる. さらに $P(X\geqq t)$ の $t$ に関する左連続性より, ある実数 $b < a$ で $f(b) < 0$ となるものが存在することがわかる. $-f(t)$ は広義単調減少函数なので, そのとき,
+
+$$
+E[|X-b|] - E[|X-a|] = \int_b^a (-f(t))\,dt \leqq (a-b)f(b) < 0
+$$
+
+となり, $E[|X-a|]$ は $E[|X-b|]$ 達の中で最小にならない.
+
+これで示すべきことがすべて示された. $\QED$
 
 
 ### 中央値と中央値との差の絶対値の平均とLaplace分布モデルによる推定
@@ -674,7 +852,7 @@ X = rand(gdist, 1000)
 
 sleep(0.1)
 histogram(X; bins=range(0, 4, step=0.1), normed=true, alpha=0.5, label="sample")
-plot!(x -> pdf(laplace_gdist, x); label="Laplace approx") |> retina
+plot!(x -> pdf(laplace_gdist, x), -1, 4; label="Laplace approx") |> retina
 ```
 
 ```julia
@@ -694,8 +872,8 @@ ns = [10;10;10;10;10;10:10:1000;1000;1000;1000;1000]
     b_hat = mean(abs(x - a_hat) for x in X)
     laplace_gdist = Laplace(a_hat, b_hat)
     P1 = histogram(X; bins=range(0, 4, step=0.2), normed=true, alpha=0.5, label="sample")
-    plot!(x -> pdf(laplace_gdist, x); label="Laplace approx")
-    plot!(legend=false, xlim=(-0.5, 4), ylim=(0, 1.5))
+    plot!(x -> pdf(laplace_gdist, x), -1, 4; label="Laplace approx")
+    plot!(legend=false, xlim=(-1, 4), ylim=(0, 1.5))
 
     loglik(a, b) = sum(logpdf(Laplace(a, b), x) for x in X)
     a = range(0.5, 1.5, length=200)
@@ -803,7 +981,7 @@ plot(ε, y; size=(400, 300), legend=false, ylim=(0, 24), xlabel="epsilon", ylabe
 a = range(extrema(X)..., length=2000)
 @time anim = @animate for ε in range(0.1, 3.0, step=0.1)
     a_hat = a[findmax(L.(a; ε=ε))[2]]    
-    plot(a, L.(a; ε=ε), legend=:topleft, label="kde", ylim=(0.0, 0.1))
+    plot(a, L.(a; ε=ε), legend=:topright, label="kde", ylim=(0.0, 0.1))
     vline!([a_hat], label="a_hat")
     title!("epsilon = $ε")
 end
@@ -944,17 +1122,17 @@ Random.seed!(37346491)
 N = 300
 XX = rand(dist_mg, N)
 
-ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
+ns = [fill(10, 10); 10:3:300; 300; fill(300, 10)]
 @time anim = @animate for n in ns
     X = @view XX[1:n]
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx")
+    plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, θ) = sum(logpdf(Gamma(α, θ), x) for x in X)
-    α = range(1, 16, length=200)
+    α = range(0.1, 13, length=200)
     θ = range(0.1, 2.0, length=200)
     P2 = heatmap(α, θ, exp.(loglik.(α', θ)); xlabel="alpha", ylabel="theta",
         size=(300, 320), colorbar=false, title="n = $n")
@@ -974,18 +1152,18 @@ Random.seed!(37346491)
 N = 300
 XX = rand(dist_mg, N)
 
-ns = [fill(10, 10);10:3:300;300;fill(300, 10)]
+ns = [fill(10, 10); 10:3:300; 300; fill(300, 10)]
 @time anim = @animate for n in ns
     X = @view XX[1:n]
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx")
+    plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
-    α = range(1, 16, length=200)
-    μ = range(2.3, 4.5, length=200)
+    α = range(0.1, 12, length=200)
+    μ = range(1.5, 4, length=200)
     P2 = heatmap(α, μ, exp.(loglik.(α', μ)); xlabel="alpha", ylabel="mu",
         size=(300, 320), colorbar=false, title="n = $n")
     
@@ -1010,12 +1188,12 @@ ns = [fill(3, 6); 4;4;4;4;5;5;5;6;6;6;7;7;8;8;9;9; 10:20; 23:3:100; 110:10:300 ;
 
     dist_g = fit_mle(Gamma, X)
     P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
-    plot!(x -> pdf(dist_g, x); label="Gamma approx")
-    plot!(legend=false, xlim=(0, 8), ylim=(0, 1.4))
+    plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
+    plot!(legend=false, xlim=(0, 8), ylim=(0, 1.2))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
     α = range(0.5, 50, length=200)
-    μ = range(1.5, 5, length=200)
+    μ = range(1.5, 4, length=200)
     P2 = heatmap(α, μ, exp.(loglik.(α', μ)); xlabel="alpha", ylabel="mu",
         size=(300, 320), colorbar=false, title="n = $n")
     
@@ -1024,4 +1202,8 @@ end
 pyplotclf()
 gif(anim, "images/lik_gamma3.gif", fps=3)
 displayfile("image/gif", "images/lik_gamma3.gif")
+```
+
+```julia
+
 ```
