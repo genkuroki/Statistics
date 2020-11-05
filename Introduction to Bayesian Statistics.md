@@ -889,7 +889,7 @@ $$
 上の方の記号をこの節でもそのまま使う. 数学的モデル内でパラメーター $w$ が決まっているとき, パラメーター $x_1,\ldots,x_n$ を持つ $x$ の確率分布 $r(x|x_1,\ldots,x_n)$ による分布 $p(x|w)$ の予測に関する汎化誤差は
 
 $$
--\int p(w|x)\log r(x|x_1,\ldots,x_n)\,dx
+-\int p(x|w)\log r(x|x_1,\ldots,x_n)\,dx
 $$
 
 と書ける. $x_i$ 達を数学的モデル内でのサンプルの値だと解釈したとき, この汎化誤差のサンプルを動かした平均は
@@ -897,9 +897,9 @@ $$
 $$
 \begin{aligned}
 &
-\int\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)\left(-\int p(w|x)\log r(x|x_1,\ldots,x_n)\,dx\right)\,dx_1\cdots dx_n
+\int\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)\left(-\int p(x|w)\log r(x|x_1,\ldots,x_n)\,dx\right)\,dx_1\cdots dx_n
 \\ &= -
-\iint\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)p(w|x)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
+\iint\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)p(x|w)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
 \end{aligned}
 $$
 
@@ -909,11 +909,11 @@ $$
 \begin{aligned}
 R(r) &:=
 \int\varphi(w)\left(-
-\iint\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)p(w|x)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
+\iint\!\!\!\cdots\!\!\!\int p(x_1|w)\cdots p(x_n|w)p(x|w)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
 \right)\,dw
 \\ & = -
 \iint\!\!\!\cdots\!\!\!\int
-\left(\int\varphi(w)p(x_1|w)\cdots p(x_n|w)p(w|x)\,dw\right)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
+\left(\int\varphi(w)p(x_1|w)\cdots p(x_n|w)p(x|w)\,dw\right)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx
 \\ & = -
 \iint\!\!\!\cdots\!\!\!\int Z(x_1,\ldots,x_n, x)\log r(x|x_1,\ldots,x_n)\,dx_1\cdots dx_n\,dx.
 \end{aligned}
