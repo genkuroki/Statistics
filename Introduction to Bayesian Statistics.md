@@ -1046,7 +1046,7 @@ $$
 を最小にするものは, 事後分布に関する $w$ の平均値
 
 $$
-E^*[w|x_1,\ldots,x_n] = \frac{\int\varphi(w))p(x_1|w)\cdots p(x_n|w)w\,dw}{Z(x_1,\ldots,x_n)}
+E^*[w|x_1,\ldots,x_n] = \frac{\int\varphi(w)p(x_1|w)\cdots p(x_n|w)w\,dw}{Z(x_1,\ldots,x_n)}
 $$
 
 になる. ここでサンプル $x_1,\ldots,x_n$ から作られる事後分布に関する平均を取る操作を $E^*[\ |x_1,\ldots,x_n]$ と書いた:
@@ -1136,9 +1136,9 @@ $$
 &
 R(r(\cdot|\,\cdot\,,\ldots,\,\cdot\,)) = 
 \int\!\!\!\cdots\!\!\!\int R(r(\cdot|x_1,\ldots,x_n)|x_1,\ldots,x_n)\,dx_1\cdots dx_n,
-\\ &
-R(r(\cdot)|x_1,\ldots,x_n) =
-\iint\varphi(w)p(x_1|w)\cdots p(x_n|w)\log r(x)\,dx\,dw
+\\ & \text{where}\quad
+R(r(\cdot)|x_1,\ldots,x_n) := -
+\iint\varphi(w)p(x_1|w)\cdots p(x_n|w)p(x|w)\log r(x)\,dx\,dw
 \end{aligned}
 $$
 
@@ -1148,9 +1148,9 @@ $R(r(\cdot)|x_1,\ldots,x_n)$ の定義式で $w$ に関する積分を実行す�
 
 $$
 \begin{aligned}
-R(r(\cdot)|x_1,\ldots,x_n) &=
+R(r(\cdot)|x_1,\ldots,x_n) &= -
 \int Z(x_1,\ldots,x_n,x)\log r(x)\,dx
-\\ &=
+\\ &= -
 Z(x_1,\ldots,x_n)\int p^*(x|x_1,\ldots,x_n)\log r(x)\,dx
 \\ &=
 Z(x_1,\ldots,x_n)G(p^*(\cdot|x_1,\ldots,x_n)|r)
