@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.2.1
   kernelspec:
-    display_name: Julia depwarn -O3 1.6.0-DEV
+    display_name: Julia 1.6.0-rc1 depwarn -O3
     language: julia
-    name: julia-depwarn--o3-1.6
+    name: julia-1.6-depwarn-o3
 ---
 
 # Kullback-Leibler情報量と記述統計
@@ -559,7 +559,7 @@ displayfile("image/gif", "images/lik_normal.gif")
 
 ### 中央値の定義
 
-確率変数 $X$ の中央値 $a_0$ は $P(X \leqq a_0)\geqq 1/2$ かつ $P(X \geqq a_0)\geqq 1/2$ という条件で定義される.
+確率変数 $X$ の中央値 $a_0$ は $P(X \leqq a_0)\leqq 1/2$ かつ $P(X \geqq a_0)\geqq 1/2$ という条件で定義される.
 
 例えば, $P(X < a_0) = 0.3$, $P(X = a_0) = 0.3$, $P(X > a_0)=0.4$ のとき, $a_0$ は確率変数 $X$ の中央値になる.
 
