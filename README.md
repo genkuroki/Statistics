@@ -66,7 +66,7 @@
 
 ● [χ²検定, そのYates補正, Fisher検定, そのmid-p補正の比較 2019-11-15](https://nbviewer.jupyter.org/gist/genkuroki/d0e8cef65d62f62041b15ff63a37880f)
 
-● [Maximum exact Pearson's χ² test for 2x2 tables 2019-11-11](https://nbviewer.jupyter.org/gist/genkuroki/e1c482ef162b4a29343817ffef08f510)
+● [Maximum exact Pearson's χ² test for 2x2 tables 2019-11-11](https://nbviewer.jupyter.org/gist/genkuroki/e1c482ef162b4a29343817ffef08f510) ([PDF](https://genkuroki.github.io/documents/Statistics/Pearson's%20%CF%87%C2%B2-statistics%20of%20contingency%20tables.pdf))
 
 ● [連続性補正の例 2019-11-09](https://nbviewer.jupyter.org/gist/genkuroki/bb6117277ff9c2a00eb6c0abd8032f0e): 二項分布と超幾何分布の正規分布近似の補正.
 
