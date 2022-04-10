@@ -13,10 +13,10 @@ jupyter:
     name: julia-1.8
 ---
 
-# __Gauss積分, ガンマ函数, ベータ函数__
+# Gauss積分, ガンマ函数, ベータ函数
 
 * 黒木玄
-* 2020-04-09
+* 2020-04-10
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
