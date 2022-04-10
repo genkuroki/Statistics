@@ -2228,10 +2228,13 @@ $$
 と定義される. $f(T_1,\ldots,T_n)$ が $f(T_1,\ldots,T_n)=f_1(T_1)\ldots f_n(T_n)$ と各々の $T_i$ のみの函数の積になっている場合には
 
 $$
-E[f_1(T_1)\cdots f_n(T_n)] =
-\int_{-\infty}^\infty\cdots\int_{-\infty}^\infty f_1(t_1)\cdots f_n(t_n) p(t_1)\cdots p(t_n)\,dt_1\cdots dt_n =
+\begin{aligned}
+E[f_1(T_1)\cdots f_n(T_n)] &=
+\int_{-\infty}^\infty\cdots\int_{-\infty}^\infty f_1(t_1)\cdots f_n(t_n) p(t_1)\cdots p(t_n)\,dt_1\cdots dt_n
+\\ &=
 \int_{-\infty}^\infty f_1(t_1)p(t_1)\,dt_1 \cdots \int_{-\infty}^\infty f_n(t_n)p(t_n)\,dt_n =
 E[f_1(T_1)]\cdots E[f_n(T_n)]
+\end{aligned}
 $$
 
 が成立する.  このように確率変数の積の期待値が各々の期待値の積に等しくなるとき, それらの確率変数は __独立__ (independent)であるという.  この点については後で別のノートで再度詳しく説明する.
