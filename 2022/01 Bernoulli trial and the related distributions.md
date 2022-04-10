@@ -2023,7 +2023,7 @@ $$
 plot(z -> cdf(Normal(), z), -4, 4; label="cdf of Normal()", legend=:left)
 plot!(z -> (1 + erf(z/√2))/2, -4, 4; label="(1 + erf(z/√2))/2", ls=:dash)
 plot!(; xtick=-5:5, ytick = 0:0.1:1, xlabel="z")
-plot!(; size=(400, 400))
+plot!(; size=(250, 250))
 ```
 
 $y = \op{erf}(x)$ の逆函数 $x = \op{erfinv}(y)$ もコンピュータでの基本特殊函数ライブラリに含まれており, 効率的に計算可能である.  標準正規分布の累積分布函数 $p = F(z)$ の逆函数(分位点函数, quantile function)は
@@ -2048,7 +2048,7 @@ quantile(Normal(), 0.975)
 plot(p -> quantile(Normal(), p), 0, 1; label="quantile of Normal()", legend=:topleft)
 plot!(p -> √2*erfinv(2p-1), 0, 1; label="z = √2 erfinv(2p-1)", ls=:dash)
 plot!(; xtick = 0:0.1:1, ytick=-5:5, xlabel="p", ylabel="z", ylim=(-4.2, 4.2))
-plot!(; size=(400, 400))
+plot!(; size=(250, 250))
 ```
 
 ### 一様分布の期待値と分散
