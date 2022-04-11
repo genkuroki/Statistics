@@ -13,7 +13,7 @@ jupyter:
     name: julia-1.8
 ---
 
-# Bernoulli試行, 二項分布, 幾何分布, 負の二項分布
+# Bernoulli試行と関連確率分布
 
 * 黒木玄
 * 2020-04-09
