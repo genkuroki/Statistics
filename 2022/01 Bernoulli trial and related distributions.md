@@ -86,6 +86,7 @@ using StatsBase
 using QuadGK
 using SymPy
 using SpecialFunctions
+using Printf
 ```
 
 ## 一様乱数の生成の繰り返し
@@ -130,13 +131,14 @@ ccdf(Binomial(20, 0.3), 10)
 
 ```julia
 T = rand(20)
+for i in eachindex(T) @printf "%.16f\n" T[i] end
 ```
 
 以下の計算では $T$ の成分が $p = 0.3$ 未満のときに $1$ に, それ以外のときに $0$ に変換している.  これによって, 一様乱数列からBernoulli試行が得られる.
 
 ```julia
 X = [t < 0.3 ? 1 : 0 for t in T]
-@show X;
+for i in eachindex(T) @printf "%.16f → %d\n" T[i] X[i] end
 ```
 
 Bernoulli試行に限らず, 何らかの確率分布に従う乱数の生成の独立試行は, 0以上1未満の一様乱数の生成を経由して作ることができる.  その意味でコンピュータでのプログラミングでおなじみの `rand()` 函数は基本的である.
@@ -145,7 +147,8 @@ Bernoulli試行に限らず, 何らかの確率分布に従う乱数の生成の
 毎回同確率で当たりが出るくじを繰り返し引くことは, 当たりのときに $1$, 外れのときに0とすれば, Bernoulli試行モデルで記述できることの例になっている. 
 
 ```julia
-[x == 1 ? "当たり" : "外れ" for x in X]
+AH = [x == 1 ? "当たり" : "外れ" for x in X]
+for i in eachindex(T) @printf "%.16f → %d → %s\n" T[i] X[i] AH[i] end
 ```
 
 ビジネス分野では, 「広告を見てくれる」「リンクをクリックしてくれる」「商品を購入してくれる」などが「当たり」の例として扱われたりする.
