@@ -1532,7 +1532,7 @@ plot!(t, pdf.(Gamma(k, θ), t); label="Gamma($k, $θ)", ls=:dash)
 
 ### 問題: 当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合
 
-当たりが $p = 1\% = 0.05$ で出るガチャを当たりがちょうど $k = 5$ 回出るまでに回した回数を $N$ と書くことにする.  $N$ は負の二項分布 $\op{NegativeBinomial}(k, p)$ に従う確率変数 $M$ によって $N = M + k$ と書ける.
+当たりが $p = 5\% = 0.05$ で出るガチャを当たりがちょうど $k = 5$ 回出るまでに回した回数を $N$ と書くことにする.  $N$ は負の二項分布 $\op{NegativeBinomial}(k, p)$ に従う確率変数 $M$ によって $N = M + k$ と書ける.
 
 (1) $N$ の期待値と分散と標準偏差を求めよ.
 
@@ -1687,6 +1687,26 @@ plot(Normal(2, 3), 2-4*3, 2+4*3; label="", title="Normal(2, 3)", xtick=-100:2:10
 
 ```julia
 plot(Normal(), -4, 4; label="", title="Normal()", xtick=-100:100)
+```
+
+標準正規分布において, 値が $-1$ 以上 $1$ 以下になる確率, $-2$ 以上 $2$ 以下になる確率, $-1.96$ 以上 $1.96$ 以下になる確率はそれぞれ以下のようになる.
+
+```julia
+@show cdf(Normal(), 1) - cdf(Normal(), -1)
+plot(Normal(), -4, 4; label="", title="Normal()", xtick=-100:100)
+plot!(Normal(), -1, 1; label="", c=1, fillrange=0, fillcolor=:red, fillalpha=0.3)
+```
+
+```julia
+@show cdf(Normal(), 2) - cdf(Normal(), -2)
+plot(Normal(), -4, 4; label="", title="Normal()", xtick=-100:100)
+plot!(Normal(), -2, 2; label="", c=1, fillrange=0, fillcolor=:red, fillalpha=0.3)
+```
+
+```julia
+@show cdf(Normal(), 1.96) - cdf(Normal(), -1.96)
+plot(Normal(), -4, 4; label="", title="Normal()", xtick=-100:100)
+plot!(Normal(), -1.96, 1.96; label="", c=1, fillrange=0, fillcolor=:red, fillalpha=0.3)
 ```
 
 ### 連続確率変数

@@ -49,6 +49,7 @@ using StatsBase
 using QuadGK
 using SymPy
 using SpecialFunctions
+using Printf
 ```
 
 ## Gauss積分
