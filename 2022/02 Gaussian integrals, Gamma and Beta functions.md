@@ -16,7 +16,7 @@ jupyter:
 # Gauss積分, ガンマ函数, ベータ函数
 
 * 黒木玄
-* 2020-04-10
+* 2022-04-10～2022-04-12
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -35,7 +35,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Gauss積分" data-toc-modified-id="Gauss積分-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Gauss積分</a></span><ul class="toc-item"><li><span><a href="#Gauss積分の定義" data-toc-modified-id="Gauss積分の定義-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Gauss積分の定義</a></span></li><li><span><a href="#問題:-正規分布での確率の総和" data-toc-modified-id="問題:-正規分布での確率の総和-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布での確率の総和</a></span></li><li><span><a href="#正規分布の定義" data-toc-modified-id="正規分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>正規分布の定義</a></span></li><li><span><a href="#$p(x|\theta)$-という記号法について" data-toc-modified-id="$p(x|\theta)$-という記号法について-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>$p(x|\theta)$ という記号法について</a></span></li><li><span><a href="#問題:-Gauss積分の拡張とガンマ函数の関係" data-toc-modified-id="問題:-Gauss積分の拡張とガンマ函数の関係-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: Gauss積分の拡張とガンマ函数の関係</a></span></li></ul></li><li><span><a href="#ガンマ函数" data-toc-modified-id="ガンマ函数-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>ガンマ函数</a></span><ul class="toc-item"><li><span><a href="#ガンマ函数の定義" data-toc-modified-id="ガンマ函数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>ガンマ函数の定義</a></span></li><li><span><a href="#問題:-ガンマ函数はこの形でよく使われる" data-toc-modified-id="問題:-ガンマ函数はこの形でよく使われる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: ガンマ函数はこの形でよく使われる</a></span></li><li><span><a href="#ガンマ分布の定義" data-toc-modified-id="ガンマ分布の定義-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>ガンマ分布の定義</a></span></li><li><span><a href="#指数分布の定義" data-toc-modified-id="指数分布の定義-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>指数分布の定義</a></span></li><li><span><a href="#ガンマ函数の函数等式" data-toc-modified-id="ガンマ函数の函数等式-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>ガンマ函数の函数等式</a></span></li><li><span><a href="#問題:-正の半整数でのガンマ函数の値" data-toc-modified-id="問題:-正の半整数でのガンマ函数の値-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 正の半整数でのガンマ函数の値</a></span></li><li><span><a href="#問題:-標準正規分布の偶数次のモーメント" data-toc-modified-id="問題:-標準正規分布の偶数次のモーメント-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 標準正規分布の偶数次のモーメント</a></span></li><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#問題:-小さな-$n$-でもStirlingの公式による-$n!$-の近似精度がそう悪くないこと" data-toc-modified-id="問題:-小さな-$n$-でもStirlingの公式による-$n!$-の近似精度がそう悪くないこと-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 小さな $n$ でもStirlingの公式による $n!$ の近似精度がそう悪くないこと</a></span></li><li><span><a href="#問題:-n-1次元単位球面の面積のガンマ函数表示" data-toc-modified-id="問題:-n-1次元単位球面の面積のガンマ函数表示-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題: n-1次元単位球面の面積のガンマ函数表示</a></span></li><li><span><a href="#問題:-n次元単位球体の面積のガンマ函数表示" data-toc-modified-id="問題:-n次元単位球体の面積のガンマ函数表示-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: n次元単位球体の面積のガンマ函数表示</a></span></li></ul></li><li><span><a href="#ベータ函数" data-toc-modified-id="ベータ函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ベータ函数</a></span><ul class="toc-item"><li><span><a href="#ベータ函数の定義" data-toc-modified-id="ベータ函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>ベータ函数の定義</a></span></li><li><span><a href="#ベータ分布の定義" data-toc-modified-id="ベータ分布の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>ベータ分布の定義</a></span></li><li><span><a href="#ベータ函数は-$\alpha$-と-$\beta$-を交換しても不変" data-toc-modified-id="ベータ函数は-$\alpha$-と-$\beta$-を交換しても不変-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>ベータ函数は $\alpha$ と $\beta$ を交換しても不変</a></span></li><li><span><a href="#問題:-ベータ分布の三角函数を使った表示" data-toc-modified-id="問題:-ベータ分布の三角函数を使った表示-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: ベータ分布の三角函数を使った表示</a></span></li><li><span><a href="#ベータ函数の別の基本的表示" data-toc-modified-id="ベータ函数の別の基本的表示-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>ベータ函数の別の基本的表示</a></span></li><li><span><a href="#問題:-$t$-分布の基礎になる公式" data-toc-modified-id="問題:-$t$-分布の基礎になる公式-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: $t$ 分布の基礎になる公式</a></span></li><li><span><a href="#$t$-分布の定義" data-toc-modified-id="$t$-分布の定義-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>$t$ 分布の定義</a></span></li><li><span><a href="#問題:-$t$-分布の自由度無限大の極限で標準正規分布が得られること" data-toc-modified-id="問題:-$t$-分布の自由度無限大の極限で標準正規分布が得られること-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: $t$ 分布の自由度無限大の極限で標準正規分布が得られること</a></span></li><li><span><a href="#ベータ函数の極限としてガンマ函数を表せること" data-toc-modified-id="ベータ函数の極限としてガンマ函数を表せること-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>ベータ函数の極限としてガンマ函数を表せること</a></span></li></ul></li><li><span><a href="#ベータ函数のガンマ函数表示" data-toc-modified-id="ベータ函数のガンマ函数表示-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ函数のガンマ函数表示</a></span><ul class="toc-item"><li><span><a href="#積分-$J[f]$-を導入とベータ函数のガンマ函数表示の証明" data-toc-modified-id="積分-$J[f]$-を導入とベータ函数のガンマ函数表示の証明-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>積分 $J[f]$ を導入とベータ函数のガンマ函数表示の証明</a></span></li><li><span><a href="#積分-$J[f]$-に関する公式の証明" data-toc-modified-id="積分-$J[f]$-に関する公式の証明-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>積分 $J[f]$ に関する公式の証明</a></span></li><li><span><a href="#問題:-ガンマ分布とベータ分布の関係" data-toc-modified-id="問題:-ガンマ分布とベータ分布の関係-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: ガンマ分布とベータ分布の関係</a></span></li><li><span><a href="#問題:-ガンマ函数のGaussの乗法公式" data-toc-modified-id="問題:-ガンマ函数のGaussの乗法公式-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: ガンマ函数のGaussの乗法公式</a></span></li><li><span><a href="#問題:-ガンマ函数の相反公式(reflection-formula)" data-toc-modified-id="問題:-ガンマ函数の相反公式(reflection-formula)-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: ガンマ函数の相反公式(reflection formula)</a></span></li><li><span><a href="#ディガンマ函数,-トリガンマ函数,-ポリガンマ函数,-Hurwitzのゼータ函数" data-toc-modified-id="ディガンマ函数,-トリガンマ函数,-ポリガンマ函数,-Hurwitzのゼータ函数-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>ディガンマ函数, トリガンマ函数, ポリガンマ函数, Hurwitzのゼータ函数</a></span></li></ul></li><li><span><a href="#Dirichlet積分=多変数ベータ函数" data-toc-modified-id="Dirichlet積分=多変数ベータ函数-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Dirichlet積分=多変数ベータ函数</a></span><ul class="toc-item"><li><span><a href="#Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示" data-toc-modified-id="Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示</a></span></li><li><span><a href="#多変数ベータ函数のガンマ函数表示の証明" data-toc-modified-id="多変数ベータ函数のガンマ函数表示の証明-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>多変数ベータ函数のガンマ函数表示の証明</a></span></li><li><span><a href="#問題:-Dirichlet-(1839)の公式の証明" data-toc-modified-id="問題:-Dirichlet-(1839)の公式の証明-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>問題: Dirichlet (1839)の公式の証明</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Gauss積分" data-toc-modified-id="Gauss積分-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Gauss積分</a></span><ul class="toc-item"><li><span><a href="#Gauss積分の定義" data-toc-modified-id="Gauss積分の定義-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Gauss積分の定義</a></span></li><li><span><a href="#問題:-正規分布での確率の総和" data-toc-modified-id="問題:-正規分布での確率の総和-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布での確率の総和</a></span></li><li><span><a href="#正規分布の定義" data-toc-modified-id="正規分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>正規分布の定義</a></span></li><li><span><a href="#$p(x|\theta)$-という記号法について" data-toc-modified-id="$p(x|\theta)$-という記号法について-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>$p(x|\theta)$ という記号法について</a></span></li><li><span><a href="#問題:-Gauss積分の拡張とガンマ函数の関係" data-toc-modified-id="問題:-Gauss積分の拡張とガンマ函数の関係-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: Gauss積分の拡張とガンマ函数の関係</a></span></li></ul></li><li><span><a href="#ガンマ函数" data-toc-modified-id="ガンマ函数-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>ガンマ函数</a></span><ul class="toc-item"><li><span><a href="#ガンマ函数の定義" data-toc-modified-id="ガンマ函数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>ガンマ函数の定義</a></span></li><li><span><a href="#問題:-ガンマ函数はこの形でよく使われる" data-toc-modified-id="問題:-ガンマ函数はこの形でよく使われる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: ガンマ函数はこの形でよく使われる</a></span></li><li><span><a href="#ガンマ分布の定義" data-toc-modified-id="ガンマ分布の定義-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>ガンマ分布の定義</a></span></li><li><span><a href="#指数分布の定義" data-toc-modified-id="指数分布の定義-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>指数分布の定義</a></span></li><li><span><a href="#ガンマ函数の函数等式" data-toc-modified-id="ガンマ函数の函数等式-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>ガンマ函数の函数等式</a></span></li><li><span><a href="#問題:-正の半整数でのガンマ函数の値" data-toc-modified-id="問題:-正の半整数でのガンマ函数の値-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 正の半整数でのガンマ函数の値</a></span></li><li><span><a href="#問題:-標準正規分布の偶数次のモーメント" data-toc-modified-id="問題:-標準正規分布の偶数次のモーメント-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 標準正規分布の偶数次のモーメント</a></span></li><li><span><a href="#Stirlingの公式" data-toc-modified-id="Stirlingの公式-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Stirlingの公式</a></span></li><li><span><a href="#問題:-小さな-$n$-でもStirlingの公式による-$n!$-の近似精度がそう悪くないこと" data-toc-modified-id="問題:-小さな-$n$-でもStirlingの公式による-$n!$-の近似精度がそう悪くないこと-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 小さな $n$ でもStirlingの公式による $n!$ の近似精度がそう悪くないこと</a></span></li><li><span><a href="#Stirlingの公式とガンマ分布の正規分布近似(中心極限定理)の関係" data-toc-modified-id="Stirlingの公式とガンマ分布の正規分布近似(中心極限定理)の関係-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Stirlingの公式とガンマ分布の正規分布近似(中心極限定理)の関係</a></span></li><li><span><a href="#問題:-n-1次元単位球面の面積のガンマ函数表示" data-toc-modified-id="問題:-n-1次元単位球面の面積のガンマ函数表示-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: n-1次元単位球面の面積のガンマ函数表示</a></span></li><li><span><a href="#問題:-n次元単位球体の面積のガンマ函数表示" data-toc-modified-id="問題:-n次元単位球体の面積のガンマ函数表示-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題: n次元単位球体の面積のガンマ函数表示</a></span></li></ul></li><li><span><a href="#ベータ函数" data-toc-modified-id="ベータ函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ベータ函数</a></span><ul class="toc-item"><li><span><a href="#ベータ函数の定義" data-toc-modified-id="ベータ函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>ベータ函数の定義</a></span></li><li><span><a href="#ベータ分布の定義" data-toc-modified-id="ベータ分布の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>ベータ分布の定義</a></span></li><li><span><a href="#ベータ函数は-$\alpha$-と-$\beta$-を交換しても不変" data-toc-modified-id="ベータ函数は-$\alpha$-と-$\beta$-を交換しても不変-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>ベータ函数は $\alpha$ と $\beta$ を交換しても不変</a></span></li><li><span><a href="#問題:-ベータ分布の三角函数を使った表示" data-toc-modified-id="問題:-ベータ分布の三角函数を使った表示-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: ベータ分布の三角函数を使った表示</a></span></li><li><span><a href="#ベータ函数の別の基本的表示" data-toc-modified-id="ベータ函数の別の基本的表示-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>ベータ函数の別の基本的表示</a></span></li><li><span><a href="#問題:-$t$-分布の基礎になる公式" data-toc-modified-id="問題:-$t$-分布の基礎になる公式-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: $t$ 分布の基礎になる公式</a></span></li><li><span><a href="#$t$-分布の定義" data-toc-modified-id="$t$-分布の定義-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>$t$ 分布の定義</a></span></li><li><span><a href="#問題:-$t$-分布の自由度無限大の極限で標準正規分布が得られること" data-toc-modified-id="問題:-$t$-分布の自由度無限大の極限で標準正規分布が得られること-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: $t$ 分布の自由度無限大の極限で標準正規分布が得られること</a></span></li><li><span><a href="#ベータ函数の極限としてガンマ函数を表せること" data-toc-modified-id="ベータ函数の極限としてガンマ函数を表せること-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>ベータ函数の極限としてガンマ函数を表せること</a></span></li></ul></li><li><span><a href="#ベータ函数のガンマ函数表示" data-toc-modified-id="ベータ函数のガンマ函数表示-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ函数のガンマ函数表示</a></span><ul class="toc-item"><li><span><a href="#積分-$J[f]$-を導入とベータ函数のガンマ函数表示の証明" data-toc-modified-id="積分-$J[f]$-を導入とベータ函数のガンマ函数表示の証明-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>積分 $J[f]$ を導入とベータ函数のガンマ函数表示の証明</a></span></li><li><span><a href="#積分-$J[f]$-に関する公式の証明" data-toc-modified-id="積分-$J[f]$-に関する公式の証明-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>積分 $J[f]$ に関する公式の証明</a></span></li><li><span><a href="#問題:-ガンマ分布とベータ分布の関係" data-toc-modified-id="問題:-ガンマ分布とベータ分布の関係-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: ガンマ分布とベータ分布の関係</a></span></li><li><span><a href="#問題:-ガンマ函数のGaussの乗法公式" data-toc-modified-id="問題:-ガンマ函数のGaussの乗法公式-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: ガンマ函数のGaussの乗法公式</a></span></li><li><span><a href="#問題:-ガンマ函数の相反公式(reflection-formula)" data-toc-modified-id="問題:-ガンマ函数の相反公式(reflection-formula)-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: ガンマ函数の相反公式(reflection formula)</a></span></li><li><span><a href="#ディガンマ函数,-トリガンマ函数,-ポリガンマ函数,-Hurwitzのゼータ函数" data-toc-modified-id="ディガンマ函数,-トリガンマ函数,-ポリガンマ函数,-Hurwitzのゼータ函数-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>ディガンマ函数, トリガンマ函数, ポリガンマ函数, Hurwitzのゼータ函数</a></span></li></ul></li><li><span><a href="#Dirichlet積分=多変数ベータ函数" data-toc-modified-id="Dirichlet積分=多変数ベータ函数-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Dirichlet積分=多変数ベータ函数</a></span><ul class="toc-item"><li><span><a href="#Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示" data-toc-modified-id="Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Dirichlet積分=多変数ベータ函数の定義とそのガンマ函数表示</a></span></li><li><span><a href="#Dirichlet分布の定義" data-toc-modified-id="Dirichlet分布の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Dirichlet分布の定義</a></span></li><li><span><a href="#多変数ベータ函数のガンマ函数表示の証明" data-toc-modified-id="多変数ベータ函数のガンマ函数表示の証明-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>多変数ベータ函数のガンマ函数表示の証明</a></span></li><li><span><a href="#問題:-Dirichlet-(1839)の公式の証明" data-toc-modified-id="問題:-Dirichlet-(1839)の公式の証明-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: Dirichlet (1839)の公式の証明</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -446,7 +446,7 @@ $$
 \end{aligned}
 $$
 
-最後から4つめの等号でガンマ函数のよく使われる形 $\int_0^\infty e^{-x/\theta} x^{\alpha - 1}\,dx = \theta^\alpha \Gamma(\alpha)$ を使い, 最後の等号で正の半整数でのガンマ函数の値を使った.
+最後から4つめの等号でガンマ函数のよく使われる形 $\int_0^\infty e^{-x/\theta} x^{\alpha - 1}\,dx = \theta^\alpha \Gamma(\alpha)$ を使い, 終わりの2つの等号で正の半整数でのガンマ函数の値を使った.
 
 __解答終__
 
@@ -625,6 +625,96 @@ plot!(stirling, 1, N; label="nⁿ e⁻ⁿ √(2πn)")
 title!("Stirling approximation of n!")
 plot!(;yscale=:log10)
 ```
+
+### Stirlingの公式とガンマ分布の正規分布近似(中心極限定理)の関係
+
+この節では, Stirlingの公式は本質的にガンマ分布の正規分布近似(中心極限定理ともいう)から出て来ることを説明する.
+
+スケールパラメータが $\theta=1$ で形状パラメータが $\alpha=n+1$ のガンマ分布 $\op{Gamma}(n+1, 1)$ の確率密度函数は
+
+$$
+p_n(x) = \frac{e^{-x} x^n}{\Gamma(n+1)} = \frac{e^{-x} x^n}{n!} \quad (x > 0)
+$$
+
+という形になる. この $p_n(x)$ の分子の対数を $f_n(x) と書く:
+
+$$
+f_n(x) = \log (e^{-x} x^n) = n \log x  - x.
+$$
+
+$f_n(x)$ を $x = n$ でTaylor展開してみよう.
+
+$$
+f_n(n) = n\log n - n, \quad
+f_n'(x) = \frac{n}{x} - 1, \quad
+f_n'(n) = 0, \quad
+f_n''(x) = -\frac{n}{x^2}, \quad
+f_n''(n) = -\frac{1}{n}.
+$$
+
+これより, $x$ が $n$ に近いとき,
+
+$$
+f_n(x) \approx n\log n - n - \frac{(x - n)^2}{2n}.
+$$
+
+ゆえに, $x$ が $n$ に近いとき, $f_n(x)$ の $x=n$ でのTaylor展開より,
+
+$$
+e^{-n}x^n = \exp(f_n(x)) \approx
+\exp\left(n\log n - n - \frac{(x - n)^2}{2n}\right) =
+n^n e^{-n} \exp\left(-\frac{(x - n)^2}{2n}\right).
+$$
+
+$n$ が大きなとき, $e^{-n}x^n$ も $\exp(-(x - n)^2/(2n))$ も $x$ が $n$ から離れると急激に $0$ に近付くので, それぞれの $x > 0$, $-\infty<x<\infty$ における積分は $n$ に近い $x$ における積分で近似される.  したがって,
+
+$$
+\begin{aligned}
+1& = \int_0^\infty p_n(x)\,dx =
+\frac{1}{n!}\int_0^\infty e^{-n}x^n\,dx
+\\ &\approx
+\frac{1}{n!}\int_{\text{around}\; n} e^{-n}x^n\,dx \approx
+\frac{n^n e^{-n}}{n!}\int_{\text{around}\; n} \exp\left(-\frac{(x - n)^2}{2n}\right)\,dx
+\\ &\approx
+\frac{n^n e^{-n}}{n!}\int_{-\infty}^\infty \exp\left(-\frac{(x - n)^2}{2n}\right)\,dx =
+\frac{n^n e^{-n}\sqrt{2\pi n}}{n!}.
+\end{aligned}
+$$
+
+これで $n! \approx n^n e^{-n}\sqrt{2\pi n}$ が再び示された.
+
+以上の計算によってガンマ分布 $\op{Gamma}(n+1, 1)$ の密度函数 $p_n(x)$ が平均 $n$, 分散 $n$ の正規分布の密度函数で近似されることも示せている:
+
+$$
+p_n(x) = \frac{e^{-x} x^n}{n!} \approx
+\frac{1}{\sqrt{2\pi n}}\exp\left(-\frac{(x - n)^2}{2n}\right).
+$$
+
+以上はかなり雑な議論だが, 議論の全体を正確に作り直すこともできるし, 以下で示すようにグラフを描くことによっても結果が正しいことを確認できる.
+
+```julia
+p(n, x) = x > 0 ? exp(n*log(x) - x - loggamma(n+1)) : zero(x)
+f(n, x) = 1/√(2π*n) * exp(-(x - n)^2/(2n))
+```
+
+```julia
+n = 30
+x = range(n - 5√n, n + 6√n, 1000)
+plot(x, x -> p(n, x); label="Gamma(n+1,1)")
+plot!(x, x -> f(n, x); label="Normal(n,√n)", ls=:dash)
+title!("n = $n")
+```
+
+```julia
+n = 100
+x = range(n - 5√n, n + 6√n, 1000)
+plot(x, x -> p(n, x); label="Gamma(n+1,1)")
+plot!(x, x -> f(n, x); label="Normal(n,√n)", ls=:dash)
+title!("n = $n")
+```
+
+__注意:__ 以上のグラフにおけるガンマ分布と正規分布の密度函数の差の大部分は $x-n$ に関する奇函数になっている.  積分するとその奇函数成分は消える.
+
 
 ### 問題: n-1次元単位球面の面積のガンマ函数表示
 
@@ -1008,7 +1098,7 @@ $$
 なので, $n\to\infty$ のとき, $(1 - x/n)^{n+b-1} \to e^{-x}$ となることを使うと,
 
 $$
-n^\alpha B(\alpha, n+1) \to
+n^\alpha B(\alpha, n+b) \to
 \int_0^\infty x^{\alpha-1}e^{-x}\,dx = \Gamma(\alpha).
 $$
 
@@ -1062,10 +1152,13 @@ $$
 もしもこの公式が証明されたならば, $J[f]$ の定義より, $f(z,t)=1$ のとき, 
 
 $$
-J[1] =
-\int_0^\infty\int_0^\infty e^{-(x+y)} x^{\alpha-1}y^{\beta-1}\,dx\,dy =
+\begin{aligned}
+J[1] &=
+\int_0^\infty\int_0^\infty e^{-(x+y)} x^{\alpha-1}y^{\beta-1}\,dx\,dy
+\\ &=
 \int_0^\infty e^{-x} x^{\alpha-1}\,dx \cdot \int_0^\infty e^{-y} y^{\beta-1}\,dy =
 \Gamma(\alpha)\Gamma(\beta)
+\end{aligned}
 $$
 
 となり, 上の公式より,
@@ -1374,7 +1467,7 @@ $$
 $$
 \psi(\alpha+1) = \psi(\alpha) + \frac{1}{\alpha}, \;
 \psi'(\alpha+1) = \psi'(\alpha) - \frac{1}{\alpha^2}, \;
-\psi''(\alpha+1) = \psi''(\alpha) + \frac{1}{\alpha^3}, \; \ldots
+\psi''(\alpha+1) = \psi''(\alpha) + \frac{2}{\alpha^3}, \; \ldots
 \tag{$*$}
 $$
 
@@ -1402,7 +1495,7 @@ $$
 
 この($**$)から上の($*$)が成立することを確認することもできる.
 
-調和級数 $\sum_{n=1}^N \frac{1}{n}$ は $N\to\infty$ で無限大に発散するが, それから $\log N$ を引いたものは有限の値 $\gamma \approx 0.5772$ に収束することが知られている. この $\gamma$ を __Eulerの $\gamma$__ (オイラーの $\gamma$, Euler's gamma)と呼ぶことがある.  ($**$)の最初の式より,
+調和級数 $\sum_{n=1}^N 1/n$ は $N\to\infty$ で無限大に発散するが, それから $\log N$ を引いたものは有限の値 $\gamma \approx 0.5772$ に収束することが知られている. この $\gamma$ を __Eulerの $\gamma$__ (オイラーの $\gamma$, Euler's gamma)と呼ぶことがある.  ($**$)の最初の式より,
 
 $$
 -\psi(1) =
@@ -1426,15 +1519,28 @@ $$
 \zeta(s, \alpha) = \sum_{k=0}^\infty \frac{1}{(\alpha + k)^s}
 $$
 
-と定義される. トリガンマ函数以降のポリガンマ函数達はHurwitzのゼータ函数で $s$ を2以上の整数にした場合になっている:
+と定義される. トリガンマ函数以降のポリガンマ函数達は, 定数倍の違いを除いて, Hurwitzのゼータ函数で $s$ を2以上の整数にした場合になっている:
 
 $$
-\psi^{(k)}(\alpha) = \zeta(k+1, \alpha) \quad (k = 1,2,3,\ldots)
+\psi^{(k)}(\alpha) = (-1)^{k+1} k!\, \zeta(k+1, \alpha) \quad (k = 1,2,3,\ldots)
 $$
 
-$\zeta(s) = \zeta(s, 1) = \sum_{n=1}^\infty n^{-s}$ は __Riemannのゼータ函数__ (リーマンのゼータ函数)と呼ばれている.　ゼータ函数達は数論の基本的研究対象である.
+$\zeta(s) = \zeta(s, 1) = \sum_{n=1}^\infty n^{-s}$ は __Riemannのゼータ函数__ (リーマンのゼータ函数)と呼ばれている.　ゼータ函数達は数論の基本的研究対象である.  ガンマ函数のよく使われる形から得られる
 
-ガンマ函数の対数(対数ガンマ函数 (logarithmic Gamma function))は定数差を除いてHurwitzのゼータ函数の $s=0$ での微係数に等しいことも知られている(__Lerchの定理__(レルヒの定理)):
+$$
+\frac{1}{(\alpha + k)^s} = 
+\frac{1}{\Gamma(s)} \int_0^\infty e^{-(\alpha + k)t} t^{s-1}\,dt
+$$
+
+という公式を使えば, Hurwitzのゼータ函数はガンマ函数のような積分表示を持つこともわかる:
+
+$$
+\zeta(s, \alpha) =
+\frac{1}{\Gamma(s)}\int_0^\infty \sum_{k=0}^\infty e^{-(\alpha + k)t} t^{s-1}\,dt =
+\frac{1}{\Gamma(s)}\int_0^\infty \frac{e^{-\alpha t}}{1 - e^{-t}}t^{s-1}\,dt.
+$$
+
+ガンマ函数の対数(対数ガンマ函数 (logarithmic Gamma function))は, 定数差を除いて, Hurwitzのゼータ函数の $s=0$ での微係数に等しいことも知られている(__Lerchの定理__(レルヒの定理)):
 
 $$
 \log\Gamma(\alpha) = \zeta_s(0, \alpha) + \log\sqrt{2\pi}.
@@ -1489,7 +1595,7 @@ V =
 \frac{\Gamma(\alpha_1/p_1)\cdots\Gamma(\alpha_n/p_n)}{\Gamma(\alpha_1/p_1 + \cdots +\alpha_n/p_n + 1)}.
 $$
 
-例えば, $\alpha_1=\cdots=\alpha_n=1$, $a_1=\cdots=a_n=1$, $p_1=\cdots=p_n=2$ のとき, $V$ の $2^n$ 倍は
+例えば, $\alpha_1=\cdots=\alpha_n=1$, $a_1=\cdots=a_n=1$, $p_1=\cdots=p_n=2$ のとき, $V$ の $2^n$ 倍の
 
 $$
 2^n V = \frac{\Gamma(1/2)^n}{\Gamma(n/2+1)} = \frac{\pi^{n/2}}{\Gamma(n/2+1)}
@@ -1534,6 +1640,56 @@ B(\alpha_1, \ldots, \alpha_{n+1}) =
 $$
 
 
+### Dirichlet分布の定義
+
+$\alpha_1,\ldots,\alpha_r > 0$ と仮定する.  このとき, 
+
+$$
+\Delta_{r-1} = \{\,(t_1,\ldots,t_{r-1})\in \R_{>0}^{r-1} \mid t_1 + \cdots + t_{r-1} < 1 \,\}
+$$
+
+上の確率密度函数を
+
+$$
+p(t_1,\ldots,t_{r-1}|\alpha_1,\ldots,\alpha_r) =
+\frac
+{t_1^{\alpha_1-1}\cdots t_{r-1}^{\alpha_{r-1}-1}(1-(t_1+\cdots+t_{r-1}))^{\alpha_r-1}}
+{B(\alpha_1, \ldots, \alpha_r)}
+$$
+
+と定めることができる.  この密度函数が定める多変量連続分布をDirichlet分布と呼び, 
+
+$$
+\op{Dirichlet}(\alpha_1,\ldots,\alpha_r)
+$$
+
+と表す.  対称性のためには
+
+$$
+t_r = 1 - (t_1 + \cdots + t_{r-1})
+$$
+
+とおいて, 
+
+$$
+\Delta^{r-1} = \{\,(t_1,\ldots,t_r)\in \R_{>0}^r \mid t_1 + \cdots + t_r = 1 \,\}
+$$
+
+上の確率分布だとみなした方がよい. これによって, Dirichlet分布は, カテゴリカル分布
+
+$$
+\op{Categorical}(t_1,\ldots,t_r) \quad (t_i > 0,\; t_1+\cdots+t_r=1)
+$$
+
+および多項分布
+
+$$
+\op{Multinomial}(n,t_1,\ldots,t_r) \quad (t_i > 0,\; t_1+\cdots+t_r=1)
+$$
+
+のパラメータ $(t_1,\ldots,t_r)$ に関する確率分布だとみなされる.  Dirichlet分布はカテゴリカル分布や多項分布の共役事前分布として重要である.
+
+
 ### 多変数ベータ函数のガンマ函数表示の証明
 
 $z = x_1+\cdots+x_{n+1}$, $t_i = x_i/z$ とおく. 函数 $f(z,t_1,\ldots,t_n)$ について次の積分を考える:
@@ -1545,7 +1701,7 @@ f(z,t_1,\ldots,t_n)\,
 e^{-(x_1+\cdots+x_{n+1})} x_1^{\alpha_1-1}\cdots x_{n+1}^{\alpha_{n+1}-1}\,dx_1\cdots dx_{n+1}.
 $$
 
-このとき
+本当は $z$, $t_i$ に $z = x_1+\cdots+x_{n+1}$, $t_i = x_i/z$ を代入した式を書きたかったのだが, 式が煩雑になり過ぎたのでそうしていない.  この式の $z$, $t$ にはそのように代入してから積分を行うという意味だと解釈する必要がある.  そのとき
 
 $$
 J[f] =
@@ -1555,7 +1711,7 @@ e^{-(x_1+\cdots+x_{n+1})} x_1^{\alpha_1-1}\cdots x_{n+1}^{\alpha_{n+1}-1}\,dx_{n
 dx_1\cdots dx_n
 $$
 
-における積分変数を $x_{n+1} = z - (x_1+\cdots+x_n)$ を使って $z$ に変換すると, $z$ の動く範囲は $x_1+\cdots+x_n < z < \infty$ になるので,
+における内側の積分変数 $x_{n+1}$ を $x_{n+1} = z - (x_1+\cdots+x_n)$ を使って $z$ に変換すると, $z$ の動く範囲は $x_1+\cdots+x_n < z < \infty$ になるので,
 
 $$
 J[f] =

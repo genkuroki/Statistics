@@ -16,7 +16,7 @@ jupyter:
 # 様々な確率分布
 
 * 黒木玄
-* 2020-04-11
+* 2022-04-11～2022-04-12
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
