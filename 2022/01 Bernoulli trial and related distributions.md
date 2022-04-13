@@ -1473,16 +1473,16 @@ $$
 \begin{aligned}
 &
 m\binom{a+m-1}{m} =
-m\frac{a(a-1)\cdots(a+m-1)}{m!}
+m\frac{a(a+1)\cdots(a+m-1)}{m!}
 \\ & \quad =
-a\frac{(a-1)\cdots(a-m+1)}{(m-1)!} =
+a\frac{(a+1)\cdots(a-m+1)}{(m-1)!} =
 a\binom{a+m-1}{m-1},
 \\ &
 m(m-1)\binom{a+m-1}{m} =
-m(m-1)\frac{a(a-1)(a-2)\cdots(a+m-1)}{m!}
+m(m-1)\frac{a(a+1)(a+2)\cdots(a+m-1)}{m!}
 \\ & \quad =
-a(a-1)\frac{(a-2)\cdots(a+m-1)}{(m-2)!} =
-a(a-1)\binom{a+m-1}{m-2}
+a(a+1)\frac{(a+2)\cdots(a+m-1)}{(m-2)!} =
+a(a+1)\binom{a+m-1}{m-2}
 \end{aligned}
 $$
 
@@ -1503,21 +1503,21 @@ p^k k(1-p) p^{-(k+1)} =
 \\ &
 E[M(M-1)] = \sum_{m=0}^\infty m(m-1) P(m) =
 p^k \sum_{m=2}^\infty m(m-1)\binom{k+m-1}{m}(1 - p)^m =
-p^k \sum_{m=2}^\infty k(k-1)\binom{k+m-1}{m-2}(1 - p)^m
+p^k \sum_{m=2}^\infty k(k+1)\binom{k+m-1}{m-2}(1 - p)^m
 \\ & \quad =
-p^k k(k-1)(1-p)^2\sum_{m=1}^\infty \binom{(k+2)+(m-2)-1}{m-2}(1 - p)^{m-2} =
-p^k k(k-1)(1-p)^2 (1-(1-p))^{-(k+2)}
+p^k k(k+1)(1-p)^2\sum_{m=1}^\infty \binom{(k+2)+(m-2)-1}{m-2}(1 - p)^{m-2} =
+p^k k(k+1)(1-p)^2 (1-(1-p))^{-(k+2)}
 \\ & \quad =
-p^k k(k-1)(1-p)^2 p^{-(k+2)} =
-\frac{k(k-1)(1-p)^2}{p^2},
+p^k k(k+1)(1-p)^2 p^{-(k+2)} =
+\frac{k(k+1)(1-p)^2}{p^2},
 \\ &
 E[M(M-1)] = E[M^2] - E[M],
 \\ &
 E[M^2] = E[M(M-1)] + E[M] =
-\frac{k(k-1)(1-p)^2}{p^2} + \frac{k(1-p)}{p},
+\frac{k(k+1)(1-p)^2}{p^2} + \frac{k(1-p)}{p},
 \\ &
 \var(M) = E[M^2] - E[M]^2 =
-\frac{k(k-1)(1-p)^2}{p^2} + \frac{k(1-p)}{p} - \frac{k^2(1-p)^2}{p^2}
+\frac{k(k+1)(1-p)^2}{p^2} + \frac{k(1-p)}{p} - \frac{k^2(1-p)^2}{p^2}
 \\ & \quad =
 \frac{-k(1-p)^2}{p^2} + \frac{kp(1-p)}{p^2} =
 \frac{k(1-p)}{p^2}.
