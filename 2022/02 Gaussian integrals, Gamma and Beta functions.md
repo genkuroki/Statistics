@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.8.0-beta3
+    display_name: Julia 1.7.2
     language: julia
-    name: julia-1.8
+    name: julia-1.7
 ---
 
 # Gauss積分, ガンマ函数, ベータ函数
@@ -20,6 +20,7 @@ jupyter:
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
+\newcommand\Z{{\mathbb Z}}
 \newcommand\var{\op{var}}
 \newcommand\std{\op{std}}
 \newcommand\eps{\varepsilon}
@@ -1379,7 +1380,7 @@ __注意:__ 上の公式をガンマ函数に関する __Gaussの乗法公式__ 
 
 ### 問題: $\sin$ の無限積表示
 
-$\alpha > 0$ であるとし, $f_\alpha(x)$ は $\cos(\alpha x)$ の $-\pi\le x\le \pi$ への制限の定義域を周期 $2\pi$ で $\R$ 全体に拡張して得られる連続函数であるとする.  このとき, $f_\alpha(x)$ の周期 $2\pi$ でのFourier級数は $f_n(x)$ に収束することを認めて, 次の $\sin$ の無限積表示を示せ:
+$f_\alpha(x)$ は $\cos(\alpha x)$ の $-\pi\le x\le \pi$ への制限の定義域を周期 $2\pi$ で $\R$ 全体に拡張して得られる連続函数であるとする.  このとき, $f_\alpha(x)$ の周期 $2\pi$ でのFourier級数は $f_n(x)$ に収束することを認めて, 次の $\sin$ の無限積表示を示せ:
 
 $$
 \sin(\pi\alpha) = \pi\alpha\prod_{k=1}^\infty\left(1 - \frac{\alpha^2}{k^2}\right).
