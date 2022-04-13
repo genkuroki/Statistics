@@ -36,7 +36,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#確率変数の独立性と無相関性" data-toc-modified-id="確率変数の独立性と無相関性-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>確率変数の独立性と無相関性</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span></li><li><span><a href="#独立同分布の定義" data-toc-modified-id="独立同分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布の定義</a></span></li><li><span><a href="#互いに異なる任意の2つが独立であっても全体が独立であるとは限らない" data-toc-modified-id="互いに異なる任意の2つが独立であっても全体が独立であるとは限らない-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>互いに異なる任意の2つが独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li><li><span><a href="#共分散と相関係数" data-toc-modified-id="共分散と相関係数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>共分散と相関係数</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数の和の分散" data-toc-modified-id="問題:--無相関な確率変数の和の分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題:  無相関な確率変数の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li></ul></li><li><span><a href="#正規分布" data-toc-modified-id="正規分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#確率変数の独立性と無相関性" data-toc-modified-id="確率変数の独立性と無相関性-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>確率変数の独立性と無相関性</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span></li><li><span><a href="#独立同分布の定義" data-toc-modified-id="独立同分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布の定義</a></span></li><li><span><a href="#互いに異なる任意の2つが独立であっても全体が独立であるとは限らない" data-toc-modified-id="互いに異なる任意の2つが独立であっても全体が独立であるとは限らない-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>互いに異なる任意の2つが独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li><li><span><a href="#共分散と相関係数" data-toc-modified-id="共分散と相関係数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>共分散と相関係数</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数の和の分散" data-toc-modified-id="問題:--無相関な確率変数の和の分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題:  無相関な確率変数の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li></ul></li><li><span><a href="#正規分布" data-toc-modified-id="正規分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#歪度と中心極限定理の収束の速さ" data-toc-modified-id="歪度と中心極限定理の収束の速さ-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>歪度と中心極限定理の収束の速さ</a></span></li><li><span><a href="#標準化キュムラントと歪度と尖度" data-toc-modified-id="標準化キュムラントと歪度と尖度-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#標本平均と不偏分散の定義" data-toc-modified-id="標本平均と不偏分散の定義-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>標本平均と不偏分散の定義</a></span></li><li><span><a href="#問題:-標本平均の期待値と分散" data-toc-modified-id="問題:-標本平均の期待値と分散-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: 標本平均の期待値と分散</a></span></li><li><span><a href="#問題:-不偏分散の期待値と分散" data-toc-modified-id="問題:-不偏分散の期待値と分散-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>問題: 不偏分散の期待値と分散</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Poisson分布</a></span></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ガンマ分布</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>χ²分布</a></span></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>ベータ分布</a></span></li><li><span><a href="#時間連続極限" data-toc-modified-id="時間連続極限-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>時間連続極限</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -773,6 +773,9 @@ WolframAlpha:
 * [√2 erfinv(0.99)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.99%29)
 
 
+### 問題: 対数正規分布の確率密度函数
+
+
 ## モーメントとその母函数と特性函数とキュムラント母函数
 
 
@@ -826,6 +829,10 @@ $$
 $$
 f(x) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat{f}(t) e^{itx}\,dt.
 $$
+
+Fourier解析の基礎については次のリンク先を参照せよ(逆Fourier変換に関する結果はこのノート内では認めて使ってよい):
+
+* [12 Fourier解析](https://nbviewer.org/github/genkuroki/Calculus/blob/master/12%20Fourier%20analysis.ipynb)
 
 ゆえに, $x$ に確率変数 $X$ を代入して両辺の期待値を取り, 期待値を取る操作と積分を交換すると,
 
@@ -908,7 +915,7 @@ __証明:__ $Y_k = (X_k - \mu)/\sigma$ とおく. $Y_1, Y_2, \ldots$ も独立�
 
 $$
 \varphi(t) =
-E[e^{itY_k} =
+E[e^{itY_k}] =
 1 + iE[Y_k]t - E[Y_k^2]\frac{t^2}{2} + O(t^3) =
 1 - \frac{t^2}{2} + O(t^3).
 $$
@@ -941,6 +948,129 @@ $$
 ゆえに $Z_n$ の分布は $n\to\infty$ で標準正規分布に近付く.
 
 __証明終__
+
+
+### 歪度と中心極限定理の収束の速さ
+
+前節の微論より, $X_1,X_2,\ldots$ を独立同分布確率変数列とし,
+
+$$
+\mu = E[X_k], \quad
+\sigma^2 = E[(X-\mu)^2], \quad
+Y_k = \frac{X_k - \mu}{\sigma}, \quad
+\varphi(t) = E[e^{itY_k}]
+$$
+
+とおいたときの, $n\to\infty$ での $\varphi(t/\sqrt{n})^n \to e^{-t^2/2}$ の収束の速さを調べれば, 中心極限定理による正規分布への収束の速さがわかる.  
+
+$$
+\mu'_3 = E[Y_k^3] = E\left[\left(\frac{X_k - \mu}{\sigma}\right)^3\right]
+$$
+
+とおくと,
+
+$$
+\varphi\left(\frac{t}{\sqrt{n}}\right) = E[e^{itY_k}] =
+1 - \frac{t^2}{2n} - i\mu_3\frac{t^3}{6n\sqrt{n}} + O(n^{-2})
+$$
+
+なので, 
+
+$$
+\log\varphi\left(\frac{t}{\sqrt{n}}\right)^n = 
+n\log\left(1 - \frac{t^2}{2n} - i\mu'_3\frac{t^3}{6n\sqrt{n}} + O(n^{-2})\right) =
+-\frac{t^2}{2} - i\mu_3\frac{t^3}{6\sqrt{n}} + O(n^{-1}).
+$$
+
+これは $n\to\infty$ での $\log\varphi\left(t/\sqrt{n}\right)^n \to -t^2/2$ の収束の速さは, $Y_k=(X_k-\mu)/\sigma$ の3次のモーメント $\mu'_3$ の絶対値の大きさであることがわかる.  $\mu'_3$ の絶対値が小さいほど収束が速く, 大きいほど収束が遅い.
+
+$\mu'_3$ は $X_k$ の分布の期待値 $\mu$ を中心とする非対称性の $\sigma$ によって適切に正規化した尺度になっている.  $\mu'_3$ は $Y_k = =(X_k-\mu)/\sigma$ の3次のキュムラントにも一致している:
+
+$$
+K(t) = \log E[e^{tY_k}] =
+\left(1 + \frac{t^2}{2} + \mu'_3\frac{t^3}{3!} + O(t^4)\right) =
+\frac{t^2}{2} + \mu'_3 \frac{t^3}{3!} + O(t^4).
+$$
+
+この $\mu'_3$ は $X_k$ が従う分布(同じことだが $Y_k$ が従う分布)の __歪度__ (skewness) と呼ばれている.
+
+確率変数 $X$ が従う分布の __歪度__ (skewness) $\op{skewness}(X)$ を次のように定める:
+
+$$
+\op{skewness}(X) = \kappa'_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right].
+$$
+
+ここで $\mu = E[X]$, $\sigma^2 = E[(x-\mu)^2]$.  期待値を中心に左右対称な分布の歪度は0になる.  歪度はロケーションスケール変換 $X\mapsto aX+b$ ($a\ne 0$) で不変である.
+
+
+### 標準化キュムラントと歪度と尖度
+
+確率変数 $X$ は確率変数であるとし, $\mu = E[X]$, $\sigma = \sqrt{E[(X-\mu)^2]}$ とおく.  このとき, 
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+を確率変数の __標準化__ (standardization)と呼ぶ.  $Z$ の期待値と分散はそれぞれ $0$ と $1$ になる.
+
+$X$ の標準化のモーメントやキュムラントをそれぞれ __標準化モーメント__, __標準化キュムラント__ と呼び, 以下のように表す:
+
+$$
+\begin{aligned}
+&
+\mu'_m = E\left[\left(\frac{X - \mu}{\sigma}\right)^m\right],
+\\ &
+E\left[\exp\left(t \frac{X - \mu}{\sigma}\right)\right] =
+\sum_{m=0}^\infty \mu'_m(X) \frac{t^m}{m!} =
+1 + \frac{t^2}{2} + \mu'_3(X)\frac{t^3}{3!} + \mu'_4(X)\frac{t^4}{4!} + \cdots,
+\\ &
+\log E\left[\exp\left(t \frac{X - \mu}{\sigma}\right)\right] =
+\sum_{m=1}^\infty \kappa'_m(X) \frac{t^m}{m!} =
+1 + \frac{t^2}{2} + \kappa'_3(X) \frac{t^3}{3!} + \kappa'_4(X) \frac{t^4}{4!} + \cdots.
+\end{aligned}
+$$
+
+$\kappa'_3(X)$ と $\kappa'_4(X)$ は次のように表される:
+
+$$
+\kappa'_3(X) = \mu'_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right], \quad
+\kappa'_4(X) = \mu'_4(X) - 3 = E\left[\left(\frac{X - \mu}{\sigma}\right)^4\right] - 3.
+$$
+
+$X$ が正規分布に従う確率変数の場合には $\kappa'_m = \delta_{m2}$ (特に $m=2$ 以外の場合に $0$)となる.
+
+$\kappa'_3$ を $X$ もしくは $X$ が従う分布の __歪度__ (わいど, skewness) と呼び, $\kappa'_4$ を __尖度__ (せんど, kurtosis)と呼ぶことにする.  歪度は左右の非対称性の尺度であり, 尖度は分布の尖り方の尺度になっている.
+
+$\kappa'_4 = \mu'_4 - 3$ ではなく, $3$ を引く前の $\mu'_4$ を尖度と定義する流儀もあるが, このノートでは __正規分布の尖度を $0$ にしたいので, $3$ を引いた側の $\kappa'_4$ を尖度の定義として採用する.__
+
+```julia
+@vars t μ3 μ4 μ5 κ3 κ4 κ5 
+Mt = 1 + t^2/2 + μ3*t^3/6 + μ4*t^4/24 + μ5*t^5
+expr = series(log(Mt), t)
+```
+
+### 標本平均と不偏分散の定義
+
+
+### 問題: 標本平均の期待値と分散
+
+
+### 問題: 不偏分散の期待値と分散
+
+
+## Poisson分布
+
+
+## ガンマ分布
+
+
+## χ²分布
+
+
+## ベータ分布
+
+
+## 時間連続極限
 
 ```julia
 
