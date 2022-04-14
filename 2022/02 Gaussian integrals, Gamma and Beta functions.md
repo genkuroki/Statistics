@@ -42,15 +42,16 @@ $
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using Distributions
-using StatsPlots
-default(fmt = :png, titlefontsize = 10, size = (400, 250))
+using Printf
+using QuadGK
 using Random
 Random.seed!(4649373)
-using StatsBase
-using QuadGK
-using SymPy
 using SpecialFunctions
-using Printf
+using StatsBase
+using StatsFuns
+using StatsPlots
+default(fmt = :png, titlefontsize = 10, size = (400, 250))
+using SymPy
 ```
 
 ## Gauss積分

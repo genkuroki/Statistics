@@ -79,15 +79,16 @@ $$
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using Distributions
-using StatsPlots
-default(fmt = :png, titlefontsize = 10, size = (400, 250))
+using Printf
+using QuadGK
 using Random
 Random.seed!(4649373)
-using StatsBase
-using QuadGK
-using SymPy
 using SpecialFunctions
-using Printf
+using StatsBase
+using StatsFuns
+using StatsPlots
+default(fmt = :png, titlefontsize = 10, size = (400, 250))
+using SymPy
 ```
 
 ## 一様乱数の生成の繰り返し
@@ -1096,7 +1097,7 @@ __注意:__ [WolframAlpha](https://www.wolframalpha.com/)では確率 $P(K \le 2
 と入力して求めることができる.  他の場合も試してみよ.  (もちろんJulia言語を導入して使ってもよい.)
 
 ```julia
-binom(n, k) = exp(loggamma(n+1) - loggamma(k+1) - loggamma(n-k+1))
+logP(n, p, k) = logabsbinomial(n, k)[1] + k*log(p) + (n-k)*log(1-p)
 
 p = 0.3
 n = 100
@@ -1104,10 +1105,10 @@ n = 100
 @show n*p*(1-p)
 @show √(n*p*(1-p))
 for Kmax in (25, 20)
-    @eval @show sum(binom(n, k)*p^k*(1-p)^(n-k) for k in 1:$Kmax)
+    @eval @show exp(logsumexp(logP(n, p, k) for k in 0:$Kmax))
 end
 for Kmin in (35, 40)
-    @eval @show sum(binom(n, k)*p^k*(1-p)^(n-k) for k in $Kmin:n)
+    @eval @show exp(logsumexp(logP(n, p, k) for k in $Kmin:n))
 end
 ```
 
