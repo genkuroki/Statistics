@@ -36,7 +36,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>χ²分布</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#t分布" data-toc-modified-id="t分布-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>t分布</a></span></li><li><span><a href="#F分布" data-toc-modified-id="F分布-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>F分布</a></span></li><li><span><a href="#二項分布とベータ分布の累積分布函数の関係" data-toc-modified-id="二項分布とベータ分布の累積分布函数の関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>二項分布とベータ分布の累積分布函数の関係</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>χ²分布</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#t分布" data-toc-modified-id="t分布-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>t分布</a></span></li><li><span><a href="#F分布" data-toc-modified-id="F分布-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>F分布</a></span></li><li><span><a href="#二項分布とベータ分布の累積分布函数の関係" data-toc-modified-id="二項分布とベータ分布の累積分布函数の関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>二項分布とベータ分布の累積分布函数の関係</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -327,6 +327,82 @@ __解答終__
 * [√2 erfinv(0.99)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.99%29), [quantile(NormalDistribution(0,1), 0.995)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.995%29)
 
 
+### 問題: 正規分布のモーメント母函数とキュムラント母函数
+
+$X \sim \op{Normal}(\mu, \sigma)$ のとき次が成立することを示せ:
+
+$$
+E[e^{tX}] = e^{\mu t + \sigma^2 t^2/2}, \quad
+\log E[e^{tX}] = \mu t + \sigma^2 \frac{t^2}{2}.
+$$
+
+__注意:__ 一般に確率変数 $X$ に対して, $E[e^{tX}]$ を $X$ の __モーメント母函数__ (moment generating function, mgf)と呼び, $\log E[e^{tX}]$ を $X$ の __キュムラント母函数__ (cumulant generating function, cgf)と呼ぶ. 
+
+__注意:__ 正規分布のキュムラント母函数は上のように非常に単純な形になる. キュムラント母函数が $t$ について2次式になることと分布が正規分布であることは同値であり, キュムラント母函数中の $t$ について3次以上の項は分布が正規分布とどのように違うかを表している.  特にそのうちの最初の2つである $t^3/3!$ と $t^4/4!$ の係数はそれぞれ __歪度__ (わいど, skewness) と __尖度__ (せんど, kurtosis)と呼ばれている.
+
+__注意:__ モーメント母函数とキュムラント母函数は物理での統計力学での分配函数と自由エネルギーの統計学での類似物になっており, 極めて便利な母函数になっている. 上の $t$ は物理的には逆温度 $\beta$ の $-1$ 倍の $-\beta$ に対応している.
+
+__解答例:__ 
+
+$$
+\begin{aligned}
+tx - \frac{(x-\mu)^2}{2\sigma^2} &= -
+\frac{(x-\mu)^2 - 2\sigma^2 tx}{2\sigma^2} = -
+\frac{x^2 - 2(\mu + \sigma^2 t) x + \mu^2}{2\sigma^2} \\ &= -
+\frac{(x - (\mu + \sigma^2 t))^2 + \mu^2 - (\mu + \sigma^2 t)^2}{2\sigma^2} \\ &= -
+\frac{(x - (\mu + \sigma^2 t))^2 - 2\sigma^2\mu t + \sigma^4 t^2}{2\sigma^2} \\ &= -
+\frac{(x - (\mu + \sigma^2 t))^2}{2\sigma^2} + \mu t + \sigma^2\frac{t^2}{2}
+\end{aligned}
+$$
+
+より
+
+$$
+\begin{aligned}
+E[e^{tX}] &=
+\frac{1}{\sqrt{2\pi\sigma^2}}
+\int_{-\infty}^\infty e^{tx} e^{-(x-\mu)^2)/(2\sigma^2)}\,dx \\ &=
+\frac{e^{\mu t+\sigma^2 t^2/2}}{\sqrt{2\pi\sigma^2}}
+\int_{-\infty}^\infty e^{-(x-(\mu+\sigma^2 t))^2)/(2\sigma^2)}\,dx =
+e^{\mu t+\sigma^2 t^2/2}.
+\end{aligned}
+$$
+
+こらから $\log E[e^{tX}] = \mu t + \sigma^2 t^2/2$ はただちに得られる.
+
+__解答終__
+
+
+### 問題: キュムラント母函数と期待値と分散
+
+期待値 $\mu$ と分散 $\sigma$ を持つ確率変数 $X$ について次が成立することを示せ:
+
+$$
+\log E[e^{tX}] = \mu t + \sigma^2\frac{t^2}{2} + O(t^3)
+$$
+
+この結果は期待値と分散の計算に有用な場合がある.  この結果は今後空気のごとく使われる.
+
+__解答例:__ $e^{tX} = 1 + X t + X^2 t^2/2 + O(t^3)$ より,
+
+$$
+E[e^{tX}] = 1 + E[X] t + E[X^2] \frac{t^2}{2} + O(t^3).
+$$
+
+$\log(1 + a) = a - a^2/2 + O(a^3)$ を使うと,
+
+$$
+\begin{aligned}
+\log E[e^{tX}] &=
+E[X] t + E[X^2] \frac{t^2}{2} - \frac{E[X] t)^2}{2} + O(t^3) \\ &=
+E[X] t + (E[X^2] - E[X]^2) \frac{t^2}{2} + O(t^3) =
+\mu t + \sigma^2 \frac{t^2}{2} + O(t^3).
+\end{aligned}
+$$
+
+__解答終__
+
+
 ### 問題: 対数正規分布の確率密度函数
 
 $X \sim \op{Normal}(\mu, \sigma)$ のときの $Y = e^X$ が従う分布を対数正規分布と呼び,
@@ -350,7 +426,7 @@ $$
 ゆえに対数正規分布の確率密度函数は次の形になる:
 
 $$
-p(y) = \frac{1}{y\sqrt{2\pi\sigma^2}}
+p(y) = \frac{1}{\sqrt{2\pi\sigma^2}\,y}
 \exp\left(-\frac{(\log y-\mu)^2}{2\sigma^2}\right).
 $$
 
@@ -360,8 +436,129 @@ __解答終__
 plot(LogNormal(0, 1), 0, 8; label="", title="LogNormal(0, 1)")
 ```
 
+### 問題: 対数正規分布の期待値と分散
+
+$Y \sim \op{LogNormal}(\mu,\sigma)$ のとき次が成立することを示せ:
+
+$$
+E[Y^m] = e^{m\mu+m^2\sigma^2/2}, \quad
+E[Y] = e^{\mu + \sigma^2/2}, \quad
+\op{var}(Y) = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1).
+$$
+
+__解答例:__ $X = \log Y \sim \op{Normal}(\mu, \sigma)$ となるので, $E[Y^m]$ の計算で正規分布のモーメント母函数に関する結果を使え, 次が得られる:
+
+$$
+E[Y^m] = E[e^{mX}] = e^{m\mu+m^2\sigma^2/2}.
+$$
+
+ゆえに
+
+$$
+\begin{aligned}
+&
+E[Y] = e^{\mu + \sigma^2/2},
+\\ &
+\op{var}(Y) = E[Y^2] - E[Y]^2 =
+e^{2\mu + 2\sigma^2} - e^{2\mu + \sigma^2} =
+e^{2\mu + \sigma^2}(e^{\sigma^2} - 1).
+\end{aligned}
+$$
+
+__解答終__
+
+
 ## Poisson分布
 
+
+### Poisson分布の定義
+
+$\lambda > 0$ と仮定する. 確率質量函数
+
+$$
+p(k|\lambda) = e^{-\lambda}\frac{\lambda^k}{k!}
+\quad (k = 0,1,2,\ldots)
+$$
+
+で定義される無限離散分布を __Poisson分布__ (ポアソン分布)と呼び, 次のように表すことにする:
+
+$$
+\op{Poisson}(\lambda).
+$$
+
+Poisson分布は一定期間に起こるイベントの回数の分布のモデル化としてよく使われている. 
+
+```julia
+PP = []
+for λ in (1, 3, 10, 30)
+    P = bar(0:λ+6√λ, k -> pdf(Poisson(λ), k);
+        alpha=0.3, label="", title="Poisson($λ)")
+    push!(PP, P)
+end
+plot(PP...; size=(800, 150), layout=(1, 4))
+```
+
+### 問題: Poisson分布のキュムラント母函数と期待値と分散
+　」
+$K \sim \op{Poisson}(\lambda)$ のとき次が成立することを示せ:
+
+$$
+\log E[e^{tK}] = \lambda(e^t - 1), \quad
+E[K] = \op{var}(K) = \lambda.
+$$
+
+さらに $K$ の標準化 $Z$ を $Z = (K - \lambda)/\sqrt{\lambda}$ と定めると成立することも示せ:
+
+$$
+\log E[e^{tZ}] = \frac{t^2}{2} + O(\lambda^{-1/2}).
+$$
+
+__注意:__ 一般に期待値 $\mu$, 標準偏差 $\sigma$ を持つ確率変数 $X$ の __標準化__ $Z$ は $Z=(X-\mu)/\sigma$ と定義される. そのとき $\log E[e^{tZ}]$ を $X$ の標準化キュムラント母函数と呼ぶ. 標準化キュムラント母函数が $t^2/2$ にどれだけ近いかはその分布がどれだけ正規分布に近いかを表していると考えられる. 上の問題の結果より, $\lambda$ を大きくすると, Poisson分布は正規分布に近付くことがわかる.
+
+__解答例:__
+
+$$
+\begin{aligned}
+&
+E[e^{tK}] =
+e^{-\lambda}\sum_{k=0}^\infty e^{tk}\frac{\lambda^k}{k!} =
+e^{-\lambda}\sum_{k=0}^\infty \frac{(\lambda e^t)^k}{k!} =
+e^{\lambda(e^t - 1)},
+\\ &
+\log E[e^{tK}] = \lambda(e^t - 1) =
+\lambda\left(t + \frac{t^2}{2} + O(t^3)\right) =
+\lambda t + \lambda \frac{t^2}{2} + O(t^3).
+\end{aligned}
+$$
+
+$\log E[e^{tK}]$ の展開における $t$, $t^2/2$ の係数がそれぞれ $X$ の期待値, 分散になるので
+
+$$
+E[K] = \op{var}(K) = \lambda.
+$$
+
+さらに, $Z = (K - \lambda)/\sqrt{\lambda})$ について
+
+$$
+\begin{aligned}
+\log E[e^{tZ}] &=
+\log\left(e^{-\sqrt{\lambda}\, t)} E\left[e^{(t/\sqrt{\lambda})X}\right]\right) =
+\log E\left[e^{(t/\sqrt{\lambda})X}\right] - \sqrt{\lambda}\, t) \\ &=
+\lambda(e^{t/\sqrt{\lambda}} - 1) - \sqrt{\lambda}\, t) =
+\lambda\left(\frac{t}{\sqrt{\lambda}} + \frac{t^2}{2\lambda} + O(\lambda^{-3/2})\right) - \sqrt{\lambda}\,t \\ &=
+\left(\sqrt{\lambda}\, t  + \frac{t^2}{2} + O(\lambda^{-1/2})\right) - \sqrt{\lambda}\,t =
+\frac{t^2}{2} + O(\lambda^{-1/2}).
+\end{aligned}
+$$
+
+__解答終__
+
+```julia
+λ = 30
+bar(0:λ+6√λ, k -> pdf(Poisson(λ), k);
+    alpha=0.3, label="", title="Poisson($λ)")
+plot!(Normal(λ, √λ); label="normal approx.", lw=2)
+```
 
 ### 二項分布の連続時間極限
 
