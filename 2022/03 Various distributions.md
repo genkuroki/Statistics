@@ -36,16 +36,18 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>χ²分布</a></span></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ベータ分布</a></span></li><li><span><a href="#時間連続極限" data-toc-modified-id="時間連続極限-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>時間連続極限</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>χ²分布</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#t分布" data-toc-modified-id="t分布-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>t分布</a></span></li><li><span><a href="#F分布" data-toc-modified-id="F分布-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>F分布</a></span></li><li><span><a href="#二項分布とベータ分布の累積分布函数の関係" data-toc-modified-id="二項分布とベータ分布の累積分布函数の関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>二項分布とベータ分布の累積分布函数の関係</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
+using BenchmarkTools
 using Distributions
 using Printf
 using QuadGK
 using Random
 Random.seed!(4649373)
+using Roots
 using SpecialFunctions
 using StatsBase
 using StatsFuns
@@ -327,20 +329,65 @@ __解答終__
 
 ### 問題: 対数正規分布の確率密度函数
 
+$X \sim \op{Normal}(\mu, \sigma)$ のときの $Y = e^X$ が従う分布を対数正規分布と呼び,
+
+$$
+\op{LogNormal}(\mu, \sigma)
+$$
+
+と表す. 対数正規分布の確率密度函数を求めよ.
+
+__解答例:__ $x = \log y$ と積分変数を変換すると, $dx = dy/y$ なので,
+
+$$
+E[f(Y)] =
+\frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^\infty
+f(e^x) \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\,dx =
+\frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^\infty
+f(y) \exp\left(-\frac{(\log y-\mu)^2}{2\sigma^2}\right)\,\frac{dy}{y}.
+$$
+
+ゆえに対数正規分布の確率密度函数は次の形になる:
+
+$$
+p(y) = \frac{1}{y\sqrt{2\pi\sigma^2}}
+\exp\left(-\frac{(\log y-\mu)^2}{2\sigma^2}\right).
+$$
+
+__解答終__
+
+```julia
+plot(LogNormal(0, 1), 0, 8; label="", title="LogNormal(0, 1)")
+```
 
 ## Poisson分布
+
+
+### 二項分布の連続時間極限
 
 
 ## ガンマ分布
 
 
-## χ²分布
+### 負の二項分布の連続時間極限
+
+
+### χ²分布
 
 
 ## ベータ分布
 
 
-## 時間連続極限
+### 一様分布の順序統計量
+
+
+### t分布
+
+
+### F分布
+
+
+### 二項分布とベータ分布の累積分布函数の関係
 
 ```julia
 

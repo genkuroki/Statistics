@@ -78,11 +78,13 @@ $$
 
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
+using BenchmarkTools
 using Distributions
 using Printf
 using QuadGK
 using Random
 Random.seed!(4649373)
+using Roots
 using SpecialFunctions
 using StatsBase
 using StatsFuns
