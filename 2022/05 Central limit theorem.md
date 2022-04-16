@@ -36,7 +36,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li><li><span><a href="#問題:-デルタ法-(実は単なる一次近似)" data-toc-modified-id="問題:-デルタ法-(実は単なる一次近似)-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: デルタ法 (実は単なる一次近似)</a></span></li><li><span><a href="#標本平均と不偏分散の定義" data-toc-modified-id="標本平均と不偏分散の定義-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>標本平均と不偏分散の定義</a></span></li><li><span><a href="#問題:-標本平均の期待値と分散" data-toc-modified-id="問題:-標本平均の期待値と分散-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 標本平均の期待値と分散</a></span></li><li><span><a href="#問題:-不偏分散の期待値と分散" data-toc-modified-id="問題:-不偏分散の期待値と分散-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題: 不偏分散の期待値と分散</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li><li><span><a href="#問題:-デルタ法-(実は単なる一次近似)" data-toc-modified-id="問題:-デルタ法-(実は単なる一次近似)-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>問題: デルタ法 (実は単なる一次近似)</a></span></li><li><span><a href="#標本平均と不偏分散の定義" data-toc-modified-id="標本平均と不偏分散の定義-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>標本平均と不偏分散の定義</a></span></li><li><span><a href="#問題:-標本平均の期待値と分散" data-toc-modified-id="問題:-標本平均の期待値と分散-3.11"><span class="toc-item-num">3.11&nbsp;&nbsp;</span>問題: 標本平均の期待値と分散</a></span></li><li><span><a href="#問題:-不偏分散の期待値と分散" data-toc-modified-id="問題:-不偏分散の期待値と分散-3.12"><span class="toc-item-num">3.12&nbsp;&nbsp;</span>問題: 不偏分散の期待値と分散</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -57,6 +57,203 @@ using SymPy
 ```
 
 ## 大数の法則
+
+
+## 二項分布の中心極限定理
+
+
+### 二項分布の中心極限定理の内容
+
+二項分布が正規分布で近似されることを __二項分布の中心極限定理__ と呼ぶことにしよう.
+
+以下は, 試行回数 $n$, 成功確率 $p$ の二項分布(期待値と分散はそれぞれ $np$, $np(1-p)$ になる)の確率質量函数と平均 $np$, 分散 $np(1-p)$ を持つ正規分布の確率密度函数の同時プロットである.  それらを見れば, 証明しなくても, 二項分布の中心極限定理が成立していることは明らかだろう.  (証明する前にコンピュータでグラフを確認するべき!)
+
+__注意:__ 以下のグラフを見れば, 二項分布の正規分布近似の精度を高めるためには, $p$ が小さいほど $n$ を大きくする必要があることがわかる. ($p$ が $1$ に近い場合にも $n$ を大きくする必要がある.)
+
+```julia
+function plot_binomial_clt(n, p, s = 1; c = 4.5)
+    μ, σ = n*p, √(n*p*(1-p))
+    ks = max(0, round(Int, μ-c*σ)):min(n, round(Int, μ+c*σ))
+    bar(ks, pdf.(Binomial(n, p), ks); alpha=0.3, label="Binomial(n,p)")
+    plot!(Normal(μ, σ), μ-c*σ, μ+c*σ; label="Normal(μ, σ)", lw=2)
+    title!("n = $n, p = $p, μ=np, σ²=np(1-p)")
+    plot!(; xtick=0:s:n)
+end
+```
+
+```julia
+plot(plot_binomial_clt(10, 0.3), plot_binomial_clt(10, 0.1); size=(800, 250))
+```
+
+```julia
+plot(plot_binomial_clt(40, 0.3, 2), plot_binomial_clt(40, 0.1); size=(800, 250))
+```
+
+```julia
+plot(plot_binomial_clt(160, 0.3, 5), plot_binomial_clt(160, 0.1, 2); size=(800, 250))
+```
+
+### 二項分布の中心極限定理の証明の方針
+
+二項分布の中心極限定理を以下の2段階で示す.
+
+記号法に関する準備: $0 < p < 1$ は固定するが, $n, k$ を動かす.  $k$ は $n$ ごとに決まっていると仮定する.  混乱を完全に防ぐには $k$ を $k_n$ のように書いた方がよいが, 記号が煩雑になって計算を書くことが面倒になるので, 単に $k$ と書き続けることにする.  $n\to\infty$ で $0$ に収束する量を $o(1)$ と書く.  より一般に $a_n$ で割った結果が $n\to\infty$ で収束する量を $o(a_n)$ と書く.  例えば $o\left(1/\sqrt{n}\right)$ は $\sqrt{n}$ をかけた後であっても $n\to\infty$ で $0$ に収束する量になる. この記号法のもとで, Stirlingの公式は次のように書ける:
+
+$$
+n! = n^n e^{-n} \sqrt{2\pi n}\,(1 + o(1)).
+$$
+
+(1) $n$ ごとに決まっている $k$ は $n\to\infty$ で
+
+$$
+\frac{k}{n} = p + o(1)
+$$
+
+という条件を満たしていると仮定する(ここで $o(1)$ は $n\to\infty$ で $0$ に収束する量). このとき, 階乗に関するStirlingの公式による近似を二項係数の中の $n!$, $k!$, $(n-k)!$ に適用すると, 二項分布の確率質量函数
+
+$$
+P(k|n,p) = \frac{n!}{k!(n-k)!} p^k(1-p)^{n-k} \quad (k=0,1,\ldots,n)
+$$
+
+が次のように変形される:
+
+$$
+P(k|n,p) = \frac{1}{\sqrt{2\pi np(1-p)}}
+\left(\left(\frac{k/n}{p}\right)\left(\frac{1-k/n}{1-p}\right)\right)^{-n}(1 + o(1)).
+$$
+
+一度この形に整理しておくと計算の見通しが良くなる.
+
+(2) 上の近似式を示すために使った仮定 $k/n = p + o(1)$ よりも強い条件
+
+$$
+\frac{k - np}{\sqrt{n}} = x + o(1) \quad
+\left(\!\!
+\iff \frac{k}{n} = p + \frac{x}{\sqrt{n}} + o\left(\frac{1}{\sqrt{n}}\right)
+\right)
+$$
+
+を仮定すると, 次が得られる:
+
+$$
+P(k|n,p) =
+\underbrace{
+\frac{1}{\sqrt{2\pi np(1-p)}} \exp\left(-\frac{x^2}{2p(1-p)}\right)
+}_{\text{pdf of normal distribution}}
+\underbrace{\frac{1}{\sqrt{n}}}_{dx/dk}
+(1 + o(1)).
+$$
+
+これより, 
+
+$$
+K_n \sim \op{Binomial}(n, p), \quad
+X_n = \frac{K_n - np}{\sqrt{n}}, \quad
+X_\infty \sim \op{Normal}(0, p(1-p))
+$$
+
+ならば
+
+$$
+\lim_{n\to\infty} E[f(X_n)] \to E[f(X_\infty)]
+$$
+
+となることがわかる. 
+
+この結果は, $n$ が大きなとき, $K_n \sim \op{Binomial}(n, p)$ に対する $X_n = (K_n - np)/\sqrt{n}$ が従う分布が $\op{Normal}(0, p(1-p))$ で近似されることを意味している($p(1-p)$ は分布 $\op{Bernoulli}(p)$ の分散に等しい).  この結果を二項分布の中心極限定理と呼ぶ. 
+
+
+### (1) Stirlingの公式を使った二項分布の確率密度函数の近似
+
+$n$ ごとに決まっている $k$ は $n\to\infty$ で
+
+$$
+\frac{k}{n} = p + o(1) \quad \left(\!\!\iff 1 - \frac{k}{n} = 1 - p + o(1)\right)
+$$
+
+という条件を満たしていると仮定する.  $0<p<1$ と仮定していたので, $n\to\infty$ のとき $k\to\infty$ だけではなく, $n-k\to\infty$ も成立している. ゆえに $n,k,n-k$ について次のStirlingの公式が成立している:
+
+$$
+\begin{aligned}
+&
+n! = n^n e^{-n} \sqrt{2\pi n}\,(1 + o(1)), 
+\\ &
+k! = k^k e^{-k} \sqrt{2\pi k}\,(1 + o(1)),
+\\ &
+(n-k)! = (n-k)^{n-k} e^{-(n-k)} \sqrt{2\pi (n-k)}\,(1 + o(1)). 
+\end{aligned}
+$$
+
+これを代入すると
+
+$$
+\begin{aligned}
+\frac{n!}{k!(n-k)!} &=
+\frac{n^n e^{-n} \sqrt{2\pi n}}{k^k e^{-k} \sqrt{2\pi k}\;(n-k)^{n-k} e^{-(n-k)} \sqrt{2\pi (n-k)}}
+(1 + o(1))
+\\ &=
+\frac{1}{(k/n)^k(1-k/n)^{n-k}\sqrt{2\pi n(k/n)(1-k/n)}}(1 + o(1))
+\\ &=
+\frac{1}{(k/n)^k(1-k/n)^{n-k}\sqrt{2\pi np(1-p)}}(1 + o(1))
+\end{aligned}
+$$
+
+2つめの等号で分子の $e^{-n}$ と分母の $e^{-k}e^{-(n-k)}$ がキャンセルさせ, 分子分母を $n^k$ と $n^{n-k}$ と $\sqrt{2\pi n}$ で割った. 3つめの等号で $k/n = p + o(1)$, $1-k/n = 1-p + o(1)$ を使った. これを二項分布の確率質量函数
+
+$$
+P(k|n,p) = \frac{n!}{k!(n-k)!} p^k(1-p)^{n-k} \quad (k=0,1,\ldots,n)
+$$
+
+に適用すると,
+
+$$
+\begin{aligned}
+P(k|n,p) &=
+\frac{1}{\sqrt{2\pi np(1-p)}}
+\left(\frac{p}{k/n}\right)^k\left(\frac{1-p}{1-k/n}\right)^{n-k}
+(1 + o(1))
+\\ &=
+\frac{1}{\sqrt{2\pi np(1-p)}}
+\left(\left(\frac{k/n}{p}\right)^{k/n}\left(\frac{1-k/n}{1-p}\right)^{1-k/n}\right)^{-n}
+(1 + o(1)).
+\end{aligned}
+$$
+
+
+### 注意: Kullback-Leibler情報量とSanovの定理との関係
+
+前節でわざわざ最後の形に変形した理由は, 対数を取ると
+
+$$
+\log\left(
+\left(\left(\frac{k/n}{p}\right)^{k/n}\left(\frac{1-k/n}{1-p}\right)^{1-k/n}\right)^{-n}
+\right) = -n\left(\frac{k}{n}\log\frac{k/n}{p} + \left(1-\frac{k}{n}\log\frac{1-k/n}{1-p}\right)\right)
+$$
+
+となることを分かり易くするためである. これを $-n$ で割った結果は
+
+$$
+D(Q||P) = \sum_{i=1}^r Q(i) \log\frac{Q(i)}{P(i)}\quad
+\left(P(i), Q(i) > 0,\; \sum_{i=1}^r P(i) = \sum_{i=1}^r Q(i) = 1\right)
+$$
+
+の特別な場合になっている($r=2$, $P(1)=p$, $P(2)=1-p$, $Q(1)=k/n$, $Q(2)=1-k/n$).  この $D(Q||P)$ は __Kullback-Leibler情報量__ (KL情報量)と呼ばれ, そして, 上の計算結果は $r=2$ の場合のKL情報量のSanovの証明にもなっている.  Sanovの定理の易しい解説が以下の場所にある:
+
+* [Kullback-Leibler情報量とSanovの定理](https://genkuroki.github.io/documents/20160616KullbackLeibler.pdf)
+
+Sanovの定理の内容を要約すると, Kullback-Leibler情報量 $D(Q||P)$ は確率分布 $P$ に従う乱数の繰り返し生成において確率分布 $Q$ がどれだけ出て来難いかを表しているという主張になる.  上の二項分布の場合には, $Q$ に対応する $k/n$ が生じる確率が $\exp(-nD(Q||P)+O(\log n))$ の形をしていることが示されていることになるので(分母の $\sqrt{2\pi np(1-p)}$ は $\exp(O(\log n))$ になる), KL情報量 $D(Q||P)$ が大きいほど $k/n$ が生じる確率は急激に小さくなる. 
+
+Sanovの定理は統計学でのモデル選択における情報量規準の考え方の基礎になっている. KL情報量は確率論では __大偏差原理__ に出て来る. KL情報量は物理的には統計力学的な相対エントロピーの $-1$ 倍になる. このような分野を超えた広がりについては, __赤池情報量規準__ (__AIC__)で有名な赤池弘次氏による1980年の2つの論説も参照せよ:
+
+* 赤池弘次, エントロピーとモデルの尤度(<講座>物理学周辺の確率統計), 日本物理学会誌, 1980年第35巻7号, pp. 608-614.  [link](https://www.jstage.jst.go.jp/article/butsuri1946/35/7/35_7_608/_article/-char/ja/)
+* 赤池弘次, 統計的推論のパラダイムの変遷について, 統計数理研究所彙報, 1980年第27巻第1号, pp. 5-12.  [link](https://ismrepo.ism.ac.jp/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=21&item_id=32568&item_no=1)
+
+赤池弘次さんは前者のp.612に「筆者によって導入されたこの統計量はAIC(an information criterionの略記*)と呼ばれ」と書いているが, それに対して会誌編集委員会が「一般には Akaike's information criterionの略と解されている」と脚注を付けている. このことを確認するだけでもダウンロードする価値があるだろう.
+
+上で紹介した計算は二項分布の確率質量函数にStirlingの公式を適用する単純な計算に過ぎないのだが, その先には分野を超えた非常に面白い世界が広がっている.
+
+
+### (2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること
 
 
 ## 中心極限定理
