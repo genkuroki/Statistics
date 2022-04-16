@@ -35,7 +35,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#WolframAlphaの使い方" data-toc-modified-id="WolframAlphaの使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>WolframAlphaの使い方</a></span></li><li><span><a href="#一様乱数の生成の繰り返し" data-toc-modified-id="一様乱数の生成の繰り返し-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>一様乱数の生成の繰り返し</a></span></li><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#離散分布" data-toc-modified-id="離散分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>離散分布</a></span><ul class="toc-item"><li><span><a href="#離散分布と確率質量函数" data-toc-modified-id="離散分布と確率質量函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>離散分布と確率質量函数</a></span></li><li><span><a href="#離散確率変数" data-toc-modified-id="離散確率変数-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>離散確率変数</a></span></li><li><span><a href="#離散確率変数の期待値" data-toc-modified-id="離散確率変数の期待値-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>離散確率変数の期待値</a></span></li><li><span><a href="#離散確率変数の期待値を取る操作の基本性質" data-toc-modified-id="離散確率変数の期待値を取る操作の基本性質-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>離散確率変数の期待値を取る操作の基本性質</a></span></li><li><span><a href="#離散確率変数に関する確率" data-toc-modified-id="離散確率変数に関する確率-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>離散確率変数に関する確率</a></span></li><li><span><a href="#離散確率変数の分散と標準偏差" data-toc-modified-id="離散確率変数の分散と標準偏差-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>離散確率変数の分散と標準偏差</a></span></li><li><span><a href="#問題:-期待値と分散の特徴付け" data-toc-modified-id="問題:-期待値と分散の特徴付け-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 期待値と分散の特徴付け</a></span></li><li><span><a href="#カテゴリカル分布の定義" data-toc-modified-id="カテゴリカル分布の定義-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>カテゴリカル分布の定義</a></span></li><li><span><a href="#問題:-ルーレットの例の賞金の期待値と分散" data-toc-modified-id="問題:-ルーレットの例の賞金の期待値と分散-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ルーレットの例の賞金の期待値と分散</a></span></li><li><span><a href="#Bernoulli分布の定義" data-toc-modified-id="Bernoulli分布の定義-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Bernoulli分布の定義</a></span></li><li><span><a href="#問題:-Bernoulli分布の期待値と分散" data-toc-modified-id="問題:-Bernoulli分布の期待値と分散-4.11"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>問題: Bernoulli分布の期待値と分散</a></span></li><li><span><a href="#オッズの定義と例" data-toc-modified-id="オッズの定義と例-4.12"><span class="toc-item-num">4.12&nbsp;&nbsp;</span>オッズの定義と例</a></span></li><li><span><a href="#オッズとロジットおよびロジスティック変換" data-toc-modified-id="オッズとロジットおよびロジスティック変換-4.13"><span class="toc-item-num">4.13&nbsp;&nbsp;</span>オッズとロジットおよびロジスティック変換</a></span></li><li><span><a href="#Bernoulli試行の確率分布" data-toc-modified-id="Bernoulli試行の確率分布-4.14"><span class="toc-item-num">4.14&nbsp;&nbsp;</span>Bernoulli試行の確率分布</a></span></li><li><span><a href="#問題:-n=3,-p=0.3-の場合のBernoulli試行の確率分布" data-toc-modified-id="問題:-n=3,-p=0.3-の場合のBernoulli試行の確率分布-4.15"><span class="toc-item-num">4.15&nbsp;&nbsp;</span>問題: n=3, p=0.3 の場合のBernoulli試行の確率分布</a></span></li><li><span><a href="#Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること" data-toc-modified-id="Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること-4.16"><span class="toc-item-num">4.16&nbsp;&nbsp;</span>Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること</a></span></li><li><span><a href="#二項定理" data-toc-modified-id="二項定理-4.17"><span class="toc-item-num">4.17&nbsp;&nbsp;</span>二項定理</a></span></li><li><span><a href="#二項分布の定義" data-toc-modified-id="二項分布の定義-4.18"><span class="toc-item-num">4.18&nbsp;&nbsp;</span>二項分布の定義</a></span></li><li><span><a href="#問題:-二項分布の期待値と分散" data-toc-modified-id="問題:-二項分布の期待値と分散-4.19"><span class="toc-item-num">4.19&nbsp;&nbsp;</span>問題: 二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが30%の確率で出るくじを100回引いた場合" data-toc-modified-id="問題:-当たりが30%の確率で出るくじを100回引いた場合-4.20"><span class="toc-item-num">4.20&nbsp;&nbsp;</span>問題: 当たりが30%の確率で出るくじを100回引いた場合</a></span></li><li><span><a href="#幾何分布の定義" data-toc-modified-id="幾何分布の定義-4.21"><span class="toc-item-num">4.21&nbsp;&nbsp;</span>幾何分布の定義</a></span></li><li><span><a href="#幾何分布の期待値と分散" data-toc-modified-id="幾何分布の期待値と分散-4.22"><span class="toc-item-num">4.22&nbsp;&nbsp;</span>幾何分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが出る確率が1%のガチャを当たりが出るまで回す場合" data-toc-modified-id="問題:-当たりが出る確率が1%のガチャを当たりが出るまで回す場合-4.23"><span class="toc-item-num">4.23&nbsp;&nbsp;</span>問題: 当たりが出る確率が1%のガチャを当たりが出るまで回す場合</a></span></li><li><span><a href="#負の二項展開" data-toc-modified-id="負の二項展開-4.24"><span class="toc-item-num">4.24&nbsp;&nbsp;</span>負の二項展開</a></span></li><li><span><a href="#負の二項分布の定義" data-toc-modified-id="負の二項分布の定義-4.25"><span class="toc-item-num">4.25&nbsp;&nbsp;</span>負の二項分布の定義</a></span></li><li><span><a href="#負の二項分布の期待値と分散" data-toc-modified-id="負の二項分布の期待値と分散-4.26"><span class="toc-item-num">4.26&nbsp;&nbsp;</span>負の二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合" data-toc-modified-id="問題:-当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合-4.27"><span class="toc-item-num">4.27&nbsp;&nbsp;</span>問題: 当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合</a></span></li><li><span><a href="#多項分布の定義" data-toc-modified-id="多項分布の定義-4.28"><span class="toc-item-num">4.28&nbsp;&nbsp;</span>多項分布の定義</a></span></li></ul></li><li><span><a href="#連続分布など" data-toc-modified-id="連続分布など-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>連続分布など</a></span><ul class="toc-item"><li><span><a href="#連続分布と確率密度函数" data-toc-modified-id="連続分布と確率密度函数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>連続分布と確率密度函数</a></span></li><li><span><a href="#一様分布の定義" data-toc-modified-id="一様分布の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>一様分布の定義</a></span></li><li><span><a href="#正規分布の定義" data-toc-modified-id="正規分布の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>正規分布の定義</a></span></li><li><span><a href="#連続確率変数" data-toc-modified-id="連続確率変数-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>連続確率変数</a></span></li><li><span><a href="#連続確率変数に関する確率とその期待値" data-toc-modified-id="連続確率変数に関する確率とその期待値-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>連続確率変数に関する確率とその期待値</a></span></li><li><span><a href="#確率変数の確率密度函数" data-toc-modified-id="確率変数の確率密度函数-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>確率変数の確率密度函数</a></span></li><li><span><a href="#確率変数の確率質量函数" data-toc-modified-id="確率変数の確率質量函数-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>確率変数の確率質量函数</a></span></li><li><span><a href="#連続分布における確率変数の期待値を取る操作の基本性質" data-toc-modified-id="連続分布における確率変数の期待値を取る操作の基本性質-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>連続分布における確率変数の期待値を取る操作の基本性質</a></span></li><li><span><a href="#問題:-Chebyshevの不等式" data-toc-modified-id="問題:-Chebyshevの不等式-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: Chebyshevの不等式</a></span></li><li><span><a href="#問題:-Jensenの不等式" data-toc-modified-id="問題:-Jensenの不等式-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>問題: Jensenの不等式</a></span></li><li><span><a href="#問題:-相加相乗平均の不等式" data-toc-modified-id="問題:-相加相乗平均の不等式-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>問題: 相加相乗平均の不等式</a></span></li><li><span><a href="#問題:-Kullback-Leibler情報量とGibbsの情報不等式" data-toc-modified-id="問題:-Kullback-Leibler情報量とGibbsの情報不等式-5.12"><span class="toc-item-num">5.12&nbsp;&nbsp;</span>問題: Kullback-Leibler情報量とGibbsの情報不等式</a></span></li><li><span><a href="#連続分布における確率変数の分散" data-toc-modified-id="連続分布における確率変数の分散-5.13"><span class="toc-item-num">5.13&nbsp;&nbsp;</span>連続分布における確率変数の分散</a></span></li><li><span><a href="#確率変数の一次函数の期待値と分散" data-toc-modified-id="確率変数の一次函数の期待値と分散-5.14"><span class="toc-item-num">5.14&nbsp;&nbsp;</span>確率変数の一次函数の期待値と分散</a></span></li><li><span><a href="#確率変数の累積分布函数" data-toc-modified-id="確率変数の累積分布函数-5.15"><span class="toc-item-num">5.15&nbsp;&nbsp;</span>確率変数の累積分布函数</a></span></li><li><span><a href="#分位点函数-(quantile-function)" data-toc-modified-id="分位点函数-(quantile-function)-5.16"><span class="toc-item-num">5.16&nbsp;&nbsp;</span>分位点函数 (quantile function)</a></span></li><li><span><a href="#Bernoulli分布の累積分布函数" data-toc-modified-id="Bernoulli分布の累積分布函数-5.17"><span class="toc-item-num">5.17&nbsp;&nbsp;</span>Bernoulli分布の累積分布函数</a></span></li><li><span><a href="#カテゴリカル分布の累積分布函数" data-toc-modified-id="カテゴリカル分布の累積分布函数-5.18"><span class="toc-item-num">5.18&nbsp;&nbsp;</span>カテゴリカル分布の累積分布函数</a></span></li><li><span><a href="#二項分布の累積分布函数のグラフ" data-toc-modified-id="二項分布の累積分布函数のグラフ-5.19"><span class="toc-item-num">5.19&nbsp;&nbsp;</span>二項分布の累積分布函数のグラフ</a></span></li><li><span><a href="#負の二項分布の累積分布函数のグラフ" data-toc-modified-id="負の二項分布の累積分布函数のグラフ-5.20"><span class="toc-item-num">5.20&nbsp;&nbsp;</span>負の二項分布の累積分布函数のグラフ</a></span></li><li><span><a href="#一様分布の累積分布函数" data-toc-modified-id="一様分布の累積分布函数-5.21"><span class="toc-item-num">5.21&nbsp;&nbsp;</span>一様分布の累積分布函数</a></span></li><li><span><a href="#標準正規分布の累積分布函数と分位点函数" data-toc-modified-id="標準正規分布の累積分布函数と分位点函数-5.22"><span class="toc-item-num">5.22&nbsp;&nbsp;</span>標準正規分布の累積分布函数と分位点函数</a></span></li><li><span><a href="#問題:-標準正規分布の四分位数" data-toc-modified-id="問題:-標準正規分布の四分位数-5.23"><span class="toc-item-num">5.23&nbsp;&nbsp;</span>問題: 標準正規分布の四分位数</a></span></li><li><span><a href="#一様分布の期待値と分散" data-toc-modified-id="一様分布の期待値と分散-5.24"><span class="toc-item-num">5.24&nbsp;&nbsp;</span>一様分布の期待値と分散</a></span></li><li><span><a href="#標準正規分布の期待値と分散" data-toc-modified-id="標準正規分布の期待値と分散-5.25"><span class="toc-item-num">5.25&nbsp;&nbsp;</span>標準正規分布の期待値と分散</a></span></li><li><span><a href="#一様乱数の生成の繰り返しの分布" data-toc-modified-id="一様乱数の生成の繰り返しの分布-5.26"><span class="toc-item-num">5.26&nbsp;&nbsp;</span>一様乱数の生成の繰り返しの分布</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#WolframAlphaの使い方" data-toc-modified-id="WolframAlphaの使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>WolframAlphaの使い方</a></span></li><li><span><a href="#一様乱数の生成の繰り返し" data-toc-modified-id="一様乱数の生成の繰り返し-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>一様乱数の生成の繰り返し</a></span></li><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#離散分布" data-toc-modified-id="離散分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>離散分布</a></span><ul class="toc-item"><li><span><a href="#離散分布と確率質量函数" data-toc-modified-id="離散分布と確率質量函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>離散分布と確率質量函数</a></span></li><li><span><a href="#離散確率変数" data-toc-modified-id="離散確率変数-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>離散確率変数</a></span></li><li><span><a href="#離散確率変数の期待値" data-toc-modified-id="離散確率変数の期待値-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>離散確率変数の期待値</a></span></li><li><span><a href="#離散確率変数の期待値を取る操作の基本性質" data-toc-modified-id="離散確率変数の期待値を取る操作の基本性質-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>離散確率変数の期待値を取る操作の基本性質</a></span></li><li><span><a href="#離散確率変数に関する確率" data-toc-modified-id="離散確率変数に関する確率-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>離散確率変数に関する確率</a></span></li><li><span><a href="#離散確率変数の分散と標準偏差" data-toc-modified-id="離散確率変数の分散と標準偏差-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>離散確率変数の分散と標準偏差</a></span></li><li><span><a href="#問題:-期待値と分散の特徴付け" data-toc-modified-id="問題:-期待値と分散の特徴付け-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 期待値と分散の特徴付け</a></span></li><li><span><a href="#カテゴリカル分布の定義" data-toc-modified-id="カテゴリカル分布の定義-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>カテゴリカル分布の定義</a></span></li><li><span><a href="#問題:-ルーレットの例の賞金の期待値と分散" data-toc-modified-id="問題:-ルーレットの例の賞金の期待値と分散-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ルーレットの例の賞金の期待値と分散</a></span></li><li><span><a href="#Bernoulli分布の定義" data-toc-modified-id="Bernoulli分布の定義-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Bernoulli分布の定義</a></span></li><li><span><a href="#問題:-Bernoulli分布の期待値と分散" data-toc-modified-id="問題:-Bernoulli分布の期待値と分散-4.11"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>問題: Bernoulli分布の期待値と分散</a></span></li><li><span><a href="#オッズの定義と例" data-toc-modified-id="オッズの定義と例-4.12"><span class="toc-item-num">4.12&nbsp;&nbsp;</span>オッズの定義と例</a></span></li><li><span><a href="#オッズとロジットおよびロジスティック変換" data-toc-modified-id="オッズとロジットおよびロジスティック変換-4.13"><span class="toc-item-num">4.13&nbsp;&nbsp;</span>オッズとロジットおよびロジスティック変換</a></span></li><li><span><a href="#Bernoulli試行の確率分布" data-toc-modified-id="Bernoulli試行の確率分布-4.14"><span class="toc-item-num">4.14&nbsp;&nbsp;</span>Bernoulli試行の確率分布</a></span></li><li><span><a href="#問題:-n=3,-p=0.3-の場合のBernoulli試行の確率分布" data-toc-modified-id="問題:-n=3,-p=0.3-の場合のBernoulli試行の確率分布-4.15"><span class="toc-item-num">4.15&nbsp;&nbsp;</span>問題: n=3, p=0.3 の場合のBernoulli試行の確率分布</a></span></li><li><span><a href="#Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること" data-toc-modified-id="Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること-4.16"><span class="toc-item-num">4.16&nbsp;&nbsp;</span>Bernoulli試行から応用上基本的かつ重要な確率分布が大量に得られること</a></span></li><li><span><a href="#二項定理" data-toc-modified-id="二項定理-4.17"><span class="toc-item-num">4.17&nbsp;&nbsp;</span>二項定理</a></span></li><li><span><a href="#二項分布の定義" data-toc-modified-id="二項分布の定義-4.18"><span class="toc-item-num">4.18&nbsp;&nbsp;</span>二項分布の定義</a></span></li><li><span><a href="#問題:-二項分布の期待値と分散" data-toc-modified-id="問題:-二項分布の期待値と分散-4.19"><span class="toc-item-num">4.19&nbsp;&nbsp;</span>問題: 二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが30%の確率で出るくじを100回引いた場合" data-toc-modified-id="問題:-当たりが30%の確率で出るくじを100回引いた場合-4.20"><span class="toc-item-num">4.20&nbsp;&nbsp;</span>問題: 当たりが30%の確率で出るくじを100回引いた場合</a></span></li><li><span><a href="#幾何分布の定義" data-toc-modified-id="幾何分布の定義-4.21"><span class="toc-item-num">4.21&nbsp;&nbsp;</span>幾何分布の定義</a></span></li><li><span><a href="#幾何分布の期待値と分散" data-toc-modified-id="幾何分布の期待値と分散-4.22"><span class="toc-item-num">4.22&nbsp;&nbsp;</span>幾何分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが出る確率が1%のガチャを当たりが出るまで回す場合" data-toc-modified-id="問題:-当たりが出る確率が1%のガチャを当たりが出るまで回す場合-4.23"><span class="toc-item-num">4.23&nbsp;&nbsp;</span>問題: 当たりが出る確率が1%のガチャを当たりが出るまで回す場合</a></span></li><li><span><a href="#負の二項展開" data-toc-modified-id="負の二項展開-4.24"><span class="toc-item-num">4.24&nbsp;&nbsp;</span>負の二項展開</a></span></li><li><span><a href="#負の二項分布の定義" data-toc-modified-id="負の二項分布の定義-4.25"><span class="toc-item-num">4.25&nbsp;&nbsp;</span>負の二項分布の定義</a></span></li><li><span><a href="#負の二項分布の期待値と分散" data-toc-modified-id="負の二項分布の期待値と分散-4.26"><span class="toc-item-num">4.26&nbsp;&nbsp;</span>負の二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合" data-toc-modified-id="問題:-当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合-4.27"><span class="toc-item-num">4.27&nbsp;&nbsp;</span>問題: 当たりが出る確率が5%のガチャを当たりが5回出るまで回す場合</a></span></li><li><span><a href="#多項分布の定義" data-toc-modified-id="多項分布の定義-4.28"><span class="toc-item-num">4.28&nbsp;&nbsp;</span>多項分布の定義</a></span></li></ul></li><li><span><a href="#連続分布など" data-toc-modified-id="連続分布など-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>連続分布など</a></span><ul class="toc-item"><li><span><a href="#連続分布と確率密度函数" data-toc-modified-id="連続分布と確率密度函数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>連続分布と確率密度函数</a></span></li><li><span><a href="#一様分布の定義" data-toc-modified-id="一様分布の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>一様分布の定義</a></span></li><li><span><a href="#正規分布の定義" data-toc-modified-id="正規分布の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>正規分布の定義</a></span></li><li><span><a href="#連続確率変数" data-toc-modified-id="連続確率変数-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>連続確率変数</a></span></li><li><span><a href="#連続確率変数に関する確率とその期待値" data-toc-modified-id="連続確率変数に関する確率とその期待値-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>連続確率変数に関する確率とその期待値</a></span></li><li><span><a href="#確率変数の確率密度函数" data-toc-modified-id="確率変数の確率密度函数-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>確率変数の確率密度函数</a></span></li><li><span><a href="#確率変数の確率質量函数" data-toc-modified-id="確率変数の確率質量函数-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>確率変数の確率質量函数</a></span></li><li><span><a href="#連続分布における確率変数の期待値を取る操作の基本性質" data-toc-modified-id="連続分布における確率変数の期待値を取る操作の基本性質-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>連続分布における確率変数の期待値を取る操作の基本性質</a></span></li><li><span><a href="#問題:-Chebyshevの不等式" data-toc-modified-id="問題:-Chebyshevの不等式-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: Chebyshevの不等式</a></span></li><li><span><a href="#問題:-Jensenの不等式" data-toc-modified-id="問題:-Jensenの不等式-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>問題: Jensenの不等式</a></span></li><li><span><a href="#問題:-相加相乗平均の不等式" data-toc-modified-id="問題:-相加相乗平均の不等式-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>問題: 相加相乗平均の不等式</a></span></li><li><span><a href="#問題:-Kullback-Leibler情報量とGibbsの情報不等式" data-toc-modified-id="問題:-Kullback-Leibler情報量とGibbsの情報不等式-5.12"><span class="toc-item-num">5.12&nbsp;&nbsp;</span>問題: Kullback-Leibler情報量とGibbsの情報不等式</a></span></li><li><span><a href="#連続分布における確率変数の分散" data-toc-modified-id="連続分布における確率変数の分散-5.13"><span class="toc-item-num">5.13&nbsp;&nbsp;</span>連続分布における確率変数の分散</a></span></li><li><span><a href="#問題:-正規分布モデルによる他の分布の最良近似" data-toc-modified-id="問題:-正規分布モデルによる他の分布の最良近似-5.14"><span class="toc-item-num">5.14&nbsp;&nbsp;</span>問題: 正規分布モデルによる他の分布の最良近似</a></span></li><li><span><a href="#確率変数の一次函数の期待値と分散" data-toc-modified-id="確率変数の一次函数の期待値と分散-5.15"><span class="toc-item-num">5.15&nbsp;&nbsp;</span>確率変数の一次函数の期待値と分散</a></span></li><li><span><a href="#確率変数の累積分布函数" data-toc-modified-id="確率変数の累積分布函数-5.16"><span class="toc-item-num">5.16&nbsp;&nbsp;</span>確率変数の累積分布函数</a></span></li><li><span><a href="#分位点函数-(quantile-function)" data-toc-modified-id="分位点函数-(quantile-function)-5.17"><span class="toc-item-num">5.17&nbsp;&nbsp;</span>分位点函数 (quantile function)</a></span></li><li><span><a href="#Bernoulli分布の累積分布函数" data-toc-modified-id="Bernoulli分布の累積分布函数-5.18"><span class="toc-item-num">5.18&nbsp;&nbsp;</span>Bernoulli分布の累積分布函数</a></span></li><li><span><a href="#カテゴリカル分布の累積分布函数" data-toc-modified-id="カテゴリカル分布の累積分布函数-5.19"><span class="toc-item-num">5.19&nbsp;&nbsp;</span>カテゴリカル分布の累積分布函数</a></span></li><li><span><a href="#二項分布の累積分布函数のグラフ" data-toc-modified-id="二項分布の累積分布函数のグラフ-5.20"><span class="toc-item-num">5.20&nbsp;&nbsp;</span>二項分布の累積分布函数のグラフ</a></span></li><li><span><a href="#負の二項分布の累積分布函数のグラフ" data-toc-modified-id="負の二項分布の累積分布函数のグラフ-5.21"><span class="toc-item-num">5.21&nbsp;&nbsp;</span>負の二項分布の累積分布函数のグラフ</a></span></li><li><span><a href="#一様分布の累積分布函数" data-toc-modified-id="一様分布の累積分布函数-5.22"><span class="toc-item-num">5.22&nbsp;&nbsp;</span>一様分布の累積分布函数</a></span></li><li><span><a href="#標準正規分布の累積分布函数と分位点函数" data-toc-modified-id="標準正規分布の累積分布函数と分位点函数-5.23"><span class="toc-item-num">5.23&nbsp;&nbsp;</span>標準正規分布の累積分布函数と分位点函数</a></span></li><li><span><a href="#問題:-標準正規分布の四分位数" data-toc-modified-id="問題:-標準正規分布の四分位数-5.24"><span class="toc-item-num">5.24&nbsp;&nbsp;</span>問題: 標準正規分布の四分位数</a></span></li><li><span><a href="#一様分布の期待値と分散" data-toc-modified-id="一様分布の期待値と分散-5.25"><span class="toc-item-num">5.25&nbsp;&nbsp;</span>一様分布の期待値と分散</a></span></li><li><span><a href="#標準正規分布の期待値と分散" data-toc-modified-id="標準正規分布の期待値と分散-5.26"><span class="toc-item-num">5.26&nbsp;&nbsp;</span>標準正規分布の期待値と分散</a></span></li><li><span><a href="#一様乱数の生成の繰り返しの分布" data-toc-modified-id="一様乱数の生成の繰り返しの分布-5.27"><span class="toc-item-num">5.27&nbsp;&nbsp;</span>一様乱数の生成の繰り返しの分布</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ## WolframAlphaの使い方
@@ -549,7 +549,7 @@ categ = Categorical(0.1, 0.2, 0.3, 0.4)
 ```
 
 ```julia
-bar(support(categ), a -> pdf(categ, a); label="", title="Categorical(0.1, 0.2, 0.3, 0.4)", alpha=0.7)
+bar(support(categ), a -> pdf(categ, a); label="", title="Categorical(0.1, 0.2, 0.3, 0.4)", alpha=0.5)
 ```
 
 ### 問題: ルーレットの例の賞金の期待値と分散
@@ -701,7 +701,7 @@ bern = Bernoulli(p)
 ```
 
 ```julia
-bar(0:1, x -> pdf(bern, 1 - x); label="", title="Bernoulli(0.3)", alpha=0.7)
+bar(0:1, x -> pdf(bern, 1 - x); label="", title="Bernoulli(0.3)", alpha=0.5)
 plot!(; xtick=(0:1, 1 .- (0:1)), ytick=0:0.1:1)
 ```
 
@@ -999,11 +999,11 @@ $$
 ```julia
 bin = Binomial(16, 0.3)
 x = support(bin)
-bar(x, x -> pdf(bin, x); label="", title="Binomial(20, 0.3)", alpha=0.7)
+bar(x, x -> pdf(bin, x); label="", title="Binomial(20, 0.3)", alpha=0.5)
 plot!(; xtick=x)
 ```
 
-二項分布 $\op{Binomial}(n, p)$ はその期待値 $np$ が大きなとき, $\op{Binomial}(n, p)$ 自身と等しい平均 $\mu=np$ と分散 $\sigma^2 = np(1-p)$ を持つ正規分布で近似されること(二項分布の中心極限定理)がよく知られている. (実際には $np$ がそう大きくなくても悪くない近似になる. これは階乗のStirlingの公式による近似がそう悪くならないからだと考えられる.)
+二項分布 $\op{Binomial}(n, p)$ はその期待値 $np$ と反対側の期待値 $n(1-p)$ の両方が大きなとき, $\op{Binomial}(n, p)$ と等しい平均 $\mu=np$ と分散 $\sigma^2 = np(1-p)$ を持つ正規分布で近似されること(__二項分布の中心極限定理__)がよく知られている. (実際には $np$ がそう大きくなくても悪くない近似になる. これは階乗のStirlingの公式による近似がそう悪くならないからだと考えられる.)
 
 二項分布の中心極限定理は階乗に関するStirlingの(近似)公式を使えば示せるが, そこそこ面倒な計算が必要になる.  そのような計算を避けたい人も避けなかった人も, コンピュータで二項分布と正規分布のグラフを重ねてプロットすれば二項分布が正規分布で近似されることをすぐに納得できると思う.  正規分布については後で詳しく説明する.
 
@@ -1011,12 +1011,12 @@ plot!(; xtick=x)
 bin = Binomial(16, 0.3)
 μ, σ = mean(bin), std(bin)
 x = support(bin)
-bar(x, x -> pdf(bin, x); label="Binomial(20, 0.3)", alpha=0.7)
+bar(x, x -> pdf(bin, x); label="Binomial(20, 0.3)", alpha=0.5)
 plot!(; xtick=x)
 plot!(Normal(μ, σ); label="normal approx.", lw=2, c=:red)
 ```
 
-$p$ が小さな場合の二項分布は期待値 $np$ のPoisson分布で近似される.
+次のセルを見ればわかるように, $p$ が小さな場合の二項分布は期待値 $np$ のPoisson分布で近似される.
 
 より正確に言うと, 固定された $\lambda > 0$ について, $p = \lambda/n$ とおくと, 二項分布 $\op{Binomial}(n, p)$ は $n\to\infty$ でPoisson分布 $\op{Poisson}(\lambda)$ に近付く.  Poisson分布(ポアソン分布)の定義を知らない人はこれをPoisson分布の定義だと思ってもよい.  この点については後で説明する予定である.
 
@@ -1027,7 +1027,7 @@ bin = Binomial(n, p)
 μ, σ = mean(bin), std(bin)
 x = 0:5λ
 groupedbar(x, [pdf.(bin, x) pdf.(Poisson(n*p), x)];
-    label=["Binomial(300, 0.01)" "Poisson($(n*p))"], alpha=0.7)
+    label=["Binomial(300, 0.01)" "Poisson($(n*p))"], alpha=0.5)
 plot!(; xtick=x, xlim=(-2, 16.5))
 plot!(Normal(μ, σ); label="normal approximation", lw=1, c=:red, ls=:dash)
 ```
@@ -1039,7 +1039,7 @@ bin = Binomial(n, p)
 μ, σ = mean(bin), std(bin)
 x = 0:5λ
 groupedbar(x, [pdf.(bin, x) pdf.(Poisson(n*p), x)];
-    label=["Binomial(300, 0.01)" "Poisson($(n*p))"], alpha=0.7)
+    label=["Binomial(300, 0.01)" "Poisson($(n*p))"], alpha=0.5)
 plot!(; xtick=x, xlim=(-2, 16.5))
 plot!(Normal(μ, σ); label="normal approximation", lw=1, c=:red, ls=:dash)
 ```
@@ -1168,7 +1168,7 @@ $1 - (1 - p)$ が $p$ になることがこれ以後頻繁に現れる.
 ```julia
 geom = Geometric(0.3)
 x = 0:16
-bar(x, x -> pdf(geom, x); label="", title="Geometric(0.3)", alpha=0.7)
+bar(x, x -> pdf(geom, x); label="", title="Geometric(0.3)", alpha=0.5)
 plot!(; xtick = x)
 ```
 
@@ -1182,7 +1182,7 @@ $$
 
 ```julia
 geom = Geometric(0.03)
-p, = params(geom)
+p = succprob(geom)
 x = 0:200
 plot(x, x -> pdf(geom, x); label="Geometric($p)")
 plot!(Exponential(1/p), 0, 200; ls=:dash, label="Exponential(1/$p)")
@@ -1559,7 +1559,7 @@ negbin = NegativeBinomial(10, 0.5)
 μ, σ = mean(negbin), std(negbin)
 x = 0:round(Int, μ + 4σ)
 bar(x, x -> pdf(negbin, x); label="",
-    title="NegativeBinomial(10, 0.5)", alpha=0.7)
+    title="NegativeBinomial(10, 0.5)", alpha=0.5)
 plot!(; xtick=0:5:maximum(x)+5)
 ```
 
@@ -2205,6 +2205,82 @@ $$
 $X$ の従う分布の名前が $\op{Dist}$ のとき $\op{var}(X)$ を __分布 $\op{Dist}$ の分散__ と呼ぶ. 標準偏差についても同様とする.
 
 
+<!-- #region -->
+### 問題: 正規分布モデルによる他の分布の最良近似
+
+$p(x)$ が平均 $\mu$, 分散 $\sigma^2$ を持つ正規分布の確率密度函数であるとする:
+
+$$
+p(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x-\mu)^2/(2\sigma^2)}.
+$$
+
+確率密度函数 $q(x)$ が定める分布の平均と分散をそれぞれ $\mu_0$, $\sigma_0^2$ と書こう:
+
+$$
+\mu_0 = \int x\,q(x)\,dx, \quad \sigma_0 = \int (x - \mu_0)^2\,q(x)\,dx.
+$$
+
+ここで $\int\cdots dx$ は実数直線全体での定積分を表す. このとき, 少し上の方で定義したKullback-Leibler情報量
+
+$$
+D(q||p) = \int q(x)\log\frac{q(x)}{p(x)}\,dx =
+\int (-\log p(x))q(x)\,dx + \int q(x)\log q(x)\,dx
+$$
+
+は次の形になることを示せ:
+
+$$
+D(q||p) =
+\frac{\sigma_0^2 + (\mu-\mu_0)^2}{2\sigma^2} +\log\sigma^2 + \log\sqrt{2\pi} +
+\int q(x)\log q(x)\,dx.
+$$
+
+特にこの場合には, 固定された $q(x)$ に対して, $D(q||p)$ を最小にする $\mu, \sigma^2$ の組み合わせは $\mu=\mu_0$, $\sigma^2=\sigma_0^2$ になることを示せ.
+
+__解答例:__ $(x - \mu)^2 = ((x-\mu_0)-(\mu-\mu_0))^2 = (x-\mu_0)^2-2(\mu-\mu_0)(x-\mu_0)+(\mu-\mu_0)^2$ と正規分布の密度函数 $p(x)$ の定義より,
+
+$$
+\begin{aligned}
+-\log p(x) &=
+\frac{(x - \mu)^2}{2\sigma^2} + \log\sigma^2 + \log\sqrt{2\pi} \\ &=
+\frac{(x-\mu_0)^2 -2(\mu-\mu_0)(x-\mu_0)+(\mu-\mu_0)^2}{2\sigma^2} + \frac{1}{2}\log\sigma^2 + \log\sqrt{2\pi}
+\end{aligned}
+$$
+
+ゆえに $\mu_0$ と $\sigma_0^2$ の定義を使うと,
+
+$$
+D(q||p) =
+\frac{\sigma_0^2 + (\mu-\mu_0)^2}{2\sigma^2} + \frac{1}{2}\log\sigma^2 + \log\sqrt{2\pi} +
+\int q(x)\log q(x)\,dx.
+$$
+
+任意に固定された $\sigma^2>0$ について, これを最小化する $\mu$ は $\mu=\mu_0$ である.  そのとき,
+
+$$
+D(q||p) =
+\frac{1}{2}\left(\frac{\sigma_0^2}{\sigma^2} + \log\sigma^2\right) + (\text{constant of}\; \sigma^2)
+$$
+
+これを $\sigma^2$ の函数とみなして増減表を書くと, これを最小化する $\sigma^2$ は $\sigma^2=\sigma_0^2$ であることがわかる. 実際, $t=\sigma^2$, $t_0 = \sigma_0^2$, $f(t) = t_0/t + \log t$ とおくと, $f'(t) = (t - t_0)/t^2$ なので,
+
+$$
+\begin{array}{c|ccccc}
+t     & 0       & \cdots   & t_0          & \cdots   & \infty \\
+\hline
+f'(t) &         & -        & 0            & +        &        \\
+\hline
+f(t)  & \infty  & \searrow & 1 + \log t_0 & \nearrow & \infty \\
+\end{array}
+$$
+
+と増減表を書ける.
+
+
+__解答終__
+
+__注意:__ 以上の結果は, 与えられた分布 $q(x)$ をKullback-Leibler情報量 $D(q||p)$ の最小化の意味で裁量近似する正規分布 $p(x)$ は $q(x)$ と同じ平均と分散を持つ正規分布になることを意味している. これ以後, 分布を定義するごとにその期待値(平均)と分散を計算して行くことになるが, そのときやっていることは本質的に「正規分布による最良近似」の計算だということになる.
+<!-- #endregion -->
 
 ### 確率変数の一次函数の期待値と分散
 
@@ -2494,6 +2570,7 @@ $$
 
 ```julia
 function E(f, dist::ContinuousUnivariateDistribution)
+    # quadgk(f, a, b)[1] は数値積分してくれる函数
     quadgk(x -> f(x) * pdf(dist, x), extrema(dist)...)[1]
 end
 ```
@@ -2622,6 +2699,12 @@ series(exp(t^2//2 + κ3 * t^3//6 + κ4 * t^4//24 + κ5 * t^5//120), t)
 
 ```julia
 series(log(1 + t^2//2 + μ3 * t^3//6 + μ4 * t^4//24 + μ5 * t^5//120), t)
+```
+
+$Z\sim\op{Normal}()$ (標準正規分布)のとき, $E[Z^{2k}] = 1\cdot 3\cdots(2k-1)$ となる.
+
+```julia
+[(prod(1:2:2k-1), E(z -> z^(2k), Normal())) for k in 1:7]
 ```
 
 ### 一様乱数の生成の繰り返しの分布
