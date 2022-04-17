@@ -2252,7 +2252,7 @@ $$
 __対数ガンマ函数とディガンマ函数とトリガンマ函数のグラフ:__
 
 ```julia
-plot(loggamma, eps(), 8; label="y = log Γ(x)", ylim=(-0.2, 10.2))
+plot(loggamma, eps(), 8; label="y = log Γ(x)", ylim=(-0.5, 10.2))
 plot!(x -> x*log(x) - x - (1/2)*log(x) + log(√(2π));
     label="Stirling approx.", ls=:dash)
 plot!(; legend=:top)
