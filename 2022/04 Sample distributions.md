@@ -36,7 +36,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布" data-toc-modified-id="標本分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布の定義" data-toc-modified-id="独立同分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.7.5"><span class="toc-item-num">1.7.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#無相関性" data-toc-modified-id="無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>無相関性</a></span><ul class="toc-item"><li><span><a href="#共分散と相関係数の定義および無相関の定義" data-toc-modified-id="共分散と相関係数の定義および無相関の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>共分散と相関係数の定義および無相関の定義</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散" data-toc-modified-id="問題:--無相関な確率変数達の和の分散-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-キュムラントのロケーションスケール変換" data-toc-modified-id="問題:-キュムラントのロケーションスケール変換-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: キュムラントのロケーションスケール変換</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布" data-toc-modified-id="標本分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布の定義" data-toc-modified-id="独立同分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.7.5"><span class="toc-item-num">1.7.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.7.6"><span class="toc-item-num">1.7.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#無相関性" data-toc-modified-id="無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>無相関性</a></span><ul class="toc-item"><li><span><a href="#共分散と相関係数の定義および無相関の定義" data-toc-modified-id="共分散と相関係数の定義および無相関の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>共分散と相関係数の定義および無相関の定義</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散" data-toc-modified-id="問題:--無相関な確率変数達の和の分散-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-キュムラントのロケーションスケール変換" data-toc-modified-id="問題:-キュムラントのロケーションスケール変換-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: キュムラントのロケーションスケール変換</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -642,20 +642,27 @@ $$
 
 そして, 与えられた $n, k$ について, Sternの信頼区間はこのP値が $\alpha$ 以上になるパラメータ $p$ の範囲として定義される.  (実はその定義だと区間になるとは限らない場合があるので, 適当に定義を訂正することになる.)
 
+
+#### Sternの信頼区間を与えるP値函数の実装例
+
+以下はSternの信頼区間を与えるP値函数の実装例である. 実装の仕方によって計算効率に大きな違いが生じていることにも注目せよ.
+
 ```julia
 x ⪅ y = x < y || x ≈ y
 
-# naive implementation is very slow
+# Naive implementation is terrible slow.
 function pvalue_stern_naive(n, k, p)
     bin = Binomial(n, p)
     sum(pdf(bin, j) for j in support(bin) if pdf(bin, j) ⪅ pdf(bin, k))
 end
 
-function pvalue_stern(n, k, p)
+# Second implementation is very slow.
+function pvalue_stern_old(n, k, p)
     bin = Binomial(n, p)
+    Pk = pdf(bin, k)
+    Pk == 0 && return Pk
     modebin = mode(bin)
     if k < modebin
-        Pk = pdf(bin, k)
         local l
         for outer l in modebin+1:n+1
             pdf(bin, l) ⪅ Pk && break
@@ -663,7 +670,6 @@ function pvalue_stern(n, k, p)
         cdf(bin, k) + ccdf(bin, l-1)
     elseif k > modebin
         ran = modebin-1:-1:-1
-        Pk = pdf(bin, k)
         local l
         for outer l in modebin-1:-1:-1
             pdf(bin, l) ⪅ Pk && break
@@ -673,17 +679,60 @@ function pvalue_stern(n, k, p)
         one(p)
     end
 end
+
+function _search_boundary(f, x0, Δx, param)
+    x = x0
+    if f(x, param)
+        while f(x - Δx, param) x -= Δx end
+    else
+        x += Δx
+        while !f(x, param) x += Δx end
+    end
+    x
+end
+
+_pdfle(x, (dist, y)) =  pdf(dist, x) ⪅ y
+
+function pvalue_stern(n, k, p)
+    bin = Binomial(n, p)
+    Pk = pdf(bin, k)
+    Pk == 0 && return Pk
+    modebin = mode(bin)
+    if k < modebin
+        l = _search_boundary(_pdfle, 2modebin - k, 1, (bin, Pk))
+        cdf(bin, k) + ccdf(bin, l-1)
+    elseif k > modebin
+        l = _search_boundary(_pdfle, 2modebin - k, -1, (bin, Pk))
+        cdf(bin, l) + ccdf(bin, k-1)
+    else # k == modebin
+        one(p)
+    end
+end
 ```
 
 ```julia
 # (3)の場合に
-# pvalue_stern_naive は pvalue_stern よりも数百倍遅く,
-# pvalue_stern は pvalue_clopper_pearson よりも数百倍遅い.
-a = @btime pvalue_stern_naive(694844 + 705585, 694844, 0.5)
-b = @btime pvalue_stern(694844 + 705585, 694844, 0.5)
-c = @btime pvalue_clopper_pearson(694844 + 705585, 694844, 0.5)
-@show a ≈ b ≈ c
-a, b, c
+# pvalue_stern_naive は pvalue_stern_old よりも数百倍遅く,
+# pvalue_stern_old は pvalue_stern よりも数百倍遅く,
+# pvalue_stern は pvalue_clopper_pearson よりも少し遅い.
+n = 694844 + 705585
+k = 694844
+a = @btime pvalue_stern_naive($n, $k, 0.5)
+b = @btime pvalue_stern_old($n, $k, 0.5)
+c = @btime pvalue_stern($n, $k, 0.5)
+d = @btime pvalue_clopper_pearson($n, $k, 0.5)
+@show a ≈ b ≈ c ≈ d
+a, b, c, d
+```
+
+```julia
+# 極端な場合
+n = 694844 + 705585
+k = 600000
+b = @btime pvalue_stern_old($n, $k, 0.5)
+c = @btime pvalue_stern($n, $k, 0.5)
+d = @btime pvalue_clopper_pearson($n, $k, 0.5)
+b, c, d
 ```
 
 ```julia
@@ -706,6 +755,8 @@ plot(title="p-value functions for n = $n, k = $k", ytick=0:0.1:1)
 plot_pvalue_function!(pvalue_stern, n, k; label="Stern")
 plot_pvalue_function!(pvalue_clopper_pearson, n, k; label="Clopper-Pearson", ls=:dash)
 ```
+
+このように数値的にぴったり一致する場合にはClopper-Pearsonの信頼区間を与えるP値函数とSternの信頼区間のどちらを使うか悩む必要はないだろう.  どちらを使っても(ほぼ)同じ結果が得られる.
 
 ```julia
 # Clopper-Pearsonの信頼区間を与えるP値函数とSternの信頼区間を与えるP値函数の比較
