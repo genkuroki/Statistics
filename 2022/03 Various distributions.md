@@ -16,7 +16,7 @@ jupyter:
 # 色々な確率分布
 
 * 黒木玄
-* 2022-04-11～2022-04-12
+* 2022-04-11～2022-04-18
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -31,6 +31,8 @@ $
 * [Julia言語のインストールの仕方の一例](https://nbviewer.org/github/genkuroki/msfd28/blob/master/install.ipynb)
 
 自明な誤りを見つけたら, 自分で訂正して読んで欲しい.  大文字と小文字の混同や書き直しが不完全な場合や符号のミスは非常によくある.
+
+このノートに書いてある式を文字通りにそのまま読んで正しいと思ってしまうとひどい目に会う可能性が高い. しかし, 数が使われている文献には大抵の場合に文字通りに読むと間違っている式や主張が書いてあるので, 内容を理解した上で訂正しながら読んで利用しなければいけない. 実践的に数学を使う状況では他人が書いた式をそのまま信じていけない.
 
 このノートの内容よりもさらに詳しいノートを自分で作ると勉強になるだろう.  膨大な時間を取られることになるが, このノートの内容に関係することで飯を食っていく可能性がある人にはそのためにかけた時間は無駄にならないと思われる.
 
@@ -49,6 +51,7 @@ using Random
 Random.seed!(4649373)
 using Roots
 using SpecialFunctions
+using StaticArrays
 using StatsBase
 using StatsFuns
 using StatsPlots
