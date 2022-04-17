@@ -2399,9 +2399,9 @@ function plot_dirichlet!(d::Dirichlet; valmax=Inf, kwargs...)
     f(p, q) = _pdf_dirichlet(d, p, q; valmax)
     p = range(0, 1, length=401)
     q = range(0, 1, length=401)
-    annotate!((1.00, 0.10, text("(1,0,0)", 8, -55.0, :right)))
-    annotate!((0.55, 1.00, text("(0,1,0)", 8, -55.0, :left)))
-    annotate!((0.00, 0.08, text("(0,0,1)", 8,  55.0, :left)))
+    annotate!((1.00, 0.10, text("(1,0,0)", 8, -58.0, :right)))
+    annotate!((0.55, 1.00, text("(0,1,0)", 8, -58.0, :left)))
+    annotate!((0.00, 0.08, text("(0,0,1)", 8,  58.0, :left)))
     heatmap!(p, q, f.(p',q); kwargs...)
 end
 
@@ -2423,17 +2423,17 @@ plot_dirichlet(α₁, α₂, α₃ ; valmax=Inf, kwargs...) =
 ```julia
 plot(plot_dirichlet(0.5, 0.5, 0.5; valmax=3),
     plot_dirichlet(0.5, 0.5, 1; valmax=3),
-    plot_dirichlet(0.5, 1, 1; valmax=3); size=(750, 200), layout=(1,3))
+    plot_dirichlet(0.5, 1, 1; valmax=3); size=(800, 240), layout=(1,3))
 ```
 
 ```julia
 plot(plot_dirichlet(2, 3, 5), plot_dirichlet(4, 6, 10), plot_dirichlet(8, 12, 20);
-    size=(750, 200), layout=(1,3))
+    size=(800, 240), layout=(1,3))
 ```
 
 ```julia
 plot(plot_dirichlet(10, 15, 25), plot_dirichlet(20, 30, 60), plot_dirichlet(40, 60, 120);
-    size=(750, 200), layout=(1,3))
+    size=(800, 240), layout=(1,3))
 ```
 
 __パラメータの大きなDirichlet分布は多変量正規分布で近似され, パラメータを大きくして行くと分布は一点に集中して行く.__
