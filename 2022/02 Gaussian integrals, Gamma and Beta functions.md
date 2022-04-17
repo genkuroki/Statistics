@@ -1358,6 +1358,16 @@ $$
 \sqrt{2}\,\Gamma(1/2) = \sqrt{2\pi}.
 $$
 
+```julia
+beta_approx_of_gamma(n, α) = exp(α*log(n) + logbeta(α, n))
+x = range(0, 30, 1000)
+plot(; legend=:topleft, yscale=:log10)
+plot!(x, gamma; label="Γ(x)", ls=:dash)
+for n in (10, 30, 100, 300)
+    plot!(x, x -> beta_approx_of_gamma(n, x); label="n = $n")
+end
+title!("y = nˣ B(x, n)")
+```
 
 ### ベータ函数の別の基本的表示
 
