@@ -99,8 +99,8 @@ plot!(; ytick=0:0.1:1)
 z = 0.3
 plot!([(0, z), (√(-log(z)), z)]; label="", lw=2)
 plot!(; xlim=(0, 3))
-annotate!(0.2, 0.2, ("√(-log(0.3))", 10, :left))
-annotate!(1.2, 0.3, ("← exp(-(0.3)²)", 10, :left))
+annotate!(1.1, 0.2, ("√(-log(0.3)) = r", 10, :right))
+annotate!(1.2, 0.3, ("← 0.3 = exp(-r²)", 10, :left))
 ```
 
 この図より, 高さ $0 < z \le 1$ での山の切断面は, 半径 $\sqrt{-\log z}$ の円盤になる.  その円盤の面積 $\pi(-\log z)$ を $0 < z \le 1$ について積分すれば上の山の体積(= Gauss積分の2乗 $I^2$ の値)が得られる:
