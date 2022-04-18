@@ -683,6 +683,10 @@ function pvalue_stern_old(n, k, p)
     end
 end
 
+### efficient implementation
+
+_pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
+
 function _search_boundary(f, x0, Δx, param)
     x = x0
     if f(x, param)
@@ -694,23 +698,21 @@ function _search_boundary(f, x0, Δx, param)
     x
 end
 
-_pdfle(x, (dist, y)) =  pdf(dist, x) ⪅ y
-
-function pvalue_stern(n, k, p)
-    bin = Binomial(n, p)
-    Pk = pdf(bin, k)
-    Pk == 0 && return Pk
-    modebin = mode(bin)
-    if k < modebin
-        l = _search_boundary(_pdfle, 2modebin - k, 1, (bin, Pk))
-        cdf(bin, k) + ccdf(bin, l-1)
-    elseif k > modebin
-        l = _search_boundary(_pdfle, 2modebin - k, -1, (bin, Pk))
-        cdf(bin, l) + ccdf(bin, k-1)
-    else # k == modebin
-        one(p)
+function pvalue_stern(dist::DiscreteUnivariateDistribution, x)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    m = mode(dist)
+    (x == m || Px ≈ pdf(dist, m)) && return 1.0
+    if x < m
+        y = _search_boundary(_pdf_le, 2m - x, 1, (dist, Px))
+        cdf(dist, x) + ccdf(dist, y-1)
+    else # x > m
+        y = _search_boundary(_pdf_le, 2m - x, -1, (dist, Px))
+        cdf(dist, y) + ccdf(dist, x-1)
     end
 end
+
+pvalue_stern(n, k, p) = pvalue_stern(Binomial(n, p), k)
 ```
 
 ```julia
