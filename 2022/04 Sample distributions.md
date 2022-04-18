@@ -611,10 +611,10 @@ function plot_pvalue_function(pvalue_func, n, k; label="", kwargs...)
     plot!(; kwargs...)
 end
 
-function pvalue_clopper_pearson(n, k, p)
-    bin = Binomial(n, p)
-    min(1, 2cdf(bin, k), 2ccdf(bin, k-1))
+function pvalue_clopper_pearson(dist::DiscreteUnivariateDistribution, x)
+    min(1, 2cdf(dist, x), 2ccdf(dist, x-1))
 end
+pvalue_clopper_pearson(n, k, p) = pvalue_clopper_pearson(Binomial(n, p), k)
 
 # (3)
 P1 = plot_pvalue_function(pvalue_clopper_pearson, 694844 + 705585, 694844;
@@ -648,40 +648,47 @@ $$
 
 #### Sternの信頼区間を与えるP値函数の実装例
 
-以下はSternの信頼区間を与えるP値函数の実装例である. 実装の仕方によって計算効率に大きな違いが生じていることにも注目せよ.
+以下はSternの信頼区間を与えるP値函数の実装例である. 
+
+Clopper-Pearsonの信頼区間を与えるP値函数の実装(実質1行!)と比較すると相当に複雑になっている.
+
+そして, 実装の仕方によって計算効率に大きな違いが生じていることにも注目せよ.
 
 ```julia
 x ⪅ y = x < y || x ≈ y
 
-# Naive implementation is terrible slow.
-function pvalue_stern_naive(n, k, p)
-    bin = Binomial(n, p)
-    sum(pdf(bin, j) for j in support(bin) if pdf(bin, j) ⪅ pdf(bin, k))
+# Naive implementation is terribly slow.
+function pvalue_stern_naive(dist::DiscreteUnivariateDistribution, x; xmax = 10^6)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    ymin, maxdist = minimum(dist), maximum(dist)
+    ymax = maxdist == Inf ? xmax : maxdist
+    sum(pdf(dist, y) for y in ymin:ymax if 0 < pdf(dist, y) ⪅ Px; init = 0.0)
 end
+pvalue_stern_naive(n, k, p) = pvalue_stern_naive(Binomial(n, p), k)
 
 # Second implementation is very slow.
-function pvalue_stern_old(n, k, p)
-    bin = Binomial(n, p)
-    Pk = pdf(bin, k)
-    Pk == 0 && return Pk
-    modebin = mode(bin)
-    if k < modebin
-        local l
-        for outer l in modebin+1:n+1
-            pdf(bin, l) ⪅ Pk && break
+function pvalue_stern_old(dist::DiscreteUnivariateDistribution, x)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    distmin, distmax = extrema(dist)
+    m = mode(dist)
+    Px ≈ pdf(dist, m) && return one(Px)
+    if x < m
+        y = m + 1
+        while !(pdf(dist, y) ⪅ Px)
+            y += 1
         end
-        cdf(bin, k) + ccdf(bin, l-1)
-    elseif k > modebin
-        ran = modebin-1:-1:-1
-        local l
-        for outer l in modebin-1:-1:-1
-            pdf(bin, l) ⪅ Pk && break
+        cdf(dist, x) + ccdf(dist, y-1)
+    else # k > m
+        y = m - 1
+        while !(pdf(dist, y) ⪅ Px)
+            y -= 1
         end
-        cdf(bin, l) + ccdf(bin, k-1)
-    else # k == modebin
-        one(p)
+        cdf(dist, y) + ccdf(dist, x-1)
     end
 end
+pvalue_stern_old(n, k, p) = pvalue_stern_old(Binomial(n, p), k)
 
 ### efficient implementation
 
@@ -702,7 +709,7 @@ function pvalue_stern(dist::DiscreteUnivariateDistribution, x)
     Px = pdf(dist, x)
     Px == 0 && return Px
     m = mode(dist)
-    (x == m || Px ≈ pdf(dist, m)) && return 1.0
+    Px ≈ pdf(dist, m) && return one(Px)
     if x < m
         y = _search_boundary(_pdf_le, 2m - x, 1, (dist, Px))
         cdf(dist, x) + ccdf(dist, y-1)
@@ -711,8 +718,19 @@ function pvalue_stern(dist::DiscreteUnivariateDistribution, x)
         cdf(dist, y) + ccdf(dist, x-1)
     end
 end
-
 pvalue_stern(n, k, p) = pvalue_stern(Binomial(n, p), k)
+```
+
+```julia
+n = 10
+k = -1:11
+p = 0.4
+a = @time pvalue_stern_naive.(n, k, p)
+b = @time pvalue_stern_old.(n, k, p)
+c = @time pvalue_stern.(n, k, p)
+d = @time pvalue_clopper_pearson.(n, k, p)
+@show a ≈ b ≈ c
+[a b c d]
 ```
 
 ```julia
@@ -738,6 +756,41 @@ b = @btime pvalue_stern_old($n, $k, 0.5)
 c = @btime pvalue_stern($n, $k, 0.5)
 d = @btime pvalue_clopper_pearson($n, $k, 0.5)
 b, c, d
+```
+
+```julia
+# この場合には pvalue_stern_naive はさらに遅い.
+n = 100000
+k = 49500:50500
+a = @time pvalue_stern_naive.(n, k, 0.5)
+b = @time pvalue_stern_old.(n, k, 0.5)
+c = @time pvalue_stern.(n, k, 0.5)
+d = @time pvalue_clopper_pearson.(n, k, 0.5)
+@show a ≈ b ≈ c ≈ d;
+```
+
+```julia
+# 以上の実装は超幾何分布でも使える.
+dist = Hypergeometric(9, 9, 9)
+k = -1:10
+a = @time pvalue_stern_naive.(dist, k)
+b = @time pvalue_stern_old.(dist, k)
+c = @time pvalue_stern.(dist, k)
+d = @time pvalue_clopper_pearson.(dist, k)
+@show a ≈ b ≈ c ≈ d
+[a b c d]
+```
+
+```julia
+# 以上の実装はPoisson分布でも使える.
+dist = Poisson(4)
+k = -1:10
+a = @time pvalue_stern_naive.(dist, k)
+b = @time pvalue_stern_old.(dist, k)
+c = @time pvalue_stern.(dist, k)
+d = @time pvalue_clopper_pearson.(dist, k)
+@show a ≈ b ≈ c
+[a b c d]
 ```
 
 ```julia
@@ -771,6 +824,9 @@ plot(title="p-value functions for n = $n, k = $k", ytick=0:0.1:1)
 plot_pvalue_function!(pvalue_stern, n, k; label="Stern")
 plot_pvalue_function!(pvalue_clopper_pearson, n, k; label="Clopper-Pearson", ls=:dash)
 ```
+
+Sternの信頼区間を与えるP値函数の値はClopper-Pearsonの信頼区間を与えるP値函数の値よりも小さくなりことが多い. (常にそうなるわけではない.) その結果, 対応する信頼区間もSternの側が狭くなってくれることが多い.
+
 
 ### 対ごとに独立であっても全体が独立であるとは限らない
 
