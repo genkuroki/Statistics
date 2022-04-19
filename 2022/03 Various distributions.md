@@ -38,7 +38,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布と二項分布の中心極限定理" data-toc-modified-id="Poisson分布と二項分布の中心極限定理-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Poisson分布と二項分布の中心極限定理</a></span></li><li><span><a href="#Poisson分布の中心極限定理の直接証明" data-toc-modified-id="Poisson分布の中心極限定理の直接証明-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布の階層化によって負の二項分布が得られる" data-toc-modified-id="Poisson分布の階層化によって負の二項分布が得られる-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Poisson分布の階層化によって負の二項分布が得られる</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>χ²分布</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#t分布" data-toc-modified-id="t分布-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>t分布</a></span></li><li><span><a href="#F分布" data-toc-modified-id="F分布-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>F分布</a></span></li><li><span><a href="#二項分布とベータ分布の累積分布函数の関係" data-toc-modified-id="二項分布とベータ分布の累積分布函数の関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>二項分布とベータ分布の累積分布函数の関係</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="問題:-正規分布における確率がほぼ95%または99%になる区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#Poisson分布の中心極限定理の直接証明" data-toc-modified-id="Poisson分布の中心極限定理の直接証明-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布の階層化によって負の二項分布が得られる" data-toc-modified-id="Poisson分布の階層化によって負の二項分布が得られる-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Poisson分布の階層化によって負の二項分布が得られる</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#χ²分布" data-toc-modified-id="χ²分布-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>χ²分布</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#t分布" data-toc-modified-id="t分布-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>t分布</a></span></li><li><span><a href="#F分布" data-toc-modified-id="F分布-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>F分布</a></span></li><li><span><a href="#二項分布とベータ分布の累積分布函数の関係" data-toc-modified-id="二項分布とベータ分布の累積分布函数の関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>二項分布とベータ分布の累積分布函数の関係</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -493,59 +493,67 @@ Poisson分布は一定期間に起こるイベントの回数の分布のモデ�
 
 ```julia
 PP = []
-for λ in (1, 3, 10, 30)
-    P = bar(max(0, round(λ-4√λ)):λ+4√λ+3/√λ, k -> pdf(Poisson(λ), k);
-        alpha=0.3, label="", title="Poisson($λ)")
+for (λ, s) in ((1, 1), (3, 3), (10, 5), (30, 10) )
+    x = max(0, round(λ-4√λ)):λ+4√λ+3/√λ
+    P = bar(x, k -> pdf(Poisson(λ), k);
+        alpha=0.3, label="", title="Poisson($λ)", xtick=0:s:maximum(x))
     push!(PP, P)
 end
 plot(PP...; size=(800, 150), layout=(1, 4))
 ```
 
+以上はPoisson分布 $\op{Poisson}(\lambda)$ の確率質量函数のグラフの例である. ここでは $\lambda$ が整数の場合のみを扱ったが, $\lambda$ は整数でなくてもよい.  $\op{Poisson}(30)$ のグラフは正規分布のグラフに近くなっている.  __パラメータ $\lambda$ が大きなPoisson分布は正規分布で近似される.__
+
+
 ### 問題: Poisson分布のキュムラント母函数と期待値と分散
-　」
-$K \sim \op{Poisson}(\lambda)$ のとき次が成立することを示せ:
+
+$K_\lambda \sim \op{Poisson}(\lambda)$ のとき次が成立することを示せ:
 
 $$
-\log E[e^{tK}] = \lambda(e^t - 1), \quad
-E[K] = \op{var}(K) = \lambda.
+\log E[e^{tK_\lambda}] = \lambda(e^t - 1), \quad
+E[K_\lambda] = \op{var}(K_\lambda) = \lambda.
 $$
 
-さらに $K$ の標準化 $Z$ を $Z = (K - \lambda)/\sqrt{\lambda}$ と定めると成立することも示せ:
+さらに $K_\lambda$ の標準化 $Z_\lambda$ を $Z_\lambda = (K_\lambda - \lambda)/\sqrt{\lambda}$ と定めると次が成立することも示せ:
 
 $$
-\log E[e^{tZ}] = \frac{t^2}{2} + O(\lambda^{-1/2}).
+\log E[e^{tZ_\lambda}] =
+\log E\left[e^{t(K_\lambda-\lambda)/\sqrt{\lambda}}\right] =
+\frac{t^2}{2} + O(\lambda^{-1/2}).
 $$
+
+ここで $O(\lambda^{-1/2})$ の部分は $O(\lambda)^{-1/2} = \lambda^{-1/2}\times$ ($\lambda\to\infty$ で有界な量)であることを表している. たとえば, $f(\lambda)$ が $\lambda\to\infty$ で収束するとき, $\lambda^{-1/2}f(\lambda)$ は $O(\lambda^{-1/2})$ と表される.  特に $O(\lambda^{-1/2})$ の部分は $\lambda\to\infty$ で $0$ に収束する.
 
 __解答例:__
 
 $$
 \begin{aligned}
 &
-E[e^{tK}] =
+E[e^{tK_\lambda}] =
 e^{-\lambda}\sum_{k=0}^\infty e^{tk}\frac{\lambda^k}{k!} =
 e^{-\lambda}\sum_{k=0}^\infty \frac{(\lambda e^t)^k}{k!} =
 e^{\lambda(e^t - 1)},
 \\ &
-\log E[e^{tK}] = \lambda(e^t - 1) =
+\log E[e^{tK_\lambda}] = \lambda(e^t - 1) =
 \lambda\left(t + \frac{t^2}{2} + O(t^3)\right) =
 \lambda t + \lambda \frac{t^2}{2} + O(t^3).
 \end{aligned}
 $$
 
-$\log E[e^{tK}]$ の展開における $t$, $t^2/2$ の係数がそれぞれ $X$ の期待値, 分散になるので
+$\log E[e^{tK_\lambda}]$ の展開における $t$, $t^2/2$ の係数がそれぞれ $K_\lambda$ の期待値, 分散になるので
 
 $$
-E[K] = \op{var}(K) = \lambda.
+E[K_\lambda] = \op{var}(K_\lambda) = \lambda.
 $$
 
-さらに, $Z = (K - \lambda)/\sqrt{\lambda})$ について
+さらに, $Z_\lambda = (K_\lambda - \lambda)/\sqrt{\lambda})$ について
 
 $$
 \begin{aligned}
-\log E[e^{tZ}] &=
-\log\left(e^{-\sqrt{\lambda}\, t)} E\left[e^{(t/\sqrt{\lambda})X}\right]\right) =
-\log E\left[e^{(t/\sqrt{\lambda})X}\right] - \sqrt{\lambda}\, t) \\ &=
-\lambda(e^{t/\sqrt{\lambda}} - 1) - \sqrt{\lambda}\, t) =
+\log E[e^{tZ_\lambda}] &=
+\log\left(e^{-\sqrt{\lambda}\, t} E\left[e^{\left(t/\sqrt{\lambda}\right)K_\lambda}\right]\right) =
+\log E\left[e^{\left(t/\sqrt{\lambda}\right)K_\lambda}\right] - \sqrt{\lambda}\, t) \\ &=
+\lambda\left(e^{t/\sqrt{\lambda}} - 1\right) - \sqrt{\lambda}\, t) =
 \lambda\left(\frac{t}{\sqrt{\lambda}} + \frac{t^2}{2\lambda} + O(\lambda^{-3/2})\right) - \sqrt{\lambda}\,t \\ &=
 \left(\sqrt{\lambda}\, t  + \frac{t^2}{2} + O(\lambda^{-1/2})\right) - \sqrt{\lambda}\,t =
 \frac{t^2}{2} + O(\lambda^{-1/2}).
@@ -554,12 +562,14 @@ $$
 
 __解答終__
 
+__注意:__ 上の問題の結果より, $K_\lambda \sim \op{Poisson}(\lambda)$, $Z_\lambda = (K_\lambda - \lambda)/\sqrt{\lambda}$, $Z_\infty\sim\op{Normal}(0,1)$ のとき, $\lambda$ を大きくすると $\log E[e^{tZ_\lambda}]$ が $\log E[e^{tZ_\infty}]$ に収束する.  (一般に確率変数 $X$ の分布はそのキュムラント母函数 $\log E[e^{tX}]$ から一意的に決まる.  この点については別のノートで説明する.) これは実は $\lambda$ が大きなとき, $Z_\lambda = (K_\lambda - \lambda)/\sqrt{\lambda}$ の従う分布が標準正規分布で近似されることを意味している.  そのとき, もとの $K_\lambda$ の分布は平均 $\lambda$, 分散 $\lambda$ の正規分布で近似される.  この結果を, __Poisson分布の中心極限定理__ と呼ぶ.
+
 ```julia
 PP = []
 for λ in (10, 30)
     P = bar(max(0, round(λ-4√λ)):λ+4√λ+3/√λ, k -> pdf(Poisson(λ), k);
-        alpha=0.3, label="", title="Poisson($λ)")
-    plot!(Normal(λ, √λ); label="normal approx.", lw=2)
+        alpha=0.3, label="", title="Poisson(λ = $λ)")
+    plot!(Normal(λ, √λ); label="Normal(λ, √λ)", lw=2)
     push!(PP, P)
 end
 plot(PP...; size=(800, 250), layout=(1, 2))
@@ -585,16 +595,16 @@ $$
 
 この結果は以下のように解釈される.
 
-(1) 二項分布は $n$ 回のBernoulli試行によって出る $1$ の回数の分布であった. $1$ が出ることを「イベントが起こった」と解釈しよう.
+(1) 二項分布は $n$ 回のBernoulli試行で出る $1$ の個数の分布であった. $1$ が出ることを「イベントが起こった」と解釈しよう.
 
-(2) さらに, その $n$ 回のBernoulli試行を一定時間に等間隔で行う状況を考える.  これは一定時間を $n$ 個に区切る離散時間を考えることに相当する. そのとき, 二項分布は一定時間内に平均して $np$ 回起こるイベントが一定時間内で何回起こるかに関する分布になっている. 
+(2) さらに, その $n$ 回のBernoulli試行を単位時間内に等間隔で行う状況を考える.  これは単位時間幅を $n$ 個に区切る離散時間を考えることに相当する. そのとき, 二項分布は単位時間のあいだに平均して $np$ 回起こるイベントが単位時間内で何回起こるかに関する分布になっている. 
 
-(3) 一定時間内に起こる二項分布に従うイベントの回数の期待値 $\lambda = np$ を固定したままで, $n\to\infty$ とする極限は, 時間の刻み幅を細かくする連続時間極限だと考えられる.  その極限によって得られる分布がPoisson分布になる.
+(3) 単位時間内に起こる二項分布に従うイベントの回数の期待値 $\lambda = np$ を固定したままで, $n\to\infty$ とすることは, 時間の刻み幅を細かくする連続時間極限を取ることだと考えられる.  この極限によって, 二項分布はPoisson分布に収束する.
 
-(4) Poisson分布は, 連続時間の場合の一定時間内に平均して $np$ 回起こるイベントが一定時間内で何回起こるかに関する分布になっている.
+(4) __Poisson分布は, 連続時間の場合に単位時間のあいだに平均して $\lambda$ 回起こるイベントが単位時間内で何回起こるかに関する分布になっている.__
 
 
-### Poisson分布と二項分布の中心極限定理
+### Poisson分布の中心極限定理と二項分布の中心極限定理の関係
 
 一般に期待値 $\mu$, 標準偏差 $\sigma$ を持つ確率変数 $X$ の __標準化__ $Z$ は $Z=(X-\mu)/\sigma$ と定義される.
 
@@ -605,42 +615,68 @@ $$
 Poisson分布のキュムラント母函数に関する問題の結果によれば,
 
 $$
-K \sim \op{Poisson}(\lambda), \quad
-Z = \frac{K - \lambda}{\sqrt{\lambda}}
+K_\lambda \sim \op{Poisson}(\lambda), \quad
+Z_\lambda = \frac{K_\lambda - \lambda}{\sqrt{\lambda}}
 \quad\implies\quad
-\log E[e^{tZ}] = \frac{t^2}{2} + O(n^{-1/2}).
+\log E[e^{tZ_\lambda}] = \frac{t^2}{2} + O(\lambda^{-1/2}).
 $$
 
 これより, $\lambda$ を大きくすると, Poisson分布は正規分布で近似されるようになることがわかる. この結果を__Poisson分布の中心極限定理__と呼ぶことにする.
 
-さらに, 前節の結果より, $np = \lambda$ を一定としたままで, $n$ を大きくすると, 二項分布 $\op{Binomial}(n, p)$ でPoisson分布 $\op{Poisson}(\lambda)$ が近似される. 
+さらに, 前節の結果より, $\lambda = np$ を一定としたままで, $n$ を大きくすると, 二項分布 $\op{Binomial}(n, p)$ はPoisson分布 $\op{Poisson}(\lambda)$ で近似される. 
 
-そのとき注意するべきことは $\op{Binomial}(n, p)$ の分散 $np(1-p)$ は $np = \lambda$ のとき $(1-p)\lambda$ になり, $p$ が小さくないと, $\op{Poisson}(\lambda)$ の分散 $\lambda$ と全然違う値になってしまうことである.  二項分布によるPoisson分布の近似は $p$ が小さくないと精度が低くなる.
+そのとき注意するべきことは $\op{Binomial}(n, p)$ の分散 $np(1-p)$ は $np = \lambda$ のとき $np(1-p) = \lambda(1-p)$ になり, $p$ が小さくないと, $\op{Poisson}(\lambda)$ の分散 $\lambda$ と全然違う値になってしまうことである(たとえば $p=1/2$ だと二項分布の分散が対応するPoisson分布の分散の半分になってしまう).  二項分布によるPoisson分布の近似は $p$ が小さくないと精度が低くなる.
 
-しかし, 以上の2つの結果を合わせると, $p$ は小さいが $np$ が大きい場合の二項分布 $\op{Binomial}(n, p)$ は正規分布で近似されることがわかる.  実際には, $p$ が小さくなくても, $np$ が大きければ, 二項分布は正規分布でよく近似される. このように二項分布が正規分布で近似されるという結果を __二項分布の中心極限定理__と呼ぶことにする.
+しかし, 以上の2つの結果を合わせると, Poisson分布の正規分布近似(=中心極限定理)を通して, $p$ は小さいが $np$ が大きい場合の二項分布 $\op{Binomial}(n, p)$ が正規分布で近似されることがわかる.  実際には, $p$ が小さくなくても, $np$ と $n(1-p)$ が大きければ, 二項分布は正規分布でよく近似される. 二項分布が正規分布で近似されるという結果を __二項分布の中心極限定理__ と呼ぶ.
 
-すでに, 別のノートで二項分布を直接正規分布で近似する経路で $p$ が小さくない場合にも通用する方法で二項分布の中心極限定理を示している.
+$p$ が小さい場合の二項分布の中心極限定理は応用上あまりににも不完全なので, 後で二項分布を直接正規分布で近似するという $p$ が小さくない場合にも通用する方法で二項分布の中心極限定理を証明する.
 
 __注意:__ 「中心極限定理」は「極限として中心に収束する定理」という意味では __ない__.  「中心極限定理」は「確率論における中心的な極限定理」という意味である.  「中心極限定理」はある種の状況で分布が正規分布で近似されるようになるという結果に付けられた名前である.
 
 ```julia
 PP = []
-for (λ, n) in zip((10, 10), (20, 200))
+for (λ, n) in ((15, 20), (15, 300))
     p = λ/n
-    ks = max(0, round(Int, λ-5√λ)):round(Int, λ+5√λ+3/√λ)
+    ks = max(0, round(Int, λ-5.5√λ)):round(Int, λ+5.5√λ+3/√λ)
     P = groupedbar(ks, 
         [pdf.(Poisson(λ), ks) pdf.(Binomial(n, λ/n), ks)];
         alpha=0.3,
         label=["Poisson(λ)" "Binomial(n,λ/n)"],
         title="λ = $λ,  n = $n,  p = λ/n = $p")
-    plot!(Normal(λ, √λ); label="Normal(λ,√λ)", lw=2, c=1)
-    plot!(Normal(λ, √(λ*(1-p))); label="Normal(λ,√(λ(1-p)))", lw=2, ls=:dash, c=2)
+    plot!(Normal(λ, √λ); label="Normal(λ,√λ)", lw=1.5, c=:blue)
+    plot!(Normal(λ, √(λ*(1-p))); label="Normal(λ,√(λ(1-p)))", lw=1.5, ls=:dash, c=:red)
     push!(PP, P)
 end
 plot(PP...; size=(800, 250), layout=(1, 2))
 ```
 
+左側のグラフでは $p = \lambda/n = 3/4$ なので, 二項分布の側の分散はPoisson分布の側の分散の4分の1になっており, 標準偏差については半分になっている.
+
+右側のグラフでは $p = \lambda/n = 1/20$ が小さくなっているので, 二項分布のグラフとPoisson分布のグラフはほとんど一致し, 正規分布による近似もほとんど一致する.
+
+
 ### Poisson分布の中心極限定理の直接証明
+
+パラメータ $\lambda > 0$ を持つPoisson分布の確率質量函数の定義は
+
+$$
+p(k|\lambda) = e^{-\lambda}\frac{\lambda^k}{k!}
+\quad (k = 0,1,2,\ldots)
+$$
+
+であった.  $k$ は $\lambda$ とともに変化するとし, 固定された $x$ について
+
+$$
+k = \lambda + \sqrt{\lambda}\, x + o(\sqrt{\lambda})
+$$
+
+を満たしていると仮定する($o(\sqrt{\lambda})$ は $\lambda$ で割って $\lambda\to\infty$ とすると $0$ に収束する量).  このとき次が成立することを示せ:
+
+$$
+p(k|\lambda) = \frac{e^{-x^2/2}}{\sqrt{2\pi}} \sqrt{\lambda}\,(1 + o(1)).
+$$
+
+ここで $o(1)$ は $\lambda\to\infty$ で $0$ に収束する量である.
 
 
 ### Poisson分布の階層化によって負の二項分布が得られる
