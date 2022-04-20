@@ -16,7 +16,7 @@ jupyter:
 # Gauss積分, ガンマ函数, ベータ函数
 
 * 黒木玄
-* 2022-04-10～2022-04-18
+* 2022-04-10～2022-04-20
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
