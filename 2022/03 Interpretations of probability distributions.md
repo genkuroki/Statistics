@@ -24,6 +24,7 @@ $
 \newcommand\var{\op{var}}
 \newcommand\std{\op{std}}
 \newcommand\eps{\varepsilon}
+\newcommand\T[1]{T_{(#1)}}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
@@ -38,7 +39,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率がほぼ95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率がほぼ95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率がほぼ95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布" data-toc-modified-id="$t$-分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる" data-toc-modified-id="問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散の $\nu$ 倍が自由度 $\nu$ のχ²分布に従う平均 $0$ の正規分布は $t$ 分布になる</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布の順序統計量" data-toc-modified-id="一様分布の順序統計量-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>一様分布の順序統計量</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布" data-toc-modified-id="$t$-分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる" data-toc-modified-id="問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散の $\nu$ 倍が自由度 $\nu$ のχ²分布に従う平均 $0$ の正規分布は $t$ 分布になる</a></span></li><li><span><a href="#必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li><li><span><a href="#Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係" data-toc-modified-id="Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li><li><span><a href="#必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲" data-toc-modified-id="必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲</a></span></li><li><span><a href="#問題:-自由度1のχ²分布と標準正規分布の関係の数値例" data-toc-modified-id="問題:-自由度1のχ²分布と標準正規分布の関係の数値例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 自由度1のχ²分布と標準正規分布の関係の数値例</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量</a></span></li><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量が従う分布</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -278,7 +279,7 @@ __注意:__ この問題の結果より, 各々が標準正規分布に従う $n
 これが一般的な __中心極限定理__ の主張である.  もとの分布が標準正規分布なら $Z_n$ が従う分布はぴったり標準正規分布になるが, それ以外の一般の場合にも $n$ を大きくすれば $Z_n$ が従う分布が近似的に標準正規分布になることはいえるのである.
 
 
-### 必ず解いて欲しい問題: 正規分布における確率がほぼ95%または99%になる区間
+### 必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間
 
 $X \sim \op{Normal}(\mu, \sigma)$ であると仮定する.  このとき, $X$ が区間 $[\mu-c\sigma, \mu+c\sigma]$ に含まれる確率
 
@@ -364,17 +365,22 @@ __解答終__
 [Julia言語](https://julialang.org/)では以下のように計算できる. (ただし, `using SpecialFunctions, Distributions` が必要.)
 
 ```julia
-√2 * erfinv(0.95), quantile(Normal(), 0.975)
+@show √2 * erfinv(0.95)
+@show √2 * erfinv(0.99);
 ```
 
 ```julia
-√2 * erfinv(0.99), quantile(Normal(), 0.995)
+@show quantile(Normal(), 0.975)
+@show quantile(Normal(), 0.995);
 ```
 
-[WolframAlpha](https://www.wolframalpha.com/)では以下のように計算できる.
+[WolframAlpha](https://www.wolframalpha.com/)では以下のように計算できる:
 
-* [√2 erfinv(0.95)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.95%29), [quantile(NormalDistribution(0,1), 0.975)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%2)
-* [√2 erfinv(0.99)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.99%29), [quantile(NormalDistribution(0,1), 0.995)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.995%29)
+* [√2 erfinv(0.95)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.95%29)
+* [√2 erfinv(0.99)](https://www.wolframalpha.com/input?i=%E2%88%9A2+erfinv%280.99%29)
+
+* [quantile(NormalDistribution(0,1), 0.975)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29)
+* [quantile(NormalDistribution(0,1), 0.995)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.995%29)
 
 
 ### 問題: 正規分布のモーメント母函数とキュムラント母函数
@@ -615,7 +621,7 @@ p(t) &=
 \end{aligned}
 $$
 
-3つめの等号で $\Gamma(1/2)=\sqrt{\pi}$ を使い, 4つめの等号でよくあるガンマ函数の使用法を使い, 最後の等号で $\Gamma(\alpha)\Gamma(\beta)=\Gamma(\alpha,\beta)B(\alpha,\beta)$ を使った.  最後の式は $t$ 分布の確率密度函数である. ゆえに $T\sim \op{TDist}(\nu)$.
+3つめの等号で $\Gamma(1/2)=\sqrt{\pi}$ を使い, 4つめの等号でよくあるガンマ函数の使用法を使い, 最後の等号で $\Gamma(\alpha)\Gamma(\beta)=\Gamma(\alpha+\beta)B(\alpha,\beta)$ を使った.  最後の式は $t$ 分布の確率密度函数である. ゆえに $T\sim \op{TDist}(\nu)$.
 
 __解答終__
 
@@ -663,6 +669,159 @@ end
 ```julia
 plot(plot_gamoαθ(10), plot_gamoαθ(30), plot_gamoαθ(100); size=(800, 200), layout=(1, 3))
 ```
+
+### 必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間
+
+$0<\alpha<1$, $\nu > 0$ であるとし, $T \sim \op{TDist}(\nu)$ と仮定する. このとき, $T$ が区間 $[-c, c]$ に含まれる確率
+
+$$
+P(-c \le T \le c)
+$$
+
+が $1 - \alpha$ になるような $c$ を __正則化された不完全ベータ函数__
+
+$$
+y = I(x|\alpha,\beta) = I_x(\alpha, \beta) =
+\frac{\int_0^x v^{\alpha-1}(1-v)^{\beta-1}\,dv}{B(\alpha, \beta)}
+$$
+
+の逆函数 $x = I^{-1}(y|\alpha, \beta)$ を使って表せ.  (注意: $I_x(\alpha, \beta)$ は広く使われている標準的な記号法だが, $I(x|\alpha,\beta)$ と $I^{-1}(y|\alpha, \beta)$ はここだけの記号法である.)
+
+さらに, $\nu = 9$ と $\nu = 19$ と $\nu = 29$ の場合に $P(-c \le T \le c)$ が $95\%$ になる $c$ と $99\%$ になる $c$ を小数点以下第2桁目まで求めよ. 
+
+__お願い:__ この問題の前半部分は少し難しいかもしれないので, どうしても無理ならば以下の解答例をざっと見るだけでもよい. しかし, 後半の「さらに」以降の具体的な数値を求める部分は必ず解けるようになっておいて欲しい. コンピュータを使ってよい. (より正確に言えばコンピュータを使った計算の仕方を1つ以上マスターしておくこと!)
+
+__注意:__ 正規分布モデルの統計学で $t$ 分布に関する計算が不完全ベータ函数に帰着できるという事実から, 正規分布モデルの統計学においてベータ分布が必須であることがわかる.
+
+
+__解答例:__ 以下 $t\ge 0$ と仮定する.  $t$ 分布の累積分布函数を $F(t)=P(T\le t)$ と書くと, 
+
+$$
+F(t) =
+\frac{1}{\sqrt{\nu}\,B(1/2, \nu/2)}
+\int_{-\infty}^t \left(1 + \frac{s^2}{\nu}\right)^{-(\nu+2)/2}\,ds =
+\frac{1}{2} +
+\frac{1}{\sqrt{\nu}\,B(1/2, \nu/2)}
+\int_0^t \left(1 + \frac{s^2}{\nu}\right)^{-(\nu+2)/2}\,ds.
+$$
+
+ベータ函数の様々な表示の計算で学んだように, この積分変数を $s = \sqrt{\nu u}$ ($\iff u = s^2/\nu$)とおいて, さらに $u = v/(1-v) = 1/(1-v)-1$ ($\iff v = u/(1+u)$)とおくとベータ分布の累積分布函数すなわち正則化された不完全ベータ函数に帰着できることがわかる:
+
+$$
+\begin{aligned}
+F(t) &=
+\frac{1}{2} +
+\frac{1}{\sqrt{\nu}\,B(1/2, \nu/2)}
+\int_0^{t^2/\nu} (1 + u)^{-(\nu+2)/2}\frac{\sqrt{\nu}}{2}u^{-1/2}\,du
+\\ &=
+\frac{1}{2} +
+\frac{1}{2 B(1/2, \nu/2)}
+\int_0^{t^2/\nu} \frac{u^{1/2-1}\,du}{(1+u)^{1/2+\nu/2}}
+\\ &=
+\frac{1}{2} +
+\frac{1}{2 B(1/2, \nu/2)}
+\int_0^{(t^2/\nu)/(1+t^2/\nu)}
+\left(\frac{v}{1 - v}\right)^{1/2-1} 
+(1 - v)^{1/2 + \nu/2}\,\frac{dv}{(1-v)^2}
+\\ &=
+\frac{1}{2} +
+\frac{1}{2}
+\frac{\int_0^{(t^2/\nu)/(1+t^2/\nu)} v^{1/2-1}(1 - v)^{\nu/2-1}\,dv}{B(1/2, \nu/2)}
+\\ &=
+\frac{1}{2}\left(
+1 + I\left(\left.\frac{t^2/\nu}{1+t^2/\nu}\right|\alpha,\beta\right)
+\right).
+\end{aligned}
+$$
+
+ゆえに, $p = u/(1+u)$ と $u = p/(1-p) = 1/(1-p)-1$ が同値であることを使うと, $t\ge 0$ のとき,
+
+$$
+\begin{aligned}
+p = F(t) & \iff
+I^{-1}(2p-1|\alpha,\beta) = \frac{t^2/\nu}{1+t^2/\nu}
+\\ & \iff
+\frac{t^2}{\nu} =
+\frac{I^{-1}(2p-1|\alpha,\beta)}{1 - I^{-1}(2p-1|\alpha,\beta)} =
+\frac{1}{1 - I^{-1}(2p-1|\alpha,\beta)} - 1
+\\ & \iff
+t = \sqrt{\nu\left(\frac{1}{1 - I^{-1}(2p-1|\alpha,\beta)} - 1\right)}.
+\end{aligned}
+$$
+
+ゆえに $t\ge 0$ における $p = F(t)$ の逆函数である分位点函数は
+
+$$
+t = Q(p) = F^{-1}(p) = \sqrt{\nu\left(\frac{1}{1 - I^{-1}(2p-1|\alpha,\beta)} - 1\right)}
+$$
+
+と書ける.
+
+$P(-c\le T\le c) = 1 - \alpha$ と $F(c) = P(T \le c) = 1 - \alpha/2$ は同値なので, そのような $c\ge 0$ は次のように表される:
+
+$$
+c = Q(1 - \alpha/2) = \sqrt{\nu\left(\frac{1}{1 - I^{-1}(2p-1|\alpha,\beta)} - 1\right)}.
+$$
+
+$\nu = 9$ のとき,
+
+* $P(-c \le T \le c) = 95\%$ となる $c\ge 0$ は $c \approx 2.26$
+* $P(-c \le T \le c) = 99\%$ となる $c\ge 0$ は $c \approx 3.25$
+
+$\nu = 19$ のとき,
+
+* $P(-c \le T \le c) = 95\%$ となる $c\ge 0$ は $c \approx 2.09$
+* $P(-c \le T \le c) = 99\%$ となる $c\ge 0$ は $c \approx 2.86$
+
+$\nu = 29$ のとき,
+
+* $P(-c \le T \le c) = 95\%$ となる $c\ge 0$ は $c \approx 2.05$
+* $P(-c \le T \le c) = 99\%$ となる $c\ge 0$ は $c \approx 2.76$
+
+ちなみに $Z \sim \op{Normal}(0,1)$ のとき,
+
+* $P(-c \le Z \le c) = 95\%$ となる $c\ge 0$ は $c \approx 1.96$
+* $P(-c \le Z \le c) = 99\%$ となる $c\ge 0$ は $c \approx 2.58$
+
+__解答終__
+
+```julia
+quantile_tdist(ν, p) = √(ν * (1/(1 - beta_inc_inv(1/2, ν/2, 2p - 1)[1]) - 1))
+quantile_stdnormal(p) = √2 * erfinv(2p - 1)
+
+for ν in (9, 19, 29)
+    @show ν
+    @show quantile_tdist(ν, 0.975)
+    @show quantile_tdist(ν, 0.995)
+    println()
+end
+ν = Inf
+@show ν
+@show quantile_stdnormal(0.975)
+@show quantile_stdnormal(0.995);
+```
+
+```julia
+for ν in (9, 19, 29)
+    @show ν
+    @show quantile(TDist(ν), 0.975)
+    @show quantile(TDist(ν), 0.995)
+    println()
+end
+ν = Inf
+@show ν
+@show quantile(TDist(ν), 0.975)
+@show quantile(TDist(ν), 0.995);
+```
+
+例えば $\nu = 9$ のとき, WolframAlphaでは以下のように計算できる:
+
+* [sqrt(n (1/(1 - InverseBetaRegularized(0.95, 1/2, n/2)) - 1)) where n = 9](https://www.wolframalpha.com/input?i=sqrt%28n+%281%2F%281+-+InverseBetaRegularized%280.95%2C+1%2F2%2C+n%2F2%29%29+-+1%29%29+where+n+%3D+9),
+* [sqrt(n (1/(1 - InverseBetaRegularized(0.99, 1/2, n/2)) - 1)) where n = 9](https://www.wolframalpha.com/input?i=sqrt%28n+%281%2F%281+-+InverseBetaRegularized%280.99%2C+1%2F2%2C+n%2F2%29%29+-+1%29%29+where+n+%3D+9),
+
+* [quantile(StudentTDistribution(9), 0.995)](https://www.wolframalpha.com/input?i=quantile%28StudentTDistribution%289%29%2C+0.995%29)
+* [quantile(StudentTDistribution(9), 0.975)](https://www.wolframalpha.com/input?i=quantile%28StudentTDistribution%289%29%2C+0.975%29)
+
 
 ## Poisson分布
 
@@ -1193,6 +1352,9 @@ end
 plot(PP...; size=(800, 200), layout=(1, 3))
 ```
 
+### Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係
+
+
 ## ガンマ分布
 
 形状パラメータ $\alpha>0$, スケールパラメータ $\theta>0$ を持つガンマ分布 $\op{Gamma}(\alpha, \theta)$ の確率密度函数は
@@ -1337,7 +1499,7 @@ $1/L$ は離散時間 $t$ の刻み幅なので, この式は時間の刻み幅�
 
 $$
 \frac{\alpha + \op{NegativeBinomial}(\alpha, p = 1/(L\theta))}{L} \to
-\Gamma(\alpha, \theta)
+\op{Gamma}(\alpha, \theta)
 \quad (L\to\infty)
 $$
 
@@ -1390,16 +1552,343 @@ plot(plot_nbgam.(2, 2, (1.2, 3, 10)./2)...; size=(800, 200), layout=(1, 3))
 plot(plot_nbgam.(5, 4, (1.2, 3, 10)./4)...; size=(800, 200), layout=(1, 3))
 ```
 
+### 必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲
+
+$0<\alpha<1$, $\nu > 0$ であるとし, $Y \sim \op{Chisq}(\nu)$ と仮定する. このとき, $Y$ が $c$ 以下になる確率
+
+$$
+P(Y \le c)
+$$
+
+が $1 - \alpha$ になるような $c$ を __正則化された(不完全)ガンマ函数__ (regularized (incomplete) gamma function)
+
+$$
+y = P(x|\alpha) = P(\alpha, x) =
+\frac{\int_0^x e^{-u} u^{\alpha-1}\,du}{\Gamma(\alpha)}
+\quad (x > 0)
+$$
+
+の逆函数 $x = P^{-1}(y|\alpha)$ を使って表せ. (注意: $P(\alpha, x)$ は広く使われている標準的な記号法だが, $P(x|\alpha)$ と $P^{-1}(y|\alpha)$ はここだけの記号法である.)
+
+さらに, $\nu = 1$ と $\nu = 2$ と $\nu = 3$ の場合に $P(Y \le c)$ が $95\%$ になる $c$ と $99\%$ になる $c$ を小数点以下第2桁目まで求めよ. 
+
+__お願い:__ 後半の「さらに」以降の具体的な数値を求める部分は必ず解けるようになっておいて欲しい. コンピュータを使ってよい. (より正確に言えばコンピュータを使った計算の仕方を1つ以上マスターしておくこと!)
+
+__注意:__ 正規分布モデルの統計学でχ²分布に関する計算が不完全ガンマ函数に帰着できるという事実から, 正規分布モデルの統計学においてガンマ分布が必須であることがわかる.
+
+
+__解答例:__ $F(y) = P(Y\le y)$ とおく. $p = F(y)$ の逆函数 $y = Q(p) = F^{-1}(p)$ を正則化された不完全ガンマ函数を使って表そう:
+
+$$
+\begin{aligned}
+F(y) = P(Y\le y) &=
+\frac{1}{2^{\nu/2}\Gamma(\nu/2)}\int_0^y e^{-x/2} x^{\nu/2-1}\,dx
+\\ &=
+\frac{1}{\Gamma(\nu/2)}\int_0^{y/2} e^{-u} u^{\nu/2-1}\,du =
+P(y/2|\nu/2).
+\end{aligned}
+$$
+
+2つめの等号で $x = 2u$ とおいた.  これより, $p = F(y)$ の逆函数(分位点函数) $y = Q(p) = F^{-1}(p)$ が次のように表されることがわかる:
+
+$$
+y = Q(p) = 2P^{-1}(p|\nu/2).
+$$
+
+したがって, $P(Y\le c) = 1 - \alpha$ となる $c$ は
+
+$$
+c = 2P^{-1}(1-\alpha|\nu/2)
+$$
+
+と表される.
+
+$\nu = 1$ のとき,
+
+* $P(Y\le c) = 95\%$ となる $c$ は $c \approx 3.84$
+* $P(Y\le c) = 99\%$ となる $c$ は $c \approx 6.63$
+
+$\nu = 3$ のとき,
+
+* $P(Y\le c) = 95\%$ となる $c$ は $c \approx 5.99$
+* $P(Y\le c) = 99\%$ となる $c$ は $c \approx 9.21$
+
+$\nu = 3$ のとき,
+
+* $P(Y\le c) = 95\%$ となる $c$ は $c \approx 7.81$
+* $P(Y\le c) = 99\%$ となる $c$ は $c \approx 11.34$
+
+__解答終__
+
+```julia
+quantile_chisq(ν, p) = 2gamma_inc_inv(ν/2, p, 1-p)
+
+for ν in (1, 2, 3)
+    @show ν
+    @show quantile_chisq(ν, 0.95)
+    @show quantile_chisq(ν, 0.99)
+    println()
+end
+```
+
+```julia
+for ν in (1, 2, 3)
+    @show ν
+    @show quantile(Chisq(ν), 0.95)
+    @show quantile(Chisq(ν), 0.99)
+    println()
+end
+```
+
+例えば $\nu = 2$ の場合について, WolframAlphaでは以下のように計算できる:
+
+* [2 InverseGammaRegularized(n/2, 1 - 0.95) where n = 2](https://www.wolframalpha.com/input?i=2+InverseGammaRegularized%28n%2F2%2C+1+-+0.95%29+where+n+%3D+2)
+* [2 InverseGammaRegularized(n/2, 1 - 0.99) where n = 2](https://www.wolframalpha.com/input?i=2+InverseGammaRegularized%28n%2F2%2C+1+-+0.99%29+where+n+%3D+2)
+
+* [quantile(ChisqDistribution(2), 0.95)](https://www.wolframalpha.com/input?i=quantile%28ChisqDistribution%282%29%2C+0.95%29)
+* [quantile(ChisqDistribution(2), 0.99)](https://www.wolframalpha.com/input?i=quantile%28ChisqDistribution%282%29%2C+0.99%29)
+
+__注意:__ このノートでは分位点函数を $Q(p)$ と書いていて紛らわしいのだが, 不完全ガンマ函数として
+
+$$
+Q(x|\alpha) = Q(\alpha, x) = 1 - P(\alpha, x) =
+\frac{\int_x^\infty e^{-u} u^{\alpha-1}}{\Gamma(\alpha)}
+$$
+
+の側が使われることもよくある. $p = Q(x|\alpha)$ の逆函数を $Q^{-1}(p|\alpha)$ と書くとき, $P(Y\le y) = 2Q^{-1}(1-p|\alpha)$ となることに注意せよ.  上のWolframAlphaでは実際にそうなっている.
+
+
+### 問題: 自由度1のχ²分布と標準正規分布の関係の数値例
+
+$Z \sim \op{Normal}(0,1)$, $Y \sim \op{Chisq}(1)$ のとき,
+
+$$
+P(-c \le Z \le c) = 0.95, \quad
+P(Y \le d) = 0.95
+$$
+
+を満たす $c$, $d$ の値はそれぞれ
+
+$$
+c \approx 1.96, \quad d \approx 3.84
+$$
+
+であった.  このとき
+
+$$
+c^2 \approx 1.96^2 = 3.8416 \approx 3.84 \approx d
+$$
+
+となる. これが必然である理由を説明せよ.
+
+```julia
+(196//100)^2 |> float
+```
+
+__解答例1:__ 実際には正確に $c^2 = d$ となっている. なぜならば, $z>0$ を $z = \sqrt{y}$ とおくと, 
+
+$$
+\begin{aligned}
+P(-c \le Z \le c) &=
+\int_{-c}^c \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz =
+2\int_0^c \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz
+\\ &=
+2\int_0^{c^2} \frac{e^{-y/2}}{\sqrt{2\pi}}\frac{1}{2}y^{-1/2}\,dy =
+\int_0^{c^2} \frac{e^{-y/2}y^{1/2-1}}{2^{1/2}\Gamma(1/2)}\,dy =
+\\ &=
+P(Y \le c^2).
+\end{aligned}
+$$
+
+つまり $P(-c \le Z \le c) = P(y \le c^2)$ なので, $P(-c \le Z \le c) = 1 - \alpha$ となる $c$ の二乗と $P(Y \le d) = 1 - \alpha$ となる $d$ は一致する.
+
+__解答終__
+
+__解答例2:__ $Z^2 \sim \op{Chisq}(1)$ となるのであった. ゆえに
+
+$$
+P(-c\le Z\le c) = P(Z^2\le c^2) = P(Y\le c^2).
+$$
+
+これより, $P(-c \le Z \le c) = 1 - \alpha$ となる $c$ の二乗と $P(Y \le d) = 1 - \alpha$ となる $d$ は一致することがわかる.
+
+__解答終__
+
+
 ## ベータ分布
 
+$\alpha,\beta>0$ と仮定する. ベータ分布は $0$ から $1$ のあいだに分布する連続確率分布でその確率密度函数は
 
-### 一様分布の順序統計量
+$$
+p(t|\alpha, \beta) = \frac{t^{\alpha-1}(1 - t)^{\beta-1}}{B(\alpha,\beta)}
+\quad (0<t<1)
+$$
+
+と書けるのであった.  別のノートで我々はこの確率密度函数を天下り的に与えて, この分布のある種の極限でガンマ分布が得られることや, ガンマ分布からベータ分布を作れることなどを示した.  ガンマ分布は正規分布がらみの確率分布なので, この事実は, ベータ分布が正規分布モデルの統計学で大活躍する確率分布であることを示唆し, 実際にそうなっている.
+
+以下ではこれとは別のベータ分布の解釈を紹介する.  それによって, ベータ分布を二項分布や負の二項分布と繋げることに成功する.  ベータ分布は二項分布モデルの統計学や負の二項分布モデルの統計学でも役に立つ.
+
+
+### 一様分布のサイズ $n$ の標本分布の順序統計量
+
+独立な確率変数達 $T_1,T_2,\ldots,T_n$ のそれぞれは一様分布 $\op{Uniform}(0,1)$ に従っていると仮定する.  $T_1,\ldots,T_n$ の中で下から $k$ 番目に小さなものを $\T{k}$ と書く. 
+
+$\T{k}$ も確率変数になることに注意せよ.  $\T{k}$ に対応する乱数は次の手続きで作れる:
+
+(1) $\op{rand}()$ を $n$ 回実行してその結果を $T_1,\ldots,T_n$ とする.
+(2) $T_1,\ldots,T_n$ の中で下から $k$ 番目に小さな値を $\T{k}$ とする.
+
+これによって $0$ から $1$ のあいだの数値 $\T{k}$ で以上の手続きによってランダムに与えられるものが得られる.
+
+$\T{k}$ を __一様分布のサイズ $n$ の標本分布の順序統計量__ と呼ぶ.
+
+
+### 一様分布のサイズ $n$ の標本分布の順序統計量が従う分布
+
+一様分布のサイズ $n$ の標本分布の順序統計量 $\T{k}$ が従う分布はベータ分布 $\op{Beta}(k, n-k+1)$ になる:
+
+$$
+\T{k} \sim \op{Beta}(k-1, n-k).
+$$
+
+__証明1:__ $0 < t < t+dt < 1$ と $1,2,\ldots,n$ を並び替えたもの $i_1,i_2,\ldots,i_n$ について,
+
+$$
+P(T_{i_1},\ldots,T_{i_{k-1}} < t < T_{i_k} < t+dt < T_{i_{k+1}},\ldots,T_{i_n}) =
+t^{k-1}\, dt\, (1 - (t+dt))^{n-k}.
+$$
+
+さらに, $1,2,\ldots,n$ を $k-1$ 個の $i_1,\ldots,i_{k-1}$ と1個の $i_k$ と $n-k$ 個の $i_{k+1},\ldots,i_n$ の3グループへの分割の仕方の個数は
+
+$$
+\frac{n!}{(k-1)!1!(n-k)!} =
+\frac{\Gamma(n+1)}{\Gamma(k)\Gamma(n-k+1)} =
+\frac{1}{B(k, n-k+1)}
+$$
+
+と書ける.  これと上の確率をかけて, $dt\to 0$ のときの $dt$ より高次の微小量を無視したものが $\T{k}$ が従う分布の密度函数 $\times dt$ になる. (順序統計量 $\T{k}$ は $T_1,\ldots,T_n$ の中で $k$ 番目に小さなものであった.) ゆえに, $\T{k}$ が従う分布の確率密度函数は
+
+$$
+p(t|n,k) = \frac{t^{k-1} (1 - t)^{n-k}}{B(k, n-k+1)}
+\quad (0<t<1)
+$$
+
+になる. これはベータ分布 $\op{Beta}(k, n-k+1)$ の確率密度函数である. これで $\T{k}$ が従う分布はベータ分布 $\op{Beta}(k, n-k+1)$ になることがわかった.
+
+__証明終__
+
+
+__証明2:__ 一様分布 $\op{Uniform}(0,1)$ の累積分布函数と確率密度函数をそれぞれ $F(t)=t$ ($0<t<1$), $p(t)=F'(t)=1$ ($0<t<1$) と書き, 一様分布のサイズ $n$ の標本分布の順序統計量 $\T{k}$ の累積分布函数を $G(t)$ と書く:
+
+$$
+G(t) = P(\T{k}\le t).
+$$
+
+$\T{k}\le t$ が成立することは, $T_1,\ldots,T_n$ の中の $k$ 個以上が $t$ 以下になることと同値なので,
+
+$$
+G(t) = \sum_{j=k}^n \binom{n}{j} F(t)^j(1 - F(t))^{n-j}.
+$$
+
+これの導函数が $\T{k}$ の確率密度函数になる:
+
+$$
+\begin{aligned}
+G'(t) &=
+\sum_{j\ge k} j\binom{n}{j} F(t)^{j-1}F'(t)(1 - F(t))^{n-j}
+\\ & -
+\sum_{j\ge k} (n-j)\binom{n}{j} F(t)^j F'(t)(1 - F(t))^{n-j-1}
+\\ & =
+\sum_{j\ge k} n\binom{n-1}{j-1} F(t)^{j-1}F'(t)(1 - F(t))^{n-j}
+\\ & -
+\sum_{j\ge k} n\binom{n-1}{j} F(t)^j F'(t)(1 - F(t))^{n-j-1}
+\\ & =
+\sum_{j\ge k} n\binom{n-1}{j-1} F(t)^{j-1}F'(t)(1 - F(t))^{n-j}
+\\ & -
+\sum_{j\ge k+1} n\binom{n-1}{j-1} F(t)^j F'(t)(1 - F(t))^{n-j}
+\\ & =
+n\binom{n-1}{j-1} F(t)^{k-1}F'(t)(1 - F(t))^{n-k}
+\\ & =
+\frac{n!}{(k-1)!(n-k)!} F(t)^{k-1}F'(t)(1 - F(t))^{n-k}
+\\ & =
+\frac{1}{B(k, n-k+1)} t^{k-1} (1 - t)^{n-k}.
+\end{aligned}
+$$
+
+これはベータ分布 $\op{Beta}(k, n-k+1)$ の確率密度函数である. これで $\T{k}$ が従う分布はベータ分布 $\op{Beta}(k, n-k+1)$ になることがわかった.
+
+__証明終__
 
 
 ### 二項分布の累積分布函数のベータ分布の累積分布函数表示
 
+前節の証明2の証明中で使った
+
+$$
+P(\T{k}\le t) = G(t) =
+\sum_{j=k}^n \binom{n}{j} F(t)^j(1 - F(t))^{n-j} =
+\sum_{j=k}^n \binom{n}{j} t^j(1 - t)^{n-j}
+\quad (0<t<1)
+$$
+
+の最右辺は二項分布 $\op{Binomial}(n, t)$ において $k$ 以上になる確率に一致している. 
+
+さらに, $\T{k}$ が従う分布が $\op{Beta}(k, n-k+1)$ だったので, その確率はベータ分布 $\op{Beta}(k, n-k+1)$ において $t$ 以下になる確率に一致することになる.
+
+これで, 二項分布とベータ分布の累積分布函数の関係が得られた:
+
+$$
+\begin{aligned}
+&
+K \sim \op{Binomial}(n, t), \;\;
+T \sim \op{Beta}(k, n-k+1)
+\\ & \implies
+P(K \ge k) = P(T \le t), \;\;
+P(K \le k-1) = 1 - P(T \le t).
+\end{aligned}
+$$
+
+後者は前者の補事象を取ることによって得られる.  $k$ を $k+1$ に置き換えると,
+
+$$
+\begin{aligned}
+&
+K \sim \op{Binomial}(n, t), \;\;
+T \sim \op{Beta}(k+1, n-k)
+\\ &\implies
+P(K \ge k+1) = P(T \le t), \;\;
+P(K \le k) = 1 - P(T \le t).
+\end{aligned}
+$$
+
+これらの公式の利点は右辺のベータ分布側の確率の計算を基本特殊函数ライブラリによって効率よく可能なことである.  左辺の二項分布における確率は $n$ が大きいときには平均して $n/2$ 個の数値を足し上げる計算が必要になってしまう.
+
+
+前節の証明1の結果($\T{k}$ の確率密度函数の形)を認めれば, 証明2で $G'(t)$ を計算する面倒な省略抜きに,
+
+$$
+P(\T{k}\le t) = \int_0^t \frac{u^{k-1} (1 - u)^{n-k}}{B(k, n-k+1)}\,du
+$$
+
+が得られるので, 易しく証明できる
+
+$$
+P(\T{k}\le t) = \sum_{j=k}^n \binom{n}{j} t^j(1 - t)^{n-j}
+$$
+
+と合わせて,
+
+$$
+\sum_{j=k}^n \binom{n}{j} t^j(1 - t)^{n-j} =
+\int_0^t \frac{u^{k-1} (1 - u)^{n-k}}{B(k, n-k+1)}\,du
+$$
+
+が得られる. このことからも上の方で述べた二項分布の累積分布函数がベータ分布の累積分布函数で書けるという結果が得られる.
+
 
 ### 負の二項分布の累積分布函数のベータ分布の累積分布函数表示
+
+
 
 
 ### ベータ二項分布の定義
