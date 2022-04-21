@@ -1381,28 +1381,37 @@ title!("y = nˣ B(x, n)")
 
 ### 問題: ベータ分布の極限でガンマ分布が得られること
 
-$\alpha, \theta > 0$, $b\in\R$, $n+b > 0$ と仮定する. $T_n$ はベータ分布 $\op{Beta}(\alpha, n+b)$ に従う確率変数であるとする.  このとき, $\theta n T_n$ が従う分布は $n\to\infty$ でガンマ分布 $\op{Gamma}(\alpha, \theta)$ に近付くことを示せ. すなわち次が成立することを示せ:
+$\alpha, \theta > 0$, $b\in\R$ と仮定する. $T_n$ はパラメータ $\alpha$, $n/\theta+b > 0$ を持つベータ分布に従う確率変数であるとする:
 
 $$
-\lim_{n\to\infty} E[f(\theta n T_n)] = 
+T_n \sim \op{Beta}(\alpha, n/\theta+b).
+$$
+
+このとき, $n T_n$ が従う分布は $n\to\infty$ でガンマ分布 $\op{Gamma}(\alpha, \theta)$ に近付くことを示せ. すなわち次が成立することを示せ:
+
+$$
+\lim_{n\to\infty} E[f(n T_n)] = 
 \int_0^\infty f(x) \frac{e^{-x/\theta}x^{\alpha-1}}{\theta^\alpha \Gamma(\alpha)}\,dx.
 $$
 
-__解答例:__ 定義に戻って $E[f(\theta n T_n)]$ を計算すると $n\to\infty$ で以下が成立することがわかる:
+__解答例:__ 定義に戻って $E[f(n T_n)]$ を計算すると $n\to\infty$ で以下が成立することがわかる:
 
 $$
 \begin{aligned}
-E[f(\theta n T_n)] &= 
-\int_0^1 f(\theta nt) \frac{t^{\alpha-1}(1-t)^{n+b-1}}{B(\alpha, n+b)}\,dt
+E[f(n T_n)] &= 
+\int_0^1 f(nt) \frac{t^{\alpha-1}(1-t)^{n/\theta+b-1}}{B(\alpha, n/\theta+b)}\,dt
 \\ &=
-\frac{1}{B(\alpha, n+b)}
-\int_0^{n\theta} f(x)
-\left(\frac{x}{n\theta}\right)^{\alpha-1}\left(1 - \frac{x}{n\theta}\right)^{n+b-1}
-\,\frac{dx}{n\theta}
+\frac{1}{B(\alpha, n/\theta+b)}
+\int_0^n f(x)
+\left(\frac{x}{n}\right)^{\alpha-1}\left(1 - \frac{x}{n}\right)^{n/\theta+b-1}
+\,\frac{dx}{n}
 \\ &=
-\frac{1}{\theta^\alpha\,\underbrace{n^\alpha B(\alpha, n+b)}_{\to\Gamma(\alpha)}}
-\int_0^{n\theta} f(x)
-\underbrace{\left(1 - \frac{x}{n\theta}\right)^{n+b-1}}_{\to\exp(-x/\theta)}
+\frac{1}{n^\alpha B(\alpha, n/\theta+b)}
+\int_0^n f(x) x^{\alpha-1}\left(1 - \frac{x}{n}\right)^{n/\theta+b-1}\,dx
+\\ &=
+\frac{1}{\theta^\alpha\,\underbrace{(n/\theta)^\alpha B(\alpha, n/\theta+b)}_{\to\Gamma(\alpha)}}
+\int_0^n f(x)
+\underbrace{\left(1 - \frac{x}{n}\right)^{n/\theta+b-1}}_{\to\exp(-x/\theta)}
 \,x^{\alpha-1}\,dx
 \\ & \to
 \frac{1}{\theta^\alpha\Gamma(\alpha)}
@@ -1410,13 +1419,36 @@ E[f(\theta n T_n)] &=
 \end{aligned}
 $$
 
-2つめの等号で $t = x/(n\theta)$ とおいた.  これで示すべきことが示された.
+2つめの等号で $t = x/n$ とおいた.  これで示すべきことが示された.
 
 __解答例__
 
 
 __注意:__ 正規分布モデルの統計学ではベータ分布がらみの確率分布達(例えば $t$ 分布, $F$ 分布)が大活躍する. 上の結果はそれらが, 正規分布またはガンマ分布がらみの確率分布(例えばχ²分布)の裾野を太くする拡張になっていることを本質的に含んでいる.
 
+```julia
+pdf_Tn(n, α, θ, b, x) = pdf(Beta(α, n/θ + b), x/n)/n
+
+function plot_nbeta(n, α, θ, b=1)
+    xmin, xmax = max(0, α*θ - 4√α*θ), α*θ + 4√α*θ
+    plot(x -> pdf_Tn(n, α, θ, b, x), xmin, xmax; label="n Beta(α,n/θ+b)")
+    plot!(x -> pdf(Gamma(α, θ), x), xmin, xmax; label="Gamma(α,β)", ls=:dash)
+    α < 1 && plot!(; ylim=(-0.3, 3.3))
+    title!("n=$n, α=$α, θ=$θ, b=$b")
+end
+```
+
+```julia
+plot(plot_nbeta.((1.0, 1.5, 2.0), 0.5, 1)...; size=(800, 200), layout=(1, 3))
+```
+
+```julia
+plot(plot_nbeta.((3, 10, 30), 1, 2)...; size=(800, 200), layout=(1, 3))
+```
+
+```julia
+plot(plot_nbeta.((10, 30, 100), 3, 1)...; size=(800, 200), layout=(1, 3))
+```
 
 ### ベータ函数の別の基本的表示
 
