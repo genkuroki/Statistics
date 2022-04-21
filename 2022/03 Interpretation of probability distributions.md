@@ -39,7 +39,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布" data-toc-modified-id="$t$-分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる" data-toc-modified-id="問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散の $\nu$ 倍が自由度 $\nu$ のχ²分布に従う平均 $0$ の正規分布は $t$ 分布になる</a></span></li><li><span><a href="#必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li><li><span><a href="#Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係" data-toc-modified-id="Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li><li><span><a href="#必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲" data-toc-modified-id="必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲</a></span></li><li><span><a href="#問題:-自由度1のχ²分布と標準正規分布の関係の数値例" data-toc-modified-id="問題:-自由度1のχ²分布と標準正規分布の関係の数値例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 自由度1のχ²分布と標準正規分布の関係の数値例</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量</a></span></li><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量が従う分布</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li></ul></li><li><span><a href="#ベータ二項分布" data-toc-modified-id="ベータ二項分布-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>ベータ二項分布</a></span><ul class="toc-item"><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布" data-toc-modified-id="$t$-分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる" data-toc-modified-id="問題:-分散の-$\nu$-倍が自由度-$\nu$-のχ²分布に従う平均-$0$-の正規分布は-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散の $\nu$ 倍が自由度 $\nu$ のχ²分布に従う平均 $0$ の正規分布は $t$ 分布になる</a></span></li><li><span><a href="#必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間</a></span></li></ul></li><li><span><a href="#Poisson分布" data-toc-modified-id="Poisson分布-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li><li><span><a href="#Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係" data-toc-modified-id="Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係</a></span></li></ul></li><li><span><a href="#ガンマ分布" data-toc-modified-id="ガンマ分布-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ガンマ分布</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li><li><span><a href="#必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲" data-toc-modified-id="必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲</a></span></li><li><span><a href="#問題:-自由度1のχ²分布と標準正規分布の関係の数値例" data-toc-modified-id="問題:-自由度1のχ²分布と標準正規分布の関係の数値例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 自由度1のχ²分布と標準正規分布の関係の数値例</a></span></li></ul></li><li><span><a href="#ベータ分布" data-toc-modified-id="ベータ分布-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ベータ分布</a></span><ul class="toc-item"><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量</a></span></li><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量が従う分布</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li></ul></li><li><span><a href="#ベータ二項分布" data-toc-modified-id="ベータ二項分布-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>ベータ二項分布</a></span><ul class="toc-item"><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li><li><span><a href="#ベータ二項分布の解釈の仕方" data-toc-modified-id="ベータ二項分布の解釈の仕方-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>ベータ二項分布の解釈の仕方</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -2012,7 +2012,96 @@ __注意:__ 負の二項分布の累積分布函数 $P(M\le m)$ の計算を定�
 
 ### ベータ二項分布の定義
 
-次の確率質量函数で定義される有限離散分布を __ベータ二項分布__ (Beta-binomial disttribution)
+次の確率質量函数で定義される有限離散分布を __ベータ二項分布__ (Beta-binomial disttribution)と呼び,
+
+$$
+\op{BetaBinomial}(n, \alpha, \beta)
+$$
+
+と表す:
+
+$$
+P(k|n,\alpha,\beta) =
+\binom{n}{k}\frac{B(\alpha+k,\beta+n-k)}{B(\alpha,\beta)}
+\quad (k=0,1,\ldots,n)
+$$
+
+次が成立していることに注意せよ:
+
+$$
+P(k|n,\alpha,\beta) =
+\int_0^1 \binom{n}{k}p^k(1-p)^{n-k}\,\frac{p^{\alpha^1}(1-p)^{\beta-1}}{B(\alpha,\beta)}\,dp.
+$$
+
+この式は二項分布 $\op{Binomial}(n,p)$ の成功確率パラメータ $p$ がベータ分布 $\op{Beta}(\alpha,\beta)$ に従って確率的に揺らいでいる場合の分布を表す確率質量函数になっている.
+
+ベータ二項分布の乱数は以下の手続きで生成可能である:
+
+1. ベータ分布 $\op{Beta}(\alpha,\beta)$ に従って乱数 $p$ を生成する.
+2. 二項分布 $\op{Binomial}(n, p)$ に従って乱数 $k$ を生成する.
+
+このように $k$ を大量に生成したときの $k$ の分布がベータ二項分布になる.
+
+```julia
+function plot_bb(n, α, β; L = 10^6, kwargs...)
+    P = rand(Beta(α, β), L) # ベータ分布の乱数を大量に生成
+    K = @. rand(Binomial(n, P)) # 二項分布で乱数生成
+
+    # 比較のための同時プロット
+    kmin, kmax = round.(Int, quantile.(BetaBinomial(n, α, β), (0.001, 0.999)))
+    x = range(kmin-0.6, kmax+0.6, 1000)
+    histogram(K; norm=true, alpha=0.3, bin=kmin-0.5:kmax+0.5, label="mc sim")
+    plot!(x, x -> pdf(BetaBinomial(n, α, β), round(Int, x)); label="BetaBin(n,α,β)", lw=1.5)
+    plot!(x, x -> pdf(Binomial(n, α/(α+β)), round(Int, x)); label="Bin(n,α/(α+β))", ls=:dash)
+    title!("n=$n, α=$α, β=$β")
+    plot!(; kwargs...)
+end
+
+function plot_beta(α, β)
+    plot(Beta(α, β); label="", title="Beta(α=$α, β=$β)", xtick=0:0.1:1)
+end
+```
+
+```julia
+plot(plot_bb(20, 3, 7), plot_bb(20, 9, 21); size=(800, 250))
+```
+
+```julia
+plot(plot_bb(20, 30, 70), plot_bb(20, 90, 210); size=(800, 250))
+```
+
+$\alpha/(\alpha+\beta)$ を保ったまま $\alpha,\beta$ を大きくすると分布 $\op{BetaBinomial}(n,\alpha,\beta)$ は 分布 $\op{Binomial}(n, \alpha/(\alpha+\beta)$ に近付く. そうなる理由は $\alpha/(\alpha+\beta)$ を保ったまま $\alpha,\beta$ を大きくすると, 分布 $\op{Beta}(\alpha,\beta)$ が $\alpha/(\alpha+\beta)$ に集中するようになるからである.
+
+```julia
+plot(plot_beta(3, 7), plot_beta(9, 21); size=(800, 250))
+```
+
+```julia
+plot(plot_beta(30, 70), plot_beta(90, 210); size=(800, 250))
+```
+
+### ベータ二項分布の解釈の仕方
+
+ある母集団に含まれる医師を無作為に選んで $n$ 人の患者を方法Aで治療してもらったとする. 何らかの基準で治療が成功したか否かを客観的に判断し, 成功した人数 $k$ を記録したとする. 
+
+このとき $n$ 回中の治療成功数 $k$ の最も単純なモデル化は, 無作為に選んだ医師によらずに共通の治療成功率 $p$ が決まっていて, 成功階数 $k$ は二項分布に従ってランダムに決まると考えることである.
+
+統計モデルは現実には確実に一致しないことが明らかなものを選ぶことが多い. 例えば, この二項分布モデルの前提である試行の独立性と毎回の成功確率が一定であるという仮定は現実には多くの場合に疑わしい.
+
+しかし, 適当な誤差を除いて現実の状況をうまく把握できれば統計モデルの設定は成功したことになる.
+
+上の二項分布モデル採用は, 無作為に選んだ医師によらずに共通の治療成功率 $p$ が決まっているという仮定が極めて疑わしい状況では失敗に終わるだろう.
+
+そのような場合には, 「無作為に選んだ医師達全員に共通の成功確率 $p$ が決まっている」という設定を, 「無作為に選んだ医師ごとに成功確率は違っていて成功確率はある確率分布にしたがってばらついている」という設定に緩めれば良さそうである.
+
+そのときの有力候補の1つがベータ二項分布になっている. ベータ二項分布における成功回数 $k$ は以下のように生成されるのであった:
+
+1. ベータ分布 $\op{Beta}(\alpha,\beta)$ に従って乱数 $p$ を生成する.
+2. 二項分布 $\op{Binomial}(n, p)$ に従って乱数 $k$ を生成する.
+
+これは, ベータ分布で乱数 $p$ を生成するところは, 医師を無作為に選んだときに成功確率 $p$ だベータ分布に従ってランダムに決まるというモデル内設定になっている.  現実の医師達についてはそう単純ではないことは確実だが, このようなモデル設定を試せることも知っていると, 統計分析の成功可能性が上がるだろう.
+
+上で見たように, $\alpha,\beta$ が大きくなると, ベータ分布がランダムに生成する成功確率 $p$ のばらつきの幅が小さくなり, ベータ二項分布はただの二項分布に近付く.  このような場合にはよりシンプルな二項分布モデルを採用した方がよい可能性も出て来る.
 
 ```julia
 

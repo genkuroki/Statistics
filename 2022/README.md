@@ -2,7 +2,11 @@
 
 ## 資料
 
-オンラインで読むなら nbviewer 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf をダウンロードしてください。
+[Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください。
+
+[Julia言語](https://julialang.org/)を使って数値的な計算はグラフの作画を行っています。[WolframAlpha](https://www.wolframalpha.com/)も併用しています。
+
+__明らかな誤りをまだ大量に含んでいるものと思われます。ごめんなさい。適切に訂正しながら読んでください。__
 
 ### 01 Bernoulli試行と関連確率分布
 
@@ -42,20 +46,28 @@ __定義された分布__
 * 自由度 (ν₁, ν₂) のF分布: FDist(ν₁, ν₂) (本質的にオッズに関する Beta(ν₁/2, ν₂/2) 分布)
 * Dirichlet分布: Dirichlet(α_1,…,α_n)  (n=2の場合がベータ分布と一致)
 
-### 03
+### 03 確率分布達の解釈
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)\]
 
 __定義された分布__
 
 * 対数正規分布: LogNormal(μ, σ)
 * 期待値 λ のPoisson分布(ポアソン分布): Poisson(λ)
-* 負の二項分布 (Poisson分布の期待値パラメータがガンマ分布に従う場合)
+* 負の二項分布 (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
+* ベータ二項分布: BetaBinomial(n, α, β)
 
-### テンプレート
+### 99 テンプレート
 
 * [Jupyter notebook]()
 \[[nbviewer]()\]
 * [pdf]()
 \[[download]()\]
+
+__定義された分布__
 
 ---
 
