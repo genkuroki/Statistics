@@ -286,34 +286,39 @@ $$
 $\alpha = 1/2$ のガンマ分布の確率密度函数は次の形になる.
 
 ```julia
-plot(Gamma(1/2, 1), 0.01, 2; label="", title="Gamma(1/2, 1)")
+α, θ = 1/2, 1
+plot(Gamma(α, θ), 0.01, 2; label="", title="Gamma($α, $θ)")
 ```
 
 $\alpha = 3$ のガンマ分布の確率密度函数は次の形になる.
 
 ```julia
-plot(Gamma(3, 1); label="", title="Gamma(3, 1)")
+α, θ = 3, 1
+plot(Gamma(α, θ); label="", title="Gamma($α, $θ)")
 ```
 
 $\alpha = 30$ のガンマ分布の確率密度函数は次の形になる.
 
 ```julia
-plot(Gamma(30, 1), 0, 60; label="", title="Gamma(30, 1)")
+α, θ = 30, 1
+plot(Gamma(α, θ); label="", title="Gamma($α, $θ)")
 ```
 
 __形状パラメータ $\alpha$ が大きなガンマ分布は正規分布で近似される.__ 
 
 ```julia
-gam = Gamma(30, 1)
-plot(gam, 0, 60; label="Gamma(30, 1)")
+α, θ = 30, 1
+gam = Gamma(α, θ)
+plot(gam, 0, 60; label="Gamma($α, $θ)")
 plot!(Normal(mean(gam), std(gam)); label="normal approx.", ls=:dash)
 ```
 
 ガンマ分布の確率密度函数は $(\alpha - 1)\theta$ で最大になることを示せる. それに対して, それを近似する正規分布の期待値はもとのガンマ分布の期待値 $\alpha\theta$ に等しくなるので, $\alpha = 30$, $\theta = 1$ の場合にはその分だけずれが生じている.
 
 ```julia
-gam = Gamma(300, 1)
-plot(gam, 200, 400; label="Gamma(100, 1)")
+α, θ = 300, 1
+gam = Gamma(α, θ)
+plot(gam, 200, 400; label="Gamma($α, $θ)")
 plot!(Normal(mean(gam), std(gam)); label="normal approx.", ls=:dash)
 ```
 
