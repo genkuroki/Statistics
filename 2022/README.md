@@ -59,6 +59,7 @@ __定義された分布__
 * 期待値 λ のPoisson分布(ポアソン分布): Poisson(λ)
 * 負の二項分布 (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
 * ベータ二項分布: BetaBinomial(n, α, β)
+* 超幾何分布: Hypergeometric(s, f, n)
 
 ### 99 テンプレート
 

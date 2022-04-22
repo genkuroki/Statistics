@@ -39,7 +39,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布の「分散が確率的に揺らいでいる正規分布」という解釈" data-toc-modified-id="$t$-分布の「分散が確率的に揺らいでいる正規分布」という解釈-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布の「分散が確率的に揺らいでいる正規分布」という解釈</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散がχ²分布の-$\nu$-分の1に従う正規分布は自由度-$\nu$-の-$t$-分布になる" data-toc-modified-id="問題:-分散がχ²分布の-$\nu$-分の1に従う正規分布は自由度-$\nu$-の-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散がχ²分布の $\nu$ 分の1に従う正規分布は自由度 $\nu$ の $t$ 分布になる</a></span></li><li><span><a href="#必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間</a></span></li></ul></li><li><span><a href="#Poisson分布の導入とその解釈" data-toc-modified-id="Poisson分布の導入とその解釈-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布の導入とその解釈</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#Poisson分布における確率の総和が1になることの確認" data-toc-modified-id="Poisson分布における確率の総和が1になることの確認-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Poisson分布における確率の総和が1になることの確認</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li></ul></li><li><span><a href="#負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈" data-toc-modified-id="負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈</a></span><ul class="toc-item"><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li></ul></li><li><span><a href="#ガンマ分布の解釈" data-toc-modified-id="ガンマ分布の解釈-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ガンマ分布の解釈</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係" data-toc-modified-id="Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li><li><span><a href="#問題:-Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明" data-toc-modified-id="問題:-Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>問題: Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明</a></span></li><li><span><a href="#必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲" data-toc-modified-id="必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲</a></span></li><li><span><a href="#問題:-自由度1のχ²分布と標準正規分布の関係の数値例" data-toc-modified-id="問題:-自由度1のχ²分布と標準正規分布の関係の数値例-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: 自由度1のχ²分布と標準正規分布の関係の数値例</a></span></li></ul></li><li><span><a href="#ベータ分布の一様乱数生成の繰り返しによる解釈" data-toc-modified-id="ベータ分布の一様乱数生成の繰り返しによる解釈-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>ベータ分布の一様乱数生成の繰り返しによる解釈</a></span><ul class="toc-item"><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量</a></span></li><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量が従う分布</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用" data-toc-modified-id="二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用</a></span></li><li><span><a href="#おまけ:-二項分布とベータ分布の関係のベイズ統計への応用" data-toc-modified-id="おまけ:-二項分布とベータ分布の関係のベイズ統計への応用-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>おまけ: 二項分布とベータ分布の関係のベイズ統計への応用</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-6.6"><span class="toc-item-num">6.6&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布とベータ分布の関係の非整数パラメータケース" data-toc-modified-id="負の二項分布とベータ分布の関係の非整数パラメータケース-6.7"><span class="toc-item-num">6.7&nbsp;&nbsp;</span>負の二項分布とベータ分布の関係の非整数パラメータケース</a></span></li></ul></li><li><span><a href="#ベータ二項分布" data-toc-modified-id="ベータ二項分布-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>ベータ二項分布</a></span><ul class="toc-item"><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li><li><span><a href="#ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈" data-toc-modified-id="ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈</a></span></li><li><span><a href="#ベータ二項分布での確率の総和が１になることの確認" data-toc-modified-id="ベータ二項分布での確率の総和が１になることの確認-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>ベータ二項分布での確率の総和が１になることの確認</a></span></li><li><span><a href="#問題:-ベータ二項分布の期待値と分散" data-toc-modified-id="問題:-ベータ二項分布の期待値と分散-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>問題: ベータ二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-ベータ二項分布の極限として負の二項分布が得られる" data-toc-modified-id="問題:-ベータ二項分布の極限として負の二項分布が得られる-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>問題: ベータ二項分布の極限として負の二項分布が得られる</a></span></li><li><span><a href="#問題:-二項分布とベータ二項分布のモーメント母函数" data-toc-modified-id="問題:-二項分布とベータ二項分布のモーメント母函数-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>問題: 二項分布とベータ二項分布のモーメント母函数</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#正規分布" data-toc-modified-id="正規分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>正規分布</a></span><ul class="toc-item"><li><span><a href="#正規分布のロケーションスケール変換も正規分布" data-toc-modified-id="正規分布のロケーションスケール変換も正規分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>正規分布のロケーションスケール変換も正規分布</a></span></li><li><span><a href="#問題:-正規分布の平均と分散" data-toc-modified-id="問題:-正規分布の平均と分散-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: 正規分布の平均と分散</a></span></li><li><span><a href="#問題:-正規分布に従う独立な確率変数達の和も正規分布に従う" data-toc-modified-id="問題:-正規分布に従う独立な確率変数達の和も正規分布に従う-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 正規分布に従う独立な確率変数達の和も正規分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う独立な確率変数の和" data-toc-modified-id="問題:-標準正規分布に従う独立な確率変数の和-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 標準正規分布に従う独立な確率変数の和</a></span></li><li><span><a href="#必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-正規分布における確率が95%または99%になる区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>必ず解いて欲しい問題: 正規分布における確率が95%または99%になる区間</a></span></li><li><span><a href="#問題:-正規分布のモーメント母函数とキュムラント母函数" data-toc-modified-id="問題:-正規分布のモーメント母函数とキュムラント母函数-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>問題: 正規分布のモーメント母函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-キュムラント母函数と期待値と分散" data-toc-modified-id="問題:-キュムラント母函数と期待値と分散-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: キュムラント母函数と期待値と分散</a></span></li><li><span><a href="#問題:-対数正規分布の確率密度函数" data-toc-modified-id="問題:-対数正規分布の確率密度函数-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>問題: 対数正規分布の確率密度函数</a></span></li><li><span><a href="#問題:-対数正規分布の期待値と分散" data-toc-modified-id="問題:-対数正規分布の期待値と分散-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 対数正規分布の期待値と分散</a></span></li></ul></li><li><span><a href="#$t$-分布の「分散が確率的に揺らいでいる正規分布」という解釈" data-toc-modified-id="$t$-分布の「分散が確率的に揺らいでいる正規分布」という解釈-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>$t$ 分布の「分散が確率的に揺らいでいる正規分布」という解釈</a></span><ul class="toc-item"><li><span><a href="#分散パラメータが確率分布に従う正規分布について" data-toc-modified-id="分散パラメータが確率分布に従う正規分布について-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>分散パラメータが確率分布に従う正規分布について</a></span></li><li><span><a href="#問題:-分散がχ²分布の-$\nu$-分の1に従う正規分布は自由度-$\nu$-の-$t$-分布になる" data-toc-modified-id="問題:-分散がχ²分布の-$\nu$-分の1に従う正規分布は自由度-$\nu$-の-$t$-分布になる-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 分散がχ²分布の $\nu$ 分の1に従う正規分布は自由度 $\nu$ の $t$ 分布になる</a></span></li><li><span><a href="#必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間" data-toc-modified-id="必ず解いて欲しい問題:-$t$-分布における確率が95%または99%になる区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必ず解いて欲しい問題: $t$ 分布における確率が95%または99%になる区間</a></span></li></ul></li><li><span><a href="#Poisson分布の導入とその解釈" data-toc-modified-id="Poisson分布の導入とその解釈-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Poisson分布の導入とその解釈</a></span><ul class="toc-item"><li><span><a href="#Poisson分布の定義" data-toc-modified-id="Poisson分布の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Poisson分布の定義</a></span></li><li><span><a href="#Poisson分布における確率の総和が1になることの確認" data-toc-modified-id="Poisson分布における確率の総和が1になることの確認-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Poisson分布における確率の総和が1になることの確認</a></span></li><li><span><a href="#問題:-Poisson分布のキュムラント母函数と期待値と分散" data-toc-modified-id="問題:-Poisson分布のキュムラント母函数と期待値と分散-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: Poisson分布のキュムラント母函数と期待値と分散</a></span></li><li><span><a href="#二項分布の連続時間極限" data-toc-modified-id="二項分布の連続時間極限-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>二項分布の連続時間極限</a></span></li><li><span><a href="#Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる" data-toc-modified-id="Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Poisson分布は単位時間内に起こるイベントの回数の分布だとみなされる</a></span></li><li><span><a href="#Poisson分布の中心極限定理と二項分布の中心極限定理の関係" data-toc-modified-id="Poisson分布の中心極限定理と二項分布の中心極限定理の関係-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Poisson分布の中心極限定理と二項分布の中心極限定理の関係</a></span></li><li><span><a href="#問題:-Poisson分布の中心極限定理の直接証明" data-toc-modified-id="問題:-Poisson分布の中心極限定理の直接証明-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: Poisson分布の中心極限定理の直接証明</a></span></li></ul></li><li><span><a href="#負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈" data-toc-modified-id="負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>負の二項分布の「期待値＝分散が確率的に揺らいでいるPoisson分布」という解釈</a></span><ul class="toc-item"><li><span><a href="#Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる" data-toc-modified-id="Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Poisson分布のパラメータがガンマ分布に従っていれば負の二項分布が得られる</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布から負の二項分布が得られる" data-toc-modified-id="問題:-Poisson分布とガンマ分布から負の二項分布が得られる-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布から負の二項分布が得られる</a></span></li></ul></li><li><span><a href="#ガンマ分布の解釈" data-toc-modified-id="ガンマ分布の解釈-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>ガンマ分布の解釈</a></span><ul class="toc-item"><li><span><a href="#問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>問題: 標準正規分布に従う確率変数の2乗は自由度1のχ²分布に従う</a></span></li><li><span><a href="#問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う" data-toc-modified-id="問題:-標準正規分布に従う-$n$-個の独立な確率変数達の2乗は自由度-$n$-のχ²分布に従う-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>問題: 標準正規分布に従う $n$ 個の独立な確率変数達の2乗は自由度 $n$ のχ²分布に従う</a></span></li><li><span><a href="#負の二項分布の連続時間極限" data-toc-modified-id="負の二項分布の連続時間極限-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>負の二項分布の連続時間極限</a></span></li><li><span><a href="#ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる" data-toc-modified-id="ガンマ分布はイベントが-$\alpha$-回起こるまでにかかる時間の分布とみなされる-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>ガンマ分布はイベントが $\alpha$ 回起こるまでにかかる時間の分布とみなされる</a></span></li><li><span><a href="#Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係" data-toc-modified-id="Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係</a></span></li><li><span><a href="#負の二項分布の連続時間極限の様子をプロット" data-toc-modified-id="負の二項分布の連続時間極限の様子をプロット-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>負の二項分布の連続時間極限の様子をプロット</a></span></li><li><span><a href="#問題:-Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明" data-toc-modified-id="問題:-Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>問題: Poisson分布の累積分布函数とガンマ分布の累積分布函数の関係の直接証明</a></span></li><li><span><a href="#必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲" data-toc-modified-id="必ず解いて欲しい問題:-χ²分布における確率が95%または99%になる範囲-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>必ず解いて欲しい問題: χ²分布における確率が95%または99%になる範囲</a></span></li><li><span><a href="#問題:-自由度1のχ²分布と標準正規分布の関係の数値例" data-toc-modified-id="問題:-自由度1のχ²分布と標準正規分布の関係の数値例-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: 自由度1のχ²分布と標準正規分布の関係の数値例</a></span></li></ul></li><li><span><a href="#ベータ分布の一様乱数生成の繰り返しによる解釈" data-toc-modified-id="ベータ分布の一様乱数生成の繰り返しによる解釈-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>ベータ分布の一様乱数生成の繰り返しによる解釈</a></span><ul class="toc-item"><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量</a></span></li><li><span><a href="#一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布" data-toc-modified-id="一様分布のサイズ-$n$-の標本分布の順序統計量が従う分布-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>一様分布のサイズ $n$ の標本分布の順序統計量が従う分布</a></span></li><li><span><a href="#二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="二項分布の累積分布函数のベータ分布の累積分布函数表示-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用" data-toc-modified-id="二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>二項分布とベータ分布の関係のClopper-PearsonのP値函数への応用</a></span></li><li><span><a href="#おまけ:-二項分布とベータ分布の関係のBayes統計への応用" data-toc-modified-id="おまけ:-二項分布とベータ分布の関係のBayes統計への応用-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>おまけ: 二項分布とベータ分布の関係のBayes統計への応用</a></span></li><li><span><a href="#おまけ関連問題:-ベータ分布は二項分布の共役事前分布である" data-toc-modified-id="おまけ関連問題:-ベータ分布は二項分布の共役事前分布である-6.6"><span class="toc-item-num">6.6&nbsp;&nbsp;</span>おまけ関連問題: ベータ分布は二項分布の共役事前分布である</a></span></li><li><span><a href="#負の二項分布の累積分布函数のベータ分布の累積分布函数表示" data-toc-modified-id="負の二項分布の累積分布函数のベータ分布の累積分布函数表示-6.7"><span class="toc-item-num">6.7&nbsp;&nbsp;</span>負の二項分布の累積分布函数のベータ分布の累積分布函数表示</a></span></li><li><span><a href="#負の二項分布とベータ分布の関係の非整数パラメータケース" data-toc-modified-id="負の二項分布とベータ分布の関係の非整数パラメータケース-6.8"><span class="toc-item-num">6.8&nbsp;&nbsp;</span>負の二項分布とベータ分布の関係の非整数パラメータケース</a></span></li></ul></li><li><span><a href="#ベータ二項分布" data-toc-modified-id="ベータ二項分布-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>ベータ二項分布</a></span><ul class="toc-item"><li><span><a href="#ベータ二項分布の定義" data-toc-modified-id="ベータ二項分布の定義-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>ベータ二項分布の定義</a></span></li><li><span><a href="#ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈" data-toc-modified-id="ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>ベータ二項分布の「成功確率が確率的に揺らいでいる二項分布」という解釈</a></span></li><li><span><a href="#ベータ二項分布での確率の総和が１になることの確認" data-toc-modified-id="ベータ二項分布での確率の総和が１になることの確認-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>ベータ二項分布での確率の総和が１になることの確認</a></span></li><li><span><a href="#問題:-ベータ二項分布の期待値と分散" data-toc-modified-id="問題:-ベータ二項分布の期待値と分散-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>問題: ベータ二項分布の期待値と分散</a></span></li><li><span><a href="#問題:-ベータ二項分布-=-負の超幾何分布" data-toc-modified-id="問題:-ベータ二項分布-=-負の超幾何分布-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>問題: ベータ二項分布 = 負の超幾何分布</a></span></li><li><span><a href="#超幾何分布,-二項分布,--ベータ二項分布の統一的な理解" data-toc-modified-id="超幾何分布,-二項分布,--ベータ二項分布の統一的な理解-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>超幾何分布, 二項分布,  ベータ二項分布の統一的な理解</a></span></li><li><span><a href="#問題:-超幾何分布,-二項分布,--ベータ二項分布の期待値と分散の統一的な公式" data-toc-modified-id="問題:-超幾何分布,-二項分布,--ベータ二項分布の期待値と分散の統一的な公式-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>問題: 超幾何分布, 二項分布,  ベータ二項分布の期待値と分散の統一的な公式</a></span></li><li><span><a href="#問題:-ベータ二項分布の極限として負の二項分布が得られる" data-toc-modified-id="問題:-ベータ二項分布の極限として負の二項分布が得られる-7.8"><span class="toc-item-num">7.8&nbsp;&nbsp;</span>問題: ベータ二項分布の極限として負の二項分布が得られる</a></span></li><li><span><a href="#問題:-二項分布とベータ二項分布のモーメント母函数" data-toc-modified-id="問題:-二項分布とベータ二項分布のモーメント母函数-7.9"><span class="toc-item-num">7.9&nbsp;&nbsp;</span>問題: 二項分布とベータ二項分布のモーメント母函数</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -2075,9 +2075,9 @@ $$
 この辺りの話は後で詳しく説明することになる.
 
 
-### おまけ: 二項分布とベータ分布の関係のベイズ統計への応用
+### おまけ: 二項分布とベータ分布の関係のBayes統計への応用
 
-この一連のノートではベイズ統計についての詳しい説明はしないつもりでいるのだが, 以下では __用語の詳しい定義を一切せずに__ 二項分布とベータ分布の関係のベイズ統計について説明してみたい.  (以下の部分は理解できなくてもよい.)
+この一連のノートではBayes統計についての詳しい説明はしないつもりでいるのだが, 以下では __用語の詳しい定義を一切せずに__ 二項分布とベータ分布の関係のBayes統計について説明してみたい.  (以下の部分は理解できなくてもよい.)
 
 二項分布モデルで事前分布として共役事前分布 $\op{Beta}(a, b)$ を採用したとき, 「$n$ 回中 $k$ 回成功した」(例: 「$n$ 任中 $k$ 人の病気が治った」, 「$n$ 人中 $k$ 人が商品を購入してくれた」「$n$ 個中 $k$ 個が不良品だった」)というデータが得られたときの成功確率 $p$ に関する事後分布は $\op{Beta}(a+k, b+(n-k))$ になる.
 
@@ -2105,16 +2105,157 @@ $$
 * 事前分布 $\op{Beta}(0,1)$ に関する事後分布において「$p \le p_0$」という仮説が成立する確率は二項分布モデルにおける「$p \le p_0$」という仮説の片側検定のP値にぴったり等しい.
 * 事前分布 $\op{Beta}(1,0)$ に関する事後分布において「$p \ge p_0$」という仮説が成立する確率は二項分布モデルにおける「$p \ge p_0$」という仮説の片側検定のP値にぴったり等しい.
 
-このように, 特定のケースではP値とベイズ統計の事後分布において仮説が成立する確率がぴったり等しくなる. 事前分布を例えば平坦事前分布 $\op{Beta}(1,1)$ に変えても, $(0,1)$ や $(1,0)$ と $(1,1)$ の違いは小さいので, $n$ が数十程度で差は小さくなる.  「$p \le p_0$」や「$p \ge p_0$」のような仮説の片側検定については, 通常のP値を使う統計学と事前事後分布を使うベイズ統計学は数学的にはほぼ同じものだと思ってよい.
+このように, 特定のケースではP値とBayes統計の事後分布において仮説が成立する確率がぴったり等しくなる. 事前分布を例えば平坦事前分布 $\op{Beta}(1,1)$ に変えても, $(0,1)$ や $(1,0)$ と $(1,1)$ の違いは小さいので, $n$ が数十程度で差は小さくなる.  「$p \le p_0$」や「$p \ge p_0$」のような仮説の片側検定については, 通常のP値を使う統計学と事前事後分布を使うBayes統計学は数学的にはほぼ同じものだと思ってよい.
 
-この事実から, __「ベイズ統計は通常の統計学とは異なる主義思想哲学に基く. そしてP値の使用には害がある. P値を使う統計学は捨ててベイズ統計を使うべきである」のような主張をすることによって, ベイズ統計を宣伝している人達が完全に間違っている__ ことがわかる.
+この事実から, __「Bayes統計は通常の統計学とは異なる主義思想哲学に基く. そしてP値の使用には害がある. P値を使う統計学は捨ててBayes統計を使うべきである」のような主張をすることによって, Bayes統計を宣伝している人達が完全に間違っている__ ことがわかる.
 
-数学的には同じデータから常に同じ結果が出ることがわかっているのに, 主義思想哲学によって結果が変わると主張することは論理的に誤りである. 事前事後分布ではなくP値を使った場合にも, 数学的に同等だという理由で事前事後分布の場合と同じような解釈をP値についても許すならば論理的に整合性は取れているが, 「ベイズ統計は通常の統計学とは異なる主義思想哲学に基く」のような主張をする人達はそういう論理的に整合性のある議論を決してしない.
+数学的には同じデータから常に同じ結果が出ることがわかっているのに, 主義思想哲学によって結果が変わると主張することは論理的に誤りである. 事前事後分布ではなくP値を使った場合にも, 数学的に同等だという理由で事前事後分布の場合と同じような解釈をP値についても許すならば論理的に整合性は取れているが, 「Bayes統計は通常の統計学とは異なる主義思想哲学に基く」のような主張をする人達はそういう論理的に整合性のある議論を決してしない.
 
-以上の結果から, 「怪しげな事前分布を使うのでベイズ統計は信用でいない」という主張も完全に間違っていることもわかる.  通常のP値を使った統計学に価値があるならば, 事前分布を適当に選べばそれと完全に同じことをできるベイズ統計にも価値があるということは明らかである.  むしろ, 事前分布という数学的選択肢が増えたおかげで, それなしにはできなかったこともできるようになると予想され, その予想は実際に正しい.
+以上の結果から, 「怪しげな事前分布を使うのでBayes統計は信用でいない」という主張も完全に間違っていることもわかる.  通常のP値を使った統計学に価値があるならば, 事前分布を適当に選べばそれと完全に同じことをできるBayes統計にも価値があるということは明らかである.  むしろ, 事前分布という数学的選択肢が増えたおかげで, それなしにはできなかったこともできるようになると予想され, その予想は実際に正しい.
 
-各種の技術には長所と短所の両方があることが普通である. 方法Aを方法Bに切り替える場合には, それで失われる方法A側の相対的長所とそれによって得られる方法Bの側の相対的長所のどちらを選ぶかになることが多い.  所謂「トレードオフ」の問題になる.  P値を使う方法を使うか, ベイズ統計の方法を使うかの問題も典型的なトレードオフの問題に過ぎない. そこに「主義思想哲学」を持ち込む必要はない.
+各種の技術には長所と短所の両方があることが普通である. 方法Aを方法Bに切り替える場合には, それで失われる方法A側の相対的長所とそれによって得られる方法Bの側の相対的長所のどちらを選ぶかになることが多い.  所謂「トレードオフ」の問題になる.  P値を使う方法を使うか, Bayes統計の方法を使うかの問題も典型的なトレードオフの問題に過ぎない. そこに「主義思想哲学」を持ち込む必要はない.
 
+
+### おまけ関連問題: ベータ分布は二項分布の共役事前分布である
+
+現実から「$n$ 回中 $k$ 回成功」の型のデータが得られる状況を考える(「$n$ 人中 $k$ 人が病気になった」「$n$ 人中 $k$ 人が商品を購入した」など).
+
+そのデータと成功確率 $p$ の二項分布 $\op{Binomial}(n, p)$ の整合性がどうなっているかを見たいとする. その確率質量函数を次のように書く:
+
+$$
+P(k|n,p) = \binom{n}{k}p^k(1-p)^{n-k}
+$$
+
+Bayes統計では, 成功確率パラメータ $p$ に関する確率密度函数 $\varphi(p)$ で与えられる確率分布(__事前分布__ (prior)と呼ぶ)をさらに与えて, 統計モデル内部では次のようになっていると考える:
+
+1. 最初に成功確率パラメータの値 $p$ が事前分布に従ってランダムに決まる.
+2. その $p$ の値を採用した二項分布 $\op{Binomial}(n, p)$ に従って $k$ がランダムに決まる.
+
+この統計モデル内における $k$ と $p$ の同時分布は $P(k|n,p)\varphi(p)$ によって与えられ, モデル内での $k, p$ のすべての組み合わせに関する確率の総和が $1$ になることは次のようにして確認される:
+
+$$
+\int_0^1 \underbrace{\sum_{k=0}^n P(k|n,p)}_{=1}\;\varphi(p)\,dp =
+\int_0^1 \varphi(p)\,dp = 1.
+$$
+
+現実のデータを取得における成功確率 $p$ に対応する値はこのモデル内設定のように確率分布しておらず, 定数かもしれない. 例えば, S市の住人をランダムに選んだときのBMI(=体重/身長の2乗)の値が25以上である確率は, S市におけるBMIが25以上である人達の割合に一致し, 確率分布しているわけではない. そういう状況であっても, 統計モデル内では成功確率パラメータ $p$ がランダムに決まっていると考えてもよい. (その理由を一般的な主義思想哲学に求めることはよく見る典型的な誤りである. Bayes統計に限らず一般的に, 統計モデルとして現実にぴったり一致する可能性があるものを選ぶ必要はない.)
+
+「$n$ 人中 $k$ 人成功」の型のデータが得られたとき, データとモデルを比較するために, その統計モデル内でデータと同じ数値が生成されたという条件で制限された __条件付き確率分布__ (条件付き確率については後で説明したい)を考える. 統計モデルと現実から得たデータを比較するために, 数学的フィクションであるモデル内で現実から得たデータと同じ数値がランダムに生成されたという状況を考えるのである. Bayes法とは異なる最尤法の予測分布もそのような条件付き確率分布になっているので, そのような条件付き確率分布を考えるか否かはBayes統計であるか否かとは無関係である.
+
+そのモデル内条件付き確率分布におけるパラメータ $p$ の分布は __事後分布__ (posterior)と呼ばれる. 条件付き確率の定義より, 「$n$ 回中 $k$ 回成功」というデータに関する事後分布 $\varphi(p|n, k)$ の確率密度函数は次の形になる:
+
+$$
+\varphi(p|n,k) = \frac{P(k|n,p)\varphi(p)}{\int_0^1 P(k|n,p)\varphi(p)\,dp}.
+$$
+
+事後分布は統計モデルとデータの整合性を見るために使われる.  例えば, 事後分布に従う確率変数 $P$ について $P\le 0.3$ となる確率が小さいならば, その統計モデル+仮説「成功確率は $0.3$ 以下である」の組み合わせとデータとの整合性は低いと考える. 注意するべきことは「成功確率は $0.3$ 以下である」という仮説単体とデータの整合性を見ているのではなく, 統計モデル+仮説とデータの整合性しかわからないということである.  統計モデルを適切に与えないと仮説とデータの整合性について信頼できる結果は得られない.
+
+__問題:__ 以上の設定のもとで, 事前分布がベータ分布 $\op{Beta}(a, b)$ で与えられたとき, 「$n$ 回中 $k$ 回成功」というデータに関する事後分布はベータ分布 $\op{Beta}(a+k, b+n-k)$ になることを示せ.
+
+
+__解答例:__ 事前分布がベータ分布 $\op{Beta}(a, b)$ で与えられているという設定は事前分布 $\varphi(p)$ が次のように書けているということを意味する:
+
+$$
+\varphi(p) = \frac{p^{a-1}(1-p)^{b-1}}{B(a,b)}.
+$$
+
+このとき,
+
+$$
+C = \left. \binom{n}{k}\! \right/ \!\!B(a, b)
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+&
+P(k|n,p)\varphi(p) =
+C\, p^k(1-p)^{n-k} \cdot p^{a-1}(1-p)^{b-1} =
+C\, p^{a+k-1}(1-p)^{b+n-k-1}
+\\ &
+\int_0^1 P(k|n,p)\varphi(p)\,dp =
+C \int_0^1 p^{a+k-1}(1-p)^{b+n-k-1}\, dp =
+C\,B(a+k, b+n-k).
+\end{aligned}
+$$
+
+ゆえに, 事後分布 $\varphi(p|n,k)$ は次のようになる:
+
+$$
+\varphi(p|n,k) =
+\frac{P(k|n,p)\varphi(p)}{\int_0^1 P(k|n,p)\varphi(p)\,dp} =
+\frac{C\,p^{a+k-1}(1-p)^{b+n-k-1}}{C\,B(a+k, b+n-k)} =
+\frac{p^{a+k-1}(1-p)^{b+n-k-1}}{B(a+k, b+n-k)}.
+$$
+
+これは事後分布がベータ分布 $\op{Beta}(a+k, b+n-k)$ になることを意味している.
+
+__解答終__
+
+```julia
+function plot_betaposterior(a, b, n, k; kwargs...)
+    beta = Beta(a+k, b+n-k)
+    plot(beta, -0.01, 1.01; label="", xtick=0:0.1:1)
+    title!("posterior Beta(a+k, b+n-k)\n(a,b)=($a,$b), n=$n, k=$k")
+    plot!(; kwargs...)
+end
+```
+
+事後分布 $\op{Beta}(a+k, b+n-k)$ を色々プロットしてみよう.
+
+データが「$n$ 回中3割成功」の場合を $n=0,10,100,1000$ の場合にプロットしてみる.
+
+
+以下は事前分布が一様分布 $\op{Beta}(1,1)=\op{Uniform}(0,1)$ の場合.
+
+```julia
+a, b = 1, 1
+plot(plot_betaposterior(a, b, 0, 0),
+    plot_betaposterior(a, b, 10, 3);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
+
+```julia
+a, b = 1, 1
+plot(plot_betaposterior(a, b, 100, 30),
+    plot_betaposterior(a, b, 1000, 300);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
+
+以下は事前分布がJeffreys事前分布 $\op{Beta}(0.5,0.5)$ の場合だが, 上の一様事前分布の場合とほとんど同じになっている.
+
+```julia
+a, b = 0.5, 0.5
+plot(plot_betaposterior(a, b, 0, 0; ylim=(-0.3, 3.3)),
+    plot_betaposterior(a, b, 10, 3);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
+
+```julia
+a, b = 0.5, 0.5
+plot(plot_betaposterior(a, b, 100, 30),
+    plot_betaposterior(a, b, 1000, 300);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
+
+以下では違いを出すために事前分布を $\op{Beta}(18, 2)$ にしてみた. 
+
+この事前分布を採用するとデータがない状態では「$p$ は $0.9$ に近い」という仮説と(事前分布を含めての)統計モデルの整合性が高いということになる.  しかし, データが「$n$ 回中3割成功」の形をしている場合には $n$ を大きくすると, 「$p$ は $0.3$ は高い」という仮説と統計モデル+データの整合性が高くなる.
+
+```julia
+a, b = 18, 2
+plot(plot_betaposterior(a, b, 0, 0),
+    plot_betaposterior(a, b, 10, 3);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
+
+```julia
+a, b = 18, 2
+plot(plot_betaposterior(a, b, 100, 30),
+    plot_betaposterior(a, b, 1000, 300);
+    size=(800, 200), layout=(1, 2), topmargin=4Plots.mm)
+```
 
 ### 負の二項分布の累積分布函数のベータ分布の累積分布函数表示
 
@@ -2506,6 +2647,310 @@ var"E[K(K-1)]" = n*(n-1)*a*(a+1)/((a+b)*(a+b+1))
 var"var(K)" = var"E[K(K-1)]" + var"E[K]" - var"E[K]"^2 |> factor
 ```
 
+### 問題: ベータ二項分布 = 負の超幾何分布
+
+ベータ二項分布の確率質量函数
+
+$$
+P(k|n,\alpha,\beta) =
+\binom{n}{k}\frac{B(\alpha+k,\beta+n-k)}{B(\alpha,\beta)}
+\quad (k=0,1,\ldots,n)
+$$
+
+は以下のように書き換えられることを示せ:
+
+$$
+\begin{aligned}
+P(k|n,\alpha,\beta) &=
+\left.
+\binom{\alpha+k-1}{k}
+\binom{\beta+(n-k)-1}{n-k}
+\!\right/\!\!
+\binom{\alpha+\beta+n-1}{n}
+\\ &=
+\left.
+\binom{-\alpha}{k}
+\binom{-\beta}{n-k}
+\!\right/\!\!
+\binom{-\alpha-\beta}{n}.
+\end{aligned}
+$$
+
+__注意:__ この形の確率質量函数は別に定義される有限離散分布のパラメータ $s,f,n\in\Z_{\ge0}$, $n\le s+f$ に関する __超幾何分布__ $\op{Hypergeometric}(s,f,n)$ の 確率質量函数
+
+$$
+k \mapsto
+\left.
+\binom{s}{k}
+\binom{f}{n-k}
+\!\right/\!\!
+\binom{s+f}{n}.
+$$
+
+における $s,f$ に負の値 $-\alpha,-\beta$ を形式的に代入したものに一致しているので, ベータ二項分布は __負の超幾何分布__ と呼ばれることがある.
+
+__注意:__ 上に書いた超幾何分布の確率は, $s$ 個の赤い球と $f$ 個の白い球が入っている袋から $n$ 個をまとめて無作為に取り出したとき, その中にちょうど $k$ 個の赤い球が含まれる確率になっている($s$ はsuccessの, $f$ はfailureの頭文字). 実際, 分母の $\binom{n+m}{n}$ は $s+f$ 個から $n$ 個を選ぶときの組み合わせの数であり, 分子は $s$ 個の赤い球から $k$ 個を選び, $f$ 個の白い球から $n-k$ 個選ぶ組み合わせの個数であり, 分子を分母で割れば, $n$ 個中ちょうど $k$ 個が赤い球である確率になる. 超幾何分布自体は「超幾何」という難しそうな形容詞が付いているが, 初等的に理解できる確率分布である.
+
+__注意:__ 負の二項分布の確率質量函数は
+
+$$
+P(m|\alpha, p) =
+\binom{\alpha+m-1}{m} p^\alpha (1-p)^m =
+(-1)^m\binom{-\alpha}{m} p^\alpha (1-p)^m
+$$
+
+と書けるのであった.  二項分布と負の二項分布の関係は超幾何分布と負の超幾何分布=ベータ二項分布の関係に似ている.
+
+
+__解答例:__
+
+$$
+\begin{aligned}
+P(k|n,\alpha,\beta) &=
+\binom{n}{k}
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha+\beta+n)}
+\frac{\Gamma(\alpha+k)}{\Gamma(\alpha)}
+\frac{\Gamma(\beta+n-k)}{\Gamma(\beta)}
+\\ &=
+\frac{n!}{k!(n-k)!}
+\frac
+{\alpha(\alpha+1)\cdots(\alpha+k-1)
+\cdot
+\beta(\beta+1)\cdots(\beta+n-k-1)}
+{(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+n-1)}
+\\ &=
+\frac{\alpha(\alpha+1)\cdots(\alpha+k-1)}{k!}
+\frac{\beta(\beta+1)\cdots(\beta+n-k-1)}{(n-k)!}
+\\ & \times
+\frac{n!}{(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+n-1)}
+\\ &=
+\left.
+\binom{\alpha+k-1}{k}
+\binom{\beta+(n-k)-1}{n-k}
+\!\right/\!\!
+\binom{\alpha+\beta+n-1}{n}
+\end{aligned}
+$$
+
+さらに,
+
+$$
+\begin{aligned}
+(-1)^k\binom{-a}{k} &=
+(-1)^k\frac{(-a)(-a-1)\cdots(-a-k+1)}{k!}
+\\ &=
+\frac{a(a+1)\cdots(a+k-1)}{k!} =
+\binom{a+k-1}{k}
+\end{aligned}
+$$
+
+なので,
+
+$$
+P(k|n,\alpha,\beta) =
+\left.
+\binom{-\alpha}{k}
+\binom{-\beta}{n-k}
+\!\right/\!\!
+\binom{-\alpha-\beta}{n}.
+$$
+
+__解説終__
+
+
+### 超幾何分布, 二項分布,  ベータ二項分布の統一的な理解
+
+この節の内容は本質的に [Pólya urn model](https://www.google.com/search?q=P%C3%B3lya+urn+model) の話である. この節では $\alpha$ と $\beta$ は $0$ 以上の整数であると仮定する.
+
+最初の状態では袋の中に赤い球が $\alpha$ 個, 白い球が $\beta$ 個入っているとし, 以下の操作を $n$ 回繰り返そう:
+
+1. 袋の中から玉を無作為に取り出し, その色を記録する.
+2. その玉が赤いならば袋の中に赤い球を $\delta+1$ 個戻し(袋の中の赤い球は $\delta$ 個増える), 白いならば袋の中に白い球を $\delta+1$ 個戻す(袋の中の白い球は $\delta$ 個増える).
+
+このとき, $n$ 回中 $k$ 回赤い球が取り出される確率は次のように書ける:
+
+$$
+P(k|n,\alpha,\beta,\delta) =
+\binom{n}{k}
+\frac
+{\alpha(\alpha+\delta)\cdots(\alpha+(k-1)\delta)
+\cdot
+\beta(\beta+\delta)\cdots(\beta+(n-k-1)\delta)}
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}.
+$$
+
+__袋に取り出した玉を戻さない非復元抽出の場合 ($\delta=-1$):__ $n$ 回中 $k$ 回赤い球が取り出される確率の分布は超幾何分布 $\op{Hypergeometric}(\alpha, \beta, n)$ になる:
+
+$$
+\begin{aligned}
+P(k|n,\alpha,\beta,-1) &=
+\binom{n}{k}
+\frac
+{\alpha(\alpha-1)\cdots(\alpha-(k-1))
+\cdot
+\beta(\beta-1)\cdots(\beta-(n-k-1)}
+{(\alpha+\beta)(\alpha+\beta-1)\cdots(\alpha+\beta-(n-1))}
+\\ &=
+\left.
+\binom{\alpha}{\beta}
+\binom{\beta}{n-k}
+\!\right/\!\!
+\binom{\alpha+\beta}{n}.
+\end{aligned}
+$$
+
+これを超幾何分布 $\op{Hypergeometric}(\alpha, \beta, n)$ の定義だと考えてよい.
+
+__袋に取り出した玉をそのまま玉を戻す復元抽出の場合 ($\delta=0$):__ $n$ 回中 $k$ 回赤い球が取り出される確率の分布は二項分布 $\op{Binomial}(n, \alpha/(\alpha+\beta))$ になる:
+
+$$
+P(k|n,\alpha,\beta,0) =
+\binom{n}{k} \frac{\alpha^k \beta^{n-k}}{(\alpha+\beta)^n} =
+\binom{n}{k}
+\left(\frac{\alpha}{\alpha+\beta}\right)^k
+\left(1-\frac{\alpha}{\alpha+\beta}\right)^{n-k}.
+$$
+
+__袋に取り出した玉と同じ色の玉を2個戻して袋の中のその色の玉が1個増えるようにした場合 ($\delta=0$):__ $n$ 回中 $k$ 回赤い球が取り出される確率の分布はベータ二項分布 $\op{BetaBinomial}(n, \alpha, \beta)$ になる:
+
+$$
+\begin{aligned}
+P(k|n,\alpha,\beta,1) &=
+\binom{n}{k}
+\frac
+{\alpha(\alpha+1)\cdots(\alpha+(k-1))
+\cdot
+\beta(\beta+1)\cdots(\beta+(n-k-1)}
+{(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+(n-1))}
+\\ &=
+\binom{n}{k}
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha+\beta+n)}
+\frac{\Gamma(\alpha+k)}{\Gamma(\alpha)}
+\frac{\Gamma(\beta+n-k)}{\Gamma(\beta)}
+\\ &=
+\binom{n}{k}\frac{B(\alpha+k,\beta+n-k)}{B(\alpha,\beta)}.
+\end{aligned}
+$$
+
+袋の中の赤い球の個数と白い球の個数の初期値である $\alpha,\beta$ が $n$ よりも非常に大きい場合には上の3つの場合の確率はほぼ同じになる.
+
+ベータ二項分布の場合には, 赤い球を引けた人はその次に赤い球を引く確率が少し上がる. この意味でベータ二項分布は "[The rich get richer and the poor get poorer.](https://www.google.com/search?q=the+rich+get+richer+and+the+poor+get+poorer)" (「金持ちはより金持ちに、貧乏人はより貧乏に」)という状況のモデル化になっていることがわかる.
+
+```julia
+function plot_hg_bin_bb(n, α, β; xtick=0:n)
+    @assert n < α + β "n must be less than α + β."
+    hg  = Hypergeometric(α, β, n)
+    bin = Binomial(n, α/(α+β))
+    bb  = BetaBinomial(n, α, β)
+    μ, σ = mean(bb), std(bb)
+    x = range(max(-0.5, μ-4σ), min(n+0.5, μ+4σ), 1000)
+    plot(; xtick)
+    plot!(x, x -> pdf(hg,  round(Int, x)); label="Hypergeom")
+    plot!(x, x -> pdf(bin, round(Int, x)); label="Binomial", ls=:dash)
+    plot!(x, x -> pdf(bb,  round(Int, x)); label="BetaBin",  ls=:dashdot)
+    title!("n=$n, α=$α, β=$β")
+end
+```
+
+以下は $\alpha/(\alpha+\beta)=1/4$ を保ったまま $\alpha,\beta$ を大きくして行った場合の超幾何分布, 二項分布, ベータ二項分布の比較である. $\alpha,\beta$ を大きくして行くと, 3つの分布は一致して行く.
+
+```julia
+plot(plot_hg_bin_bb(10, 3, 9), plot_hg_bin_bb(10, 10, 30); size=(800, 250))
+```
+
+```julia
+plot(plot_hg_bin_bb(10, 30, 90), plot_hg_bin_bb(10, 100, 300); size=(800, 250))
+```
+
+### 問題: 超幾何分布, 二項分布,  ベータ二項分布の期待値と分散の統一的な公式
+
+前節の確率質量函数 $P(k|n,\alpha,\beta,\delta)$ を持つ確率変数 $K$ について次が成立することを示せ:
+
+$$
+E[K] = \frac{n\alpha}{\alpha+\beta}, \quad
+\op{var}(K) =
+\frac{\alpha\beta n(\alpha+\beta+n\delta)}{(\alpha+\beta)^2(\alpha+\beta+\delta)}.
+$$
+
+__注意:__ 特にこれの $\delta=-1$, $\alpha=s$, $\beta=f$ の場合より, 超幾何分布 $\op{Hypergeometric}(s, f, n)$ の期待値と分散が次のようになることがわかる: 確率変数 $K\sim \op{Hypergeometric}(s, f, n)$ について
+
+$$
+E[K] = \frac{ns}{s+f}, \quad
+\op{var}(K) = \frac{sfn(s+f-n)}{(s+f)^2(s+f-1)}.
+$$
+
+__解答例:__ 問題を一般化して, 前節の確率質量函数
+
+$$
+P(k|n,\alpha,\beta,\delta) =
+\binom{n}{k}
+\frac
+{\alpha(\alpha+\delta)\cdots(\alpha+(k-1)\delta)
+\cdot
+\beta(\beta+\delta)\cdots(\beta+(n-k-1)\delta)}
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}.
+$$
+
+を持つ確率変数 $K$ について考える. このとき,
+
+$$
+\begin{aligned}
+&
+E[K(K-1)\cdots(K-m+1)]
+\\ &=
+\sum_k k(k-1)\cdots(k-m+1)
+\binom{n}{k}
+\frac
+{\alpha(\alpha+\delta)\cdots(\alpha+(k-1)\delta)
+\cdot
+\beta(\beta+\delta)\cdots(\beta+(n-k-1)\delta)}
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}
+\\ &=
+n(n-1)\cdots(n-m+1)
+\frac{\alpha(\alpha+\delta)\cdots(\alpha+(m-1)\delta)}
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(m-1)\delta)}
+\\ &\;\times
+\underbrace{
+\sum_k
+\binom{n-m}{k-m}
+\frac
+{(\alpha+m\delta)(\alpha+(m+1)\delta)\cdots(\alpha+(k-1)\delta)
+\cdot
+\beta(\beta+\delta)\cdots(\beta+(n-k-1)\delta)}
+{(\alpha+\beta+m)(\alpha+\beta+(m+1)\delta)\cdots(\alpha+\beta+(n-1)\delta)}
+}_{=\sum_k P(k|n-m, \alpha+m, \beta)=1}
+\\ &=
+n(n-1)\cdots(n-m+1)
+\frac{\alpha(\alpha+\delta)\cdots(\alpha+(m-1)\delta)}
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(m-1)\delta)}.
+\end{aligned}
+$$
+
+例えば,
+
+$$
+E[K] = \frac{n\alpha}{\alpha+\beta}, \quad
+E[K(K-1)] = \frac{n(n-1)\alpha(\alpha+\delta)}{(\alpha+\beta)(\alpha+\beta+\delta)}.
+$$
+
+これを使って少し計算すると,
+
+$$
+\op{var}(K) = E[K^2] - E[K]^2 = E[K(K-1)] + E[K] - E[K]^2 =
+\frac{\alpha\beta n(\alpha+\beta+n\delta)}{(\alpha+\beta)^2(\alpha+\beta+\delta)}
+$$
+
+となることがわかる(以下のセルでのコンピュータによる代数計算も参照せよ).
+
+__解答終__
+
+```julia
+@vars a b d n
+var"E[K]" = n*a/(a+b)
+var"E[K(K-1)]" = n*(n-1)*a*(a+d)/((a+b)*(a+b+d))
+var"var(K)" = var"E[K(K-1)]" + var"E[K]" - var"E[K]"^2 |> factor
+```
+
 ### 問題: ベータ二項分布の極限として負の二項分布が得られる
 
 $\alpha, \theta > 0$ であるとし, ベータ二項分布 $\op{BetaBinomial}(L, \alpha, \beta)$ の確率質量函数
@@ -2733,7 +3178,7 @@ $$
 
 __解答終__
 
-__注意:__ 二項分布もベータ分布も統計学における最も基本的な確率分布である. それらを組み合わせて作ったベータ二項分布から, モーメント母函数の形式で自然にGaussの超幾何函数が出て来ることはちょっと面白い. 超幾何函数のような特殊函数は主に微分方程式との関連で自然に現れて来ることが多いのだが, この場合には微分方程式と全く無関係に超幾何函数が自然に出て来ている.  統計学によく出て来る特殊函数達に関する話題は「微分方程式抜きの特殊函数論」というような趣がある.
+__注意:__ 二項分布もベータ分布も統計学における最も基本的な確率分布である. それらを組み合わせて作ったベータ二項分布から, モーメント母函数の形式でGaussの超幾何函数の積分表示式が自然に出て来ることはちょっと面白い. 超幾何函数のような特殊函数は主に微分方程式との関連で自然に現れて来ることが多いのだが, この場合には微分方程式と全く無関係に超幾何函数が自然に出て来ている.  統計学によく出て来る特殊函数達に関する話題は「微分方程式抜きの特殊函数論」というような趣がある.
 
 ```julia
 
