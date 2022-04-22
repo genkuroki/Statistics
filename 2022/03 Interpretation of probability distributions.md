@@ -568,7 +568,7 @@ f\left(z/\sqrt{y/\nu}\right) \frac{e^{-z^2/2}}{\sqrt{2\pi}}p(y|\nu)\,dz
 \\ &=
 \int_0^\infty
 \left(\int_{-\infty}^\infty
-f(t) \frac{e^{-yt^2/2}}{\sqrt{2\pi}}p(y|\nu)\sqrt{\frac{y}{\nu}}\,dt
+f(t) \frac{e^{-yt^2/(2\nu)}}{\sqrt{2\pi}}p(y|\nu)\sqrt{\frac{y}{\nu}}\,dt
 \right)dy
 \\ &=
 \int_{-\infty}^\infty
