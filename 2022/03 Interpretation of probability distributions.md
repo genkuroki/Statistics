@@ -2900,6 +2900,8 @@ P(k|n,\alpha,\beta,\delta) =
 {(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}.
 $$
 
+注意: $\delta\ne 0$ ならば分子分母を $|\delta|^k|\delta|^{n-k} = |\delta|^n$ で割ることによって形式的に $\delta$ の部分を $\pm 1$ にできる.  だから, $\delta=-1,0,1$ の場合が基本的であると考えられる.
+
 __袋に取り出した玉を戻さない非復元抽出の場合 ($\delta=-1$):__ $n$ 回中 $k$ 回赤い球が取り出される確率の分布は超幾何分布 $\op{Hypergeometric}(\alpha, \beta, n)$ になる:
 
 $$
@@ -2913,7 +2915,7 @@ P(k|n,\alpha,\beta,-1) &=
 {(\alpha+\beta)(\alpha+\beta-1)\cdots(\alpha+\beta-(n-1))}
 \\ &=
 \left.
-\binom{\alpha}{\beta}
+\binom{\alpha}{k}
 \binom{\beta}{n-k}
 \!\right/\!\!
 \binom{\alpha+\beta}{n}.
