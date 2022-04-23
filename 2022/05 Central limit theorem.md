@@ -76,9 +76,10 @@ __注意:__ 以下のグラフを見れば, 二項分布の正規分布近似の
 ```julia
 function plot_binomial_clt(n, p, s = 1; c = 4.5)
     μ, σ = n*p, √(n*p*(1-p))
-    ks = max(0, round(Int, μ-c*σ)):min(n, round(Int, μ+c*σ))
-    bar(ks, pdf.(Binomial(n, p), ks); alpha=0.3, label="Binomial(n,p)")
-    plot!(Normal(μ, σ), μ-c*σ, μ+c*σ; label="Normal(μ, σ)", lw=2)
+    xlim = (μ-c*σ, μ+c*σ)
+    plot(x -> pdf(Binomial(n, p), round(x)), xlim...; label="Binomial(n,p)")
+    plot!(Normal(μ, σ), xlim...; label="Normal(μ,σ)", lw=2)
+    # plot!(x -> pdf(Poisson(μ), round(x)), xlim...; label="Poisson(μ)", ls=:dash)
     title!("n = $n, p = $p, μ=np, σ²=np(1-p)")
     plot!(; xtick=0:s:n)
 end
