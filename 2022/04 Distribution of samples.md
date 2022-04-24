@@ -64,50 +64,58 @@ using SymPy
 
 ### 同時確率質量函数と同時確率密度函数
 
-確率変数達 $X_1,\ldots,X_n$ が同時確率質量函数 $P(x_1,\ldots,x_n)$ を持つとは, $P(x_1,\ldots,x_n)\ge 0$ であり, $P(x_1,\ldots,x_n)$ の総和が $1$ にあり, 
+確率変数達 $X_1,\ldots,X_n$ が同時確率質量函数 $P(x_1,\ldots,x_n)$ を持つとは, $P(x_1,\ldots,x_n)\ge 0$ でかつ, $P(x_1,\ldots,x_n)$ の総和が $1$ であり, 
 
 $$
 E[f(X_1,\ldots,X_n)] = \sum_{x_1}\cdots\sum_{x_n}f(x_1,\ldots,x_n)P(x_1,\ldots,x_n)
 $$
 
-が成立することである. このとき, $X_1$ 単独の確率質量函数 $P(x_1)$ は
+が成立することである. このとき, $X_i$ 単独の確率質量函数 $P(x_i)$ は
 
 $$
-P(x_1) = \sum_{x_2}\cdots\sum_{x_n}P(x_1,x_2,\ldots,x_n)
+P(x_i) = \sum_{x_1}\cdots\widehat{\sum_{x_i}}\cdots\sum_{x_n}P(x_1,\cdots,x_i,\ldots,x_n)
 $$
 
-になる. なぜならば,
+になる. ここで, $\widehat{\sum_{x_i}}$ は $\\sum_{x_i}$ を除くという意味である. なぜならば,
 
 $$
-E[f(X_1,\ldots,X_n)] =
-\sum_{x_1}\sum_{x_2}\cdots\sum_{x_n}f(x_1)P(x_1,x_2,\ldots,x_n) =
-\sum_{x_1}f(x_1)\left(\sum_{x_2}\cdots\sum_{x_n} P(x_1,x_2,\ldots,x_n)\right).
+\begin{aligned}
+E[f(X_i)] &=
+\sum_{x_1}\cdots\sum_{x_i}\cdots\sum_{x_n}f(x_i)P(x_1,\cdots,x_i,\ldots,x_n)
+\\ &=
+\sum_{x_i}f(x_1)\left(\sum_{x_1}\cdots\widehat{\sum_{x_i}}\cdots\sum_{x_n}P(x_1,\cdots,x_i,\ldots,x_n)\right).
+\end{aligned}
 $$
 
-他の $X_i$ についても同様である.
+__注意:__ $i\ne j$ のとき $P(x_i)$ と $P(x_j)$ は一般に異なる確率質量函数になることに注意せよ. 区別を明瞭にするためには $P(x_i)$ を $P_i(x_i)$ のように書くべきであるが, 統計学の世界での慣習に従ってこのような記号法上の省略を行った.  これが気に入らない人は自分でノートを作るときに, 区別されるべきものに異なる記号を割り振るようにすればよいだろう.  以下についても同様である.
 
-確率変数達 $X_1,\ldots,X_n$ が同時確率密度函数 $p(x_1,\ldots,x_n)$ を持つとは, $p(x_1,\ldots,x_n)\ge 0$ であり, $p(x_1,\ldots,x_n)$ の積分が $1$ になり, 
+確率変数達 $X_1,\ldots,X_n$ が同時確率密度函数 $p(x_1,\ldots,x_n)$ を持つとは, $p(x_1,\ldots,x_n)\ge 0$ でかつ, $p(x_1,\ldots,x_n)$ の積分が $1$ になり, 
 
 $$
 E[f(X_1,\ldots,X_n)] = \int\!\!\cdots\!\!\int f(x_1,\ldots,x_n)p(x_1,\ldots,x_n)\,dx_1\cdots dx_n
 $$
 
-が成立することである. ここで $\int$ は定積分を表す. このとき, $X_1$ 単独の確率密度函数 $p(x_1)$ は
+が成立することである. ここで $\int$ は定積分を表す. このとき, $X_i$ 単独の確率密度函数 $p(x_i)$ は
 
 $$
-p(x_1) = \int\!\!\cdots\!\!\int p(x_1,x_2,\ldots,x_n)\,dx_2\cdots dx_n
+p(x_i) =
+\int\!\!\!\cdots\!\!\!\widehat{\int}\!\!\!\cdots\!\!\!\int
+p(x_1,\cdots,x_i,\ldots,x_n)\,dx_1\cdots\widehat{dx_i}\cdots dx_n
 $$
 
-になる. なぜならば,
+になる. ここで, $\widehat{\int}$, $\widehat{dx_i}$ はそれらを除くことを意味する.  なぜならば,
 
 $$
-E[f(X_1,\ldots,X_n)] =
-\iint\!\!\cdots\!\!\int f(x_1)p(x_1,x_2,\ldots,x_n)\,dx_1\,dx_2\cdots dx_n =
-\int f(x_1)
-\left(\int\!\!\cdots\!\!\int p(x_1,x_2,\ldots,x_n)\,dx_2\cdots dx_n\right)dx_1.
+\begin{aligned}
+E[f(X_i)] &=
+\int\!\!\!\cdots\!\!\!\int\!\!\!\cdots\!\!\!\int
+f(x_i)p(x_1,\cdots,x_i,\ldots,x_n)\,dx_1\cdots dx_i\cdots dx_n
+\\ &=
+\int f(x_i)
+\left(\int\!\!\!\cdots\!\!\!\widehat{\int}\!\!\!\cdots\!\!\!\int
+p(x_1,\cdots,x_i,\ldots,x_n)\,dx_1\cdots\widehat{dx_i}\cdots dx_n\right)dx_i.
+\end{aligned}
 $$
-
-他の $X_i$ についても同様である.
 
 
 ### 確率変数の独立性の定義
@@ -126,18 +134,20 @@ __注意:__ 厳密には函数 $f_i$ 達を動かす範囲を確定させる必�
 
 #### 独立な確率変数達の同時確率質量函数
 
-$X_i$ 達のそれぞれが確率質量函数 $P_i(x_i)$ を持つ場合には, $X_1,\ldots,X_n$ の独立性は, それらの同時確率質量函数 $P(x_1,\ldots,x_n)$ について
+確率変数達 $X_1,\ldots,X_n$ が同時確率質量函数 $P(x_1,\ldots,x_n)$ を持つとき,  $X_i$ の確率質量函数を $P_i(x_i)$ と書くとき, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
 
 $$
 P(x_1,\ldots,x_n) = P_1(x_1)\cdots P_n(x_n)
 \tag{2}
 $$
 
-が成立することと同値である. すなわち, $(X_1,\ldots,X_n)$ の函数の期待値が次のように表されることと同値である:
+が成立することは同値である. すなわち, $(X_1,\ldots,X_n)$ の函数の期待値が次のように表されることと同値である:
 
 $$
 E[f(X_1,\ldots,X_n)] = \sum_{x_1}\cdots\sum_{x_n} f(x_1,\ldots,x_n)P_1(x_1)\cdots P_n(x_n)
 $$
+
+__注意:__ ここでは気分を変えて, $P_i(x_i)$ をずぼらに $P(x_i)$ と書く流儀をやめてみた.
 
 __証明:__ (2)が成立しているならば,
 
@@ -164,20 +174,22 @@ $$
 
 #### 独立な確率変数達の同時確率密度函数
 
-$X_i$ 達のそれぞれが確率密度函数 $p_i(x_i)$ を持つとき, $(X_1,\ldots,X_n)$ の独立性は, それらの同時確率密度函数 $p(x_1,\ldots,x_n)$ について
+確率変数達 $X_1,\ldots,X_n$ が同時確率密度函数 $p(x_1,\ldots,x_n)$ を持つとき,  $X_i$ の確率密度函数を $p_i(x_i)$ と書くとき, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
 
 $$
 p(x_1,\ldots,x_n) = p_1(x_1)\cdots p_n(x_n)
 \tag{3}
 $$
 
-が成立することと同値である. すなわち, $(X_1,\ldots,X_n)$ の函数の期待値が次のように表されることと同値である:
+が成立することは同値である. すなわち, $(X_1,\ldots,X_n)$ の函数の期待値が次のように表されることと同値である:
 
 $$
 E[f(X_1,\ldots,X_n)] = \int\!\!\cdots\!\!\int f(x_1,\ldots,x_n)p_1(x_1)\cdots p_n(x_n)\,dx_1\cdots dx_n.
 $$
 
 ここで $\int\cdots dx_i$ は適切な範囲での定積分を表す.
+
+__注意:__ ここでは気分を変えて, $p_i(x_i)$ をずぼらに $p(x_i)$ と書く流儀をやめてみた.
 
 __(雑な)証明:__ (3)が成立しているならば,
 
@@ -192,7 +204,7 @@ $$
 
 と(1)が成立する.
 
-簡単のため, 密度函数達 $p(x_1,\ldots,p_n)$, $p_i(x_i)$ は滑らかな函数になっていると仮定する(応用上は概ねこれで十分).  このとき,
+簡単のため, 密度函数達 $p(x_1,\ldots,p_n)$, $p_i(x_i)$ は連続函数になっていると仮定する(応用上は概ねこれで十分).  このとき,
 
 $$
 f_i(x_i) = \frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\left(-\frac{(x_i-a_i)^2}{2\sigma_i^2}\right)
@@ -219,7 +231,7 @@ $$
 p(a_1,\ldots,a_n) = p_1(a_1)\cdots p_n(a_n)
 $$
 
-なので(3)が成立する.
+と(3)が成立する.
 
 確率密度函数と確率質量函数が混ざっている場合も同様である.
 

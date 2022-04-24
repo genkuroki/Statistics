@@ -2881,12 +2881,12 @@ __解説終__
 
 ### 超幾何分布, 二項分布,  ベータ二項分布の統一的な理解
 
-この節の内容は本質的に [Pólya urn model](https://www.google.com/search?q=P%C3%B3lya+urn+model) の話である. この節では $\alpha$ と $\beta$ は $0$ 以上の整数であると仮定する.
+この節の内容は本質的に [Pólya urn model](https://www.google.com/search?q=P%C3%B3lya+urn+model) の話である. この節では $\alpha$ と $\beta$ は $0$ 以上の整数であり, $\delta$ は $-1$ 以上の整数であると仮定する.
 
 最初の状態では袋の中に赤い球が $\alpha$ 個, 白い球が $\beta$ 個入っているとし, 以下の操作を $n$ 回繰り返そう:
 
 1. 袋の中から玉を無作為に取り出し, その色を記録する.
-2. その玉が赤いならば袋の中に赤い球を $\delta+1$ 個戻し(袋の中の赤い球は $\delta$ 個増える), 白いならば袋の中に白い球を $\delta+1$ 個戻す(袋の中の白い球は $\delta$ 個増える).
+2. その玉が赤いならば袋の中に赤い球を $\delta+1$ 個戻し(袋の中の赤い球は $\delta$ 個増える($\delta=-1$ ならば $1$ 個減る)), 白いならば袋の中に白い球を $\delta+1$ 個戻す(袋の中の白い球は $\delta$ 個増える($\delta=-1$ ならば $1$ 個減る)).
 
 このとき, $n$ 回中 $k$ 回赤い球が取り出される確率は次のように書ける:
 
@@ -2897,10 +2897,20 @@ P(k|n,\alpha,\beta,\delta) =
 {\alpha(\alpha+\delta)\cdots(\alpha+(k-1)\delta)
 \cdot
 \beta(\beta+\delta)\cdots(\beta+(n-k-1)\delta)}
-{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}.
+{(\alpha+\beta)(\alpha+\beta+\delta)\cdots(\alpha+\beta+(n-1)\delta)}
+\quad (k=0,1,\ldots,n).
 $$
 
-注意: $\delta\ne 0$ ならば分子分母を $|\delta|^k|\delta|^{n-k} = |\delta|^n$ で割ることによって形式的に $\delta$ の部分を $\pm 1$ にできる.  だから, $\delta=-1,0,1$ の場合が基本的であると考えられる.
+__注意:__ $\delta = -1$ のときであっても, $k > \alpha$ ならば
+
+$$
+\alpha(\alpha+\delta)\cdots(\alpha+(k-1)\delta) =
+\alpha(\alpha-1)\cdots(\alpha-\alpha)\cdots(\alpha-(k-1)) = 0
+$$
+
+となるので $p(k|n,\alpha,\beta,-1)=0$ となり, 同様にして $n-k > \beta$ ならば $p(k|n,\alpha,\beta,-1)=0$ となることがわかる.  これより, $\delta = -1$ であっても $p(k|n,\alpha,\beta,-1)$ ($k=0,1,\ldots,n$) が負の値にならないことがわかる.
+
+__注意:__ $\delta > 0$ ならば分子分母を $\delta^k\delta^{n-k} = \delta^n$ で割ることによって形式的に $\delta$ の部分を $1$ にでき, $\alpha, \beta$ を $0$ 以上の正の有理数にできるので, $\delta=1$ の場合が本質的だと感がえられる.  そして, その場合の極限として, $\alpha, \beta$ が $0$ 以上の実数で $\delta=1$ の場合も理解できる.
 
 __袋に取り出した玉を戻さない非復元抽出の場合 ($\delta=-1$):__ $n$ 回中 $k$ 回赤い球が取り出される確率の分布は超幾何分布 $\op{Hypergeometric}(\alpha, \beta, n)$ になる:
 
