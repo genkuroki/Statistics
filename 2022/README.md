@@ -17,16 +17,16 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 
 __定義された分布__
 
-* カテゴリカル分布: Categorical(p_1,…,p_n)
-* 試行回数 n のBernoulli試行の分布: Bernoulli(p)ⁿ
-* 成功確率 p のBernoulli分布: Bernoulli(p)
-* 試行回数 n, 成功確率 p の二項分布: Binomial(n, p)
-* 成功階数 k, 成功確率 p の負の二項分布: NegativeBinomial(n, p) = NegBin(n, p)
-* 成功確率 p の幾何分布: Geometric(p) = NegativeBinomial(1, p)
-* 0～1のあいだの一様分布: Uniform(0, 1)
-* 試行回数 n の一様乱数生成の分布: Uniform(0, 1)ⁿ
-* 平均 μ, 分散 σ² (標準偏差 σ)の正規分布: Normal(μ, σ)
-* 標準正規分布: Normal() = Normal(0, 1)
+* __カテゴリカル分布__: Categorical(p_1,…,p_n)
+* 試行回数 n の __Bernoulli試行の分布__: Bernoulli(p)ⁿ
+* 成功確率 p の __Bernoulli分布__: Bernoulli(p)
+* 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
+* 成功階数 k, 成功確率 p の __負の二項分布__: NegativeBinomial(n, p) = NegBin(n, p)
+* 成功確率 p の __幾何分布__: Geometric(p) = NegativeBinomial(1, p)
+* 0～1のあいだの __一様分布__: Uniform(0, 1)
+* 試行回数 n の __一様乱数生成の繰り返しの分布__: Uniform(0, 1)ⁿ
+* 平均 μ, 分散 σ² (標準偏差 σ)の __正規分布__: Normal(μ, σ)
+* __標準正規分布__: Normal() = Normal(0, 1)
 
 ### 02 Gauss積分, ガンマ函数, ベータ函数
 
@@ -37,14 +37,15 @@ __定義された分布__
 
 __定義された分布__
 
-* 正規分布(再): Normal(μ, σ)
-* 形状パラメータ α, スケールパラメータ θ のガンマ分布: Gamma(α, θ)
-* 平均 θ の指数分布: Exponential(θ) = Gamma(1, θ)
-* 自由度 ν のχ²分布(カイ二乗分布): Chisq(ν) = Gamma(ν/2, 2)
-* パラメータ α, β のベータ分布: Beta(α, β)
-* 自由度 ν のt分布: TDist(ν) (Beta(1/2, ν/2) と密接に関係)
-* 自由度 (ν₁, ν₂) のF分布: FDist(ν₁, ν₂) (本質的にオッズに関する Beta(ν₁/2, ν₂/2) 分布)
-* Dirichlet分布: Dirichlet(α_1,…,α_n)  (n=2の場合がベータ分布と一致)
+* 正規分布 (再): Normal(μ, σ)
+* 形状パラメータ α, スケールパラメータ θ の __ガンマ分布__: Gamma(α, θ)
+* 平均 θ の __指数分布__: Exponential(θ) = Gamma(1, θ)
+* 形状パラメータ α, スケールパラメータ θ の __逆ガンマ分布__: InverseGamma(α, θ)
+* 自由度 ν の __χ²分布__(カイ二乗分布): Chisq(ν) = Gamma(ν/2, 2)
+* パラメータ α, β の __ベータ分布__: Beta(α, β)
+* 自由度 ν の __t分布__: TDist(ν) (Beta(1/2, ν/2) と密接に関係)
+* 自由度 (ν₁, ν₂) の __F分布__: FDist(ν₁, ν₂) (本質的にオッズに関する Beta(ν₁/2, ν₂/2) 分布)
+* __Dirichlet分布__: Dirichlet(α_1,…,α_n)  (n=2の場合がベータ分布と一致)
 
 ### 03 確率分布達の解釈
 
@@ -55,11 +56,11 @@ __定義された分布__
 
 __定義された分布__
 
-* 対数正規分布: LogNormal(μ, σ)
-* 期待値 λ のPoisson分布(ポアソン分布): Poisson(λ)
-* 負の二項分布 (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
-* ベータ二項分布: BetaBinomial(n, α, β)
-* 超幾何分布: Hypergeometric(s, f, n)
+* __対数正規分布__: LogNormal(μ, σ)
+* 期待値 λ の __Poisson分布__(ポアソン分布): Poisson(λ)
+* __負の二項分布__ (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
+* __ベータ二項分布__: BetaBinomial(n, α, β)
+* __超幾何分布__: Hypergeometric(s, f, n)
 
 ### 99 テンプレート
 
