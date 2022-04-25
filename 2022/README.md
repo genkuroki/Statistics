@@ -4,7 +4,7 @@
 
 [Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください。
 
-[Julia言語](https://julialang.org/)を使って数値的な計算はグラフの作画を行っています。[WolframAlpha](https://www.wolframalpha.com/)も併用しています。
+[Julia言語](https://julialang.org/)を使って数値の計算やグラフの作画を行っています。[WolframAlpha](https://www.wolframalpha.com/)も併用しています。
 
 __明らかな誤りをまだ大量に含んでいるものと思われます。ごめんなさい。適切に訂正しながら読んでください。__
 
