@@ -38,7 +38,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布" data-toc-modified-id="標本分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布の定義" data-toc-modified-id="独立同分布の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.7.5"><span class="toc-item-num">1.7.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.7.6"><span class="toc-item-num">1.7.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#無相関性" data-toc-modified-id="無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>無相関性</a></span><ul class="toc-item"><li><span><a href="#共分散と相関係数の定義および無相関の定義" data-toc-modified-id="共分散と相関係数の定義および無相関の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>共分散と相関係数の定義および無相関の定義</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散" data-toc-modified-id="問題:--無相関な確率変数達の和の分散-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-キュムラントのロケーションスケール変換" data-toc-modified-id="問題:-キュムラントのロケーションスケール変換-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: キュムラントのロケーションスケール変換</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布" data-toc-modified-id="標本分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.7.5"><span class="toc-item-num">1.7.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.7.6"><span class="toc-item-num">1.7.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#無相関性" data-toc-modified-id="無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>無相関性</a></span><ul class="toc-item"><li><span><a href="#共分散と相関係数の定義および無相関の定義" data-toc-modified-id="共分散と相関係数の定義および無相関の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>共分散と相関係数の定義および無相関の定義</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散" data-toc-modified-id="問題:--無相関な確率変数達の和の分散-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-キュムラントのロケーションスケール変換" data-toc-modified-id="問題:-キュムラントのロケーションスケール変換-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: キュムラントのロケーションスケール変換</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -76,7 +76,7 @@ $$
 P(x_i) = \sum_{x_1}\cdots\widehat{\sum_{x_i}}\cdots\sum_{x_n}P(x_1,\cdots,x_i,\ldots,x_n)
 $$
 
-になる. ここで, $\widehat{\sum_{x_i}}$ は $\\sum_{x_i}$ を除くという意味である. なぜならば,
+になる. ここで, $\widehat{\sum\nolimits_{x_i}}$ は $\sum_{x_i}$ を除くという意味である. なぜならば,
 
 $$
 \begin{aligned}
@@ -134,7 +134,7 @@ __注意:__ 厳密には函数 $f_i$ 達を動かす範囲を確定させる必�
 
 #### 独立な確率変数達の同時確率質量函数
 
-確率変数達 $X_1,\ldots,X_n$ が同時確率質量函数 $P(x_1,\ldots,x_n)$ を持つとき,  $X_i$ の確率質量函数を $P_i(x_i)$ と書くとき, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
+確率変数達 $X_1,\ldots,X_n$ が同時確率質量函数 $P(x_1,\ldots,x_n)$ を持つとき,  $X_i$ 単独の確率質量函数を $P_i(x_i)$ と書くならば, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
 
 $$
 P(x_1,\ldots,x_n) = P_1(x_1)\cdots P_n(x_n)
@@ -174,7 +174,7 @@ $$
 
 #### 独立な確率変数達の同時確率密度函数
 
-確率変数達 $X_1,\ldots,X_n$ が同時確率密度函数 $p(x_1,\ldots,x_n)$ を持つとき,  $X_i$ の確率密度函数を $p_i(x_i)$ と書くとき, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
+確率変数達 $X_1,\ldots,X_n$ が同時確率密度函数 $p(x_1,\ldots,x_n)$ を持つとき,  $X_i$ 単独の確率密度函数を $p_i(x_i)$ と書くならば, 確率変数達 $X_1,\ldots,X_n$ が独立であることと, 
 
 $$
 p(x_1,\ldots,x_n) = p_1(x_1)\cdots p_n(x_n)
@@ -249,8 +249,7 @@ var"正規分布は分散が小さくなると一点に集中して行く." = pl
 for σ in (1.0, 0.5, 0.25, 0.1)
     plot!(Normal(0, σ); label="σ = $σ")
 end
-title!("Normal(μ=0, σ)")
-;
+title!("Normal(μ=0, σ)");
 ```
 
 #### 分散を0に近付けたときの正規分布について
@@ -274,14 +273,22 @@ var"正規分布は分散が小さくなると一点に集中して行く."
 $E[f(X_0)] = f(\mu)$ を満たす確率変数 $X_0$ は実質定数 $\mu$ に等しく, 実質定数に等しい確率変数が従う分布を __Dirac分布__ と呼ぶことがある.
 
 
-### 独立同分布の定義
+### 独立同分布(i.i.d., iid)の定義
 
 確率変数達 $X_1,\ldots,X_n$ が __独立同分布__ (independent and identically distributed, __i.i.d.__, __iid__) であるとは, それらが独立でかつ $X_i$ 達が従う分布が互いにすべて等しいことであると定める.
 
 
 ### 標本分布の定義
 
-独立同分布な $n$ 個の確率変数達 $X_1,\ldots,X_n$ の同時確率分布を各 $X_k$ の分布の __サイズ $n$ の標本分布__ (サンプル分布, sample distribution)と呼ぶ.
+$n$ 個の確率変数達 $X_1,\ldots,X_n$ は独立同分布であり, 各 $X_i$ は共通の確率分布 $D$ に従うと仮定する:
+
+$$
+X_1,\ldots,X_n \sim D \quad (independent)
+$$
+
+このとき, $X_1,\ldots,X_n$ を分布 $D$ の __標本__ または __サンプル__ (sample)と呼び,  $X_1,\ldots,X_n$ の同時確率分布を __分布 $D$ のサイズ $n$ の標本分布__ (distribution of samples)と呼ぶことにする.
+
+__注意:__ 独立同分布な確率変数達 $X_1,\ldots,X_n$ (確率変数は数ではなく函数であった)そのものではなく, それらの実現値 $x_1,\ldots,x_n$ (函数としての確率変数の値達)を標本もしくはサンプルと呼ぶことがある.  1つひとつの値 $x_i$ をサンプルと呼ぶのではなく, 数の列 $x_1,\ldots,x_n$ をサンプルと呼ぶことに注意せよ.  その辺が紛らわしい場合には数の列 $x_1,\ldots,x_n$ を __データ__ (data)と呼ぶことがある.  $X_1,\ldots,X_n$ もデータと呼ぶことがある.  この辺の用語の使い方はかなりイーカゲンになり易いので注意して欲しい.
 
 確率変数 $X_i$ 達が同一の確率密度函数 $p(x_i)$ を持つとき, $X_1,\ldots,X_n$ の同時確率密度函数が
 
@@ -332,9 +339,13 @@ __言葉使いに関する重要な注意:__ 「標本」「サンプル」は�
 
 前節の設定を引き継ぐ.
 
-Bernoulli分布のサイズ $n$ の標本分布における $1$ の個数の分布は二項分布になるのであった.  仮に $n$ 回中 $k$ 回の当たりが出たときに, 未知の当たりの確率は $k/n$ であると推定することにしたときの, $k/n$ の確率的な揺らぎは二項分布によって計算できる.
+Bernoulli分布のサイズ $n$ の標本分布における $1$ の個数の分布は二項分布になるのであった.  仮に
 
-$K$ は二項分布 $\op{Binomial}(n,p)$ に従う確率変数であるとし, 確率変数 $\hat{p}$ を $\hat{p} = K/n$ と定める.  この確率変数 $\hat{p} = K/n$ は上のルールで定めた未知の確率 $p$ の推定の仕方のモデル化になっている.
+>$n$ 回中 $k$ 回の当たりが出たときに, 未知である当たりが出る確率は $k/n$ に近いだろうと推定
+    
+することにしたときの, $k/n$ の確率的な揺らぎは二項分布によって計算できる.
+
+$K$ は二項分布 $\op{Binomial}(n,p)$ に従う確率変数であるとし, 確率変数 $\hat{p}$ を $\hat{p} = K/n$ と定める.  この確率変数 $\hat{p} = K/n$ は上のルールで定めた未知の確率 $p$ の推定の仕方の数学的記述になっている. このとき, $\hat{p}$ はパラメータ $p$ の __推定量__ (estimator)であるという.  確率変数 $\hat{p}$ は「$n$ 回中 $k$ 回当たりが出た」というデータに対応する確率変数 $K$ の函数になっている.
 
 $\hat{p} = K/n$ の期待値と分散は, 二項分布の期待値と分散がそれぞれ $np$ と $np(1-p)$ であることより, 以下のように計算される:
 
@@ -357,15 +368,17 @@ $$
 
 モデル内の設定では大雑把に推定結果はこの2倍の $\pm 3\%$ 程度揺らぐと考えらえる.
 
-未知の $p$ を使わずに $\op{SE} = \std(\hat{p})$ の値を推定するためにはここで使った $p$ に $\hat{p}$ を代入して得られる公式
+未知の $p$ を使わずに $\op{SE} = \std(\hat{p})$ の値を推定するためには, その式の中の $p$ に $p$ の推定量 $\hat{p}$ を代入して得られる公式
 
 $$
 \widehat{SE} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$
 
-を使えばよいだろう.
+を使えばよいだろう. ($\op{SE} = \std(\hat{p})$ は __標準誤差__ (standard error)と呼ばる.  $\widehat{SE}$ は標準誤差の推定量である.  $\widehat{SE}$ のことも標準誤差と呼ぶことがある.  この辺の言葉遣いもイーカゲンな場合が多いので注意が必要である.  何をどう呼ぶかよりも, それが正確には何を意味しているかが重要である.
 
 このような統計分析の結果が現実において信頼できるかどうかは, Bernoulli分布の標本分布によるモデル化の現実における妥当性に依存する.  モデルが現実において妥当である証拠が全然無ければ, このような推測結果も信頼できないことになる. モデルの現実における妥当性の証拠の提示は統計モデルのユーザー側が独自に行う必要がある.
+
+例えば, ルーレットを1回まわすたびに, 当たりが出る確率 $p$ の値が確率的に揺らいだり, ルーレットを複数回まわすときの出目が独立でなかったりするならば(例えば当たりが出た直後には当たりが出る確率が上がったりするならば), 二項分布モデルの単純な適用は妥当でなくなる可能性がある.
 
 ```julia
 n, p = 1000, 0.3
@@ -384,6 +397,20 @@ title!("n = $n, p = $p")
 
 現実の統計分析ではこのような未知の確率 $p = 0.3$ に当たるものが使えないので, このようなグラフを描くことはできない. 真っ暗闇の中を手探りで進むような感じになる. 
 
+
+当たりが出る確率が確率 $1/2$ で $0.45$ になり, 確率 $1/2$ で 0.55$ になり, 独立性の条件は満たされている場合.
+
+```julia
+n, q = 100, 0.45
+L = 10^6
+X = rand(Bernoulli(1/2), L)
+P = @. q*(1 - X) + (1 - q)*X
+K = @. rand(Binomial(n, P))
+p̂ = K/n
+histogram(p̂; norm=true, alpha=0.3, label="p̂ = K/n", bin=51)
+plot!(x -> pdf(Normal(1/2, 1/(2√n)), x), 0, 1; label="")
+title!("n = $n")
+```
 
 ### 問題: 大阪都構想に関する住民投票の結果について
 
