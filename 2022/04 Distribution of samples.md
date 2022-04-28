@@ -16,7 +16,7 @@ jupyter:
 # 標本分布について
 
 * 黒木玄
-* 2022-04-11～2022-04-18
+* 2022-04-11～2022-04-26
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -38,7 +38,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布" data-toc-modified-id="標本分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.7.5"><span class="toc-item-num">1.7.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.7.6"><span class="toc-item-num">1.7.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#無相関性" data-toc-modified-id="無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>無相関性</a></span><ul class="toc-item"><li><span><a href="#共分散と相関係数の定義および無相関の定義" data-toc-modified-id="共分散と相関係数の定義および無相関の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>共分散と相関係数の定義および無相関の定義</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散" data-toc-modified-id="問題:--無相関な確率変数達の和の分散-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布とその使い方" data-toc-modified-id="標本分布とその使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布とその使い方</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#確率分布の積と-$n$-乗の定義" data-toc-modified-id="確率分布の積と-$n$-乗の定義-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率分布の積と $n$ 乗の定義</a></span></li><li><span><a href="#分布-$D$-の標本分布の主な使用用途" data-toc-modified-id="分布-$D$-の標本分布の主な使用用途-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>分布 $D$ の標本分布の主な使用用途</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.9.2"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.9.3"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.9.4"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.9.5"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.9.6"><span class="toc-item-num">1.9.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#確率変数達の共分散と相関係数と無相関性" data-toc-modified-id="確率変数達の共分散と相関係数と無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>確率変数達の共分散と相関係数と無相関性</a></span><ul class="toc-item"><li><span><a href="#確率変数達の共分散と相関係数の定義" data-toc-modified-id="確率変数達の共分散と相関係数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>確率変数達の共分散と相関係数の定義</a></span></li><li><span><a href="#確率変数達の無相関の定義" data-toc-modified-id="確率変数達の無相関の定義-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>確率変数達の無相関の定義</a></span></li><li><span><a href="#問題:-確率変数の相関係数の計算例" data-toc-modified-id="問題:-確率変数の相関係数の計算例-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 確率変数の相関係数の計算例</a></span></li><li><span><a href="#問題:-Cauchy-Schwarzの不等式" data-toc-modified-id="問題:-Cauchy-Schwarzの不等式-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: Cauchy-Schwarzの不等式</a></span></li><li><span><a href="#問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係" data-toc-modified-id="問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係</a></span></li><li><span><a href="#問題:-相関係数の計算" data-toc-modified-id="問題:-相関係数の計算-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 相関係数の計算</a></span></li><li><span><a href="#問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある" data-toc-modified-id="問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる" data-toc-modified-id="問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#標本(サンプル,-データ)の平均と分散と共分散と相関係数" data-toc-modified-id="標本(サンプル,-データ)の平均と分散と共分散と相関係数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>標本(サンプル, データ)の平均と分散と共分散と相関係数</a></span><ul class="toc-item"><li><span><a href="#標本平均の定義" data-toc-modified-id="標本平均の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>標本平均の定義</a></span></li><li><span><a href="#問題:-無相関な確率変数達の標本平均の分散" data-toc-modified-id="問題:-無相関な確率変数達の標本平均の分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: 無相関な確率変数達の標本平均の分散</a></span></li><li><span><a href="#標本分散と不偏分散の定義" data-toc-modified-id="標本分散と不偏分散の定義-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>標本分散と不偏分散の定義</a></span></li><li><span><a href="#不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの共分散の定義" data-toc-modified-id="データの共分散の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>データの共分散の定義</a></span></li><li><span><a href="#問題:-標本平均達の共分散" data-toc-modified-id="問題:-標本平均達の共分散-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 標本平均達の共分散</a></span></li><li><span><a href="#問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの相関係数の定義-(以上の定義のまとめにもなっている)" data-toc-modified-id="データの相関係数の定義-(以上の定義のまとめにもなっている)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>データの相関係数の定義 (以上の定義のまとめにもなっている)</a></span></li><li><span><a href="#問題:-最小二乗法" data-toc-modified-id="問題:-最小二乗法-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>問題: 最小二乗法</a></span></li><li><span><a href="#問題:-計算例" data-toc-modified-id="問題:-計算例-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>問題: 計算例</a></span></li></ul></li><li><span><a href="#モーメントとキュムラントと歪度と尖度" data-toc-modified-id="モーメントとキュムラントと歪度と尖度-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>モーメントとキュムラントと歪度と尖度</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li><li><span><a href="#独立同分布な確率変数達の不偏分散の分散" data-toc-modified-id="独立同分布な確率変数達の不偏分散の分散-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>独立同分布な確率変数達の不偏分散の分散</a></span><ul class="toc-item"><li><span><a href="#準備:-歪度と尖度" data-toc-modified-id="準備:-歪度と尖度-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>準備: 歪度と尖度</a></span></li><li><span><a href="#標本平均と不偏分散の共分散の計算" data-toc-modified-id="標本平均と不偏分散の共分散の計算-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>標本平均と不偏分散の共分散の計算</a></span></li><li><span><a href="#不偏分散の分散の計算" data-toc-modified-id="不偏分散の分散の計算-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>不偏分散の分散の計算</a></span></li></ul></li><li><span><a href="#正規分布の標本分布の場合" data-toc-modified-id="正規分布の標本分布の場合-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>正規分布の標本分布の場合</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -59,7 +59,7 @@ default(fmt = :png, titlefontsize = 10, size = (400, 250))
 using SymPy
 ```
 
-## 標本分布
+## 標本分布とその使い方
 
 
 ### 同時確率質量函数と同時確率密度函数
@@ -283,10 +283,10 @@ $E[f(X_0)] = f(\mu)$ を満たす確率変数 $X_0$ は実質定数 $\mu$ に等
 $n$ 個の確率変数達 $X_1,\ldots,X_n$ は独立同分布であり, 各 $X_i$ は共通の確率分布 $D$ に従うと仮定する:
 
 $$
-X_1,\ldots,X_n \sim D \quad (independent)
+X_1,\ldots,X_n \sim D \quad (\text{independent})
 $$
 
-このとき, $X_1,\ldots,X_n$ を分布 $D$ の __標本__ または __サンプル__ (sample)と呼び,  $X_1,\ldots,X_n$ の同時確率分布を __分布 $D$ のサイズ $n$ の標本分布__ (distribution of samples)と呼ぶことにする.
+このとき, $X_1,\ldots,X_n$ を分布 $D$ の __標本__ または __サンプル__ (sample)と呼び,  $X_1,\ldots,X_n$ の同時確率分布を __分布 $D$ のサイズ $n$ の標本分布__ (distribution of samples of size $n$ from distribution $D$)と呼ぶことにする.
 
 __注意:__ 独立同分布な確率変数達 $X_1,\ldots,X_n$ (確率変数は数ではなく函数であった)そのものではなく, それらの実現値 $x_1,\ldots,x_n$ (函数としての確率変数の値達)を標本もしくはサンプルと呼ぶことがある.  1つひとつの値 $x_i$ をサンプルと呼ぶのではなく, 数の列 $x_1,\ldots,x_n$ をサンプルと呼ぶことに注意せよ.  その辺が紛らわしい場合には数の列 $x_1,\ldots,x_n$ を __データ__ (data)と呼ぶことがある.  $X_1,\ldots,X_n$ もデータと呼ぶことがある.  この辺の用語の使い方はかなりイーカゲンになり易いので注意して欲しい.
 
@@ -305,6 +305,54 @@ P(x_1,\ldots,x_n) = P(x_1)\cdots P(x_n)
 $$
 
 であることと, $X_1,\ldots,X_n$ の同時確率分布が確率質量函数 $P(x)$ が定める離散分布の標本分布であることは同値である.
+
+
+### 確率分布の積と $n$ 乗の定義
+
+$X_1,\ldots,X_n$ が独立な確率変数達であり, $X_i$ が従う分布が $D_i$ であるとき, $(X_1,\ldots,X_n)$ が従う分布を
+
+$$
+D_1\times\cdots\times D_n
+$$
+
+と書き, 分布 $D_1,\ldots,D_n$ の __積__ (product, 直積, direct product)と呼ぶ:
+
+$$
+(X_1,\ldots,X_n) \sim D_1\times\cdots\times D_n
+\iff
+\text{$X_i \sim D_i$ for $i=1,\ldots,n$ and $X_1,\ldots,X_n$ are independent.}
+$$
+
+例えば, 分布 $D_i$ が確率密度函数 $p_i(x_i)$ を持つとき, 積分布 $D_1\times\cdots\times D_n$ は確率密度函数
+
+$$
+p(x_1,\ldots,x_n) = p_1(x_1)\cdots p(x_n)
+$$
+
+によって定義される多変量連続分布になる.  確率密度函数が積の形になるので, 分布の積と呼ぶ.
+
+$D_i$ がすべて同一の分布 $D$ であるとき, 積 $D_1\times\cdots\times D_n$ を $D^n$ と書き, 分布 $D$ の __べき乗__ (冪乗, power)もしくは __累乗__ と呼ぶ.  前節で説明したように分布 $D$ の $n$ 乗 $D^n$ は分布 $D$ のサイズ $n$ の標本分布と呼ばれる:
+
+$$
+(X_1,\ldots,X_n) \sim D^n
+\iff
+\text{$(X_1,\ldots,X_n)$ is a sample of size $n$ from the distribution D}.
+$$
+
+__例:__ 試行回数 $n$, 成功確率 $p$ のBernoulli試行の分布は成功確率 $p$ のBernoulli分布の $n$ 乗になる. 以下の節も参照せよ.
+
+
+### 分布 $D$ の標本分布の主な使用用途
+
+分布 $D$ のサイズ $n$ の標本分布は, 現実に得られる長さ $n$ の数値列 $x_1,\ldots,x_n$ の形式のデータの生成法則のモデル化としてよく使われている.  そのとき, 分布 $D$ やその標本分布 $D^n$ は __統計モデル__ と呼ばれる.
+
+ただし, 我々は, 分布 $D$ のサイズ $n$ の標本分布 $D^n$ を各々が分布 $D$ に従う独立同分布な $n$ 個の確率変数達 $X_1,\ldots,X_n$ の同時確率分布のことだと定義したので, データ $x_1,\ldots,x_n$ の生成法則が独立同分布という強い条件を近似的に満たしていなければ, そのようなモデル化は妥当ではなくなる.
+
+__例:__ データ $x_1,\ldots,x_n$ がコンピュータで $\op{rand}()$ 函数を $n$ 回繰り返して得られた乱数列とするとき, そのデータの生成法則は一様分布 $\op{Uniform}(0, 1)$ のサイズ $n$ の標本分布に近似的に従っているとみなされる.
+
+__例(基本!):__ S市の中学3年生男子の総人数は $N$ 人であるとし, その身長の値全体を $a_1,a_2,\ldots,a_N$ と書く. 等確率 $1/N$ で $a_i$ 達のどれかの値が選ばれるという条件で定義される有限離散分布を $Q$ と書き, S市の中3男子の身長の分布と呼ぶことにする. (全数調査前なので分布 $Q$ は未知であると仮定する.)  $1,2,\ldots,N$ から $n$ 個の数 $i_1,\ldots,i_n$ を無作為に選んで, $n$ 人分の中3男子の身長を測定してデータ $(x_1,\ldots,x_N)=(a_{i_1},\ldots,a_{i_N})$ が得られたとする.  このとき, データ $x_1,\ldots,x_N$ の生成法則はS市の中3男子の身長の分布 $Q$ のサイズ $n$ の標本分布になっていると考えられる.  このとき, 未知の分布 $Q$ についての推定・推測・推論をデータ $x_1,\ldots,x_N$ を用いて行いたい.  そのときに, $Q$ のモデル化として平均 $\mu$ と分散 $\sigma^2$ をパラメータに持つ正規分布を設定し, データ $x_1,\ldots,x_N$ の生成法則のモデル化として, 正規分布のサイズ $n$ の標本分布 $\op{Normal}(\mu, \sigma)^n$ を採用することが考えらえる. この場合には正規分布モデルを統計モデルとして採用したことになる.  パラメータ $\mu, \sigma$ はデータ $x_1,\ldots,x_N$ を使って推定されることになる.  未知であるS市の中3男子の身長の分布 $Q$ (よく __真の分布__ と呼ばれる)が正規分布からかけ離れた形をしていると, 正規分布モデルの採用は妥当ではなくなるが, 真の分布が十分に正規分布に近いことが十分に確からしい場合には正規分布モデルの採用は適切になる.
+
+__例:__ 当たりが常に同じ確率で出続けると考えられるルーレットを $n$ 回まわして, 当たりなら $1$ を記録し, 外れなら $0$ を記録することによって得られる $1,0$ で構成された長さ $n$ の数列 $x_1,\ldots,x_n$ の生成法則は, 未知の成功確率 $p$ を持つ試行回数 $n$ のBernoulli試行の確率分布 $\op{Bernoulli}(p)^n$ (これはBernoulli分布の標本分布に等しい)に近似的に従うと考えられる.
 
 
 ### 試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布
@@ -374,7 +422,7 @@ $$
 \widehat{SE} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$
 
-を使えばよいだろう. ($\op{SE} = \std(\hat{p})$ は __標準誤差__ (standard error)と呼ばる.  $\widehat{SE}$ は標準誤差の推定量である.  $\widehat{SE}$ のことも標準誤差と呼ぶことがある.  この辺の言葉遣いもイーカゲンな場合が多いので注意が必要である.  何をどう呼ぶかよりも, それが正確には何を意味しているかが重要である.
+を使えばよいだろう. ($\op{SE} = \std(\hat{p})$ は __標準誤差__ (standard error)と呼ばれる.  $\widehat{SE}$ は標準誤差の推定量である.  $\widehat{SE}$ のことも標準誤差と呼ぶことがある.  この辺の言葉遣いもイーカゲンな場合が多いので注意が必要である.  何をどう呼ぶかよりも, それが正確には何を意味しているかが重要である.
 
 このような統計分析の結果が現実において信頼できるかどうかは, Bernoulli分布の標本分布によるモデル化の現実における妥当性に依存する.  モデルが現実において妥当である証拠が全然無ければ, このような推測結果も信頼できないことになる. モデルの現実における妥当性の証拠の提示は統計モデルのユーザー側が独自に行う必要がある.
 
@@ -389,11 +437,11 @@ vline!([p]; label="p=$p", xlabel="p̂", xtick=0.30-0.12:0.03:0.30+0.12)
 title!("n = $n, p = $p")
 ```
 
-確かにランダムに決まる $\hat{p}=K/n$ の値は, 推定先の値である $p=0.30$ を中心に大雑把に $\pm 3\%$ 程度の範囲に分布している.
+確かにランダムに決まる $\hat{p}=K/n$ の値は, 推定先の値である $p=0.30=30\%$ を中心に大雑把に $\pm 3\%$ 程度の範囲に分布している.
 
 実際には小さな確率でもっと大きく外れることもあることに注意せよ.
 
-現実の統計分析ではこのような未知の確率 $p = 0.3$ に当たるものが使えないので, このようなグラフを描くことはできない. 真っ暗闇の中を手探りで進むような感じになる. 
+現実の統計分析では, データを上のグラフの例のように100万回撮り直したりできないので, このようなグラフを描くことはできない. たった1つの「$n$ 回中 $k$ 回成功」(もしくは「$n$ 人中 $k$ 人」)の型のデータだけを使って判断を下さなければいけなくなる. 真っ暗闇の中を手探りで進むような感じになる.
 
 
 ### 問題: 大阪都構想に関する住民投票の結果について
@@ -409,9 +457,9 @@ title!("n = $n, p = $p")
 
 確率変数 $K$ は二項分布 $\op{Binomial}(n, p)$ に従うと仮定する.
 
-(1) $n = 694844 + 705585 = 1400429$, $p = 0.5$ のとき, 確率 $P(K \le 694844)$ の2倍を求めよ.
+(1) $n = 694844 + 705585 = 1400429$, $p = 0.5$ のとき, 確率 $P(K \le 694844)$ の2倍の値を求めよ.
 
-(2) $n = 675829 + 692996 = 1368825$, $p = 0.5$ のとき, 確率 $P(K \le 675829)$ の2倍を求めよ.
+(2) $n = 675829 + 692996 = 1368825$, $p = 0.5$ のとき, 確率 $P(K \le 675829)$ の2倍の値を求めよ.
 
 (3) $n = 694844 + 705585 = 1400429$ のとき, 以下を求めよ:
 
@@ -423,7 +471,7 @@ title!("n = $n, p = $p")
 * $P(K \ge 675829) = 2.5\%$ になるようなパラメータ $p$ の値 $p_L$,
 * $P(K \le 675829) = 2.5\%$ になるようなパラメータ $p$ の値 $p_U$.
 
-確率やパラメータの数値は有効桁4桁まで求めよ. $0.000\cdots01234$ のように $0$ を沢山含む表示は見難いので,
+確率やパラメータの数値は有効桁4桁まで求めよ. $0.00000 00000 00000 00001234$ のように $0$ を沢山含む表示は見難いので,
 
 $$
 1.234\times 10^{20} = 0.\underbrace{00000 00000 00000 00001}_{20}234
@@ -609,6 +657,13 @@ title!("n = $n,  k = $k"; xlabel="p")
 plot(P1, P2; size = (800, 250), bottommargin=4Plots.mm)
 ```
 
+上のグラフでは $1 - \op{cdf}(\op{Binomial}(n, p), k-1)$ と $\op{cdf}(\op{Beta}(k, n-k+1), p)$ がぴったり一致し, $\op{cdf}(\op{Binomial}(n, p), k)$ と $1 - \op{cdf}(\op{Beta}(k+1, n-k), p)$ がぴったり一致し, 区別がつかなくなっている.  ここで $\op{cdf}(D, x)$ は分布 $D$ の累積分布函数を表す:
+
+$$
+X \sim D \implies \op{cdf}(D, x) = P(X \le x).
+$$
+
+
 #### 信頼区間よりも情報量が大きなP値函数のプロット
 
 二項分布モデルにおいて $n, k$ が与えられたときに, パラメータ $p$ に対してP値を対応させる函数を __P値函数__ (p-value function)と呼ぶ.  P値函数の値が有意水準 $\alpha$ 以上の $p$ 全体の集合が信頼度 $1-\alpha$ の信頼区間になる.  この意味でP値函数はすべての信頼度に関する信頼区間の情報をすべて持っており, 適当な条件の下ではすべての信頼度に関する信頼区間が与えられていればそこからP値函数を逆に作れる.  この意味でP値函数と信頼区間達は表裏一体の関係になっている.
@@ -644,8 +699,29 @@ P1 = plot_pvalue_function(pvalue_clopper_pearson, 694844 + 705585, 694844;
 P2 = plot_pvalue_function(pvalue_clopper_pearson, 675829 + 692996, 675829;
     label="Clopper-Pearson", xtick=0:0.0005:1)
 
-plot(P1, P2; size=(800, 250), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+plot(P1, P2; size=(800, 250),
+    leftmargin=4Plots.mm, bottommargin=4Plots.mm, rightmargin=4Plots.mm)
 ```
+
+データ $x$ を与えられているとき(上の場合には「$n$ 人中 $k$ 人が賛成」というデータを与えられているとき), 統計モデルのパラメータ $\theta$ に(上の場合には $p$ に)対してP値を対応させる函数をP値函数と呼ぶ.  上のグラフは大阪都構想に関する住民投票の結果データとし, 統計モデルを二項分布にしたときのP値函数のプロットである.
+
+P値が高いパラメータ値ほど与えられたデータに統計モデルがよくフィット(fit, 適合)している.  P値が低い場合にはその逆になる. あまりにも低いP値を持つパラメータ値については, 統計モデルとそのパラメータ値の組が与えられたデータに全然適合していないことになる.
+
+そのとき重要なことは, P値が低いパラメータ値について, そのパラメータ値のみについてデータに適合していないと考えるのではなく, 統計モデルとそのパラメータ値の組がデータにフィットしていないと考えなければいけないことである.
+
+例えば, 上のグラフを見れば, グラフに描いた部分の横軸の目盛りをはみ出しているパラメータ値 $p=0.5$ のP値はおそろしく低い.  二項分布モデル内で $p=0.5$ は賛成派の比率がちょうど $50\%$ であることを意味している.  $p=0.5$ のP値がおそろしく低いことを理由に「賛成派の比率が $50\%$ であるという仮説は否定された」のように単純に考えてはいけない.  そうではなく, 「賛成派の比率が $50\%$ であることを意味するパラメータ値の二項分布モデルの現実における妥当性は疑わしい」と考えなければいけない. 二項分布モデルも現実における妥当性を疑う対象に入れる必要がある.
+
+この手のことが大学学部生向けの教科書に書かれていないせいで, 大学で統計学の講義を受講した人達の多くが統計学の最も基本的な部分をひどく誤解したまま単位を取得しているように思われる.
+
+誤解を修正するためには次の講義動画がお勧めである:
+
+* 京都大学大学院医学研究科 聴講コース 臨床研究者のための生物統計学「仮説検定とP値の誤解」佐藤 俊哉 医学研究科教授. \[[YouTube](https://youtu.be/vz9cZnB1d1c)\]
+
+その講義で扱われているP値に関するASA声明の翻訳とその翻訳の経緯の解説を以下の場所で読める:
+
+* 統計的有意性とP値に関するASA声明 \[[pdf](https://www.biometrics.gr.jp/news/all/ASA.pdf)\]
+* 佐藤俊哉, ASA声明と疫学研究におけるP値, 計量生物学, 2018年38巻2号, pp. 109-115. \[[link](https://www.jstage.jst.go.jp/article/jjb/38/2/38_109/_article/-char/ja/)\]
+
 
 #### Sternの信頼区間とそれを与えるP値函数
 
@@ -658,12 +734,12 @@ $$
 と書くとき,
 
 $$
-\op{pvalue}_{\op{Stern}}(k|n, p) = \sum_{P(j|n,p) \le P(k|n,p)} P(j|n,p)
+\op{pvalue}_{\op{Stern}}(k|n, p) = \sum_{j\ \text{with}\ P(j|n,p) \le P(k|n,p)} P(j|n,p)
 $$
 
 と $P(k|n,p)$ 以下となるような $P(j|n,p)$ 達の和として定義される. すなわち, 二項分布 $\op{Binomial}(n, p)$ においてその値が生じる確率がデータの数値 $k$ が生じる確率以下になる確率としてSternの信頼区間を与えるP値は定義される.
 
-そして, 与えられた $n, k$ について, Sternの信頼区間はこのP値が $\alpha$ 以上になるパラメータ $p$ の範囲として定義される.  (実はその定義だと区間になるとは限らない場合があるので, 適当に定義を訂正することになる.)
+そして, 与えられた $n, k$ について, Sternの信頼区間はこのP値が $\alpha$ 以上になるパラメータ $p$ の範囲として定義される.  (実はその定義だと区間になるとは限らない場合が稀にあるので, その場合には適当に定義を訂正することになる.)
 
 
 #### Sternの信頼区間を与えるP値函数の実装例
@@ -710,7 +786,7 @@ function pvalue_stern_old(dist::DiscreteUnivariateDistribution, x)
 end
 pvalue_stern_old(n, k, p) = pvalue_stern_old(Binomial(n, p), k)
 
-### efficient implementation
+### The following implementation efficient.
 
 _pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
 
@@ -802,7 +878,7 @@ d = @time pvalue_clopper_pearson.(dist, k)
 ```
 
 ```julia
-# 以上の実装はPoisson分布でも使える.
+# 以上の実装は無限離散分布のPoisson分布でも使える.
 dist = Poisson(4)
 k = -1:10
 a = @time pvalue_stern_naive.(dist, k)
@@ -884,36 +960,65 @@ $x,y,z$ はそれぞれ $1,0$ を動くとする. このとき, $P(x,y)$, $P(x,z
 
 上の例は具体的には次のような状況だと解釈可能である. 
 
-(1) $P(x) = 1/2$ の解釈: $X=1$ は薬Aを与えたことを, $X=0$ は薬Bを与えたことを意味する. 全員に確率 $1/2$ で薬AまたはBを与えた. 
+(1) $P(x) = 1/2$ の解釈: $X=1$ は薬Aを与えたことを, $X=0$ は薬Bを与えたことを意味する. 全員に確率 $1/2$ で薬Aまたは薬Bを与えた.
 
-(2) $P(y) = 1/2$ の解釈: $Y=1$ は薬に効果があったことを, $Y=0$ は効果が無かったことを意味する. 全体で見たら, $1/2$ の確率で薬には効果があった.
+$$
+\begin{array}{|l|l|}
+\hline
+x = 1 = \text{薬A} & P(x=1)=1/2 \\
+x = 0 = \text{薬B} & P(x=0)=1/2 \\
+\hline
+\end{array}
+$$
+
+(2) $P(y) = 1/2$ の解釈: $Y=1$ は薬に効果があったことを, $Y=0$ は薬に効果が無かったことを意味する. 全体で見たら, $1/2$ の確率で薬には効果があった.
+
+$$
+\begin{array}{|ll|}
+\hline
+y = 1 = \text{効果有} & y = 0 = \text{効果無} \\
+\hline
+P(y=1)=1/2 & P(y=0)=1/2 \\
+\hline
+\end{array}
+$$
 
 (3) $P(z) = 1/2$ の解釈: $Z=1$ は女性であることをを, $Z=0$ は男性であることを意味する. 女性である確率と男性である確率は $1/2$ だった.
+
+$$
+\begin{array}{|ll|}
+\hline
+z = 1 = \text{女性} & z = 0 = \text{男性} \\
+\hline
+P(z=1)=1/2 & P(z=0)=1/2 \\
+\hline
+\end{array}
+$$
 
 (4) 男女の区別をやめると, 薬Aも薬Bも効果がある確率は半々であり, 薬Aと薬Bのどちらを与えたかと効果があったかどうかは独立である. 男女を合わせた($z=1,0$ の場合の和を取って得られる)確率質量函数 $P(x,y)$ の表
 
 $$
 \begin{array}{|l|ll|}
 \hline
-& y = 1 & y = 0 \\
+& y = 1 = \text{効果有} & y = 0 = \text{効果無} \\
 \hline
-x = 1 & P(x=1,y=1)=1/4 & P(x=1,y=0)=1/4 \\
-x = 0 & P(x=0,y=1)=1/4 & P(x=0,y=0)=1/4 \\
+x = 1 = \text{薬A} & P(x=1,y=1)=1/4 & P(x=1,y=0)=1/4 \\
+x = 0 = \text{薬B} & P(x=0,y=1)=1/4 & P(x=0,y=0)=1/4 \\
 \hline
 \end{array}
 $$
 
-は$x=1$ の薬Aの場合も $x=0$ の薬Bの場合も男女全体を見ると半々で効果があり, 男女全体では効果に変わりがないことを意味している.
+は$x=1$ の薬Aの場合も $x=0$ の薬Bの場合も男女の区別をやめると薬Aと薬Bで効果に変わりがないことを意味している.
 
 (5) 薬Aと薬Bのどちらを与えたかと男女のどちらであるかは独立である. そのことは効果の有無を意味する $y=1,0$ について和を取って得られる確率質量函数 $P(x,z)$ の表
 
 $$
 \begin{array}{|l|ll|}
 \hline
-& z = 1 & z = 0 \\
+& z = 1 = \text{女性} & z = 0 = \text{男性} \\
 \hline
-x = 1 & P(x=1,z=1)=1/4 & P(x=1,z=0)=1/4 \\
-x = 0 & P(x=0,z=1)=1/4 & P(x=0,z=0)=1/4 \\
+x = 1 = \text{薬A} & P(x=1,z=1)=1/4 & P(x=1,z=0)=1/4 \\
+x = 0 = \text{薬B} & P(x=0,z=1)=1/4 & P(x=0,z=0)=1/4 \\
 \hline
 \end{array}
 $$
@@ -925,55 +1030,64 @@ $$
 $$
 \begin{array}{|l|ll|}
 \hline
-& z = 1 & z = 0 \\
+& y = 1 = \text{効果有} & y = 0 = \text{効果無} \\
 \hline
-y = 1 & P(y=1,z=1)=1/4 & P(y=1,z=0)=1/4 \\
-y = 0 & P(y=0,z=1)=1/4 & P(y=0,z=0)=1/4 \\
+z = 1 = \text{女性}\; & P(y=1,z=1)=1/4 & P(y=0,z=1)=1/4 \\
+z = 0 = \text{男性}\; & P(y=1,z=0)=1/4 & P(y=0,z=0)=1/4 \\
 \hline
 \end{array}
 $$
 
 からわかる.
 
-(7) しかし, 男女を区別すると全然違う結果が見えて来る. 薬Aは女性だけに効果があり, 薬Bは男性だけに効果がある.  $z=1$ の女性の場合に制限した確率質量函数の表 
+(7) しかし, 男女を区別すると全然違う結果が見えて来る. 薬Aは女性だけに効果があり, 薬Bは男性だけに効果がある.  $z=1$ の女性の場合に制限した確率質量函数 $P(x,y,z)$ $P(x,y,z)$  の表 
 
 $$
 \begin{array}{|l|ll|}
 \hline
-& z = 1 & \\
+& z = 1 = \text{女性} & \\
 \hline
-& y = 1 & y = 0 \\
+& y = 1 = \text{効果有} & y = 0 = \text{効果無} \\
 \hline
-x = 1 & P(1,1,1)=1/4 & P(1,0,1)=0   \\
-x = 0 & P(0,1,1)=0   & P(0,0,1)=1/4 \\
+x = 1 = \text{薬A} & P(1,1,1)=1/4 & P(1,0,1)=0   \\
+x = 0 = \text{薬B} & P(0,1,1)=0   & P(0,0,1)=1/4 \\
 \hline
 \end{array}
 $$
 
-より, $x=1$ の薬Aの場合には $y=1$ の確率が正で効果があるが, $x=0$ の薬Bの場合には $y=1$ の確率が0で効果がないことがわかる. $z=0$ の男性の場合に制限した確率質量函数の表
+より, $x=1$ の薬Aの場合には $y=1$ の効果有の確率が正であるが, $x=0$ の薬Bの場合には $y=1$ の効果有の確率が0になっている.  $z=0$ の男性の場合に制限した確率質量函数 $P(x,y,z)$ の表
 
 $$
 \begin{array}{|l|ll|}
 \hline
-& z = 0 & \\
+& z = 0 = \text{男性} & \\
 \hline
-& y = 1 & y = 0 \\
+& y = 1 = \text{効果有} & y = 0 = \text{効果無} \\
 \hline
-x = 1 & P(1,1,0)=0   & P(1,0,0)=1/4 \\
-x = 0 & P(0,1,0)=1/4 & P(0,0,0)=0 \\
+x = 1 = \text{薬A} & P(1,1,0)=0   & P(1,0,0)=1/4 \\
+x = 0 = \text{薬B} & P(0,1,0)=1/4 & P(0,0,0)=0 \\
 \hline
 \end{array}
 $$
 
-より, $x=1$ の薬Aの場合には $y=1$ の確率が0で効果がないが, $x=0$ の薬Bの場合には $y=1$ の確率が正で効果があることがわかる.
+より, $x=1$ の薬Aの場合には $y=1$ の効果有の確率が0で効果がないが, $x=0$ の薬Bの場合には $y=1$ の効果有の確率が正になっている.
 
-__このように確率変数達が独立か否かは現実において重大な意味を持ち得る.  ある重要な条件(上の場合には女性か男性か)を無視して, 「XとYは独立である」と結論すると大変なことになってしまう場合がある. XとYも, XとZも, YとZも独立であっても, XとYとZの全体は独立でないかもしれない.__
-
-
-## 無相関性
+__このように現実世界において確率変数達が独立か否かは重大な意味を持ち得る.  ある重要な条件(上の場合には女性か男性か)を無視して, 「XとYは独立である」(どちらの薬を与えても効果は同じである)と結論すると大変なことになってしまうかもしれない.  XとYも, XとZも, YとZも独立であっても, XとYとZの全体は独立でないかもしれない.__
 
 
-### 共分散と相関係数の定義および無相関の定義
+## 確率変数達の共分散と相関係数と無相関性
+
+分散と共分散と相関係数と無相関性に関する理論は線形代数における有限実ベクトル空間における内積の理論と本質的に同じものであると考えられる.  分散, 共分散, 相関係数, 無相関性はそれぞれベクトルのノルムの2乗, 内積, ベクトルのあいだの角度 $\theta$ に関する $\cos\theta$, ベクトルの直交に対応している.
+
+|確率変数|線形代数|
+|:---:|:---:|
+|分散|ノルムの2乗|
+|共分散|内積|
+|相関係数|$\cos\theta$|
+|無相関|直交|
+
+
+### 確率変数達の共分散と相関係数の定義
 
 確率函数 $X, Y$ の期待値をそれぞれ $\mu_X = E[X]$, $\mu_Y = E[Y]$ と書くことにする.
 
@@ -983,7 +1097,18 @@ $$
 \sigma_{XY} = \op{cov}(X, Y) = E[(X-\mu_X)(Y-\mu_Y)].
 $$
 
-$X=Y$ のときこれは $X$ の分散になる. 
+$X=Y$ のときこれは $X$ の分散になる. 分散の場合と同様に
+
+$$
+\begin{aligned}
+\op{cov}(X, Y) &= E[(X-\mu_X)(Y-\mu_Y)] \\ &=
+E[XY] - \mu_X E[Y] - E[X]\mu_Y + \mu_X \mu_Y \\ &=
+E[XY] - E[X] E[Y] - E[X] E[Y] + E[X] E[Y] \\ &=
+E[XY] - E[X]E[Y].
+\end{aligned}
+$$
+
+$X=Y$ の場合から $\op{var}(X) = E[X^2] - E[X]^2$ が得られる.
 
 線形代数の言葉を使えば, 共分散 $\sigma_{XY}=\op{cov}(X,Y)$ は内積に対応しており, 分散 $\sigma_X^2 = \op{var}(X)$, $\sigma_Y^2 = \op{var}(Y)$ はノルム(ベクトルの長さ)の二乗に対応しており, 標準偏差 $\sigma_X = \op{std}(X)$, $\sigma_Y = \op{std}(Y)$ はノルム(ベクトルの長さ)に対応している.
 
@@ -997,15 +1122,447 @@ $$
 
 相関係数という言葉を見たら $\cos\theta$ を想像し, 分散, 標準偏差, 共分散という言葉を見たら, ベクトルの長さの2乗, ベクトルの長さ, ベクトルの内積を想像すればよい. $X-\mu_X$ や $Y-\mu_Y$ がベクトルに対応している.
 
-$X,Y$ の共分散が $\op{cov}(X,Y)=0$ のとき(この条件は相関係数が $\op{cor}(X,Y)=0$ となることと同値, 直観的には「直交している」と考える), 確率変数達 $X,Y$ は __無相関__ であるという.
+__非常に重要な注意・警告:__ 以上で定義したのは確率変数達の共分散と相関係数であり, 後で定義する標本(サンプル, データ)の共分散と相関係数とは異なる数学的対象になるので注意が必要である.  この点は平均と分散の場合と同様である.  我々は複雑な現実世界に立ち向かうための道具として数学的に統計モデルを設定し, 統計モデル内の住人として確率変数を考える.  そのとき, 確率変数達の平均(期待値), 分散, 共分散, 相関係数を計算することは, 統計モデル内の確率変数の特徴を調べていることになる. 統計モデルを数学的フィクションである現実世界のデータと比較することは以下のように行われる:
 
-確率変数達 $X_1,\ldots,X_n$ が無相関であるとは, そのうちの互いに異なる任意の2つが無相関であることだと定める. $\mu_i = E[X_i]$, $\sigma_i^2 = \op{var}(X_i)$ のとき, $X_1,\ldots,X_n$ が無相関であることは, 
+1. 数学的フィクションである統計モデル内に住んでる現実世界のデータのモデル化になっている確率変数の特徴を調べる.
+2. 現実世界で取得したデータの特徴を調べる.
+3. 統計モデル内の確率変数の特徴と現実世界で取得したデータの特徴を比較してみる.
+
+上で定義したの確率変数達の共分散と相関係数は1の段階で使用される. 2の段階で使われる道具については後で説明する.
+
+__数学的な注意:__ 統計学的な位置付けとして, 確率変数達の平均, 分散, 共分散, 相関係数などと, 標本(サンプル, データ)平均, 分散, 共分散, 相関係数は異なる対象だとみなす必要があることはすぐ上で説明した.  しかし, 純粋に数学的性質を調べる場合には, 後者は前者の特別な場合になっていることから, 前者の数学的性質を調べれば後者の数学的性質もわかるという仕組みになっている. 初学者が混乱しがちになる原因の1つは, 数学的に鋭い初学者が確率変数達の扱いとデータ(サンプル, 標本)の取り扱いが数学的に似ていることに気付いてしまうせいで, それらの位置付けを混同してしまいがちなことにもあるように思われる. 
+
+
+### 確率変数達の無相関の定義
+
+$X,Y$ の相関係数 $\rho_{XY} = \op{cor}(X,Y)$ が $0$ になるとき, 確率変数達 $X,Y$ は __無相関__ であるという.  $X$ と $Y$ が無相関であることは $X - \mu_X$ と $Y - \mu_Y$ が「直交している」と考えてもよい.
+
+__注意:__ $X,Y$ の相関係数 $\rho_{XY} = \op{cor}(X,Y)$ が __近似的に $0$ になっている場合__ には($\cos\theta$ に対応する量が近似的に $0$ になっている場合には), 確率変数達 $X,Y$ は __近似的に無相関__ であると考える.  そのとき注意するべきことは共分散 $\sigma_{XY} = \op{cov}(X, Y)$ が近似的に $0$ になっていても(内積に当たる量が近似的に $0$ になっていても), 相関係数が $0$ からほど遠い値になっていて, 近似的に無相関とは言えない場合があることである.  下にある関連問題の節の内容を参照せよ.
+
+確率変数達 $X_1,\ldots,X_n$ が __無相関__ であるとは, そのうちの互いに異なる任意の2つが無相関であることだと定める. $\mu_i = E[X_i]$, $\sigma_i^2 = \op{var}(X_i)$ のとき, $X_1,\ldots,X_n$ が無相関であることは, 
 
 $$
 \op{cov}(X_i, X_j) = E[(X_i - \mu_i)(X_j - \mu_j)] = \sigma_i^2\delta_{ij}
 $$
 
 と書けることと同値である.  ここで $\delta_{ij}$ は $i=j$ の場合にのみ $1$ になり, それ以外の場合に $0$ になるKroneckerのデルタである.
+
+
+### 問題: 確率変数の相関係数の計算例
+
+確率変数の組 $(X, Y)$ は確率 $0.1, 0.2, 0.3, 0.4$ でそれぞれ $(10, -50), (-4, -10), (0, 20), (2, 0)$ という値になると仮定する:
+
+$$
+\begin{array}{|c|rrrr|}
+\hline
+\text{probability} & 0.1 & 0.2 & 0.3 & 0.4 \\
+\hline
+X &  10 & -4 & 0 & 2 \\
+Y & -50 & -10 & 20 & 0 \\
+\hline
+\end{array}
+$$
+
+確率変数 $X, Y$ の相関係数を小数点以下第2桁まで求めよ.
+
+__解答例:__ まず $X,Y$ の期待値を求める:
+
+$$
+\begin{aligned}
+&
+\mu_X = E[X] = 10\cdot0.1 + (-4)\cdot0.2 + 0\cdot0.3 + 2\cdot0.4 = 1,
+\\ &
+\mu_Y = E[Y] = (-50)\cdot0.1 + (-10)\cdot0.2 + 20\cdot0.3 + 0\cdot0.4 = -1.
+\end{aligned}
+$$
+
+ゆえに期待値を $X$, $Y$ から引いた値の分布は次の表のようになる:
+
+$$
+\begin{array}{|c|rrrr|}
+\hline
+\text{probability} & 0.1 & 0.2 & 0.3 & 0.4 \\
+\hline
+X - \mu_X &   9 & -5 & -1 & 1 \\
+Y - \mu_Y & -49 & -9 & 21 & 1 \\
+\hline
+\end{array}
+$$
+
+この表を用いて確率変数達としての $X,Y$ の分散と共分散を求める:
+
+$$
+\begin{aligned}
+&
+\op{var}(X) = 9^2\cdot0.1 + (-5)^2\cdot0.2 + (-1)^2\cdot0.3 + 1^2\cdot0.4 = 13.8,
+\\ &
+\op{var}(Y) = (-49)^2\cdot0.1 + (-9)^2\cdot0.2 + 21^2\cdot0.3 + 1^2\cdot0.4 = 389, 
+\\ &
+\op{cov}(X,Y) = 9(-49)\cdot0.1 + (-5)(-9)\cdot0.2 + (-1)21\cdot0.3 + 1\cdot1\cdot0.4 = -41.
+\end{aligned}
+$$
+
+相関係数を求めよう:
+
+$$
+\begin{aligned}
+\op{cor}(X,Y) =
+\frac{\op{cov}(X, Y)}{\sqrt{\op{var}(X)}\sqrt{\op{var}(Y)}} \approx -0.56.
+\end{aligned}
+$$
+
+__解答終__
+
+```julia
+@show E_X = 10*0.1 + (-4)*0.2 + 0*0.3 + 2*0.4
+@show E_Y = (-50)*0.1 + (-10)*0.2 + 20*0.3 + 0*0.4
+```
+
+```julia
+@show var_X = 9^2*0.1 + (-5)^2*0.2 + (-1)^2*0.3 + 1^2*0.4
+@show var_Y = (-49)^2*0.1 + (-9)^2*0.2 + 21^2*0.3 + 1^2*0.4
+@show cov_XY = 9*(-49)*0.1 + (-5)*(-9)*0.2 + (-1)*21*0.3 + 1*1*0.4;
+```
+
+```julia
+@show cor_XY = cov_XY/(√var_X * √var_Y);
+```
+
+```julia
+X = [10, -4, 0, 2]
+Y = [-50, -10, 20, 0]
+P = [0.1, 0.2, 0.3, 0.4]
+@show E_X = sum(X[i]*P[i] for i in eachindex(P))
+@show E_Y = sum(Y[i]*P[i] for i in eachindex(P))
+@show var_X = sum((X[i] - E_X)^2*P[i] for i in eachindex(P))
+@show var_Y = sum((Y[i] - E_Y)^2*P[i] for i in eachindex(P))
+@show cov_XY = sum((X[i] - E_X) * (Y[i] - E_Y) * P[i] for i in eachindex(P))
+@show cor_XY = cov_XY/(√var_X * √var_Y);
+```
+
+### 問題: Cauchy-Schwarzの不等式
+
+確率変数達 $X, Y$ について, 以下の不等式を示せ:
+
+$$
+\op{cov}(X, Y) \le \op{std}(X) \op{std}(Y).
+$$
+
+簡単のため $X, Y$ が同時確率質量函数を持つと仮定してよい.
+
+__注意:__ Cauchy-Schwarzの不等式より, $\op{std}(X)\op{std}(Y) \ne 0$ のとき, 相関係数
+
+$$
+\rho_{XY} = \op{cor}(X,Y) =
+\frac{\op{cov}(X,Y)}{\op{std}(X)\op{std}(Y)} 
+$$
+
+が $-1$ 以上 $1$ 以下になることがわかる.  これより, $0$ 以上 $\pi$ 以下の $\theta$ を
+
+$$
+\rho_{XY} = \op{cor}(X,Y) =
+\frac{\op{cov}(X,Y)}{\op{std}(X)\op{std}(Y)} =
+\cos\theta
+$$
+
+によって定めることができる.  この $\theta$ はベクトルのあいだの角度の確率変数の場合の類似物になっている.
+
+
+__解答例1:__ 右辺の2乗から左辺の2乗を引いた結果が $0$ 以上になること, すなわち, 次を示せばよい:
+
+$$
+\op{var}(X) \op{var}(Y) - \op{cov}(X, Y)^2 \ge 0.
+\tag{$*$}
+$$
+
+確率変数の分散や共分散は確率変数から定数を引いても変わらないので, $X$, $Y$ からそれらの期待値を引いたものを考えることによって, $X$, $Y$ の期待値は $0$ であると仮定してよい. このとき,
+
+$$
+\op{var}(X) = E[X^2], \quad
+\op{var}(Y) = E[Y^2], \quad
+\op{cov}(X,Y) = E[XY].
+$$
+
+$X, Y$ の同時確率質量函数を $P(x,y)$ と書く:
+
+$$
+E[f(X,Y)] = \sum_{x,y}f(x,y)P(x,y).
+$$
+
+このとき,
+
+$$
+E[f(X,Y)] E[g(X,Y)] = \sum_{x,y,x',y'} f(x,y)g(x',y')P(x,y)P(x',y').
+$$
+
+以上の準備のもとで, 
+
+$$
+\begin{aligned}
+2\op{var}(X)\op{var}(Y) &=
+E[X^2]E[Y^2] + E[Y^2]E[X^2]
+\\ &=
+\sum_{x,y,x',y'} (x^2 y'^2 + y^2 x'^2)P(x,y)P(x',y'),
+\\
+2\op{cov}(X, Y)^20 &=
+2E[XY]E[XY] =
+\sum_{x,y,x',y'} 2xyx'y' P(x,y)P(x',y')
+\\ &=
+\sum_{x,y,x',y'} 2xy'yx' P(x,y)P(x',y').
+\end{aligned}
+$$
+
+ゆえに,
+
+$$
+\begin{aligned}
+2\op{var}(X)\op{var}(Y) - 2\op{cov}(X, Y)^2 &=
+\sum_{x,y,x',y'}(x^2 y'^2 + y^2 x'^2 - 2xy'yx')P(x,y)P(x',y')
+\\ &=
+\sum_{x,y,x',y'}(xy' - yx')^2 P(x,y)P(x',y') \ge 0.
+\end{aligned}
+$$
+
+これより($*$)が成立することがわかる.
+
+__解答終__
+
+
+上の解答例でやっていることは本質的に $(X,Y)$ と独立で同分布な確率変数 $(X',Y')$ に対応する離散変数 $x',y'$ を導入したことである. そのことに気付けば, 同時確率質量函数の存在に頼らない一般的な証明法も得られる. 
+
+__解答例2(より一般的な場合):__ 右辺の2乗から左辺の2乗を引いた結果が $0$ 以上になること, すなわち, 次を示せばよい:
+
+$$
+\op{var}(X) \op{var}(Y) - \op{cov}(X, Y)^2 \ge 0.
+\tag{$*$}
+$$
+
+確率変数の分散や共分散は確率変数から定数を引いても変わらないので, $X$, $Y$ からそれらの期待値を引いたものを考えることによって, $X$, $Y$ の期待値は $0$ であると仮定してよい. このとき,
+
+$$
+\op{var}(X) = E[X^2], \quad
+\op{var}(Y) = E[Y^2], \quad
+\op{cov}(X,Y) = E[XY].
+$$
+
+さらに, $(X', Y')$ は $(X, Y)$ と同じ分布を持つ $(X, Y)$ と独立な確率変数であるとする. このとき, 次の公式を使用できる:
+
+$$
+E[f(X, Y)] = E[f(X', Y')], \quad
+E[f(X, Y)g(X', Y')] = E[f(X, Y)]E[g(X', Y')].
+$$
+
+以上の準備のもとで, 
+
+$$
+\begin{aligned}
+&
+2\op{var}(X)\op{var}(Y) =
+2E[X^2]E[Y^2] =
+E[X^2]E[Y'^2] + E[Y^2]E[X'^2] =
+E[X^2 Y'^2 + Y^2 X'^2],
+\\ &
+2\op{cov}(X, Y)^2 =
+2E[XY]^2 =
+2E[XY]E[X'Y'] =
+E[2XY'YX'].
+\end{aligned}
+$$
+
+ゆえに,
+
+$$
+\begin{aligned}
+2\op{var}(X)\op{var}(Y) - 2\op{cov}(X, Y)^2 &=
+E[X^2 Y'^2 + Y^2 X'^2] - E[2XY'YX']
+\\ &=
+E[X^2 Y'^2 + Y^2 X'^2 - 2XY'YX']
+\\ &=
+E[(XY' - X'Y)^2] \ge 0.
+\end{aligned}
+$$
+
+これより($*$)が成立することがわかる.
+
+__解答終__
+
+
+__注意:__ 線形代数の教科書におけるCauchy-Schwarzの不等式の証明と以上で紹介した証明を比較してみよ.  もしも比較した線形代数の教科書の証明が以上で紹介した証明と全く違っているならば, その教科書の文脈において上で紹介した証明の方法が使えないかどうかを考えてみよ.  参照にした教科書に上で紹介した証明と全く異なる証明が載っているならば, 上で証明した確率変数に関するCauchy-Schwarzの不等式をその教科書の方法で証明してみよ.
+
+
+### 問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係
+
+$a_i, b_i\in\R$ であるとし, 確率変数の組 $(X,Y)$ は同じ確率 $1/n$ で $(a_1,b_1),\ldots,(a_n, b_n)$ のどれかの値になるものと仮定する.  この仮定は
+
+$$
+E[f(X,Y)] = \frac{1}{n}\sum_{i=1}^n f(a_i, b_i)
+$$
+
+の成立と同値である(確率変数の組が定義されていることはその函数の期待値が定義されていることと同じことだと考えてよい). さらに, 
+
+$$
+\mu_X = E[X] = \frac{1}{n}\sum_{i=1}^n  a_i, \quad
+\mu_Y = E[Y] = \frac{1}{n}\sum_{i=1}^n  b_i
+$$
+
+とおき, ベクトル $v_X, v_Y$ を次のように定める:
+
+$$
+v_X = \frac{1}{\sqrt{n}} \begin{bmatrix} a_1 - \mu_X \\ \vdots \\ a_n - \mu_X \end{bmatrix}, \quad
+v_Y = \frac{1}{\sqrt{n}} \begin{bmatrix} b_1 - \mu_Y \\ \vdots \\ b_n - \mu_y \end{bmatrix}
+$$
+
+これらの内積(対応する成分の積の和)を $(v_X, v_Y)$ と書き, ノルム(成分の2乗の和の平方根)を $\|v_X\|, \|v_Y\|$ と書き, $v_X,v_Y$ のあいだの角度を $\theta$ と書くことにし, $\|v_X\| > 0$, $\|v_Y\| > 0$ であると仮定する. このとき, $X,Y$ の相関係数 $\op{cor}(X, Y)$ について次が成立することを示せ:
+
+$$
+\op{cor}(X, Y) = \frac{(v_X, v_Y)}{\|v_X\| \|v_Y\|} = \cos\theta.
+$$
+
+__注意:__ 相関係数とベクトルのあいだの角度の関係についてはこの場合をイメージしておけばよい.
+
+__解答例:__ 内積とノルムの定義より,
+
+$$
+\begin{aligned}
+&
+\|v_X\|^2 =
+\frac{1}{n} \sum_{i=1}^n (a_i-\mu_X)^2 =
+E[(X - \mu_X)^2] =
+\op{var}(X),
+\\ &
+\|v_Y\|^2 =
+\frac{1}{n} \sum_{i=1}^n (b_i-\mu_Y)^2 =
+E[(Y - \mu_Y)^2] =
+\op{var}(Y),
+\\ &
+(v_X, v_Y) =
+\frac{1}{n}\sum_{i=1}^n (a_i-\mu_X)(b_i-\mu_Y) =
+E[(X - \mu_X)(Y - \mu_Y)] =
+\op{cov}(X,Y).
+\end{aligned}
+$$
+
+ゆえに,
+
+$$
+\op{cor}(X, Y) =
+\frac{\op{cov}(X, Y)}{\sqrt{\op{var}(X)}\sqrt{\op{var}(Y)}} =
+\frac{(v_X, v_Y)}{\|v_X\| \|v_Y\|} = \cos\theta.
+$$
+
+__解答終__
+
+
+### 問題: 相関係数の計算
+
+確率変数達 $X, Y$ は無相関であるとし, それぞれの期待値と分散はどちらも $0$ と $1$ であるとし, $a,b,c,d\in\R$, $a^2+b^2 > 0$, $c^2+d^2 > 0$ であると仮定する. 確率変数 $A, B$ を次のように定める:
+
+$$
+A = aX + bY, \quad
+B = cX + dY.
+$$
+
+確率変数達 $A, B$ の相関係数を求めよ.
+
+__解答例:__ $X,Y$ の期待値はどちらも $0$ なのでそれらの一次結合である $A,B$ の期待値も $0$ になる. さらに, $X,Y$ の分散はどちらも $1$ でそれらは無相関だと仮定したので,
+
+$$
+\begin{aligned}
+&
+\op{var}(A) = a^2\op{var}(X) + b^2\op{var}(Y) = a^2 + b^2,
+\\ &
+\op{var}(B) = c^2\op{var}(X) + d^2\op{var}(Y) = c^2 + d^2,
+\\ &
+\op{cov}(A, B) = E[AB] = E[acX^2 + (ad+bc)XY + bdY^2]
+\\ &=
+ac\op{var}(X) + (ad+bc)\op{cov}(X,Y) + bd\op{var}(Y) =
+ac + bd.
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+\op{cor}(A, B) =
+\frac{\op{cov}(A, B)}{\sqrt{\op{var}(A)}\sqrt{\op{var}(B)}} =
+\frac{ac + bd}{\sqrt{a^2+b^2}\sqrt{c^2+d^2}}.
+$$
+
+__解答終__
+
+__注意:__ ベクトル $v_A, v_B$ を
+
+$$
+v_A = \begin{bmatrix} a \\ b \end{bmatrix}, \quad
+v_B = \begin{bmatrix} c \\ d \end{bmatrix}
+$$
+
+と定め, これらの標準内積(対応する成分の積の和)を $(v_A, v_B)$ と書き, それらのノルム(すべての成分の2乗の和の平方根)を $\|v_A\|, \|v_B\|$ と書き, それらの間の角度を $\theta$ と書くとき, 
+
+$$
+\op{cor}(A, B) = \frac{(v_A, v_B)}{\|v_A\| \|v_B\}} = \cos\theta
+$$
+
+が成立している.  上の問題の状況において, 確率変数 $A, B$ の相関係数が $1$ に近いことはベクトル $v_A, v_B$ の向きがほぼ同じであることと同値であり, $A, B$ の相関係数が $-1$ に近いことは $v_A,v_B$ の向きがほぼ正反対であることに同値であり, $A, B$ が無相関に近いことは $v_A,v_B$ がほぼ直交していることと同値である.
+
+
+### 問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある
+
+平均が $0$ の具体的な確率変数達 $X, Y$ の組で, 共分散 $\sigma_{XY} = \op{cov}(X, Y) = E[XY]$ は $0$ に近い値だが, 相関係数 $\rho_{XY} = \op{cov}(X, Y) = \op{cov}(X, Y)/(\op{std}(X)\op{std}(Y))$ が $0$ から遠い値になっているものを構成せよ.
+
+__解答例:__ $\eps, \delta > 0$ であるとし, 確率変数の組 $(X, Y)$ は同じ確率 $1/3$ で $(\eps+\delta, \eps)$, $(-\eps, \delta )$, $(-\delta, -\eps-\delta)$ のどれかの値になるものとする. このとき, $X$, $Y$ の平均はそれぞれ
+
+$$
+E[X] = \frac{(\eps+\delta)+(-\eps)+(-\delta)}{3} = 0, \quad
+E[Y] = \frac{\eps+\delta+(-\eps-\delta)}{3} = 0
+$$
+
+となる. $X$ と $Y$ の分散と共分散と相関係数は以下のようになる:
+
+$$
+\begin{aligned}
+&
+\op{var}(X) = E[X^2] =
+\frac{(\eps+\delta)^2+(-\eps)^2+(-\delta)^2}{3} =
+\frac{2(\eps^2 + \eps\delta + \delta^2)}{3},
+\\ &
+\op{var}(Y) = E[Y^2] =
+\frac{\eps^2+\delta^2+(-\eps-\delta)^2}{3} =
+\frac{2(\eps^2 + \eps\delta + \delta^2)}{3},
+\\ &
+\op{cov}(X, Y) = E[XY] =
+\frac{(\eps+\delta)\eps+(-\eps)\delta+(-\delta)(-\eps-\delta)}{3} =
+\frac{(\eps^2+\eps\delta+\delta^2)}{3},
+\\ &
+\op{cor}(X, Y) = \frac{\op{cov}(X,Y)}{\sqrt{\op{var}(X)}\sqrt{\op{var}(Y)}}
+= \frac{1}{2}.
+\end{aligned}
+$$
+
+$\eps, \delta > 0$ の値が小さいとき, $X$, $Y$ の共分散は小さくなるが, 相関係数は $1/2$ で全然 $0$ に近くない.
+__解答終__
+
+__注意:__ 3次元ベクトル $v_X, v_Y$ を以下のように定める:
+
+$$
+v_X = \frac{1}{\sqrt{3}}\begin{bmatrix} \eps+\delta \\ -\eps \\ -\delta \end{bmatrix}, \quad
+v_Y = \frac{1}{\sqrt{3}}\begin{bmatrix} \eps \\ \delta \\ -\eps-\delta \end{bmatrix}.
+$$
+
+このとき, これらの標準内積(対応する成分の積の和)を $(v_X, v_Y)$ と書き, それらのノルム(すべての成分の2乗の和の平方根)を $\|v_X\|, \|v_Y\|$ と書き, それらの間の角度を $\theta$ と書くとき,
+
+$$
+\begin{aligned}
+&
+\op{var}(X) = \|v_X\|^2, \quad
+\op{var}(Y) = \|v_Y\|^2, \quad
+\op{cov}(X, Y) = (v_X, v_Y),
+\\ &
+\op{cor}(X, Y) = \frac{(v_X, v_Y)}{\|v_X\|\|v_Y\|} = \cos\theta
+\end{aligned}
+$$
+
+が成立していることに注意せよ.
 
 
 ### 問題: 独立ならば無相関である (実質1行で解ける)
@@ -1104,7 +1661,7 @@ $$
 \op{cov}(X, Y) = E[XY] = \frac{1}{\pi}\iint_{x^2+y^2\le 1} xy\, \,dx\,dy
 $$
 
-と書けるが, $xy\ge 0$ の部分の積分と $xy\le 0$ の部分の積分が円盤の対称性より互いに打ち消しあって $\op{cov}(X, Y) = 0$ となることがわかる. $X$ 単独の密度函数は
+と書けるが, $xy\ge 0$ の部分の積分と $xy\le 0$ の部分の積分が単位円盤の対称性より互いに打ち消しあって $\op{cov}(X, Y) = 0$ となることがわかる. $X$ 単独の密度函数は
 
 $$
 p(x) = \frac{1}{\pi}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}dy = \frac{2}{\pi}\sqrt{1-x^2}
@@ -1114,11 +1671,13 @@ $$
 
 __解答終__
 
+この解答例3については, 下の方でプロットした $(X, Y)$ の分布のサンプルの散布図も参照して欲しい.  散布図を見れば直観的にどうなっているかを把握しやすい.
+
 ```julia
 n = 10^4
 XY = [(r = √rand(); t = 2π*rand(); (r*cos(t), r*sin(t))) for _ in 1:n]
 X, Y = first.(XY), last.(XY)
-@show cov(X, Y)
+@show cov(X, Y) cor(X, Y)
 P1 = scatter(X, Y; msc=:auto, ms=2, alpha=0.7, label="", xlabel="x", ylabel="y")
 P2 = histogram(X; norm=true, alpha=0.3, bin=41, label="X")
 plot!(x -> 2/π*√(1 - x^2), -1, 1; label="", lw=2)
@@ -1129,8 +1688,48 @@ plot(P1, P2, P3; size=(800, 400), layout=@layout [a [b; c]])
 
 単位円盤上の一様分布は「無相関だが独立ではない場合」の例になっている.
 
+この「無相関だが独立ではない場合」の例のサンプルに含まれる点の個数を減らすと以下のように見える.
 
-### 問題:  無相関な確率変数達の和の分散
+```julia
+n = 100
+XY = [(r = √rand(); t = 2π*rand(); (r*cos(t), r*sin(t))) for _ in 1:n]
+X, Y = first.(XY), last.(XY)
+@show cov(X, Y) cor(X, Y)
+P1 = scatter(X, Y; msc=:auto, label="", xlabel="x", ylabel="y")
+plot!(; xlim=(-1.05, 1.05), ylim=(-1.05, 1.05))
+plot!(; size=(400, 400))
+```
+
+上の場合において $X$, $Y$ はどちらも __半円分布__ (semicircle distribution)に従っているが, 独立ではない.  $X$, $Y$ の分布が以上と同じ半円分布のときと $X, Y$ が独立になるならば, $(X, Y)$ の分布のサンプルは以下のようになる. 
+
+```julia
+n = 10^4
+sc = Semicircle(1)
+X, Y = rand(sc, n), rand(sc, n)
+@show cov(X, Y) cor(X, Y)
+P1 = scatter(X, Y; msc=:auto, ms=2, alpha=0.7, label="", xlabel="x", ylabel="y")
+P2 = histogram(X; norm=true, alpha=0.3, bin=41, label="X")
+plot!(x -> 2/π*√(1 - x^2), -1, 1; label="", lw=2)
+P3 = histogram(X; norm=true, alpha=0.3, bin=41, label="Y")
+plot!(y -> 2/π*√(1 - y^2), -1, 1; label="", lw=2)
+plot(P1, P2, P3; size=(800, 400), layout=@layout [a [b; c]])
+```
+
+これは $X$, $Y$ が独立な場合であり, ゆえに無相関にもなっている.
+
+サンプルが含む点の個数を減らすと以下のように見える.
+
+```julia
+n = 100
+sc = Semicircle(1)
+X, Y = rand(sc, n), rand(sc, n)
+@show cov(X, Y)
+P1 = scatter(X, Y; msc=:auto, label="", xlabel="x", ylabel="y")
+plot!(; xlim=(-1.05, 1.05), ylim=(-1.05, 1.05))
+plot!(; size=(400, 400))
+```
+
+### 問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる
 
 $X_1,\ldots,X_n$ は独立でも無相関とも限らない確率変数達であるとする.  このとき, 期待値を取る操作の線形性より,
 
@@ -1300,7 +1899,514 @@ $$
 __解答終__
 
 
-## モーメントとその母函数と特性函数とキュムラント母函数
+## 標本(サンプル, データ)の平均と分散と共分散と相関係数
+
+
+### 標本平均の定義
+
+$n$ 個の数値 $x_1,\ldots,x_n$ で構成されたデータ(標本, サンプル)に対して,
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1+\cdots+x_n}{n}
+$$
+
+をその __標本平均__ (sample mean)と呼ぶ. 
+
+統計モデルを設定するとは現実世界で得られるデータ(標本, サンプル)の生じ方を確率分布の言葉でモデル化することである.  そのとき, 統計モデル内部では, データ(標本, サンプル)を, $n$ 個の数値ではなく, $n$ 個の確率変数達 $X_1,\ldots,X_n$ でモデル化することになる.  その場合には, 確率変数達の加法平均
+
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i = \frac{X_1+\cdots+X_n}{n}
+$$
+
+をその __標本平均__ (sample mean)と呼ぶ.  $X_i$ 達が確率変数であることより, それらの標本平均 $\bar{X}$ も確率変数になることに注意せよ. この文脈での標本平均 $\bar{X}$ は確率モデル内部における確率変数になる.
+
+統計学入門の文脈では, 標本のモデル化とみなされる$n$ 個の確率変数達 $X_1,\ldots,X_n$ は独立同分布だと仮定することが多い.  
+
+__以下では, $X_i$ 達は同じ期待値と分散を持ち, 無相関であると仮定する(この条件は独立同分布よりも弱い).__
+
+__注意・警告:__ 標本のモデル化としての確率変数達の __標本平均と確率変数の平均(期待値)を明瞭に区別しなければいけない__.  各確率変数 $X_i$ の期待値 $E[X_i]$ や確率変数としての標本平均 $\bar{X}$ の期待値
+
+$$
+E[\bar{X}] = E\left[\frac{1}{n}\sum_{i=1}^n X_i\right] =
+\frac{1}{n}\sum_{i=1}^n E\left[X_i\right] = \mu
+$$
+
+と標本平均 $\bar{X}$ を明瞭に区別することが必要になる.
+
+統計モデル内での標本のモデル化としての確率変数達 $X_1,\ldots,X_n$ の標本平均 $\bar{X}$ は確率変数なので, 数学的には函数とみなされ, 直観的にはランダムに値が決まる変数だとみなされるものになる.  それに対して, 標本平均 $\bar{X}$ の期待値 $E[\bar{X}]$ は単なる数値になる. このように, 確率変数としての標本平均 $\bar{X}$ とその期待値 $E[\bar{X}]$ は全く異なる数学的対象になる.
+
+__注意:__ 上で期待値を取る操作 $E[\ ]$ の線形性を用いて, 標本平均の期待値が $X_i$ 達の共通の期待値 $\mu$ に一致すること
+
+$$
+E[\bar{X}] = \mu
+$$
+
+も示されていることに注意せよ.  これは標本平均を取る操作が平均の __不偏推定量__ を作る操作になっていることも意味している. この点については後で詳しく説明する. 
+
+
+### 問題: 無相関な確率変数達の標本平均の分散
+
+同じ期待値 $\mu$ と分散 $\sigma^2$ を持つ無相関な $n$ 個の確率変数達 $X_1,\ldots,X_n$ の標本分散 $\bar{X}$ について次が成立していることを示せ:
+
+$$
+\op{var}(\bar{X}) = \frac{\sigma^2}{n}
+$$
+
+__注意:__ この問題で扱っている確率変数としての $\bar{X}$ の分散と次の節で説明する標本のモデル化 $X_1,\ldots,X_n$ の分散は異なる数学的対象であることに注意せよ.
+
+__注意:__ $\op{std}(\bar{X}) = \sigma/\sqrt{n}$ は __標準誤差__ (standard error)と呼ばれ, $\op{SE}$ と書かれることがある.  未知の真の標準誤差の推定量をも標準誤差と呼ぶことがあるが, このノートではそのスタイルを採用せずに, 未知の真の標準誤差の推定量を「標準誤差の推定量」と丁寧に呼ぶことにする.
+
+__解答例:__ 無相関な確率変数達の和の分散はそれぞれの確率変数の分散の和になるのであった.  $X_i$ 達が無相関であるという仮定より, $X_i/n$ 達も無相関になる. そして,
+
+$$
+\bar{X} = \sum_{i=1}^n \frac{X_i}{n}
+$$
+
+であることより,
+
+$$
+\op{var}(\bar{X}) =
+\sum_{i=1}^n \op{var}\left(\frac{X_i}{n}\right) =
+\sum_{i=1}^n \frac{\op{var}(X_i)}{n^2} =
+\sum_{i=1}^n \frac{\sigma^2}{n^2} =
+\frac{\sigma^2}{n}.
+$$
+
+__解答終__
+
+
+### 標本分散と不偏分散の定義
+
+$n$ 個の数値 $x_1,\ldots,x_n$ で構成されたデータ(標本, サンプル)の標本平均を
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1+\cdots+x_n}{n}
+$$
+
+と書くとき, 
+
+$$
+\frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2
+$$
+
+を __標本分散__ (sample variance, 標本の無補正分散)と呼ぶ.  __慣習的には__ 補正無し標本分散が使用されることは少なく, 次のように定義される __不偏分散__ (unbiased variance, 標本の不偏補正分散)を使うことが多い:
+
+$$
+s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2.
+$$
+
+どうして $n$ ではなく $n-1$ で割るかについては後で説明する.  このとき,
+
+$$
+\overline{x^2} = \frac{1}{n}\sum_{i=1}^n x_i^2
+$$
+
+とおくと, 
+
+$$
+\sum_{i=1}^n (x_i - \bar{x})^2 =
+\sum_{i=1}^n x_i^2 - 2\bar{x}\sum_{i=1}^n x_i + n\bar{x}^2 =
+n\overline{x^2} - 2n\bar{x}^2 + n\bar{x}^2 =
+n\left(\overline{x^2} - \bar{x}^2\right)
+$$
+
+なので, 
+
+$$
+s^2 = \frac{n}{n-1}\left(\overline{x^2} - \bar{x}^2\right).
+$$
+
+
+$X_1,\ldots,X_n$ は標本のモデル化とみなされる $n$ 個の確率変数達であるとする.  $X_i$ 達は同じ期待値と分散を持ち, 無相関であると仮定し, それらの標本平均を
+
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i = \frac{X_1+\cdots+X_n}{n}
+$$
+
+と書く. このとき, $X_1,\ldots,X_n$ の __不偏分散__ $S^2$ を次のように定義する:
+
+$$
+S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2.
+$$
+
+このとき,
+
+$$
+\overline{X^2} = \frac{1}{n}\sum_{i=1}^n x_i^2
+$$
+
+とおくと, 
+
+$$
+\sum_{i=1}^n (X_i - \bar{X})^2 =
+\sum_{i=1}^n X_i^2 - 2\bar{X}\sum_{i=1}^n X_i + n\bar{X}^2 =
+n\overline{X^2} - 2n\bar{X}^2 + n\bar{X}^2 =
+n\left(\overline{X^2} - \bar{X}^2\right)
+$$
+
+なので, 
+
+$$
+S^2 = \frac{n}{n-1}\left(\overline{X^2} - \bar{X}^2\right).
+$$
+
+この場合には, 不偏分散 $S^2$ は確率変数になることに注意せよ. この $S^2$ と単なる数値になる $\bar{X}$ の確率変数としての分散 $\op{var}(\bar{X})$ は異なる数学的対象になるので混乱しないようにして欲しい.
+
+
+### 不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか
+
+$X_1,\ldots,X_n$ に共通の期待値と分散をそれぞれ $\mu$, $\sigma^2$ と書くことにする.  $X_1,\ldots,X_n$ を現実で得られる標本のモデル化とみなす. そのとき, 統計モデル内での $\mu$, $\sigma^2$ の値は未知の真の平均と分散の値であって欲しい. この設定では未知の $\mu$ と $\sigma^2$ を標本から推定する方法が欲しくなる.
+
+未知の $\mu$ の推定量として優れているのは標本平均である. 標本のモデル化とみなされる $X_1,\ldots,X_n$ の標本平均 $\bar{X}$ についてはその期待値 $E[\bar{X}]$ が未知の真の平均値 $\mu$ に等しくなる.  この性質を標本平均の __不偏性__ という. 未知の値 $\theta$ の推定量を $E[T] = \theta$ を満たす確率変数 $T$ とするとき, $T$ は $\theta$ の __不偏推定量__ (unbiased estimator) と呼ぶ.
+
+次に, 不偏分散の定義でどうして $n$ ではなく $n-1$ で割るかを理解するために, $n-1$ で割る前の量の期待値を計算してみよう. 
+
+$X_1,\ldots,X_n$ 達の標本平均 $\bar{X}$ の期待値と分散がそれぞれ次のようになることはわかっている:
+
+$$
+E[\bar{X}] = \mu, \quad
+\op{var}(\bar{X}) = E[(\bar{X}-\mu)^2] = \frac{\sigma^2}{n}.
+$$
+
+そして, 以下が成立している:
+
+$$
+\begin{aligned}
+\sum_{i=1}^n (X_i - \bar{X})^2 &=
+\sum_{i=1}^n ((X_i - \mu) - (\bar{X} - \mu))^2
+\\ &=
+\sum_{i=1}^n \left((X_i - \mu)^2 - 2(X_i - \mu)(\bar{X} - \mu) + (\bar{X} - \mu)^2)^2\right)
+\\ &=
+\sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n(X_i - \mu)\right)(\bar{X} - \mu) + n(\bar{X} - \mu)^2)^2
+\\ &=
+\sum_{i=1}^n (X_i - \mu)^2 - 2n(\bar{X} - \mu)^2 + n(\bar{X} - \mu)^2)^2
+\\ &=
+\sum_{i=1}^n (X_i - \mu)^2 - n(\bar{X} - \mu)^2.
+\end{aligned}
+$$
+
+4つめの等号で $\sum_{i=1}^n X_i = n\bar{X}$ を用いた. ゆえに,
+
+$$
+\begin{aligned}
+E\left[\sum_{i=1}^n (X_i - \bar{X})^2\right] &=
+\sum_{i=1}^n E[(X_i - \mu)^2] - nE[(\bar{X} - \mu)^2] =
+n\sigma^2 - n\frac{\sigma^2}{n} = (n-1)\sigma^2.
+\end{aligned}
+$$
+
+これより, $\sigma^2$ の不偏推定量を作るためには $\sum_{i=1}^n (X_i - \bar{X})^2$ を $n-1$ で割らなければいけないことがわかる.  実際にそのように定義した $\sigma^2$ の不偏推定量が不偏分散 $S^2$ である:
+
+$$
+S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2, \quad
+E[S^2] = \sigma^2.
+$$
+
+このように, $\sum_{i=1}^n (X_i - \bar{X})^2$ の確率変数としての分散を計算して $(n-1)\sigma^2$ になることを確認すれば, $n$ ではなく $n-1$ で割る理由は明瞭である.
+
+さらに
+
+$$
+\widehat{\op{SE}} = \sqrt{\frac{S^2}{n}} = \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^n(X_i - \bar{X})^2}
+$$
+
+を __標準誤差の推定量__ として採用する. このとき,
+
+$$
+E\left[\widehat{\op{SE}}^2\right] = \frac{E[S^2]}{n} =
+\frac{\sigma^2}{n} = \op{var}(\bar{X}) = \op{SE}^2 
+$$
+
+なので, $\widehat{\op{SE}}^2$ は標準誤差の2乗 $\op{SE}^2 = \op{var}(\bar{X}) = \sigma^2/n$ の不偏推定量になっている.
+
+
+__注意:__ 不偏推定量の方が不偏でない推定量より常に優れていると考えるのは誤りである. 推定量に不偏性の条件を課すと平均二乗誤差が大きくなってしまうことが多い(不偏分散についても実際にそうなることを後で示す). 不偏推定量を使うか否かはそうすることのメリットとデメリットの両方を考慮に入れて決定するべきである. ただし, 上で紹介した不偏分散については害は相当に小さく, 慣習的に非常によく使われている.
+
+
+__注意:__ $X_1,\ldots,X_n$ は標本のモデル化とみなされる独立同分布な確率変数達であるとし, $X_i$ 達に共通の期待値と分散をそれぞれ $\mu$, $\sigma^2$ と書くことにする. このとき, その標本平均 $\bar{X} = (1/n)\sum_{i=1}^n X_i$ の期待値と分散がそれぞれ
+
+$$
+E[\bar{X}] = \mu, \quad \op{var}(\bar{X}) = \frac{\sigma^2}{n} 
+$$
+
+となり, 不偏分散 $S^2 = (1/(n-1))\sum_{i=1}^n(X_i-\bar{X})^2$ の期待値が
+
+$$
+E[S^2] = \sigma^2
+$$
+
+となることまではすでにわかっている.  この一連のノートではほぼ常に与えられた確率変数の期待値と分散を同時に計算して来た.  ここでも, 確率変数としての不偏分散の分散も計算するべきである. そして, さらに標本平均と不偏分散の共分散も計算するべきである.  しかし, そのためには $X_i$ 達共通の分布の __歪度__ (わいど, skewness)と __尖度__ (せんど, kurtosis)の定義を先にしておいた方がよい.  次の節で歪度と尖度を定義する.
+
+
+### データの共分散の定義
+
+$n$ 個の数値の対 $(x_1, y_1),\ldots,(x_n, y_n)$ で構成されたデータ(標本, サンプル)について, $x_i$, $y_i$ 達各々の標本平均を
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i
+$$
+
+と書くとき, 
+
+$$
+\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})
+$$
+
+を __標本共分散__ (sample covariance, 標本の無補正共分散)と呼ぶ.  __慣習的には__ 補正無しの標本共分散が使用されることは少なく, 次のように定義される __不偏共分散__ (unbiased variance, 標本の不偏補正共分散)を使うことが多い:
+
+$$
+s_{xy} = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+$$
+
+$n$ ではなく $n-1$ で割る理由は不偏分散の場合と同様である.  後で詳しく説明する.  このとき,
+
+$$
+\overline{xy} = \frac{1}{n}\sum_{i=1}^n x_i y_i
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}) &=
+\sum_{i=1}^n x_i y_i - \bar{x} \sum_{i=1}^n y_i - \sum_{i=1}^n x_i\,\bar{y}+ n\bar{x}\bar{y} \\ &=
+n\overline{xy} - n\bar{x}\bar{y} - n\bar{x}\bar{y}+ n\bar{x}\bar{y} =
+n\left(\overline{xy} - \bar{x}\bar{y}\right)
+\end{aligned}
+$$
+
+なので,
+
+$$
+s_{xy} = \frac{n}{n-1}\left(\overline{xy} - n\bar{x}\bar{y}\right).
+$$
+
+
+$(X_1, Y_1),\ldots,(X_n,Y_n)$ は上の型のデータのモデル化とみなされる $n$ 個の確率変数対達であるとする.  $X_i$ 達は無相関で共通の同じ期待値 $\mu_X$ と分散 $\sigma_X^2$ を持ち, $Y_i$ 達も無相関で共通の同じ期待値 $\mu_Y$ と分散 $\sigma_Y^2$ を持ち, $X_i$ と $Y_i$ の共分散は $i$ によらない共通の値 $\sigma_{XY}$ になっているとし,  異なる番号 $i,j$ について $X_i$ と $Y_j$ は無相関であると仮定する. これらの仮定は次のように式で書ける:
+
+$$
+\begin{aligned}
+&
+E[X_i] = \mu_X, \quad
+E[Y_i] = \mu_Y
+\\ &
+E[(X_i - \mu_X)(X_j - \mu_X)] = \delta_{ij}\sigma_X^2, \\ &
+E[(Y_i - \mu_Y)(Y_j - \mu_Y)] = \delta_{ij}\sigma_Y^2, \\ &
+E[(X_i - \mu_X)(Y_j - \mu_Y)] = \delta_{ij}\sigma_{XY}.
+\end{aligned}
+$$
+
+それらの $X_i$ 達と $Y_i$ 達それぞれの標本平均を次のように書くことにする:
+
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+\bar{Y} = \frac{1}{n}\sum_{i=1}^n Y_i.
+$$
+
+このとき, $(X_1, Y_1),\ldots,(X_n,Y_n)$ の __不偏共分散__ $S_{XY}$ を次のように定義する:
+
+$$
+S_{XY} = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})
+$$
+
+このとき,
+
+$$
+\overline{XY} = \frac{1}{n}\sum_{i=1}^n X_i Y_i
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y}) &=
+\sum_{i=1}^n X_i Y_i - \bar{X} \sum_{i=1}^n Y_i - \sum_{i=1}^n X_i\,\bar{Y} + n\bar{X}\bar{Y} \\ &=
+n\overline{XY} - n\bar{X}\bar{Y} - n\bar{X}\bar{Y}+ n\bar{X}\bar{Y} =
+n\left(\overline{XY} - \bar{X}\bar{Y}\right)
+\end{aligned}
+$$
+
+なので,
+
+$$
+s_{XY} = \frac{n}{n-1}\left(\overline{XY} - n\bar{X}\bar{Y}\right).
+$$
+
+この場合には, 不偏分散 $S_{XY}$ は確率変数になることに注意せよ. この $S_{XY}$ と単なる数値になる $\bar{X}, \bar{Y}$ の確率変数としての共分散 $\op{cov}(\bar{X}, \bar{Y})$ は異なる数学的対象になるので混乱しないようにして欲しい.
+
+
+### 問題: 標本平均達の共分散
+
+前節の設定のもとで次が成立することを示せ:
+
+$$
+\op{cov}(\bar{X}, \bar{Y}) = \frac{\sigma_{XY}}{n}.
+$$
+
+__解答例:__ 標本平均の分散の計算とほぼ同じになる.
+
+番号が異なる確率変数達が無相関なときの確率変数達の和の共分散は各々の対の共分散の和になるのであった.  これを確率変数の和達
+
+$$
+\bar{X} = \sum_{i=1}^n\frac{X_i}{n}, \quad
+\bar{Y} = \sum_{i=1}^n\frac{Y_i}{n}
+$$
+
+に適用すると,
+
+$$
+\op{cov}(\bar{X}, \bar{Y}) =
+\sum_{i=1}^n \op{cov}\left(\frac{X_i}{n}, \frac{Y_i}{n}\right) =
+\sum_{i=1}^n \frac{\op{cov}(X_i, Y_i)}{n^2} =
+\sum_{i=1}^n \frac{\sigma_{XY}}{n^2} =
+\frac{\sigma_{XY}}{n}.
+$$
+
+__解答終__
+
+
+### 問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか
+
+前々の設定のもとで, 不偏共分散 $S_{XY}$ が $X_i, Y_i$ の共分散 $\sigma_{XY}$ の不偏推定量になっていることを示せ.  すなわち次が成立することを示せ:
+
+$$
+E[S_{XY}] = \sigma_{XY}.
+$$
+
+__注意:__ これが不偏共分散の定義で $n$ ではなく $n-1$ で割る理由である.
+
+
+__解答例:__ 不偏分散の場合の議論とほぼ同じ.
+
+$\bar{X}$, $\bar{Y}$ の期待値と共分散がそれぞれ次のようになることはわかっている:
+
+$$
+E[\bar{X}] = \mu_X, \quad
+E[\bar{Y}] = \mu_Y, \quad
+\op{cov}(\bar{X}, \bar{Y}) = E[(\bar{X}-\mu_Y)(\bar{Y}-\mu_Y)] = \frac{\sigma_{XY}}{n}.
+$$
+
+そして, 以下が成立している:
+
+$$
+\begin{aligned}
+&
+\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y}) =
+\sum_{i=1}^n ((X_i - \mu_X) - (\bar{X} - \mu_X))((Y_i - \mu_Y) - (\bar{Y} - \mu_Y))
+\\ &=
+\sum_{i=1}^n \left(
+(X_i - \mu_X)(Y_i - \mu_Y) -
+(X_i - \mu_X)(\bar{Y} - \mu_Y) -
+(\bar{X} - \mu_X)(Y_i - \mu_Y) +
+(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
+\right)
+\\ &=
+\sum_{i=1}^n (X_i - \mu_X)(Y_i - \mu_Y) -
+\left(\sum_{i=1}^n(X_i - \mu_X)\right)(\bar{Y} - \mu_Y) -
+(\bar{X} - \mu_X)\left(\sum_{i=1}^n(Y_i - \mu_Y)\right) +
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
+\\ &=
+\sum_{i=1}^n (X_i - \mu_X)(Y_i - \mu_Y) -
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y) -
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y) +
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
+\\ &=
+\sum_{i=1}^n (X_i - \mu_X)(Y_i - \mu_Y) -
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y).
+\end{aligned}
+$$
+
+4つめの等号で $\sum_{i=1}^n X_i = n\bar{X}$, $\sum_{i=1}^n Y_i = n\bar{Y}$ を用いた. ゆえに,
+
+$$
+\begin{aligned}
+E\left[\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\right] &=
+\sum_{i=1}^n E[(X_i - \mu_X)(Y_i - \mu_Y)] -
+nE[(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)] =
+n\sigma_{XY} - n\frac{\sigma_{XY}}{n} = (n-1)\sigma_{XY}.
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+S_{XY} = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})
+$$
+
+より
+
+$$
+E[S_{XY}] = \sigma_{XY}.
+$$
+
+__解答終__
+
+
+### データの相関係数の定義 (以上の定義のまとめにもなっている)
+
+数値データの場合の共分散の定義の設定のもとで, $x_i$, $y_i$ 達の標本平均, 不偏分散達と不偏共分散を以下のように書くことにする:
+
+$$
+\begin{aligned}
+&
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i, \quad
+\\ &
+s_x^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2, \quad
+s_y^2 = \frac{1}{n-1}\sum_{i=1}^n (y_i - \bar{y})^2,
+\\ &
+s_{xy} = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+\end{aligned}
+$$
+
+$s_x^2$, $s_y^2$ の平方根をそれぞれ $s_x$, $s_y$ と書く.  $x_i$ 達と $y_i$ 達の相関係数 $r_{xy}$ を次のように定める:
+
+$$
+r_{xy} =
+\frac{s_{xy}}{s_x s_y} =
+\frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}
+{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}
+ \sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}.
+$$
+
+この $r_{xy}$ は数値になる.
+
+データのモデル化である確率変数達の共分散の定義の設定のもとで, $X_i$, $Y_i$ 達の標本平均, 不偏分散達と不偏共分散を以下のように書くことにする:
+
+$$
+\begin{aligned}
+&
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+\bar{Y} = \frac{1}{n}\sum_{i=1}^n Y_i, \quad
+\\ &
+S_X^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2, \quad
+S_Y^2 = \frac{1}{n-1}\sum_{i=1}^n (Y_i - \bar{Y})^2,
+\\ &
+S_{XY} = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y}).
+\end{aligned}
+$$
+
+$S_X^2$, $S_Y^2$ の平方根をそれぞれ $S_X$, $S_Y$ と書く.  $X_i$ 達と $Y_i$ 達の相関係数 $R_{XY}$ を次のように定める:
+
+$$
+R_{XY} =
+\frac{S_{XY}}{S_X S_Y} =
+\frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}
+{\sqrt{\sum_{i=1}^n (X_i - \bar{X})^2}
+ \sqrt{\sum_{i=1}^n (Y_i - \bar{Y})^2}}.
+$$
+
+この $R_{XY}$ は確率変数になる. (確率変数とは数学的には「その函数の期待値が定義されている変数」のことであり, 直観的には値がランダムに決まる変数だと思える.)
+
+
+### 問題: 最小二乗法
+
+
+### 問題: 計算例
+
+
+## モーメントとキュムラントと歪度と尖度
 
 
 ### モーメントとその母函数と特性函数とキュムラント母函数の定義
@@ -1631,6 +2737,21 @@ K_{X_1}(t) + \cdots + K_{X_n}(t).
 $$
 
 __解答終__
+
+
+## 独立同分布な確率変数達の不偏分散の分散
+
+
+### 準備: 歪度と尖度
+
+
+### 標本平均と不偏分散の共分散の計算
+
+
+### 不偏分散の分散の計算
+
+
+## 正規分布の標本分布の場合
 
 ```julia
 
