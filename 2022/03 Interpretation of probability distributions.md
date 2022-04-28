@@ -16,7 +16,7 @@ jupyter:
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-04-22
+* 2022-04-11～2022-04-29
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -25,6 +25,7 @@ $
 \newcommand\std{\op{std}}
 \newcommand\eps{\varepsilon}
 \newcommand\T[1]{T_{(#1)}}
+\newcommand\bk{\bar\kappa}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 

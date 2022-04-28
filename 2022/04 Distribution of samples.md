@@ -16,7 +16,7 @@ jupyter:
 # 標本分布について
 
 * 黒木玄
-* 2022-04-11～2022-04-26
+* 2022-04-11～2022-04-29
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -24,6 +24,8 @@ $
 \newcommand\var{\op{var}}
 \newcommand\std{\op{std}}
 \newcommand\eps{\varepsilon}
+\newcommand\T[1]{T_{(#1)}}
+\newcommand\bk{\bar\kappa}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
@@ -38,7 +40,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布とその使い方" data-toc-modified-id="標本分布とその使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布とその使い方</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#確率分布の積と-$n$-乗の定義" data-toc-modified-id="確率分布の積と-$n$-乗の定義-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率分布の積と $n$ 乗の定義</a></span></li><li><span><a href="#分布-$D$-の標本分布の主な使用用途" data-toc-modified-id="分布-$D$-の標本分布の主な使用用途-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>分布 $D$ の標本分布の主な使用用途</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.9.2"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.9.3"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.9.4"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.9.5"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.9.6"><span class="toc-item-num">1.9.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#確率変数達の共分散と相関係数と無相関性" data-toc-modified-id="確率変数達の共分散と相関係数と無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>確率変数達の共分散と相関係数と無相関性</a></span><ul class="toc-item"><li><span><a href="#確率変数達の共分散と相関係数の定義" data-toc-modified-id="確率変数達の共分散と相関係数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>確率変数達の共分散と相関係数の定義</a></span></li><li><span><a href="#確率変数達の無相関の定義" data-toc-modified-id="確率変数達の無相関の定義-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>確率変数達の無相関の定義</a></span></li><li><span><a href="#問題:-確率変数の相関係数の計算例" data-toc-modified-id="問題:-確率変数の相関係数の計算例-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 確率変数の相関係数の計算例</a></span></li><li><span><a href="#問題:-Cauchy-Schwarzの不等式" data-toc-modified-id="問題:-Cauchy-Schwarzの不等式-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: Cauchy-Schwarzの不等式</a></span></li><li><span><a href="#問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係" data-toc-modified-id="問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係</a></span></li><li><span><a href="#問題:-相関係数の計算" data-toc-modified-id="問題:-相関係数の計算-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 相関係数の計算</a></span></li><li><span><a href="#問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある" data-toc-modified-id="問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる" data-toc-modified-id="問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li></ul></li><li><span><a href="#標本(サンプル,-データ)の平均と分散と共分散と相関係数" data-toc-modified-id="標本(サンプル,-データ)の平均と分散と共分散と相関係数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>標本(サンプル, データ)の平均と分散と共分散と相関係数</a></span><ul class="toc-item"><li><span><a href="#標本平均の定義" data-toc-modified-id="標本平均の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>標本平均の定義</a></span></li><li><span><a href="#問題:-無相関な確率変数達の標本平均の分散" data-toc-modified-id="問題:-無相関な確率変数達の標本平均の分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: 無相関な確率変数達の標本平均の分散</a></span></li><li><span><a href="#標本分散と不偏分散の定義" data-toc-modified-id="標本分散と不偏分散の定義-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>標本分散と不偏分散の定義</a></span></li><li><span><a href="#不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの共分散の定義" data-toc-modified-id="データの共分散の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>データの共分散の定義</a></span></li><li><span><a href="#問題:-標本平均達の共分散" data-toc-modified-id="問題:-標本平均達の共分散-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 標本平均達の共分散</a></span></li><li><span><a href="#問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの相関係数の定義-(以上の定義のまとめにもなっている)" data-toc-modified-id="データの相関係数の定義-(以上の定義のまとめにもなっている)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>データの相関係数の定義 (以上の定義のまとめにもなっている)</a></span></li><li><span><a href="#問題:-最小二乗法" data-toc-modified-id="問題:-最小二乗法-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>問題: 最小二乗法</a></span></li><li><span><a href="#問題:-計算例" data-toc-modified-id="問題:-計算例-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>問題: 計算例</a></span></li></ul></li><li><span><a href="#モーメントとキュムラントと歪度と尖度" data-toc-modified-id="モーメントとキュムラントと歪度と尖度-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>モーメントとキュムラントと歪度と尖度</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li></ul></li><li><span><a href="#独立同分布な確率変数達の不偏分散の分散" data-toc-modified-id="独立同分布な確率変数達の不偏分散の分散-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>独立同分布な確率変数達の不偏分散の分散</a></span><ul class="toc-item"><li><span><a href="#準備:-歪度と尖度" data-toc-modified-id="準備:-歪度と尖度-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>準備: 歪度と尖度</a></span></li><li><span><a href="#標本平均と不偏分散の共分散の計算" data-toc-modified-id="標本平均と不偏分散の共分散の計算-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>標本平均と不偏分散の共分散の計算</a></span></li><li><span><a href="#不偏分散の分散の計算" data-toc-modified-id="不偏分散の分散の計算-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>不偏分散の分散の計算</a></span></li></ul></li><li><span><a href="#正規分布の標本分布の場合" data-toc-modified-id="正規分布の標本分布の場合-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>正規分布の標本分布の場合</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布とその使い方" data-toc-modified-id="標本分布とその使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布とその使い方</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#確率分布の積と-$n$-乗の定義" data-toc-modified-id="確率分布の積と-$n$-乗の定義-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率分布の積と $n$ 乗の定義</a></span></li><li><span><a href="#分布-$D$-の標本分布の主な使用用途" data-toc-modified-id="分布-$D$-の標本分布の主な使用用途-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>分布 $D$ の標本分布の主な使用用途</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.9.2"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.9.3"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.9.4"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.9.5"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.9.6"><span class="toc-item-num">1.9.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#確率変数達の共分散と相関係数と無相関性" data-toc-modified-id="確率変数達の共分散と相関係数と無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>確率変数達の共分散と相関係数と無相関性</a></span><ul class="toc-item"><li><span><a href="#確率変数達の共分散と相関係数の定義" data-toc-modified-id="確率変数達の共分散と相関係数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>確率変数達の共分散と相関係数の定義</a></span></li><li><span><a href="#確率変数達の無相関の定義" data-toc-modified-id="確率変数達の無相関の定義-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>確率変数達の無相関の定義</a></span></li><li><span><a href="#問題:-確率変数の相関係数の計算例" data-toc-modified-id="問題:-確率変数の相関係数の計算例-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 確率変数の相関係数の計算例</a></span></li><li><span><a href="#問題:-Cauchy-Schwarzの不等式" data-toc-modified-id="問題:-Cauchy-Schwarzの不等式-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: Cauchy-Schwarzの不等式</a></span></li><li><span><a href="#問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係" data-toc-modified-id="問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係</a></span></li><li><span><a href="#問題:-相関係数の計算" data-toc-modified-id="問題:-相関係数の計算-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 相関係数の計算</a></span></li><li><span><a href="#問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある" data-toc-modified-id="問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる" data-toc-modified-id="問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li><li><span><a href="#分散共分散行列とその半正定値性" data-toc-modified-id="分散共分散行列とその半正定値性-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>分散共分散行列とその半正定値性</a></span></li></ul></li><li><span><a href="#標本(サンプル,-データ)の平均と分散と共分散と相関係数" data-toc-modified-id="標本(サンプル,-データ)の平均と分散と共分散と相関係数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>標本(サンプル, データ)の平均と分散と共分散と相関係数</a></span><ul class="toc-item"><li><span><a href="#標本平均の定義" data-toc-modified-id="標本平均の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>標本平均の定義</a></span></li><li><span><a href="#問題:-無相関な確率変数達の標本平均の分散" data-toc-modified-id="問題:-無相関な確率変数達の標本平均の分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: 無相関な確率変数達の標本平均の分散</a></span></li><li><span><a href="#標本分散と不偏分散の定義" data-toc-modified-id="標本分散と不偏分散の定義-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>標本分散と不偏分散の定義</a></span></li><li><span><a href="#不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの共分散の定義" data-toc-modified-id="データの共分散の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>データの共分散の定義</a></span></li><li><span><a href="#問題:-標本平均達の共分散" data-toc-modified-id="問題:-標本平均達の共分散-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 標本平均達の共分散</a></span></li><li><span><a href="#問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの相関係数の定義-(以上の定義のまとめにもなっている)" data-toc-modified-id="データの相関係数の定義-(以上の定義のまとめにもなっている)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>データの相関係数の定義 (以上の定義のまとめにもなっている)</a></span></li><li><span><a href="#問題:-最小二乗法" data-toc-modified-id="問題:-最小二乗法-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>問題: 最小二乗法</a></span></li><li><span><a href="#問題:-計算例" data-toc-modified-id="問題:-計算例-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>問題: 計算例</a></span></li></ul></li><li><span><a href="#モーメントとキュムラントと歪度と尖度" data-toc-modified-id="モーメントとキュムラントと歪度と尖度-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>モーメントとキュムラントと歪度と尖度</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:--正規分布の歪度と尖度" data-toc-modified-id="問題:--正規分布の歪度と尖度-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題:  正規分布の歪度と尖度</a></span></li><li><span><a href="#問題:-一様分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-一様分布のキュムラント母函数と歪度と尖度-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 一様分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-ガンマ分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-ガンマ分布のキュムラント母函数と歪度と尖度-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ガンマ分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-二項分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-二項分布のキュムラント母函数と歪度と尖度-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: 二項分布のキュムラント母函数と歪度と尖度</a></span></li></ul></li><li><span><a href="#独立同分布な確率変数達の不偏分散の分散" data-toc-modified-id="独立同分布な確率変数達の不偏分散の分散-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>独立同分布な確率変数達の不偏分散の分散</a></span><ul class="toc-item"><li><span><a href="#期待値-$0$,-分散-$1$-の場合への帰着" data-toc-modified-id="期待値-$0$,-分散-$1$-の場合への帰着-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>期待値 $0$, 分散 $1$ の場合への帰着</a></span></li><li><span><a href="#標本平均と不偏分散の共分散の計算" data-toc-modified-id="標本平均と不偏分散の共分散の計算-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>標本平均と不偏分散の共分散の計算</a></span></li><li><span><a href="#不偏分散の分散の計算" data-toc-modified-id="不偏分散の分散の計算-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>不偏分散の分散の計算</a></span></li><li><span><a href="#歪度と尖度に関する不等式" data-toc-modified-id="歪度と尖度に関する不等式-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>歪度と尖度に関する不等式</a></span></li></ul></li><li><span><a href="#正規分布の標本分布の場合" data-toc-modified-id="正規分布の標本分布の場合-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>正規分布の標本分布の場合</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -1899,6 +1901,42 @@ $$
 __解答終__
 
 
+### 分散共分散行列とその半正定値性
+
+$n$ 個の確率変数を縦に並べてできるベクトル $X$ と実数を成分に持つベクトル $a$ を考える:
+
+$$
+X = \begin{bmatrix} X_1 \\ \vdots \\ X_n \end{bmatrix}, \quad
+a = \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} \in \R^n.
+$$
+
+このとき, $X$, $a$ の転置をそれぞれ $X$, $a^T$ と書くと,
+
+$$
+a^T X = X^T a = \sum_{i=1}^n a_i X_i
+$$
+
+なので
+
+$$
+a^T X X^T a = \left(\sum_{i=1}^n a_i X_i\right)^2 \ge 0.
+$$
+
+ゆえに, 期待値を取る操作の線形性と単調性より,
+
+$$
+0 \le E[a^T X X^T a] = a^T E[X X^T] a
+$$
+
+でかつ, $X X^T$ は $X_i X_j$ を $(i,j)$ 成分とする $n\times n$ 行列になるので, $E[X X^T]$ は $E[X_i X_j]$ を $(i,j)$ 成分とする $n\times n$ の実対称行列になる.  上の計算より, その実対称行列の固有値はすべて $0$ 以上になることがわかる.
+
+ここで $E[X_i]=0$ と仮定する. このとき, $E[X X^T]$ は $i$ 番目の対角成分が $X_i$ の分散 $\op{var}(X_i)$ で, $i\ne j$ のときの $(i,j)$ 成分が共分散 $\op{cov}(X_i, X_j)$ であるような $n\times n$ の実対称行列になる.
+
+このとき, 行列 $E[XX^T]$ を __分散共分散行列__ と呼ぶ.
+
+分散共分散行列の固有値はすべて $0$ 以上になる. この結果を分散共分散行列の __半正定値性__ と呼ぶことにする. 特に分散共分散行列式は $0$ 以上になる.
+
+
 ## 標本(サンプル, データ)の平均と分散と共分散と相関係数
 
 
@@ -2291,24 +2329,23 @@ $$
 
 $$
 \begin{aligned}
-&
-\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y}) =
+\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y}) &=
 \sum_{i=1}^n ((X_i - \mu_X) - (\bar{X} - \mu_X))((Y_i - \mu_Y) - (\bar{Y} - \mu_Y))
 \\ &=
-\sum_{i=1}^n \left(
+\sum_{i=1}^n \bigl(
 (X_i - \mu_X)(Y_i - \mu_Y) -
-(X_i - \mu_X)(\bar{Y} - \mu_Y) -
+(X_i - \mu_X)(\bar{Y} - \mu_Y) \\ & \qquad -
 (\bar{X} - \mu_X)(Y_i - \mu_Y) +
 (\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
-\right)
+\bigr)
 \\ &=
 \sum_{i=1}^n (X_i - \mu_X)(Y_i - \mu_Y) -
-\left(\sum_{i=1}^n(X_i - \mu_X)\right)(\bar{Y} - \mu_Y) -
+\left(\sum_{i=1}^n(X_i - \mu_X)\right)(\bar{Y} - \mu_Y) \\ &-
 (\bar{X} - \mu_X)\left(\sum_{i=1}^n(Y_i - \mu_Y)\right) +
 n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
 \\ &=
 \sum_{i=1}^n (X_i - \mu_X)(Y_i - \mu_Y) -
-n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y) -
+n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y) \\ &-
 n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y) +
 n(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)
 \\ &=
@@ -2323,7 +2360,7 @@ $$
 \begin{aligned}
 E\left[\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\right] &=
 \sum_{i=1}^n E[(X_i - \mu_X)(Y_i - \mu_Y)] -
-nE[(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)] =
+nE[(\bar{X} - \mu_X)(\bar{Y} - \mu_Y)] \\ &=
 n\sigma_{XY} - n\frac{\sigma_{XY}}{n} = (n-1)\sigma_{XY}.
 \end{aligned}
 $$
@@ -2433,10 +2470,12 @@ $X$ が従う確率分布の名前が $\op{Dist}$ のとき, これらを __分�
 モーメント母函数の定義で $t$ を $it = \sqrt{-1}\,t$ で置き換えたもの
 
 $$
-\varphi_X(t) = E[e^{itX}] =
-E\left[\sum_{m=0}^\infty i^m X^m\frac{t^m}{m!}\right] =
+\begin{aligned}
+\varphi_X(t) &= E[e^{itX}] =
+E\left[\sum_{m=0}^\infty i^m X^m\frac{t^m}{m!}\right] \\ &=
 \sum_{m=0}^\infty i^m E[X^m] \frac{t^m}{m!} =
 \sum_{m=0}^\infty i^m \mu_m(X) \frac{t^m}{m!}
+\end{aligned}
 $$
 
 を __特性函数__ (characteristic function)と呼ぶ.  特性函数を扱う場合には $i = \sqrt{-1}$ としたいので, $i$ を番号の意味で使わないように気を付ける必要がある.
@@ -2533,9 +2572,11 @@ $$
 $K_{aX+b}(t)$ の展開結果は
 
 $$
-K_{aX+b}(t) = K_X(at) + bt =
-\sum_{m=0}^\infty \kappa_m(X)\frac{(at)^m}{m!} + bt =
+\begin{aligned}
+K_{aX+b}(t) &= K_X(at) + bt =
+\sum_{m=0}^\infty \kappa_m(X)\frac{(at)^m}{m!} + bt \\ &=
 (a\kappa_1(X)+b)t + \sum_{m=2}^\infty a^m \kappa_m(X) \frac{t^m}{m!}
+\end{aligned}
 $$
 
 になるので,
@@ -2571,11 +2612,13 @@ $$
 なので,
 
 $$
-M_Z(t) = E[e^{tZ}] =
+\begin{aligned}
+M_Z(t) &= E[e^{tZ}] =
 \int_{-\infty}^\infty e^{tz} \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz =
-\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-(z-t)^2/2 + t^2/2}\,dz =
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-(z-t)^2/2 + t^2/2}\,dz \\ &=
 \frac{e^{t^2/2}}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-w^2/2}\,dw =
 e^{t^2/2}.
+\end{aligned}
 $$
 
 4つめの等号で $z=w+t$ とおいた. ゆえに,
@@ -2626,7 +2669,7 @@ $$
 
 を確率変数の __標準化__ (standardization)と呼ぶ.  $Z$ の期待値と分散はそれぞれ $0$ と $1$ になる.
 
-$X$ の標準化のモーメントやキュムラントをそれぞれ __標準化モーメント__, __標準化キュムラント__ と呼び, それぞれを $\bar\mu_m(X)$, $\bar\kappa_m(X)$ と表す. 詳しくは以下の通り:
+$X$ の標準化のモーメントやキュムラントおよびそれらの母函数をそれぞれ __標準化モーメント__, __標準化キュムラント__ と呼び, それぞれを $\bar\mu_m(X)$, $\bk_m(X)$ と表す. 詳しくは以下の通り:
 
 $$
 \begin{aligned}
@@ -2638,16 +2681,16 @@ M_Z(t) = E\left[\exp\left(t \frac{X - \mu}{\sigma}\right)\right] =
 1 + \frac{t^2}{2} + \bar\mu_3(X)\frac{t^3}{3!} + \bar\mu_4(X)\frac{t^4}{4!} + \cdots,
 \\ &
 K_Z(t) = \log M_Z(t) =
-\sum_{m=1}^\infty \bar\kappa_m(X) \frac{t^m}{m!} =
-\frac{t^2}{2} + \bar\kappa_3(X) \frac{t^3}{3!} + \bar\kappa_4(X) \frac{t^4}{4!} + \cdots.
+\sum_{m=1}^\infty \bk_m(X) \frac{t^m}{m!} =
+\frac{t^2}{2} + \bk_3(X) \frac{t^3}{3!} + \bk_4(X) \frac{t^4}{4!} + \cdots.
 \end{aligned}
 $$
 
-$\bar\kappa_3(X)$ と $\bar\kappa_4(X)$ は次のように表される:
+$\bk_3(X)$ と $\bk_4(X)$ は次のように表される:
 
 $$
-\bar\kappa_3(X) = \bar\mu_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right], \quad
-\bar\kappa_4(X) = \bar\mu_4(X) - 3 = E\left[\left(\frac{X - \mu}{\sigma}\right)^4\right] - 3.
+\bk_3(X) = \bar\mu_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right], \quad
+\bk_4(X) = \bar\mu_4(X) - 3 = E\left[\left(\frac{X - \mu}{\sigma}\right)^4\right] - 3.
 $$
 
 このことは, $\log(1+a)=a-a^2/2+O(a^3)$ を使って以下のようにして確認される:
@@ -2661,27 +2704,91 @@ $$
 \end{aligned}
 $$
 
-$\bar\kappa_3(X)$ を $X$ もしくは $X$ が従う分布の __歪度__ (わいど, skewness) と呼び, $\bar\kappa_4(X)$ を __尖度__ (せんど, kurtosis)と呼び, 次のようにも書くことにする:
+$\bk_3(X)$ を $X$ もしくは $X$ が従う分布の __歪度__ (わいど, skewness) と呼び, $\bk_4(X)$ を __尖度__ (せんど, kurtosis)と呼び, 次のようにも書くことにする:
 
 $$
-\op{skewness}(X) = \bar\kappa_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right], \quad
-\op{kurtosis}(X) = \bar\kappa_4(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^4\right] - 3.
+\op{skewness}(X) = \bk_3(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right], \quad
+\op{kurtosis}(X) = \bk_4(X) = E\left[\left(\frac{X - \mu}{\sigma}\right)^4\right] - 3.
 $$
 
 歪度は左右の非対称性の尺度であり, 尖度は分布の尖り具合が正規分布とどれだけ違うかの尺度になっている.
 
-$X$ が正規分布に従う確率変数の場合にはその標準化 $Z = (X-\mu)/\sigma$ は標準正規分布に従う確率変数になるので, その標準化キュムラント達は $\bar\kappa_2(X) = 1$, $\bar\kappa_m(X) = 0$ ($m\ne 0$) となる. 2次の標準化キュムラントは常に $1$ になるが, $3$ 次以上の標準化キュムラントは $X$ が正規分布でなければ $0$ でなくなる.
+$X$ が正規分布に従う確率変数の場合にはその標準化 $Z = (X-\mu)/\sigma$ は標準正規分布に従う確率変数になるので, その標準化キュムラント達は $\bk_2(X) = 1$, $\bk_m(X) = 0$ ($m\ne 0$) となる. 2次の標準化キュムラントは常に $1$ になるが, $3$ 次以上の標準化キュムラントは $X$ が正規分布でなければ $0$ でなくなる.
 
-このことから, $3$ 次以上の標準化キュムラントは分布が正規分布からどれだけ離れているかを表していると考えられる. それらのうち最初の2つが上で定義した歪度 $\bar\kappa_3(X)$ と尖度 $\bar\kappa_4(X)$ になっている.  
+このことから, $3$ 次以上の標準化キュムラントは分布が正規分布からどれだけ離れているかを表していると考えられる. それらのうち最初の2つが上で定義した歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ になっている.  
 
-__分布の歪度 $\bar\kappa_3(X)$ と尖度 $\bar\kappa_4(X)$ は分布がどれだけ正規分布から離れているかを表す最も基本的な量である.__
+__分布の歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ は分布がどれだけ正規分布から離れているかを表す最も基本的な量である.__
 
-__注意:__ $\bar\kappa_4(X) = \bar\mu_4(X) - 3$ ではなく, $3$ を引く前の $\bar\mu_4(X)$ を尖度と定義する流儀もあるが, このノートでは正規分布の扱いでキュムラントが非常に便利なことを重視したいので, $3$ を引いた側の $\bar\kappa_4$ を尖度の定義として採用する.  $3$ を引いた方の $\bar\kappa_4(X) = \bar\mu_4(X) - 3$ は __過剰尖度__ (かじょうせんど, __excess kurtosis__)と呼ばれることも多い.  正規分布の尖度を($\bar\kappa_4$ の方の $0$ ではなく) $\bar\mu_4$ の方の $3$ とするときに, そこからどれだけ分布の尖り具合が増したかを $\bar\kappa(X)$ が表していることを「過剰」と表現している.
+__注意:__ $\bk_4(X) = \bar\mu_4(X) - 3$ ではなく, $3$ を引く前の $\bar\mu_4(X)$ を尖度と定義する流儀もあるが, このノートでは正規分布の扱いでキュムラントが非常に便利なことを重視したいので, $3$ を引いた側の $\bk_4$ を尖度の定義として採用する.  $3$ を引いた方の $\bk_4(X) = \bar\mu_4(X) - 3$ は __過剰尖度__ (かじょうせんど, __excess kurtosis__)と呼ばれることも多い.  正規分布の尖度を($\bk_4$ の方の $0$ ではなく) $\bar\mu_4$ の方の $3$ とするときに, そこからどれだけ分布の尖り具合が増したかを $\bk(X)$ が表していることを「過剰」と表現している.
 
 ```julia
 @vars t μ3 μ4 μ5 κ3 κ4 κ5 
 Mt = 1 + t^2/2 + μ3*t^3/6 + μ4*t^4/24 + μ5*t^5
 expr = series(log(Mt), t)
+```
+
+### 問題:  正規分布の歪度と尖度
+
+$X$ が正規分布に従う確率変数であるとき, その歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ が以下のようになることを示せ:
+
+$$
+\bk_3(X) = \bk_4(X) = 0.
+$$
+
+__解答例:__ $X$ が正規分布 $\op{Normal}(\mu, \sigma)$ に従う確率変数のとき, その標準化 $Z = (X - \mu)/\sigma$ は標準正規分布に従うので, $Z = (X - \mu)/\sigma$ のキュムラント母函数は $t^2/2$ になり, その $3$ 次以上の項がすべて $0$ になる.  ゆえに $\bk_m(X) = 0$ ($m=3,4,5,\ldots$).  特に $\bk_3(X) = \bk_4(X) = 0$.
+
+__解答終__
+
+
+
+### 問題: 一様分布のキュムラント母函数と歪度と尖度
+
+一様分布 $\op{Uniform}(0, 1)$ に従う確率変数 $X$ について, そのキュムラント母函数 $K_X(t) = \log E[e^{tX}]$ と歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ が以下のようになることを示せ:
+
+$$
+K_X(t) = \log\frac{e^t - 1}{t}, \quad
+\bk_3(X) = 0, \quad
+\bk_4(X) = -\frac{6}{5}.
+$$
+
+一様分布は歪度が $0$ でかつ尖度がかなり小さな連続分布の例になっている.
+
+__解答例:__ モーメント母函数とキュムラント母函数は以下のように計算される:
+
+$$
+\begin{aligned}
+&
+E[e^{tX}] =
+\int_0^1 e^{tx}\,dx =
+\left[\frac{e^{tx}}{t}\right]_0^1 =
+\frac{e^t - 1}{t},
+\\ &
+K_X(t) = \log\frac{e^t - 1}{t} =
+\frac{1}{2}t + \frac{1}{12}\frac{t^2}{2} - \frac{1}{120}\frac{t^4}{4!} + O(t^5).
+\end{aligned}
+$$
+
+ゆえに, $\mu=1/2$, $\sigma = \sqrt{1/12}$, $Z=(X-\mu)/\sigma$ とおくと,
+
+$$
+K_Z(t) =
+K_X\left(\frac{t}{\sigma}\right) - \frac{\mu}{\sigma}t =
+\frac{t^2}{2} - \frac{6}{5}\frac{t^4}{4!} + O(t^5).
+$$
+
+ゆえに $\bk_3(X)=0$, $\bk_4=-6/5$.
+
+__解答終__
+
+```julia
+@vars t
+K_X = log((exp(t) - 1)/t)
+κ = [limit(diff(K_X, t, m) , t, 0) for m in 1:4]
+```
+
+```julia
+μ, σ = κ[1], √κ[2]
+κ = [limit(diff(K_X(t=>t/σ) - μ/σ*t, t, m) , t, 0) for m in 1:4]
 ```
 
 ### 問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数
@@ -2739,16 +2846,414 @@ $$
 __解答終__
 
 
+### 問題: ガンマ分布のキュムラント母函数と歪度と尖度
+
+ガンマ分布 $\op{Gamma}(\alpha, \theta)$ に従う確率変数 $X$ について, そのキュムラント母函数 $K_X(t) = \log E[e^{tX}]$ と歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ が以下のようになることを示せ:
+
+$$
+K_X(t) = -\alpha\log(1-\theta t), \quad
+\bk_3(X) = \frac{2}{\sqrt{\alpha}}, \quad
+\bk_3(X) = \frac{6}{\alpha}.
+$$
+
+__解答例:__ $t < 1/\theta$ と仮定する.  このとき,
+
+$$
+\mu = \alpha\theta, \quad \sigma = \sqrt{\alpha}\,\theta, \quad
+Z = \frac{X-\mu}{\sigma}
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+E[e^{tX}] &=
+\int_0^\infty e^{tx}
+\frac{e^{-x/\theta} x^{\alpha-1}}{\theta^\alpha\Gamma(\alpha)}\,dx =
+\frac{1}{\theta^\alpha\Gamma(\alpha)}
+\int_0^\infty e^{-((1-\theta t)/\theta)x} x^{\alpha-1}\,dx \\ &=
+\frac{1}{\theta^\alpha\Gamma(\alpha)}
+\frac{\theta^\alpha}{(1 - \theta t)^\alpha} \Gamma(\alpha) =
+\frac{1}{(1 - \theta t)^\alpha},
+\\
+K_X(t) &= -\alpha\log(1 - \theta t) \\ &=
+\alpha\theta t +
+\alpha\theta^2\frac{t^2}{2} +
+\alpha\theta^3\frac{t^3}{3} +
+\alpha\theta^4\frac{t^4}{4} + O(t^5) \\ &=
+\mu t +
+\sigma^2 \frac{t^2}{2} +
+\frac{2\sigma^3}{\sqrt{\alpha}}\frac{t^3}{3!} +
+\frac{6\sigma^4}{\alpha}\frac{t^4}{4!} + O(t^5),
+\\
+K_Z(t) &=
+K_X\left(\frac{t}{\sigma}\right) - \frac{\mu}{\sigma}t =
+\frac{t^2}{2} +
+\frac{2}{\sqrt{\alpha}}\frac{t^3}{3!} +
+\frac{6}{\alpha}\frac{t^4}{4!} + O(t^5).
+\end{aligned}
+$$
+
+ゆえに,
+
+$$
+\bk_3(X) = \frac{2}{\sqrt{\alpha}}, \quad
+\bk_3(X) = \frac{6}{\alpha}.
+$$
+
+__解答終__
+
+```julia
+@vars t
+@vars α θ positive=true
+K_X = -α*log(1 - θ*t)
+κ = [diff(K_X, t, m)(t=>0).simplify().factor() for m in 1:4]
+```
+
+```julia
+μ, σ = κ[1], √κ[2]
+[diff(K_X(t=>t/σ) - μ/σ*t, t, m)(t=>0).simplify().factor() for m in 1:4]
+```
+
+### 問題: 二項分布のキュムラント母函数と歪度と尖度
+
+二項分布 $\op{Binomial}(n, p)$ に従う確率変数 $X$ について, そのキュムラント母函数 $K_X(t) = \log E[e^{tX}]$ と歪度 $\bk_3(X)$ と尖度 $\bk_4(X)$ が以下のようになることを示せ:
+
+$$
+K_X(t) = n\log(1 + p(e^t - 1)), \quad
+\bk_3(X) = \frac{1-2p}{\sqrt{np(1-p)}}, \quad
+\bk_4(X) = \frac{1-6p(1-p)}{np(1-p)}.
+$$
+
+__注意:__ $n=1$, $p=1/2$ のとき $\bk_4(X) = -2$ となる. 実はその場合の分布 $\op{Bernoulli}(1/2)$ が確率分布全体の中で最小の尖度を持つ分布になっている.
+
+__解答例:__ $X_1,\ldots,X_n$ をそれぞれがBernoulli分布 $\op{Binomial}(p)$ に従う独立同分布な確率変数達であるとする. このとき, 二項分布に従う確率変数は $X=\sum_{i=1}^n X_i$ と作れる.  ゆえに
+
+$$
+K_X(t) = \sum_{i=1}^n K_{X_i}(t) = n K_{X_1}(t).
+$$
+
+$X_1\sim\op{Bernoulli}(p)$ について,
+
+$$
+\begin{aligned}
+&
+E[e^{tX_1}] =
+e^{t1} p + e^{t0}(1-p) = 1 + p(e^t - 1),
+\\ &
+K_{X_1}(t) = \log(1 + p(e^t - 1))
+\\ &
+K_X(t) = n \log(1 + p(e^t - 1))
+\end{aligned}
+$$
+
+なので, 
+
+$$
+\mu = np, \quad \sigma = \sqrt{np(1-p)}
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+&
+K_X(t) = n \log(1 + p(e^t - 1)) \\ &=
+npt +
+np(1-p)\frac{t^2}{2} +
+np(1-p)(1-2p)\frac{t^3}{3!} +
+np(1-p)(6p^2-6p+1)\frac{t^4}{4!} +
+O(t^5)
+\\ &=
+\mu t +
+\sigma^2 \frac{t^2}{2} +
+\sigma^2 (1-2p)\frac{t^3}{3!} +
+\sigma^2 (1-6p(1-p))\frac{t^4}{4!} +
+O(t^5),
+\\ &
+K_{(X-\mu)/\sigma}(t) =
+K_X\left(\frac{t}{\sigma}\right) - \frac{\mu}{\sigma}t =
+\frac{t^2}{2} +
+\frac{1-2p}{\sigma}\frac{t^3}{3!} +
+\frac{1-6p(1-p)}{\sigma^2}\frac{t^4}{4!} +
+O(t^5).
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+\bk_3(X) = \frac{1-2p}{\sigma} = \frac{1-2p}{\sqrt{np(1-p)}}, \quad
+\bk_4(X) = \frac{1-6p(1-p)}{\sigma^2} = \frac{1-6p(1-p)}{np(1-p)}.
+$$
+
+__解答終__
+
+```julia
+kurtosis(Bernoulli(0.5))
+```
+
+```julia
+@vars n p t
+K_X = n * log(1 + p*(exp(t) - 1))
+κ = [diff(K_X, t, m)(t=>0).simplify().factor() for m in 1:4]
+```
+
+```julia
+μ, σ = κ[1], √κ[2]
+[diff(K_X(t=>t/σ) - μ/σ*t, t, m)(t=>0).simplify().factor() for m in 1:4]
+```
+
 ## 独立同分布な確率変数達の不偏分散の分散
 
+以下の節においては, $X_1,\ldots,X_n$ は独立同分布な確率変数達であるとし, それらの標本分散と不偏分散を以下のように書くことにする:
 
-### 準備: 歪度と尖度
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+S_X^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2.
+$$
+
+さらに, $X_i$ の期待値と分散をそれぞれ $\mu$, $\sigma^2$ と書くことにする.
+
+このとき, 以下が成立することはすでに示している:
+
+$$
+E[\bar{X}] = \mu, \quad
+\op{var}(X) = E[(\bar{X} - \mu)^2] = \frac{\sigma^2}{n}, \quad
+E[S_X^2] = \sigma^2.
+$$
+
+さらに以下では, $X_i$ の __歪度__ (わいど, skewness)と __尖度__ (せんど, kurtosis)をそれぞて $\bk_3 = \bk_3(X_i)$, $\bk_4 = \bk_4(X_i)$ と書くことにする:
+$$
+\bk_3 = E\left[\left(\frac{X_i-\mu}{\sigma}\right)^3\right], \quad
+\bk_4 = E\left[\left(\frac{X_i-\mu}{\sigma}\right)^4\right] - 3.
+$$
+
+標本平均と不偏分散の共分散と分散は $X_i$ の歪度 $\bk_3$ と尖度 $\bk_4$ を使って次のように書ける:
+
+$$
+\op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3, \quad
+\op{var}(S_X^2) = \frac{\bk_4}{n} + \frac{2}{n-1}.
+$$
+
+以下の節ではこの結果を証明する.
+
+
+### 期待値 $0$, 分散 $1$ の場合への帰着
+
+$Z=(X-\mu)/\sigma$ とおくと, $Z$ の期待値と分散はそれぞれ $0$ と $1$ になる. 
+
+$Z_i = (X_i - \mu)/\sigma$ とおくと, $Z_1,\ldots,Z_n$ はそれぞれが $Z$ と同じ分布に従う独立同分布な確率変数達になる.  そして, $X_i = \sigma Z_i + \mu$ より,
+
+$$
+\bar{Z} = \frac{1}{n}\sum_{i=1}^n Z_i, \quad
+S_Z^2 = \frac{1}{n-1}\sum_{i=1}^n (Z_i - \bar{Z})^2
+$$
+
+とおくと, 
+
+$$
+\bar{X} = \sigma\bar{Z} + \mu,  \quad
+S_X^2 = \sigma^2 S_Z^2
+$$
+
+なので,
+
+$$
+\op{cov}(\bar{X}, S_X^2) = \sigma^3\op{cov}(\bar{Z}, S_Z^2), \quad
+\op{var}(S_X^2) = \sigma^4\op{var}(S_Z^2).
+$$
+
+これより, 標本分散と不偏分散の分散と共分散の計算は $\mu=0$, $\sigma=1$ の場合に帰着する. 
 
 
 ### 標本平均と不偏分散の共分散の計算
 
+標本平均と不偏分散の共分散は $X_i$ の歪度 $\bk_3$ を使って次のように書ける:
+
+$$
+\op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3.
+$$
+
+__証明:__ $\mu=0$, $\sigma=1$ と仮定する. このとき, $\mu=0$ という仮定より,
+
+$$
+\op{cov}(\bar{X}, S_X^2) =
+E[\bar{X}(S_X^2-\sigma^2)] =
+E[\bar{X}S_X^2] - \sigma^2 \underbrace{E[\bar{X}]}_{=0} =
+E[\bar{X}S_X^2].
+$$
+
+そして,
+
+$$
+\begin{aligned}
+&
+n\bar{X}^2 =
+\frac{1}{n}\sum_{i=1}^n X_i^2 + \frac{2}{n}\sum_{1\le i<j\le n} X_i X_j,
+\\ &
+(n-1)S_X^2 =
+\sum_{i=1}^n (X_i-\bar{X})^2 =
+\sum_{i=1}^n (X_i^2-2\bar{X}X_i+\bar{X}^2) =
+\sum_{i=1}^n X_i^2-n\bar{X}^2 \\ &=
+\sum_{i=1}^n X_i^2 -
+\frac{1}{n}\sum_{i=1}^n X_i^2 -
+\frac{2}{n}\sum_{1\le i<j\le n} X_i X_j =
+\frac{n-1}{n}\sum_{i=1}^n X_i^2 - \frac{2}{n}\sum_{1\le i<j\le n} X_i X_j,
+\\ &
+\therefore\quad
+S_X^2 = \frac{1}{n}\sum_{i=1}^n X_i^2 - \frac{2}{n(n-1)}\sum_{1\le i<j\le n} X_i X_j.
+\end{aligned}
+$$
+
+ゆえに
+
+$$
+\bar{X}S_X^2 =
+\frac{1}{n}\sum_{i=1}^n X_i
+\left(
+\frac{1}{n}\sum_{i=1}^n X_i^2 - \frac{2}{n(n-1)}\sum_{1\le i<j\le n} X_i X_j
+\right).
+$$
+
+$E[X_i]=\mu=0$ という仮定と $X_i$ 達の独立性より, $i,j,k$ がすべて等しいとき以外には $E[X_i X_j X_k] = 0$ となり,  $\mu=0$, $\sigma=1$ という仮定より $E[X_i^3]=\bk_3$ となるので,
+
+$$
+\op{cov}(\bar{X}, S_X^2) = 
+E[\bar{X}S_X^2] =
+\frac{1}{n^2}\sum_{i=1}^n E[X_i^3] =
+\frac{\bk_3}{n}.
+$$
+
+$\mu=0$, $\sigma=1$ と仮定しない一般の場合には, これが $\sigma^3$ 倍されて,
+
+$$
+\op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3.
+$$
+
+__証明終__
+
 
 ### 不偏分散の分散の計算
+
+不偏分散の分散は $X_i$ の尖度 $\bk_4$ を使って次のように書ける:
+
+$$
+\op{var}(S_X^2) = \left(\frac{\bk_4}{n} + \frac{2}{n-1}\right)\sigma^4.
+$$
+
+__証明:__ $\mu=0$, $\sigma=1$ と仮定する. このとき, $E[S_X^2]=\sigma^2=1$ より,
+
+$$
+\op{var}(S_X^2) = E[(S_X^2)^2] - E[S_X^2]^2 = E[(S_X^2)^2] - 1.
+$$
+
+そして, 前節の計算より
+
+$$
+S_X^2 =
+\frac{1}{n}\sum_{i=1}^n X_i^2 - \frac{2}{n(n-1)}\sum_{1\le i<j\le n} X_i X_j
+$$
+
+なので,
+
+$$
+\begin{aligned}
+(S_X^2)^2 &=
+\frac{1}{n^2}\left(
+\sum_{i=1}^n X_i^4 + 2\sum_{1\le i<j\le n}X_i^2 X_j^2
+\right)
+\\ &-
+\frac{2}{n^2(n-1)}
+\sum_{i=1}^n \sum_{1\le j<k\le n}X_i^2 X_j X_k
+\\ &+
+\frac{4}{n^2(n-1)^2}
+\sum_{1\le i<j\le n}\sum_{1\le k<l\le n} X_i X_j X_k X_l.
+\end{aligned}
+$$
+
+$\mu=0$, $\sigma=1$ でかつ $X_1,\ldots,X_n$ は独立であるという仮定と, $E[X_i]=0$, $E[X_i^2]=1$, $E[X_i^4]=\bk_4 + 3$ であることを使うと,
+
+$$
+\begin{aligned}
+&
+E\left[\sum_{i=1}^n X_i^4\right] = n(\bk_4 + 3),
+\\ &
+E\left[2\sum_{1\le i<j\le n}X_i^2 X_j^2\right] =
+2\frac{n(n-1)}{2} = n(n-1),
+\\ &
+E\left[\sum_{1\le j<k\le n}X_i^2 X_j X_k\right] = 0,
+\\ &
+E\left[\sum_{1\le i<j\le n}\sum_{1\le k<l\le n} X_i X_j X_k X_l\right] =
+\frac{n(n-1)}{2}.
+\end{aligned}
+$$
+
+最後の等式は $i=k, j=l$ の場合のみが和に寄与することを使った. ゆえに
+
+$$
+\begin{aligned}
+\op{var}(S_X^2) &=
+\frac{n(\bk_4 + 3) + n(n-1)}{n^2} + \frac{4}{n^2(n-1)^2}\frac{n(n-1)}{2} - 1
+\\ &=
+\frac{\bk_4 + n + 2}{n} + \frac{2}{n(n-1)} - 1
+\\ &=
+\frac{\bk_4 + n + 2}{n} +
+\frac{2}{n-1} - \frac{2}{n} - \frac{n}{n}
+\\ &=
+\frac{\bk_4}{n} + \frac{2}{n-1}.
+\end{aligned}
+$$
+
+$\mu=0$, $\sigma=1$ と仮定しない一般の場合には, これが $\sigma^4$ 倍されて,
+
+$$
+\op{var}(S_X^2) = \left(\frac{\bk_4}{n} + \frac{2}{n-1}\right)\sigma^4.
+$$
+
+__証明終__
+
+
+### 歪度と尖度に関する不等式
+
+以上の結果を用いて, 歪度 $\bk_3$ と尖度 $\bk_4$ のあいだには
+
+$$
+\bk_4 \ge \bk_3^2 - 2 \ge - 2
+$$
+
+が成立することを示そう.  標本平均 $\bar{X}$ と不偏分散 $S_X^2$ の分散共分散行列
+
+$$
+\begin{bmatrix}
+\op{var}(\bar{X}) & \op{cov}(\bar{X}, S_X^2) \\
+\op{cov}(S_X^2, \bar{X}) & \op{var}(S_X^2) \\
+\end{bmatrix} =
+\begin{bmatrix}
+\sigma^2/n & \sigma^3\bk_3/n \\
+\sigma^3\bk_3/n & \sigma^4(\bk_4/n + 2/(n-1)) \\
+\end{bmatrix}
+$$
+
+は半正定値になる.  特にその行列式は $0$ 以上になる:
+
+$$
+\frac{\sigma^6}{n^2}\left(\bk_4 + \frac{2}{1-1/n} - \bk_3^2\right) \ge 0.
+$$
+
+ゆえに,
+
+$$
+\bk_4 \ge \bk_3^2 - \frac{2}{1-1/n}.
+$$
+
+$n\to\infty$ とすることによって,
+
+$$
+\bk_4 \ge \bk_3^2 - 2.
+$$
+
+を得る.
 
 
 ## 正規分布の標本分布の場合

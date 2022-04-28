@@ -16,13 +16,16 @@ jupyter:
 # Bernoulli試行と関連確率分布
 
 * 黒木玄
-* 2022-04-09～2022-04-20
+* 2022-04-09～2022-04-29
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
 \newcommand\Z{{\mathbb Z}}
 \newcommand\var{\op{var}}
 \newcommand\std{\op{std}}
+\newcommand\eps{\varepsilon}
+\newcommand\T[1]{T_{(#1)}}
+\newcommand\bk{\bar\kappa}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
@@ -2631,7 +2634,13 @@ $$
 p(x) = \frac{1}{b - a} \quad (a < x < b)
 $$
 
-によって与えられる一様分布を考え, $X$ はこの分布に従う確率変数であるとする.
+によって与えられる一様分布
+
+$$
+\op{Uniform}(a, b)
+$$
+
+を考え, $X$ はこれに従う確率変数であるとする.
 
 このとき, $X$ の期待値(平均) $\mu$ と分散 $\sigma^2$ は以下のように計算される:
 

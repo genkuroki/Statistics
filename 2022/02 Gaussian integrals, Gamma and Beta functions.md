@@ -16,7 +16,7 @@ jupyter:
 # Gauss積分, ガンマ函数, ベータ函数
 
 * 黒木玄
-* 2022-04-10～2022-04-21
+* 2022-04-10～2022-04-29
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -24,6 +24,8 @@ $
 \newcommand\var{\op{var}}
 \newcommand\std{\op{std}}
 \newcommand\eps{\varepsilon}
+\newcommand\T[1]{T_{(#1)}}
+\newcommand\bk{\bar\kappa}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
