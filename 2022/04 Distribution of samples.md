@@ -40,7 +40,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布とその使い方" data-toc-modified-id="標本分布とその使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布とその使い方</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#確率分布の積と-$n$-乗の定義" data-toc-modified-id="確率分布の積と-$n$-乗の定義-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率分布の積と $n$ 乗の定義</a></span></li><li><span><a href="#分布-$D$-の標本分布の主な使用用途" data-toc-modified-id="分布-$D$-の標本分布の主な使用用途-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>分布 $D$ の標本分布の主な使用用途</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.9.2"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.9.3"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.9.4"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.9.5"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.9.6"><span class="toc-item-num">1.9.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#確率変数達の共分散と相関係数と無相関性" data-toc-modified-id="確率変数達の共分散と相関係数と無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>確率変数達の共分散と相関係数と無相関性</a></span><ul class="toc-item"><li><span><a href="#確率変数達の共分散と相関係数の定義" data-toc-modified-id="確率変数達の共分散と相関係数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>確率変数達の共分散と相関係数の定義</a></span></li><li><span><a href="#確率変数達の無相関の定義" data-toc-modified-id="確率変数達の無相関の定義-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>確率変数達の無相関の定義</a></span></li><li><span><a href="#問題:-確率変数の相関係数の計算例" data-toc-modified-id="問題:-確率変数の相関係数の計算例-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 確率変数の相関係数の計算例</a></span></li><li><span><a href="#問題:-Cauchy-Schwarzの不等式" data-toc-modified-id="問題:-Cauchy-Schwarzの不等式-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: Cauchy-Schwarzの不等式</a></span></li><li><span><a href="#問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係" data-toc-modified-id="問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係</a></span></li><li><span><a href="#問題:-相関係数の計算" data-toc-modified-id="問題:-相関係数の計算-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 相関係数の計算</a></span></li><li><span><a href="#問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある" data-toc-modified-id="問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる" data-toc-modified-id="問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる</a></span></li><li><span><a href="#問題(メタアナリシスの出発点):-共通の期待値と異なる分散を持つ確率変数の荷重平均" data-toc-modified-id="問題(メタアナリシスの出発点):-共通の期待値と異なる分散を持つ確率変数の荷重平均-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題(メタアナリシスの出発点): 共通の期待値と異なる分散を持つ確率変数の荷重平均</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li><li><span><a href="#分散共分散行列とその半正定値性" data-toc-modified-id="分散共分散行列とその半正定値性-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>分散共分散行列とその半正定値性</a></span></li></ul></li><li><span><a href="#標本(サンプル,-データ)の平均と分散と共分散と相関係数" data-toc-modified-id="標本(サンプル,-データ)の平均と分散と共分散と相関係数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>標本(サンプル, データ)の平均と分散と共分散と相関係数</a></span><ul class="toc-item"><li><span><a href="#標本平均の定義" data-toc-modified-id="標本平均の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>標本平均の定義</a></span></li><li><span><a href="#問題:-無相関な確率変数達の標本平均の分散" data-toc-modified-id="問題:-無相関な確率変数達の標本平均の分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: 無相関な確率変数達の標本平均の分散</a></span></li><li><span><a href="#標本分散と不偏分散の定義" data-toc-modified-id="標本分散と不偏分散の定義-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>標本分散と不偏分散の定義</a></span></li><li><span><a href="#不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの共分散の定義" data-toc-modified-id="データの共分散の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>データの共分散の定義</a></span></li><li><span><a href="#問題:-標本平均達の共分散" data-toc-modified-id="問題:-標本平均達の共分散-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 標本平均達の共分散</a></span></li><li><span><a href="#問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの相関係数の定義-(以上の定義のまとめにもなっている)" data-toc-modified-id="データの相関係数の定義-(以上の定義のまとめにもなっている)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>データの相関係数の定義 (以上の定義のまとめにもなっている)</a></span></li></ul></li><li><span><a href="#最小二乗法による線形回帰" data-toc-modified-id="最小二乗法による線形回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最小二乗法による線形回帰</a></span><ul class="toc-item"><li><span><a href="#問題:-最小二乗法による線形回帰の公式の導出" data-toc-modified-id="問題:-最小二乗法による線形回帰の公式の導出-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 最小二乗法による線形回帰の公式の導出</a></span><ul class="toc-item"><li><span><a href="#解答例1:-単回帰の公式の素朴な導出" data-toc-modified-id="解答例1:-単回帰の公式の素朴な導出-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>解答例1: 単回帰の公式の素朴な導出</a></span></li><li><span><a href="#解答例2:-データの5つの要約値だけで平均二乗誤差を表示" data-toc-modified-id="解答例2:-データの5つの要約値だけで平均二乗誤差を表示-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>解答例2: データの5つの要約値だけで平均二乗誤差を表示</a></span></li><li><span><a href="#コンピュータによる最小二乗法の計算例" data-toc-modified-id="コンピュータによる最小二乗法の計算例-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>コンピュータによる最小二乗法の計算例</a></span></li></ul></li><li><span><a href="#是非とも解いてもらいたい問題:-最小二乗法の計算例-(Anscombe's-quartet)" data-toc-modified-id="是非とも解いてもらいたい問題:-最小二乗法の計算例-(Anscombe's-quartet)-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>是非とも解いてもらいたい問題: 最小二乗法の計算例 (Anscombe's quartet)</a></span></li><li><span><a href="#Galton-(1886)が描いた2つの回帰直線" data-toc-modified-id="Galton-(1886)が描いた2つの回帰直線-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Galton (1886)が描いた2つの回帰直線</a></span><ul class="toc-item"><li><span><a href="#Galtonのグラフの再現" data-toc-modified-id="Galtonのグラフの再現-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Galtonのグラフの再現</a></span></li><li><span><a href="#グラフ中の楕円と2変量正規分布モデルや回帰直線の関係" data-toc-modified-id="グラフ中の楕円と2変量正規分布モデルや回帰直線の関係-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>グラフ中の楕円と2変量正規分布モデルや回帰直線の関係</a></span></li></ul></li></ul></li><li><span><a href="#モーメントとキュムラントと歪度と尖度" data-toc-modified-id="モーメントとキュムラントと歪度と尖度-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>モーメントとキュムラントと歪度と尖度</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:--正規分布の歪度と尖度" data-toc-modified-id="問題:--正規分布の歪度と尖度-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>問題:  正規分布の歪度と尖度</a></span></li><li><span><a href="#問題:-一様分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-一様分布のキュムラント母函数と歪度と尖度-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>問題: 一様分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-ガンマ分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-ガンマ分布のキュムラント母函数と歪度と尖度-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: ガンマ分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-二項分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-二項分布のキュムラント母函数と歪度と尖度-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>問題: 二項分布のキュムラント母函数と歪度と尖度</a></span></li></ul></li><li><span><a href="#独立同分布な確率変数達の不偏分散の分散" data-toc-modified-id="独立同分布な確率変数達の不偏分散の分散-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>独立同分布な確率変数達の不偏分散の分散</a></span><ul class="toc-item"><li><span><a href="#期待値-$0$,-分散-$1$-の場合への帰着" data-toc-modified-id="期待値-$0$,-分散-$1$-の場合への帰着-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>期待値 $0$, 分散 $1$ の場合への帰着</a></span></li><li><span><a href="#標本平均と不偏分散の共分散の計算" data-toc-modified-id="標本平均と不偏分散の共分散の計算-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>標本平均と不偏分散の共分散の計算</a></span></li><li><span><a href="#不偏分散の分散の計算" data-toc-modified-id="不偏分散の分散の計算-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>不偏分散の分散の計算</a></span></li><li><span><a href="#歪度と尖度に関する不等式" data-toc-modified-id="歪度と尖度に関する不等式-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較" data-toc-modified-id="問題:-不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>問題: 不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較</a></span></li></ul></li><li><span><a href="#正規分布の標本分布の場合" data-toc-modified-id="正規分布の標本分布の場合-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>正規分布の標本分布の場合</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#標本分布とその使い方" data-toc-modified-id="標本分布とその使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>標本分布とその使い方</a></span><ul class="toc-item"><li><span><a href="#同時確率質量函数と同時確率密度函数" data-toc-modified-id="同時確率質量函数と同時確率密度函数-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>同時確率質量函数と同時確率密度函数</a></span></li><li><span><a href="#確率変数の独立性の定義" data-toc-modified-id="確率変数の独立性の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>確率変数の独立性の定義</a></span><ul class="toc-item"><li><span><a href="#独立な確率変数達の同時確率質量函数" data-toc-modified-id="独立な確率変数達の同時確率質量函数-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>独立な確率変数達の同時確率質量函数</a></span></li><li><span><a href="#独立な確率変数達の同時確率密度函数" data-toc-modified-id="独立な確率変数達の同時確率密度函数-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>独立な確率変数達の同時確率密度函数</a></span></li><li><span><a href="#独立性に関する大雑把なまとめ" data-toc-modified-id="独立性に関する大雑把なまとめ-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>独立性に関する大雑把なまとめ</a></span></li><li><span><a href="#分散を0に近付けたときの正規分布について" data-toc-modified-id="分散を0に近付けたときの正規分布について-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>分散を0に近付けたときの正規分布について</a></span></li></ul></li><li><span><a href="#独立同分布(i.i.d.,-iid)の定義" data-toc-modified-id="独立同分布(i.i.d.,-iid)の定義-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>独立同分布(i.i.d., iid)の定義</a></span></li><li><span><a href="#標本分布の定義" data-toc-modified-id="標本分布の定義-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>標本分布の定義</a></span></li><li><span><a href="#確率分布の積と-$n$-乗の定義" data-toc-modified-id="確率分布の積と-$n$-乗の定義-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>確率分布の積と $n$ 乗の定義</a></span></li><li><span><a href="#分布-$D$-の標本分布の主な使用用途" data-toc-modified-id="分布-$D$-の標本分布の主な使用用途-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>分布 $D$ の標本分布の主な使用用途</a></span></li><li><span><a href="#試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布" data-toc-modified-id="試行回数-$n$-のBernoulli試行の分布はBernoulli分布の標本分布-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>試行回数 $n$ のBernoulli試行の分布はBernoulli分布の標本分布</a></span></li><li><span><a href="#二項分布による推定の確率的揺らぎの記述" data-toc-modified-id="二項分布による推定の確率的揺らぎの記述-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>二項分布による推定の確率的揺らぎの記述</a></span></li><li><span><a href="#問題:-大阪都構想に関する住民投票の結果について" data-toc-modified-id="問題:-大阪都構想に関する住民投票の結果について-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: 大阪都構想に関する住民投票の結果について</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の例" data-toc-modified-id="Julia言語による計算の例-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Julia言語による計算の例</a></span></li><li><span><a href="#WolframAlphaによる計算の例:" data-toc-modified-id="WolframAlphaによる計算の例:-1.9.2"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>WolframAlphaによる計算の例:</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間とそれを与えるP値" data-toc-modified-id="Clopper-Pearsonの信頼区間とそれを与えるP値-1.9.3"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間とそれを与えるP値</a></span></li><li><span><a href="#信頼区間よりも情報量が大きなP値函数のプロット" data-toc-modified-id="信頼区間よりも情報量が大きなP値函数のプロット-1.9.4"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>信頼区間よりも情報量が大きなP値函数のプロット</a></span></li><li><span><a href="#Sternの信頼区間とそれを与えるP値函数" data-toc-modified-id="Sternの信頼区間とそれを与えるP値函数-1.9.5"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Sternの信頼区間とそれを与えるP値函数</a></span></li><li><span><a href="#Sternの信頼区間を与えるP値函数の実装例" data-toc-modified-id="Sternの信頼区間を与えるP値函数の実装例-1.9.6"><span class="toc-item-num">1.9.6&nbsp;&nbsp;</span>Sternの信頼区間を与えるP値函数の実装例</a></span></li></ul></li><li><span><a href="#対ごとに独立であっても全体が独立であるとは限らない" data-toc-modified-id="対ごとに独立であっても全体が独立であるとは限らない-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>対ごとに独立であっても全体が独立であるとは限らない</a></span></li><li><span><a href="#確率変数の独立性の現実における解釈に関する重大な注意" data-toc-modified-id="確率変数の独立性の現実における解釈に関する重大な注意-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>確率変数の独立性の現実における解釈に関する重大な注意</a></span></li></ul></li><li><span><a href="#確率変数達の共分散と相関係数と無相関性" data-toc-modified-id="確率変数達の共分散と相関係数と無相関性-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>確率変数達の共分散と相関係数と無相関性</a></span><ul class="toc-item"><li><span><a href="#確率変数達の共分散と相関係数の定義" data-toc-modified-id="確率変数達の共分散と相関係数の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>確率変数達の共分散と相関係数の定義</a></span></li><li><span><a href="#確率変数達の無相関の定義" data-toc-modified-id="確率変数達の無相関の定義-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>確率変数達の無相関の定義</a></span></li><li><span><a href="#問題:-確率変数の相関係数の計算例" data-toc-modified-id="問題:-確率変数の相関係数の計算例-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: 確率変数の相関係数の計算例</a></span></li><li><span><a href="#問題:-Cauchy-Schwarzの不等式" data-toc-modified-id="問題:-Cauchy-Schwarzの不等式-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: Cauchy-Schwarzの不等式</a></span></li><li><span><a href="#問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係" data-toc-modified-id="問題:-等確率有限離散分布の相関係数と-$\cos\theta$-の関係-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 等確率有限離散分布の相関係数と $\cos\theta$ の関係</a></span></li><li><span><a href="#問題:-相関係数の計算" data-toc-modified-id="問題:-相関係数の計算-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 相関係数の計算</a></span></li><li><span><a href="#問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある" data-toc-modified-id="問題:-共分散が-$0$-に近くても相関係数が-$0$-から遠い場合がある-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 共分散が $0$ に近くても相関係数が $0$ から遠い場合がある</a></span></li><li><span><a href="#問題:-独立ならば無相関である-(実質1行で解ける)" data-toc-modified-id="問題:-独立ならば無相関である-(実質1行で解ける)-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: 独立ならば無相関である (実質1行で解ける)</a></span></li><li><span><a href="#問題:-無相関でも独立とは限らない" data-toc-modified-id="問題:-無相関でも独立とは限らない-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: 無相関でも独立とは限らない</a></span></li><li><span><a href="#問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる" data-toc-modified-id="問題:--無相関な確率変数達の和の分散はそれぞれの分散の和になる-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題:  無相関な確率変数達の和の分散はそれぞれの分散の和になる</a></span></li><li><span><a href="#問題(メタアナリシスの出発点):-共通の期待値と異なる分散を持つ確率変数の荷重平均" data-toc-modified-id="問題(メタアナリシスの出発点):-共通の期待値と異なる分散を持つ確率変数の荷重平均-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題(メタアナリシスの出発点): 共通の期待値と異なる分散を持つ確率変数の荷重平均</a></span></li><li><span><a href="#問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着" data-toc-modified-id="問題:-二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着</a></span></li><li><span><a href="#問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散" data-toc-modified-id="問題:--番号が異なる確率変数達が無相関なときの確率変数の和の共分散-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>問題:  番号が異なる確率変数達が無相関なときの確率変数の和の共分散</a></span></li><li><span><a href="#分散共分散行列とその半正定値性" data-toc-modified-id="分散共分散行列とその半正定値性-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>分散共分散行列とその半正定値性</a></span></li></ul></li><li><span><a href="#標本(サンプル,-データ)の平均と分散と共分散と相関係数" data-toc-modified-id="標本(サンプル,-データ)の平均と分散と共分散と相関係数-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>標本(サンプル, データ)の平均と分散と共分散と相関係数</a></span><ul class="toc-item"><li><span><a href="#標本平均の定義" data-toc-modified-id="標本平均の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>標本平均の定義</a></span></li><li><span><a href="#問題:-無相関な確率変数達の標本平均の分散" data-toc-modified-id="問題:-無相関な確率変数達の標本平均の分散-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: 無相関な確率変数達の標本平均の分散</a></span></li><li><span><a href="#標本分散と不偏分散の定義" data-toc-modified-id="標本分散と不偏分散の定義-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>標本分散と不偏分散の定義</a></span></li><li><span><a href="#不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="不偏推定量について:-不偏分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>不偏推定量について: 不偏分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの共分散の定義" data-toc-modified-id="データの共分散の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>データの共分散の定義</a></span></li><li><span><a href="#問題:-標本平均達の共分散" data-toc-modified-id="問題:-標本平均達の共分散-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 標本平均達の共分散</a></span></li><li><span><a href="#問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか" data-toc-modified-id="問題:-不偏共分散の定義ではどうして-$n$-ではなく-$n-1$-で割るか-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 不偏共分散の定義ではどうして $n$ ではなく $n-1$ で割るか</a></span></li><li><span><a href="#データの相関係数の定義-(以上の定義のまとめにもなっている)" data-toc-modified-id="データの相関係数の定義-(以上の定義のまとめにもなっている)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>データの相関係数の定義 (以上の定義のまとめにもなっている)</a></span></li></ul></li><li><span><a href="#最小二乗法による線形回帰" data-toc-modified-id="最小二乗法による線形回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>最小二乗法による線形回帰</a></span><ul class="toc-item"><li><span><a href="#問題:-最小二乗法による線形回帰の公式の導出" data-toc-modified-id="問題:-最小二乗法による線形回帰の公式の導出-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>問題: 最小二乗法による線形回帰の公式の導出</a></span><ul class="toc-item"><li><span><a href="#解答例1:-単回帰の公式の素朴な導出" data-toc-modified-id="解答例1:-単回帰の公式の素朴な導出-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>解答例1: 単回帰の公式の素朴な導出</a></span></li><li><span><a href="#解答例2:-データの5つの要約値だけで平均二乗残差を表示" data-toc-modified-id="解答例2:-データの5つの要約値だけで平均二乗残差を表示-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>解答例2: データの5つの要約値だけで平均二乗残差を表示</a></span></li><li><span><a href="#コンピュータによる最小二乗法の計算例" data-toc-modified-id="コンピュータによる最小二乗法の計算例-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>コンピュータによる最小二乗法の計算例</a></span></li></ul></li><li><span><a href="#必修問題:-最小二乗法の計算例-(Anscombe's-quartet)" data-toc-modified-id="必修問題:-最小二乗法の計算例-(Anscombe's-quartet)-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>必修問題: 最小二乗法の計算例 (Anscombe's quartet)</a></span><ul class="toc-item"><li><span><a href="#WaolframAlphaでAnscombeの例1を扱う方法" data-toc-modified-id="WaolframAlphaでAnscombeの例1を扱う方法-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>WaolframAlphaでAnscombeの例1を扱う方法</a></span></li><li><span><a href="#Julia言語でAnscombeの例を扱う方法" data-toc-modified-id="Julia言語でAnscombeの例を扱う方法-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Julia言語でAnscombeの例を扱う方法</a></span></li></ul></li><li><span><a href="#Galton-(1886)が描いた2つの回帰直線" data-toc-modified-id="Galton-(1886)が描いた2つの回帰直線-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Galton (1886)が描いた2つの回帰直線</a></span><ul class="toc-item"><li><span><a href="#Galtonのグラフの再現" data-toc-modified-id="Galtonのグラフの再現-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Galtonのグラフの再現</a></span></li><li><span><a href="#グラフ中の楕円と2変量正規分布モデルや回帰直線の関係" data-toc-modified-id="グラフ中の楕円と2変量正規分布モデルや回帰直線の関係-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>グラフ中の楕円と2変量正規分布モデルや回帰直線の関係</a></span></li></ul></li></ul></li><li><span><a href="#モーメントとキュムラントと歪度と尖度" data-toc-modified-id="モーメントとキュムラントと歪度と尖度-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>モーメントとキュムラントと歪度と尖度</a></span><ul class="toc-item"><li><span><a href="#モーメントとその母函数と特性函数とキュムラント母函数の定義" data-toc-modified-id="モーメントとその母函数と特性函数とキュムラント母函数の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>モーメントとその母函数と特性函数とキュムラント母函数の定義</a></span></li><li><span><a href="#特性函数による期待値の表示" data-toc-modified-id="特性函数による期待値の表示-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>特性函数による期待値の表示</a></span></li><li><span><a href="#問題:-分布のアフィン変換のキュムラント" data-toc-modified-id="問題:-分布のアフィン変換のキュムラント-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>問題: 分布のアフィン変換のキュムラント</a></span></li><li><span><a href="#問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-標準正規分布のモーメント母函数と特性函数とキュムラント母函数-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: 標準正規分布のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#確率変数の標準化と標準化キュムラントと歪度と尖度" data-toc-modified-id="確率変数の標準化と標準化キュムラントと歪度と尖度-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>確率変数の標準化と標準化キュムラントと歪度と尖度</a></span></li><li><span><a href="#問題:--正規分布の歪度と尖度" data-toc-modified-id="問題:--正規分布の歪度と尖度-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>問題:  正規分布の歪度と尖度</a></span></li><li><span><a href="#問題:-一様分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-一様分布のキュムラント母函数と歪度と尖度-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>問題: 一様分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数" data-toc-modified-id="問題:-独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>問題: 独立な確率変数達の和のモーメント母函数と特性函数とキュムラント母函数</a></span></li><li><span><a href="#問題:-ガンマ分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-ガンマ分布のキュムラント母函数と歪度と尖度-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>問題: ガンマ分布のキュムラント母函数と歪度と尖度</a></span></li><li><span><a href="#問題:-二項分布のキュムラント母函数と歪度と尖度" data-toc-modified-id="問題:-二項分布のキュムラント母函数と歪度と尖度-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>問題: 二項分布のキュムラント母函数と歪度と尖度</a></span></li></ul></li><li><span><a href="#独立同分布な確率変数達の不偏分散の分散" data-toc-modified-id="独立同分布な確率変数達の不偏分散の分散-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>独立同分布な確率変数達の不偏分散の分散</a></span><ul class="toc-item"><li><span><a href="#期待値-$0$,-分散-$1$-の場合への帰着" data-toc-modified-id="期待値-$0$,-分散-$1$-の場合への帰着-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>期待値 $0$, 分散 $1$ の場合への帰着</a></span></li><li><span><a href="#標本平均と不偏分散の共分散の計算" data-toc-modified-id="標本平均と不偏分散の共分散の計算-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>標本平均と不偏分散の共分散の計算</a></span></li><li><span><a href="#不偏分散の分散の計算" data-toc-modified-id="不偏分散の分散の計算-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>不偏分散の分散の計算</a></span></li><li><span><a href="#歪度と尖度に関する不等式" data-toc-modified-id="歪度と尖度に関する不等式-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較" data-toc-modified-id="問題:-不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>問題: 不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較</a></span></li></ul></li><li><span><a href="#標本分布における標本平均と不偏分散の同時分布の視覚化" data-toc-modified-id="標本分布における標本平均と不偏分散の同時分布の視覚化-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>標本分布における標本平均と不偏分散の同時分布の視覚化</a></span><ul class="toc-item"><li><span><a href="#正規分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="正規分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>正規分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#一様分布の標本分布における$\bar{X},-S^2$-の同時分布" data-toc-modified-id="一様分布の標本分布における$\bar{X},-S^2$-の同時分布-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>一様分布の標本分布における$\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#単峰型のガンマ分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="単峰型のガンマ分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>単峰型のガンマ分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#指数分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="指数分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>指数分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#非対称なベータ分布の標本分布における-$\bar{X}$,-$S^2$-の同時分布" data-toc-modified-id="非対称なベータ分布の標本分布における-$\bar{X}$,-$S^2$-の同時分布-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>非対称なベータ分布の標本分布における $\bar{X}$, $S^2$ の同時分布</a></span></li><li><span><a href="#非対称な2つ山の混合正規分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="非対称な2つ山の混合正規分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>非対称な2つ山の混合正規分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#非対称なBernoulli分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="非対称なBernoulli分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>非対称なBernoulli分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li><li><span><a href="#対数正規分布の標本分布における-$\bar{X},-S^2$-の同時分布" data-toc-modified-id="対数正規分布の標本分布における-$\bar{X},-S^2$-の同時分布-7.8"><span class="toc-item-num">7.8&nbsp;&nbsp;</span>対数正規分布の標本分布における $\bar{X}, S^2$ の同時分布</a></span></li></ul></li><li><span><a href="#正規分布の標本分布の場合" data-toc-modified-id="正規分布の標本分布の場合-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>正規分布の標本分布の場合</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -2536,22 +2536,30 @@ $$
 
 最小二乗法による単純な線形回帰について説明しよう. 以下, $x_1,\ldots,x_n$ のうち2つは互いに異なると仮定する.
 
-データ $(x_1, y_1),\ldots, (x_n, y_n)$ が与えられたときに, $y_i$ 達の値の $x_i$ 達の値の共通の一次函数による近似の __平均二乗誤差__
+与えられたデータ $(x_1, y_1),\ldots, (x_n, y_n)$ における $y_i$ 達の値達を $x_i$ 達の値の共通の一次函数 $\alpha + \beta x_i$ ($\alpha, \beta$ は $i$ によらない)で近似することを考える. そのとき,
+
+$$
+\eps_i = y_i - (\alpha + \beta x_i)
+$$
+
+を残差と呼ぶ. このとき, __平均二乗残差__
 
 $$
 f(\alpha,\beta) =
 \frac{1}{n}\sum_{i=1}^n (y_i - (\alpha + \beta x_i))^2
 $$
 
-を最小化するような係数 $\alpha, \beta$ の値を __回帰係数__ と呼び, $\hat\alpha, \hat\beta$ と書くことにする. 回帰係数 $\hat\alpha, \hat\beta$ を求めて __回帰直線__ (regression line)
+を最小化することを __最小二乗法__ と呼び, 最小二乗法で求めた係数 $\alpha, \beta$ の値を __回帰係数__ と呼び, $\hat\alpha, \hat\beta$ と書き, それに対応する一次函数
 
 $$
-y = \hat\alpha + \hat\beta x
-$$
+y = \hat\alpha + \hat\beta
+$$ 
 
-によって, データ $(x_1, y_1),\ldots,(x_2, y_2)$ の様子が「$x_i$ の値によって $y_i$ の値が概ねどのように決まっているように見えるか」を調べることをを __最小二乗法__ (least squares method)による __線形回帰__ (ordinary least squares, OLS, linear regression)と呼ぶ.  そのとき, $x$ を __説明変数__ や __独立変数__ と呼び, $y$ を __目的変数__, __従属変数__, __反応変数__ などと呼ぶ.  この場合には説明変数が $x$ の1つだけなので __単回帰__ (simple regression, simple linear regression)と呼ぶ.  (説明変数が多変数になった場合には __重回帰__ (multiple regression)と呼ぶ.
+を __回帰直線__ (regression line)と呼ぶ.  このとき, $x$ を __説明変数__ や __独立変数__ などと呼び, $y$ を __目的変数__, __従属変数__, __反応変数__ などと呼ぶ.  
 
-以下ではさらに, 最小平均二乗誤差の値を次のように書くことにする:
+これは一次函数によるデータの近似になっているので, __線形回帰__ (ordinary least squares, OLS, linear regression)と呼ばれる. この場合には説明変数が $x$ の1つだけなので __単回帰__ (simple regression, simple linear regression)と呼ぶこともある.  説明変数が多変数になった場合には __重回帰__ (multiple regression)と呼ぶ.
+
+以下ではさらに, __最小平均二乗残差__ (もしくは単に __平均二乗残差__)の値を次のように書くことにする:
 
 $$
 \hat\sigma^2 = f(\hat\alpha, \hat\beta) =
@@ -2590,7 +2598,7 @@ s_y^2 = \frac{n}{n-1}\left(\overline{y^2} - \bar{y}^2\right), \quad
 s_{xy} = \frac{n}{n-1}\left(\overline{xy} - \bar{x}\bar{y}\right).
 $$
 
-平均二乗誤差 $f(\alpha, \beta)$ を最小化する $\alpha=\hat\alpha$, $\beta=\hat\beta$ は $f$ の導函数を $0$ する. ゆえに, $\hat\alpha, \hat\beta$ は次の方程式の解である:
+平均二乗残差 $f(\alpha, \beta)$ を最小化する $\alpha=\hat\alpha$, $\beta=\hat\beta$ は $f$ の導函数を $0$ する. ゆえに, $\hat\alpha, \hat\beta$ は次の方程式の解である:
 
 $$
 \begin{aligned}
@@ -2658,9 +2666,9 @@ __解答終__
 __注意:__ 上の解答例ではわざと素朴な方法で計算してみた.
 
 
-#### 解答例2: データの5つの要約値だけで平均二乗誤差を表示
+#### 解答例2: データの5つの要約値だけで平均二乗残差を表示
 
-__解答例2:__ 平均二乗誤差 $f(\alpha, \beta)$ の和の二乗の内側に $\bar{y} - (\alpha + \beta\bar{x})$ を引いて足して, 適当に整理して, 展開して, 整理すると以下のようになる:
+__解答例2:__ 平均二乗残差 $f(\alpha, \beta)$ の和の二乗の内側に $\bar{y} - (\alpha + \beta\bar{x})$ を引いて足して, 適当に整理して, 展開して, 整理すると以下のようになる:
 
 $$
 \begin{aligned}
@@ -2692,7 +2700,7 @@ s_x^2\left(\beta - \frac{s_{xy}}{s_x^2}\right)^2 +
 \end{aligned}
 $$
 
-これより, 平均二乗誤差 $f(\alpha,\beta)$ は, $\beta, \alpha$ がそれぞれ
+これより, 平均二乗残差 $f(\alpha,\beta)$ は, $\beta, \alpha$ がそれぞれ
 
 $$
 \hat\beta = \frac{s_{xy}}{s_x^2}, \quad
@@ -2710,7 +2718,7 @@ $$
 __解答終__
 
 
-__注意:__ 上の計算では最初に, 平均二乗誤差の回帰係数 $\alpha,\beta$ の函数 $f(\alpha, \beta)$ が $2n$ 個の数値で構成されているデータ $(x_1,y_1),\ldots,(x_n,y_n)$ を要約している標本平均と分散共分散の5つの数値 $\bar{x}, \bar{y}, s_x^2, s_y^2, s_{xy}^2$ だけで記述されることを示した. 特に __回帰直線と最小平均二乗誤差の値はそれらの5つの要約値だけで決まってしまう.__ データのそれら5つの値への要約が不適切な場合には最小二乗法を使うべきではない.
+__注意:__ 上の計算では最初に, 回帰係数 $\alpha,\beta$ の函数 $f(\alpha, \beta)$ (平均二乗残差)が $2n$ 個の数値で構成されているデータ $(x_1,y_1),\ldots,(x_n,y_n)$ を要約している標本平均と分散共分散の5つの数値 $\bar{x}, \bar{y}, s_x^2, s_y^2, s_{xy}^2$ だけで記述されることを示した. 特に __回帰直線と最小平均二乗残差の値はそれらの5つの要約値だけで決まってしまう.__ データのそれら5つの値への要約が不適切な場合には最小二乗法を使うべきではない.
 
 __注意:__ 以上とはまったく別の __線形代数__ における __直交射影__ で最小二乗法を理解することもできる.  最小二乗法は数学的には直交射影の理論そのものだと言ってよい.  この点に関する詳しい解説は別の機会に行いたい.  以上では最も素朴な最小二乗法の扱い方をした.
 
@@ -2744,7 +2752,7 @@ $$
 #### コンピュータによる最小二乗法の計算例
 
 
-[WolframAlpha](https://www.wolframalpha.com/)では次のように入力すれば最小二乗法を実行できる.
+[WolframAlpha](https://www.wolframalpha.com/)では次のように入力すれば単回帰を実行できる.
 
 \[[実行](https://www.wolframalpha.com/input?i=linear+fit+%2811%2C22%29%2C+%2812%2C20%29%2C+%2813%2C25%29%2C+%2814%2C+19%29%2C+%2815%2C+24%29%2C+%2816%2C+29%29)\] → 7.35238 + 1.17143 x
 ```
@@ -2908,7 +2916,7 @@ o = optimize(((α, β, t),) -> f(x, y, α, β, t), zeros(3), LBFGS())
 plot_ols(x, y, α̂, β̂)
 ```
 
-### 是非とも解いてもらいたい問題: 最小二乗法の計算例 (Anscombe's quartet)
+### 必修問題: 最小二乗法の計算例 (Anscombe's quartet)
 
 以下に示した $(x_1, y_1),\ldots,(x_n, y_n)$ 型の4つのデータのそれぞれについて, 
 
@@ -2917,7 +2925,7 @@ plot_ols(x, y, α̂, β̂)
 * $x_i$ 達の不偏分散 $s_x^2$,
 * $y_i$ 達の不偏分散 $s_y^2$,
 * $x_i$ 達と $y_i$ 達の不偏共分散 $s_{xy}$,
-* 回帰直線 $y = \hat\alpha + \hat\beta x$ の係数 $\hat\alpha$, $\hat\beta$ 
+* 回帰直線 $y = \hat\alpha + \hat\beta x$ の係数 $\hat\alpha$, $\hat\beta$ と最小平均二乗残差の平方根 $\hat\sigma$
 
 を求めよ.  それぞれについて小数点以下第1桁まで求めよ.
 
@@ -2927,6 +2935,25 @@ plot_ols(x, y, α̂, β̂)
 4. (8, 6.58), (8, 5.76), (8, 7.71), (8, 8.84), (8, 8.47), (8, 7.04), (8, 5.25), (19, 12.5), (8, 5.56), (8, 7.91), (8, 6.89)
 
 __注意:__ 実はこれは有名な[アンスコムの例](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%82%B9%E3%82%B3%E3%83%A0%E3%81%AE%E4%BE%8B)である.  この例の教訓はデータの散布図をプロットすることの重要性である.  回帰直線を求める統計分析は2,3,4のデータについては適切ではない.
+
+
+__コピー＆ペースト用:__ Anscombe's quartet
+
+データ1
+* x: 10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5
+* y: 8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68
+
+データ2
+* x: 10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5
+* y: 9.14, 8.14, 8.74, 8.77, 9.26, 8.1, 6.13, 3.1, 9.13, 7.26, 4.74
+
+データ3
+* x: 10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5
+* y: 7.46, 6.77, 12.74, 7.11, 7.81, 8.84, 6.08, 5.39, 8.15, 6.42, 5.73
+
+データ4
+* x: 8, 8, 8, 8, 8, 8, 8, 19, 8, 8, 8
+* y: 6.58, 5.76, 7.71, 8.84, 8.47, 7.04, 5.25, 12.5, 5.56, 7.91, 6.89
 
 
 __解答例:__
@@ -2944,7 +2971,8 @@ s_y^2 \approx 4.1, \quad
 s_{xy} \approx 5.5
 \\ &
 \hat\alpha \approx 3.0, \quad
-\hat\beta \approx 0.5
+\hat\beta \approx 0.5, \quad
+\hat\sigma \approx 1.1
 \end{aligned}
 $$
 
@@ -2961,7 +2989,8 @@ s_y^2 \approx 4.1, \quad
 s_{xy} \approx 5.5
 \\ &
 \hat\alpha \approx 3.0, \quad
-\hat\beta \approx 0.5
+\hat\beta \approx 0.5, \quad
+\hat\sigma \approx 1.1
 \end{aligned}
 $$
 
@@ -2978,7 +3007,8 @@ s_y^2 \approx 4.1, \quad
 s_{xy} \approx 5.5
 \\ &
 \hat\alpha \approx 3.0, \quad
-\hat\beta \approx 0.5
+\hat\beta \approx 0.5, \quad
+\hat\sigma \approx 1.1
 \end{aligned}
 $$
 
@@ -2995,7 +3025,8 @@ s_y^2 \approx 4.1, \quad
 s_{xy} \approx 5.5
 \\ &
 \hat\alpha \approx 3.0, \quad
-\hat\beta \approx 0.5
+\hat\beta \approx 0.5, \quad
+\hat\sigma \approx 1.1
 \end{aligned}
 $$
 
@@ -3004,7 +3035,14 @@ __解答終__
 __注意:__ 小数点以下第1桁までの数値は4つのデータについてすべて一致している! データの散布図を描くと, 回帰直線を描くことが適切なのは最初のデータだけで, 残りの3つのデータについては不適切なことがわかる.  グラフは下の方にある.
 
 
-データ1に関するWolframAlphaの使用例: [xの標本平均](https://www.wolframalpha.com/input?i=mean+10%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5&lang=ja), [yの標本平均](https://www.wolframalpha.com/input?i=mean+8.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68), [xの不偏分散](https://www.wolframalpha.com/input?i=var+10%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5), [yの不偏分散](https://www.wolframalpha.com/input?i=var+8.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68), [x,yの不偏共分散](https://www.wolframalpha.com/input?i=covar+%2810%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5%29%2C+%288.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68%29&lang=ja), [回帰直線](https://www.wolframalpha.com/input?i=linear+fit+%2810%2C+8.04%29%2C+%288%2C+6.95%29%2C+%2813%2C+7.58%29%2C+%289%2C+8.81%29%2C+%2811%2C+8.33%29%2C+%2814%2C+9.96%29%2C+%286%2C+7.24%29%2C+%284%2C+4.26%29%2C+%2812%2C+10.84%29%2C+%287%2C+4.82%29%2C+%285%2C+5.68%29&lang=ja)
+#### WaolframAlphaでAnscombeの例1を扱う方法
+
+データ1に関するWolframAlphaの使用例: [xの標本平均](https://www.wolframalpha.com/input?i=mean+10%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5&lang=ja), [yの標本平均](https://www.wolframalpha.com/input?i=mean+8.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68), [xの不偏分散](https://www.wolframalpha.com/input?i=var+10%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5), [yの不偏分散](https://www.wolframalpha.com/input?i=var+8.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68), [x,yの不偏共分散](https://www.wolframalpha.com/input?i=covar+%2810%2C+8%2C+13%2C+9%2C+11%2C+14%2C+6%2C+4%2C+12%2C+7%2C+5%29%2C+%288.04%2C+6.95%2C+7.58%2C+8.81%2C+8.33%2C+9.96%2C+7.24%2C+4.26%2C+10.84%2C+4.82%2C+5.68%29&lang=ja), [回帰直線](https://www.wolframalpha.com/input?i=linear+fit+%2810%2C+8.04%29%2C+%288%2C+6.95%29%2C+%2813%2C+7.58%29%2C+%289%2C+8.81%29%2C+%2811%2C+8.33%29%2C+%2814%2C+9.96%29%2C+%286%2C+7.24%29%2C+%284%2C+4.26%29%2C+%2812%2C+10.84%29%2C+%287%2C+4.82%29%2C+%285%2C+5.68%29&lang=ja), [最小平均二乗残差の平方根](https://www.wolframalpha.com/input?i=sqrt%28%28n-1%29%2Fn*%28a*c+-+b%5E2%29%2Fa%29+where+n%3D11%2C+a%3D11%2C+b%3D5.5%2C+c%3D4.127)
+
+
+#### Julia言語でAnscombeの例を扱う方法
+
+RDatatsets.jl パッケージを入れればその中にAnscombeの例が入っている.
 
 ```julia
 using RDatasets
@@ -3038,7 +3076,8 @@ function solve_anscombe(x, y;
     @show sxy = cov(x, y)
     β̂ = sxy/sx²
     α̂ = ȳ - β̂*x̄
-    @show α̂ β̂
+    σ̂ = √((n - 1)/n*(sx²*sy² - sxy^2)/sx²)
+    @show α̂ β̂ σ̂
     
     plot_ols(x, y, α̂, β̂; title, xlim, ylim, size)
 end
@@ -3112,7 +3151,7 @@ galton = [
 ]
 # 上の行列の縦軸は親の身長であり, 行列の下ほど身長は小さくなる.
 # 各種函数の仕様に合わせるために, 行列の縦方向を逆転させて扱う.
-galton = galton[reverse(axes(galton, 1)), :]
+galton = reverse(galton; dims=1)
 # 行列の横軸が子の身長(単位はインチ)
 galton_x = 61.2:74.2
 # 行列の縦軸が親の身長(単位はインチ)
@@ -3126,6 +3165,7 @@ heatmap(galton_x, galton_y, galton; size=(320, 220))
 
 ```julia
 # 適当にランダマイズしてデータを作成
+Random.seed!(4649373)
 data = hcat(([x-0.5+rand(), y-0.5+rand()] 
         for (i, y) in enumerate(galton_y) 
             for (j, x) in enumerate(galton_x) 
@@ -3852,12 +3892,12 @@ $$
 
 さらに, $X_i$ の期待値と分散をそれぞれ $\mu$, $\sigma^2$ と書くことにする.
 
-このとき, 以下が成立することはすでに示している:
+このとき, 以下が成立することはすでに示した:
 
 $$
 E[\bar{X}] = \mu, \quad
-\op{var}(X) = E[(\bar{X} - \mu)^2] = \frac{\sigma^2}{n}, \quad
-E[S_X^2] = \sigma^2.
+E[S_X^2] = \sigma^2, \quad
+\op{var}(X) = E[(\bar{X} - \mu)^2] = \frac{\sigma^2}{n}.
 $$
 
 さらに以下では, $X_i$ の __歪度__ (わいど, skewness)と __尖度__ (せんど, kurtosis)をそれぞて $\bk_3 = \bk_3(X_i)$, $\bk_4 = \bk_4(X_i)$ と書くことにする:
@@ -3866,14 +3906,14 @@ $$
 \bk_4 = E\left[\left(\frac{X_i-\mu}{\sigma}\right)^4\right] - 3.
 $$
 
-標本平均と不偏分散の共分散と分散は $X_i$ の歪度 $\bk_3$ と尖度 $\bk_4$ を使って次のように書ける:
+このとき, 標本平均と不偏分散の共分散と不偏分散の分散は $X_i$ の歪度 $\bk_3$ と尖度 $\bk_4$ を使って次のように書ける:
 
 $$
 \op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3, \quad
 \op{var}(S_X^2) = \frac{\bk_4}{n} + \frac{2}{n-1}.
 $$
 
-以下の節ではこの結果を証明する.
+以下ではこの結果を証明する.
 
 
 ### 期待値 $0$, 分散 $1$ の場合への帰着
@@ -4120,11 +4160,11 @@ $$
 $$
 \op{var}(S_X^2) - E\left[\left(\frac{n-1}{n}S_X^2 - \sigma^2\right)^2\right] =
 \frac{\sigma^4}{n^2}\left(
-\frac{2n-1}{n}\bk_4 + \frac{3n-1}{n-1}
+\left(2 - \frac{1}{n}\right)\bk_4 + 3 + \frac{2}{n-1}
 \right).
 $$
 
-これより, $\bk_4 > -3/2$ ならば $n$ を十分大きくすれば, 不偏分散の平均二乗誤差の方が不偏補正されていない標本平均の平均二乗誤差よりも大きくなることがわかる.
+これより, $\bk_4 \ge -3/2$ ならば不偏分散の平均二乗誤差の方が不偏補正されていない標本平均の平均二乗誤差よりも大きくなることがわかる.
 
 __注意:__ $\bk_4 \ge \bk_3^2 - 2 \ge -2$ なので多くの場合に $\bk_4 > -3/2$ となる. 例えば正規分布では $\bk_4 = 0$ なので, 
 
@@ -4166,26 +4206,234 @@ $$
 \frac{2n-1}{n^2}\sigma^4\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right) - \frac{\sigma^4}{n^2}
 \\ & \quad =
 \frac{\sigma^4}{n^2}\left(\frac{2n-1}{n}\bk_4 + \frac{4n-2}{n-1} - 1\right) =
-\frac{\sigma^4}{n^2}\left(\frac{2n-1}{n}\bk_4 + \frac{3n-1}{n-1}\right).
+\frac{\sigma^4}{n^2}\left(\frac{2n-1}{n}\bk_4 + \frac{3n-1}{n-1}\right)
+\\ & \quad =
+\frac{\sigma^4}{n^2}\left(
+\left(2 - \frac{1}{n}\right)\bk_4 + 3 + \frac{2}{n-1}
+\right).
 \end{aligned}
 $$
 
 __解答終__
 
 ```julia
-μ, σ = 1, 2
-n, L = 10, 10^6
-X = rand(Normal(μ, σ), n, L)
-S² = var.(eachcol(X))
-V² = var.(eachcol(X); corrected=false)
-var_S² = mean((s² - σ^2)^2 for s² in S²)
-MSE_V² = mean((v² - σ^2)^2 for v² in V²)
-theoretical_val = σ^4/n^2 * (3n-1)/(n-1)
-@show theoretical_val
-@show var_S² - MSE_V²;
+function print_varS²_minus_MSEV²(dist, n; L=10^6)
+    @show dist
+    @show μ = mean(dist)
+    @show σ = std(dist)
+    @show κ = kurtosis(dist)
+    @show n
+    @show L = 10^6
+    X = rand(dist, n, L)
+    S² = var.(eachcol(X))
+    V² = var.(eachcol(X); corrected=false)
+    var_S² = mean((s² - σ^2)^2 for s² in S²)
+    MSE_V² = mean((v² - σ^2)^2 for v² in V²)
+    theoretical_val = σ^4/n^2*((2n-1)/n * κ + (3n-1)/(n-1))
+    theoretical_value = theoretical_val
+    @show theoretical_val
+    @show var_S² - MSE_V²
+    @show theoretical_value / σ^4
+    @show (var_S² - MSE_V²) / σ^4
+    nothing
+end
+```
+
+```julia
+print_varS²_minus_MSEV²(Normal(1, 0.5), 5)
 ```
 
 正規分布の場合に確かに理論通りに不偏分散の平均二乗誤差の方が非補正標本分散の平均二乗誤差よりも大きくなっている.
+
+```julia
+print_varS²_minus_MSEV²(Bernoulli(0.5), 5)
+```
+
+これが尖度が最小の場合. 不偏分散の平均二乗誤差の方を確かに小さくできているが, ほんの少しだけである.
+
+
+## 標本分布における標本平均と不偏分散の同時分布の視覚化
+
+以下の節においては, $X_1,\ldots,X_n$ は独立同分布な確率変数達であるとし, それらの標本分散と不偏分散を以下のように書くことにする:
+
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2.
+$$
+
+さらに, 各 $X_i$ の期待値と分散と歪度と尖度をそれぞれ $\mu$, $\sigma^2$, $\bk_3$, $\bk_4$ と書くことにする. このとき, 標本平均 $\bar{X}$ と不偏分散 $S^2$ の同時分布の期待値と分散・共分散は以下のようになるのであった:
+
+$$
+\begin{aligned}
+&
+E[\bar{X}] = \mu, \quad
+E[S^2] = \sigma^2,
+\\ &
+\op{var}(\bar{X}) = \frac{\sigma^2}{n}, \quad
+\op{cov}(\bar{X}, S^2) = \sigma^3\frac{\bk_3}{n}, \quad
+\op{var}(S^2) = \sigma^4\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right).
+\end{aligned}
+$$
+
+これを, 期待値ベクトルと分散共分散行列の形式で書くと, 
+
+$$
+\begin{aligned}
+&
+\begin{bmatrix}
+E[\bar{X}] \\
+E[S^2] \\
+\end{bmatrix} =
+\begin{bmatrix}
+\mu \\
+\sigma^2 \\
+\end{bmatrix},
+\\ &
+\begin{bmatrix}
+\op{var}(\bar{X}) & \op{cov}(\bar{X}, S^2) \\
+\op{cov}(S^2, \bar{X}) & \op{var}(S^2)     \\
+\end{bmatrix} =
+\frac{1}{n}
+\begin{bmatrix}
+\sigma^2 & \sigma^3\bk_3 \\
+\sigma^3\bk_3 & \sigma^4\left(\bk_4 + \frac{2}{1-1/n}\right)
+\end{bmatrix}
+\\ & \qquad =
+\frac{1}{n}
+\begin{bmatrix}
+\sigma & 0 \\
+0 & \sigma^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & \bk_3 \\
+\bk_3 & \bk_4 + \frac{2}{1-1/n}
+\end{bmatrix}
+\begin{bmatrix}
+\sigma & 0 \\
+0 & \sigma^2 \\
+\end{bmatrix}.
+\end{aligned}
+$$
+
+以下では $X_i$ の従う分布が色々な場合に $\bar{X}, S^2$ の同時分布を視覚化してみる. その結果を見ると, 一般に以下が成立していそうなことがわかる:
+
+* 標本平均 $\bar{X}$ と不偏分散 $S^2$ の組 $(\bar{X}, S^2)$ の平面上での分布は, $n$ が十分に大きければ $(\mu, \sigma^2)$ を中心とする楕円状の小さな領域内に集中する分布(実は多変量正規分布で近似される)になり(中心極限定理!), $n\to\infty$ で $(\mu, \sigma^2)$ に集中するようになる(大数の法則!).
+
+* もとの分布が対称ならば $(\bar{X}, S^2)$ の分布も左右対称になり, もとの分布が非対称ならば $(\bar{X}, S^2)$ の分布も左右非対称になり, $n$ が大きなとき斜めに傾いた楕円状の領域内に集中する分布になる.
+
+```julia
+myskewness(dist) = skewness(dist)
+myskewness(dist::MixtureModel) = _myskewness(dist)
+function _myskewness(dist)
+    μ, σ = mean(dist), std(dist)
+    quadgk(x -> ((x-μ)/σ)^3*pdf(dist, x), extrema(dist)...)[1]
+end
+
+mykurtosis(dist) = kurtosis(dist)
+mykurtosis(dist::MixtureModel) = _mykurtosis(dist)
+function _mykurtosis(dist)
+    μ, σ = mean(dist), std(dist)
+    quadgk(x -> ((x-μ)/σ)^4*pdf(dist, x), extrema(dist)...)[1] - 3
+end
+```
+
+```julia
+skewness(Gamma(2, 3)), _myskewness(Gamma(2,3))
+```
+
+```julia
+kurtosis(Gamma(2, 3)), _mykurtosis(Gamma(2,3))
+```
+
+```julia
+function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
+        sk = myskewness(dist), ku = mykurtosis(dist),
+        size = (400, 350), legend = :topleft, alpha = 0.4, kwargs...)
+    μ, σ = mean(dist), std(dist)
+    Σ = (1/n)*[σ^2 σ^3*sk; σ^3*sk σ^4*(ku+2/(1-1/n))]
+    A = inv(Σ)
+    f(x, y) = A[1,1]*(x-μ)^2 + 2A[1,2]*(x-μ)*(y-σ^2) + A[2,2]*(y-σ^2)^2
+    h = quantile(Chisq(2), 0.95)
+    X = rand(dist, n, L)
+    X̄ = mean.(eachcol(X))
+    S² = var.(eachcol(X))
+    scatter(X̄, S²; ms=1.5, msw=0, alpha, label="")
+    scatter!([μ], [σ^2]; msc=:auto, label="(μ, σ²)")
+    x = range(extrema(X̄)..., 200)
+    y = range(extrema(S²)..., 200)
+    contour!(x, y, f; label="", levels=[h], c=2, colorbar=false)
+    plot!(; xlabel="x̄", ylabel="s²")
+    plot!(; size, legend, kwargs...)
+end
+
+function plot_X̄_and_SX²_2x2(dist; ns = (10, 40, 160, 640),
+        size=(800, 700), kwargs...)
+    μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
+    println(dist)
+    @show μ σ²
+    println("skewness = ", sk)
+    println("kurtosis = ", ku)
+    
+    PP = []
+    for n in ns
+        P = plot_X̄_and_SX²(dist; n, sk, ku, kwargs..., title="n = $n")
+        push!(PP, P)
+    end
+    plot(PP...; size, layout=(2,2),
+        titlefontsize=12, guidefontsize=10, tickfontsize=8)
+end
+```
+
+### 正規分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Normal(); xlim=(-1.1, 1.1), ylim=(-0.1, 3.0))
+```
+
+### 一様分布の標本分布における$\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Uniform(); xlim=(0.2, 0.8), ylim=(0.01, 0.18))
+```
+
+### 単峰型のガンマ分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Gamma(3, 4); xlim=(5, 20), ylim=(0, 200))
+```
+
+### 指数分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Exponential(); xlim=(0.2, 2.3), ylim=(-0.2, 7))
+```
+
+### 非対称なベータ分布の標本分布における $\bar{X}$, $S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Beta(0.1, 0.9); xlim=(-0.02, 0.4), ylim=(-0.05, 0.2))
+```
+
+### 非対称な2つ山の混合正規分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(MixtureModel([Normal(), Normal(20)], [0.95, 0.05]);
+    xlim=(-1, 8), ylim=(-2, 120))
+```
+
+### 非対称なBernoulli分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(Bernoulli(0.1); xlim=(-0.02, 0.6), ylim=(-0.01, 0.3))
+```
+
+### 対数正規分布の標本分布における $\bar{X}, S^2$ の同時分布
+
+```julia
+plot_X̄_and_SX²_2x2(LogNormal(); xlim=(-0.2, 5), ylim=(-2, 50))
+```
+
+対数正規分布では $(\bar{X}, S^2)$ の分布の正規分布近似の精度がよくするためには相当に $n$ を大きくする必要がある.
 
 
 ## 正規分布の標本分布の場合
