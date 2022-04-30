@@ -3909,8 +3909,8 @@ $$
 このとき, 標本平均と不偏分散の共分散と不偏分散の分散は $X_i$ の歪度 $\bk_3$ と尖度 $\bk_4$ を使って次のように書ける:
 
 $$
-\op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3, \quad
-\op{var}(S_X^2) = \frac{\bk_4}{n} + \frac{2}{n-1}.
+\op{cov}(\bar{X}, S_X^2) = \sigma^3\frac{\bk_3}{n}, \quad
+\op{var}(S_X^2) = \sigma^4\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right).
 $$
 
 以下ではこの結果を証明する.
@@ -4005,7 +4005,7 @@ $$
 $\mu=0$, $\sigma=1$ と仮定しない一般の場合には, これが $\sigma^3$ 倍されて,
 
 $$
-\op{cov}(\bar{X}, S_X^2) = \frac{\bk_3}{n}\sigma^3.
+\op{cov}(\bar{X}, S_X^2) = \sigma^3\frac{\bk_3}{n}.
 $$
 
 __証明終__
