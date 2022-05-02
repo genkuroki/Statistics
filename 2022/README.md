@@ -69,6 +69,11 @@ __定義された分布__
 
 ### 04 標本分布について
 
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/04%20Distribution%20of%20samples.pdf)\]
+
 __定義された分布__
 
 * 分布達 D₁,…,Dₙ の __積__: D₁×⋯×Dₙ
