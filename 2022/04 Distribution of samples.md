@@ -1938,7 +1938,7 @@ $$
 __注意:__ この結果はことなる分散を持つ複数の推定量をうまくまとめることによって, 分散がより小さな推定量を作れることを意味している. これは同一の量に関する異なる研究の結果をまとめるメタアナリシスの出発点になる.
 
 
-__解答例:__ まず $\hat\mu$ の分散の式を整理しよう:
+__解答例1:__ まず $\hat\mu$ の分散の式を整理しよう:
 
 $$
 \op{var}(\hat\mu) =
@@ -1962,6 +1962,57 @@ w_i = \frac{1/\sigma_i^2}{\sum_{i=1}^n 1/\sigma_i^2}, \quad
 \op{var}(\hat\mu) = \sum_{i=1}^n w_i^2\sigma_i^2 =
 \frac{1}{\sum_{i=1}^n 1/\sigma_i^2} <
 \frac{1}{1/\sigma_i^2} = \sigma_i^2.
+$$
+
+__解答終__
+
+
+答えが分かっているので, 以下のように平方完成の方法によって偏微分を使わずにも証明できる.
+
+__解答例2:__ まず, 
+
+$$
+A = \sum_{i=1}^n 1/\sigma_i^2
+$$
+
+とおいて, $\sum_{i=1}^n w_i=1$ の仮定のもとで, $\hat\mu$ の分散の式を整理しよう:
+
+$$
+\begin{aligned}
+\op{var}(\hat\mu) &=
+E\left[\left(\sum_{i=1}^n w_i X_i - \mu\right)^2\right] =
+E\left[\left(\sum_{i=1}^n w_i (X_i - \mu)\right)^2\right]
+\\ &=
+E\left[
+\sum_{i=1}^n w_i^2 (X_i - \mu)^2 +
+\sum_{i\ne j} w_i w_j (X_i - \mu)(X_j - \mu)
+\right]
+\\ &=
+\sum_{i=1}^n w_i^2 E[(X_i - \mu)^2] +
+\sum_{i\ne j} w_i w_j E[(X_i - \mu)(X_j - \mu)]
+\\ &=
+\sum_{i=1}^n w_i^2 E[(X_i - \mu)^2] =
+\sum_{i=1}^n w_i^2\sigma_i^2 =
+\sum_{i=1}^n \sigma_i^2
+\left(w_i - \frac{1/\sigma_i^2}{A} + \frac{1/\sigma_i^2}{A}\right)^2
+\\ &=
+\sum_{i=1}^n \sigma_i^2
+\left(
+\left(w_i - \frac{1/\sigma_i^2}{A}\right)^2 -
+2\frac{1/\sigma_i^2}{A}\left(w_i - \frac{1/\sigma_i^2}{A}\right) +
+\frac{(1/\sigma_i^2)^2}{A^2}
+\right)
+\\ &=
+\sum_{i=1}^n \sigma_i^2 \left(w_i - \frac{1/\sigma_i^2}{A}\right)^2 + \frac{1}{A}.
+\end{aligned}
+$$
+
+2つめの等号で $\sum_{i=1}^n w_i=1$ であることを使い, 5つめの等号で $X_i$ 達が無相関であること($i\ne j$ ならば $E[(X_i - \mu)(X_j - \mu)]$)を使い, 最後の等号で $\sum_{i=1}^n w_i=1$ と $\sum_{i=1}^n 1/\sigma_i^2 = A$ を使った. 
+
+このとき, $\sum_{i=1}^n (1/\sigma_i^2)/A = 1$ に注意すれば, $\op{var}(\hat\mu)$ は $\sum_{i=1}^n w_i=1$ という条件のもとで $w_i = (1/\sigma_i^2)/A$ のときに最小になり, 最小値は $1/A$ になることがわかる. そして, さらに,
+
+$$
+\frac{1}{A} = \frac{1}{\sum_{i=1}^n 1/\sigma_i^2} < \frac{1}{1/\sigma_i^2} = \sigma_i^2. 
 $$
 
 __解答終__
