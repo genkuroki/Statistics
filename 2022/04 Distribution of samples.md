@@ -4513,51 +4513,6 @@ function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
         size = (400, 350), legend = :topleft, alpha = 0.4, kwargs...)
     μ, σ = mean(dist), std(dist)
     Σ = (1/n)*[σ^2 σ^3*sk; σ^3*sk σ^4*(ku+2/(1-1/n))]
-    A = inv(Σ)
-    f(x, y) = A[1,1]*(x-μ)^2 + 2A[1,2]*(x-μ)*(y-σ^2) + A[2,2]*(y-σ^2)^2
-    h = quantile(Chisq(2), 0.95)
-    
-    X̄ = Vector{Float64}(undef, L)
-    S² = similar(X̄)
-    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:Threads.nthreads()]
-    Threads.@threads for i in 1:L
-        X = rand!(dist, tmp[Threads.threadid()])
-        X̄[i] = mean(X)
-        S²[i] = var(X)
-    end
-    scatter(X̄, S²; ms=1.5, msw=0, alpha, label="")
-    scatter!([μ], [σ^2]; msc=:auto, label="(μ, σ²)")
-    x = range(extrema(X̄)..., 200)
-    y = range(extrema(S²)..., 200)
-    contour!(x, y, f; label="", levels=[h], c=2, colorbar=false)
-    plot!(; xlabel="x̄", ylabel="s²")
-    plot!(; size, legend, kwargs...)
-end
-
-function plot_X̄_and_SX²_2x2(dist; ns = (10, 40, 160, 640),
-        size=(800, 800), kwargs...)
-    μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
-    println(dist)
-    @show μ σ²
-    println("skewness = ", sk)
-    println("kurtosis = ", ku)
-    
-    PP = []
-    for n in ns
-        P = plot_X̄_and_SX²(dist; n, sk, ku, kwargs..., title="n = $n")
-        push!(PP, P)
-    end
-    plot(PP...; size, layout=(2,2),
-        titlefontsize=12, guidefontsize=10, tickfontsize=8)
-end
-```
-
-```julia
-function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
-        sk = myskewness(dist), ku = mykurtosis(dist),
-        size = (400, 350), legend = :topleft, alpha = 0.4, kwargs...)
-    μ, σ = mean(dist), std(dist)
-    Σ = (1/n)*[σ^2 σ^3*sk; σ^3*sk σ^4*(ku+2/(1-1/n))]
     λ, U = eigen(Σ)
     h = quantile(Chisq(2), 0.95)
     f(t) = μ + √(λ[1]*h)*cos(t)*U[1,1] + √(λ[2]*h)*sin(t)*U[1,2]
