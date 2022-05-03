@@ -2018,6 +2018,11 @@ $$
 __解答終__
 
 
+以下の図も参照:
+
+![meta-analysis.jpg](attachment:meta-analysis.jpg)
+
+
 ### 問題: 二項分布と負の二項分布の平均と分散のBernoulli分布と幾何分布の場合への帰着
 
 Bernoulli分布 $\op{Bernoulli}(p)$ の平均と分散がそれぞれ $p$, $p(1-p)$ であることと, 幾何分布 $\op{Geometric}(p)$ の平均と分散がそれぞれ $(1-p)/p$, $(1-p)/p^2$ であることを認めて, 二項分布 $\op{Binomial}(n, p)$ と負の二項分布 $\op{NegativeBinomial}(k, p)$ の平均と分散を平易な計算で求めてみよ. 以下を示せ:
@@ -2034,7 +2039,7 @@ $$
 P(x_1,\ldots,x_n) = P(x_1)\cdots P(x_n), \quad P(x_i) = p^{x_i}(1-p)^{1-x_i} \quad (x_i=1,0)
 $$
 
-とBernoulli分布の確率質量函数 $P(x_i)$ の積で書けるのであった.  この事実はBernoulli分布に従う確率変数 $X_1,\ldots,X_n$ が独立であることを意味する.  そして, Bernoulli試行で生成された $1$ と $0$ からなる長さ $n$ の数列中に含まれる $1$ の個数を意味する確率変数は $K = \sum_{i=1}^n X_i$ と書ける. このことから, 
+とBernoulli分布の確率質量函数 $P(x_i)$ の __積で書ける__ のであった.  この事実はBernoulli分布に従う確率変数達 $X_1,\ldots,X_n$ が独立であることを意味する.  そして, Bernoulli試行で生成された $1$ と $0$ からなる長さ $n$ の数列中に含まれる $1$ の個数を意味する確率変数は $K = \sum_{i=1}^n X_i$ と書ける. このことから, 
 
 $$
 \begin{aligned}
