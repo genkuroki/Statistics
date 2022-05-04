@@ -70,16 +70,16 @@ using SymPy
 # https://github.com/JuliaPy/SymPy.jl/blob/29c5bfd1d10ac53014fa7fef468bc8deccadc2fc/src/types.jl#L87-L105
 
 @eval SymPy function Base.show(io::IO, ::MIME"text/latex", x::SymbolicObject)
-    print(io, as_markdown("\\displaystyle" * sympy.latex(x, mode="plain", fold_short_frac=false)))
+    print(io, as_markdown("\\displaystyle " * sympy.latex(x, mode="plain", fold_short_frac=false)))
 end
 @eval SymPy function Base.show(io::IO, ::MIME"text/latex", x::AbstractArray{Sym})
     function toeqnarray(x::Vector{Sym})
-        a = join(["\\displaystyle" * sympy.latex(x[i]) for i in 1:length(x)], "\\\\")
+        a = join(["\\displaystyle " * sympy.latex(x[i]) for i in 1:length(x)], "\\\\")
         """\\left[ \\begin{array}{r}$a\\end{array} \\right]"""
     end
     function toeqnarray(x::AbstractArray{Sym,2})
         sz = size(x)
-        a = join([join("\\displaystyle" .* map(sympy.latex, x[i,:]), "&") for i in 1:sz[1]], "\\\\")
+        a = join([join("\\displaystyle " .* map(sympy.latex, x[i,:]), "&") for i in 1:sz[1]], "\\\\")
         "\\left[ \\begin{array}{" * repeat("r",sz[2]) * "}" * a * "\\end{array}\\right]"
     end
     print(io, as_markdown(toeqnarray(x)))
@@ -4508,6 +4508,24 @@ kurtosis(Gamma(2, 3)), _mykurtosis(Gamma(2,3))
 ```
 
 ```julia
+function plot_dist(dist; m = 4, xlim = :auto, kwargs...)
+    if xlim isa Symbol || length(xlim) != 2
+        μ, σ = mean(dist), std(dist)
+        a = max(minimum(dist), μ - m*σ)
+        b = min(maximum(dist), μ + m*σ)
+        xmin, xmax = a - 0.1(b - a), b + 0.1(b - a)
+    else
+        xmin, xmax = xlim
+    end
+    if dist isa DiscreteUnivariateDistribution
+        x = range(round(xmin) - 1, round(xmax) + 1, 1000)
+        plot(x, x -> pdf(dist, round(x)); label="", xlim, kwargs...)
+    else
+        x = range(xmin, xmax, 1000)
+        plot(x, x -> pdf(dist, x); label="", xlim, kwargs...)
+    end
+end
+
 function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
         sk = myskewness(dist), ku = mykurtosis(dist),
         size = (400, 350), legend = :topleft, alpha = 0.4, kwargs...)
@@ -4536,13 +4554,18 @@ function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
     plot!(; size, legend, kwargs...)
 end
 
-function plot_X̄_and_SX²_2x2(dist; ns = (10, 40, 160, 640),
-        size=(800, 800), kwargs...)
+function plot_X̄_and_SX²_2x2(dist;
+        m = 4, distxlim = :auto, distylim = :auto,
+        ns = (10, 40, 160, 640), size=(800, 800), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²
     println("skewness = ", sk)
     println("kurtosis = ", ku)
+    flush(stdout)
+    
+    D = plot_dist(dist; m, xlim=distxlim, ylim=distylim, size=(300, 200))
+    display(D)
     
     PP = []
     for n in ns
@@ -4581,7 +4604,8 @@ plot_X̄_and_SX²_2x2(Exponential(); xlim=(0.2, 2.3), ylim=(-0.2, 7))
 ### 非対称なベータ分布の標本分布における $\bar{X}$, $S^2$ の同時分布
 
 ```julia
-plot_X̄_and_SX²_2x2(Beta(0.1, 0.9); xlim=(-0.02, 0.4), ylim=(-0.05, 0.2))
+plot_X̄_and_SX²_2x2(Beta(0.1, 0.9); xlim=(-0.02, 0.4), ylim=(-0.05, 0.2),
+    distxlim=(-0.05, 1.05), distylim=(-0.5, 10))
 ```
 
 ### 非対称な2つ山の混合正規分布の標本分布における $\bar{X}, S^2$ の同時分布
@@ -4600,7 +4624,8 @@ plot_X̄_and_SX²_2x2(Bernoulli(0.5); xlim=(-0.02, 1.02), ylim=(-0.01, 0.30))
 ### 非対称なBernoulli分布の標本分布における $\bar{X}, S^2$ の同時分布
 
 ```julia
-plot_X̄_and_SX²_2x2(Bernoulli(0.1); xlim=(-0.02, 0.6), ylim=(-0.01, 0.3))
+plot_X̄_and_SX²_2x2(Bernoulli(0.1);
+    xlim=(-0.02, 0.6), ylim=(-0.01, 0.3), distxlim=(-1, 2))
 ```
 
 ### Poisson分布の標本分布における $\bar{X}, S^2$ の同時分布
@@ -5201,12 +5226,17 @@ function plot_X̄_S²_T(dist; n = 10, L = 10^6, kwargs...)
 end
 
 function plot_X̄_S²_T_4x3(dist; ns = (10, 40, 160, 640),
-        size=(800, 800), kwargs...)
+        m = 4, distxlim = :auto, distylim = :auto,
+        size = (800, 800), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²
     println("skewness = ", sk)
     println("kurtosis = ", ku)
+    flush(stdout)
+    
+    D = plot_dist(dist; m, xlim=distxlim, ylim=distylim, size=(300, 200))
+    display(D)
     
     PP = []
     for n in ns
@@ -5245,7 +5275,7 @@ plot_X̄_S²_T_4x3(Exponential())
 ### 非対称なベータ分布の標本分布における $T$ の分布
 
 ```julia
-plot_X̄_S²_T_4x3(Beta(0.1, 0.9))
+plot_X̄_S²_T_4x3(Beta(0.1, 0.9); distxlim=(-0.05, 1.05), distylim=(-0.5, 10))
 ```
 
 ### 非対称な2つ山の混合正規分布の標本分布における $T$ の分布
