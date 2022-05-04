@@ -4556,7 +4556,7 @@ end
 
 function plot_X̄_and_SX²_2x2(dist;
         m = 4, distxlim = :auto, distylim = :auto,
-        ns = (10, 40, 160, 640), size=(800, 800), kwargs...)
+        ns = (10, 40, 160, 640), size=(700, 700), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²
@@ -5227,7 +5227,7 @@ end
 
 function plot_X̄_S²_T_4x3(dist; ns = (10, 40, 160, 640),
         m = 4, distxlim = :auto, distylim = :auto,
-        size = (800, 800), kwargs...)
+        size = (800, 750), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²
@@ -5235,7 +5235,7 @@ function plot_X̄_S²_T_4x3(dist; ns = (10, 40, 160, 640),
     println("kurtosis = ", ku)
     flush(stdout)
     
-    D = plot_dist(dist; m, xlim=distxlim, ylim=distylim, size=(300, 200))
+    D = plot_dist(dist; m, xlim=distxlim, ylim=distylim, size=(300, 180))
     display(D)
     
     PP = []
