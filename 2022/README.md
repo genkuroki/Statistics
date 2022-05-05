@@ -76,7 +76,9 @@ __定義された分布__
 
 __サンプルデータ__
 
-* アンスコムの例: \[[csv](https://github.com/genkuroki/Statistics/raw/master/2022/data/amscombe.csv)], \[[transposed version](https://github.com/genkuroki/Statistics/raw/master/2022/data/amscombe_transposed.csv)] 
+* アンスコムの例
+  * [csv file](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe.csv), [raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe.csv)
+  * [transposed version](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe_transposed.csv), [transposed raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe_transposed.csv)
 
 __定義された分布__
 
