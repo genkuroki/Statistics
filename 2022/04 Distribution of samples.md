@@ -896,7 +896,7 @@ function pvalue_sterne_old(dist::DiscreteUnivariateDistribution, x)
 end
 pvalue_sterne_old(n, k, p) = pvalue_sterne_old(Binomial(n, p), k)
 
-### The following implementation efficient.
+### The following implementation is efficient.
 
 _pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
 
