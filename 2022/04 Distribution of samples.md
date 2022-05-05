@@ -2714,7 +2714,7 @@ $$
 を最小化することを __最小二乗法__ と呼び, 最小二乗法で求めた係数 $\alpha, \beta$ の値を __回帰係数__ と呼び, $\hat\alpha, \hat\beta$ と書き, それに対応する一次函数
 
 $$
-y = \hat\alpha + \hat\beta
+y = \hat\alpha + \hat\beta x
 $$ 
 
 を __回帰直線__ (regression line)と呼ぶ.  このとき, $x$ を __説明変数__ や __独立変数__ などと呼び, $y$ を __目的変数__, __従属変数__, __反応変数__ などと呼ぶ.  
@@ -4933,11 +4933,11 @@ __注意:__ 以上の議論では定数因子 $\text{const.}$ の部分は重要
 $$
 \begin{aligned}
 &
-p(\bar{X}|n,\mu,\sigma) = 
+p(\bar{x}|n,\mu,\sigma) = 
 \frac{1}{\sqrt{2\pi\sigma^2/n}}
 \exp\left(-\frac{n(\bar{x} - \mu)^2}{2\sigma^2}\right),
 \\ &
-p(u|n,\mu,\sigma) =
+p(u=s^2|n,\mu,\sigma) =
 \frac{1}{(2\sigma^2/(n-1))^{(n-1)/2}\Gamma((n-1)/2)}
 \exp\left(-\frac{(n-1)u}{2\sigma^2}\right) u^{(n-1)/2-1}.
 \end{aligned}
