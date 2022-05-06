@@ -3471,11 +3471,18 @@ $$
 \end{aligned}
 $$
 
+すなわち, $L\to\infty$ のとき,
+
+$$
+\frac{k + \op{NegativeBinomial}(k, \lambda/L)}{L} \to
+\op{Gamma}(k, 1/\lambda).
+$$
+
 
 ### ベータ分布の極限の復習
 
 $$
-p = \frac{\lambda}{L}, \quad \beta = L
+p = \frac{\lambda}{L}, \quad \beta = \frac{L}{\theta}
 $$
 
 とおいて, $L\to\infty$ とすると,
@@ -3483,63 +3490,99 @@ $$
 $$
 \begin{aligned}
 \frac{p^{\alpha-1}(1-p)^{\beta-1}}{B(\alpha,\beta)}\,dp &=
-\frac{L^\alpha}{L^\alpha B(\alpha, L)}
+\frac{L^\alpha}{\theta^\alpha(L/\theta)^\alpha B(\alpha, L/\theta)}
 \frac{\lambda^{\alpha-1}}{L^{\alpha-1}}
-\left(1 - \frac{\lambda}{L}\right)^{L-1} \frac{d\lambda}{L}
+\left(1 - \frac{\lambda}{L}\right)^{L/\theta-1}
+\frac{d\lambda}{L}
 \\ &=
-\frac{1}{L^\alpha B(\alpha, L)}
-\left(1 - \frac{\lambda}{L}\right)^{L-1} \lambda^{\alpha-1}\,d\lambda
+\frac{1}{\theta^\alpha(L/\theta)^\alpha B(\alpha, L/\theta)}
+\left(1 - \frac{\lambda}{L}\right)^{L/\theta-1} \lambda^{\alpha-1}\,d\lambda
 \\ &\to
-\frac{1}{\Gamma(\alpha)} e^{-\lambda} \lambda^{\alpha-1}\,d\lambda.
+\frac{1}{\theta^\alpha\Gamma(\alpha)} e^{-\lambda/\theta} \lambda^{\alpha-1}\,d\lambda.
 \end{aligned}
+$$
+
+すなわち, $L\to\infty$ のとき,
+
+$$
+L\op{Beta}(\alpha, L/\theta) \to \op{Gamma}(\alpha, \theta).
 $$
 
 
 ### ベータ負の二項分布の連続極限
 
 $$
-m + k = Lt, \quad p = \frac{\lambda}{L}, \quad \beta = L
+k + m = Lt, \quad p = \frac{\lambda}{L}, \quad \beta = \frac{L}{\theta}
 $$
 
-とおく.  直接的に極限を取ると,
+とおく.  このとき,
+
+$$
+\beta + m =
+\frac{L}{\theta} + Lt - k =
+L\left(\frac{1}{\theta} + t\right) - k =
+L\frac{1+\theta t}{\theta} - k
+$$
+
+直接的に極限を取ると,
 
 $$
 \begin{aligned}
 &
-\binom{k+m-1}{m} \frac{B(\alpha+k,\beta+m)}{B(\alpha,\beta)} \,dm =
-\frac{1}{(k+m)B(k,m+1)}\frac{B(\alpha+k,\beta+m)}{B(\alpha,\beta)} \,dm
+\binom{k+m-1}{m} \frac{B(\alpha+k,\beta+m)}{B(\alpha,\beta)} \,dm
 \\ &=
-\frac{(Lt)^{k-1}}{(Lt)^k B(k,m+1)}
-\frac{(L(1+t))^{\alpha+k} B(\alpha+k,L(1+t)-k)}{L^\alpha B(\alpha,L)}
-\frac{L^\alpha}{L^{\alpha+k} (1+t)^{\alpha+k}}
+\frac{1}{(k+m)B(k,m+1)}
+\frac{B(\alpha+k,\beta+m)}{B(\alpha,\beta)}
+\,dm
+\\ &=
+\frac{(Lt)^{k-1}}{(Lt)^k B(k, Lt+1)}
+\frac
+{(L(1+\theta t)/\theta)^{\alpha+k} B(\alpha+k, L(1+\theta t)/\theta - k)}
+{(L/\theta)^\alpha B(\alpha, L/\theta)}
+\frac
+{(L/\theta)^\alpha}
+{(L(1+\theta t)/\theta)^{\alpha+k}}
 L\,dt
 \\ &=
-\frac{(L(1+t))^{\alpha+k} B(\alpha+k,L(1+t)-k)}{(Lt)^k B(k,m+1) L^\alpha B(\alpha,L)}
-\frac{t^{k-1}}{(1+t)^{\alpha+k}}\,dt
+\frac
+{(L(1+\theta t)/\theta)^{\alpha+k} B(\alpha+k, L(1+\theta t)/\theta - k)}
+{(Lt)^k B(k, Lt+1) (L/\theta)^\alpha B(\alpha, L/\theta)}
+\frac{(\theta t)^k}{(1+\theta t)^{k+\alpha}}
+\frac{dt}{t}
 \\ &\to
 \frac{\Gamma(\alpha+k)}{\Gamma(k) \Gamma(\alpha)}
-\frac{t^{k-1}}{(1+t)^{\alpha+k}}\,dt =
+\frac{(\theta t)^k}{(1+\theta t)^{k+\alpha}}
+\frac{dt}{t} =
 \frac{1}{B(k, \alpha)}
-\frac{t^{k-1}}{(1+t)^{k+\alpha}}\,dt.
+\frac{(\theta t)^k}{(1+\theta t)^{k+\alpha}}
+\frac{dt}{t}.
 \end{aligned}
 $$
 
-このように収束先はベータプライム分布 $\op{BetaPrime}(k,\alpha)$ になる.
+すなわち, $L\to\infty$ のとき,
+
+$$
+\frac{k + \op{BetaNegativeBinomial}(k, \alpha, L/\theta)}{L} \to
+\frac{1}{\theta}\op{BetaPrime}(k, \alpha).
+$$
 
 負の二項分布とベータ分布の極限を取った後に積分すると,
 
 $$
 \begin{aligned}
+&
 \int_0^\infty
 \frac{\lambda^k}{\Gamma(k)} e^{-\lambda t}t^{k-1}
-\frac{1}{\Gamma(\alpha)} e^{-\lambda} \lambda^{\alpha-1}\,d\lambda &=
-\frac{t^{k-1}}{\Gamma(k)\Gamma(\alpha)}
-\int_0^\infty e^{-\lambda(1+t)} \lambda^{\alpha+k-1}\,d\lambda
+\frac{1}{\theta^\alpha\Gamma(\alpha)} e^{-\lambda/\theta} \lambda^{\alpha-1}\,d\lambda
 \\ &=
-\frac{t^{k-1}}{\Gamma(k)\Gamma(\alpha)}
-\frac{\Gamma(\alpha+k)}{(1+t)^{\alpha+k}} =
+\frac{t^{k-1}}{\Gamma(k)\theta^\alpha\Gamma(\alpha)}
+\int_0^\infty e^{-\lambda(1+\theta t)/\theta} \lambda^{\alpha+k-1}\,d\lambda
+\\ &=
+\frac{t^{k-1}}{\Gamma(k)\theta^\alpha\Gamma(\alpha)}
+\frac{\theta^{\alpha+k}\Gamma(\alpha+k)}{(1+\theta t)^{\alpha+k}} =
 \frac{1}{B(k, \alpha)}
-\frac{t^{k-1}}{(1+t)^{k+\alpha}}.
+\frac{(\theta t)^k}{(1+\theta t)^{k+\alpha}}
+\frac{dt}{t}.
 \end{aligned}
 $$
 
