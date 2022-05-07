@@ -66,6 +66,8 @@ __定義された分布__
 * __負の二項分布__ (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
 * __ベータ二項分布__: BetaBinomial(n, α, β)
 * __超幾何分布__: Hypergeometric(s, f, n)
+* __ベータ負の二項分布__: NegativeBetaBinomial(n, α, β)
+* 試行回数 $n$ の__Pólyaの壺の確率分布__: Pólya(n,\alpha,\beta)
 
 ### 04 標本分布について
 
