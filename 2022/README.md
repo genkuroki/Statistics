@@ -91,6 +91,19 @@ __定義された分布__
 
 ### 05 中心極限定理について
 
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/05%20Central%20limit%20theorem.pdf)\]
+
+<!--
+__演習用サンプル__
+
+__定義された分布__
+-->
+
+### 06 条件付き確率分布, 尤度, 推定, 記述統計
+
 * [Jupyter notebook]()
 \[[nbviewer]()\]
 * [pdf]()
