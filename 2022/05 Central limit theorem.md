@@ -40,7 +40,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合-(Cauchy分布)" data-toc-modified-id="大数の法則が成立しない場合-(Cauchy分布)-1.6.4"><span class="toc-item-num">1.6.4&nbsp;&nbsp;</span>大数の法則が成立しない場合 (Cauchy分布)</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li><li><span><a href="#問題:-二項分布の中心極限定理を使った簡単な計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った簡単な計算問題-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った簡単な計算問題</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li><li><span><a href="#問題:-デルタ法-(実は単なる一次近似)" data-toc-modified-id="問題:-デルタ法-(実は単なる一次近似)-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: デルタ法 (実は単なる一次近似)</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合-(Cauchy分布)" data-toc-modified-id="大数の法則が成立しない場合-(Cauchy分布)-1.6.4"><span class="toc-item-num">1.6.4&nbsp;&nbsp;</span>大数の法則が成立しない場合 (Cauchy分布)</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li><li><span><a href="#問題:-二項分布の中心極限定理を使った簡単な計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った簡単な計算問題-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った簡単な計算問題</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li></ul></li><li><span><a href="#デルタ法" data-toc-modified-id="デルタ法-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>デルタ法</a></span><ul class="toc-item"><li><span><a href="#1次のデルタ法と2次のデルタ法" data-toc-modified-id="1次のデルタ法と2次のデルタ法-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>1次のデルタ法と2次のデルタ法</a></span></li><li><span><a href="#おまけ:-2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式" data-toc-modified-id="おまけ:-2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>おまけ: 2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用" data-toc-modified-id="問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法の正規分布近似への応用" data-toc-modified-id="問題:-1次のデルタ法の正規分布近似への応用-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 1次のデルタ法の正規分布近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法による分布の逆数の近似" data-toc-modified-id="問題:-1次のデルタ法による分布の逆数の近似-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 1次のデルタ法による分布の逆数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の逆数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の逆数の近似-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の逆数の近似</a></span></li><li><span><a href="#問題:-デルタ法による分布の対数の近似" data-toc-modified-id="問題:-デルタ法による分布の対数の近似-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: デルタ法による分布の対数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の対数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の対数の近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の対数の近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似" data-toc-modified-id="問題:-ベータ分布の正規分布近似-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似の直接的証明" data-toc-modified-id="問題:-ベータ分布の正規分布近似の直接的証明-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似の直接的証明</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -1703,7 +1703,621 @@ plot_central_limit_theorem(LogNormal(), 40; bin=range(-3, 9, 100))
 plot_central_limit_theorem(LogNormal(), 160; bin=range(-3, 9, 100))
 ```
 
-### 問題: デルタ法 (実は単なる一次近似)
+## デルタ法
+
+
+### 1次のデルタ法と2次のデルタ法
+
+$X$ は平均 $\mu$, 分散 $\sigma^2$ を持つ確率変数であるとし, 滑らかな函数 $f(x)$ にそれを代入して得られる確率変数 $Y=f(X)$ について考える.
+
+$x$ が $\mu$ に十分近ければ, $y = f(x)$ はその $x = \mu$ での接線
+
+$$
+y = f(\mu) + f'(\mu)(x - \mu)
+$$
+
+で近似される.  $\sigma$ が十分小さければ $X$ の分布の大部分は $\mu$ の近くに集まり, 確率変数 $Y = f(X)$ は確率変数 
+
+$$
+Y_1 = f(\mu) + f'(\mu)(X - \mu)
+$$
+
+で近似される. ゆえに
+
+$$
+\begin{aligned}
+&
+E[Y] \approx E[Y_1] = f(\mu) + f'(\mu)E[X - \mu] = f(\mu),
+\\ &
+\op{var}(Y) \approx \op{var}(Y_1) = f'(\mu)^2\sigma^2
+\end{aligned}
+$$
+
+という近似が使える.  これを __1次のデルタ法__ と呼ぶことにする.
+
+接線よりも精密に2次までの項を加えた
+
+$$
+y = f(\mu) + f'(\mu)(x - \mu) + \frac{f''(\mu)}{2}(x - \mu)^2
+$$
+
+は $y = f(x)$ のさらに良い近似になっている.  ゆえに, 確率変数 $Y=f(X)$ は, 上の $Y_1$ よりも,
+
+$$
+Y_2 = f(\mu) + f'(\mu)(X - \mu) + \frac{f''(\mu)}{2}(X - \mu)^2
+$$
+
+でより良く近似される.  この近似を使えば, $E[Y]\approx E[Y_1] = f(\mu)$ よりも精度が高い
+
+$$
+E[Y] \approx E[Y_2] = f(\mu) + \frac{f''(\mu)}{2}E[(x - \mu)^2] =
+f(\mu) + \frac{f''(\mu)\sigma^2}{2}
+$$
+
+という近似が得られる. これを __2次のデルタ法__ と呼ぶことにする.
+
+
+### おまけ: 2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式
+
+確率変数 $X$ の期待値を $\mu$, 分散を $\sigma^2$, 歪度を $\bk_3=E[((X-\mu)/\sigma)^3]$, 尖度を $\bk_4=E[((X-\mu)/\sigma)^4]-3$ と表し, 与えられた定数 $a,b,c$ について,
+
+$$
+Y_2 = a + b(X-\mu) + c(X-\mu)^2
+$$
+
+とおく. このとき, $E[Y_2]=a+c\sigma^2$ となることは易しい. $Y_2$ の分散は以下のようにして求められる:
+
+$$
+\begin{aligned}
+\op{var}(Y_2) &=
+E[(Y_2 - (a+c\sigma^2))^2] =
+E[(-c\sigma^2 + b(X-\mu) + c(X-\mu)^2)^2]
+\\ &=
+E[c^2\sigma^4 -2bc\sigma^2(X-\mu) + (b^2 - 2c^2\sigma^2)(X-\mu)^2 +
+2bc(X-\mu)^3 + c^2(X-\mu)^4]
+\\ &=
+c^2\sigma^4 + (b^2 - 2c^2\sigma^2)\sigma^2 + 2bc\sigma^3\bk_3 + c^2\sigma^4(\bk_4 + 3)
+\\ &=
+b^2\sigma^2 + 2bc\sigma^3\bk_3 + c^2\sigma^4(\bk_4 + 2)
+\\ &=
+\begin{bmatrix} b\sigma & c\sigma^2 \end{bmatrix}
+\begin{bmatrix}
+1     & \bk_3 \\
+\bk_3 & \bk_4 + 2 \\
+\end{bmatrix}
+\begin{bmatrix}
+b\sigma \\
+c\sigma^2 \\
+\end{bmatrix}.
+\end{aligned}
+$$
+
+これが任意の実数 $b,c$ について $0$ 以上になることから, この式中の $2\times 2$ 行列の行列式は $0$ 以上になることがわかるので, 次の不等式が得られる:
+
+$$
+\bk_4 + 2 \ge \bk_3^2.
+$$
+
+「標本分布について」のノートで標本平均と不偏分散の分散共分散行列の非負性を用いて示した「歪度と尖度に関する不等式」が再び証明された.
+
+
+### 問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用
+
+$X_1,X_2,\ldots,X_n$ を独立同分布な確率変数達であるとし, それらの標本平均と不偏分散を
+
+$$
+\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i, \quad
+S^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \bar{X})^2
+$$
+
+と書き, $X_i$ 達共通の期待値を $\mu$, 共通の分散を $\sigma^2$ と書き, 共通の尖度を $\bk_4 = E[((X_i-\mu)/\sigma)^4]-3$ と書く.  このとき,  $S^2$ の期待値と分散は
+
+$$
+E[S^2] = \sigma^2, \quad
+\op{var}(S^2) = \sigma^4\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right)
+$$
+
+となるのであった.  これに2次のデルタ法を適用すると, $S = \sqrt{S^2}$ の期待値の $\sigma$ からのずれが近似的に
+
+$$
+E[S] \approx
+\sigma - \frac{\op{var}(S^2)}{8\sigma^3} =
+\sigma\left(1 - \frac{1}{8}\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right)\right)
+$$
+
+のように表されることを確認せよ.
+
+__解答例:__ $f(x) = \sqrt{x}$ とおくと,
+
+$$
+f'(x) = \frac{1}{2}x^{-1/2}, \quad
+f''(x) = -\frac{1}{4}x^{-3/2}, \quad
+f(\sigma^2) = \sigma,  \quad
+f''(\sigma^2) = -\frac{1}{4\sigma^3}
+$$
+
+なので, $X = S^2$ に2次のデルタ法を適用すると,
+
+$$
+\begin{aligned}
+E[S] &\approx
+f(\sigma^2) + \frac{f''(\sigma^2)\op{var}(S^2)}{2} 
+\\ &=
+\sigma - \frac{\op{var}(S^2)}{8\sigma^3} =
+\sigma\left(1 - \frac{1}{8}\left(\frac{\bk_4}{n} + \frac{2}{n-1}\right)\right).
+\end{aligned}
+$$
+
+__解答終__
+
+
+__注意:__ 不偏分散 $S^2$ は分散 $\sigma^2$ の不偏推定量だが, その平方根 $S=\sqrt{S^2}$ は標準偏差 $\sigma$ の不偏推定量にならないことが上の問題からわかる. $\op{var}(S^2) \ge 0$ なので $E[S]$ の値は $\sigma$ よりも少し小さくなる.
+
+__注意:__ これを理由に $S=\sqrt{S^2}$ は標準偏差の推定量として不適切であると考えては __いけない__. 推定量が不偏であること自体に特別に優先度が高い価値があるわけではない.  推定法に不偏性の条件を課すと誤差が増えてしまう場合がある.
+
+```julia
+function check_deltamethod_for_S(dist, n; L=10^7)
+    σ = std(dist)
+    ku = mykurtosis(dist)
+    @show dist
+    println("kurtosis = ", ku)
+    @show n
+    
+    S = Vector{Float64}(undef, L)
+    tmp = [Vector{Float64}(undef, n) for _ in 1:Threads.nthreads()]
+    Threads.@threads for i in 1:L
+        X = rand!(dist, tmp[Threads.threadid()])
+        S[i] = std(X)
+    end
+    println("approximation = ", σ*(1 - (1/8)*(ku/n + 2/(n-1))))
+    println("mean(S) =       ", mean(S))
+    println("σ =             ", σ)
+end
+```
+
+```julia
+check_deltamethod_for_S(Normal(2, 3), 10)
+```
+
+```julia
+check_deltamethod_for_S(Uniform(), 10)
+```
+
+```julia
+check_deltamethod_for_S(Gamma(4, 3), 10)
+```
+
+```julia
+check_deltamethod_for_S(Bernoulli(0.4), 10)
+```
+
+```julia
+check_deltamethod_for_S(LogNormal(), 10; L=10^6)
+```
+
+```julia
+check_deltamethod_for_S(LogNormal(), 100; L=10^6)
+```
+
+```julia
+check_deltamethod_for_S(LogNormal(), 1000; L=10^6)
+```
+
+### 問題: 1次のデルタ法の正規分布近似への応用
+
+
+確率変数 $X$ が近似的に正規分布 $\op{Normal}(\mu,\sigma)$ に従っているとき, 滑らかな函数 $f(x)$ に対して, $\sigma$ が十分に小さければ, 確率変数 $Y = f(X)$ は近似的に正規分布 $\op{Normal}(f(\mu), |f'(\mu)|\sigma)$ に従うことを示せ.
+
+__解答例:__ $x$ が $\mu$ に十分近ければ $y = f(x)$ は $x=\mu$ における接線 $y = f(\mu) + f'(\mu)(x - \mu)$ で近似される.  $\sigma$ が十分に小さければ確率変数 $X$ の分布の大部分は $\mu$ の十分近くに留まる. 以上の状況のもとで, 確率変数 $Y = f(X)$ は確率変数 $Y_1 = f(\mu) + f'(\mu)(X - \mu)$ で近似される.  $X$ が正規分布 $\op{Normal}(\mu,\sigma)$ に近似的に従っていると仮定しているので, そのアフィン変換である $Y_1$ も近似的に正規分布に従い, その期待値と分散は
+
+$$
+E[Y_1] = f(\mu) + f'(\mu)E[X-\mu] \approx f(\mu), \quad
+\op{var}(Y_1) = f'(\mu)^2\op{var}(X) \approx f'(\mu)^2\sigma^2
+$$
+
+となる.  以上をまとめると, $Y$ が近似的に正規分布 $\op{Normal}(f(\mu), |f'(\mu)|\sigma)$ に従うことがわかる.
+
+__解答終__
+
+__注意:__ デルタ法を使うと, 正規分布で近似される確率変数から正規分布に近似的に従う別の確率変数を作れる.  中心極限定理による正規分布近似はデルタ法を使えば大幅に拡張される.  以上では一変数函数 $f(x)$ に正規分布に近似的に従う確率変数 $X$ を代入する場合のみを扱ったが, 多変数函数に複数の正規分布に近似的に従う確率変数達を代入する場合も同じように一次近似で考えればよい.
+
+
+### 問題: 1次のデルタ法による分布の逆数の近似
+
+正値の確率変数 $X$ は正規分布 $\op{Normal}(\mu, \sigma)$ に近似的に従っていると仮定し, $\sigma/\mu$ は十分に小さいと仮定する.  このとき, $Y = 1/X$ が正規分布 $\op{Normal}(1/\mu, \sigma/\mu^2)$ に近似的に従うことを示せ.
+
+__解答例:__ $f(x)=1/x$ とおくと,
+
+$$
+f(x) = \frac{1/\mu}{1 + (x/\mu - 1)} =
+\frac{1}{\mu}\left(1 - \left(\frac{x}{\mu}-1\right) + \left(\frac{x}{\mu}-1\right)^2 - \cdots\right)
+$$
+
+なので, $y = f(x)$ は $x/\mu$ が $1$ に近ければ, その $x=\mu$ での接線
+
+$$
+y =
+\frac{1}{\mu}\left(1 - \left(\frac{x}{\mu}-1\right)\right) =
+\frac{1}{\mu} - \frac{x - \mu}{\mu^2}
+$$
+
+で近似される. $\sigma/\mu$ が十分に小さければ $X/\mu$ の分布の大部分は $1$ の近くに留まる. ゆえに $Y=1/X$ の分布は $Y_1 = 1/\mu - (X-\mu)/\mu^2$ の分布で近似される.  このことから, $Y=1/X$ が平均 $1/\mu$, 分散 $\sigma^2/\mu^4$ の正規分布に近似的に従うことがわかる. 
+
+__解答終__
+
+
+### 例: 自由度が大きなχ²分布の逆数の近似
+
+例えば, $X \sim \op{Chisq}(\nu)$ のとき, $E[X]=\nu$, $\op{var}(X)=2\nu$ であり, $\nu$ が大きなとき $X$ は近似的に平均 $\mu=\nu$, 分散 $\sigma^2=2\nu$ の正規分布に近似的に従い,  $\nu$ が大きなとき $\sigma/\mu = \sqrt{2/\nu}$ の値は小さくなる.  ゆえに上の問題の結果より, $1/X$ は平均 $1/\mu = 1/\nu$, 分散 $\sigma^2/\mu^4 = 2/\nu^3$ の正規分布に近似的に従う.  
+
+__注意:__ $X\sim\op{Chisq}(\nu) = \op{Gamma}(\nu/2, 2)$ のとき, $1/X\sim\op{InverseGamma}(\nu/2, 1/2)$ なので, 
+
+$$
+\begin{aligned}
+&
+E[1/X] = \frac{1/2}{\nu/2-1} = \frac{1}{\nu-2} \approx \frac{1}{\nu},
+\\ &
+\op{var}(1/X) = \frac{(1/2)^2}{(\nu/2-1)^2(\nu/2-2)} =
+\frac{2}{(\nu-2)^2(\nu-4)} \approx \frac{2}{\nu^3}.
+\end{aligned}
+$$
+
+```julia
+InverseChisq(ν) = InverseGamma(ν/2, 1/2)
+
+function plot_invchisq(ν)
+    xlim = (max(0, 1/ν - 4√(2/ν^3)), 1/ν + 6√(2/ν^3))
+    plot(InverseChisq(ν), xlim...; label="InverseChisq(ν=$ν)")
+    plot!(Normal(1/ν, √(2/ν^3)); label="Normal(1/ν, √(2/ν³))", ls=:dash)
+    plot!(; legend=:outertop)
+end
+```
+
+```julia
+plot(plot_invchisq.((10, 40))...; size=(800, 250), layout=(1, 2))
+```
+
+```julia
+plot(plot_invchisq.((160, 640))...; size=(800, 250), layout=(1, 2))
+```
+
+### 問題: デルタ法による分布の対数の近似
+
+正値の確率変数 $X$ は正規分布 $\op{Normal}(\mu, \sigma)$ に近似的に従っていると仮定し, $\sigma/\mu$ は十分に小さいと仮定する.  このとき, $Y = \log X$ が正規分布 $\op{Normal}(\log \mu, \sigma/\mu)$ に近似的に従うことを示せ.
+
+__解答例:__ $f(x)=\log x$ とおくと,
+
+$$
+f(x) = \log\nu\left(1 + \left(\frac{x}{\mu}-1\right)\right) =
+\log\mu + \left(\frac{x}{\mu}-1\right) - \frac{1}{2}\left(\frac{x}{\mu}-1\right)^2 + \cdots
+$$
+
+なので, $y = f(x)$ は $x/\mu$ が $1$ に近ければ, その $x=\mu$ での接線
+
+$$
+y = \log\mu + \left(\frac{x}{\mu}-1\right) =
+\log\mu + \frac{x-\mu}{\mu}
+$$
+
+で近似される. $\sigma/\mu$ が十分に小さければ $X/\mu$ の分布の大部分は $1$ の近くに留まる. ゆえに $Y=\log X$ の分布は $Y_1 = \log\mu + (X-\mu)/\mu$ の分布で近似される.  このことから, $Y=\log X$ が平均 $\log\mu$, 分散 $\sigma^2/\mu^2$ の正規分布に近似的に従うことがわかる. 
+
+__解答終__
+
+__注意:__ 正値の確率変数の分布は対数を取ることによって左右の非対称性が緩和されて, 正規分布近似がより正確になる場合がある.  次の例を見よ.
+
+
+### 例: 自由度が大きなχ²分布の対数の近似
+
+例えば, $X \sim \op{Chisq}(\nu)$ のとき, $E[X]=\nu$, $\op{var}(X)=2\nu$ であり, $\nu$ が大きなとき $X$ は近似的に平均 $\mu=\nu$, 分散 $\sigma^2=2\nu$ の正規分布に近似的に従い,  $\nu$ が大きなとき $\sigma/\mu = \sqrt{2/\nu}$ の値は小さくなる.  ゆえに上の問題の結果より, $\log X$ は平均 $\log\mu = \log\nu$, 分散 $\sigma^2/\mu^2 = 2/\nu$ の正規分布に近似的に従う.
+
+この場合には余り大きくない自由度 $\nu$ におけるχ²分布の左右の非対称性が対数を取ることによって緩和され, 正規分布による近似の精度が高まる.
+
+```julia
+pdf_logchisq(ν, y) = pdf(Chisq(ν), exp(y))*exp(y)
+
+function plot_logchisq(ν)
+    xlim = (max(0, ν - 4√(2ν)), ν + 4√(2ν))
+    P0 = plot(Chisq(ν), xlim...; label="Chisq(ν=$ν)")
+    plot!(Normal(ν, √(2ν)); label="Normal(ν, √(2ν))", ls=:dash)
+    plot!(; legend=:outertop)
+    
+    xlim = (log(ν) - 5√(2/ν), log(ν) + 4√(2/ν))
+    P1 = plot(y -> pdf(Chisq(ν), exp(y))*exp(y), xlim...; label="LogChisq(ν=$ν)")
+    plot!(Normal(log(ν), √(2/ν)); label="Normal(log ν, √(2/ν))", ls=:dash)
+    plot!(; legend=:outertop)
+    
+    plot(P0, P1; size=(800, 250))
+end
+```
+
+```julia
+plot_logchisq(10)
+```
+
+```julia
+plot_logchisq(20)
+```
+
+```julia
+plot_logchisq(40)
+```
+
+```julia
+plot_logchisq(80)
+```
+
+### 問題: ベータ分布の正規分布近似
+
+確率変数達 $X,Y$ は独立であり, $X\sim\op{Gamma}(\alpha,1)$, $Y\sim\op{Gamma}(\beta,1)$ を満たしていると仮定する.  このとき $T = X/(X+Y)$ とおくと, $T\sim \op{Beta}(\alpha,\beta)$ となるのであった.  $\alpha$, $\beta$ が大きなとき, $X$, $Y$ の分布はそれぞれ $\op{Normal}(\alpha, \sqrt{\alpha})$, $\op{Normal}(\beta, \sqrt{\beta})$ に近似的に従う.  2変数函数 $f(x,y)=x/(x+y)$ に1次のデルタ法を適用して, $\alpha,\beta$ が大きなとき, $T=X/(X+Y)\sim \op{Beta}(\alpha,\beta)$ が
+
+$$
+\op{Normal}\left(\frac{\alpha}{\alpha+\beta}, \sqrt{\frac{\alpha\beta}{(\alpha+\beta)^3}}\right)
+$$
+
+に近似的に従うことを示せ.
+
+__注意:__ $T\sim \op{Beta}(\alpha,\beta)$ の正確な期待値と分散は次のようになる:
+
+$$
+E[T] = \frac{\alpha}{\alpha+\beta}, \quad
+\op{var}(T) = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+$$
+
+
+__解答例:__ $f(x,y) = x/(x+y) = 1 - y/(x+y)$ を偏微分すると,
+
+$$
+\begin{aligned}
+&
+f_x(x,y) = \frac{y}{(x+y)^2}, \quad
+f_y(x,y) = \frac{-x}{(x+y)^2},
+\\ &
+f_{xx}(x,y) = \frac{-2y}{(x+y)^3}, \quad
+f_{xy}(x,y) = \frac{x-y}{(x+y)^3}, \quad
+f_{yy}(x,y) = \frac{2x}{(x+y)^3}
+\end{aligned}
+$$
+
+なので, 
+
+$$
+\begin{aligned}
+T &= \frac{X}{X+Y} = f(X,Y)
+\\ &=
+f(\alpha, \beta) + f_x(\alpha,\beta)(X-\alpha) + f_y(\alpha,\beta)(Y-\beta)
+\\ &+
+\frac{1}{2}\left(
+f_{xx}(\alpha,\beta)(X-\alpha)^2 +
+2f_{xy}(\alpha,\beta)(X-\alpha)(Y-\beta) +
+f_{yy}(\alpha,\beta)(Y-\beta)^2
+\right) + \cdots
+\\ &=
+\frac{\alpha}{\alpha+\beta} +
+\frac{\beta}{(\alpha+\beta)^2}(X-\alpha) +
+\frac{-\alpha}{(\alpha+\beta)^2}(Y-\beta)
+\\ &+
+\frac{-\beta}{(\alpha+\beta)^3}(X-\alpha)^2 +
+\frac{\alpha-\beta}{(\alpha+\beta)^3}(X-\alpha)(Y-\beta) +
+\frac{\alpha}{(\alpha+\beta)^3}(Y-\beta)^2
++ \cdots.
+\end{aligned}
+$$
+
+ゆえに, $\alpha, \beta$ の両方が大きいならば, 
+
+$$
+\frac{\op{std}(X)}{\alpha+\beta} = \frac{\sqrt{\alpha}}{\alpha+\beta}, \quad
+\frac{\op{std}(Y)}{\alpha+\beta} = \frac{\sqrt{\beta}}{\alpha+\beta}
+$$
+
+がどちらも小さくなり, 1次近似
+
+$$
+T \approx
+\frac{\alpha}{\alpha+\beta} +
+\frac{\beta}{(\alpha+\beta)^2}(X-\alpha) +
+\frac{-\alpha}{(\alpha+\beta)^2}(Y-\beta)
+$$
+
+が有効になり,
+
+$$
+\begin{aligned}
+&
+E[T] \approx \frac{\alpha}{\alpha+\beta},
+\\ &
+\op{var}(T) \approx
+\frac{\beta^4 \op{var}(X)}{(\alpha+\beta)^4} +
+\frac{\alpha^2 \op{var}(Y)}{(\alpha+\beta)^4} =
+\frac{\beta^2\alpha + \alpha^2\beta}{(\alpha+\beta)^4} =
+\frac{\alpha\beta}{(\alpha+\beta)^3}.
+\end{aligned}
+$$
+
+さらにそのとき, $X$, $Y$ の分布は正規分布で近似されるので, $T$ の分布も正規分布で近似される.
+
+__解答終__
+
+```julia
+@vars x y
+expr = x/(x+y)
+[
+    expr
+    diff(expr, x).simplify()
+    diff(expr, y).simplify()
+    ;;
+    diff(expr, x, x).simplify()
+    diff(expr, x, y).simplify()
+    diff(expr, y, y).simplify()
+]
+```
+
+__注意:__ $X_1,X_2,\ldots,X_n$ が独立同分布な確率変数達で $X_i\sim\op{Gamma}(\alpha/n, \theta)$ のとき, それらの和もガンマ分布に $X_1+X_2+\cdots+X_n \sim \op{Gamma}(\alpha, \theta)$ と従う.  この事実と中心極限定理から, $\alpha$ が大きなときのガンマ分布 $\op{Gamma}(\alpha,\theta)$ が正規分布 $\op{Normal}(\alpha, \sqrt{\alpha\theta^2})$ で近似されることが導かれる.
+
+ゆえに, 上の問題の結果は, パラメータの値が大きなときのベータ分布が正規分布で近似されることが, ガンマ分布に関する中心極限定理の帰結になっていることを示していることになる.
+
+ベータ分布の確率密度函数の形から直接的に正規分布近似を導くことも易しい.
+
+__注意終__
+
+```julia
+function plot_gammanormal(α, θ)
+    m, s = α*θ, √(α*θ^2)
+    xlim = (m - 4s, m + 4s)
+    plot(Gamma(α, θ), xlim...; label="Gamma(α,θ)")
+    plot!(Normal(m, s); label="normal approx", ls=:dash)
+    #plot!(; legend=:outertop)
+    title!("α = $α, θ = $θ")
+end
+```
+
+```julia
+plot(plot_gammanormal(5, 20), plot_gammanormal(20, 5); size=(800, 250))
+```
+
+```julia
+plot(plot_gammanormal(80, 1.25), plot_gammanormal(320, 0.3125); size=(800, 250))
+```
+
+```julia
+function plot_betanormal(α, β)
+    m, s = α/(α+β), √(α*β/(α+β)^3)
+    xlim = (m - 4s, m + 4s)
+    plot(Beta(α, β), xlim...; label="Beta(α,β)")
+    plot!(Normal(m, s); label="normal approx", ls=:dash)
+    #plot!(; legend=:outertop)
+    title!("α = $α, β = $β")
+end
+```
+
+```julia
+[3, 7] .* (4 .^ (0:3))'
+```
+
+```julia
+plot(plot_betanormal(3, 7), plot_betanormal(12, 28); size=(800, 250))
+```
+
+```julia
+plot(plot_betanormal(48, 112), plot_betanormal(192, 448); size=(800, 250))
+```
+
+### 問題: ベータ分布の正規分布近似の直接的証明
+
+$\alpha$, $\beta$ が大きなときにベータ分布 $\op{Beta}(\alpha, \beta)$ が正規分布で近似されることを, その確率密度函数の具体形を使って直接証明せよ.
+
+__解答例:__ $0<\mu<1$ と仮定し,
+
+$$
+\alpha = N\mu, \quad
+\beta = N(1-\mu), \quad
+t = \mu + \frac{x}{\sqrt{N}}
+$$
+
+とおいて, $N$ を大きくすると, Stirlingの公式より,
+
+$$
+\begin{aligned}
+&
+\frac{1}{B(\alpha,\beta)} =
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} =
+\frac{\Gamma(N)}{\Gamma(N\mu)\Gamma(N(1-\mu))}
+\\ &\sim
+\frac{N\mu\;N(1-\mu)}{N}
+\frac
+{N^N e^{-N} \sqrt{2\pi N}}
+{
+(N\mu)^{N\mu} e^{-N\mu} \sqrt{2\pi N\mu}\;
+(N(1-\mu))^{N(1-\mu)} e^{-N(1-\mu)} \sqrt{2\pi N(1-\mu)}
+}
+\\ &=
+\frac
+{N\mu(1-\mu)}
+{
+\mu^{N\mu}\sqrt{2\pi N\mu}\;
+(1-\mu)^{N(1-\mu)} \sqrt{1-\mu}
+}
+\\ &=
+\frac{1}{\sqrt{2\pi\mu(1-\mu)}}
+\frac{\sqrt{N}}{\mu^{N\mu-1} (1-\mu)^{N(1-\mu)-1}}.
+\end{aligned}
+$$
+
+そして
+
+$$
+\begin{aligned}
+&
+N\mu\log\left(1+\frac{x}{\sqrt{N}\,\mu}\right)
+\\ &=
+N\mu\left(\frac{x}{\sqrt{N}\,\mu} - \frac{x^2}{2N\mu^2} + O(N^{-3/2})\right)
+\\ &=
+\sqrt{N}\,x - \frac{x^2}{2\mu} + O(N^{-1/2}),
+\\ &
+N(1-\mu)\log\left(1-\frac{x}{\sqrt{N}(1-\mu)}\right) 
+\\ &=
+N(1-\mu)\left(-\frac{x}{\sqrt{N}(1-\mu)} - \frac{x^2}{2N(1-\mu)^2} + O(N^{-3/2})\right)
+\\ &= -
+\sqrt{N}\,x - \frac{x^2}{2(1-\mu)} + O(N^{-1/2}),
+\\ &
+\frac{x^2}{2\mu} + \frac{x^2}{2(1-\mu)} = \frac{x^2}{2\mu(1-\mu)}
+\end{aligned}
+$$
+
+より, 以下が成立することがわかる:
+
+$$
+\begin{aligned}
+&
+t^{\alpha-1}(1-t)^{\beta-1}\,dt
+\\ &=
+\left(\mu + \frac{x}{\sqrt{N}}\right)^{N\mu-1}
+\left(1 - \mu - \frac{x}{\sqrt{N}}\right)^{N(1-\mu)-1}
+\frac{dx}{\sqrt{N}}
+\\ &=
+\mu^{N\mu-1} (1-\mu)^{N(1-\mu)-1}
+\left(1+\frac{x}{\sqrt{N}\,\mu}\right)^{N\mu-1}
+\left(1-\frac{x}{\sqrt{N}(1-\mu)}\right) ^{N(1-\mu)-1}
+\frac{dx}{\sqrt{N}}
+\\ &=
+\frac{\mu^{N\mu-1} (1-\mu)^{N(1-\mu)-1}}{\sqrt{N}}
+\exp\left(-\frac{x^2}{2\mu(1-\mu)}\right) (1 + O(n^{-1/2}))
+\,dx.
+\end{aligned}
+$$
+
+以上の結果より,
+
+$$
+\begin{aligned}
+\frac{t^{\alpha-1}(1-t)^{\beta-1}\,dt}{B(\alpha,\beta)}\,dt =
+\frac{1}{\sqrt{2\pi\mu(1-\mu)}}
+\exp\left(-\frac{x^2}{2\mu(1-\mu)}\right) (1 + O(n^{-1/2}))
+\,dx.
+\end{aligned}
+$$
+
+この公式はベータ分布が上で導入した $x$ 座標では平均 $0$, 分散 $\mu(1-\mu)$ の正規分布で近似されることを意味している.
+
+__解答終__
+
+__注意:__ $\alpha = N\mu$, $\beta = N(1-\mu)$, $T\sim\op{Beta}(\alpha,\beta)$ のとき,
+
+$$
+E[T] = \frac{\alpha}{\alpha+\beta} = \mu, \quad
+\op{var}(T) =
+\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} =
+\frac{\mu(1-\mu)}{N+1}
+$$
+
+なので, $X = \sqrt{N}(T - \mu)$ とおくと, $N\to\infty$ のとき,
+
+$$
+E[X] = 0, \quad
+\op{var}(X) = N\op{var}(T) = \frac{N}{N+1}\mu(1-\mu) \to \mu(1-\mu).
+$$
+
+この $\mu(1-\mu)$ が上の解答例の中で登場した正規分布の分散である.
 
 ```julia
 
