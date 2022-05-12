@@ -3276,7 +3276,7 @@ plot(PA1, PA2, PA3, PA4; size=(500, 450), layout=(2,2))
 
 * Galton, Francis. Regression towards mediocrity in hereditary stature. Journal of the Anthropological Institute, Vol. 5 (1886), 246-263. \[[link](https://galton.org/bib/JournalItem.aspx_action=view_id=157)\]
 
-この論文の著者の [Francis Galton](https://en.wikipedia.org/wiki/Francis_Galton) ([フランシス・ゴルトン](https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%BB%E3%82%B4%E3%83%AB%E3%83%88%E3%83%B3)) は「平均への回帰の記述」や「相関係数の導入」で有名である.
+この論文の著者の [Francis Galton](https://en.wikipedia.org/wiki/Francis_Galton) ([フランシス・ゴルトン](https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%BB%E3%82%B4%E3%83%AB%E3%83%88%E3%83%B3)) は「平均への回帰」の記述や「相関係数」の導入で有名である.
 
 ![Galton1886.png](attachment:Galton1886.png)
 
@@ -4300,6 +4300,64 @@ $$
 __注意:__ 上の不等式は __Karl Pearson の不等式__ と呼ばれることがある.
 
 * Pearson, Karl. IX. Mathematical contributions to the theory of evolution.—XIX. Second supplement to a memoir on skew variation. Philosophical Transactions of the Royal Society of London A, 216 (546): 429–457. \[[doi](https://doi.org/10.1098/rsta.1916.0009)\]
+
+
+__注意:__ 実は上で紹介した歪度と尖度に関する不等式の証明はひどく遠回りになっている. 分散共分散行列の半正定値性(非負性)に帰着するのであれば, 確率変数 $X$ について $X-\mu$ と $(X-\mu)^2$ の分散共分散行列を求めれみればよい. 
+
+$$
+E[X] = \mu, \quad
+E[(X-\mu)^2] = \sigma^2, \quad
+E[(X-\mu)^3] = \sigma^3\bk_3, \quad
+E[(X-\mu)^4] = \sigma^4(\bk_4+3)
+$$
+
+のとき,
+
+$$
+\begin{aligned}
+&
+E[X-\mu] = 0, \quad
+E[(X-\mu)^2] = \sigma^2,
+\\ &
+\op{var}(X-\mu) = \sigma^2,
+\\ &
+\op{cov}(X-\mu, (X-\mu)^2) = E[(X-\mu)^3] = \sigma^3\bk_3,
+\\ &
+\op{var}((X-\mu)^2) =
+E[(X-\mu)^4] - E[(X-\mu)^2]^2 =
+\sigma^4(\bk_4+3) - \sigma^4 =
+\sigma^4(\bk_4+2).
+\end{aligned}
+$$
+
+これより, $X-\mu$ と $(X-\mu)^2$ の分散共分散行列
+
+$$
+\begin{bmatrix}
+\sigma^2 & \sigma^3\bk_3   \\
+\sigma^3\bk_3 & \sigma^4(\bk_4+2) \\
+\end{bmatrix} =
+\begin{bmatrix}
+\sigma & 0   \\
+0 & \sigma^2 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & \bk_3   \\
+\bk_3 & \bk_4+2 \\
+\end{bmatrix}
+\begin{bmatrix}
+\sigma & 0   \\
+0 & \sigma^2 \\
+\end{bmatrix}
+$$
+
+は半正定値なので, 特にその行列式は $0$ 以上になり, 
+
+$$
+\bk_4 + 2 \ge \bk_3^3
+$$
+
+という不等式を得る.
 
 
 ### 問題: 不偏分散と不偏補正されていない標本分散の平均二乗誤差の比較

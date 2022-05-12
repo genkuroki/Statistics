@@ -40,7 +40,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合-(Cauchy分布)" data-toc-modified-id="大数の法則が成立しない場合-(Cauchy分布)-1.6.4"><span class="toc-item-num">1.6.4&nbsp;&nbsp;</span>大数の法則が成立しない場合 (Cauchy分布)</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li><li><span><a href="#問題:-二項分布の中心極限定理を使った簡単な計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った簡単な計算問題-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った簡単な計算問題</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li></ul></li><li><span><a href="#デルタ法" data-toc-modified-id="デルタ法-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>デルタ法</a></span><ul class="toc-item"><li><span><a href="#1次のデルタ法と2次のデルタ法" data-toc-modified-id="1次のデルタ法と2次のデルタ法-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>1次のデルタ法と2次のデルタ法</a></span></li><li><span><a href="#おまけ:-2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式" data-toc-modified-id="おまけ:-2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>おまけ: 2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用" data-toc-modified-id="問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法の正規分布近似への応用" data-toc-modified-id="問題:-1次のデルタ法の正規分布近似への応用-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 1次のデルタ法の正規分布近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法による分布の逆数の近似" data-toc-modified-id="問題:-1次のデルタ法による分布の逆数の近似-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 1次のデルタ法による分布の逆数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の逆数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の逆数の近似-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の逆数の近似</a></span></li><li><span><a href="#問題:-デルタ法による分布の対数の近似" data-toc-modified-id="問題:-デルタ法による分布の対数の近似-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: デルタ法による分布の対数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の対数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の対数の近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の対数の近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似" data-toc-modified-id="問題:-ベータ分布の正規分布近似-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似の直接的証明" data-toc-modified-id="問題:-ベータ分布の正規分布近似の直接的証明-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似の直接的証明</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の強法則に関する文献" data-toc-modified-id="大数の強法則に関する文献-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の強法則に関する文献</a></span></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.7.1"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.7.2"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.7.3"><span class="toc-item-num">1.7.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合-(Cauchy分布)" data-toc-modified-id="大数の法則が成立しない場合-(Cauchy分布)-1.7.4"><span class="toc-item-num">1.7.4&nbsp;&nbsp;</span>大数の法則が成立しない場合 (Cauchy分布)</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li><li><span><a href="#問題:-二項分布の中心極限定理を使った簡単な計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った簡単な計算問題-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った簡単な計算問題</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li></ul></li><li><span><a href="#デルタ法" data-toc-modified-id="デルタ法-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>デルタ法</a></span><ul class="toc-item"><li><span><a href="#1次のデルタ法と2次のデルタ法" data-toc-modified-id="1次のデルタ法と2次のデルタ法-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>1次のデルタ法と2次のデルタ法</a></span></li><li><span><a href="#おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式" data-toc-modified-id="おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>おまけ: 2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用" data-toc-modified-id="問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法の正規分布近似への応用" data-toc-modified-id="問題:-1次のデルタ法の正規分布近似への応用-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 1次のデルタ法の正規分布近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法による分布の逆数の近似" data-toc-modified-id="問題:-1次のデルタ法による分布の逆数の近似-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 1次のデルタ法による分布の逆数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の逆数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の逆数の近似-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の逆数の近似</a></span></li><li><span><a href="#問題:-デルタ法による分布の対数の近似" data-toc-modified-id="問題:-デルタ法による分布の対数の近似-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: デルタ法による分布の対数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の対数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の対数の近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の対数の近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似" data-toc-modified-id="問題:-ベータ分布の正規分布近似-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似の直接的証明" data-toc-modified-id="問題:-ベータ分布の正規分布近似の直接的証明-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似の直接的証明</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -234,12 +234,14 @@ $$
 
 ### 大数の強法則
 
-この節の内容は無理して読まなくてもよい.  定義していない用語や記号法が登場する. 説明も少々雑になるだろう.
+この節の内容は無理して読まなくてもよい.  定義していない用語や記号法が登場する. 大数の強法則の取り扱いには測度論的確率論が必要になるが, この一連のノート群では測度論を避ける方針なので, 大数の強法則について詳しく説明することはできない.  以下で紹介する議論は「よく見る議論」のコピー＆ペーストに過ぎない.  必要な用語の定義もされていないし, 内容的にも雑である.  しかし, 大数の強法則の証明の雰囲気を伝えたいと思ったので, このような説明をしてみることにした.
+
+確率空間とは $\sigma$-algebra (= $\sigma$-field) $\mathscr{F}$ と確率測度 $\mathscr{F}\ni A\mapsto P(A)\in\R_{\ge 0}$ が与えられた集合 $\Omega$ のことである. 以下では確率空間 $\Omega$ 上の点を $\omega$ と表す. $\Omega$ 上の実数値可測函数を確率変数と呼ぶ. 
 
 
 #### Borel-Cantelliの補題
 
-確率空間において次が成立する:
+確率空間 $\Omega$ において次が成立する:
 
 $$
 \sum_{k=1}^\infty P(A_k) < \infty \implies
@@ -273,27 +275,44 @@ $$
 
 __注意:__ これは標本平均が $\mu$ に確率 $1$ で収束することを意味している.
 
-__証明:__ 大数の弱法則の場合と同様に補事象の側の同値な主張を示す. すなわち, 標本平均が $\mu$ に収束しない確率が　 $0$ であることを示す.  標本平均が $\mu$ に収束しないという条件は以下のように書き換えられる:
+__証明:__ 大数の弱法則の場合と同様に補事象の側の同値な主張を示す. すなわち, 確率変数(可測函数)としての標本平均 $\bar{X}_n$ が $n\to\infty$ で $\mu$ に収束しない確率が $0$ であることを示そう.
 
-$\bar{X}_k(\omega)$ は $k\to\infty$ で $\mu$ に収束しない<br>
-$\iff$ ある $\eps>0$ が存在して, $|\bar{X}_k(\omega)-\mu|\ge\eps$ となる $k$ が無限個ある<br>
+確率変数(可測函数)としての最初の $n$ 個の標本平均 $\bar{X}_n$ の $\omega$ における値 $\bar{X}_n(\omega)$ が $n\to\infty$ で $\mu$ に収束しないという条件は以下のように書き換えられる.  すなわち,
+
+$$
+A_k(\eps) = \{\,\omega\mid |\bar{X}_k(\omega)-\mu|\ge\eps\,\}
+$$
+
+とおくと, 以下が成立している:
+
+$\bar{X}_n(\omega)$ は $n\to\infty$ で $\mu$ に収束しない.<br>
+$\iff$ ある $\eps>0$ が存在して, 任意の $n$ について, ある $k\ge n$ で $|\bar{X}_k(\omega)-\mu|\ge\eps$ を満たすものが存在する.<br>
 $\iff$ ある $\eps>0$ が存在して, $\displaystyle
-\omega\in \bigcap_{n=1}^\infty \bigcup_{k\ge n}\{\,\omega\mid |\bar{X}_k(\omega)-\mu|\ge\eps\,\} =
-\bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(\eps)
-$<br>
+\omega \in \bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(\eps)
+$.<br>
 $\iff$ $\displaystyle
-\omega \in \bigcup_{N=1}^\infty \bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(1/N).
-$
+\omega \in \bigcup_{L=1}^\infty \bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(1/L)
+$.
 
-ここで $A_k(\eps) = \{\,\omega\mid |\bar{X}_k(\omega)-\mu|\ge\eps\,\}$ とおいた.  任意の $\eps>0$ について $\sum_{k=1}^\infty P(A_k(\eps)) < \infty$ を示せれば, Borel-Cantelliの補題より $P\left(\bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(\eps)\right) = 0$ が得られ, それより
+この条件の書き換えによって, 任意の $\eps>0$ について,
 
 $$
-P\left(\bigcup_{N=1}^\infty \bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(1/N)\right)=0
+\sum_{k=1}^\infty P(A_k(\eps)) = \sum_{k=1}^\infty P(|\bar{X}_k-\mu|\ge\eps) < \infty
 $$
 
-が得られ, $\bar{X}_k$ が $k\to\infty$ で $\mu$ に収束しない確率が $0$ であることが示される.
+を示せれば, Borel-Cantelliの補題より $P\left(\bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(\eps)\right) = 0$ が得られ, それより
 
-必要ならば $X_i$ を $X_i-\mu$ で置き換えることによって, $\mu=0$ と仮定しても一般性が失われないので, $\mu=0$ と仮定する.  $\eps>0$ を任意に取る.  このとき, 
+$$
+P\left(\bigcup_{L=1}^\infty \bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(1/L)\right)
+\le \sum_{L=1}^\infty P\left(\bigcap_{n=1}^\infty \bigcup_{k\ge n} A_k(1/L)\right)
+=0
+$$
+
+が導かれ, $\bar{X}_n$ が $n\to\infty$ で $\mu$ に収束しない確率が $0$ であることが示されることがわかる.
+
+必要ならば $X_i$ を $X_i-\mu$ で置き換えることによって, $\mu=0$ と仮定しても一般性が失われないので, $\mu=0$ と仮定する. 
+
+$\eps>0$ を任意に取る.  このとき, 
 
 $$
 P(|\bar{X}_n|\ge\eps) =
@@ -330,7 +349,22 @@ $$
 
 __証明終__
 
-__注意:__ $\zeta(s) = \sum_{n=1}^\infty 1/n^s$ はRiemannのゼータ函数と呼ばれ, $s=1$ では調和級数になって無限大に発散するが, $s > 1$ ならば有限の値に収束する.  $\zeta(2) = \sum_{n=1}^\infty 1/n^2$ を求めよという問題は __Basel問題__ (バーゼル問題)と呼ばれ, 18世紀の超大数学者のEulerが解いた.  答えは $\pi^2/6$ になる.  その逆数の $6/\pi^2 \approx 0.6079$ は2つの整数の互いに素になる(最大公約数が $1$ になる)「確率」に等しい.
+__注意:__ 要するに, Borel-Cantelliの補題から, 任意の $\eps > 0$ について,
+
+$$
+\sum_{n=1}^\infty P(|\bar{X}_n-\mu|\ge\eps) < \infty
+$$
+
+を示せれば, 大数の強法則が証明される.  大数の弱法則の証明で示したことは
+
+$$
+P(|\bar{X}_n-\mu|\ge\eps) \le \frac{\sigma^2}{\eps^2}\frac{1}{n}
+$$
+
+に過ぎず, $\sum_{n=1}1/n = \infty$ と調和級数の和は無限大になるので, 大数の弱法則の証明の議論だけで大数の強法則を示すことはできない.
+
+
+__注意:__ $\zeta(s) = \sum_{n=1}^\infty 1/n^s$ はRiemannのゼータ函数と呼ばれ, $s=1$ では調和級数になって無限大に発散するが, $s > 1$ ならば有限の値に収束する.  $\zeta(2) = \sum_{n=1}^\infty 1/n^2$ を求めよという問題は __Basel問題__ (バーゼル問題)と呼ばれ, 18世紀の超大数学者のEulerが解いた.  答えは $\pi^2/6$ になる.  その逆数の $6/\pi^2 = 0.6079271{\cdots}$ は2つの整数の互いに素になる(最大公約数が $1$ になる)「確率」に等しい.
 
 ```julia
 6/π^2
@@ -338,14 +372,17 @@ __注意:__ $\zeta(s) = \sum_{n=1}^\infty 1/n^s$ はRiemannのゼータ函数と
 
 ```julia
 """
+エラストテネスの篩(sieve of Eratosthenes)によって,
+以下の条件を満たす長さ `N` のビットベクトル `IsPrime` を作成する.
+
 `IsPrime = make_isprime(N)` のとき
-`IsPrime[p]` は `p` が素数なら真に素数でないなら偽になる.
+`IsPrime[p]` は `p` が素数なら真になり, 素数でないなら偽になる.
 """
 function make_isprime(N)
     IsPrime = trues(N)
     # 1は素数ではない
     IsPrime[1] = false
-    for p in 2:isqrt(N)
+    @inbounds for p in 2:isqrt(N)
         if IsPrime[p]
             for i in 2p:p:N
                 # 素数の非自明な倍数は素数ではない
@@ -356,11 +393,13 @@ function make_isprime(N)
     IsPrime
 end
 
-"""N以下の2つの正の整数が互いに素な確率"""
+"""
+N以下の2つの正の整数が互いに素になる確率を篩法で求める.
+"""
 function prob_mutually_prime(N)
     IsPrime = make_isprime(N)
     C = trues(N, N)
-    for p in 2:N
+    @inbounds for p in 2:N
         if IsPrime[p]
             for i in p:p:N
                 for j in i:p:N
@@ -377,7 +416,11 @@ end
 ```
 
 ```julia
-primes = make_isprime(100) |> findall
+@doc make_isprime
+```
+
+```julia
+primes = findall(make_isprime(100)) 
 primes'
 ```
 
@@ -388,6 +431,24 @@ primes'
 ```julia
 @time prob_mutually_prime(100000)
 ```
+
+10万以下の2つの正の整数が互いに素な確率を求めてみたが, 確かに理論値の $1/\zeta(2) = 0.6079271{\cdots}$ に近い値になっている.
+
+
+### 大数の強法則に関する文献
+
+大数の強法則は前節で採用した条件よりもずっと弱い条件のもとで成立している. そのようなことに興味がある人達は以下の文献を参照せよ.
+
+* N. Etemadi, An elementary proof of the strong law of large numbers, Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete volume 55, pages 119–122 (1981) \[[Springer](https://link.springer.com/article/10.1007/BF01013465#citeas)\] \[[pdf](https://people.math.umass.edu/~yaoli/ptrl.pdf)\]
+
+* N. Lizia, A simple proof of the strong law of large numbers with rates, Bulletin of the Australian Mathematical Society, Volume 97, Issue 3, June 2018, pp. 513 - 517. \[[doi](https://doi.org/10.1017/S0004972718000059)\] \[[pdf](http://www.im.ufrj.br/nuno/SLLN.pdf)\]
+
+$X_1,X_2,X_3,\ldots$ が同分布な確率変数の列であるとし, 共通の期待値 $\mu=E[X_i]$ のwell-definedness ($E[|X_i|]<\infty$)を仮定する.
+
+前者の文献では, $X_1,X_2,X_3,\ldots$ に関する(独立性よりもずっと弱い)対ごとの独立性の仮定のもとで大数の強法則を証明している(分散の有限性も仮定していない).
+
+後者の文献では, $X_1,X_2,X_3,\ldots$ の独立性と分散の有限性($\sigma^2 = \op{var}(X_i)<\infty$)のもとで, 収束の速さが分かるような大数の強法則の証明を与えている.
+
 
 ### 大数の法則のデモンストレーション
 
@@ -1757,9 +1818,9 @@ $$
 という近似が得られる. これを __2次のデルタ法__ と呼ぶことにする.
 
 
-### おまけ: 2次のデルタ法使用時の分散の近似公式と歪度と尖度に関する不等式
+### おまけ: 2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式
 
-確率変数 $X$ の期待値を $\mu$, 分散を $\sigma^2$, 歪度を $\bk_3=E[((X-\mu)/\sigma)^3]$, 尖度を $\bk_4=E[((X-\mu)/\sigma)^4]-3$ と表し, 与えられた定数 $a,b,c$ について,
+確率変数 $X$ の期待値を $\mu$, 分散を $\sigma^2$, 歪度を $\bk_3=E[((X-\mu)/\sigma)^3]$, 尖度を $\bk_4=E[((X-\mu)/\sigma)^4]-3$ と表し, 任意の実数 $a,b,c$ に対して,
 
 $$
 Y_2 = a + b(X-\mu) + c(X-\mu)^2
@@ -1792,13 +1853,15 @@ c\sigma^2 \\
 \end{aligned}
 $$
 
-これが任意の実数 $b,c$ について $0$ 以上になることから, この式中の $2\times 2$ 行列の行列式は $0$ 以上になることがわかるので, 次の不等式が得られる:
+これが任意の実数 $b,c$ について $0$ 以上になることから, この結果に現れた $2\times 2$ 行列の行列式は $0$ 以上になることがわかるので, 次の不等式が得られる:
 
 $$
 \bk_4 + 2 \ge \bk_3^2.
 $$
 
 「標本分布について」のノートで標本平均と不偏分散の分散共分散行列の非負性を用いて示した「歪度と尖度に関する不等式」が再び証明された.
+
+__注意:__ 以上の証明は本質的に $X-\mu$ と $(X-\mu)^2$ の分散共分散行列が半正定値になることを使う証明と本質的に同じである.
 
 
 ### 問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用
