@@ -82,6 +82,21 @@ end
 end
 ```
 
+```julia
+mypdf(dist, x) = pdf(dist, x)
+mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(x))
+
+distname(dist::Distribution) = replace(string(dist), r"{.*}" => "")
+myskewness(dist) = skewness(dist)
+mykurtosis(dist) = kurtosis(dist)
+function standardized_moment(dist::ContinuousUnivariateDistribution, m)
+    μ, σ = mean(dist), std(dist)
+    quadgk(x -> (x - μ)^m * pdf(dist, x), extrema(dist)...)[1] / σ^m
+end
+myskewness(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dist, 3)
+mykurtosis(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dist, 4) - 3
+```
+
 ![CLT.PNG](attachment:CLT.PNG)
 
 
@@ -629,9 +644,9 @@ __注意:__ 以下のグラフを見れば, 二項分布の正規分布近似の
 function plot_binomial_clt(n, p, s = 1; c = 4.5)
     μ, σ = n*p, √(n*p*(1-p))
     xlim = (μ-c*σ, μ+c*σ)
-    plot(x -> pdf(Binomial(n, p), round(x)), xlim...; label="Binomial(n,p)")
+    plot(x -> mypdf(Binomial(n, p), x), xlim...; label="Binomial(n,p)")
     plot!(Normal(μ, σ), xlim...; label="Normal(μ,σ)", lw=2)
-    # plot!(x -> pdf(Poisson(μ), round(x)), xlim...; label="Poisson(μ)", ls=:dash)
+    # plot!(x -> mypdf(Poisson(μ), x), xlim...; label="Poisson(μ)", ls=:dash)
     title!("n = $n, p = $p, μ=np, σ²=np(1-p)")
     plot!(; xtick=0:s:n)
 end
@@ -2120,16 +2135,6 @@ title!("n = $n")
 #   * 離散分布の場合にも対応
 #   * 歪度と尖度を混合モデルの場合にも表示
 
-distname(dist::Distribution) = replace(string(dist), r"{.*}" => "")
-myskewness(dist) = skewness(dist)
-mykurtosis(dist) = kurtosis(dist)
-function standardized_moment(dist::ContinuousUnivariateDistribution, m)
-    μ, σ = mean(dist), std(dist)
-    quadgk(x -> (x - μ)^m * pdf(dist, x), extrema(dist)...)[1] / σ^m
-end
-myskewness(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dist, 3)
-mykurtosis(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dist, 4) - 3
-
 function plot_central_limit_theorem(dist, n;
         L=10^6,
         μ = mean(dist),
@@ -2909,9 +2914,6 @@ $$
 以下に挙げるもの以外にも正規分布で近似される確率分布はたくさんある.  各自, 研究してノートにまとめておくとよいだろう.  具体的な数値例をコンピュータで作っておくと, どのようなときにどれだけ近似がうまく行くかについての「土地勘」が得られる.
 
 ```julia
-mypdf(dist, x) = pdf(dist, x)
-mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(x))
-
 function plot_normalapprox(dist; title=distname(dist), kwargs...)
     μ, σ = mean(dist), std(dist)
     normal = Normal(μ, σ)
