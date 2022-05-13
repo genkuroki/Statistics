@@ -1,5 +1,7 @@
 # 数理統計学2022
 
+すべてをまとめたPDF(更新は遅れる予定): [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
+
 ## 資料
 
 [Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください。
