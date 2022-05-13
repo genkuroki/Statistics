@@ -70,7 +70,7 @@ __定義された分布__
 * __ベータ二項分布__: BetaBinomial(n, α, β)
 * __超幾何分布__: Hypergeometric(s, f, n)
 * __ベータ負の二項分布__: NegativeBetaBinomial(n, α, β)
-* 試行回数 $n$ の __Pólyaの壺の確率分布__: Pólya(n, α, β)
+* 試行回数 n の __Pólyaの壺の確率分布__: Pólya(n, α, β)
 
 ### 04 標本分布について
 
