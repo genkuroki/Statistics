@@ -883,7 +883,7 @@ __解答終__
 #### Julia言語による計算2
 
 
-`ccdf(d, x) = 1 - cdf(d, x)` で `cdf(d, x)` 分布 `d` の累積分布函数.
+__記号法:__ `cdf(d, x)` は分布 `d` の累積分布函数で `ccdf(d, x) = 1 - cdf(d, x)`.
 
 `cdf(Binomial(n, p), k) == ccdf(Beta(k+1, n-k), p)` の確認:
 
