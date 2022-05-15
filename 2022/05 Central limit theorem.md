@@ -40,7 +40,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の強法則に関する文献" data-toc-modified-id="大数の強法則に関する文献-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の強法則に関する文献</a></span></li><li><span><a href="#問題:-大数の法則に関する誤解" data-toc-modified-id="問題:-大数の法則に関する誤解-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大数の法則に関する誤解</a></span></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.8.1"><span class="toc-item-num">1.8.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.8.2"><span class="toc-item-num">1.8.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.8.3"><span class="toc-item-num">1.8.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合-(Cauchy分布)" data-toc-modified-id="大数の法則が成立しない場合-(Cauchy分布)-1.8.4"><span class="toc-item-num">1.8.4&nbsp;&nbsp;</span>大数の法則が成立しない場合 (Cauchy分布)</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理のプロット" data-toc-modified-id="二項分布の中心極限定理のプロット-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理のプロット</a></span></li><li><span><a href="#必修重要問題:-二項分布の正規分布近似を使った確率の近似計算1" data-toc-modified-id="必修重要問題:-二項分布の正規分布近似を使った確率の近似計算1-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修重要問題: 二項分布の正規分布近似を使った確率の近似計算1</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる計算1" data-toc-modified-id="WolframAlphaによる計算1-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WolframAlphaによる計算1</a></span></li><li><span><a href="#Julia言語による計算1" data-toc-modified-id="Julia言語による計算1-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による計算1</a></span></li><li><span><a href="#Julia言語による視覚化1" data-toc-modified-id="Julia言語による視覚化1-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>Julia言語による視覚化1</a></span></li></ul></li><li><span><a href="#必修重要問題:-二項分布の正規分布近似を使った確率の近似計算2" data-toc-modified-id="必修重要問題:-二項分布の正規分布近似を使った確率の近似計算2-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>必修重要問題: 二項分布の正規分布近似を使った確率の近似計算2</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる計算" data-toc-modified-id="WolframAlphaによる計算-2.4.1"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>WolframAlphaによる計算</a></span></li><li><span><a href="#Julia言語による計算2" data-toc-modified-id="Julia言語による計算2-2.4.2"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Julia言語による計算2</a></span></li><li><span><a href="#Julia言語による視覚化2" data-toc-modified-id="Julia言語による視覚化2-2.4.3"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Julia言語による視覚化2</a></span></li></ul></li><li><span><a href="#問題:-二項分布の中心極限定理を使った極限の計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った極限の計算問題-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った極限の計算問題</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li></ul></li><li><span><a href="#デルタ法" data-toc-modified-id="デルタ法-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>デルタ法</a></span><ul class="toc-item"><li><span><a href="#1次のデルタ法と2次のデルタ法" data-toc-modified-id="1次のデルタ法と2次のデルタ法-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>1次のデルタ法と2次のデルタ法</a></span></li><li><span><a href="#おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式" data-toc-modified-id="おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>おまけ: 2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用" data-toc-modified-id="問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法の正規分布近似への応用" data-toc-modified-id="問題:-1次のデルタ法の正規分布近似への応用-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 1次のデルタ法の正規分布近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法による分布の逆数の近似" data-toc-modified-id="問題:-1次のデルタ法による分布の逆数の近似-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 1次のデルタ法による分布の逆数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の逆数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の逆数の近似-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の逆数の近似</a></span></li><li><span><a href="#問題:-デルタ法による分布の対数の近似" data-toc-modified-id="問題:-デルタ法による分布の対数の近似-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: デルタ法による分布の対数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の対数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の対数の近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の対数の近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似" data-toc-modified-id="問題:-ベータ分布の正規分布近似-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似の直接的証明" data-toc-modified-id="問題:-ベータ分布の正規分布近似の直接的証明-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似の直接的証明</a></span></li></ul></li><li><span><a href="#確率分布の正規分布近似" data-toc-modified-id="確率分布の正規分布近似-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>確率分布の正規分布近似</a></span><ul class="toc-item"><li><span><a href="#二項分布の正規分布近似" data-toc-modified-id="二項分布の正規分布近似-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>二項分布の正規分布近似</a></span></li><li><span><a href="#負の二項分布の正規分布近似" data-toc-modified-id="負の二項分布の正規分布近似-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>負の二項分布の正規分布近似</a></span></li><li><span><a href="#Poisson分布の正規分布近似" data-toc-modified-id="Poisson分布の正規分布近似-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Poisson分布の正規分布近似</a></span></li><li><span><a href="#ガンマ分布の正規分布近似" data-toc-modified-id="ガンマ分布の正規分布近似-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>ガンマ分布の正規分布近似</a></span></li><li><span><a href="#χ²分布の正規分布近似" data-toc-modified-id="χ²分布の正規分布近似-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>χ²分布の正規分布近似</a></span></li><li><span><a href="#逆ガンマ分布の正規分布近似" data-toc-modified-id="逆ガンマ分布の正規分布近似-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>逆ガンマ分布の正規分布近似</a></span></li><li><span><a href="#ベータ分布の正規分布近似" data-toc-modified-id="ベータ分布の正規分布近似-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>ベータ分布の正規分布近似</a></span></li><li><span><a href="#$t$-分布の正規分布近似" data-toc-modified-id="$t$-分布の正規分布近似-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>$t$ 分布の正規分布近似</a></span></li><li><span><a href="#ベータプライム分布の正規分布近似" data-toc-modified-id="ベータプライム分布の正規分布近似-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>ベータプライム分布の正規分布近似</a></span></li><li><span><a href="#$F$-分布の正規分布近似" data-toc-modified-id="$F$-分布の正規分布近似-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>$F$ 分布の正規分布近似</a></span></li><li><span><a href="#超幾何分布の正規分布近似" data-toc-modified-id="超幾何分布の正規分布近似-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>超幾何分布の正規分布近似</a></span></li><li><span><a href="#ベータ二項分布の正規分布近似" data-toc-modified-id="ベータ二項分布の正規分布近似-5.12"><span class="toc-item-num">5.12&nbsp;&nbsp;</span>ベータ二項分布の正規分布近似</a></span></li><li><span><a href="#ベータ負の二項分布の正規分布近似" data-toc-modified-id="ベータ負の二項分布の正規分布近似-5.13"><span class="toc-item-num">5.13&nbsp;&nbsp;</span>ベータ負の二項分布の正規分布近似</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#大数の法則" data-toc-modified-id="大数の法則-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>大数の法則</a></span><ul class="toc-item"><li><span><a href="#Markovの不等式" data-toc-modified-id="Markovの不等式-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Markovの不等式</a></span></li><li><span><a href="#Chebyshevの不等式" data-toc-modified-id="Chebyshevの不等式-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Chebyshevの不等式</a></span></li><li><span><a href="#大数の弱法則" data-toc-modified-id="大数の弱法則-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>大数の弱法則</a></span></li><li><span><a href="#不偏分散の-$n\to\infty$-での挙動" data-toc-modified-id="不偏分散の-$n\to\infty$-での挙動-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>不偏分散の $n\to\infty$ での挙動</a></span></li><li><span><a href="#大数の強法則" data-toc-modified-id="大数の強法則-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>大数の強法則</a></span><ul class="toc-item"><li><span><a href="#Borel-Cantelliの補題" data-toc-modified-id="Borel-Cantelliの補題-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Borel-Cantelliの補題</a></span></li><li><span><a href="#4次以下のモーメントの存在を仮定した場合の大数の強法則" data-toc-modified-id="4次以下のモーメントの存在を仮定した場合の大数の強法則-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>4次以下のモーメントの存在を仮定した場合の大数の強法則</a></span></li></ul></li><li><span><a href="#大数の強法則に関する文献" data-toc-modified-id="大数の強法則に関する文献-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>大数の強法則に関する文献</a></span></li><li><span><a href="#問題:-大数の法則に関する誤解" data-toc-modified-id="問題:-大数の法則に関する誤解-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>問題: 大数の法則に関する誤解</a></span></li><li><span><a href="#大数の法則のデモンストレーション" data-toc-modified-id="大数の法則のデモンストレーション-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>大数の法則のデモンストレーション</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行" data-toc-modified-id="Bernoulli試行-1.8.1"><span class="toc-item-num">1.8.1&nbsp;&nbsp;</span>Bernoulli試行</a></span></li><li><span><a href="#正規分布のサンプルの場合" data-toc-modified-id="正規分布のサンプルの場合-1.8.2"><span class="toc-item-num">1.8.2&nbsp;&nbsp;</span>正規分布のサンプルの場合</a></span></li><li><span><a href="#ガンマ分布の場合" data-toc-modified-id="ガンマ分布の場合-1.8.3"><span class="toc-item-num">1.8.3&nbsp;&nbsp;</span>ガンマ分布の場合</a></span></li><li><span><a href="#大数の法則が成立しない場合:-Cauchy分布" data-toc-modified-id="大数の法則が成立しない場合:-Cauchy分布-1.8.4"><span class="toc-item-num">1.8.4&nbsp;&nbsp;</span>大数の法則が成立しない場合: Cauchy分布</a></span></li><li><span><a href="#大数の法則が成立しない場合:-Pólyaの壺" data-toc-modified-id="大数の法則が成立しない場合:-Pólyaの壺-1.8.5"><span class="toc-item-num">1.8.5&nbsp;&nbsp;</span>大数の法則が成立しない場合: Pólyaの壺</a></span></li></ul></li></ul></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span><ul class="toc-item"><li><span><a href="#二項分布の中心極限定理の内容" data-toc-modified-id="二項分布の中心極限定理の内容-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>二項分布の中心極限定理の内容</a></span></li><li><span><a href="#二項分布の中心極限定理のプロット" data-toc-modified-id="二項分布の中心極限定理のプロット-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>二項分布の中心極限定理のプロット</a></span></li><li><span><a href="#必修重要問題:-二項分布の正規分布近似を使った確率の近似計算1" data-toc-modified-id="必修重要問題:-二項分布の正規分布近似を使った確率の近似計算1-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修重要問題: 二項分布の正規分布近似を使った確率の近似計算1</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる計算1" data-toc-modified-id="WolframAlphaによる計算1-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WolframAlphaによる計算1</a></span></li><li><span><a href="#Julia言語による計算1" data-toc-modified-id="Julia言語による計算1-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による計算1</a></span></li><li><span><a href="#Julia言語による視覚化1" data-toc-modified-id="Julia言語による視覚化1-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>Julia言語による視覚化1</a></span></li></ul></li><li><span><a href="#必修重要問題:-二項分布の正規分布近似を使った確率の近似計算2" data-toc-modified-id="必修重要問題:-二項分布の正規分布近似を使った確率の近似計算2-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>必修重要問題: 二項分布の正規分布近似を使った確率の近似計算2</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる計算" data-toc-modified-id="WolframAlphaによる計算-2.4.1"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>WolframAlphaによる計算</a></span></li><li><span><a href="#Julia言語による計算2" data-toc-modified-id="Julia言語による計算2-2.4.2"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Julia言語による計算2</a></span></li><li><span><a href="#Julia言語による視覚化2" data-toc-modified-id="Julia言語による視覚化2-2.4.3"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Julia言語による視覚化2</a></span></li></ul></li><li><span><a href="#連続性補正とmid-P補正" data-toc-modified-id="連続性補正とmid-P補正-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>連続性補正とmid-P補正</a></span></li><li><span><a href="#問題:-二項分布の中心極限定理を使った極限の計算問題" data-toc-modified-id="問題:-二項分布の中心極限定理を使った極限の計算問題-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: 二項分布の中心極限定理を使った極限の計算問題</a></span></li><li><span><a href="#二項分布の中心極限定理の証明の方針" data-toc-modified-id="二項分布の中心極限定理の証明の方針-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>二項分布の中心極限定理の証明の方針</a></span></li><li><span><a href="#(1)-Stirlingの公式を使った二項分布の確率密度函数の近似" data-toc-modified-id="(1)-Stirlingの公式を使った二項分布の確率密度函数の近似-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>(1) Stirlingの公式を使った二項分布の確率密度函数の近似</a></span></li><li><span><a href="#注意:-Kullback-Leibler情報量とSanovの定理との関係" data-toc-modified-id="注意:-Kullback-Leibler情報量とSanovの定理との関係-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>注意: Kullback-Leibler情報量とSanovの定理との関係</a></span></li><li><span><a href="#(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること" data-toc-modified-id="(2)-二項分布の確率質量函数から正規分布の密度函数が出て来ること-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>(2) 二項分布の確率質量函数から正規分布の密度函数が出て来ること</a></span></li></ul></li><li><span><a href="#中心極限定理" data-toc-modified-id="中心極限定理-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>中心極限定理</a></span><ul class="toc-item"><li><span><a href="#中心極限定理のラフな説明" data-toc-modified-id="中心極限定理のラフな説明-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>中心極限定理のラフな説明</a></span></li><li><span><a href="#中心極限定理の特性函数を使った証明" data-toc-modified-id="中心極限定理の特性函数を使った証明-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>中心極限定理の特性函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度" data-toc-modified-id="中心極限定理の収束の速さと歪度-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度</a></span></li><li><span><a href="#中心極限定理のキュムラント母函数を使った証明" data-toc-modified-id="中心極限定理のキュムラント母函数を使った証明-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>中心極限定理のキュムラント母函数を使った証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度</a></span></li><li><span><a href="#中心極限定理のTaylorの定理のみを使う証明" data-toc-modified-id="中心極限定理のTaylorの定理のみを使う証明-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>中心極限定理のTaylorの定理のみを使う証明</a></span><ul class="toc-item"><li><span><a href="#多重積分の書き方" data-toc-modified-id="多重積分の書き方-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>多重積分の書き方</a></span></li><li><span><a href="#積分剰余項型のTaylorの定理" data-toc-modified-id="積分剰余項型のTaylorの定理-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>積分剰余項型のTaylorの定理</a></span></li><li><span><a href="#積分剰余項の別の表示" data-toc-modified-id="積分剰余項の別の表示-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>積分剰余項の別の表示</a></span></li><li><span><a href="#微分剰余項型のTaylorの定理" data-toc-modified-id="微分剰余項型のTaylorの定理-3.6.4"><span class="toc-item-num">3.6.4&nbsp;&nbsp;</span>微分剰余項型のTaylorの定理</a></span></li><li><span><a href="#Taylorの定理を使った中心極限定理の証明" data-toc-modified-id="Taylorの定理を使った中心極限定理の証明-3.6.5"><span class="toc-item-num">3.6.5&nbsp;&nbsp;</span>Taylorの定理を使った中心極限定理の証明</a></span></li><li><span><a href="#中心極限定理の収束の速さと歪度と尖度(再)" data-toc-modified-id="中心極限定理の収束の速さと歪度と尖度(再)-3.6.6"><span class="toc-item-num">3.6.6&nbsp;&nbsp;</span>中心極限定理の収束の速さと歪度と尖度(再)</a></span></li></ul></li><li><span><a href="#問題:-中心極限定理の収束の様子のグラフ" data-toc-modified-id="問題:-中心極限定理の収束の様子のグラフ-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 中心極限定理の収束の様子のグラフ</a></span></li></ul></li><li><span><a href="#デルタ法" data-toc-modified-id="デルタ法-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>デルタ法</a></span><ul class="toc-item"><li><span><a href="#1次のデルタ法と2次のデルタ法" data-toc-modified-id="1次のデルタ法と2次のデルタ法-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>1次のデルタ法と2次のデルタ法</a></span></li><li><span><a href="#おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式" data-toc-modified-id="おまけ:-2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>おまけ: 2次のデルタ法使用時の近似分散と歪度と尖度に関する不等式</a></span></li><li><span><a href="#問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用" data-toc-modified-id="問題:-2次のデルタ法の不偏分散の平方根の期待値の近似への応用-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 2次のデルタ法の不偏分散の平方根の期待値の近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法の正規分布近似への応用" data-toc-modified-id="問題:-1次のデルタ法の正規分布近似への応用-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 1次のデルタ法の正規分布近似への応用</a></span></li><li><span><a href="#問題:-1次のデルタ法による分布の逆数の近似" data-toc-modified-id="問題:-1次のデルタ法による分布の逆数の近似-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 1次のデルタ法による分布の逆数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の逆数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の逆数の近似-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の逆数の近似</a></span></li><li><span><a href="#問題:-デルタ法による分布の対数の近似" data-toc-modified-id="問題:-デルタ法による分布の対数の近似-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: デルタ法による分布の対数の近似</a></span></li><li><span><a href="#例:-自由度が大きなχ²分布の対数の近似" data-toc-modified-id="例:-自由度が大きなχ²分布の対数の近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>例: 自由度が大きなχ²分布の対数の近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似" data-toc-modified-id="問題:-ベータ分布の正規分布近似-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似</a></span></li><li><span><a href="#問題:-ベータ分布の正規分布近似の直接的証明" data-toc-modified-id="問題:-ベータ分布の正規分布近似の直接的証明-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>問題: ベータ分布の正規分布近似の直接的証明</a></span></li></ul></li><li><span><a href="#各種の確率分布の正規分布近似" data-toc-modified-id="各種の確率分布の正規分布近似-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>各種の確率分布の正規分布近似</a></span><ul class="toc-item"><li><span><a href="#二項分布の正規分布近似" data-toc-modified-id="二項分布の正規分布近似-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>二項分布の正規分布近似</a></span></li><li><span><a href="#負の二項分布の正規分布近似" data-toc-modified-id="負の二項分布の正規分布近似-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>負の二項分布の正規分布近似</a></span></li><li><span><a href="#Poisson分布の正規分布近似" data-toc-modified-id="Poisson分布の正規分布近似-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Poisson分布の正規分布近似</a></span></li><li><span><a href="#ガンマ分布の正規分布近似" data-toc-modified-id="ガンマ分布の正規分布近似-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>ガンマ分布の正規分布近似</a></span></li><li><span><a href="#χ²分布の正規分布近似" data-toc-modified-id="χ²分布の正規分布近似-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>χ²分布の正規分布近似</a></span></li><li><span><a href="#逆ガンマ分布の正規分布近似" data-toc-modified-id="逆ガンマ分布の正規分布近似-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>逆ガンマ分布の正規分布近似</a></span></li><li><span><a href="#ベータ分布の正規分布近似" data-toc-modified-id="ベータ分布の正規分布近似-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>ベータ分布の正規分布近似</a></span></li><li><span><a href="#$t$-分布の正規分布近似" data-toc-modified-id="$t$-分布の正規分布近似-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>$t$ 分布の正規分布近似</a></span></li><li><span><a href="#ベータプライム分布の正規分布近似" data-toc-modified-id="ベータプライム分布の正規分布近似-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>ベータプライム分布の正規分布近似</a></span></li><li><span><a href="#$F$-分布の正規分布近似" data-toc-modified-id="$F$-分布の正規分布近似-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>$F$ 分布の正規分布近似</a></span></li><li><span><a href="#超幾何分布の正規分布近似" data-toc-modified-id="超幾何分布の正規分布近似-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>超幾何分布の正規分布近似</a></span></li><li><span><a href="#ベータ二項分布の正規分布近似" data-toc-modified-id="ベータ二項分布の正規分布近似-5.12"><span class="toc-item-num">5.12&nbsp;&nbsp;</span>ベータ二項分布の正規分布近似</a></span></li><li><span><a href="#ベータ負の二項分布の正規分布近似" data-toc-modified-id="ベータ負の二項分布の正規分布近似-5.13"><span class="toc-item-num">5.13&nbsp;&nbsp;</span>ベータ負の二項分布の正規分布近似</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ![CLT.PNG](attachment:CLT.PNG)
@@ -85,6 +85,8 @@ end
 ```
 
 ```julia
+x ⪅ y = x < y || x ≈ y
+
 mypdf(dist, x) = pdf(dist, x)
 mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(x))
 
@@ -497,8 +499,9 @@ __解答終__
 ### 大数の法則のデモンストレーション
 
 ```julia
-function plot_law_of_large_numbers(dist, N; μ = mean(dist), kwargs...)
-    X = rand(dist, N)
+function plot_law_of_large_numbers(dist, N;
+        randfunc = rand, μ = mean(dist), kwargs...)
+    X = randfunc(dist, N)
     X̄ = cumsum(X) ./ (1:N)
     plot(1:N, X̄; label="")
     hline!([μ]; label="")
@@ -506,11 +509,11 @@ function plot_law_of_large_numbers(dist, N; μ = mean(dist), kwargs...)
 end
 
 function plot_law_of_large_numbers_6x3(dist, N;
-        μ = mean(dist), seed=4649363, title="", kwargs...)
+        randfunc = rand, μ = mean(dist), seed = 4649363, title = "", kwargs...)
     Random.seed!(seed)
     PP = []
     for _ in 1:18
-        P = plot_law_of_large_numbers(dist, N; μ, kwargs...)
+        P = plot_law_of_large_numbers(dist, N; randfunc, μ, kwargs...)
         push!(PP, P)
     end
     P0 = plot(; title,
@@ -542,7 +545,7 @@ plot_law_of_large_numbers_6x3(Gamma(2, 3), 2^12;
     title="Law of large numbers for Gamma(2, 3)", ylim=(5, 7))
 ```
 
-#### 大数の法則が成立しない場合 (Cauchy分布)
+#### 大数の法則が成立しない場合: Cauchy分布
 
 確率密度函数が
 
@@ -556,20 +559,27 @@ $$
 E[|X|] = \frac{2}{\pi}\int_0^\infty \frac{x}{1+x^2}\,dx = \infty
 $$
 
-なので, 期待値 $E[X]$ が定義されない.  ゆえに大数の法則も成立しない.
+なので, 期待値 $E[X]$ が定義されない.  Cauchy分布の場合には大数の法則は成立しない.
 
 ```julia
 plot_law_of_large_numbers_6x3(Cauchy(), 2^12; μ = 0.0,
     title="Law of large numbers for Cauchy() does not hold", ylim=(-10, 10))
 ```
 
-__注意:__ $X_1,X_2,\ldots,X_n$ がCauchy分布のサイズ $n$ の標本であるとき, その標本平均 $\bar{X}$ もCauchy分布に従うことを示せる. (証明したい人はCauchy分布の特性函数が
+__注意:__ $X_1,X_2,\ldots,X_n$ がCauchy分布のサイズ $n$ の標本であるとき, その標本平均 $\bar{X}$ もCauchy分布に従うことを示せる. そのことはCauchy分布の特性函数が
 
 $$
 \varphi(t) = E[e^{itX}] = e^{-|t|} \quad (X\sim\op{Cauchy}())
 $$
 
-となることを示せ.)
+となることを認めれば容易に確認できる(この公式のよくある証明では複素解析を使う). 実際, これを認めると,
+
+$$
+E[e^{it\bar{X}}] = \phi\left(\frac{t}{n}\right)^n =
+(e^{-|t/n|})^n = e^{-|t|} = \varphi(t) = E[e^{itX}].
+$$
+
+$\bar{X}$ と $X\sim\op{Cauchy}()$ の特性函数が等しいので $\bar{X}\sim\op{Cauchy}()$.
 
 ```julia
 function plot_cauchy(n; dist=Cauchy(), L=10^6, xlim=(-10, 10), kwargs...)
@@ -589,6 +599,60 @@ end
 
 ```julia
 plot_cauchy(10)
+```
+
+#### 大数の法則が成立しない場合: Pólyaの壺
+
+$\alpha, \beta > 0$ であると仮定する.  パラメータ $(\alpha,\beta)$ から $1$ の出る確率が $\alpha/(\alpha+\beta)$ と, $0$ が出る確率が $\beta/(\alpha+\beta)$ と決まっているとする.  そして, $1$ が出たら, パラメータが $(\alpha,\beta)\mapsto(\alpha+1,\beta)$ と更新され, $0$ が出たら, パラメータが　$(\alpha,\beta)\mapsto(\alpha,\beta+1)$ と更新されると仮定する.  このようにして $1,0$ の列 $X_1,X_2,X_3,\ldots$ がランダムに得られる試行を __Pólyaの壺__ の試行と呼ぶことにする.
+
+Pólyaの壺では $1$ が出るとその次に $1$ が出る確率は上昇し, $0$ が出るとその次に $0$ が出る確率は上昇する.  __Pólyaの壺__ の試行では独立性の仮定が満たされていない.  実際, __Pólyaの壺__ の試行の $n$ 回分の出目が $(x_1,\ldots,x_n)\in\{1,0\}^n$ になる確率は, $x_1,\ldots,x_n$ の中に $1$ がちょうど $k$ 個含まれているとき,
+
+$$
+P(x_1,\ldots,x_n|\alpha,\beta) =
+\binom{n}{k}
+\frac
+{\alpha(\alpha+1)\cdots(\alpha+k-1)\;
+\beta(\beta+1)\cdots(\beta+n-k-1)}
+{(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+n-1)}
+$$
+
+と書ける.  (「確率分布達の解釈」のノートに詳しい説明がある.)
+
+しかし, $n-1$ 回目までの出目に条件を付けないとき, $n$ 番目に $1$ が出る確率は $n$ によらず $\alpha/(\alpha+\beta)$ のまま一定であることを示せる.  すなわち, 各 $X_n$ が従う確率分布は $n$ によらずにどれも成功確率 $\alpha/(\alpha+\beta)$ のBernoulli分布になる.  __Pólyaの壺__ の試行では同分布の仮定は満たされている.
+
+__Pólyaの壺__ の試行で得られる $1,0$ の列 $X_1,X_2,X_3,\ldots$ については大数の法則は成立しない.  その $n$ 番目までの標本平均 $\bar{X}_n$ はベータ二項分布 $\op{BetaBinomial}(n,\alpha,\beta)$ に従い, $n$ が大きなときに $\bar{X}_n$ はベータ分布 $\op{Beta}(\alpha,\beta)$ に近似的に従う.  そうなることは, 
+
+$$
+P(x_1,\ldots,x_n|\alpha,\beta) =
+\int_0^1 \prod_{i=1}^n\left(p^{x_i}(1-p)^{1-x_i}\right)
+\frac{p^{\alpha-1}(1-p)^{\beta-1}}{B(\alpha,\beta)}\,dp
+$$
+
+なので, __Pólyaの壺__ の試行が成功確率 $p$ がベータ分布 $\op{Beta}(\alpha,\beta)$ に従ってランダムに決まっているようなBernoulli試行であることから分かる.
+
+```julia
+plot_law_of_large_numbers_6x3(Beta(4, 6), 2^8;
+    randfunc = (dist, n) -> (p = rand(dist); rand(Bernoulli(p), n)))
+```
+
+```julia
+function plot_polyaurn(n, α, β; L=10^6, kwargs...)
+    X̄ = Vector{Float64}(undef, L)
+    tmp = [Vector{Int}(undef, n) for _ in 1:Threads.nthreads()]
+    Threads.@threads for i in 1:L
+        p = rand(Beta(α, β))
+        X = rand!(Bernoulli(p), tmp[Threads.threadid()])
+        X̄[i] = mean(X)
+    end
+    stephist(X̄; norm=true, label="X̄")
+    plot!(Beta(α, β), 0, 1; label="Beta(α, β)", ls=:dash)
+    title!("Pólya's urn for n=$n, α=$α, β=$β")
+    plot!(; kwargs...)
+end
+```
+
+```julia
+plot_polyaurn(1000, 4, 6)
 ```
 
 ## 二項分布の中心極限定理
@@ -715,12 +779,17 @@ q_N = cdf(Normal(n*p, √(n*p*(1-p))), 40)
 #### Julia言語による視覚化1
 
 ```julia
+n, p = 100, 1/2
+```
+
+```julia
 # (1)
 plot(x -> mypdf(Binomial(n, p), x), 30, 70; label="", c=1)
 vline!([n*p]; label="np", c=1)
 plot!(x -> mypdf(Binomial(n, p), x), 30, 40.5;
     label="", fillrange=0, c=1, alpha=0.5)
-annotate!(35, 0.01, text(@sprintf("%0.5f", p_B), 10, :blue))
+prob = cdf(Binomial(n, p), 40)
+annotate!(35, 0.01, text(@sprintf("%0.5f", prob), 10, :blue))
 vline!([40]; label="", c=:gray)
 title!("Binomial(n = $n, p = $p)")
 ```
@@ -731,9 +800,10 @@ plot(x -> mypdf(Normal(n*p, √(n*p*(1-p))), x), 30, 70; label="", c=:blue, ls=:
 vline!([n*p]; label="np", ls=:dashdot, c=:blue)
 plot!(x -> mypdf(Normal(n*p, √(n*p*(1-p))), x), 30, 40;
     label="", fillrange=0, c=:blue, alpha=0.5)
-annotate!(35, 0.01, text(@sprintf("%0.5f", q_N), 10, :blue))
+prob = cdf(Normal(n*p, √(n*p*(1-p))), 40)
+annotate!(35, 0.01, text(@sprintf("%0.5f", prob), 10, :blue))
 vline!([40]; label="", c=:gray)
-title!("Normal(μ = 100×$p, σ = √$(n*p*(1-p)))")
+title!("Normal(μ = $n×$p, σ = √$(n*p*(1-p)))")
 ```
 
 ```julia
@@ -970,6 +1040,19 @@ q_L = (k - z*σ̂)/n
 #### Julia言語による視覚化2
 
 ```julia
+n, k, α = 100, 40, 0.05
+p̂ = k/n
+σ̂² = n*p̂*(1-p̂)
+σ̂ = √σ̂²
+
+p_U = quantile(Beta(k+1, n-k), 1 - α/2)
+p_L = quantile(Beta(k, n-k+1), α/2)
+z = quantile(Normal(0, 1), 1 - α/2)
+q_U = (k + z*σ̂)/n
+q_L = (k - z*σ̂)/n;
+```
+
+```julia
 # (1)
 plot(x -> mypdf(Binomial(n, p_U), x), 10, 70; label="", c=1)
 vline!([n*p_U]; label="n p_U", c=1)
@@ -1020,7 +1103,7 @@ plot!(x -> mypdf(Normal(n*q_U, σ̂), x), 10, 40;
     label="", fillrange=0, c=:blue, alpha=0.5)
 annotate!(35, 0.01, text("2.5%", 10, :blue))
 vline!([40]; label="", c=:gray)
-title!("Normal(μ = 100×$(@sprintf "%.4f" q_U)), σ = √($σ̂²))")
+title!("Normal(μ = $(n)×$(@sprintf "%.4f" q_L), σ = √($n⋅$p̂(1-$p̂))")
 plot!(; size=(600, 250))
 ```
 
@@ -1032,7 +1115,7 @@ plot!(x -> mypdf(Normal(n*q_L, σ̂), x), 40, 70;
     label="", fillrange=0, c=:red, alpha=0.5)
 annotate!(45, 0.01, text("2.5%", 10, :red))
 vline!([40]; label="", c=:gray)
-title!("Normal(μ = 100×$(@sprintf "%.4f" q_L)), σ = √($σ̂²))")
+title!("Normal(μ = $(n)×$(@sprintf "%.4f" q_L), σ = √($n⋅$p̂(1-$p̂))")
 plot!(; size=(600, 250))
 ```
 
@@ -1073,6 +1156,171 @@ vline!([40]; label="", c=:gray)
 title!("[p_L, p_U] = [$(@sprintf "%.4f" p_L), $(@sprintf "%.4f" p_U)]"*
     ",  [q_L, q_U] = [$(@sprintf "%.4f" q_L), $(@sprintf "%.4f" q_U)]")
 plot!(; size=(600, 250))
+```
+
+__次節で使う視覚化のための函数__
+
+```julia
+function plot_bin_and_normal_cdfs(;
+        n=20, p = 0.4, k = 5, k_normal = k, midp = false, 
+        xlim = (-0.5, 16), annpos = (2, 0.05), midpannpos = (2, 0.07),
+        xtick = 0:20, kwargs...
+    )
+    P1 = plot(x -> mypdf(Binomial(n, p), x), xlim...; label="", c=1)
+    if midp
+        plot!(x -> mypdf(Binomial(n, p), x), first(xlim), k;
+                label="", fillrange=0, c=1, alpha=0.5)
+        prob1 = (cdf(Binomial(n, p), k-1) + cdf(Binomial(n, p), k))/2
+        annotate!(midpannpos..., text("mid-P value", 9, :blue))
+    else
+        plot!(x -> mypdf(Binomial(n, p), x), first(xlim), k+0.5;
+                label="", fillrange=0, c=1, alpha=0.5)
+        prob1 = cdf(Binomial(n, p), k)
+    end
+    annotate!(annpos..., text(@sprintf("%0.5f", prob1), 10, :blue))
+    vline!([k]; label="x = $k", c=:gray)
+    title!("Binomial(n = $n, p = $p)")
+    plot!(; xtick)
+
+    P2 = plot(x -> mypdf(Normal(n*p, √(n*p*(1-p))), x), xlim...;
+        label="", c=:blue, ls=:dash)
+    plot!(x -> mypdf(Normal(n*p, √(n*p*(1-p))), x), first(xlim), k_normal;
+        label="", fillrange=0, c=:blue, alpha=0.5)
+    prob2 = cdf(Normal(n*p, √(n*p*(1-p))), k_normal)
+    annotate!(annpos..., text(@sprintf("%0.5f", prob2), 10, :blue))
+    vline!([k_normal]; label="x = $k_normal", c=:gray)
+    title!("Normal(μ = $(n*p), σ = √$(n*p*(1-p)))")
+    plot!(; xtick)
+
+    plot(P1, P2; size=(800, 250))
+end
+```
+
+```julia
+pval_exact(k, n, p0) = cdf(Binomial(n, p0), k)
+pval_normal(k, n, p0) = cdf(Normal(n*p0, √(n*p0*(1-p0))), k)
+pval_conti(k, n, p0) = cdf(Normal(n*p0, √(n*p0*(1-p0))), k+0.5)
+pval_midp(k, n, p0) = (cdf(Binomial(n, p0), k-1) + cdf(Binomial(n, p0), k))/2
+
+function prob_alphaerror(pvalfunc, n, p0, α)
+    null = Binomial(n, p0)
+    sum(pdf(null, k) for k in support(null)
+            if pvalfunc(k, n, p0) ⪅ α; init = 0.0)
+end
+
+function _plot_alphaerrors(n, p0, α, tick)
+    p_exact  = prob_alphaerror.(pval_exact, n, p0, α)
+    p_normal = prob_alphaerror.(pval_normal, n, p0, α)
+    p_conti  = prob_alphaerror.(pval_conti, n, p0, α)
+    p_midp   = prob_alphaerror.(pval_midp, n, p0, α)
+    plot(; legend=:topleft)
+    plot!(α, p_exact; label="exact")
+    plot!(α, p_normal; label="normal", ls=:dash)
+    plot!(α, p_conti; label="conti. corr.", ls=:dot, lw=1.5)
+    plot!(α, p_midp; label="mid-P", ls=:dashdot)
+    plot!(α, α; label="", c=:black, ls=:dot)
+    xtick = ytick = tick
+    plot!(; xtick, ytick, xrotation=90)
+    a, b = extrema(α)
+    xlim = ylim = (a-0.02(b-a), b+0.02(b-a))
+    plot!(; xlim, ylim)
+    title!("n = $n, p₀ = $p0")
+end
+
+function plot_alphaerrors(n, p0)
+    α = 
+    P1 = _plot_alphaerrors(n, p0, 0:0.001:1, 0:0.1:1)
+    P2 = _plot_alphaerrors(n, p0, 0:0.0001:0.1, 0:0.01:1)
+    plot(P1, P2; size=(640, 320), layout=(1, 2))
+end
+```
+
+### 連続性補正とmid-P補正
+
+まずは次の図を見て欲しい.
+
+```julia
+plot_bin_and_normal_cdfs()
+```
+
+この図の左側と右側は, それぞれ, $n=20$, $p=0.4$, $k=5$ に関する
+
+$$
+\begin{aligned}
+&
+\op{cdf}(\op{Binomial}(n, p), k) \approx 0.12560,
+\\ &
+\op{cdf}(\op{Normal}(np, \sqrt{np(1-p)}), k) \approx 0.08545,
+\end{aligned}
+$$
+
+の計算を視覚化したものである.  ここで $\op{cdf}$ は累積分布函数 (cumulative distribution function) を意味する.
+
+後者は前者の正規分布近似による計算であるが, 前者の値 $\approx 0.12560$ より小さな値 $\approx 0.08545$ になってしまっている. この近似をより正確にするためにはどうすればよいだろうか?
+
+図を見ればわかるように, 正規分布側で $5$ 以下になる確率ではなく, $5.5$ 以下になる確率を計算すれば良さそうである.  実際に計算してみると次のセルのようになる.
+
+```julia
+plot_bin_and_normal_cdfs(; k_normal = 5.5)
+```
+
+正規分布近似の側で $5.5$ 以下になる確率を計算するようにしたら, 二項分布の側で $5$ 以下である確率の値 $\approx 0.12560$ にかなり近い値 $\approx 0.12692$ が得られた.
+
+正規分布による近似の側(より一般的には離散分布の連続分布による近似側)をこのように補正することを __連続性補正__ (continuity correction)と呼ぶ.
+
+
+逆に二項分布の側での値を $5$ 以下になる確率と $4$ 以下になる確率の平均値で求めるようにすると, 正規分布近似側の値に近付く.  離散分布の側でこのように補正することを __mid-P 補正__ (mid-P correction)と呼ぶ.  次の図を見よ.
+
+```julia
+plot_bin_and_normal_cdfs(; midp = true)
+```
+
+mid-P補正は近似である連続分布の側に近似されている離散分布側の値を近付ける補正になっている.  近似される側を近似する側に近付ける補正を使うことは無意味だと感じる人もいるかもしれないが必ずしもそうではないことを説明しよう.
+
+
+二項分布 $\op{Binomial}(n, p_0)$ において, $k$ 以下になる確率を次のように書き, データ $k$ に関する仮説 $p\ge p_0$ の片側検定の正確な __P値__ (P-value) と呼ぶことにする:
+
+$$
+\op{pval}_{\op{exact}}(k|n,p_0) = \op{cdf}(\op{Binomial}(n, p_0), k).
+$$
+
+これの正規分布近似版とその連続補正版とmid-P補正版をそれぞれ次のように書くことにする:
+
+$$
+\begin{aligned}
+&
+\op{pval}_{\op{normal}}(k|n,p_0) =
+\op{cdf}(\op{Normal}(n p_0, \sqrt{n p_0(1 - p_0)}), k),
+\\ &
+\op{pval}_{\op{conti}}(k|n,p_0) =
+\op{cdf}(\op{Normal}(n p_0, \sqrt{n p_0(1 - p_0)}), k+0.5),
+\\ &
+\op{pval}_{\op{mid-P}}(k|n,p_0) =
+\frac{1}{2}(\op{cdf}(\op{Binomial}(n, p_0), k-1) + \op{cdf}(\op{Binomial}(n, p_0), k)).
+\end{aligned}
+$$
+
+確率変数 $K$ が $\op{Binomial}(n, p_0)$ に従うとき, データを $K$ としたときのこれらのP値の値が $0<\alpha<1$ について $\alpha$ 以下になる確率がどうなるかを計算してみよう.  その確率は __第一種の過誤の確率__ もしくは __アルファエラー__ と呼ばれ, $\alpha$ に近いことが期待される値とみなされる(その理由は後で検定論を学べばわかる).
+
+正確なP値については, 第一種の過誤の確率は確実に $\alpha$ 以下になる. しかし, 大部分の場合に $\alpha$ より小さな値になり, 場合によってはかなり小さな値になる(この性質を __保守的__ (conservative)と形容することがある). それの良い近似である連続補正された正規分布近似版も保守的である.  それらに対して, 正規分布近似によるP値とmid-P補正によるP値の第一種の過誤の確率は $\alpha$ 前後の値になり, 平均的には正確なP値よりも $\alpha$ の値に近付く.
+
+第一種の過誤の確率を確実に $\alpha$ 以下にしたければ正確なP値が優れているが, 第一種の過誤の確率が $\alpha$ に近い方が良いことにすると正規分布近似によるP値とmid-P補正によるP値の方が優れていることになる.
+
+このようにP値のユーザーが何を欲しているかによってどのP値が適切であるかは変わる.
+
+
+以下のグラフは横軸を $\alpha$ としたときのP値達の第一種の過誤の確率を同時プロットしたものである.
+
+```julia
+plot_alphaerrors(10, 0.6)
+```
+
+```julia
+plot_alphaerrors(20, 0.6)
+```
+
+```julia
+plot_alphaerrors(40, 0.6)
 ```
 
 ### 問題: 二項分布の中心極限定理を使った極限の計算問題
@@ -2591,7 +2839,7 @@ $$
 
 __解答終__
 
-__注意:__ 正値の確率変数の分布は対数を取ることによって左右の非対称性が緩和されて, 正規分布近似がより正確になる場合がある.  次の例を見よ.
+__注意:__ 正値の確率変数の分布は対数を取ることによって左右の非対称性が緩和されて, 正規分布近似がより正確になる場合がある(次の節の例を見よ). 分布の非対称性を補正して正規分布近似をより正確にする工夫は色々研究されている.
 
 
 ### 例: 自由度が大きなχ²分布の対数の近似
@@ -2687,11 +2935,21 @@ f_{yy}(\alpha,\beta)(Y-\beta)^2
 \frac{-\beta}{(\alpha+\beta)^3}(X-\alpha)^2 +
 \frac{\alpha-\beta}{(\alpha+\beta)^3}(X-\alpha)(Y-\beta) +
 \frac{\alpha}{(\alpha+\beta)^3}(Y-\beta)^2
++ \cdots
+\\ &=
+\frac{\alpha}{\alpha+\beta} +
+\frac{\beta}{\alpha+\beta}\frac{X-\alpha}{\alpha+\beta} +
+\frac{-\alpha}{\alpha+\beta}\frac{Y-\beta}{\alpha+\beta}
+\\ &+
+\frac{-\beta}{\alpha+\beta}\left(\frac{X-\alpha}{\alpha+\beta}\right)^2 +
+\frac{\alpha-\beta}{\alpha+\beta}
+\frac{X-\alpha}{\alpha+\beta}\frac{Y-\beta}{\alpha+\beta} +
+\frac{\alpha}{\alpha+\beta}\left(\frac{Y-\beta}{\alpha+\beta}\right)^2
 + \cdots.
 \end{aligned}
 $$
 
-ゆえに, $\alpha, \beta$ の両方が大きいならば, 
+ゆえに, $\alpha, \beta$ の両方が大きいならば(より正確に言えば $\alpha=N\mu$, $\beta=N(1-\mu$, $0<\mu<1$ で $N$ が大きいならば), 
 
 $$
 \frac{\op{std}(X)}{\alpha+\beta} = \frac{\sqrt{\alpha}}{\alpha+\beta}, \quad
@@ -2744,7 +3002,7 @@ __注意:__ $X_1,X_2,\ldots,X_n$ が独立同分布な確率変数達で $X_i\si
 
 ゆえに, 上の問題の結果は, パラメータの値が大きなときのベータ分布が正規分布で近似されることが, ガンマ分布に関する中心極限定理の帰結になっていることを示していることになる.
 
-ベータ分布の確率密度函数の形から直接的に正規分布近似を導くことも易しい.
+ベータ分布の確率密度函数の形から直接的に正規分布近似を導くことも易しい(次の節の問題を見よ).
 
 __注意終__
 
@@ -2908,7 +3166,7 @@ $$
 この $\mu(1-\mu)$ が上の解答例の中で登場した正規分布の分散である.
 
 
-## 確率分布の正規分布近似
+## 各種の確率分布の正規分布近似
 
 以下に挙げるもの以外にも正規分布で近似される確率分布はたくさんある.  各自, 研究してノートにまとめておくとよいだろう.  具体的な数値例をコンピュータで作っておくと, どのようなときにどれだけ近似がうまく行くかについての「土地勘」が得られる.
 
@@ -3088,7 +3346,7 @@ plot_normalapprox(TDist(20))
 
 ### ベータプライム分布の正規分布近似
 
-$\alpha, \beta > 0$ が大きなとき, ベータプライム分布 $\op{Beta}(\alpha, \beta)$ は正規分布で近似される. (証明に興味がある人は自分で証明してみよ.)
+$\alpha, \beta > 0$ が大きなとき, ベータプライム分布 $\op{BetaPrime}(\alpha, \beta)$ は正規分布で近似される. (証明に興味がある人は自分で証明してみよ. ベータプライム分布は $F$ 分布のスケール変換に等しい.)
 
 ```julia
 plot_normalapprox(BetaPrime(100, 200))
