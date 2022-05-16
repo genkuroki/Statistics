@@ -13,10 +13,10 @@ jupyter:
     name: julia-1.7
 ---
 
-# 中心極限定理などについて
+# 大数の法則と中心極限定理
 
 * 黒木玄
-* 2022-04-11～2022-05-08
+* 2022-04-11～2022-05-16
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -2345,7 +2345,8 @@ $$
 E[f(Z_n^{(k)})] - E[f(Z_n^{(k-1)})]
 \\ &=
 \frac{E[f'''(A_n^{(k)})]}{3!\,n\sqrt{n}}(E[X_k^3] - E[Y_k^3]) +
-\frac{E[f^{(4)}(A_n^{(k)})]}{4!\,n^2}(E[X_k^4] - E[Y_k^4]) +
+\frac{E[f^{(4)}(A_n^{(k)})]}{4!\,n^2}(E[X_k^4] - E[Y_k^4]) 
+\\ &+
 \frac{1}{n^2\sqrt{n}}
 \left(
 E\left[X_k^5 G\left(A_n^{(k)}, \frac{Y_k}{\sqrt{n}}\right)\right] +

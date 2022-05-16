@@ -91,7 +91,7 @@ __定義された分布__
 * 分布 D の __累乗__: Dⁿ
 * 分布 D のサイズnの __標本分布__: Dⁿ
 
-### 05 中心極限定理について
+### 05 大数の法則と中心極限定理
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)\]
