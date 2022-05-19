@@ -749,6 +749,8 @@ p(x) = \int p(x,y)\,dy
 p(y) = \int p(x,y)\,dx.
 $$
 
+確率密度函数 $p(x), $p(y)$ のそれぞれが定める $x,y$ の分布を __周辺分布__ (marginal distribution)と呼ぶことがある.
+
 このとき, $y$ に対応する確率変数 $Y$ によって $Y=y$ という条件で定義される条件付き確率分布の確率密度函数
 
 $$
@@ -812,7 +814,177 @@ Bayes統計の文脈では, $p(\theta)$ は __事前分布__ (prior)と呼ばれ
 
 ### 2変量の正規分布とその条件付き確率分布の例
 
+$$
+\Sigma =
+\begin{bmatrix}
+a & b \\
+b & d \\
+\end{bmatrix}
+$$
+
+は固有値がすべて正の実対称行列であるとし, $\mu=(\mu_x, \mu_y) \in \R^2$ であるとする. このとき, 
+
+$$
+\Sigma^{-1} = 
+\frac{1}{ac-b^2}
+\begin{bmatrix}
+c & -b \\
+-b & a \\
+\end{bmatrix}
+$$
+
+であり, $(x,y)\in\R^2$ の確率密度函数を
+
+$$
+\begin{aligned}
+p(x,y) &=
+\frac{1}{\det(2\pi\Sigma)^{1/2}}
+\exp\left(-\frac{1}{2}
+\big[x - \mu_x,\; y - \mu_y \big]
+\Sigma^{-1}
+\begin{bmatrix}
+x - \mu_x \\
+y - \mu_y \\
+\end{bmatrix}
+\right)
+\\ &=
+\frac{1}{\sqrt{(2\pi)^2(ac-b^2)}}
+\exp\left(-\frac
+{a(y-\mu_y)^2 - 2b(x-\mu_x)(y-\mu_y) + c(x-\mu_x)^2}
+{2(ac-b^2)}
+\right)
+\end{aligned}
+$$
+
+と定めることができる. これが $\iint_{\R^2} p(x,y)\,dx\,dy = 1$ を満たすことは, $\Sigma$ を直交行列で対角すれば示せる(詳細は略す). この確率密度函数が定める確率分布を2変量正規分布と呼び,
+
+$$
+\op{MvNormal}(\mu, \Sigma)
+$$
+
+と表すことにする.
+
+2変量正規分布の条件 $X=x$ が定める $y$ に関する条件付き確率分布を求めよう.
+
+$$
+\begin{aligned}
+&
+a(y-\mu_y)^2 - 2b(x-\mu_x)(y-\mu_y) + c(x-\mu_x)^2
+\\ &=
+a\left(y - \mu_y - \frac{b}{a}(x - \mu_x)\right)^2 - \frac{b^2}{a}(x - \mu_x)^2 + c(x - \mu_x)^2
+\\ &=
+a\left(y - \mu_y - \frac{b}{a}(x - \mu_x)\right)^2 + \frac{ac-b^2}{a}(x - \mu_x)^2.
+\end{aligned}
+$$
+
+ゆえに,
+
+$$
+\begin{aligned}
+&
+\sqrt{(2\pi)^2(ac-b^2)}\;p(x)
+\\ &=
+\int_\R \exp\left(-\frac
+{a\left(y - \mu_y - (b/a)(x - \mu_x)\right)^2 + ((ac-b^2)/a)(x - \mu_x)^2}
+{2(ac-b^2)}
+\right)dy
+\\ &=
+\sqrt{\frac{2\pi(ac-b^2)}{a}}
+\exp\left(-\frac{(x - \mu_x)^2}{2a}\right)
+\end{aligned}
+$$
+
+なので,
+
+$$
+p(x) = \frac{1}{\sqrt{2\pi a}}
+\exp\left(-\frac{(x - \mu_x)^2}{2a}\right).
+$$
+
+これは $x$ の周辺分布が平均 $\mu_x$, 分散 $a$ の正規分布になることを意味している. (実は多変量正規分布の一般論からこれは言えることでもある.) さらに, 
+
+$$
+\begin{aligned}
+&
+a(y-\mu_y)^2 - 2b(x-\mu_x)(y-\mu_y) + c(x-\mu_x)^2 - \frac{ac-b^2}{a}(x - \mu_x)^2
+\\ &=
+a\left(y - \mu_y - \frac{b}{a}(x - \mu_x)\right)^2
+\end{aligned}
+$$
+
+より,
+
+$$
+\begin{aligned}
+p(y|x) &=
+\frac{p(x,y)}{p(x)} =
+\frac{1}{\sqrt{2\pi(ac-b^2)/a}}
+\exp\left(-\frac
+{a\left(y - \mu_y - (b/a)(x - \mu_x)\right)^2}
+{2(ac-b^2)}
+\right).
+\end{aligned}
+$$
+
+これは条件 $X=x$ が定める $y$ の条件付き確率分布が平均 $(b/a)(x-\mu_x) + \mu_y$, 分散が $(ac-b^2)/a$ の正規分布になることを意味している. 
+
 __注意:__ 以上の計算を一般の多変量正規分布に一般化すれば __Gauss過程回帰__ が得られる.
+
+
+__注意:__ 最小二乗法による線形回帰との関係.  条件付き確率分布の平均と分散は $\sigma_x^2 = a$, $\sigma_{xy} = b$, $\sigma_y^2 = c$ と書くと,
+
+$$
+\frac{b}{a}(x-\mu_x) + \mu_y = \frac{\sigma_{xy}}{\sigma_x^2}(x - \mu_x) + \mu_y, \quad
+\frac{ac-b^2}{a} = \frac{\sigma_x^2\sigma_y^2 - \sigma_{xy}^2}{\sigma_x^2}
+$$
+
+と表される.  これは「標本分布について」のノートで導出したデータ $(x_1,y_1),\ldots,(x_n,y_n)$ に関する最小二乗法による線形回帰の公式
+
+$$
+\hat\alpha + \hat\beta x = \frac{s_{xy}}{s_x^2}(x - \bar{x}) + \bar{y}, \quad
+\hat\sigma^2 = \frac{n-1}{n}\frac{s_x^2 s_y^2 - s_{xy}^2}{s_x^2}
+$$
+
+に非常に似ている. ここで
+
+$$
+\begin{aligned}
+&
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i,
+\\ &
+s_x^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2, \quad
+s_y^2 = \frac{1}{n-1}\sum_{i=1}^n (y_i - \bar{y})^2,
+\\ &
+s_{xy} = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+\end{aligned}
+$$
+
+さらに, 
+
+$$
+\begin{aligned}
+&
+\hat\mu_x = \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+\hat\mu_y = \bar{y} = \frac{1}{n}\sum_{i=1}^n y_i,
+\\ &
+\hat\sigma_x^2 = \frac{n-1}{n}s_x^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2, \quad
+\hat\sigma_y^2 = \frac{n-1}{n}s_y^2 = \frac{1}{n}\sum_{i=1}^n (y_i - \bar{y})^2,
+\\ &
+\hat\sigma_{xy} = \frac{n-1}{n}s_{xy} = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+\end{aligned}
+$$
+
+とおくと,
+
+$$
+\hat\alpha + \hat\beta x = \frac{\hat\sigma_{xy}}{\hat\sigma_x^2}(x - \hat\mu_x) + \hat\mu_y, \quad
+\hat\sigma^2 = \frac{\hat\sigma_x^2 \hat\sigma_y^2 - \hat\sigma_{xy}^2}{\hat\sigma_x^2}
+$$
+
+となり, 式の類似性はさらに増す.
+
+この類似は偶然ではない. 最小二乗法による線形回帰は, データ $(x_1,y_1),\ldots,(x_n,y_n)$ に最もフィットする2変量正規分布を最尤法で構成し($\hat\mu_x$, $\hat\mu_y$, $\hat\sigma_x^2$, $\hat\sigma_y^2$, $\hat\sigma_{xy}$ がその最尤法の解になっている), 条件 $X=x$ で定められた $y$ に関する条件付き確率分布を求めることと数学的に同じことになっている.
 
 
 ## 尤度
