@@ -41,7 +41,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li></ul></li><li><span><a href="#尤度" data-toc-modified-id="尤度-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>尤度</a></span></li><li><span><a href="#推定" data-toc-modified-id="推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>推定</a></span></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例</a></span></li></ul></li><li><span><a href="#尤度" data-toc-modified-id="尤度-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>尤度</a></span></li><li><span><a href="#推定" data-toc-modified-id="推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>推定</a></span></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -146,6 +146,50 @@ $$
 $$
 
 なので確かにこの確率質量函数は「確率の総和が1になる」という条件を満たしており, 確率分布を定める.
+
+条件 $Y=y$ という条件のもとでの変数 $x$ に対応する確率変数 $X$ と $y$ の函数 $f(X,y)$ の __条件付き期待値__ を次のように書く:
+
+$$
+E[f(X,Y)|Y=y] = E[f(X,y)|y] = \sum_x f(x,y) p(x|y).
+$$
+
+これと同じ記号法を一般のパラメータ $\theta$ 付きの確率質量函数 $P(x|\theta)$ の場合にも使うことにする:
+
+$$
+E[f(X,\theta)|\theta] = \sum_x f(x,\theta) P(x|\theta).
+$$
+
+
+### 条件付き期待値の基本性質(離散分布版)
+
+条件付き期待値 $g(y) = E[f(X,y)|y]$ は $y$ の函数とみなせるので, 確率変数 $E[f(X,Y)|Y] = g(Y)$ が得られる. このとき次が成立することを示せ:
+
+$$
+E[g(Y)] = E[E[f(X,Y)|Y]] = E[f(X,Y)].
+$$
+
+__解答例:__ 定義通りに計算しよう:
+
+$$
+\begin{aligned}
+E[f(X,Y)|Y] &= E[g(Y)] = \sum_y g(y)P(y)
+\\ &=
+\sum_y E[f(X,y)|y] P(y)
+\\ &=
+\sum_y \left(\sum_x f(x,y)P(x|y)\right)P(y)
+\\ &=
+\sum_{x,y} f(x,y)P(x|y)P(y)
+\\ &=
+\sum_{x,y} f(x,y)P(x,y) =
+E[f(X,Y)].
+\end{aligned}
+$$
+
+要するに $x,y$ の同時確率質量函数が $P(x,y)=P(x|y)P(y)$ と書けることから, この問題の結論が出て来る.
+
+__解答終__
+
+__注意:__ 測度論的確率論ではこれを一般化して条件付き期待値を定義する.
 
 
 ### 離散分布の条件付き確率分布の簡単な例
@@ -428,9 +472,9 @@ __注意:__ 伝統的には以上の内容はBayesの定理の応用として説
 
 ### 必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか
 
-前節の状況において, 有病率 $p$ が $10\%, 20\%, 40\%, 80\%$ の場合の偽陽性率と偽陰性率を求めよ. 
+前節の状況において, 有病率 $p$ が $5\%, 10\%, 20\%, 40\%, 80\%$ の場合の偽陽性率と偽陰性率を求めよ. 
 
-__解答例:__ 前節で求めた偽陽性率と偽陰性率の公式に $p=0.1,0.2,0.4,0.8$ を代入すれば求まるが, 以下では地道に確率の表を書いて求めてみよう.  (前節で求めた公式を使った人は以下の地道なやり方を採用しても手間がそう増えず, 状況をより把握し易くなっていることを確認して欲しい.)
+__解答例:__ 前節で求めた偽陽性率と偽陰性率の公式に $p=0.05, 0.1,0.2,0.4,0.8$ を代入すれば求まるが, 以下では地道に確率の表を書いて求めてみよう.  (前節で求めた公式を使った人は以下の地道なやり方を採用しても手間がそう増えず, 状況をより把握し易くなっていることを確認して欲しい.)
 
 前節の確率の表を引用しよう:
 
@@ -443,6 +487,20 @@ $$
 \text{陰性} & 0.25 p & 0.95(1-p) & 0.95 - 0.70p \\
 \hline
  & p & 1-p & 1 \\
+\end{array}
+$$
+
+$p=0.05$ の場合:
+
+$$
+\begin{array}{c|c|c|c}
+& \text{病気有} & \text{病気無} & \\
+\hline
+\text{陽性} & 3.75\% & 4.75\% & 8.5\% \\
+\hline
+\text{陰性} & 1.25\% & 90.25\% & 91.5\% \\
+\hline
+ & 5\% & 95\% & 100\% \\
 \end{array}
 $$
 
@@ -509,10 +567,11 @@ $$
 \hline
 \text{有病率} & \text{偽陽性率} & \text{偽陰性率} \\
 \hline
-10\% & 4.5/12 \approx 38\% & 2.5/88 \approx 2.8\% \\
-20\% & 4/19 \approx 21\%   & 5/81 \approx 6.2\% \\
-30\% & 3/33 \approx 9.1\%  & 10/67 \approx 15\% \\
-40\% & 1/61 \approx 1.6\%  & 20/39 \approx 51\% \\
+5\%  & 4.75/8.5 \approx 56\% & 1.25/91.5 \approx 1.4\% \\
+10\% & 4.5/12 \approx 38\%   & 2.5/88 \approx 2.8\% \\
+20\% & 4/19 \approx 21\%     & 5/81 \approx 6.2\% \\
+30\% & 3/33 \approx 9.1\%    & 10/67 \approx 15\% \\
+40\% & 1/61 \approx 1.6\%    & 20/39 \approx 51\% \\
 \hline
 \end{array}
 $$
@@ -520,6 +579,240 @@ $$
 有病率が低いと偽陽性率が高くなり, 有病率が高いと偽陰性率が高くなる.
 
 __解答終__
+
+```julia
+function falsepositive_falsenegative(prevalence_rate, sensitivity, specificity)
+    a = positive_besick  = sensitivity       * prevalence_rate
+    b = negative_besick  = (1 - sensitivity) * prevalence_rate
+    c = positive_notsick = (1 - specificity) * (1 - prevalence_rate)
+    d = negative_notsick = specificity       * (1 - prevalence_rate)
+    positive = positive_besick + positive_notsick
+    negative = negative_besick + negative_notsick
+    falsepositive = positive_notsick / positive
+    falsenegative = negative_besick  / negative
+    falsepositive, falsenegative
+end
+```
+
+```julia
+falsepositive_falsenegative.([0.05, 0.1, 0.2, 0.4, 0.8], 0.75, 0.95) .|>
+x -> round.(x; digits=4)
+```
+
+### 有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化
+
+```julia
+function plot_falsepositive(prevalence_rate, sensitivity, specificity;
+        xsize = 20, ysize = xsize, ms = 5, size = (480, 300), kwargs...)
+    N = xsize * ysize
+    a = positive_besick  = sensitivity       * prevalence_rate
+    b = negative_besick  = (1 - sensitivity) * prevalence_rate
+    c = positive_notsick = (1 - specificity) * (1 - prevalence_rate)
+    d = negative_notsick = specificity       * (1 - prevalence_rate)
+    A = round(Int, a*N)
+    B = round(Int, b*N)
+    C = round(Int, c*N)
+    D = round(Int, d*N)
+    xsize_besick  = (A + B + ysize - 1) ÷ ysize 
+    xsize_notsick = (C + D + ysize - 1) ÷ ysize 
+    TP = [(mod(i, xsize_besick), -(i ÷ xsize_besick)) for i in 0:A-1]
+    FN = [(mod(i, xsize_besick), -(i ÷ xsize_besick)) for i in A:A+B-1]
+    FP = [(xsize_besick + mod(i, xsize_notsick), -(i ÷ xsize_notsick)) for i in 0:C-1]
+    TN = [(xsize_besick + mod(i, xsize_notsick), -(i ÷ xsize_notsick)) for i in C:C+D-1]
+    P = plot(; frame=false, axis=false, tick=false, margin=0Plots.mm)
+    scatter!(TP; m=:utriangle, msc=:red, mc=:white, label="true-positive", ms)
+    scatter!(FN; m=:diamond, msc=:red, mc=:white, label="false-negative", ms, msw=3)
+    scatter!(FP; m=:dtriangle, msc=:blue, mc=:white, label="false-positive", ms, msw=3)
+    scatter!(TN; m=:square, msc=:blue, mc=:white, label="true-negative", ms)
+    plot!(; legend = :outertopright)
+    plot!(; xlim = (-0.5, xsize+0.5), ylim = (-ysize-0.5, 0.5))
+    plot!(; size, kwargs...)
+ end
+```
+
+赤色は病気有を, 青色は病気無を意味する.  すなわち, 赤い上向き三角と赤いひし形は病気Dに罹っている人で, 青の下向き三角と青の正方形は病気に罹っていない人である. 
+
+三角は検査陽性を意味し, 四角は検査陰性を意味する. すなわち, 赤い上向き三角と青の下向き三角は検査で陽性になった人達で, それ以外のひし形と正方形は陰性になった人達である.
+
+青い下向き三角は病気Dに罹っていないのに検査で陽性になってしまったので偽陽性. 目立つように太くしてある.
+
+赤いひし形は病気Dに罹っているのに検査で陰性になってしまったので偽陰性. これも目立つように太くしてある.
+
+以下の図を見れば, 有病率(赤色の割合=赤い上向き三角と赤いひし形を合わせた割合)を変えたときにどのように偽陽性と偽陰性の割合が変化するかが分かる.
+
+```julia
+plot_falsepositive(0.05, 0.75, 0.95)
+```
+
+```julia
+plot_falsepositive(0.10, 0.75, 0.95)
+```
+
+```julia
+plot_falsepositive(0.20, 0.75, 0.95)
+```
+
+```julia
+plot_falsepositive(0.40, 0.75, 0.95)
+```
+
+```julia
+plot_falsepositive(0.80, 0.75, 0.95)
+```
+
+### 連続確率分布の条件付き確率分布
+
+連続変数 $(x, y)$ の確率密度函数 $p(x,y)$ が定める連続分布 $D$ を考え, 変数 $y$ に対応する確率変数を $Y$ と書く:
+
+$$
+E[f(Y)] = \iint f(y)p(x,y)\,dx\,dy =
+\int f(y)\left(\int p(x,y)\,dx\right) dy.
+$$
+
+これより, 確率変数 $Y$ が従う分布は確率密度函数
+
+$$
+p(y) = \int p(x,y)\,dx
+$$
+
+を持つことがわかる. 条件 $Y=y$ が定める $x$ に関する __条件付き確率分布__ の密度函数 $p(x|y)$ を次のように定める:
+
+$$
+p(x|y) = \frac{p(x,y)}{p(y)}.
+$$
+
+このとき,
+
+$$
+\int p(x|y)\,dx = \frac{\int p(x,y)\,dx}{p(y)} = 1
+$$
+
+より, $p(x|y)$ がパラメータ $y$ を持つ $x$ の確率密度函数になっていることがわかる.
+
+条件 $Y=y$ という条件のもとでの変数 $x$ に対応する確率変数 $X$ と $y$ 付きの函数 $f(X,y)$ の __条件付き期待値__ を次のように定める:
+
+$$
+E[f(X,Y)|Y=y] = E[f(X,y)|y] = \int f(x,y) p(x|y)\,dx.
+$$
+
+これと同じ記号法を一般のパラメータ $\theta$ 付きの確率密度函数 $p(x|\theta)$ の場合にも使うことにする:
+
+$$
+E[f(X,\theta)|\theta] = \int f(x,\theta) p(x|\theta)\,dx.
+$$
+
+
+__注意:__ 条件付き確率分布の密度函数の定義について.
+
+![conditional_density.jpg](attachment:conditional_density.jpg)
+
+
+### 条件付き期待値の基本性質(連続分布版)
+
+条件付き期待値 $g(y) = E[f(X,y)|y]$ は $y$ の函数とみなせるので, 確率変数 $E[f(X,Y)|Y] = g(Y)$ が得られる. このとき次が成立することを示せ:
+
+$$
+E[g(Y)] = E[E[f(X,Y)|Y]] = E[f(X,Y)].
+$$
+
+__解答例:__ 定義通りに計算しよう:
+
+$$
+\begin{aligned}
+E[f(X,Y)|Y] &= E[g(Y)] = \int g(y)p(y)\,dy
+\\ &=
+\int E[f(X,y)|y] p(y)\,dy
+\\ &=
+\int \left(\int f(x,y)p(x|y)\,dx\right)p(y)\,dy
+\\ &=
+\iint f(x,y)p(x|y)p(y)\,dx\,dy
+\\ &=
+\iint f(x,y)p(x,y)\,dx\,dy =
+E[f(X,Y)].
+\end{aligned}
+$$
+
+要するに $x,y$ の同時確率密度函数が $p(x,y)=p(x|y)p(y)$ と書けることから, この問題の結論が出て来る.
+
+__解答終__
+
+__注意:__ 測度論的確率論ではこれを一般化して条件付き期待値を定義する.
+
+
+### 連続分布版のBayesの定理
+
+連続変数 $(x,y)$ の確率密度函数 $P(x,y)$ によって連続確率分布が定義されているとする. 以下では, 変数 $x,y$ に対応する確率変数達 $X,Y$ それぞれ単独の確率密度函数を $p(x),p(y)$ と書くことにする:
+
+$$
+p(x) = \int p(x,y)\,dy
+\quad
+p(y) = \int p(x,y)\,dx.
+$$
+
+このとき, $y$ に対応する確率変数 $Y$ によって $Y=y$ という条件で定義される条件付き確率分布の確率密度函数
+
+$$
+p(x|y) = \frac{p(x,y)}{p(y)}, \quad
+p(y) = \int p(x,y)\,dx
+\tag{1}
+$$
+
+だけではなく, $x$ に対応する確率変数 $X$ によって $X=x$ という条件で定義される条件付き確率分布の確率密度函数
+
+$$
+p(y|x) = \frac{p(x,y)}{p(x)}, \quad
+p(x) = \int P(x,y)\,dy
+\tag{2}
+$$
+
+が定義される.  このとき
+
+$$
+\begin{aligned}
+&
+p(x,y) = p(x|y)p(y) = p(y|x)p(x),
+\\ &
+p(x) = \int p(x,y)\,dy = \int p(x|y)p(y)\,dy,
+\\ &
+p(y) = \int p(x,y)\,dx = \int p(y|x)p(x)\,dx
+\end{aligned}
+\tag{3}
+$$
+
+なので,
+
+$$
+\begin{aligned}
+&
+p(y|x) = \frac{p(x|y)p(y)}{\int p(x|y)p(y)\,dy}, 
+\\ &
+p(x|y) = \frac{p(y|x)p(x)}{\int p(y|x)p(x)\,dx}.
+\end{aligned}
+\tag{B}
+$$
+
+この結果(B)を __Bayesの定理__ (ベイズの定理)と呼ぶ.
+
+しかし, 以上の議論を見ればわかるように, Bayesの定理は条件付き確率分布の定義を書き直したものに過ぎず, 価値ある新しい考え方が得られるような結果ではない.  しかし, 具体的もしくは理論的な計算で条件付き確率の概念が(B)の形式で使われることがあることは知っておいて損がないと思われるので, このように紹介することにした.
+
+__注意:__ Bayes統計ではパラメータ $\theta$ 付きの確率密度函数 $p(x|\theta)$ の他にパラメータ $\theta$ の確率密度函数 $p(\theta)$ も用意して, $x$ と $\theta$ の同時確率密度函数を $p(x,\theta)=p(x|\theta)p(\theta)$ と定義する.  この状況のもとでは, $X=x$ という条件で定義される $\theta$ の条件付き確率分布 $p(\theta|x)$ は次のように表される:
+
+$$
+p(\theta|x) = \frac{p(x|\theta)p(\theta)}{\int p(x|\theta)p(\theta)\,d\theta}.
+$$
+
+Bayes統計の文脈では, $p(\theta)$ は __事前分布__ (prior)と呼ばれ, $p(x|\theta)$ は __事後分布__ (posterior)と呼ばれる.  Bayes統計では新たな道具として事前分布 $p(\theta)$ を利用できるお陰で, それ抜きでは困難な統計分析も可能になる.  ただし, Bayes統計がそういう優れた性質を持っている理由は「主観確率」や「ベイズ主義」のような概念抜きに語ることができる. この点に関する詳しい説明は次の教科書にある:
+
+* 渡辺澄夫, ベイズ統計の理論と方法, 2012年, コロナ社, 226ページ.
+
+さらに, 次の論説も参考になる:
+
+* 赤池弘次, 統計的推論のパラダイムの変遷について, 統計数理研究所彙報, 1980年第27巻第1号, pp. 5-12.  [link](https://ismrepo.ism.ac.jp/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=21&item_id=32568&item_no=1)
+
+
+### 2変量の正規分布とその条件付き確率分布の例
+
+__注意:__ 以上の計算を一般の多変量正規分布に一般化すれば __Gauss過程回帰__ が得られる.
 
 
 ## 尤度
@@ -529,6 +822,10 @@ __解答終__
 
 
 ## 記述統計 (要約統計)
+
+```julia
+
+```
 
 ```julia
 
