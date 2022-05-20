@@ -18,22 +18,23 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.pdf)\]
 
-__定義された分布__
+__定義された確率分布__
 
-* __カテゴリカル分布__: Categorical(p_1,…,p_n)
-* 成功確率 p の __Bernoulli分布__: Bernoulli(p)
-* 試行回数 n の __Bernoulli試行の分布__: Bernoulli(p)^n
-* 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
-* 成功階数 k, 成功確率 p の __負の二項分布__: NegativeBinomial(n, p) = NegBin(n, p)
-* 成功確率 p の __幾何分布__: Geometric(p) = NegativeBinomial(1, p)
-* 0～1のあいだの __一様分布__: Uniform(0, 1)
-* 試行回数 n の __一様乱数生成の繰り返しの分布__: Uniform(0, 1)ⁿ
-* 平均 μ, 分散 σ² (標準偏差 σ)の __正規分布__: Normal(μ, σ)
-* __標準正規分布__: Normal() = Normal(0, 1)
-* 分布 D の __アフィン変換___: aD+b
-* 分布 D の __スケール変換__: aD (a > 0)
-* 分布 D の __平行移動__: D + b
-* 分布 D の __逆数__: 1/D
+* __カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
+
+* 成功確率 $p$ の __Bernoulli分布__: $\mathrm{Bernoulli}(p)$
+* 試行回数 $n$, 成功確率 $p$ の __Bernoulli試行の分布__: $\mathrm{Bernoulli}(p)^n$
+* 試行回数 $n$, 成功確率 $p$ の __二項分布__: $\mathrm{Binomial}(n, p)$ ($n$ 回のBernoulli試行での成功回数の分布)
+* 成功回数 $k$, 成功確率 $p$ の __負の二項分布__: $\mathrm{NegativeBinomial}(n, p) = \mathrm{NegBin}(n, p)$ (Bernoulli試行をちょうど $k$ 回成功するまで続けたときの失敗回数の分布)
+* 成功確率 $p$ の __幾何分布__: $\mathrm{Geometric}(p) = \mathrm{NegativeBinomial}(1, p)$ (Bernoulli試行を成功するまで続けたときの失敗の回数の分布)
+* 0から1のあいだの __一様分布__: $\mathrm{Uniform}(0, 1)$ (コンピュータでの一様乱数函数 `rand()` のモデル化)
+* 試行回数 $n$ の __一様乱数生成の繰り返しの分布__: $\mathrm{Uniform}(0, 1)^n$
+* 平均 $\mu$, 分散 $\sigma^2$ (標準偏差 $\sigma$)の __正規分布__: $\mathrm{Normal}(\mu, \sigma)$
+* __標準正規分布__: $\mathrm{Normal}() = \mathrm{Normal}(0, 1)$
+* 分布 $D$ の __アフィン変換___: $aD+b$
+* 分布 $D$ の __スケール変換__: $aD$ ($a > 0$)
+* 分布 $D$ の __平行移動__: $D + b$
+* 分布 $D$ の __逆数__: $1/D$
 
 ### 02 Gauss積分, ガンマ函数, ベータ函数
 
@@ -42,20 +43,21 @@ __定義された分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.pdf)\]
 
-__定義された分布__
+__定義された確率分布__
 
-* 正規分布 (再): Normal(μ, σ) = μ + σ Normal(0, 1)
-* 形状パラメータ α, スケールパラメータ θ の __ガンマ分布__: Gamma(α, θ) = θ Gamma(α, 1)
-* 平均 θ の __指数分布__: Exponential(θ) = Gamma(1, θ)
-* パラメータ a, b の __Laplace分布__: Laplace(a, b)
-* 形状パラメータ α, スケールパラメータ θ の __逆ガンマ分布__: InverseGamma(α, θ) = 1/Gamma(α, 1/θ)
-* 自由度 ν の __χ²分布__(カイ二乗分布): Chisq(ν) = Gamma(ν/2, 2)
-* 形状パラメータ α, スケールパラメータ θ の __Weibull分布__: Weibull(α, θ)
-* パラメータ α, β の __ベータ分布__: Beta(α, β)
-* 自由度 ν の __t分布__: TDist(ν) (Beta(1/2, ν/2) と密接に関係)
-* パラメータ α, β の __ベータプライム分布__: BetaPrime(α, β) = 1/(1-Beta(α, β))-1  (確率 t に関する分布 Beta(α, β) をオッズ u = t/(1-t)=1/(1-t)-1 に関する分布に変換したもの) 
-* 自由度 (ν₁, ν₂) の __F分布__: FDist(ν₁, ν₂) = (ν₂/ν₁)BetaPrime(ν₁/2, ν₂/2)
-* __Dirichlet分布__: Dirichlet(α_1,…,α_n)  (n=2の場合がベータ分布と一致)
+* 正規分布 (再): $\mathrm{Normal}(\mu, \sigma) = \mu + \sigma\,\mathrm{Normal}(0, 1)$
+
+* 形状 $\alpha$, スケール $\theta$ の __ガンマ分布__: $\mathrm{Gamma}(\alpha, \theta) = \theta\,\mathrm{Gamma}(\alpha, 1)$ (平均的なイベント発生間隔が $\theta$ のときにちょうど $\alpha$ 回イベントが生じるまでにかかる時間の分布)
+* 平均 $\theta$ の __指数分布__: $\mathrm{Exponential}(\theta) = \mathrm{Gamma}(1, \theta)$ (平均的なイベント発生間隔が $\theta$ のときにイベントが発生するまでにかかる時間の分布)
+* 中央値 $a$, スケール $b$ の __Laplace分布__: $\mathrm{Laplace}(a, b)$
+* 形状 $\alpha$, スケール $\theta$ の __逆ガンマ分布__: $\mathrm{InverseGamma}(\alpha, \theta) = 1/\mathrm{Gamma}(\alpha, 1/\theta)$
+* 自由度 $\nu$ の __χ²分布__(カイ二乗分布): $\mathrm{Chisq}(\nu) = \mathrm{Gamma}(\nu/2, 2)$
+* 形状 $\alpha$, スケール $\theta$ の __Weibull分布__: $\mathrm{Weibull}(\alpha, \theta)$
+* パラメータ $\alpha, \beta$ の __ベータ分布__: $\mathrm{Beta}(\alpha, \beta)$ ($\alpha+\beta-1$ 個の一様乱数の中で $\alpha$ 番目に小さな(= $\beta$ 番目に大きな)値の分布)
+* 自由度 $\nu$ の __t分布__: $\mathrm{TDist}(\nu)$ (平均 $0$ の正規分布で分散の逆数が $\mathrm{Chisq}(\nu)/\nu$ に従う場合, $\mathrm{BetaPrime}(1/2, \nu/2)$ と密接に関係)
+* パラメータ $\alpha,\beta$ の __ベータプライム分布__: $\mathrm{BetaPrime}(\alpha, \beta)$  (確率 $t$ に関するベータ分布 $\mathrm{Beta}(\alpha, \beta)$ をオッズ $u = t/(1-t)=1/(1-t)-1$ に関する分布に変換したもの) 
+* 自由度 $\nu_1, \nu_2$ の __F分布__: $\mathrm{FDist}(\nu_1, \nu_2) = (\nu_2/\nu_1)\,\mathrm{BetaPrime}(\nu_1/2, \nu_2/2)$
+* __Dirichlet分布__: $\mathrm{Dirichlet}(\alpha_1,\ldots,\alpha_n)$  ($n=2$ の場合がベータ分布と一致)
 
 ### 03 確率分布達の解釈
 
@@ -64,15 +66,16 @@ __定義された分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)\]
 
-__定義された分布__
+__定義された確率分布__
 
-* __対数正規分布__: LogNormal(μ, σ) = exp(Normal(μ, σ))
-* 期待値 λ の __Poisson分布__(ポアソン分布): Poisson(λ)
-* __負の二項分布__ (Poisson分布の期待値パラメータがガンマ分布に従う場合): NegativeBinomial(α, 1/(1+θ))
-* __ベータ二項分布__: BetaBinomial(n, α, β)
-* __超幾何分布__: Hypergeometric(s, f, n)
-* __ベータ負の二項分布__: NegativeBetaBinomial(n, α, β)
-* 試行回数 n の __Pólyaの壺の確率分布__: Pólya(n, α, β)
+* __対数正規分布__: $\mathrm{LogNormal}(\mu, \sigma) = \exp(\mathrm{Normal}(\mu, \sigma))$
+
+* 平均 $\lambda$ の __Poisson分布__(ポアソン分布): $\mathrm{Poisson}(\lambda)$
+* __負の二項分布__: $\mathrm{NegativeBinomial}(\alpha, 1/(1+\theta))$ (Poisson分布の平均パラメータ $\lambda$ がガンマ分布に従う場合)
+* __ベータ二項分布__: $\mathrm{BetaBinomial}(n, \alpha, \beta)$ (二項分布の成功確率パラメータがベータ分布に従う場合)
+* __超幾何分布__: $\mathrm{Hypergeometric}(s, f, n)$ (非復元抽出の分布)
+* __ベータ負の二項分布__: $\mathrm{NegativeBetaBinomial}(n, \alpha, \beta)$ (負の二項分布の成功確率パラメータがベータ分布に従う場合)
+* 試行回数 $n$ の __Pólyaの壺の確率分布__: $\mathrm{Pólya}(n, \alpha, \beta)$ (Bernoulli試行の分布で成功確率パラメータがベータ分布に従う場合)
 
 ### 04 標本分布について
 
@@ -87,11 +90,13 @@ __演習用サンプル__
   * [csv file](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe.csv), [raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe.csv)
   * [transposed version](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe_transposed.csv), [transposed raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe_transposed.csv)
 
-__定義された分布__
+__定義された確率分布__
 
-* 分布達 D₁,…,Dₙ の __積__: D₁×⋯×Dₙ
-* 分布 D の __累乗__: Dⁿ
-* 分布 D のサイズnの __標本分布__: Dⁿ
+* 分布達 $D_1,\ldots,D_n$ の __積__: $D_1\times\cdots\times D_n$
+
+* 分布 $D$ の __累乗__: $D^n$
+
+* 分布 $D$ のサイズ $n$ の __標本分布__: $D^n$
 
 ### 05 大数の法則と中心極限定理
 
@@ -113,12 +118,16 @@ __定義された分布__
 * [pdf]()
 \[[download]()\]
 
+<!--
 __演習用サンプル__
+-->
 
-__定義された分布__
+__定義された確率分布__
 
-* __2変量正規分布__: MvNormal(μ, Σ)
-* 2×2の分割表の分布
+* __2変量正規分布__: $\mathrm{MvNormal}(\mu, \Sigma)$ (__多変量正規分布__ でも同じ記号を使う.)
+
+* __2×2の分割表の分布__
+
   * 4つのPoisson分布の積
   * 四項分布
   * 2つの二項分布の積
