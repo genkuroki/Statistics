@@ -2,7 +2,6 @@
 
 すべてをまとめたPDF(更新は遅れる予定): [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 
-$\alpha$
 
 ## 資料
 
@@ -21,9 +20,11 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 
 __定義された分布__
 
-* __カテゴリカル分布__: Categorical(p_1,…,p_n)
-* 成功確率 p の __Bernoulli分布__: Bernoulli(p)
-* 試行回数 n の __Bernoulli試行の分布__: Bernoulli(p)ⁿ
+$\newcommand\op{\operatorname}$
+
+* __カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
+* 成功確率 p の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
+* 試行回数 n の __Bernoulli試行の分布__: $\op{Bernoulli}(p)^n$
 * 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
 * 成功階数 k, 成功確率 p の __負の二項分布__: NegativeBinomial(n, p) = NegBin(n, p)
 * 成功確率 p の __幾何分布__: Geometric(p) = NegativeBinomial(1, p)
