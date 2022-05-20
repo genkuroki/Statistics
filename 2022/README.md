@@ -21,7 +21,7 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 __定義された分布__
 
 * __カテゴリカル分布__: $\text{Categorical}(p_1,\ldots,p_n)$
-* 成功確率 p の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
+* 成功確率 $p$ の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
 * 試行回数 n の __Bernoulli試行の分布__: $\operatorname{Bernoulli}(p)^n$
 * 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
 * 成功階数 k, 成功確率 p の __負の二項分布__: NegativeBinomial(n, p) = NegBin(n, p)
