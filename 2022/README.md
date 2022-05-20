@@ -24,7 +24,10 @@ $\mathrm{Categorical}(p_1,\ldots,p_n)$
 
 $\text{Categorical}(p_1,\ldots,p_n)$
 
+
 __カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
+
+* $\alpha$
 
 * 成功確率 p の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
 * 試行回数 n の __Bernoulli試行の分布__: $\operatorname{Bernoulli}(p)^n$
