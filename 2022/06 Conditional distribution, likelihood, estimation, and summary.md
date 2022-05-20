@@ -41,13 +41,14 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例</a></span></li></ul></li><li><span><a href="#尤度" data-toc-modified-id="尤度-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>尤度</a></span></li><li><span><a href="#推定" data-toc-modified-id="推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>推定</a></span></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-1.15.1"><span class="toc-item-num">1.15.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-1.15.2"><span class="toc-item-num">1.15.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-1.15.3"><span class="toc-item-num">1.15.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-1.15.4"><span class="toc-item-num">1.15.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-1.15.5"><span class="toc-item-num">1.15.5&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-1.15.6"><span class="toc-item-num">1.15.6&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-1.15.7"><span class="toc-item-num">1.15.7&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-1.15.8"><span class="toc-item-num">1.15.8&nbsp;&nbsp;</span>独立性条件</a></span></li></ul></li></ul></li><li><span><a href="#尤度" data-toc-modified-id="尤度-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>尤度</a></span></li><li><span><a href="#推定" data-toc-modified-id="推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>推定</a></span></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using BenchmarkTools
 using Distributions
+using LinearAlgebra
 using Printf
 using QuadGK
 using Random
@@ -323,6 +324,8 @@ P(x) = P(X=x) = \sum_y P(x,y),
 \quad
 P(y) = P(Y=y) = \sum_x P(x,y).
 $$
+
+__記号法上の注意:__ 慣習に従って $P(x)$ と $P(y)$ の違いを独立変数名 $x$, $y$ の違いで区別するという記号法を採用している. これは簡潔に書くための手抜きであり, $P_X(x)$ や $P_Y(y)$ のように書けば独立変数名の違いで区別する必要はなくなる.  以下では簡潔さを重視するスタイルを採用したので混乱しないように注意して欲しい. $P(x|y)$ と $P(y|x)$ の違いも独立変数名 $x,y$ の違いで区別することになる.
 
 このとき, $y$ に対応する確率変数 $Y$ によって $Y=y$ という条件で定義される条件付き確率分布の確率質量函数
 
@@ -660,6 +663,54 @@ plot_falsepositive(0.40, 0.75, 0.95)
 plot_falsepositive(0.80, 0.75, 0.95)
 ```
 
+### おまけの問題: モンティ・ホール問題 (Monty Hall problem)
+
+以下のようなゲームを考える:
+
+(1) 親は $1,2,3$ の中から番号 $X$ を無作為に選んで秘密にしておく.
+
+(2) あなたは, $1,2,3$ の中から番号 $1$ を選んでそれを親に告げる.
+
+(3) 親は $1,2,3$ の中から $1$ と $X$ 以外の番号 $Y$ を無作為に選んで, あなたに告げる.
+
+(4) あなたは $1,2,3$ の中から $1$, $Y$ を除いて残った1つの番号 $Z$ を選ぶ.
+
+あなたが最後に選んだ番号 $Z$ が秘密の番号 $X$ に一致する確率を求めよ.
+
+__代表的誤答例:__ $Z=X$ となる確率は $1/2$ である. __誤答終__
+
+__解答例1:__ すべての場合の確率を書き下す方法. 確率 $P(X=x, Y=y)$ 達を表にすると以下のようになる:
+
+$$
+\begin{array}{c|ccc|c}
+      & Y = 1 & Y = 2 & Y = 3 & \\
+\hline
+X = 1 & 0     & 1/6   & 1/6   & 1/3 \\
+X = 2 & 0     & 0     & 1/3   & 1/3 \\
+X = 3 & 0     & 1/3   & 0     & 1/3 \\
+\hline
+      & 0     & 1/2   & 1/2 & \\
+\end{array}
+$$
+
+$Y$ として $1$ と $X$ 以外の番号を選ぶので, $Y=1$ の確率は $0$ になる.  $X=1$ となる確率は $1/3$ であり, そのとき, $1$ と $X=1$ 以外の番号は $2,3$ の2つで, それらを無作為に選ぶのでそれぞれに確率は $1/6$ になる.  $X=2$ の場合には常に $Y=3$ となり, $X=3$ の場合には常に $Y=2$ となり, それぞれの確率は $1/3$ になる. これを表にすると上のようになる.
+
+* $X=1$, $Y=2$ のとき $Z=3$ となり, $Z\ne X$ となる.
+* $X=1$, $Y=3$ のとき $Z=2$ となり, $Z\ne X$ となる.
+* $X=2$, $Y=3$ のとき $Z=2$ となり, $Z = X$ となる.
+* $X=3$, $Y=2$ のとき $Z=3$ となり, $Z = X$ となる.
+
+ゆえに $P(Z=X) = P(X=2, Y=3) + P(X=3, Y=2) = 1/3 + 1/3 = 2/3$.
+
+__解答終__
+
+__解答例2:__ あなたが最後に選んだ番号 $Z$ が $X$ に一致しないことと, あなたが最初に選んだ番号 $1$ が $X$ に一致することは同値であり, $X=1$ となる確率は $1/3$ である.  ゆえに, その補事象である $Z=X$ となる確率は $2/3$ である. 
+
+__解答終__
+
+__注意:__ 単に確率を計算すればよいだけの問題である. 「主観確率」「ベイズ確率」のような用語を持ち出す説明を読むときには, 本当は易しい話を無駄に難しく考えて, おかしな考え方に陥っていることを疑った方がよい.  歴史の偶然のせいで世間的に広まってしまった考え方の多くが間違っている.
+
+
 ### 連続確率分布の条件付き確率分布
 
 連続変数 $(x, y)$ の確率密度函数 $p(x,y)$ が定める連続分布 $D$ を考え, 変数 $y$ に対応する確率変数を $Y$ と書く:
@@ -797,6 +848,8 @@ $$
 
 しかし, 以上の議論を見ればわかるように, Bayesの定理は条件付き確率分布の定義を書き直したものに過ぎず, 価値ある新しい考え方が得られるような結果ではない.  しかし, 具体的もしくは理論的な計算で条件付き確率の概念が(B)の形式で使われることがあることは知っておいて損がないと思われるので, このように紹介することにした.
 
+__記号法上の注意:__ 慣習に従って $p(x)$ と $p(y)$ の違いを独立変数名 $x$, $y$ の違いで区別するという記号法を採用した. これは簡潔に書くための手抜きであり, $p_X(x)$ や $p_Y(y)$ のように書けば独立変数名の違いで区別する必要はなくなる.  以上では簡潔さを重視するスタイルを採用したので混乱しないように注意して欲しい. $p(x|y)$ と $p(y|x)$ の違いも独立変数名 $x,y$ の違いで区別することになった.
+
 __注意:__ Bayes統計ではパラメータ $\theta$ 付きの確率密度函数 $p(x|\theta)$ の他にパラメータ $\theta$ の確率密度函数 $p(\theta)$ も用意して, $x$ と $\theta$ の同時確率密度函数を $p(x,\theta)=p(x|\theta)p(\theta)$ と定義する.  この状況のもとでは, $X=x$ という条件で定義される $\theta$ の条件付き確率分布 $p(\theta|x)$ は次のように表される:
 
 $$
@@ -862,9 +915,9 @@ $$
 \op{MvNormal}(\mu, \Sigma)
 $$
 
-と表すことにする.
+と表すことにする. (この記号法は2変量に限らない, 任意の __多変量正規分布__ (multivariate normal distribution)にも使用することにする.)
 
-2変量正規分布の条件 $X=x$ が定める $y$ に関する条件付き確率分布を求めよう.
+2変量正規分布において条件 $X=x$ が定める $y$ に関する条件付き確率分布を求めよう.
 
 $$
 \begin{aligned}
@@ -985,6 +1038,526 @@ $$
 となり, 式の類似性はさらに増す.
 
 この類似は偶然ではない. 最小二乗法による線形回帰は, データ $(x_1,y_1),\ldots,(x_n,y_n)$ に最もフィットする2変量正規分布を最尤法で構成し($\hat\mu_x$, $\hat\mu_y$, $\hat\sigma_x^2$, $\hat\sigma_y^2$, $\hat\sigma_{xy}$ がその最尤法の解になっている), 条件 $X=x$ で定められた $y$ に関する条件付き確率分布を求めることと数学的に同じことになっている.
+
+
+### 2変量の正規分布とその条件付き確率分布の例の視覚化
+
+以下では前節の内容を2変量正規分布の乱数を大量に生成することによって数値的に確認してみよう.
+
+```julia
+# 二変量正規分布
+μ = [10, 20]
+Σ = [
+    6 2
+    2 3
+]
+mvnormal = MvNormal(μ, Σ)
+```
+
+```julia
+# X, Y 単独の分布
+xdist = Normal(μ[1], √Σ[1,1])
+ydist = Normal(μ[2], √Σ[2,2])
+@show xdist ydist;
+```
+
+```julia
+# 条件X=xが定めるyの条件付き確率分布の平均値 (≈ 回帰直線 (regression line))
+f(x, μ, Σ) = (Σ[1,2]/Σ[1,1])*(x - μ[1]) + μ[2]
+```
+
+```julia
+# テストデータの生成: 二変量正規分布の分布は楕円状になる.
+n = 10^4
+XY = rand(mvnormal, n)
+X, Y = XY[1,:], XY[2,:]
+scatter(X, Y; ma=0.3, ms=2, msw=0, label="", title="data")
+```
+
+```julia
+# データでのX単独の分布
+stephist(X; norm=true, label="data X")
+plot!(xdist; label="true", ls=:dash)
+```
+
+```julia
+# データでのY単独の分布
+stephist(Y; norm=true, label="data Y")
+plot!(ydist; label="true", ls=:dash)
+```
+
+```julia
+# μの最尤推定
+μ̂ = mean(XY, dims=2)
+```
+
+```julia
+# Σの最尤推定
+Σ̂ = cov(XY'; corrected=false)
+```
+
+```julia
+# 条件X=xが定めるyの条件付き確率分布の期待値と回帰直線の比較
+xlim = (μ[1] - 4√Σ[1,1], μ[1] + 4√Σ[1,1])
+plot(x -> f(x, μ̂, Σ̂), xlim...; label="linear regression")
+plot!(x -> f(x, μ, Σ), xlim...; label="true", ls=:dash)
+plot!(; legend=:topleft)
+```
+
+```julia
+# 条件X=xが定めるyの条件付き確率分布の分散とその推定値の比較
+σ² = det(Σ)/Σ[1,1]
+σ̂² = det(Σ̂)/Σ̂[1,1]
+@show σ² σ̂²;
+```
+
+### 2×2の分割表の分布
+
+実践的によく使われている2×2の分割表のモデルになる確率分布を紹介しよう.
+
+2×2の分割表とは数学的には0以上の整数を成分とする2×2の行列
+
+$$
+A =
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+\end{bmatrix},
+\quad a_{ij} \in \Z_{\ge 0}
+$$
+
+のことである.  以下では2×2の分割表の集合に順次制限して狭くして行きながら, 4種類の確率分布を紹介する.
+
+
+#### 4つのPoisson分布の積
+
+$\lambda_{ij} \ge 0$ であるとし, 
+
+$$
+\lambda =
+\begin{bmatrix}
+\lambda_{11} & \lambda_{12} \\
+\lambda_{21} & \lambda_{22} \\
+\end{bmatrix}
+$$
+
+とおく.  制限のない分割表 $A=[a_{ij}]$ 達の確率質量函数
+
+$$
+P(A|\lambda) =
+\prod_{i,j=1}^2\left(e^{-\lambda_{ij}}\frac{\lambda_{ij}^{a_{ij}}}{a_{ij}!}\right)
+\qquad (a_{ij}\in\Z_{\ge 0})
+$$
+
+で定まる分割表の確率分布を __4つのPoisson分布の積__ と呼ぶことにする.
+
+分割表の4つのPoisson分布の積モデルはある一定期間のあいだ収集したサンプルを2つの条件 $X,Y$ を使って次のように分類することによって得られた2×2の分割表のモデルになっていると考えられる:
+
+* $a_{11}$ はサンプル中の $X$ でかつ $Y$ であるものの個数で, $a_{12}$ は $X$ でかつ $Y$ でないものの個数で,  $a_{21}$ は $X$ でなくて $Y$ であるものの個数で, $a_{22}$ は $X$ でも $Y$ でもないものの個数であるとする.
+
+以上の設定のもとで4つのPoisson分布の期待値は
+
+$$
+\lambda =
+\begin{bmatrix}
+\lambda_{11} & \lambda_{12} \\
+\lambda_{21} & \lambda_{22} \\
+\end{bmatrix}
+$$
+
+に一致する.
+
+
+#### 四項分布
+
+$\theta_{ij}\ge 0$, $\sum_{i,j=1}^2 \theta_{ij} = 1$ であるとし, 
+
+$$
+\theta =
+\begin{bmatrix}
+\theta_{11} & \theta_{12} \\
+\theta_{21} & \theta_{22} \\
+\end{bmatrix}
+$$
+
+とおく.  $n\in\Z_{\ge 0}$ を任意に取って固定し, 成分の総和が $n$ になるという条件
+
+$$
+\sum_{i,j=1}^2 a_{ij} = n
+$$
+
+を満たす分割表 $A=[a_{ij}]$ に関する確率分布が次の確率質量函数によって定められる:
+
+$$
+P(A|n,\theta) = n!\prod_{i,j=1}^4 \frac{\theta_{ij}^{a_{ij}}}{a_{ij}!}
+\qquad
+(a_{11}+a_{12}+a_{21}+a_{22} = n)
+$$
+
+これは __四項分布__ である.
+
+分割表の四項分布モデルは, 最初に決めておいたサイズ $n$ のサンプルを収集して, 2つの条件 $X,Y$ を使って前節を同じようにサンプルを分類することによって得られた分割表のモデル化になっていると考えられる.
+
+この四項分布の期待値は
+
+$$
+n\theta =
+\begin{bmatrix}
+n\theta_{11} & n\theta_{12} \\
+n\theta_{21} & n\theta_{22} \\
+\end{bmatrix}
+$$
+
+になる.
+
+
+#### 2つの二項分布の積
+
+$0\le\eta_i\le 1$ ($i=1,2$)であるとし, $\eta = (\eta_1, \eta_2)$ とおく. $r_1, r_2 \in\Z_{\ge 0}$ を任意に取って固定し, $r=(r_1,r_2)$ とおく. このとき, 横方向の合計(横方向のマージン)が
+
+$$
+\sum_{j=1}^n a_{ij} = r_i \quad (i=1,2)
+$$
+
+と固定されているような分割表の確率分布を次の確率質量函数によって定めることができる:
+
+$$
+P(A|r,\eta) =
+\binom{r_1}{a_{11}} \eta_1^{a_{11}}(1 - \eta_2)^{a_{12}} \cdot
+\binom{r_2}{a_{21}} \eta_1^{a_{21}}(1 - \eta_2)^{a_{22}}
+\quad (a_{i1}+a_{i2}=r_i)
+$$
+
+これを __2つの二項分布の積__ と呼ぶ.
+
+分割表の2つの二項分布の積モデルは, 前もって決めておいたサイズ $r_1, r_2$ の条件 $X$ を満たす群と満たさない群のサンプルを取得して, 条件 $Y$ によって分類することによって得られた分割表のモデル化になっていると考えられる.
+
+この設定のもとで, 2つの二項分布の積の期待値は
+
+$$
+\begin{aligned}
+r_1\eta_1 & r_1(1-\eta_1) \\
+r_2\eta_2 & r_2(1-\eta_2) \\
+\end{aligned}
+$$
+
+になる.
+
+
+#### Fisherの非心超幾何分布
+
+$\omega > 0$ であるとする. $r_1,r_2,s_1,s_2,n\in\Z_{\ge 0}$ で
+
+$$
+n = r_1+r_2 = s_1+s_2
+$$
+
+という条件を満たすものを任意に取って固定し, $r=(r_1,r_2)$, $s=(s_1,s_2)$ とおく. このとき, 横方向の合計と縦方向の合計の両方(全マージン)が
+
+$$
+\sum_{j=1}^2 a_{ij} = r_i \quad(i=1,2), \qquad
+\sum_{i=1}^2 a_{ij} = s_j \quad(j=1,2)
+$$
+
+と固定されているような分割表の確率分布を次の形の確率質量函数によって定めることができる:
+
+$$
+\begin{aligned}
+&
+P(A|r,s,\omega)
+\\ &=
+Z(r,s,\omega)^{-1}\frac{\omega^{a_{11}}}{\prod_{i,j=1}^2 a_{ij}!} =
+\frac{\omega^{a_{11}}}{\widetilde{Z}(r,s,\omega)}
+\binom{n}{r_1}^{-1}\binom{s_1}{a_{11}}\binom{s_2}{a_{12}}
+\\ &=
+\frac{\omega^{a_{11}}}{\widetilde{Z}(r,s,\omega)}
+\binom{r_1}{a_{11}}
+\frac{s_1(s_1-1)\cdots(s_1-a_{11}+1)\,s_2(s_2-1)\cdots(s_2-(r_1-a_{11})+1)}
+{n(n-1)\cdots(n-r_1+1)}.
+\\ &
+(a_{i1}+a_{i2}=r_i,\; a_{1j}+a_{2j}=s_j)
+\end{aligned}
+$$
+
+これを __Fisherの非心超幾何分布__ (Fisher's noncentral hypergeometric distribution)と呼ぶ.
+
+パラメータの函数達 $Z(r,s,\omega)$, $\widetilde{Z}(r,s,\omega)$ は確率の総和が $1$ になるという条件で決める.  一般にそれらの定数の具体形はシンプルに書けないが, $\omega = 1$ の場合は例外的に, $n=r_1+r_2=s_1+s_2$ とおくと,
+
+$$
+\widetilde{Z}(r,s,1) = 1, \quad
+Z(r,s,1) = \frac{n!}{r_1!r_2!s_1!s_2!}
+$$
+
+とシンプルな形になり, 
+
+$$
+P(A|r,s,1) =
+\binom{n}{r_1}^{-1} \binom{s_1}{a_{11}}\binom{s_2}{a_{12}} =
+\frac{r_1!r_2!s_1!s_2!}{n!a_{11}!a_{12}!a_{21}!a_{22}!}
+$$
+
+となる.  この $\omega=1$ の場合のFisherの非心超幾何分布は単に __超幾何分布__ と呼ばれている. 
+
+
+この超幾何分布の期待値は
+
+$$
+\begin{bmatrix}
+r_1s_1/n & r_1s_2/n \\
+r_2s_1/n & r_2s_2/n \\
+\end{bmatrix}
+$$
+
+になる.
+
+
+__注意:__ 超幾何分布の確率質量函数の上の表示は以下のような解釈を持つ. 
+
+袋の中に $s_1$ 個の赤い玉と $s_2$ 個の白い玉が入っているとし, その中から $r_1$ 個の玉を一度にまとめて無作為に取り出す.  取り出した $r_1$ 個の玉の中の赤い玉の個数を $a_{11}$ とし, 白い玉の個数を $a_{12} = r_1 - a_{11}$ と書き, 袋の中に残された $r_2$ 個の玉の中の赤い玉の個数を $a_{21}=s_1-a{11}$ と書き, 白い玉の個数を $a_{22}=s_2-a_{12} = s_2 - r_1 + a_{11}$ と書き, 2×2の分割表 $A=[a_{ij}]$ を作る.  $a_{11}$ だけから残りの $a_{12},a_{21}.a_{22}$ の値が決定される.
+
+このとき, $A$ の分布は前節の超幾何分布に従う. なぜならば, 袋の中の $n=s_1+s_2$ 個の玉の中から $r_1$ 個を一度に取り出す組み合わせ全体の個数は $\binom{n}{r_1}$ であり(分母), 袋の中の $s_1$ 個の赤い玉の中から $a_{11}$ 個選ぶ組み合わせ全体の個数と $s_2$ 個の白い玉の中から $a_{12}$ 個選ぶ組み合わせ全体の個数の積は $\binom{s_1}{a_{11}}\binom{s_2}{a_{12}}$ になる(分子)からである.になる.
+
+
+__注意:__ 超幾何分布と非復元抽出の関係. 超幾何分布の確率質量函数は次のようにも表される:
+
+$$
+P(A|r,s,1) =
+\binom{r_1}{a_{11}}
+\frac{s_1(s_1-1)\cdots(s_1-a_{11}+1)\,s_2(s_2-1)\cdots(s_2-(r_1-a_{11})+1)}
+{n(n-1)\cdots(n-r_1+1)}.
+$$
+
+この公式は以下のような解釈を持つ.  袋の中に $s_1$ 個の赤い玉と $s_2$ 個の白い玉が入っているとし, $s_1+s_2=n$ であるとする.  袋の中から無作為に1個ずつ玉を取り出す.  ただし, 取り出した玉は袋に戻さないとする(非復元抽出).  そのように玉を $r_1$ 個取り出したとき, その中に赤い玉が $a_{11}$ 個含まれる確率が超幾何分布における確率の値 $P(A|r,s,1)$ になる.
+
+
+__注意:__ 以上の状況のもとで $a_{11}$ が動ける範囲はちょうど次になる:
+
+$$
+\max(0, s_1+r_1-n) \le a_{11} \le \min(s_1, r_1).
+$$
+
+この条件は以下の条件を整理することによって得られる:
+
+$$
+\begin{aligned}
+&
+a_{11} \ge 0,
+\\ &
+a_{11} = r_1 - a_{12} \le r_1,
+\\ &
+a_{11} = s_1 - a_{21} \le s_1,
+\\ &
+a_{11} = s_1+r_1-n+a_{22} \ge s_1+r_1-n.
+\end{aligned}
+$$
+
+これらの等式部分は以下から得られる:
+
+$$
+\begin{aligned}
+&
+a_{12} = r_1 - a_{11},
+\\ &
+a_{21} = s_1 - a_{11},
+\\ &
+a_{22} = n - (a_{11}+a_{12}+a_{21}) = n - r_1 - s_1 + a_{11}.
+\end{aligned}
+$$
+
+
+#### 四項分布は4つのPoisson分布の積の条件付き確率分布
+
+オッズ比 $\omega$ を次のように定める:
+
+$$
+\omega =
+\frac{\lambda_{11}/\lambda_{12}}{\lambda_{21}/\lambda_{22}} =
+\frac{\lambda_{11}\lambda_{22}}{\lambda_{12}\lambda_{21}}.
+$$
+
+4つのPoisson分布の積の確率質量函数を $\sum_{i,j=1}a_{ij}=n$ が固定された場合に制限してみよう.
+
+$$
+\theta_{ij} = \frac{\lambda_{ij}}{\sum_{i',j'=1}^n \lambda_{i'j'}}
+$$
+
+とおくと,
+
+$$
+\omega =
+\frac{\theta_{11}/\theta_{12}}{\theta_{21}/\theta_{22}} =
+\frac{\theta_{11}\theta_{22}}{\theta_{12}\theta_{21}}
+$$
+
+でかつ,
+
+$$
+\begin{aligned}
+P(A|\lambda) &=
+\prod_{i,j=1}^2\left(e^{-\lambda_{ij}}\frac{\lambda_{ij}^{a_{ij}}}{a_{ij}!}\right) =
+\underbrace{
+\frac{1}{n!} e^{-\sum_{i,j=1}^2 \lambda_{ij}}\left(\sum_{i,j=1}^2 \lambda_{ij}\right)^n
+}_{\text{independent of $a_{ij}$}}
+\;
+n!\prod_{i,j=1}^2\frac{\theta_{ij}^{a_{ij}}}{a_{ij}!}.
+\end{aligned}
+$$
+
+ゆえに, 四項分布における確率の総和が1であること
+
+$$
+\sum_{\sum_{i,j=1}^2 a_{ij}=n}
+n!\prod_{i,j=1}^2\frac{\theta_{ij}^{a_{ij}}}{a_{ij}!} = 1
+$$
+
+より, 
+
+$$
+P(n|\lambda) = \sum_{\sum_{i,j=1}^2 a_{ij}=n} P(A|\lambda) =
+\frac{1}{n!}
+e^{-\sum_{i,j=1}^2 \lambda_{ij}}\left(\sum_{i,j=1}^2 \lambda_{ij}\right)^n.
+$$
+
+ゆえに, $\sum_{i,j=1}^2 a_{ij}=n$ という条件で定義される条件付き確率分布の確率質量函数は
+
+$$
+\frac{P(A|\lambda)}{P(n|\lambda)} =
+n!\prod_{i,j=1}^2\frac{\theta_{ij}^{a_{ij}}}{a_{ij}!}
+$$
+
+と, 四項分布の確率質量函数になる.
+
+
+#### 2つの二項分布の積は四項分布は4つの条件付き確率分布
+
+四項分布の確率質量函数を $\sum_{j=1}^2 a_{ij} = r_i$, $r_1+r_2=n$ の場合に制限してみよう.
+
+$$
+\eta_i = \frac{\theta_{i1}}{\theta_{i1}+\theta_{i2}}
+$$
+
+とおくと,
+
+$$
+\omega =
+\frac{\eta_1/(1-\eta_1)}{\eta_2/(1-\eta_2)} =
+\frac{\eta_1(1-\eta_2)}{(1-\eta_1)\eta_2}
+$$
+
+でかつ,
+
+$$
+\begin{aligned}
+&
+P(A|n,\theta) = 
+n!\prod_{i,j=1}^4 \frac{\theta_{ij}^{a_{ij}}}{a_{ij}!} =
+\underbrace{
+n!\prod_{i=1}^2(\theta_{i1}+\theta_{i2})^{r_i}
+}_{\text{independent of $a_{ij}$}}
+\cdot
+\frac{\eta_1^{a_{11}}(1-\eta_1)^{r_1-a_{11}}}{a_{11}!(r_1-a_{11})!}
+\frac{\eta_2^{a_{21}}(1-\eta_2)^{r_1-a_{21}}}{a_{21}!(r_2-a_{21})!}
+\\ &=
+\underbrace{
+\binom{n}{r_1}\prod_{i=1}^2(\theta_{i1}+\theta_{i2})^{r_i}
+}_{\text{independent of $a_{ij}$}}
+\cdot
+\binom{r_1}{a_{11}}
+\eta_1^{a_{11}}(1-\eta_1)^{r_1-a_{11}}
+\cdot
+\binom{r_2}{a_{21}}
+\eta_2^{a_{21}}(1-\eta_2)^{r_1-a_{21}}
+\end{aligned}
+$$
+
+これを $a_{11}+a_{12}=r_1$, $a_{21}+a_{22}=r_2$ を満たす分割表について和を取ると, 2つの二項分布の積の部分の和が $1$ になる.  ゆえに
+
+$$
+P(r|n,\theta) =
+\binom{n}{r_1}\prod_{i=1}^2(\theta_{i1}+\theta_{i2})^{r_i} =
+\binom{n}{r_1}
+(\theta_{11}+\theta_{12})^{r_1}
+(1-(\theta_{11}+\theta_{12}))^{n-r_1}.
+$$
+
+したがって, 条件 $a_{11}+a_{12}=r_1$, $a_{21}+a_{22}=r_2$ が定める条件付き確率分布の確率質量函数は次の形になる:
+
+$$
+\frac{P(A|n,\theta)}{P(r|n,\theta)} =
+\binom{r_1}{a_{11}}
+\eta_1^{a_{11}}(1-\eta_1)^{r_1-a_{11}}
+\cdot
+\binom{r_2}{a_{21}}
+\eta_2^{a_{21}}(1-\eta_2)^{r_1-a_{21}}.
+$$
+
+これは2つの二項分布の積の確率質量函数である.
+
+
+#### Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布
+
+2つの二項分布の積の確率質量函数をさらに $\sum_{i=1}^2 a_{ij}=s_j$, $s_1+s_2=n$ の場合に制限してみよう. そのとき,
+
+$$
+a_{21} = s_1 - a_{11}, \quad
+a_{22} = s_2 - r_1 + a_{11}, \quad
+\omega = \frac{\eta_1(1-\eta_2)}{(1-\eta_1)\eta_2}
+$$
+
+であることを使うと, 
+
+$$
+\begin{aligned}
+P(A|r,\theta) &=
+\binom{r_1}{a_{11}}
+\eta_1^{a_{11}}(1-\eta_1)^{r_1-a_{11}}
+\cdot
+\binom{r_2}{a_{21}}
+\eta_2^{a_{21}}(1-\eta_2)^{r_2-a_{21}}
+\\ &=
+\frac{r_1!}{a_{11}!a_{12}!}
+\eta_1^{a_{11}}(1-\eta_1)^{r_1-a_{11}}
+\cdot
+\frac{r_2!}{a_{21}!a_{22}!}
+\eta_2^{s_1-a_{11}}(1-\eta_2)^{s_2-r_1+a_{11}}
+\\ &=
+\underbrace{
+r_1!r_2!(1-\eta_1)^{r_1}\eta_2^{s_1}(1-\eta_2)^{s_2-r_1}
+}_{\text{independent of $a_{ij}$}}
+\frac{\omega^{a_{11}}}{a_{11}!a_{12}!a_{21}!a_{22}!}.
+\end{aligned}
+$$
+
+これより, 2つの二項分布の積における条件 $\sum_{i=1}^2 a_{ij}=s_j$ に関する条件付き確率分布がFisherの非心超幾何分布になることがわかる.
+
+
+#### 独立性条件
+
+以上における条件付き確率分布の構成でオッズ比 $\omega$ が保たれて行くことに注意せよ. 以上で扱った4種類の確率分布は $\omega = 1$ を満たすとき __独立である__, もしくは, __独立性条件を満たす__ という. 
+
+2つの二項分布の積においては独立であることと $\eta_1=\eta_2$ であることは同値である.  $\eta_i$ は __比率__ と呼ばれることがあり, $\eta_1=\eta_2$ は比率が等しいという条件になる.
+
+「比率が等しい」という仮説の検定で $\omega = 1$ の統計モデルが使用される.
+
+たとえば, タバコを吸っているかどうかの条件を $X$ と書き, 肺がんになるかどうかの条件を $Y$ と書くとき, その調査結果から作った分割表
+
+$$
+\begin{array}{c|c|c|c}
+& Y = 1 & Y = 0 & \\
+\hline
+X = 1 & a \text{人} & b \text{人} & r_1 \text{人} \\
+\hline
+X = 0 & c \text{人} & d \text{人} & r_2 \text{人} \\
+\hline
+& s_1 \text{人} & s_2 \text{人} & n \text{人} \\
+\end{array}
+$$
+
+に関する独立性は条件 $X$ と条件 $Y$ が無関係であることを意味する. 
 
 
 ## 尤度
