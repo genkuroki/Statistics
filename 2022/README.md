@@ -20,6 +20,9 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 
 __定義された分布__
 
+$\mathrm{Categorical}(p_1,\ldots,p_n)$
+
+$\text{Categorical}(p_1,\ldots,p_n)$
 
 * __カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
 * 成功確率 p の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
