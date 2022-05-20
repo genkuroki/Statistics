@@ -20,15 +20,7 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 
 __定義された分布__
 
-$\mathrm{Categorical}(p_1,\ldots,p_n)$
-
-$\text{Categorical}(p_1,\ldots,p_n)$
-
-
-__カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
-
-* $\alpha$
-
+* __カテゴリカル分布__: $\mathrm{Categorical}(p_1,\ldots,p_n)$
 * 成功確率 p の __Bernoulli分布__: $\operatorname{Bernoulli}(p)$
 * 試行回数 n の __Bernoulli試行の分布__: $\operatorname{Bernoulli}(p)^n$
 * 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
