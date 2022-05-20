@@ -10,6 +10,18 @@
 
 __明らかな誤りをまだ大量に含んでいるものと思われます。ごめんなさい。適切に訂正しながら読んでください。__
 
+$
+\newcommand\op{\operatorname}
+\newcommand\R{{\mathbb R}}
+\newcommand\Z{{\mathbb Z}}
+\newcommand\var{\op{var}}
+\newcommand\std{\op{std}}
+\newcommand\eps{\varepsilon}
+\newcommand\T[1]{T_{(#1)}}
+\newcommand\bk{\bar\kappa}
+\newcommand\X{{\mathscr X}}
+$
+
 ### 01 Bernoulli試行と関連確率分布
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.ipynb)
@@ -19,7 +31,7 @@ __明らかな誤りをまだ大量に含んでいるものと思われます。
 
 __定義された分布__
 
-* __カテゴリカル分布__: Categorical(p_1,…,p_n)
+* __カテゴリカル分布__: $\op{Categorical}(p_1,\ldots,p_n)$
 * 成功確率 p の __Bernoulli分布__: Bernoulli(p)
 * 試行回数 n の __Bernoulli試行の分布__: Bernoulli(p)ⁿ
 * 試行回数 n, 成功確率 p の __二項分布__: Binomial(n, p)
