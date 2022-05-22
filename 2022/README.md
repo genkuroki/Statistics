@@ -122,7 +122,8 @@ __演習用サンプル__
 
 * [Datasaurusの例 (データサウルスの例)](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html)
   * [csv file](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_data.csv), [raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/Datasaurus_data.csv)
-  * [X](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X.txt), [Y](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y.txt)
+  * [x座標のみ](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X.txt), [y座標のみ](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y.txt)
+  * [x座標のみコンマ付き](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X_with_commas.txt), [y座標のみコンマ付き](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y_with_commas.txt)
 
 __定義された確率分布__
 
