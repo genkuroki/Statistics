@@ -16,7 +16,8 @@ jupyter:
 # 標本分布について
 
 * 黒木玄
-* 2022-04-11～2022-04-29
+* 2022-04-11～2022-05-21
+
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}

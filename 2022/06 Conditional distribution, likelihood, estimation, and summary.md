@@ -16,7 +16,8 @@ jupyter:
 # 条件付き確率分布, 尤度, 推定, 記述統計
 
 * 黒木玄
-* 2022-05-18
+* 2022-05-22
+
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -41,7 +42,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-1.15.1"><span class="toc-item-num">1.15.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-1.15.2"><span class="toc-item-num">1.15.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-1.15.3"><span class="toc-item-num">1.15.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-1.15.4"><span class="toc-item-num">1.15.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-1.15.5"><span class="toc-item-num">1.15.5&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-1.15.6"><span class="toc-item-num">1.15.6&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-1.15.7"><span class="toc-item-num">1.15.7&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-1.15.8"><span class="toc-item-num">1.15.8&nbsp;&nbsp;</span>独立性条件</a></span></li></ul></li></ul></li><li><span><a href="#尤度函数" data-toc-modified-id="尤度函数-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>尤度函数</a></span><ul class="toc-item"><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li></ul></li><li><span><a href="#推定" data-toc-modified-id="推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>推定</a></span></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)" data-toc-modified-id="問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)</a></span></li><li><span><a href="#分散が固定された正規分布モデルのBayes統計の事後分布の視覚化" data-toc-modified-id="分散が固定された正規分布モデルのBayes統計の事後分布の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>分散が固定された正規分布モデルのBayes統計の事後分布の視覚化</a></span></li><li><span><a href="#問題:-2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="問題:-2変量の正規分布とその条件付き確率分布の例-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>問題: 2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.16"><span class="toc-item-num">1.16&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li></ul></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布の正規分布近似の視覚化" data-toc-modified-id="Fisherの非心超幾何分布の正規分布近似の視覚化-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Fisherの非心超幾何分布の正規分布近似の視覚化</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>独立性条件</a></span></li><li><span><a href="#Pearsonのχ²統計量" data-toc-modified-id="Pearsonのχ²統計量-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Pearsonのχ²統計量</a></span></li></ul></li><li><span><a href="#尤度-(ゆうど)と推定" data-toc-modified-id="尤度-(ゆうど)と推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>尤度 (ゆうど)と推定</a></span><ul class="toc-item"><li><span><a href="#尤度に関するまとめ" data-toc-modified-id="尤度に関するまとめ-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>尤度に関するまとめ</a></span></li><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li><li><span><a href="#例:-Bernoulli試行の尤度函数と最尤法" data-toc-modified-id="例:-Bernoulli試行の尤度函数と最尤法-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>例: Bernoulli試行の尤度函数と最尤法</a></span></li><li><span><a href="#Bernoulli試行モデルの尤度函数の視覚化" data-toc-modified-id="Bernoulli試行モデルの尤度函数の視覚化-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Bernoulli試行モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-正規分布の標本分布モデルの尤度函数と最尤法" data-toc-modified-id="問題:-正規分布の標本分布モデルの尤度函数と最尤法-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: 正規分布の標本分布モデルの尤度函数と最尤法</a></span></li><li><span><a href="#正規分布の標本分布モデルの尤度函数の視覚化" data-toc-modified-id="正規分布の標本分布モデルの尤度函数の視覚化-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>正規分布の標本分布モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-最小二乗法が正規分布モデルの最尤法の一種に一致すること" data-toc-modified-id="問題:-最小二乗法が正規分布モデルの最尤法の一種に一致すること-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 最小二乗法が正規分布モデルの最尤法の一種に一致すること</a></span></li><li><span><a href="#最尤法の観点から見た十分統計量" data-toc-modified-id="最尤法の観点から見た十分統計量-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>最尤法の観点から見た十分統計量</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行モデルの十分統計量" data-toc-modified-id="Bernoulli試行モデルの十分統計量-3.8.1"><span class="toc-item-num">3.8.1&nbsp;&nbsp;</span>Bernoulli試行モデルの十分統計量</a></span></li><li><span><a href="#正規分布の標本分布モデルの十分統計量" data-toc-modified-id="正規分布の標本分布モデルの十分統計量-3.8.2"><span class="toc-item-num">3.8.2&nbsp;&nbsp;</span>正規分布の標本分布モデルの十分統計量</a></span></li><li><span><a href="#最小二乗法を与える正規分布モデルの十分統計量" data-toc-modified-id="最小二乗法を与える正規分布モデルの十分統計量-3.8.3"><span class="toc-item-num">3.8.3&nbsp;&nbsp;</span>最小二乗法を与える正規分布モデルの十分統計量</a></span></li></ul></li></ul></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span><ul class="toc-item"><li><span><a href="#$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約" data-toc-modified-id="$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約</a></span></li><li><span><a href="#Anscombeの例(アンスコムの例,-再)" data-toc-modified-id="Anscombeの例(アンスコムの例,-再)-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Anscombeの例(アンスコムの例, 再)</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -85,10 +86,13 @@ end
 ```
 
 ```julia
+safemul(x, y) = x == 0 ? x : x*y
+safediv(x, y) = x == 0 ? x : x/y
+
 x ⪅ y = x < y || x ≈ y
 
 mypdf(dist, x) = pdf(dist, x)
-mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(x))
+mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(Int, x))
 
 distname(dist::Distribution) = replace(string(dist), r"{.*}" => "")
 myskewness(dist) = skewness(dist)
@@ -633,13 +637,15 @@ function plot_falsepositive(prevalence_rate, sensitivity, specificity;
  end
 ```
 
-赤色は病気有を, 青色は病気無を意味する.  すなわち, 赤い上向き三角と赤いひし形は病気Dに罹っている人で, 青の下向き三角と青の正方形は病気に罹っていない人である. 
+以下は, 感度(病気有の人が検査陽性になる確率)が $75\%$ で特異度(病気無の人が検査陽性になる確率)が $95\%$ の場合.
+
+赤色は病気有を, 青色は病気無を意味する.  すなわち, 赤い上向き三角と赤いひし形は病気Dに罹っている人で, 青の下向き三角と青の正方形は病気Dに罹っていない人である. 
 
 三角は検査陽性を意味し, 四角は検査陰性を意味する. すなわち, 赤い上向き三角と青の下向き三角は検査で陽性になった人達で, それ以外のひし形と正方形は陰性になった人達である.
 
-青い下向き三角は病気Dに罹っていないのに検査で陽性になってしまったので偽陽性. 目立つように太くしてある.
+__青い下向き三角__ は病気Dに罹っていないのに検査で陽性になってしまったので __偽陽性__ (__false-positive__). 目立つように太くしてある.  (青い正方形は病気有でかつ検査陽性なので真陽性 (true-negative).)
 
-赤いひし形は病気Dに罹っているのに検査で陰性になってしまったので偽陰性. これも目立つように太くしてある.
+__赤いひし形__ は病気Dに罹っているのに検査で陰性になってしまったので __偽陰性__ (__false-negative__). これも目立つように太くしてある.  (青い正方形は病気無でかつ検査陰性なので真陰性 (true-negative).)
 
 以下の図を見れば, 有病率(赤色の割合=赤い上向き三角と赤いひし形を合わせた割合)を変えたときにどのように偽陽性と偽陰性の割合が変化するかが分かる.
 
@@ -661,6 +667,28 @@ plot_falsepositive(0.40, 0.75, 0.95)
 
 ```julia
 plot_falsepositive(0.80, 0.75, 0.95)
+```
+
+感度(病気有の人が検査陽性になる確率)を $75\%$ から $95\%$ に上げて, 特異度(病気無の人が検査陽性になる確率)が $75\%$ に下がった場合.  当たり前のことだが, 偽陽性(青い下向き三角)が大幅に増える.  検査対象の有病率を $20\%$ まで上げても, 検査陽性者のうち半分以上が病気無になってしまう.
+
+```julia
+plot_falsepositive(0.05, 0.95, 0.75)
+```
+
+```julia
+plot_falsepositive(0.10, 0.95, 0.75)
+```
+
+```julia
+plot_falsepositive(0.20, 0.95, 0.75)
+```
+
+```julia
+plot_falsepositive(0.40, 0.95, 0.75)
+```
+
+```julia
+plot_falsepositive(0.80, 0.95, 0.75)
 ```
 
 ### おまけの問題: モンティ・ホール問題 (Monty Hall problem)
@@ -792,6 +820,8 @@ __注意:__ 測度論的確率論ではこれを一般化して条件付き期�
 
 ### 連続分布版のBayesの定理
 
+以下では $\int \cdots dx$ は定積分を意味するとする.
+
 連続変数 $(x,y)$ の確率密度函数 $P(x,y)$ によって連続確率分布が定義されているとする. 以下では, 変数 $x,y$ に対応する確率変数達 $X,Y$ それぞれ単独の確率密度函数を $p(x),p(y)$ と書くことにする:
 
 $$
@@ -848,7 +878,9 @@ $$
 
 しかし, 以上の議論を見ればわかるように, Bayesの定理は条件付き確率分布の定義を書き直したものに過ぎず, 価値ある新しい考え方が得られるような結果ではない.  しかし, 具体的もしくは理論的な計算で条件付き確率の概念が(B)の形式で使われることがあることは知っておいて損がないと思われるので, このように紹介することにした.
 
-__記号法上の注意:__ 慣習に従って $p(x)$ と $p(y)$ の違いを独立変数名 $x$, $y$ の違いで区別するという記号法を採用した. これは簡潔に書くための手抜きであり, $p_X(x)$ や $p_Y(y)$ のように書けば独立変数名の違いで区別する必要はなくなる.  以上では簡潔さを重視するスタイルを採用したので混乱しないように注意して欲しい. $p(x|y)$ と $p(y|x)$ の違いも独立変数名 $x,y$ の違いで区別することになった.
+__記号法上の注意1:__ 慣習に従って $p(x)$ と $p(y)$ の違いを独立変数名 $x$, $y$ の違いで区別するという記号法を採用した. これは簡潔に書くための手抜きであり, $p_X(x)$ や $p_Y(y)$ のように書けば独立変数名の違いで区別する必要はなくなる.  以上では簡潔さを重視するスタイルを採用したので混乱しないように注意して欲しい. $p(x|y)$ と $p(y|x)$ の違いも独立変数名 $x,y$ の違いで区別することになった.
+
+__記号法上の注意2:__ $p(y|x) = \dfrac{p(x|y)p(y)}{\int p(x|y)p(y)\,dy}$ における分子の $y$ は独立変数だが, 分母の $y$ は積分変数であり, 異なる意味を持っている. 違うものを同じ記号で書いている.  $\int p(x|y)p(y)\,dy$ は $\int p(x|y')p(y')\,dy'$ と書いた方が混乱を防ぎ易かったかもしれない. しかし, そのようにすると, 変数名を $y$ の1個から $y, y'$ の2個に増やす必要があり, 式の煩雑さが増すので, あえて同じ記号で書くことにした.  混乱しないように注意して欲しい.
 
 __注意:__ Bayes統計ではパラメータ $\theta$ 付きの確率密度函数 $p(x|\theta)$ の他にパラメータ $\theta$ の確率密度函数 $p(\theta)$ も用意して, $x$ と $\theta$ の同時確率密度函数を $p(x,\theta)=p(x|\theta)p(\theta)$ と定義する.  この状況のもとでは, $X=x$ という条件で定義される $\theta$ の条件付き確率分布 $p(\theta|x)$ は次のように表される:
 
@@ -865,7 +897,139 @@ Bayes統計の文脈では, $p(\theta)$ は __事前分布__ (prior)と呼ばれ
 * 赤池弘次, 統計的推論のパラダイムの変遷について, 統計数理研究所彙報, 1980年第27巻第1号, pp. 5-12.  [link](https://ismrepo.ism.ac.jp/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=21&item_id=32568&item_no=1)
 
 
-### 2変量の正規分布とその条件付き確率分布の例
+### 問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)
+
+__この節の式には細かい誤りが多数含まれている可能性がある. 誤りを見付けたら自分で訂正すること. 誤りがなかったら, 拍手喝采して欲しい.__
+
+$n, \rho > 0$ を任意に取って固定する.  $x,\mu\in\R$ の同時確率密度函数
+
+$$
+p(x,\mu|n,\rho) =
+\frac{e^{-n(x-\mu)^2/2}}{\sqrt{2\pi/n}} \frac{e^{-\mu^2/(2\rho^2)}}{\sqrt{2\pi\rho^2}}.
+$$
+
+によって定義される $(x, \mu)\in\R^2$ の確率分布を考える. その分布において, 変数 $x$ に対応する確率変数 $X$ に関する条件 $X=x$ で定義された $\mu$ に関する条件付き確率分布の密度函数が
+
+$$
+p(\mu|x,n,\rho) = 
+\frac{1}{\sqrt{2\pi\rho^2/(1+n\rho^2)}}
+\exp\left(-\frac{1+n\rho^2}{2\rho^2}\left(\mu - \frac{n\rho^2 x}{1+n\rho^2}\right)^2\right).
+$$
+
+になることを示せ.  これは平均と分散がそれぞれ
+
+$$
+\frac{n\rho^2}{1+n\rho^2}x, \quad
+\frac{\rho^2}{1+n\rho^2}
+$$
+
+の正規分布である.
+
+__注意:__ 特に, $n\to\infty$ とすると, 条件 $X=x$ で定義された $\mu$ の条件付き確率分布の期待値は $x$ に収束し, 分散は $0$ に収束するので,  $\mu$ の条件付き確率分布は $x$ の近くに集中するようになる.
+
+__注意:__ この問題の例は正規分布モデル $p(x|n,\mu) = e^{-n(x-\mu)^2/2}/\sqrt{2\pi/n}$ と事前分布 $p(\mu|\rho) = e^{-\mu^2/(2\rho^2)}/\sqrt{2\pi\rho^2}$ に関するBayes統計におけるデータの数値 $x$ が定める事後分布 $p(\mu|x,n,\rho)$ を求める計算になっている.  $x$ は標本平均に, $n$ はサンプルサイズに対応しており, $p(x|n,\mu)$ の形は分散 $1$ の正規分布のサイズ $n$ 標本分布のおいて標本平均の分散が $1/n$ になることを表している.  だから, この場合には固定された分散 $1$ を持つ正規分布の標本分布を統計モデルとして採用している場合になっていると考えて欲しい.  $n=0$ のとき事後分布が事前分布に一致することにも注意せよ.
+
+__注意:__ 条件付き確率分布の概念はBayes統計に限らず統計学における最も基本的かつ重要な確率論の道具であるが, 特にBayes統計では条件付き確率分布を使った推論が系統的に利用される.
+
+__解答例:__ $X$ 単独の密度函数 $p(x|\rho)$ を求めよう.
+
+$$
+\begin{aligned}
+n(x-\mu)^2 + \frac{\mu^2}{\rho^2} &=
+\frac{1+n\rho^2}{\rho^2}\mu^2 - 2nx\mu + nx^2
+\\ &=
+\frac{1+n\rho^2}{\rho^2}\left(\mu - \frac{n\rho^2 x}{1+n\rho^2}\right)^2 +
+\frac{nx^2}{1+n\rho^2}
+\end{aligned}
+\tag{$*$}
+$$
+
+より,
+
+$$
+\begin{aligned}
+p(x|n,\rho) &= \int_\R p(x,\mu|n,\rho)\,d\mu
+\\ &=
+\frac{\exp(-nx^2/(2(1+n\rho^2)))}{\sqrt{2\pi/n}\,\sqrt{2\pi\rho^2}}
+\int_\R \exp\left(-\frac{1+n\rho^2}{2\rho^2}\left(\mu - \frac{n\rho^2 x}{1+n\rho^2}\right)^2\right)d\mu
+\\ &=
+\frac{\exp(-nx^2/(2(1+n\rho^2)))}{\sqrt{2\pi/n}\,\sqrt{2\pi\rho^2}}
+\sqrt{\frac{2\pi\rho^2}{1+n\rho^2}}
+\\ &=
+\frac{1}{\sqrt{2\pi(1+n\rho^2)/n}}
+\exp\left(-\frac{x^2}{2(1+n\rho^2)/n}\right).
+\end{aligned}
+$$
+
+このように $X$ 単独の分布は平均 $0$, 分散 $(1+\rho^2)/n$ の正規分布になる. 
+
+ゆえに, 条件 $X=x$ で定義される $\mu$ の分布の確率密度函数 $p(\mu|x,n,\rho)$ は以下のようになる. すなわち,
+
+$$
+n(x-\mu)^2 + \frac{\mu^2}{\rho^2} - \frac{nx^2}{1+n\rho^2} =
+\frac{1+n\rho^2}{\rho^2}\left(\mu - \frac{n\rho^2 x}{1+n\rho^2}\right)^2
+$$
+
+を使うと, 
+
+$$
+p(\mu|x,n,\rho) = \frac{p(x,\mu|n,\rho)}{p(x|n,\rho)} =
+\frac{1}{\sqrt{2\pi\rho^2/(1+n\rho^2)}}
+\exp\left(-\frac{1+n\rho^2}{2\rho^2}\left(\mu - \frac{n\rho^2 x}{1+n\rho^2}\right)^2\right).
+$$
+
+__解答終__
+
+__注意:__ 本当は最初に公式($*$)を得た時点ですべての答えが出ていたと考えられる.  以上では丁寧だが無駄な詳細を含む計算を納得感を高めるためにあえてやってみせたが, 実践的な計算においてはそのように考えるべきである.  以下においても同様に無駄な詳細を含む計算をやってみせる場合があるので注意して欲しい. (要するにこのノートの計算の仕方を実践的な計算で真似しないで欲しいということ.)
+
+```julia
+@vars n ρ positive=true
+@vars x μ
+
+expr1 = n*(x - μ)^2 + μ^2/ρ^2
+expr2 = (1+n*ρ^2)/ρ^2 * (μ - n*ρ^2/(1+n*ρ^2)*x)^2
+expr3 = (expr1 - expr2).factor()
+[
+    expr1
+    expr2
+    expr3
+]
+```
+
+### 分散が固定された正規分布モデルのBayes統計の事後分布の視覚化
+
+$\mu_0 = 4$, $\rho = 1/2$ とおく.
+
+平均 $\mu_0=4$, 分散 $1$ の正規分布のサイズ $N=2^{10}$ の標本 $X_1,X_2,\ldots,X_N$ をランダムに生成し, $n=0,1,2,4,8,\ldots,1024=2^{10}$ について標本平均 $x = \bar{X}_n = (X_1+\cdots+X_n)/n$ を求め, 前節で求めた $\mu$ の事後分布 $p(\mu|x,n,\rho)$ をプロットしてみよう.
+
+$n$ を大きくすると $\mu$ の事後分布はサンプルを生成した分布の平均値 $\mu_0$ に集中して行く.
+
+これはBayes統計の漸近論的な基礎付けの最も簡単な場合になっている.
+
+```julia
+Random.seed!(4649373) # よろしくみなさん
+
+μ₀ = 4
+ρ = 1/2
+N = 2^10
+X = rand(Normal(μ₀, 1), N) # 標本生成
+PP = []
+prior = Normal(0, ρ)
+P = plot(prior, μ₀-6, μ₀+4.5; label="prior", xtick=-10:10)
+push!(PP, P)
+for k in 0:10
+    n = 2^k
+    x = mean(@view X[1:n])
+    μ_posterior = n*ρ^2*x/(1 + n*ρ^2)
+    σ_posterior = √(ρ^2/(1+n*ρ^2))
+    posterior = Normal(μ_posterior, σ_posterior)
+    P = plot(posterior, μ₀-6, μ₀+4.5; label="n=$n", xtick=-10:10)
+    push!(PP, P)
+end
+plot(PP...; size=(800, 500), layout=(4, 3))
+```
+
+### 問題: 2変量の正規分布とその条件付き確率分布の例
 
 $$
 \Sigma =
@@ -909,15 +1073,24 @@ y - \mu_y \\
 \end{aligned}
 $$
 
-と定めることができる. これが $\iint_{\R^2} p(x,y)\,dx\,dy = 1$ を満たすことは, $\Sigma$ を直交行列で対角すれば示せる(詳細は略す). この確率密度函数が定める確率分布を2変量正規分布と呼び,
+と定めることができる. これが $\iint_{\R^2} p(x,y)\,dx\,dy = 1$ を満たすことは, $\Sigma$ を直交行列で対角すれば示せる. (詳細は略す. 以下では認めて使ってよい.) この確率密度函数が定める確率分布を2変量正規分布と呼び,
 
 $$
 \op{MvNormal}(\mu, \Sigma)
 $$
 
-と表すことにする. (この記号法は2変量に限らない, 任意の __多変量正規分布__ (multivariate normal distribution)にも使用することにする.)
+と表すことにする. (この記号法は, 2変量の場合に限定せずに, 任意の __多変量正規分布__ (multivariate normal distribution)にも使用することにする.)
 
-2変量正規分布において条件 $X=x$ が定める $y$ に関する条件付き確率分布を求めよう.
+この場合には条件 $X=x$ が定める $y$ に関する条件付き確率分布が, 平均と分散がそれぞれ
+
+$$
+\mu = (b/a)(x-\mu_x) + \mu_y, \quad
+\sigma^2 = (ac-b^2)/a
+$$
+
+の正規分布になることを示せ.
+
+__解答例:__ 上の2変量正規分布において条件 $X=x$ が定める $y$ に関する条件付き確率分布を求めよう.
 
 $$
 \begin{aligned}
@@ -1099,8 +1272,16 @@ plot!(ydist; label="true", ls=:dash)
 ```julia
 # 条件X=xが定めるyの条件付き確率分布の期待値と回帰直線の比較
 xlim = (μ[1] - 4√Σ[1,1], μ[1] + 4√Σ[1,1])
-plot(x -> f(x, μ̂, Σ̂), xlim...; label="linear regression")
-plot!(x -> f(x, μ, Σ), xlim...; label="true", ls=:dash)
+plot(x -> f(x, μ̂, Σ̂), xlim...; label="linear regression", c=:red)
+plot!(x -> f(x, μ, Σ), xlim...; label="true", ls=:dash, c=:blue)
+plot!(; legend=:topleft)
+```
+
+```julia
+# サンプルとまとめてプロット
+scatter(X, Y; ma=0.3, ms=2, msw=0, label="", title="data")
+plot!(x -> f(x, μ̂, Σ̂); label="linear regression", c=:red)
+plot!(x -> f(x, μ, Σ); label="true", ls=:dash, c=:blue)
 plot!(; legend=:topleft)
 ```
 
@@ -1111,7 +1292,7 @@ plot!(; legend=:topleft)
 @show σ² σ̂²;
 ```
 
-### 2×2の分割表の分布
+## 2×2の分割表の分布
 
 実践的によく使われている2×2の分割表のモデルになる確率分布を紹介しよう.
 
@@ -1132,8 +1313,10 @@ $$
 
 のことである.  以下では2×2の分割表の集合に順次制限して狭くして行きながら, 4種類の確率分布を紹介する.
 
+それら4種の確率分布達は条件付け確率分布の階層をなしている.
 
-#### 4つのPoisson分布の積
+
+### 4つのPoisson分布の積
 
 $\lambda_{ij} \ge 0$ であるとし, 
 
@@ -1172,7 +1355,7 @@ $$
 に一致する.
 
 
-#### 四項分布
+### 四項分布
 
 $\theta_{ij}\ge 0$, $\sum_{i,j=1}^2 \theta_{ij} = 1$ であるとし, 
 
@@ -1215,7 +1398,7 @@ $$
 になる.
 
 
-#### 2つの二項分布の積
+### 2つの二項分布の積
 
 $0\le\eta_i\le 1$ ($i=1,2$)であるとし, $\eta = (\eta_1, \eta_2)$ とおく. $r_1, r_2 \in\Z_{\ge 0}$ を任意に取って固定し, $r=(r_1,r_2)$ とおく. このとき, 横方向の合計(横方向のマージン)が
 
@@ -1248,7 +1431,7 @@ $$
 になる.
 
 
-#### Fisherの非心超幾何分布
+### Fisherの非心超幾何分布
 
 $\omega > 0$ であるとする. $r_1,r_2,s_1,s_2,n\in\Z_{\ge 0}$ で
 
@@ -1285,7 +1468,7 @@ $$
 
 これを __Fisherの非心超幾何分布__ (Fisher's noncentral hypergeometric distribution)と呼ぶ.
 
-パラメータの函数達 $Z(r,s,\omega)$, $\widetilde{Z}(r,s,\omega)$ は確率の総和が $1$ になるという条件で決める.  一般にそれらの定数の具体形はシンプルに書けないが, $\omega = 1$ の場合は例外的に, $n=r_1+r_2=s_1+s_2$ とおくと,
+パラメータの函数達 $Z(r,s,\omega)$, $\widetilde{Z}(r,s,\omega)$ は確率の総和が $1$ になるという条件で決める.  一般にそれらの定数の具体形はシンプルに書けないが, $\omega = 1$ の場合は例外的に,
 
 $$
 \widetilde{Z}(r,s,1) = 1, \quad
@@ -1303,7 +1486,7 @@ $$
 となる.  この $\omega=1$ の場合のFisherの非心超幾何分布は単に __超幾何分布__ と呼ばれている. 
 
 
-この超幾何分布の期待値は
+__注意:__ 超幾何分布の期待値は
 
 $$
 \begin{bmatrix}
@@ -1312,7 +1495,7 @@ r_2s_1/n & r_2s_2/n \\
 \end{bmatrix}
 $$
 
-になる.
+になる. Fisherの非心超幾何分布の期待値についてはこのようなシンプルな公式はない.
 
 
 __注意:__ 超幾何分布の確率質量函数の上の表示は以下のような解釈を持つ. 
@@ -1337,7 +1520,7 @@ $$
 __注意:__ 以上の状況のもとで $a_{11}$ が動ける範囲はちょうど次になる:
 
 $$
-\max(0, s_1+r_1-n) \le a_{11} \le \min(s_1, r_1).
+\max(0, r_1 - s_2) \le a_{11} \le \min(s_1, r_1).
 $$
 
 この条件は以下の条件を整理することによって得られる:
@@ -1351,7 +1534,7 @@ a_{11} = r_1 - a_{12} \le r_1,
 \\ &
 a_{11} = s_1 - a_{21} \le s_1,
 \\ &
-a_{11} = s_1+r_1-n+a_{22} \ge s_1+r_1-n.
+a_{11} = r_1 - s_2 + a_{22} \ge r_1 - s_2.
 \end{aligned}
 $$
 
@@ -1364,12 +1547,67 @@ a_{12} = r_1 - a_{11},
 \\ &
 a_{21} = s_1 - a_{11},
 \\ &
-a_{22} = n - (a_{11}+a_{12}+a_{21}) = n - r_1 - s_1 + a_{11}.
+a_{22} = s_2 - a_{12} = s_2 - r_1 + a_{11}.
 \end{aligned}
 $$
 
 
-#### 四項分布は4つのPoisson分布の積の条件付き確率分布
+__注意:__ 2×2の分割表のFisherの非心超幾何分布およびその特別な場合である超幾何分布においては $a_{11}$ の値を決めれば他の $a_{12},a_{21},a_{22}$ の値が決まるので, それらは
+
+$$
+\max(0, r_1 - s_2) \le a_{11} \le \min(s_1, r_1)
+$$
+
+を満たす整数 $a_{11}$ のみに関する確率分布だとみなされる.  $a_{11}$ のみに関するFisherの非心超幾何分布を
+
+$$
+\op{FisherNoncentralHypergeometric}(s_1, s_2, r_1, \omega)
+$$
+
+と書き, 超幾何分布を
+
+$$
+\op{Hypergeometric}(s_1, s_2, r_1)
+$$
+
+と書くことにする. $\op{Hypergeometric}(s_1, s_2, r_1)$ は $s_1$ 個の赤い玉と $s_2$ 個の白い玉が入っている袋から取り出した $r_1$ 個の玉の中の赤い玉の個数 $a_{11}$ の分布になっている.
+
+袋の中の赤い玉の個数 $s_1$ が取り出す玉の個数 $r_1$ より小さい場合には取り出した $r_1$ 個の玉がすべて赤い玉になること ($a_{11}=s_1$) はありえず, 袋の中の白い玉の個数 $s_2$ が取り出す玉の個数 $r_1$ より小さい場合には取り出した $r_1$ 個の玉がすべて白い玉になること($a_{11}=0$)となることはありえない.  このことに注意すれば $a_{11}$ の動く範囲についても理解し易いだろう.
+
+
+### Fisherの非心超幾何分布の正規分布近似の視覚化
+
+Fisherの非心超幾何分布 $\op{FisherNoncentralHypergeometric}(s, f, n)$ も $s, f, n$ が十分大きければ正規分布で近似される.
+
+```julia
+function plot_fnch(s₁, s₂, r₁, ω)
+    fnch = FisherNoncentralHypergeometric(s₁, s₂, r₁, ω)
+    μ, σ = mean(fnch), std(fnch)
+    xlim = (max(-1.0, μ-4σ), min(maximum(fnch)+1.0, μ+4σ))
+    x = range(xlim..., 1000)
+    plot(x -> mypdf(fnch, x), xlim...; label="")
+    plot!(Normal(μ, σ); label="", ls=:dash)
+    title!("s₁=$s₁, s₂=$s₂, r₁=$r₁, ω=$ω")
+end
+```
+
+```julia
+plot(plot_fnch(6, 14, 10, 0.5), plot_fnch(6, 14, 10, 2.0); size=(800, 250))
+```
+
+```julia
+plot(plot_fnch(12, 28, 20, 0.5), plot_fnch(12, 28, 20, 2.0); size=(800, 250))
+```
+
+```julia
+plot(plot_fnch(24, 56, 40, 0.5), plot_fnch(24, 56, 40, 2.0); size=(800, 250))
+```
+
+```julia
+plot(plot_fnch(48, 112, 80, 0.5), plot_fnch(48, 112, 80, 2.0); size=(800, 250))
+```
+
+### 四項分布は4つのPoisson分布の積の条件付き確率分布
 
 オッズ比 $\omega$ を次のように定める:
 
@@ -1432,7 +1670,7 @@ $$
 と, 四項分布の確率質量函数になる.
 
 
-#### 2つの二項分布の積は四項分布は4つの条件付き確率分布
+### 2つの二項分布の積は四項分布は4つの条件付き確率分布
 
 四項分布の確率質量函数を $\sum_{j=1}^2 a_{ij} = r_i$, $r_1+r_2=n$ の場合に制限してみよう.
 
@@ -1498,7 +1736,7 @@ $$
 これは2つの二項分布の積の確率質量函数である.
 
 
-#### Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布
+### Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布
 
 2つの二項分布の積の確率質量函数をさらに $\sum_{i=1}^2 a_{ij}=s_j$, $s_1+s_2=n$ の場合に制限してみよう. そのとき,
 
@@ -1535,7 +1773,7 @@ $$
 これより, 2つの二項分布の積における条件 $\sum_{i=1}^2 a_{ij}=s_j$ に関する条件付き確率分布がFisherの非心超幾何分布になることがわかる.
 
 
-#### 独立性条件
+### 独立性条件
 
 以上における条件付き確率分布の構成でオッズ比 $\omega$ が保たれて行くことに注意せよ. 以上で扱った4種類の確率分布は $\omega = 1$ を満たすとき __独立である__, もしくは, __独立性条件を満たす__ という. 
 
@@ -1560,9 +1798,126 @@ $$
 に関する独立性は条件 $X$ と条件 $Y$ が無関係であることを意味する. 
 
 
-## 尤度函数
+### Pearsonのχ²統計量
 
-「尤度」は「ゆうど」と読むが, 正しい読み方を知っても統計学的に有用な知見が得られない.
+以上で紹介した2×2の分割表
+
+$$
+A =
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+\end{bmatrix},
+\quad a_{ij} \in \Z_{\ge 0}
+$$
+
+の4つの確率分布について, 独立性条件が成立しているならば, 次の式で定義される __Pearsonのχ²統計量__
+
+$$
+X^2 = \frac{(a+b+c+d)(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}
+$$
+
+は近似的に自由度 $1$ のχ²分布に従うことが知られている. 以下でそれを視覚化によって確認しておこう.
+
+```julia
+function plot_pearson_chisq(randfunc, A, B, C, D; L=10^5)
+    # 仮の期待値 A, B, C, D から独立性条件を満たす期待値を作成
+    N = A + B + C + D
+    Ā = (A+B)*(A+C)/N
+    B̄ = (A+B)*(B+D)/N
+    C̄ = (C+D)*(A+C)/N
+    D̄ = (C+D)*(B+D)/N
+    # Pearsonのχ²統計量を配列 X² に格納
+    X² = Vector{Float64}(undef, L)
+    Threads.@threads for i in 1:L
+        a, b, c, d = randfunc(Ā, B̄, C̄, D̄)
+        X²[i] = safediv((a+b+c+d)*(a*d-b*c)^2, (a+b)*(c+d)*(a+c)*(b+d))
+    end
+    ecdf_chisq = ecdf(X²) # Pearsonのχ²統計量の経験累積分布函数
+    plot(; legend=:bottomright)
+    plot!(x -> ecdf_chisq(x), -0.2, 6.5; label="ecdf of Pearson's χ²")
+    plot!(x -> cdf(Chisq(1), x); label="cdf of Chisq(1)", ls=:dash)
+    title!("$randfunc($Ā, $B̄, $C̄, $D̄)")
+end
+
+function rand_4poisson(A, B, C, D)
+    rand(Poisson(A)), rand(Poisson(B)), rand(Poisson(C)), rand(Poisson(D))
+end
+
+function rand_quadnomial(A, B, C, D)
+    N = Int(A + B + C + D)
+    rand(Multinomial(N, [A/N, B/N, C/N, D/N]))
+end
+
+function rand_2binomial(A, B, C, D)
+    R₁, R₂ = Int.((A+B, C+D))
+    a, c = rand(Binomial(R₁, A/(A+B))), rand(Binomial(R₂, C/(C+D)))
+    b, d = R₁-a, R₂-c
+    a, b, c, d
+end
+
+function rand_hypergeometric(A, B, C, D)
+    A, B, C, D = Int.((A, B, C, D))
+    a = rand(Hypergeometric(A+C, B+D, A+B))
+    b = A+B-a
+    c = A+C-a
+    d = D-A+a
+    a, b, c, d
+end
+```
+
+以下では期待値が独立性条件を満たす
+
+$$
+\begin{bmatrix}
+4 & 6 \\
+6 & 9 \\
+\end{bmatrix}
+$$
+
+の場合のPearsonのχ²統計量の分布の累積分布函数をプロットし, 自由度 $1$ のχ²分布と比較している.
+
+```julia
+plot_pearson_chisq(rand_4poisson, 4, 6, 6, 9)
+```
+
+```julia
+plot_pearson_chisq(rand_quadnomial, 4, 6, 6, 9)
+```
+
+```julia
+plot_pearson_chisq(rand_2binomial, 4, 6, 6, 9)
+```
+
+```julia
+plot_pearson_chisq(rand_hypergeometric, 4, 6, 6, 9)
+```
+
+最後の超幾何分布の場合にのみ自由度 $1$ のχ²分布による近似が大幅に悪化することに注意せよ.  それ以外の場合にはχ²分布による近似の精度はかなりよいように見える.
+
+
+## 尤度 (ゆうど)と推定
+
+
+### 尤度に関するまとめ
+
+「尤度」は「ゆうど」と読むが, 正しい読み方を知っても統計学的実践に関する有用な知見は得られない.
+
+尤度の定義は __統計モデル内でデータと同じ数値が生成される確率もしくは確率の密度__ である.
+
+尤度は統計モデルの「もっともらしさ」(尤もらしさ)の指標では __ない__. (尤度の英語名は「もっともらしさ」を意味する likelihood なのでこの点には注意を要する.)
+
+尤度は「証拠の強さ」の指標でも __ない__. (尤度は証拠の強さの指標として不適切であるにもかかわらず, 歴史的な事情で evidence (証拠)という別名が付いているので, この点にも注意が必要である.)
+
+尤度は __統計モデルのデータへの数値への適合度__(フィッティングの良さ)の指標の1つ(他にも沢山ある)として基本的かつ有用である.
+
+尤度をそのような道具として使用することは, 統計モデルのデータの数値への適合度(フィッティングの良さ)をモデル内でデータと同じ数値がどれだけ生成され易いかで測ることを意味している.
+
+尤度が高い(＝モデルがデータの数値によくフィットしている)にも関わらず役に立たない統計モデルを作ってしまうことはよくある.  そうなってしまうことを __オーバーフィッティング__ (overfitting, 過剰適合)という.
 
 
 ### 尤度函数と尤度の定義と諸注意
@@ -1573,11 +1928,11 @@ $$
 
 さらにパラメータの値 $\theta$ が与えられたとき, そこでの尤度函数の値 $P(x|\theta)$ または $p(x|\theta)$ を __尤度__ (ゆうど, likelihood)と呼ぶ.
 
-すなわち, 統計モデル内において, データ $x$ と同じ数値が生成される確率 $P(x|\theta)$ または確率密度 $p(x|\theta)$ を尤度(ゆうど)と呼ぶ.
+すなわち, __統計モデル内においてデータ $x$ と同じ数値が生成される確率 $P(x|\theta)$ または確率の密度 $p(x|\theta)$ を尤度(ゆうど)と呼ぶ__.
 
 __注意:__ 尤度(ゆうど)は英語では「もっともらしさ」(尤もらしさ)を意味する likelihood という単語で表されるが, 統計学における専門用語としての尤度は「もっともらしさ」と呼ぶには適さない量になっているので注意が必要である. (非常に残念なことに, 多くの教科書で「尤度はもっともらしさを意味する」のような誤誘導的な解説が書いてある.)
 
-__注意:__ 尤度は「もっともらしさ」の指標としては不適切だが, 統計モデルのデータへの適合度(フィットの度合い)の指標の1つとして非常に有用である.
+__注意:__ 尤度は「もっともらしさ」の指標としては不適切だが, 統計モデルのデータへの適合度(フィットの度合い)の指標の1つとして基本的かつ有用である.
 
 __注意:__ 尤度函数 $\theta\mapsto P(x|\theta)$ または $\theta\mapsto p(x|\theta)$ は一般に $\theta$ の確率密度函数にはなっていない.
 
@@ -1587,18 +1942,782 @@ __注意:__ 繰り返しになるが, __尤度はモデルのデータへの適�
 
 __注意:__ 尤度をデータへのモデルの適合度の指標として使うことは, モデルのデータへの適合度をモデル内でどれだけデータと同じ数値が生成され易いかでモデルのデータへの適合度を測るということになる.
 
-__注意:__ データの数値を得てから, 後付けで統計モデルを作れば, いくらでも尤度の高い統計モデルを作れる. さらに, データの数値を見てから, 後付けで統計モデルを自由に作らなくても, 統計モデルに大量のパラメータを入れておけば, 後付けで採用しそうなモデルもその中に実質的に含まれているようにでき, データの数値に合わせてパラメータを調節することによって統計モデルの尤度を高めることも可能である. そのような方法によって, 尤度が高いのに役に立たないモデルができてしまうことを __オーバーフィッティング__ (overfitting, 過剰適合)と呼ぶ.  過剰適合の問題があるので, 尤度を単純に「もっともらしさ」の指標として安易に採用することはできない.
+__注意:__ データの数値を得てから, 後付けで統計モデルを作れば, いくらでも尤度の高い統計モデルを作れる. さらに, データの数値を見てから後付けで統計モデルを作らなくても, 事前に統計モデルに大量のパラメータを入れておけば, 後付けで採用しそうなモデルもその中に含まれているようにでき, 事前に決めておいた方法でパラメータをデータの数値に合わせて調節することによって, 統計モデルの尤度を高めることも可能である. 何らかの理由で尤度が高い(すなわち既知のデータへの適合度が高い)のにこれから得られるデータの予測に役に立たないモデルができてしまうことを __オーバーフィッティング__ (overfitting, 過剰適合)と呼ぶ.  過剰適合の問題があるので, 尤度を単純に「もっともらしさ」の指標として安易に採用することは危険である.
 
 
-## 推定
+### 例: Bernoulli試行の尤度函数と最尤法
+
+当たりが出る確率 $p$ が未知のルーレットを $n$ 回まわして得た当たりとはずれの長さ $n$ 列 $x_1,x_2,\ldots,x_n$ がデータとして得られる状況を考える.  当たりは $1$ ではずれは $0$ で表しておくことにする.
+
+その状況をBernoulli試行でモデル化する. すなわち, 次の確率質量函数を統計モデルとして採用する:
+
+$$
+P(x_1,\ldots,x_n|p) = p^{x_1+\cdots+x_n}(1 - p)^{n - (x_1+\cdots+x_n)}
+\quad (x_i=1,0).
+$$
+
+このとき, データの数値 $(x_1,\ldots,x_n)$ が得られたとき, この統計モデルの尤度函数は
+
+$$
+L(p) = p^{x_1+\cdots+x_n}(1 - p)^{n - (x_1+\cdots+x_n)}
+$$
+
+になる.  これの右辺の式の形は上の確率質量函数と同じである. しかし, 尤度函数の側では $x_1,\ldots,x_n$ が具体的なデータの数値になっている点が異なる.
+
+記号の簡単のため, データ $x_1,\ldots,x_n$ の中の当たり(=1)の個数を $k$ と書くことにする:
+
+$$
+k = x_1 + \cdots + x_n.
+$$
+
+このとき, 尤度函数は次のように書かれる:
+
+$$
+L(p) = p^k(1 - p)^{n-k}
+$$
+
+実際の計算では尤度函数そのものではなく, その対数である __対数尤度函数__
+
+$$
+\ell(p) = \log L(p) = k\log p + (n - k)\log(1 - p)
+$$
+
+が使われることが多い.  以下の計算でも主にこちら側を使うことにする.
+
+パラメータの値 $p$ の尤度 $L(p)$ もしくはその対数 $\log L(p)$ はBernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度の指標の1つとみなされる.  だから, Bernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度を最大化することは, 対数尤度 $\log L(p)$ を最大化するパラメータ値 $p$ を採用することに等しいと考えることができる. このようにしてモデルのパラメータを決定することを __最尤法__ (maximum likelihood method)や __最尤推定法__ (maximum likelihood estimation)と呼ぶ.  そして, そのようにして求めたパラメータ値を __最尤推定値__ (maximum likelihood esitimate, 最尤法の解) と呼ぶ.
+
+最尤法の解 $p = \hat{p}$ を求めてみよう.  そのために対数尤度函数を微分してみる:
+
+$$
+\ell'(p) = \frac{k}{p} - \frac{n-k}{1-p} = \frac{k-np}{p(1-p)}
+$$
+
+なので, $\ell'(p)$ は $p < k/n$ で正になり, $p > k/n$ で負になる.  ゆえに $\ell(p)$ は $p < k/n$ で単調増加し, $p > k/n$ で単調減少する.  ゆえに, 対数尤度函数 $\ell(p)$ を最大化する $p = \hat{p}$ は
+
+$$
+\hat{p} = \frac{k}{n}
+$$
+
+になる.  Bernoulli試行モデルの「$n$ 回中 $k$ 回が当たりが出た」というデータに関する尤度は成功確率パラメータの値を $p=\hat{p}=k/n$ としたときに最大になり, Bernoulli試行モデルがデータに最もよくフィットするようになる.
+
+この結果を見て, 「$n$ 回中 $k$ 回が当たりが出た」というデータによれば, そのルーレットで当たりが出る確率は $k/n$ であるに違いないと推測することは __誤り__ である.  以上で行った計算は単にモデルがデータに最もよくフィットするパラメータ値を求めただけであり, データを生成したルーレットで当たりが出る確率を求めてはいない.
+
+ルーレットを $n$ 回まわしたときに当たりが出る回数 $k$ は, ルーレットを $n$ 回まわす操作を行うごとに違う値になるだろう.  データは確率的に揺らぐ.  ルーレットで当たりが出る確率(これは未知)を適切に推測するためには, データの確率的揺らぎについても考慮する必要がある.  この点については様々な考え方があるが, 後で我々は区間推定(信頼区間)の考え方を学ぶことになるだろう.
+
+
+### Bernoulli試行モデルの尤度函数の視覚化
+
+前節で求めた「$n$ 回中当たりが $k$ 回出た」というデータに関するBernoulli試行モデルの尤度函数
+
+$$
+L(p) = p^k(1 - p)^{n-k}
+$$
+
+のグラフを描いてみよう.
+
+しかし, 浮動小数点数での計算では $0<p<1$ を満たす $p$ の高次のべきは容易に $0$ になってしまう. そこで最大値が $1$ になるように定数をかけた次の函数のグラフをプロットすることにしよう:
+
+$$
+\frac{L(p)}{L(k/n)} = \left(\frac{p}{k/n}\right)^k \left(\frac{1-p}{1-k/n}\right)^{n-k}.
+$$
+
+```julia
+function plot_berlik(n, k)
+    if k < 0 || k > n
+        return plot(; axis=false, tick=false, frame=false, margin=0Plots.mm)
+    end
+    L(p) = if 0 < p < 1
+        exp(-(xlogy(k, safediv(k/n, p))+xlogy(n-k, safediv(1-k/n, 1-p))))
+    else
+        zero(p)
+    end
+    plot(L, -0.02, 1.02; label="", title="n=$n, k=$k")
+    plot!(; xtick=0:0.1:1, tickfontsize=6)
+end
+```
+
+$n = 10$ を固定した場合
+
+```julia
+n = 10
+plot(plot_berlik.(n,(0,1,2))...; size=(800,150), layout=(1,3))
+```
+
+```julia
+plot(plot_berlik.(n,(3,4,5))...; size=(800,150), layout=(1,3))
+```
+
+```julia
+n = 10
+plot(plot_berlik.(n,(6,7,8))...; size=(800,150), layout=(1,3))
+```
+
+```julia
+n = 10
+plot(plot_berlik.(n,(9,10,11))...; size=(800,150), layout=(1,3))
+```
+
+$k/n$ を固定して $n$ を大きくした場合には, 尤度函数 $L(p)$ の台は $k/n$ に集中して行く.
+
+```julia
+plot(plot_berlik.((10, 100, 1000), (3, 30, 300))...; size=(800,150), layout=(1,3))
+```
+
+このグラフから, データに基づくパラメータの推定において, パラメータの推定値としてどれだけの幅を持たせるかについて, 尤度函数がなにがしかの情報を持っていそうなこともわかる.
+
+
+### 問題: 正規分布の標本分布モデルの尤度函数と最尤法
+
+データは $n$ 個の実数達 $x_1,\ldots,x_n$ であるとし, 統計モデルとして平均 $\mu$, 分散 $\sigma^2$ の正規分布のサイズ $n$ の標本分布を考える. その統計モデルの確率密度函数 $p(x_1,\ldots,x_n|\mu,\sigma^2)$ は, 
+
+$$
+p(x_i|\mu,\sigma^2) =
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)
+$$
+
+とおくとき次のように表される:
+
+$$
+p(x_1,\ldots,x_n|\mu,\sigma^2) = \prod_{i=1}^n p(x_i|\mu,\sigma^2).
+$$
+
+データ $x_1,\ldots,x_n$ に関するこのモデルの尤度函数を最大化する $\mu=\hat\mu$, $\sigma^2=\hat\sigma^2$ はそれぞれ次になることを示せ:
+
+$$
+\hat\mu = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+\hat\sigma^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \hat\mu)^2.
+$$
+
+これは, 正規分布の標本分布モデルの最尤法の解が標本平均と(不偏にするための補正無しの)標本分散になることを意味している.
+
+__注意:__ この結果はデータの標本平均と標本分散を求めることは, 正規分布の標本分布モデルがデータに最もよくフィットするような $\mu$ と $\sigma^2$ を求めることに等しいことがわかる.  この点は次の節の要約統計の説明でも触れる.
+
+
+__解答例:__ 記号の簡単のため以下のように書くことにする:
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+v^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2.
+$$
+
+このとき
+
+$$
+\begin{aligned}
+\sum_{i=1}^n (x_i - \mu)^2 &=
+\sum_{i=1}^n ((x_i - \bar{x}) - (\mu - \bar{x}))^2
+\\ &=
+\underbrace{\sum_{i=1}^n (x_i - \bar{x})^2}_{=nv^2} -
+2(\mu - \bar{x})\underbrace{\sum_{i=1}^n(x_i - \bar{x})}_{=0} +
+\sum_{i=1}^n (\mu - \bar{x})^2
+\\ &=
+n(v^2 + (\mu - \bar{x})^2)
+\end{aligned}
+$$
+
+なので, 正規分布の標本分布の密度函数は以下のように表される:
+
+$$
+\begin{aligned}
+p(x_1,\ldots,x_n|\mu,\sigma^2) &=
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n (x_i - \mu)^2 \right)
+\\ &=
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(-\frac{n}{2\sigma^2}(v^2 + (\mu - \bar{x})^2) \right).
+\end{aligned}
+$$
+
+ゆえにデータ $x_1,\ldots,x_n$ に関するこれの尤度函数を $\ell(\mu,\sigma)$ と書くと,
+
+$$
+-\frac{2}{n}\ell(\mu, \sigma) =
+\frac{(\mu - \bar{x})^2 + v^2}{\sigma^2} + \log\sigma^2 + \log(2\pi).
+$$
+
+これを最小化する $\mu=\hat\mu$ と $\sigma^2=\hat\sigma^2$ が $\hat\mu=\bar{x}$, $\hat\sigma^2=v^2$ となることを示せばよい.
+
+$\sigma^2$ を固定するとき, 上の式を最小化する $\mu=\hat\mu$ が $\hat\mu = \bar{x}$ になることはすぐにわかる.
+
+$\mu = \bar{x}$ のとき
+
+$$
+-\frac{2}{n}\ell(\bar{x}, \sigma) =
+\frac{v^2}{\sigma^2} + \log\sigma^2 + \text{const.}
+\tag{$\sharp$}
+$$
+
+右辺を $\sigma^2$ を1つの変数だとみなして, $\sigma^2$ で微分すると
+
+$$ -
+\frac{v^2}{(\sigma^2)^2} + \frac{1}{\sigma^2} =
+\frac{\sigma^2 - v^2}{(\sigma^2)^2}
+$$
+
+であることから, これは $\sigma^2$ の函数として, $\sigma^2 < v_2$ のとき単調減少し, $\sigma^2 > v^2$ のとき単調増加するので, ($\sharp$)を最小化する $\sigma^2=\hat\sigma^2$ が $\hat\sigma^2=v^2$ であることがわかる.
+
+__解答終__
+
+
+### 正規分布の標本分布モデルの尤度函数の視覚化
+
+値が大きな点ほど明るくプロットされるヒートマップによって正規分布の標本分布モデルの尤度函数をプロットしてみよう. 尤度函数を与えるためにはデータ $x_1,\ldots,x_n$ が必要になるが, データは簡単のため標準正規分布に従う乱数で生成することにする.
+
+```julia
+function plot_normallik(X, xlim, ylim; kwargs...)
+    n = length(X)
+    mle = fit_mle(Normal, X)
+    μ̂, σ̂² = mean(mle), var(mle)
+    f(μ, σ²) = exp(
+        loglikelihood(Normal(μ, √σ²), X) -
+        loglikelihood(Normal(μ̂, √σ̂²), X)
+    )
+    x = range(xlim..., 200)
+    y = range(ylim..., 200)
+    heatmap(x, y, f; colorbar=false)
+    plot!(; xguide="μ", yguide="σ²")
+    title!("n = $n")
+    plot!(; fmt=:png, size=(250, 250))
+end
+```
+
+```julia
+Random.seed!(4649373) # よろしくみなさん
+plot((plot_normallik(randn(10), (-2, 2), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(randn(40), (-2, 2), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(randn(160), (-2, 2), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(randn(640), (-2, 2), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+$n$ を大きくすると, サンプルを生成した分布の期待値と分散の値の近くに尤度函数の台が集中して行く.
+
+以下はサンプルを生成する分布を正規分布とは大きく違う指数分布にした場合
+
+```julia
+Random.seed!(4649373) # よろしくみなさん
+plot((plot_normallik(rand(Exponential(), 10), (-1, 3), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(rand(Exponential(), 40), (-1, 3), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(rand(Exponential(), 160), (-1, 3), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+```julia
+plot((plot_normallik(rand(Exponential(), 640), (-1, 3), (0, 4)) for _ in 1:3)...;
+    size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+```
+
+### 問題: 最小二乗法が正規分布モデルの最尤法の一種に一致すること
+
+データは2つの実数の組が $n$ 個 $(x_1, y_1), \ldots, (x_n, y_n)$ の形式であるとし, 記号の簡単のために次のようにおく:
+
+$$
+\begin{aligned}
+&
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+v_x^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2,
+\\ &
+\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i, \quad
+v_y^2 = \frac{1}{n}\sum_{i=1}^n (y_i - \bar{y})^2, \quad
+v_{xy} = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+\end{aligned}
+$$
+
+統計モデルとして, パラメータ $x_1,\ldots,x_n,\alpha,\beta$ と $\sigma^2>0$ を持つ次の確率密度函数で定まる $y_1,\ldots,y_n$ に関する確率分布を考える:
+
+$$
+p(y_1,\ldots,y_n|x_1,\ldots,x_n,\alpha,\beta,\sigma^2) =
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - (\alpha + \beta x_i))^2\right).
+$$
+
+このモデルのデータ $(x_1, y_1), \ldots, (x_n, y_n)$ に関する尤度函数
+
+$$
+L(\alpha,\beta,\sigma^2) =
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i - (\alpha + \beta x_i))^2\right)
+$$
+
+を最大化する $\alpha=\hat\alpha$, $\beta=\hat\beta$, $\sigma^2=\hat\sigma^2$ は次になることを示せ:
+
+$$
+\hat\beta = \frac{v_{xy}}{v_x^2}, \quad
+\hat\alpha = \bar{y} - \hat\beta \bar{x}, \quad
+\hat\sigma^2 = \frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2}.
+$$
+
+__注意:__ この公式は最小二乗法の公式と一致する.
+
+
+__解答例:__ 尤度函数の形を整理し直そう.
+
+$$
+\begin{aligned}
+(y_i - (\alpha + \beta x_i))^2 &=
+(y_i - \bar{y} + \bar{y} - (\alpha + \beta\bar{x}) + (\alpha + \beta\bar{x}) - (\alpha + \beta x_i))^2
+\\ &=
+((y_i - \bar{y}) - \beta(x_i - \bar{x}) + (\bar{y} - (\alpha + \beta\bar{x})))^2
+\\ &=
+\beta^2(x_i - \bar{x})^2 -
+2\beta(x_i - \bar{x})(y_i - \bar{y}) +
+(y_i - \bar{y})^2
+\\ &+
+(\bar{y} - (\alpha + \beta\bar{x}))^2 +
+2(y_i - \bar{y})(\bar{y} - (\alpha + \beta\bar{x})) -
+2\beta(x_i - \bar{x})(\bar{y} - (\alpha + \beta\bar{x}))
+\end{aligned}
+$$
+
+より
+
+$$
+\begin{aligned}
+\frac{1}{n}\sum_{i=1}^n (y_i - (\alpha + \beta x_i))^2 &=
+v_x^2\beta^2 - 2v_{xy}\beta + v_y^2 + (\bar{y} - (\alpha + \beta\bar{x}))^2
+\\ &=
+v_x^2\left(\beta - \frac{v_{xy}}{v_x^2}\right)^2 +
+\frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2} +
+(\bar{y} - (\alpha + \beta\bar{x}))^2.
+\end{aligned}
+$$
+
+ゆえに, 尤度函数の対数の $-2/n$ 倍を $f(\alpha,\beta,\sigma^2)$ と書くと,
+
+$$
+\begin{aligned}
+&
+f(\alpha,\beta,\sigma^2) = -\frac{2}{n}\log L(\alpha,\beta,\sigma^2)
+\\ &=
+\frac{1}{\sigma^2}\left(
+v_x^2\left(\beta - \frac{v_{xy}}{v_x^2}\right)^2 +
+\frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2} +
+(\bar{y} - (\alpha + \beta\bar{x}))^2
+\right) + \log\sigma^2 + \log(2\pi).
+\end{aligned}
+$$
+
+これを最小化する $\alpha=\hat\alpha$, $\beta=\hat\beta$, $\sigma^2=\hat\sigma^2$ が
+
+$$
+\hat\beta = \frac{v_{xy}}{v_x^2}, \quad
+\hat\alpha = \bar{y} - \hat\beta \bar{x}, \quad
+\hat\sigma^2 = \frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2}.
+$$
+
+になることを示せばよい. $\sigma^2$ を固定したとき, $f(\alpha,\beta,\sigma^2)$ を最小化する $\alpha=\hat\alpha$, $\beta=\hat\beta$ が
+
+$$
+\hat\beta = \frac{v_{xy}}{v_x^2}, \quad
+\hat\alpha = \bar{y} - \hat\beta \bar{x}
+$$
+
+になることはすぐにわかる.  このとき
+
+$$
+f(\hat\alpha,\hat\beta,\sigma^2) =
+\frac{1}{\sigma^2}\frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2} +
+\log\sigma^2 + \log(2\pi)
+$$
+
+であり, 前節と同様に $\sigma^2$ を1つの変数だとみなして $\sigma^2$ で微分することによって, これを最小化する $\sigma^2=\hat\sigma^2$ が
+
+$$
+\hat\sigma^2 = \frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2}
+$$
+
+になることがわかる.
+
+__解答終__
+
+
+### 最尤法の観点から見た十分統計量
+
+$p(x|\theta)$ はパラメータ $\theta$ を持つ $x$ に関する確率密度函数であるとする(確率質量函数の場合も同様である).  $p(x|\theta)$ をデータ $x$ に関する統計モデルの密度函数である場合について考える.
+
+このとき, Fiher-Neymanの分解定理より, $x$ の函数 $t(x)$ が __十分統計量__ (sufficient statistic)であることと, モデルの密度函数が $0$ 以上の値を持つ函数たち $a(x)$, $b(t|\theta)$ によって
+
+$$
+p(x|\theta) = a(x)b(t(x)|\theta)
+$$
+
+と表されることは同値である.  すなわちこの条件を十分統計量の定義として採用してもよい.  この条件はデータ $x$ の尤度函数
+
+$$
+L(\theta) = a(x)b(t(x)|\theta)
+$$
+
+が $\theta$ に関する定数 $a(x)$ 倍の違いを除けば, $t(x)$ と $\theta$ だけで尤度函数が表されることと同値である. 尤度 $L(\theta)$ を最大化することと $b(t(x)|\theta)$ を最大化することは同値なので, 最尤法の解は, データ $x$ そのものの値ではなく, データ $x$ から計算される $t(x)$ の値だけで決まることになる. 
+
+十分統計量はデータの要約を与えるためにも有用である.
+
+
+#### Bernoulli試行モデルの十分統計量
+
+Bernoulli試行モデルのパラメータ $p$ を持つ確率質量函数は
+
+$$
+P(x_1,\ldots,x_n|p) = p^{x_1+\cdots+x_n}(1 - p)^{n - (x_1+\cdots+x_n)}
+\quad (x_i=1,0).
+$$
+
+と書けるので, 
+
+$$
+t(x_1,\ldots,x_n) = x_1+\cdots+x_n
+$$
+
+は十分統計量になっている. $x_1,\ldots,x_n$ そのものの情報を忘れても, $k=x_1+\cdots+x_n$ の情報さえあれば最尤法を実行できる.
+
+
+#### 正規分布の標本分布モデルの十分統計量
+
+正規分布の標本分布モデルのパラメータ $\mu,\sigma^2$ を持つ確率密度函数は
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+v^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2
+$$
+
+とおくと,
+
+$$
+p(x_1,\ldots,x_n|\mu,\sigma^2) =
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(-\frac{n}{2\sigma^2}(v^2 + (\mu - \bar{x})^2) \right)
+$$
+
+と書けるので,
+
+$$
+t(x_1,\ldots,x_n) = (\bar{x}, v^2) =
+\left(\frac{1}{n}\sum_{i=1}^n x_i, \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2\right)
+$$
+
+は十分統計量になっている. すなわち, 標本平均と標本分散の組み合わせは正規分布の標本分布モデルの十分統計量になっている. 補正無しの標本分散 $v^2$ を不偏分散 $s^2=(n/(n-1))v^2$ で置き換えても十分統計量のままである.
+
+
+#### 最小二乗法を与える正規分布モデルの十分統計量
+
+最小二乗法を与える正規分布モデルのパラメータ $x_1,\ldots,x_n,\alpha,\beta,\sigma^2$ を持つ確率密度函数は
+
+$$
+\begin{aligned}
+&
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
+v_x^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2,
+\\ &
+\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i, \quad
+v_y^2 = \frac{1}{n}\sum_{i=1}^n (y_i - \bar{y})^2, \quad
+v_{xy} = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}).
+\end{aligned}
+$$
+
+とおくと,
+
+$$
+\begin{aligned}
+&
+p(y_1,\ldots,y_n|x_1,\ldots,x_n,\alpha,\beta,\sigma^2)
+\\ &=
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(
+-\frac{n}{2\sigma^2}\left(
+v_x^2\beta^2 - 2v_{xy}\beta + v_y^2 + (\bar{y} - (\alpha + \beta\bar{x}))^2
+\right)
+\right)
+\\ &=
+\frac{1}{(2\pi\sigma^2)^{n/2}}
+\exp\left(
+-\frac{n}{2\sigma^2}\left(
+v_x^2\left(\beta - \frac{v_{xy}}{v_x^2}\right)^2 +
+\frac{v_x^2 v_y^2 - v_{xy}^2}{v_x^2} +
+(\bar{y} - (\alpha + \beta\bar{x}))^2
+\right)
+\right)
+\end{aligned}
+$$
+
+と書けるので, 
+
+$$
+t(y_1,\ldots,y_n|x_1,\ldots,x_n) = (\bar{x}, \bar{y}, v_x^2, v_y^2, v_{xy})
+$$
+
+は少し拡張した意味での十分統計量だと言ってよいだろう.
+
+__注意:__ $(\bar{x}, \bar{y}, v_x^2, v_y^2, v_{xy})$ は2変量正規分布の標本分布モデルの十分統計量になっている.
 
 
 ## 記述統計 (要約統計)
 
-```julia
+$x_1,\ldots,x_n$ の形式のデータや $(x_1,y_1),\ldots,(x_n,y_n)$ の形式のデータが得られたとき, それらの情報を要約するためによく使われる量がある.
 
+それらについて簡単にまとめておこう.
+
+
+### $n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約
+
+$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約としてよく使われるのは, $x_1,\ldots,x_n$ の中の $1$ の個数 $k=x_1+\cdots+x_n$ を求めて, 「$n$ 個中 $k$ 個が $1$ である」と報告することである. このとき, $k$ はBernoulli試行モデルの十分統計量になっているのであった.
+
+このようなデータの要約の仕方は $x_1,\ldots,x_n$ が並んでいる順序が重要な場合には適さない.
+
+さらに, 「$n$ 個中の $k$ 個が $1$ である」と報告するときには $n$ と $k$ の両方の数値を報告することが重要である. なぜならばデータのサイズ $n$ は統計分析の精度を見積もる上で非常に重要な情報だからである.
+
+$n$ の情報を省いて「$1$ の割合は $30\%$ であった」のように $k/n$ の情報だけを伝えることは好ましくない.
+
+
+### $n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約
+
+$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約としては以下がよく使われている:
+
+* 標本平均 $\bar{x}$ と不偏分散 $s^2$
+* 中央値
+* 四分位数
+
+標本平均と不偏分散の組み合わせは正規分布の標本分布モデルの十分統計量になっており, それだけではなく, その最尤法の解にもなっているのであった.
+
+標本平均だけではなく, 中央値の情報も報告されているとき, それらに大きなずれが存在するならば, 分布に非対称性があることもわかる.
+
+四分位数は外れ値がある場合の分布の散らばり方の要約として頑健である.
+
+以上で挙げた, 標本平均, 不偏分散, 中央値, 四分位数はデータの分布が単峰型の場合にはデータの要約の仕方として適切だが, 山が2以上ある分布の場合には適さない.
+
+この型のデータの様子は, ヒストグラムや経験累積分布函数($x$ に $x$ 以下の $x_i$ 達の割合を対応させる函数)をプロットして, __データ全体の様子を視覚的に必ず確認した方がよい.__
+
+
+### $n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約
+
+$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約としてよく使われているのは,
+
+* 標本平均 $\bar{x},\bar{y}$ と不偏分散と不偏共分散 $s_x^2, s_y^2, s_{xy}$
+
+である.　この5つの量を合わせたものは二変量正規分布の標本分布モデルの十分統計量になっている.
+
+このようなデータを取得する場合には $x_i$ と $y_i$ のあいだの関係がどうなっているかに興味がある.
+
+しかし, 上の5つの要約統計量だけしか見ないと, $x_i$ と $y_i$ のあいだの重要な関係を見逃してしまうことがある.
+
+この型のデータを扱う場合には, __散布図__ (scatter plot)を行うなどして、__データ全体の様子を視覚的に必ず確認した方がよい.__
+
+
+### Anscombeの例(アンスコムの例, 再)
+
+以下のプロットを見れば, 要約統計量だけを見てはいけないことがわかる.
+
+```julia
+function plot_ols(x, y, α̂, β̂; xlim=nothing,
+        title="data and regression line", kwargs...)
+    a, b = extrema(x)
+    isnothing(xlim) && (xlim = (a - 0.1(b-a), b + 0.1(b-a)))
+    scatter(x, y; label="", msw=0)
+    plot!(x -> α̂ + β̂*x, xlim...; label="", lw=2)
+    plot!(; xlabel="x", ylabel="y", msw=0)
+    plot!(; size=(400, 300))
+    plot!(; title, kwargs...)
+end
+
+using RDatasets
+anscombe = dataset("datasets", "anscombe")
+
+function solve_anscombe(x, y;
+        title="", xlim=(3, 20), ylim=(2, 14), size=(250, 225))
+    @show x̄ = mean(x)
+    @show ȳ = mean(y)
+    @show sx² = var(x)
+    @show sy² = var(y)
+    @show sxy = cov(x, y)
+    β̂ = sxy/sx²
+    α̂ = ȳ - β̂*x̄
+    σ̂ = √((n - 1)/n*(sx²*sy² - sxy^2)/sx²)
+    @show α̂ β̂ σ̂
+    
+    plot_ols(x, y, α̂, β̂; title, xlim, ylim, size)
+end
+
+println("---------- Anscombe 1")
+PA1 = solve_anscombe(anscombe.X1, anscombe.Y1, title="Anscombe 1")
+println("\n---------- Anscombe 2")
+PA2 = solve_anscombe(anscombe.X2, anscombe.Y2, title="Anscombe 1")
+println("\n---------- Anscombe 3")
+PA3 = solve_anscombe(anscombe.X3, anscombe.Y3, title="Anscombe 1")
+println("\n---------- Anscombe 4")
+PA4 = solve_anscombe(anscombe.X4, anscombe.Y4, title="Anscombe 1")
+
+plot(PA1, PA2, PA3, PA4; size=(500, 450), layout=(2,2))
 ```
 
-```julia
+### DataSaurusの例
 
+以下のデータは
+
+* http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html
+
+から取得したものである. 
+
+```julia
+[
+    55.3846 97.1795
+    51.5385 96.0256
+    46.1538 94.4872
+    42.8205 91.4103
+    40.7692 88.3333
+    38.7179 84.8718
+    35.6410 79.8718
+    33.0769 77.5641
+    28.9744 74.4872
+    26.1538 71.4103
+    23.0769 66.4103
+    22.3077 61.7949
+    22.3077 57.1795
+    23.3333 52.9487
+    25.8974 51.0256
+    29.4872 51.0256
+    32.8205 51.0256
+    35.3846 51.4103
+    40.2564 51.4103
+    44.1026 52.9487
+    46.6667 54.1026
+    50.0000 55.2564
+    53.0769 55.6410
+    56.6667 56.0256
+    59.2308 57.9487
+    61.2821 62.1795
+    61.5385 66.4103
+    61.7949 69.1026
+    57.4359 55.2564
+    54.8718 49.8718
+    52.5641 46.0256
+    48.2051 38.3333
+    49.4872 42.1795
+    51.0256 44.1026
+    45.3846 36.4103
+    42.8205 32.5641
+    38.7179 31.4103
+    35.1282 30.2564
+    32.5641 32.1795
+    30.0000 36.7949
+    33.5897 41.4103
+    36.6667 45.6410
+    38.2051 49.1026
+    29.7436 36.0256
+    29.7436 32.1795
+    30.0000 29.1026
+    32.0513 26.7949
+    35.8974 25.2564
+    41.0256 25.2564
+    44.1026 25.6410
+    47.1795 28.7180
+    49.4872 31.4103
+    51.5385 34.8718
+    53.5897 37.5641
+    55.1282 40.6410
+    56.6667 42.1795
+    59.2308 44.4872
+    62.3077 46.0256
+    64.8718 46.7949
+    67.9487 47.9487
+    70.5128 53.7180
+    71.5385 60.6410
+    71.5385 64.4872
+    69.4872 69.4872
+    46.9231 79.8718
+    48.2051 84.1026
+    50.0000 85.2564
+    53.0769 85.2564
+    55.3846 86.0256
+    56.6667 86.0256
+    56.1538 82.9487
+    53.8462 80.6410
+    51.2821 78.7180
+    50.0000 78.7180
+    47.9487 77.5641
+    29.7436 59.8718
+    29.7436 62.1795
+    31.2821 62.5641
+    57.9487 99.4872
+    61.7949 99.1026
+    64.8718 97.5641
+    68.4615 94.1026
+    70.7692 91.0256
+    72.0513 86.4103
+    73.8462 83.3333
+    75.1282 79.1026
+    76.6667 75.2564
+    77.6923 71.4103
+    79.7436 66.7949
+    81.7949 60.2564
+    83.3333 55.2564
+    85.1282 51.4103
+    86.4103 47.5641
+    87.9487 46.0256
+    89.4872 42.5641
+    93.3333 39.8718
+    95.3846 36.7949
+    98.2051 33.7180
+    56.6667 40.6410
+    59.2308 38.3333
+    60.7692 33.7180
+    63.0769 29.1026
+    64.1026 25.2564
+    64.3590 24.1026
+    74.3590 22.9487
+    71.2821 22.9487
+    67.9487 22.1795
+    65.8974 20.2564
+    63.0769 19.1026
+    61.2821 19.1026
+    58.7179 18.3333
+    55.1282 18.3333
+    52.3077 18.3333
+    49.7436 17.5641
+    47.4359 16.0256
+    44.8718 13.7180
+    48.7179 14.8718
+    51.2821 14.8718
+    54.1026 14.8718
+    56.1538 14.1026
+    52.0513 12.5641
+    48.7179 11.0256
+    47.1795  9.8718
+    46.1538  6.0256
+    50.5128  9.4872
+    53.8462 10.2564
+    57.4359 10.2564
+    60.0000 10.6410
+    64.1026 10.6410
+    66.9231 10.6410
+    71.2821 10.6410
+    74.3590 10.6410
+    78.2051 10.6410
+    67.9487  8.7180
+    68.4615  5.2564
+    68.2051  2.9487
+    37.6923 25.7692
+    39.4872 25.3846
+    91.2821 41.5385
+    50.0000 95.7692
+    47.9487 95.0000
+    44.1026 92.6923
+]
 ```

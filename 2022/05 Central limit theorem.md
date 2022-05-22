@@ -16,7 +16,8 @@ jupyter:
 # 大数の法則と中心極限定理
 
 * 黒木玄
-* 2022-04-11～2022-05-16
+* 2022-04-11～2022-05-21
+
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -88,7 +89,7 @@ end
 x ⪅ y = x < y || x ≈ y
 
 mypdf(dist, x) = pdf(dist, x)
-mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(x))
+mypdf(dist::DiscreteUnivariateDistribution, x) = pdf(dist, round(Int, x))
 
 distname(dist::Distribution) = replace(string(dist), r"{.*}" => "")
 myskewness(dist) = skewness(dist)

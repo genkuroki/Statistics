@@ -86,7 +86,7 @@ __定義された確率分布__
 
 __演習用サンプル__
 
-* アンスコムの例
+* Anscombeの例(アンスコムの例)
   * [csv file](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe.csv), [raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe.csv)
   * [transposed version](https://github.com/genkuroki/Statistics/blob/master/2022/data/anscombe_transposed.csv), [transposed raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/anscombe_transposed.csv)
 
@@ -113,14 +113,16 @@ __定義された分布__
 
 ### 06 条件付き確率分布, 尤度, 推定, 記述統計
 
-* [Jupyter notebook]()
-\[[nbviewer]()\]
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)\]
 * [pdf]()
 \[[download]()\]
 
-<!--
 __演習用サンプル__
--->
+
+* [Datasaurusの例 (データサウルスの例)](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html)
+  * [csv file](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_data.csv), [raw version](https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/data/Datasaurus_data.csv)
+  * [X](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X.txt), [Y](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y.txt)
 
 __定義された確率分布__
 
@@ -132,6 +134,22 @@ __定義された確率分布__
   * 四項分布
   * 2つの二項分布の積
   * Fisherの非心超幾何分布
+
+### 08 例
+
+### 09 検定と信頼区間(1) 一般論
+
+### 10 検定と信頼区間(2) 比率
+
+### 11 検定と信頼区間(3) 平均
+
+### 12 検定と信頼区間(4) 比率の違い
+
+### 13 検定と信頼区間(5) 平均の差
+
+### 14 例
+
+### 15 例
 
 ### 99 テンプレート
 

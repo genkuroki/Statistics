@@ -16,7 +16,7 @@ jupyter:
 # Bernoulli試行と関連確率分布
 
 * 黒木玄
-* 2022-04-09～2022-04-29
+* 2022-04-09～2022-05-21
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
