@@ -458,8 +458,8 @@ P(\text{病気有}|\text{陽性}) =
 \frac{0.75p}{0.05 + 0.70p},
 \\ &
 (\text{偽陽性率}) :=
-P(\text{病気有}|\text{陽性}) =
-\frac{P(\text{陽性}, \text{病気有})\qquad}{P(\text{陽性})\qquad} =
+P(\text{病気無}|\text{陽性}) =
+\frac{P(\text{陽性}, \text{病気無})\qquad}{P(\text{陽性})\qquad} =
 \frac{0.05(1-p)}{0.05 + 0.70p},
 \\ &
 (\text{偽陰性率}) :=
