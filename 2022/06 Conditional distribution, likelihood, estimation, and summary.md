@@ -42,7 +42,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)" data-toc-modified-id="問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)</a></span></li><li><span><a href="#分散が固定された正規分布モデルのBayes統計の事後分布の視覚化" data-toc-modified-id="分散が固定された正規分布モデルのBayes統計の事後分布の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>分散が固定された正規分布モデルのBayes統計の事後分布の視覚化</a></span></li><li><span><a href="#問題:-2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="問題:-2変量の正規分布とその条件付き確率分布の例-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>問題: 2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.16"><span class="toc-item-num">1.16&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li></ul></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布の正規分布近似の視覚化" data-toc-modified-id="Fisherの非心超幾何分布の正規分布近似の視覚化-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Fisherの非心超幾何分布の正規分布近似の視覚化</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>独立性条件</a></span></li><li><span><a href="#Pearsonのχ²統計量" data-toc-modified-id="Pearsonのχ²統計量-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Pearsonのχ²統計量</a></span></li></ul></li><li><span><a href="#尤度-(ゆうど)と推定" data-toc-modified-id="尤度-(ゆうど)と推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>尤度 (ゆうど)と推定</a></span><ul class="toc-item"><li><span><a href="#尤度に関するまとめ" data-toc-modified-id="尤度に関するまとめ-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>尤度に関するまとめ</a></span></li><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li><li><span><a href="#例:-Bernoulli試行の尤度函数と最尤法" data-toc-modified-id="例:-Bernoulli試行の尤度函数と最尤法-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>例: Bernoulli試行の尤度函数と最尤法</a></span></li><li><span><a href="#Bernoulli試行モデルの尤度函数の視覚化" data-toc-modified-id="Bernoulli試行モデルの尤度函数の視覚化-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Bernoulli試行モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-正規分布の標本分布モデルの尤度函数と最尤法" data-toc-modified-id="問題:-正規分布の標本分布モデルの尤度函数と最尤法-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: 正規分布の標本分布モデルの尤度函数と最尤法</a></span></li><li><span><a href="#正規分布の標本分布モデルの尤度函数の視覚化" data-toc-modified-id="正規分布の標本分布モデルの尤度函数の視覚化-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>正規分布の標本分布モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-最小二乗法が正規分布モデルの最尤法の一種に一致すること" data-toc-modified-id="問題:-最小二乗法が正規分布モデルの最尤法の一種に一致すること-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: 最小二乗法が正規分布モデルの最尤法の一種に一致すること</a></span></li><li><span><a href="#最尤法の観点から見た十分統計量" data-toc-modified-id="最尤法の観点から見た十分統計量-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>最尤法の観点から見た十分統計量</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行モデルの十分統計量" data-toc-modified-id="Bernoulli試行モデルの十分統計量-3.8.1"><span class="toc-item-num">3.8.1&nbsp;&nbsp;</span>Bernoulli試行モデルの十分統計量</a></span></li><li><span><a href="#正規分布の標本分布モデルの十分統計量" data-toc-modified-id="正規分布の標本分布モデルの十分統計量-3.8.2"><span class="toc-item-num">3.8.2&nbsp;&nbsp;</span>正規分布の標本分布モデルの十分統計量</a></span></li><li><span><a href="#最小二乗法を与える正規分布モデルの十分統計量" data-toc-modified-id="最小二乗法を与える正規分布モデルの十分統計量-3.8.3"><span class="toc-item-num">3.8.3&nbsp;&nbsp;</span>最小二乗法を与える正規分布モデルの十分統計量</a></span></li></ul></li></ul></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span><ul class="toc-item"><li><span><a href="#$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約" data-toc-modified-id="$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約</a></span></li><li><span><a href="#Anscombeの例(アンスコムの例,-再)" data-toc-modified-id="Anscombeの例(アンスコムの例,-再)-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Anscombeの例(アンスコムの例, 再)</a></span></li><li><span><a href="#問題:-DataSaurusの例" data-toc-modified-id="問題:-DataSaurusの例-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: DataSaurusの例</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)" data-toc-modified-id="問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)</a></span></li><li><span><a href="#分散が固定された正規分布モデルのBayes統計の事後分布の視覚化" data-toc-modified-id="分散が固定された正規分布モデルのBayes統計の事後分布の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>分散が固定された正規分布モデルのBayes統計の事後分布の視覚化</a></span></li><li><span><a href="#問題:-2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="問題:-2変量の正規分布とその条件付き確率分布の例-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>問題: 2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.16"><span class="toc-item-num">1.16&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li></ul></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布の正規分布近似の視覚化" data-toc-modified-id="Fisherの非心超幾何分布の正規分布近似の視覚化-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Fisherの非心超幾何分布の正規分布近似の視覚化</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>独立性条件</a></span></li><li><span><a href="#Pearsonのχ²統計量" data-toc-modified-id="Pearsonのχ²統計量-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Pearsonのχ²統計量</a></span></li></ul></li><li><span><a href="#尤度-(ゆうど)と推定" data-toc-modified-id="尤度-(ゆうど)と推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>尤度 (ゆうど)と推定</a></span><ul class="toc-item"><li><span><a href="#尤度に関するまとめ" data-toc-modified-id="尤度に関するまとめ-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>尤度に関するまとめ</a></span></li><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li><li><span><a href="#例:-Bernoulli試行の尤度函数と最尤法" data-toc-modified-id="例:-Bernoulli試行の尤度函数と最尤法-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>例: Bernoulli試行の尤度函数と最尤法</a></span></li><li><span><a href="#Bernoulli試行モデルの尤度函数の視覚化" data-toc-modified-id="Bernoulli試行モデルの尤度函数の視覚化-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Bernoulli試行モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)" data-toc-modified-id="問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: 尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)</a></span></li><li><span><a href="#問題:-正規分布の標本分布モデルの尤度函数と最尤法" data-toc-modified-id="問題:-正規分布の標本分布モデルの尤度函数と最尤法-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 正規分布の標本分布モデルの尤度函数と最尤法</a></span></li><li><span><a href="#正規分布の標本分布モデルの尤度函数の視覚化" data-toc-modified-id="正規分布の標本分布モデルの尤度函数の視覚化-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>正規分布の標本分布モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること" data-toc-modified-id="問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: 最小二乗法がある種の正規分布モデルの最尤法に一致すること</a></span></li><li><span><a href="#最尤法の観点から見た十分統計量" data-toc-modified-id="最尤法の観点から見た十分統計量-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>最尤法の観点から見た十分統計量</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行モデルの十分統計量" data-toc-modified-id="Bernoulli試行モデルの十分統計量-3.9.1"><span class="toc-item-num">3.9.1&nbsp;&nbsp;</span>Bernoulli試行モデルの十分統計量</a></span></li><li><span><a href="#正規分布の標本分布モデルの十分統計量" data-toc-modified-id="正規分布の標本分布モデルの十分統計量-3.9.2"><span class="toc-item-num">3.9.2&nbsp;&nbsp;</span>正規分布の標本分布モデルの十分統計量</a></span></li><li><span><a href="#最小二乗法を与える正規分布モデルの十分統計量" data-toc-modified-id="最小二乗法を与える正規分布モデルの十分統計量-3.9.3"><span class="toc-item-num">3.9.3&nbsp;&nbsp;</span>最小二乗法を与える正規分布モデルの十分統計量</a></span></li></ul></li></ul></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span><ul class="toc-item"><li><span><a href="#$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約" data-toc-modified-id="$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約</a></span></li><li><span><a href="#Anscombeの例(アンスコムの例,-再)" data-toc-modified-id="Anscombeの例(アンスコムの例,-再)-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Anscombeの例(アンスコムの例, 再)</a></span></li><li><span><a href="#問題:-DataSaurusの例" data-toc-modified-id="問題:-DataSaurusの例-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: DataSaurusの例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -167,7 +167,7 @@ $$
 
 ### 条件付き期待値の基本性質(離散分布版)
 
-条件付き期待値 $g(y) = E[f(X,y)|y]$ は $y$ の函数とみなせるので, 確率変数 $E[f(X,Y)|Y] = g(Y)$ が得られる. このとき次が成立することを示せ:
+条件付き期待値 $g(y) = E[f(X,y)|y]$ は $y$ の函数とみなせるので, 確率変数 $g(Y) = E[f(X,Y)|Y]$ が得られる. このとき次が成立することを示せ:
 
 $$
 E[g(Y)] = E[E[f(X,Y)|Y]] = E[f(X,Y)].
@@ -194,7 +194,9 @@ $$
 
 __解答終__
 
-__注意:__ 測度論的確率論ではこれを一般化して条件付き期待値を定義する.
+__注意:__ 測度論的確率論ではこれを一般化して条件付き期待値を定義する(Radon–Nikodýmの定理の話になる).
+
+__注意:__ 個人的な意見では以上のようなシンプルで初等的な例さえ知らずに, いきなり測度論的確率論を勉強しようとするのは不健全な勉強の仕方で好ましくないと思う.  測度論が無用な事柄について多くの意味のある具体例を知った後でそれらを測度論を使って整理し直すようにした方が測度論的確率論についてもスムーズに理解できように思われる.
 
 
 ### 離散分布の条件付き確率分布の簡単な例
@@ -211,9 +213,9 @@ $$
 
 によって定まる集合 $\X = \{1,2,3,4,5\}$ 上の有限離散分布によってモデル化される.
 
-$\X$ 上の函数 $f(x)$ を $x$ が偶数ならば $f(x)=0$, 奇数ならば $f(x)=1$ と定める.
+$\X$ 上の函数 $f(x)$ を $x$ が偶数ならば $f(x)=0$, $x$ が奇数ならば $f(x)=1$ と定める.
 
-このとき, 確率変数 $Y=f(X)$ に関する条件付き確率分布を求めてみよう. 
+このとき, 確率変数 $Y=f(X)$ に関する条件 $Y=y$ が定める条件付き確率分布を求めてみよう. 
 
 この場合の $\X_y = \{\,x\in\X\mid f(x)=y\,\}$ は次のようになる:
 
@@ -262,17 +264,17 @@ P(x,y) = e^{-(\lambda+\mu)}\frac{\lambda^x}{x!}\frac{\mu^y}{y!}
 \quad (x,y=0,1,2,\ldots)
 $$
 
-集合 $\X$ 上の函数 $f(x,y)$ を $f(x,y)=x+y$ と定める. $N = f(X, Y)$ によって確率変数 $N$ を定めることができる. $N$ の函数の期待値は次のように表される:
+集合 $\X$ 上の函数 $f(x,y)$ を $f(x,y)=x+y$ と定める. $N = f(X, Y) = X+Y$ によって確率変数 $N$ を定めることができる(ここで $X,Y$ はいつものように変数 $x,y$ に対応する確率変数である). 確率変数 $N$ の函数の期待値は次のように表される:
 
 $$
 E[g(N)] = \sum_{(x,y)\in\X} g(x+y)P(x,y).
 $$
 
-以下を示せ:
+$n$ が $0$ 以上の整数であるとする. 以下を示せ:
 
 (1) $N$ は平均 $\lambda+\mu$ のPoisson分布に従う.
 
-(2) $n$ が $0$ 以上の整数であるとき, この場合に条件 $N=n$ が定める条件付き確率分布は本質的に二項分布になる.
+(2) この場合には, 条件 $N=n$ が定める条件付き確率分布は本質的に二項分布になる.
 
 __解答例:__ $\X_n = \{\,(x,y)\in\X\mid f(x,y)=x+y=n\,\}$, $P(N=n)$, $P(x,y|n) = P(x,y)/P(N=n)$ ($(x,y\in\X_n$) を順番に計算して行こう. まず, 
 
@@ -328,6 +330,8 @@ P(x) = P(X=x) = \sum_y P(x,y),
 \quad
 P(y) = P(Y=y) = \sum_x P(x,y).
 $$
+
+ここで, 前者の式の $\sum_y$ の $y$ は各 $x$ ごとに $P(x,y)$ が $0$ にならないような $y$ 全体を動き, 後者の式の $\sum_x$ の $x$ は各 $y$ ごとに $P(x,y)$ が $0$ にならないような $x$ 全体を動く.
 
 __記号法上の注意:__ 慣習に従って $P(x)$ と $P(y)$ の違いを独立変数名 $x$, $y$ の違いで区別するという記号法を採用している. これは簡潔に書くための手抜きであり, $P_X(x)$ や $P_Y(y)$ のように書けば独立変数名の違いで区別する必要はなくなる.  以下では簡潔さを重視するスタイルを採用したので混乱しないように注意して欲しい. $P(x|y)$ と $P(y|x)$ の違いも独立変数名 $x,y$ の違いで区別することになる.
 
@@ -1292,6 +1296,30 @@ plot!(; legend=:topleft)
 @show σ² σ̂²;
 ```
 
+以下では, $x,y$ の同時確率密度函数 $p(x,y)$ (これは平均 $\mu$ と分散共分散行列 $\Sigma$ を持つ二変量正規分布の密度函数)と $x$ で条件付けられた $y$ に関する条件付き確率分布の密度函数 $p(y|x) = p(x,y)/p(x)$ のヒートマップ(値が大きなところほど明るくプロットされる)を比較してみよう.
+
+```julia
+f(x, y) = pdf(mvnormal, SVector(x, y)) # p(x,y)
+f(x) = pdf(xdist, x) # p(x)
+g(x, y) = f(x, y)/f(x)
+
+x = range(0, 20, 300)
+y = range(10, 30, 300)
+
+P1 = heatmap(x, y, f; colorbar=false, title="p(x,y)")
+P2 = heatmap(x, y, g; colorbar=false, title="p(y|x)")
+plot(P1, P2; size=(600, 250))
+```
+
+$p(x,y)$ は $xy$ 平面上の確率密度函数になっている. 
+
+$p(y|x)$ は各 $x$ ごとに $y$ 軸に平行な直線上の確率密度函数になっている.
+
+その様子の違いの典型例が上のグラフからわかる.
+
+$p(y|x)$ のヒートマップを見れば, パラメータ $x$ を持つ $y$ の確率密度函数は $x$ を $y$ に対応させる函数の一般化($x$ に対応する $y$ の値が確率的に揺らぐ)になっていることもわかる.
+
+
 ## 2×2の分割表の分布
 
 実践的によく使われている2×2の分割表のモデルになる確率分布を紹介しよう.
@@ -1930,6 +1958,14 @@ plot_pearson_chisq(rand_hypergeometric, 4, 6, 6, 9)
 
 すなわち, __統計モデル内においてデータ $x$ と同じ数値が生成される確率 $P(x|\theta)$ または確率の密度 $p(x|\theta)$ を尤度(ゆうど)と呼ぶ__.
 
+尤度は __統計モデルのデータの数値への適合度の指標の1つ__(フィッティングの良さの指標の1つ, 他にも沢山ある)として使われる.
+
+データの数値 $x$ が与えられたとき, 統計モデル $p(x|\theta)$ をデータの数値 $x$ に最も適合するようなパラメータ $\theta$ の値は, 尤度を適合度の指標として採用したとき, 尤度函数 $\theta \mapsto p(x|\theta)$ を最大化する $\theta = \hat\theta$ として得られる.
+
+この方法を __最尤法__ (maximum likelihood method)と呼び, __最尤法の解__ $\hat\theta$ を __最尤推定値__ (maximum likelihood estimate)と呼び, $\theta=\hat\theta$ での尤度函数の値 $p(x|\hat\theta)$ をデータの数値 $x$ に関するモデルの __最大尤度__ と呼ぶ. 
+
+実際の計算や理論的な取り扱いでは尤度函数そのものではなく, その対数である __対数尤度函数__ (log-likelihood function) $\theta\mapsto \log p(x|\theta)$ を使った方が便利なことが多い.  実際にはその $-1$ 倍の __負の対数尤度函数__ (negative log-likelihood function) $\theta \mapsto -\log p(x|\theta)$ が使われることが多い.  最尤法の解は負の対数尤度函数を最小化することによって得られる. (χ²分布との関係で $-1$ 倍ではなく, $-2$ 倍することも多い.)
+
 __注意:__ 尤度(ゆうど)は英語では「もっともらしさ」(尤もらしさ)を意味する likelihood という単語で表されるが, 統計学における専門用語としての尤度は「もっともらしさ」と呼ぶには適さない量になっているので注意が必要である. (非常に残念なことに, 多くの教科書で「尤度はもっともらしさを意味する」のような誤誘導的な解説が書いてある.)
 
 __注意:__ 尤度は「もっともらしさ」の指標としては不適切だが, 統計モデルのデータへの適合度(フィットの度合い)の指標の1つとして基本的かつ有用である.
@@ -1947,7 +1983,7 @@ __注意:__ データの数値を得てから, 後付けで統計モデルを作
 
 ### 例: Bernoulli試行の尤度函数と最尤法
 
-当たりが出る確率 $p$ が未知のルーレットを $n$ 回まわして得た当たりとはずれの長さ $n$ 列 $x_1,x_2,\ldots,x_n$ がデータとして得られる状況を考える.  当たりは $1$ ではずれは $0$ で表しておくことにする.
+当たりが出る確率 $p$ が未知のルーレットを $n$ 回まわして得た当たりとはずれの長さ $n$ 列 $x_1,x_2,\ldots,x_n$ がデータとして得られる状況を考える.  当たりは $1$ ではずれは $0$ で表しておくことにする. 例えば, ルーレットを $n=5$ 回まわして, 当たり, はずれ, はずれ, 当たり, はずれが順に出たとき, $(x_1,x_2,x_3,x_4,x_5)=(1,0,0,1,0)$ となるとする.
 
 その状況をBernoulli試行でモデル化する. すなわち, 次の確率質量函数を統計モデルとして採用する:
 
@@ -1976,15 +2012,21 @@ $$
 L(p) = p^k(1 - p)^{n-k}
 $$
 
-実際の計算では尤度函数そのものではなく, その対数である __対数尤度函数__
+実際の計算では尤度函数そのものではなく, その対数である __対数尤度函数__ (log-likelihood function)
 
 $$
 \ell(p) = \log L(p) = k\log p + (n - k)\log(1 - p)
 $$
 
-が使われることが多い.  以下の計算でも主にこちら側を使うことにする.
+の方が便利であることが多い.  実際にはさらにこれの $-1$ 倍(__負の対数尤度函数__ (negative log-likelihood function)
 
-パラメータの値 $p$ の尤度 $L(p)$ もしくはその対数 $\log L(p)$ はBernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度の指標の1つとみなされる.  だから, Bernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度を最大化することは, 対数尤度 $\log L(p)$ を最大化するパラメータ値 $p$ を採用することに等しいと考えることができる. このようにしてモデルのパラメータを決定することを __最尤法__ (maximum likelihood method)や __最尤推定法__ (maximum likelihood estimation)と呼ぶ.  そして, そのようにして求めたパラメータ値を __最尤推定値__ (maximum likelihood esitimate, 最尤法の解) と呼ぶ.
+$$-
+\ell(p) = - \log L(p) = -k\log p - (n - k)\log(1 - p)
+$$
+
+が使われることが多い. 最尤法の解は負の対数尤度函数を最小化することによって得られる. (χ²分布との関係で $-1$ 倍ではなく, $-2$ 倍することも多い.)
+
+パラメータの値 $p$ の尤度 $L(p)$ もしくはその対数 $\log L(p)$ はBernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度の指標の1つとみなされる.  だから, Bernoulli試行モデルのデータ $x_1,\ldots,x_n$ への適合度を最大化することは, 対数尤度 $\log L(p)$ を最大化するパラメータ値 $p$ を採用することに等しいと考えることができる. このようにしてモデルのパラメータを決定することを __最尤法__ (maximum likelihood method)や __最尤推定法__ (maximum likelihood estimation)と呼ぶ.  そして, そのようにして求めたパラメータ値を __最尤推定値__ (maximum likelihood esitimate, __最尤法の解__) と呼び, 最尤推定値における尤度函数の値を __最大尤度__ (maximum likelihood)と呼ぶ.  __この段落の定義はBernoulli試行モデル以外の場合にもそのまま一般化される.__
 
 最尤法の解 $p = \hat{p}$ を求めてみよう.  そのために対数尤度函数を微分してみる:
 
@@ -2064,6 +2106,58 @@ plot(plot_berlik.((10, 100, 1000), (3, 30, 300))...; size=(800,150), layout=(1,3
 ```
 
 このグラフから, データに基づくパラメータの推定において, パラメータの推定値としてどれだけの幅を持たせるかについて, 尤度函数がなにがしかの情報を持っていそうなこともわかる.
+
+
+### 問題: 尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)
+
+データは当たり($1$ と書く)とはずれ($0$ と書く)がランダムに出るルーレットを $n$ 回まわして得た $1$ と $0$ の列 $x_1,x_2,\ldots,x_n$ として得られるとする.
+
+統計モデルとして以下の2つを考える.
+
+__モデル0:__ Bernoulli試行モデル: このモデルのパラメータ $0\le p\le 1$ を持つ確率質量函数は次のように書けるのであった:
+
+$$
+P_0(x_1,\ldots,x_n|p) = p^{x_1+\cdots+x_n}(1 - p)^{n-(x_1+\cdots+x_n)}
+\quad (x_i=1,0).
+$$
+
+__モデル1:__ ルーレットをまわすごとに当たりが出る確率が変わってもよいと想定したモデル: このモデルは $n$ 個のパラメータ $0\le p_1,\ldots,p_n\le 1$ を持つ次の確率質量函数によって与えられる:
+
+$$
+P_1(x_1,\ldots,x_n|p_1,\ldots,p_n) =
+\prod_{i=1}^n\left(p_i^{x_i}(1-p_i)^{1-x_i}\right)
+\quad (x_i=1,0).
+$$
+
+データ($1$ と $0$ の列) $x_1,\ldots,x_n$ について, モデル0の最尤法の解 $p=\hat{p}$ は $\hat{p} = n/k$ ($k = x_1+\cdots+x_n$) になるのであった.  以下の2つを同時に示せ:
+
+(1) モデル1の最尤法の解 $p_i = \hat{p}_i$ は $\hat{p}_i = x_i$ になる.
+
+(2) どのようなデータ $x_1,x_2,\ldots,x_n$ についてもモデル1の最大尤度は離散分布モデルの場合に可能な最大の値 $1$ になる.
+
+__注意:__ 確率と違って確率密度の値はいくらでも大きくなりえるので, 尤度が確率密度の値になる連続分布モデルにおいては尤度はいくらでも大きな値を取り得る.  離散分布モデルの場合には尤度は確率の値になるのでその最大値は $1$ になる.
+
+__注意:__ この例はオーバーフィッティング(過剰適合)のシンプルな例になっている. パラメータの個数が多いモデルではオーバーフィッティングし易くなる.
+
+__注意:__ この例を知っていれば, 「尤度が高ければもっともらしい」と考えることは単純に誤りであることがわかる.  尤度を常識的な意味でのもっともらしさと繋げるためには特別な条件が必要になる.
+
+__解答例:__ モデル1において, データ $x_1,x_2,\ldots,x_n$ ($1$ と $0$ の列)について, $p_i=x_i$ とおくと, 
+
+$$
+x_i^{x_i}(1 - x_i)^{1-x_i} = 1
+\quad (x_i=1,0)
+$$
+
+なので($0^0=1$ と約束しておく), その尤度は
+
+$$
+P_1(x_1,\ldots,x_n|x_1,\ldots,x_n) =
+\prod_{i=1}^n\left(x_i^{x_i}(1-x_i)^{1-x_i}\right) = 1
+$$
+
+となり, 可能な最大の値になる.  ゆえに, 最尤推定値は $\hat{p}=x_i$ となる.
+
+__解答終__
 
 
 ### 問題: 正規分布の標本分布モデルの尤度函数と最尤法
@@ -2175,7 +2269,7 @@ function plot_normallik(X, xlim, ylim; kwargs...)
     x = range(xlim..., 200)
     y = range(ylim..., 200)
     heatmap(x, y, f; colorbar=false)
-    plot!(; xguide="μ", yguide="σ²")
+    plot!(; xguide="μ", yguide="σ²", tickfontsize=7)
     title!("n = $n")
     plot!(; fmt=:png, size=(250, 250))
 end
@@ -2183,22 +2277,22 @@ end
 
 ```julia
 Random.seed!(4649373) # よろしくみなさん
-plot((plot_normallik(randn(10), (-2, 2), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(randn(10), (-1.5, 1.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(randn(40), (-2, 2), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(randn(40), (-1.5, 1.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(randn(160), (-2, 2), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(randn(160), (-1.5, 1.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(randn(640), (-2, 2), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(randn(640), (-1.5, 1.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
@@ -2208,26 +2302,26 @@ $n$ を大きくすると, サンプルを生成した分布の期待値と分�
 
 ```julia
 Random.seed!(4649373) # よろしくみなさん
-plot((plot_normallik(rand(Exponential(), 10), (-1, 3), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(rand(Exponential(), 10), (-0.5, 2.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(rand(Exponential(), 40), (-1, 3), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(rand(Exponential(), 40), (-0.5, 2.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(rand(Exponential(), 160), (-1, 3), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(rand(Exponential(), 160), (-0.5, 2.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
 ```julia
-plot((plot_normallik(rand(Exponential(), 640), (-1, 3), (0, 4)) for _ in 1:3)...;
+plot((plot_normallik(rand(Exponential(), 640), (-0.5, 2.5), (0, 4)) for _ in 1:3)...;
     size=(750,250), layout=(1,3), leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 ```
 
-### 問題: 最小二乗法が正規分布モデルの最尤法の一種に一致すること
+### 問題: 最小二乗法がある種の正規分布モデルの最尤法に一致すること
 
 データは2つの実数の組が $n$ 個 $(x_1, y_1), \ldots, (x_n, y_n)$ の形式であるとし, 記号の簡単のために次のようにおく:
 
@@ -2523,7 +2617,19 @@ $n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要�
 
 ### Anscombeの例(アンスコムの例, 再)
 
-以下のプロットを見れば, 要約統計量だけを見てはいけないことがわかる.
+以下の散布図(scatter plot)を見れば, 要約統計量だけを見てはいけないことがわかる.
+
+```julia
+using RDatasets
+anscombe = dataset("datasets", "anscombe")
+
+SA1 = scatter(anscombe.X1, anscombe.Y1; title="Anscombe 1", label="", msw=0)
+SA2 = scatter(anscombe.X2, anscombe.Y2; title="Anscombe 2", label="", msw=0)
+SA3 = scatter(anscombe.X3, anscombe.Y3; title="Anscombe 3", label="", msw=0)
+SA4 = scatter(anscombe.X4, anscombe.Y4; title="Anscombe 4", label="", msw=0)
+plot(SA1, SA2, SA3, SA4; size=(500, 450), layout=(2,2),
+    xlim=(3, 20), ylim=(2, 14), xlabel="x", ylabel="y")
+```
 
 ```julia
 function plot_ols(x, y, α̂, β̂; xlim=nothing,
@@ -2536,9 +2642,6 @@ function plot_ols(x, y, α̂, β̂; xlim=nothing,
     plot!(; size=(400, 300))
     plot!(; title, kwargs...)
 end
-
-using RDatasets
-anscombe = dataset("datasets", "anscombe")
 
 function solve_anscombe(x, y;
         title="", xlim=(3, 20), ylim=(2, 14), size=(250, 225))
@@ -2585,7 +2688,9 @@ plot(PA1, PA2, PA3, PA4; size=(500, 450), layout=(2,2))
 
 (2) 何らかの方法で散布図(scatter plot)を描け.
 
-__ヒント:__ インターネット上で適切に検索すれば以上の問題を解くためのサイトを発見できる.
+さらに datasaurus same stats についてインターネットで検索して統計分析で注意するべきことを学べるサイトを見つけて内容を理解するように努力せよ.
+
+__ヒント:__ (1),(2)についてはインターネット上で適切に検索すれば以上の問題を解くことができるサイトを発見できる.
 
 ```julia
 datasaurus = [
@@ -2734,11 +2839,13 @@ datasaurus = [
 ];
 ```
 
-__注意:__ この例について, もっと詳しい情報が欲しい人は
+__注意:__ この例についての詳しい解説が
 
-* https://www.autodesk.com/research/publications/same-stats-different-graphs
+* Justin Matejka, George Fitzmaurice. Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing. Honourable Mention, ACM SIGCHI Conference on Human Factors in Computing Systems, 2017 \[[link](https://www.autodesk.com/research/publications/same-stats-different-graphs)\]
 
-を参照せよ.  この解説は非常に面白い.
+にある.  この解説は非常に面白い.  データ全体の様子がわかるようなグラフを作成することが統計分析では必須なことがよくわかる解説になっている.
+
+このサイトは "datasaurus same stats" をインターネットで検索すればすぐに見つかる.
 
 
 __解答例1:__ Julia言語を使って計算してみよう.

@@ -1,7 +1,8 @@
 # 数理統計学2022
 
-すべてをまとめたPDF(更新は遅れる予定): [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
+すべてをまとめたPDF: [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 
+これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている.
 
 ## 資料
 
@@ -25,7 +26,7 @@ __定義された確率分布__
 * 成功確率 $p$ の __Bernoulli分布__: $\mathrm{Bernoulli}(p)$
 * 試行回数 $n$, 成功確率 $p$ の __Bernoulli試行の分布__: $\mathrm{Bernoulli}(p)^n$
 * 試行回数 $n$, 成功確率 $p$ の __二項分布__: $\mathrm{Binomial}(n, p)$ ($n$ 回のBernoulli試行での成功回数の分布)
-* 成功回数 $k$, 成功確率 $p$ の __負の二項分布__: $\mathrm{NegativeBinomial}(n, p) = \mathrm{NegBin}(n, p)$ (Bernoulli試行をちょうど $k$ 回成功するまで続けたときの失敗回数の分布)
+* 成功回数 $k$, 成功確率 $p$ の __負の二項分布__: $\mathrm{NegativeBinomial}(n, p) = \mathrm{NegBin}(n, p)$ (Bernoulli試行をちょうど $k$ 回成功するまで続けたときの失敗の回数の分布)
 * 成功確率 $p$ の __幾何分布__: $\mathrm{Geometric}(p) = \mathrm{NegativeBinomial}(1, p)$ (Bernoulli試行を成功するまで続けたときの失敗の回数の分布)
 * 0から1のあいだの __一様分布__: $\mathrm{Uniform}(0, 1)$ (コンピュータでの一様乱数函数 `rand()` のモデル化)
 * 試行回数 $n$ の __一様乱数生成の繰り返しの分布__: $\mathrm{Uniform}(0, 1)^n$
