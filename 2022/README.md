@@ -126,6 +126,12 @@ __演習用サンプル__
   * [x座標のみ](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X.txt), [y座標のみ](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y.txt)
   * [x座標のみコンマ付き](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_X_with_commas.txt), [y座標のみコンマ付き](https://github.com/genkuroki/Statistics/blob/master/2022/data/Datasaurus_Y_with_commas.txt)
 
+この例に関する詳しい解説が次の場所にある:
+
+* Justin Matejka, George Fitzmaurice. Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing. Honourable Mention, ACM SIGCHI Conference on Human Factors in Computing Systems, 2017 \[[link](https://www.autodesk.com/research/publications/same-stats-different-graphs)\]
+
+関連の情報が [datasaurus same stats を検索](https://www.google.com/search?q=datasaurus+same+stats) すれば得られる.
+
 __定義された確率分布__
 
 * __2変量正規分布__: $\mathrm{MvNormal}(\mu, \Sigma)$ (__多変量正規分布__ でも同じ記号を使う.)
