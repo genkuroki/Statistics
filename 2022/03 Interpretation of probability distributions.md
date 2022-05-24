@@ -16,7 +16,7 @@ jupyter:
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-05-21
+* 2022-04-11～2022-05-25
 
 $
 \newcommand\op{\operatorname}
@@ -3941,7 +3941,9 @@ $$
 
 ここで $\prod_{i=1}^n\left(p^{x_i} (1 - p)^{1-x_i}\right)$ は通常のBernoulli試行の確率質量函数なので, Pólyaの壺の確率分布に従う試行は成功確率 $p$ がベータ分布 $\op{Beta}(\alpha,\beta)$ に従って確率的に揺らいでいるようなBernoulli試行になっていることがわかった.
 
-__注意:__ この結果は, Pólyaの壺の確率分布が共役事前分布 $p\sim\op{Beta}(\alpha,\beta)$ に関するBernoulli試行 $\op{Bernoulli}(p)^n$ のBayes版の統計モデルそのものになっていることを意味している.
+__注意:__ この結果は, Pólyaの壺の確率分布が共役事前分布 $p\sim\op{Beta}(\alpha,\beta)$ に関するBernoulli試行 $\op{Bernoulli}(p)^n$ のBayes版の統計モデルそのものになっていることを意味している.  Bernoulli試行と一様乱数生成の繰り返しとベータ分布とPólyaの壺の関係については以下のリンク先も参照せよ:
+
+* https://twitter.com/genkuroki/status/1529044220887310336
 
 ```julia
 
