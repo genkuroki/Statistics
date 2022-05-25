@@ -16,7 +16,7 @@ jupyter:
 # 条件付き確率分布, 尤度, 推定, 記述統計
 
 * 黒木玄
-* 2022-05-22
+* 2022-05-26
 
 $
 \newcommand\op{\operatorname}
@@ -42,7 +42,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)" data-toc-modified-id="問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)</a></span></li><li><span><a href="#分散が固定された正規分布モデルのBayes統計の事後分布の視覚化" data-toc-modified-id="分散が固定された正規分布モデルのBayes統計の事後分布の視覚化-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>分散が固定された正規分布モデルのBayes統計の事後分布の視覚化</a></span></li><li><span><a href="#問題:-2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="問題:-2変量の正規分布とその条件付き確率分布の例-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>問題: 2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.16"><span class="toc-item-num">1.16&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li></ul></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布の正規分布近似の視覚化" data-toc-modified-id="Fisherの非心超幾何分布の正規分布近似の視覚化-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Fisherの非心超幾何分布の正規分布近似の視覚化</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>独立性条件</a></span></li><li><span><a href="#Pearsonのχ²統計量" data-toc-modified-id="Pearsonのχ²統計量-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Pearsonのχ²統計量</a></span></li></ul></li><li><span><a href="#尤度-(ゆうど)と推定" data-toc-modified-id="尤度-(ゆうど)と推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>尤度 (ゆうど)と推定</a></span><ul class="toc-item"><li><span><a href="#尤度に関するまとめ" data-toc-modified-id="尤度に関するまとめ-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>尤度に関するまとめ</a></span></li><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li><li><span><a href="#例:-Bernoulli試行の尤度函数と最尤法" data-toc-modified-id="例:-Bernoulli試行の尤度函数と最尤法-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>例: Bernoulli試行の尤度函数と最尤法</a></span></li><li><span><a href="#Bernoulli試行モデルの尤度函数の視覚化" data-toc-modified-id="Bernoulli試行モデルの尤度函数の視覚化-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Bernoulli試行モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)" data-toc-modified-id="問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: 尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)</a></span></li><li><span><a href="#問題:-正規分布の標本分布モデルの尤度函数と最尤法" data-toc-modified-id="問題:-正規分布の標本分布モデルの尤度函数と最尤法-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 正規分布の標本分布モデルの尤度函数と最尤法</a></span></li><li><span><a href="#正規分布の標本分布モデルの尤度函数の視覚化" data-toc-modified-id="正規分布の標本分布モデルの尤度函数の視覚化-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>正規分布の標本分布モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること" data-toc-modified-id="問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: 最小二乗法がある種の正規分布モデルの最尤法に一致すること</a></span></li><li><span><a href="#最尤法の観点から見た十分統計量" data-toc-modified-id="最尤法の観点から見た十分統計量-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>最尤法の観点から見た十分統計量</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行モデルの十分統計量" data-toc-modified-id="Bernoulli試行モデルの十分統計量-3.9.1"><span class="toc-item-num">3.9.1&nbsp;&nbsp;</span>Bernoulli試行モデルの十分統計量</a></span></li><li><span><a href="#正規分布の標本分布モデルの十分統計量" data-toc-modified-id="正規分布の標本分布モデルの十分統計量-3.9.2"><span class="toc-item-num">3.9.2&nbsp;&nbsp;</span>正規分布の標本分布モデルの十分統計量</a></span></li><li><span><a href="#最小二乗法を与える正規分布モデルの尤度函数を記述する統計量" data-toc-modified-id="最小二乗法を与える正規分布モデルの尤度函数を記述する統計量-3.9.3"><span class="toc-item-num">3.9.3&nbsp;&nbsp;</span>最小二乗法を与える正規分布モデルの尤度函数を記述する統計量</a></span></li></ul></li></ul></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span><ul class="toc-item"><li><span><a href="#$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#より一般の離散的なデータの要約" data-toc-modified-id="より一般の離散的なデータの要約-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>より一般の離散的なデータの要約</a></span></li><li><span><a href="#$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約" data-toc-modified-id="$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約</a></span></li><li><span><a href="#Anscombeの例(アンスコムの例,-再)" data-toc-modified-id="Anscombeの例(アンスコムの例,-再)-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Anscombeの例(アンスコムの例, 再)</a></span></li><li><span><a href="#問題:-DataSaurusの例" data-toc-modified-id="問題:-DataSaurusの例-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: DataSaurusの例</a></span><ul class="toc-item"><li><span><a href="#Julia言語を使う解答例" data-toc-modified-id="Julia言語を使う解答例-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Julia言語を使う解答例</a></span></li><li><span><a href="#Julia言語の使い方" data-toc-modified-id="Julia言語の使い方-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Julia言語の使い方</a></span></li><li><span><a href="#インターネット上の各種計算サイトを使う方法" data-toc-modified-id="インターネット上の各種計算サイトを使う方法-4.6.3"><span class="toc-item-num">4.6.3&nbsp;&nbsp;</span>インターネット上の各種計算サイトを使う方法</a></span></li></ul></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#条件付き確率分布" data-toc-modified-id="条件付き確率分布-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>条件付き確率分布</a></span><ul class="toc-item"><li><span><a href="#離散確率分布の条件付き確率分布" data-toc-modified-id="離散確率分布の条件付き確率分布-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>離散確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(離散分布版)" data-toc-modified-id="条件付き期待値の基本性質(離散分布版)-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>条件付き期待値の基本性質(離散分布版)</a></span></li><li><span><a href="#離散分布の条件付き確率分布の簡単な例" data-toc-modified-id="離散分布の条件付き確率分布の簡単な例-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>離散分布の条件付き確率分布の簡単な例</a></span></li><li><span><a href="#問題:-サイコロの出目の数だけコインを投げる場合" data-toc-modified-id="問題:-サイコロの出目の数だけコインを投げる場合-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: サイコロの出目の数だけコインを投げる場合</a></span></li><li><span><a href="#問題:-離散分布の条件付き確率分布として二項分布が得られること" data-toc-modified-id="問題:-離散分布の条件付き確率分布として二項分布が得られること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>問題: 離散分布の条件付き確率分布として二項分布が得られること</a></span></li><li><span><a href="#離散分布の場合のBayesの定理" data-toc-modified-id="離散分布の場合のBayesの定理-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>離散分布の場合のBayesの定理</a></span></li><li><span><a href="#2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)" data-toc-modified-id="2×2の分割表での条件付き確率分布(偽陽性率,-偽陰性率)-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>2×2の分割表での条件付き確率分布(偽陽性率, 偽陰性率)</a></span></li><li><span><a href="#必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか" data-toc-modified-id="必修の易しい計算問題:-有病率によって偽陽性率と偽陰性率がどのように変化するか-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>必修の易しい計算問題: 有病率によって偽陽性率と偽陰性率がどのように変化するか</a></span></li><li><span><a href="#有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化" data-toc-modified-id="有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>有病率によって偽陽性率と偽陰性率がどのように変化するかの視覚化</a></span></li><li><span><a href="#おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)" data-toc-modified-id="おまけの問題:-モンティ・ホール問題-(Monty-Hall-problem)-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>おまけの問題: モンティ・ホール問題 (Monty Hall problem)</a></span></li><li><span><a href="#連続確率分布の条件付き確率分布" data-toc-modified-id="連続確率分布の条件付き確率分布-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>連続確率分布の条件付き確率分布</a></span></li><li><span><a href="#条件付き期待値の基本性質(連続分布版)" data-toc-modified-id="条件付き期待値の基本性質(連続分布版)-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>条件付き期待値の基本性質(連続分布版)</a></span></li><li><span><a href="#連続分布版のBayesの定理" data-toc-modified-id="連続分布版のBayesの定理-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>連続分布版のBayesの定理</a></span></li><li><span><a href="#問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)" data-toc-modified-id="問題:-連続分布の条件付き確率分布の例-(分散が固定された正規分布モデルのBayes統計)-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>問題: 連続分布の条件付き確率分布の例 (分散が固定された正規分布モデルのBayes統計)</a></span></li><li><span><a href="#分散が固定された正規分布モデルのBayes統計の事後分布の視覚化" data-toc-modified-id="分散が固定された正規分布モデルのBayes統計の事後分布の視覚化-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>分散が固定された正規分布モデルのBayes統計の事後分布の視覚化</a></span></li><li><span><a href="#問題:-2変量の正規分布とその条件付き確率分布の例" data-toc-modified-id="問題:-2変量の正規分布とその条件付き確率分布の例-1.16"><span class="toc-item-num">1.16&nbsp;&nbsp;</span>問題: 2変量の正規分布とその条件付き確率分布の例</a></span></li><li><span><a href="#2変量の正規分布とその条件付き確率分布の例の視覚化" data-toc-modified-id="2変量の正規分布とその条件付き確率分布の例の視覚化-1.17"><span class="toc-item-num">1.17&nbsp;&nbsp;</span>2変量の正規分布とその条件付き確率分布の例の視覚化</a></span></li></ul></li><li><span><a href="#2×2の分割表の分布" data-toc-modified-id="2×2の分割表の分布-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>2×2の分割表の分布</a></span><ul class="toc-item"><li><span><a href="#4つのPoisson分布の積" data-toc-modified-id="4つのPoisson分布の積-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>4つのPoisson分布の積</a></span></li><li><span><a href="#四項分布" data-toc-modified-id="四項分布-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>四項分布</a></span></li><li><span><a href="#2つの二項分布の積" data-toc-modified-id="2つの二項分布の積-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>2つの二項分布の積</a></span></li><li><span><a href="#Fisherの非心超幾何分布" data-toc-modified-id="Fisherの非心超幾何分布-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fisherの非心超幾何分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布の正規分布近似の視覚化" data-toc-modified-id="Fisherの非心超幾何分布の正規分布近似の視覚化-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Fisherの非心超幾何分布の正規分布近似の視覚化</a></span></li><li><span><a href="#四項分布は4つのPoisson分布の積の条件付き確率分布" data-toc-modified-id="四項分布は4つのPoisson分布の積の条件付き確率分布-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>四項分布は4つのPoisson分布の積の条件付き確率分布</a></span></li><li><span><a href="#2つの二項分布の積は四項分布は4つの条件付き確率分布" data-toc-modified-id="2つの二項分布の積は四項分布は4つの条件付き確率分布-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>2つの二項分布の積は四項分布は4つの条件付き確率分布</a></span></li><li><span><a href="#Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布" data-toc-modified-id="Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Fisherの非心超幾何分布は2つの二項分布の積の条件付き確率分布</a></span></li><li><span><a href="#独立性条件" data-toc-modified-id="独立性条件-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>独立性条件</a></span></li><li><span><a href="#Pearsonのχ²統計量" data-toc-modified-id="Pearsonのχ²統計量-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>Pearsonのχ²統計量</a></span></li></ul></li><li><span><a href="#尤度-(ゆうど)と推定" data-toc-modified-id="尤度-(ゆうど)と推定-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>尤度 (ゆうど)と推定</a></span><ul class="toc-item"><li><span><a href="#尤度に関するまとめ" data-toc-modified-id="尤度に関するまとめ-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>尤度に関するまとめ</a></span></li><li><span><a href="#尤度函数と尤度の定義と諸注意" data-toc-modified-id="尤度函数と尤度の定義と諸注意-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>尤度函数と尤度の定義と諸注意</a></span></li><li><span><a href="#例:-Bernoulli試行の尤度函数と最尤法" data-toc-modified-id="例:-Bernoulli試行の尤度函数と最尤法-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>例: Bernoulli試行の尤度函数と最尤法</a></span></li><li><span><a href="#Bernoulli試行モデルの尤度函数の視覚化" data-toc-modified-id="Bernoulli試行モデルの尤度函数の視覚化-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Bernoulli試行モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)" data-toc-modified-id="問題:-尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: 尤度が高くても全然もっともらしくない例(オーバーフィッティングの例)</a></span></li><li><span><a href="#問題:-正規分布の標本分布モデルの尤度函数と最尤法" data-toc-modified-id="問題:-正規分布の標本分布モデルの尤度函数と最尤法-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: 正規分布の標本分布モデルの尤度函数と最尤法</a></span></li><li><span><a href="#正規分布の標本分布モデルの尤度函数の視覚化" data-toc-modified-id="正規分布の標本分布モデルの尤度函数の視覚化-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>正規分布の標本分布モデルの尤度函数の視覚化</a></span></li><li><span><a href="#問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること" data-toc-modified-id="問題:-最小二乗法がある種の正規分布モデルの最尤法に一致すること-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>問題: 最小二乗法がある種の正規分布モデルの最尤法に一致すること</a></span></li><li><span><a href="#最尤法の観点から見た十分統計量" data-toc-modified-id="最尤法の観点から見た十分統計量-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>最尤法の観点から見た十分統計量</a></span><ul class="toc-item"><li><span><a href="#Bernoulli試行モデルの十分統計量" data-toc-modified-id="Bernoulli試行モデルの十分統計量-3.9.1"><span class="toc-item-num">3.9.1&nbsp;&nbsp;</span>Bernoulli試行モデルの十分統計量</a></span></li><li><span><a href="#正規分布の標本分布モデルの十分統計量" data-toc-modified-id="正規分布の標本分布モデルの十分統計量-3.9.2"><span class="toc-item-num">3.9.2&nbsp;&nbsp;</span>正規分布の標本分布モデルの十分統計量</a></span></li><li><span><a href="#最小二乗法を与える正規分布モデルの尤度函数を記述する統計量" data-toc-modified-id="最小二乗法を与える正規分布モデルの尤度函数を記述する統計量-3.9.3"><span class="toc-item-num">3.9.3&nbsp;&nbsp;</span>最小二乗法を与える正規分布モデルの尤度函数を記述する統計量</a></span></li></ul></li></ul></li><li><span><a href="#記述統計-(要約統計)" data-toc-modified-id="記述統計-(要約統計)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>記述統計 (要約統計)</a></span><ul class="toc-item"><li><span><a href="#$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の-$1$-と-$0$-からなるデータ-$x_1,\ldots,x_n$-の要約-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>$n$ 個の $1$ と $0$ からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#より一般の離散的なデータの要約" data-toc-modified-id="より一般の離散的なデータの要約-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>より一般の離散的なデータの要約</a></span></li><li><span><a href="#$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約" data-toc-modified-id="$n$-個の実数からなるデータ-$x_1,\ldots,x_n$-の要約-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>$n$ 個の実数からなるデータ $x_1,\ldots,x_n$ の要約</a></span></li><li><span><a href="#$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約" data-toc-modified-id="$n$-個の実数の対からなるデータ-$(x_1,y_1),\ldots,(x_n,y_n)$-の要約-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>$n$ 個の実数の対からなるデータ $(x_1,y_1),\ldots,(x_n,y_n)$ の要約</a></span></li><li><span><a href="#Anscombeの例(アンスコムの例,-再)" data-toc-modified-id="Anscombeの例(アンスコムの例,-再)-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Anscombeの例(アンスコムの例, 再)</a></span></li><li><span><a href="#問題:-DataSaurusの例" data-toc-modified-id="問題:-DataSaurusの例-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: DataSaurusの例</a></span><ul class="toc-item"><li><span><a href="#Julia言語を使う解答例" data-toc-modified-id="Julia言語を使う解答例-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Julia言語を使う解答例</a></span></li><li><span><a href="#Julia言語の使い方" data-toc-modified-id="Julia言語の使い方-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Julia言語の使い方</a></span></li><li><span><a href="#インターネット上の各種計算サイトを使う方法" data-toc-modified-id="インターネット上の各種計算サイトを使う方法-4.6.3"><span class="toc-item-num">4.6.3&nbsp;&nbsp;</span>インターネット上の各種計算サイトを使う方法</a></span></li></ul></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -254,6 +254,89 @@ $$
 
 となる. 偶数の目は2,4の2通りで20面のうち8面に2,4と書かれており, そのうちの5面が2で残りの3面が4なので, 偶数の目に制限した場合に2の目が出る条件付き確率は $P(2|0)=5/8$ になり, 4の目が出る条件付き確率は $P(4|0)=3/8$ になる. 奇数の目の場合も同様である.
 
+
+### 問題: サイコロの出目の数だけコインを投げる場合
+
+1から6の目が等確率で出るサイコロをふって出た目の数だけコインを投げて表になった枚数のみが報告されるとする.  ただし, 各々のコインを投げて表になる確率はちょうど $1/2$ であると仮定し, サイコロの出目は秘密のままになっているとする.  表になったコインの枚数が $k=0,1,\ldots,6$ だと報告されたときの, サイコロの出目の条件付き確率分布の表を作成し, 以下に答えよ:
+
+(1) 表になったコインの枚数は $2$ 枚だと報告されたとき, サイコロの出目が $5$ である条件付き確率をどうなるか?
+
+(2) 表になったコインの枚数は $5$ 枚だと報告されたとき, サイコロの出目が $5$, $6$ である条件付き確率はどちらが大きいか?
+
+__解答例:__ サイコロの出目を $X$ とし, $X$ 枚のコインを投げて表になった枚数を $Y$ と書くと,
+
+$$
+\begin{aligned}
+&
+P(X=x, Y=y) = \frac{1}{6}\binom{x}{y}\frac{1}{2^x}
+\quad (x=1,2,\ldots,6,\; y=0,1,\ldots,x)
+\\ &
+P(Y=y) = \sum_{x=y}^6 P(X=x, Y=y) =
+\frac{1}{6}\sum_{x=y}^6 \binom{x}{y}\frac{1}{2^x}
+\\ &
+P(X=x|Y=y) = \frac{P(X=x,Y=y)}{P(Y=y)} =
+\frac
+{\binom{x}{y}(1/2^x)}
+{\sum_{x=y}^6 \binom{x}{y}(1/2^x)}.
+\end{aligned}
+$$
+
+これを $y=0,1,\ldots,6$ と $x=y,y+1,\ldots,6$ について地道計算するとその結果は次のようになる:
+
+$$
+\begin{array}{r|rrrrrrr}
+    & Y=0    & Y=1   & Y=2   & Y=3  & Y=4   & Y=5 & Y=6 \\
+\hline
+X=1 & 32/127 & 16/60 &  0/99 & 0/16 &  0/29 & 0/4 & 0 \\
+X=2 & 16/127 & 16/60 & 16/99 & 0/16 &  0/29 & 0/4 & 0 \\
+X=3 &  8/127 & 12/60 & 24/99 & 2/16 &  0/29 & 0/4 & 0 \\
+X=4 &  4/127 &  8/60 & 24/99 & 4/16 &  4/29 & 0/4 & 0 \\
+X=5 &  2/127 &  5/60 & 20/99 & 5/16 & 10/29 & 1/4 & 0 \\
+X=6 &  1/127 &  3/60 & 15/99 & 5/16 & 15/29 & 3/4 & 1 \\
+\end{array}
+$$
+
+(1) $Y=2$ のときの $X=5$ となる条件付き確率は $20/99$ である.
+
+(2) $Y=5$ のときの $X=5,6$ となる条件付き確率はそれぞれ $1/4,3/4$ なので, $X=6$ となる条件付き確率の方が大きい.
+
+__解答終__
+
+__(2)を直確認:__ (2)は実は $P(X=5,Y=5)$ と $P(X=6,Y=5)$ を比較するだけでよい. なぜならば
+
+$$
+P(X=5|Y=5) = \frac{P(X=5,Y=5)}{P(Y=5)}, \quad
+P(X=6|Y=5) = \frac{P(X=6,Y=5)}{P(Y=5)}
+$$
+
+の分母は共通なので, 分子の大小を比較すれば十分だからである. 
+
+$$
+6 P(X=5,Y=5) = \binom{5}{5}\frac{1}{2^5} = \frac{1}{32}, \quad
+6 P(X=6,Y=5) = \binom{6}{5}\frac{1}{2^6} = \frac{6}{64} = \frac{3}{32}
+$$
+
+なので, 後者の方が3倍大きい.  ゆえに, $Y=5$ のときの $X=6$ となる条件付き確率は $X=5$ となる条件付き確率よりも3倍大きい.
+
+__注意:__ この(2)の結果は, 「表になったコインの枚数は5枚である」という情報が得られたとき, 秘密のままになっているサイコロの出目は $5$ ではなく $6$ であった可能性が高いことを意味している(確率的に3倍).  新たな情報が得られるたびにまだ見えていない部分がどうなっているかを推測する問題の解決は確率が絡むゲームでは必須である. しかもこのような計算をリアルタイムで処理し続けることは結構大変であり, 強者に勝つためには十分な修練が必要になることが多い.
+
+__注意・警告:__ 非常に残念なことに, このような確率的推測について, 「逆確率」「ベイズ統計」「主観確率」などの用語を持ち出して何か深淵なことをやっているかのように見せる解説が普及してしまっている. 上の解答例を見ればわかるように, 単に条件付き確率分布を計算すればよいだけなので, それらの用語を使った議論は不要である.  条件付き確率の定義を知っていれ定義に忠実に計算できれば「ベイズの定理」さえ不要である.  簡単なことを哲学的にもしくは思想的に深淵であるかのように説明している解説は有害なので相手にしないように注意して欲しい.
+
+```julia
+function condprob_dicecoins(x, y)
+    num = binomial(x, y)//2^x
+    den = sum(binomial(x, y)//2^x for x in y:6)
+    num/den
+end
+```
+
+```julia
+CP = condprob_dicecoins.(1:6, (0:6)')
+```
+
+```julia
+heatmap(0:6, 1:6, CP; xlabel="y", ylabel="x")
+```
 
 ### 問題: 離散分布の条件付き確率分布として二項分布が得られること
 
@@ -592,15 +675,20 @@ $$
 __解答終__
 
 ```julia
+# 有病率 = prevalence rate
+# 感度 = sensitivity
+# 特異度 = specificity
+# 偽陽性 = false-positive
+# 偽陰性 = false-negative
 function falsepositive_falsenegative(prevalence_rate, sensitivity, specificity)
-    a = positive_besick  = sensitivity       * prevalence_rate
-    b = negative_besick  = (1 - sensitivity) * prevalence_rate
-    c = positive_notsick = (1 - specificity) * (1 - prevalence_rate)
-    d = negative_notsick = specificity       * (1 - prevalence_rate)
-    positive = positive_besick + positive_notsick
-    negative = negative_besick + negative_notsick
-    falsepositive = positive_notsick / positive
-    falsenegative = negative_besick  / negative
+    a = positive_ill     = sensitivity       * prevalence_rate
+    b = negative_ill     = (1 - sensitivity) * prevalence_rate
+    c = positive_healthy = (1 - specificity) * (1 - prevalence_rate)
+    d = negative_healthy = specificity       * (1 - prevalence_rate)
+    positive = positive_ill + positive_healthy
+    negative = negative_ill + negative_healthy
+    falsepositive = positive_healthy / positive
+    falsenegative = negative_ill     / negative
     falsepositive, falsenegative
 end
 ```
@@ -2891,9 +2979,9 @@ scatter(x, y; label="", tirle="Datasaurus")
 
 #### Julia言語の使い方
 
-(1) https://julialang.org/downloads/ から current stable release のインストーラをダウンロードして公式バイナリをパソコンに入れる.
+(1) https://julialang.org/downloads/ から最新安定板 (current stable release)のインストーラをダウンロードして実行し, 最新安定板の公式バイナリを自分のパソコンにインストールする.
 
-(2) juliaを起動して, 適当にコードを打ち込んで計算できることを確認する.
+(2) juliaを起動して, 適当にコードを打ち込んで正常に計算できることを確認する.
 
 ```
 julia> sinpi(1/6)
@@ -2917,12 +3005,15 @@ julia> using Statistics
 julia> using Plots
 ```
 
-(4) `datasaurus = [ ... ]` のセルの内容を `julia> ` と表示されている画面にコピー＆ペーストする.
+`using Plots` には少しだけ時間を取られる.  `julia>` の部分を含めてコピー＆ペーストしてもその部分が自動的に削除されて正常に実行される.
+
+(4) `datasaurus = [ ... ]` のセルの内容を `julia> ` と表示されている画面にコピー＆ペーストして実行する.
 
 (5) 以下を順次実行する.
 
 ```
-julia> x, y = datasaurus[:,1], datasaurus[:,2]
+julia> x = datasaurus[:,1];
+julia> y = datasaurus[:,2];
 julia> mean(x)
 julia> mean(y)
 julia> var(x)
@@ -2937,6 +3028,8 @@ julia> cov(x,y)
 ```
 julia> scatter(x, y)
 ```
+
+これも最初の実行のときに少し時間が取られる.  2回目以降は瞬時に実行される.
 
 __注意:__ 複雑な計算を十分にできるソフトを自分のパソコンに入れておいた方がよい. もちろんそれはJulia言語である必要はない. 統計学を学習するという目的のためにはR言語やPython言語もお勧めである.
 
