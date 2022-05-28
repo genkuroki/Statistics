@@ -6,11 +6,15 @@
 
 ## 資料
 
-[Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください。
+[Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください.
 
-[Julia言語](https://julialang.org/)を使って数値の計算やグラフの作画を行っています。[WolframAlpha](https://www.wolframalpha.com/)も併用しています。
+[Julia言語](https://julialang.org/)を使って数値の計算やグラフの作画を行っています。必要最小限の使い方については次の資料を見て下さい:
 
-__明らかな誤りをまだ大量に含んでいるものと思われます。ごめんなさい。適切に訂正しながら読んでください。__
+* 07-2 [Julia言語を使った統計学の勉強の仕方](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
+
+[WolframAlpha](https://www.wolframalpha.com/)も併用しています.
+
+__明らかな誤りをまだ大量に含んでいるものと思われます. ごめんなさい. 適切に訂正しながら読んでください.__
 
 ### 01 Bernoulli試行と関連確率分布
 
@@ -196,12 +200,21 @@ __定義された確率分布__
   * 2つの二項分布の積
   * Fisherの非心超幾何分布
 
-### 07 例：ベータ函数と二項分布の関係とその応用
+### 07 例
 
-* [Jupyter notebook]()
-\[[nbviewer]()\]
-* [pdf]()
-\[[download]()\]
+#### 07-1 例：ベータ函数と二項分布の関係とその応用
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.pdf)\]
+
+#### 07-2 Julia言語を使った統計学の勉強の仕方
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.pdf)\]
 
 ### 08 検定と信頼区間(1) 一般論
 
