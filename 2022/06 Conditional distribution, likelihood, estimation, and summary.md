@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.7.2
+    display_name: Julia 1.7.3
     language: julia
     name: julia-1.7
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 条件付き確率分布, 尤度, 推定, 記述統計
 
 * 黒木玄
-* 2022-05-26
+* 2022-05-22～2022-05-26
 
 $
 \newcommand\op{\operatorname}
@@ -2967,7 +2967,7 @@ x, y = datasaurus[:,1], datasaurus[:,2]
 
 ```julia
 # (2)
-scatter(x, y; label="", tirle="Datasaurus")
+scatter(x, y; label="", title="Datasaurus")
 ```
 
 こんなことになっていることは要約統計量たちを眺めてもわからない!
