@@ -16,7 +16,7 @@ jupyter:
 # 例：ベータ函数と二項分布の関係とその応用
 
 * 黒木玄
-* 2022-05-27～2022-05-27
+* 2022-05-27～2022-05-29
 
 $
 \newcommand\op{\operatorname}
@@ -42,7 +42,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係</a></span><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の証明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の証明</a></span></li><li><span><a href="#基本特殊函数ライブラリを使うと効率的に計算できる" data-toc-modified-id="基本特殊函数ライブラリを使うと効率的に計算できる-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>基本特殊函数ライブラリを使うと効率的に計算できる</a></span></li><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の別証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の別証明-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の別証明</a></span></li><li><span><a href="#累積分布函数と分位点函数について" data-toc-modified-id="累積分布函数と分位点函数について-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>累積分布函数と分位点函数について</a></span></li><li><span><a href="#パラメータに関する区間推定での利用の仕方" data-toc-modified-id="パラメータに関する区間推定での利用の仕方-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>パラメータに関する区間推定での利用の仕方</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>まとめ</a></span></li></ul></li><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間の定義" data-toc-modified-id="Clopper-Pearsonの信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の定義</a></span></li><li><span><a href="#問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: n=100, k=30 の95%Clopper-Pearson信頼区間</a></span></li><li><span><a href="#問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: n=400, k=120 の95% Clopper-Pearson信頼区間</a></span></li></ul></li><li><span><a href="#関連の問題" data-toc-modified-id="関連の問題-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>関連の問題</a></span><ul class="toc-item"><li><span><a href="#問題:-Waldの信頼区間との比較" data-toc-modified-id="問題:-Waldの信頼区間との比較-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>問題: Waldの信頼区間との比較</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布の関係" data-toc-modified-id="問題:-Poisson分布とガンマ分布の関係-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布の関係</a></span></li></ul></li><li><span><a href="#おまけ:-二項分布モデルのBayes統計との関係" data-toc-modified-id="おまけ:-二項分布モデルのBayes統計との関係-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>おまけ: 二項分布モデルのBayes統計との関係</a></span><ul class="toc-item"><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#事前分布が共役事前分布(ベータ分布)の場合" data-toc-modified-id="事前分布が共役事前分布(ベータ分布)の場合-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>事前分布が共役事前分布(ベータ分布)の場合</a></span></li><li><span><a href="#二項分布モデルでの片側P値のBayes統計での解釈" data-toc-modified-id="二項分布モデルでの片側P値のBayes統計での解釈-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>二項分布モデルでの片側P値のBayes統計での解釈</a></span></li><li><span><a href="#Pólyaの壺との関係" data-toc-modified-id="Pólyaの壺との関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Pólyaの壺との関係</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係</a></span><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の証明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の証明</a></span></li><li><span><a href="#基本特殊函数ライブラリを使うと効率的に計算できる" data-toc-modified-id="基本特殊函数ライブラリを使うと効率的に計算できる-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>基本特殊函数ライブラリを使うと効率的に計算できる</a></span></li><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の別証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の別証明-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の別証明</a></span></li><li><span><a href="#累積分布函数と分位点函数について" data-toc-modified-id="累積分布函数と分位点函数について-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>累積分布函数と分位点函数について</a></span></li><li><span><a href="#パラメータに関する区間推定での利用の仕方" data-toc-modified-id="パラメータに関する区間推定での利用の仕方-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>パラメータに関する区間推定での利用の仕方</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>まとめ</a></span></li></ul></li><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間の定義" data-toc-modified-id="Clopper-Pearsonの信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の定義</a></span></li><li><span><a href="#問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: n=100, k=30 の95%Clopper-Pearson信頼区間</a></span></li><li><span><a href="#問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: n=400, k=120 の95% Clopper-Pearson信頼区間</a></span></li></ul></li><li><span><a href="#関連の問題" data-toc-modified-id="関連の問題-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>関連の問題</a></span><ul class="toc-item"><li><span><a href="#問題:-Waldの信頼区間との比較" data-toc-modified-id="問題:-Waldの信頼区間との比較-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>問題: Waldの信頼区間との比較</a></span></li><li><span><a href="#Waldの信頼区間の基礎" data-toc-modified-id="Waldの信頼区間の基礎-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Waldの信頼区間の基礎</a></span></li><li><span><a href="#問題:-Waldの信頼区間が0～1の範囲をはみ出す場合" data-toc-modified-id="問題:-Waldの信頼区間が0～1の範囲をはみ出す場合-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: Waldの信頼区間が0～1の範囲をはみ出す場合</a></span></li><li><span><a href="#問題:-Wilsonの信頼区間との比較" data-toc-modified-id="問題:-Wilsonの信頼区間との比較-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: Wilsonの信頼区間との比較</a></span></li><li><span><a href="#Wilsonの信頼区間の基礎" data-toc-modified-id="Wilsonの信頼区間の基礎-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Wilsonの信頼区間の基礎</a></span></li><li><span><a href="#Sterneの信頼区間について" data-toc-modified-id="Sterneの信頼区間について-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Sterneの信頼区間について</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布の関係" data-toc-modified-id="問題:-Poisson分布とガンマ分布の関係-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布の関係</a></span></li></ul></li><li><span><a href="#おまけ:-二項分布モデルのBayes統計との関係" data-toc-modified-id="おまけ:-二項分布モデルのBayes統計との関係-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>おまけ: 二項分布モデルのBayes統計との関係</a></span><ul class="toc-item"><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#事前分布が共役事前分布(ベータ分布)の場合" data-toc-modified-id="事前分布が共役事前分布(ベータ分布)の場合-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>事前分布が共役事前分布(ベータ分布)の場合</a></span></li><li><span><a href="#二項分布モデルでの片側P値のBayes統計での解釈" data-toc-modified-id="二項分布モデルでの片側P値のBayes統計での解釈-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>二項分布モデルでの片側P値のBayes統計での解釈</a></span></li><li><span><a href="#Pólyaの壺との関係" data-toc-modified-id="Pólyaの壺との関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Pólyaの壺との関係</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -125,14 +125,21 @@ $$
 \end{aligned}
 $$
 
-数式で書くと,
+これは
+
+$$
+1 - \op{cdf}(\op{Binomial}(n, p), k-1) =
+\op{cdf}(\op{Beta}(k, n-k+1), p)
+$$
+
+や次のように書き直される:
 
 $$
 \sum_{i\ge k} \binom{n}{i} p^i (1-p)^{n-i} =
 \frac{\int_0^p t^{k-1} (1-t)^{n-i}\,dt}{B(k, n-k+1)}.
 $$
 
-これは, 補事象を取り, 「$k$ 未満になる」という条件を「$k$ 以下になる」に置き換えるために, $k$ を $k+1$ で置き換えると次と同値である: $k=0,1,\ldots,n-1$ のとき,
+補事象を取り, 「$k$ 未満になる」という条件を「$k$ 以下になる」に置き換えるために, $k$ を $k+1$ で置き換えると, 以上の結果は以下と同値である: $k=0,1,\ldots,n-1$ のとき,
 
 $$
 \begin{aligned}
@@ -143,7 +150,14 @@ $$
 \end{aligned}
 $$
 
-数式で書くと,
+これは
+
+$$
+\op{cdf}(\op{Binomial}(n, p), k) =
+1 - \op{cdf}(\op{Beta}(k+1, n-k), p)
+$$
+
+や次のように書き直される:
 
 $$
 \sum_{i\le k} \binom{n}{i} p^i (1-p)^{n-i} =
@@ -164,7 +178,7 @@ $$
 \end{aligned}
 $$
 
-__証明:__ $p=t$ のときの左辺(二項分布 $\op{Binomial}(n, t)$ において $k$ 以上になる確率)を $F(t)$ と書くと,
+__証明:__ $p=t$ のときの左辺(二項分布 $\op{Binomial}(n, t)$ で成功回数が $k$ 以上になる確率)を $F(t)$ と書くと,
 
 $$
 F(t) =
@@ -836,50 +850,66 @@ WolframAlphaで求めるには以下のようにすればよい.
 * [quantile(BetaDistribution(120, 281), 0.025)](https://www.wolframalpha.com/input?i=quantile%28BetaDistribution%28120%2C+281%29%2C+0.025%29) → 0.255467
 * [quantile(BetaDistribution(121, 280), 0.975)](https://www.wolframalpha.com/input?i=quantile%28BetaDistribution%28121%2C+280%29%2C+0.975%29) → 0.347522
 
+```julia
+α = 0.05
+z = quantile(Normal(), 1 - α/2)
+
+var"z_{0.025}の定義" = plot()
+plot!(Normal(),  -4,  4; label="")
+plot!(Normal(), -4, -z; label="", c=1, fillrange=0, fc=:red, fa=0.3)
+plot!(Normal(),  z,  4; label="", c=1, fillrange=0, fc=:red, fa=0.3)
+plot!([-z, -z, NaN, z, z],
+    [0, pdf(Normal(), -z), NaN, 0, pdf(Normal(), z)];
+    label="±z_{0.025}", c=:red)
+title!("Normal(0,1)"; xtick=-4:4)
+annotate!(-2.2, 0.06, text("2.5%", 10, :red, :right))
+annotate!(2.2, 0.06, text("2.5%", 10, :red, :left));
+```
 
 ## 関連の問題
-
-
-### 問題: Waldの信頼区間との比較
 
 以下では信頼度を $1-\alpha$ と表す($0 < \alpha < 1$ は有意水準と呼ばれる). さらに,
 
 $$
-c_\alpha = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2)
+z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2)
 $$
 
-とおく.  これは標準正規分布において $c_\alpha$ 以上になる確率が $\alpha/2$ になることを意味している.  例えば, $\alpha = 5\%$ のとき, 
+とおく.  これは標準正規分布において $z_{\alpha/2}$ 以上になる確率が $\alpha/2$ になることを意味している.  例えば, $\alpha = 5\%$ のとき, 
 
 $$
-c_{0.05} = 1.95996{\cdots} \approx 1.96.
+z_{0.025} = 1.95996{\cdots} \approx 1.96.
 $$
 
 この $1.96$ は非常に有名な数値である. 大雑把な分析で十分な場合には $2$ で代替してよい.
+
+```julia
+var"z_{0.025}の定義"
+```
+
+### 問題: Waldの信頼区間との比較
 
 __Waldの信頼区間の定義:__ データ「$n$ 回中 $k$ 回成功」が得られたとする. このとき,
 
 $$
 \hat{p} = \frac{k}{n}, \quad
-\widehat{\op{SE}} = \sqrt{\frac{p(1-p)}{n}}
+\widehat{\op{SE}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$
 
 とおき, 
 
 $$
-\hat{p} - c_\alpha \widehat{\op{SE}}
+\hat{p} - z_{\alpha/2} \widehat{\op{SE}}
 \le p \le
-\hat{p} + c_\alpha \widehat{\op{SE}}
+\hat{p} + z_{\alpha/2} \widehat{\op{SE}}
 $$
 
-を成功確率パラメータ $p$ の信頼度 $1-\alpha$ の __Waldの信頼区間__ と呼ぶ. $95\%$ Wald信頼区間は近似的に
+を成功確率パラメータ $p$ の信頼度 $1-\alpha$ の __Waldの信頼区間__ と呼ぶ. $95\%$ Wald信頼区間は近似的に次のように書ける:
 
 $$
 \hat{p} - 1.96 \widehat{\op{SE}}
 \le p \le
-\hat{p} + 1.96 \widehat{\op{SE}}
+\hat{p} + 1.96 \widehat{\op{SE}}.
 $$
-
-と書ける.
 
 (1) データ「$n=100$ 回中 $k=30$ 回成功」の $95\%$ Wald信頼区間を求めよ.
 
@@ -890,7 +920,6 @@ $$
 数値は小数点以下第4桁まで求めよ.
 
 __注意:__ Waldの信頼区間の計算はClopper-Pearsonの信頼区間と比較すると圧倒的に易しい. $k$ と $n-k$ が十分に大きければ, 実用的には計算が容易なWaldの信頼区間で用が足りることが多い.
-
 
 __解答例:__ (1),(3) データ「$n=100$ 回中 $k=30$ 回成功」の $95\%$ Wald信頼区間は
 
@@ -924,7 +953,7 @@ __解答終__
 
 ```julia
 α = 0.05
-c = quantile(Normal(), 1 - α/2)
+z = quantile(Normal(), 1 - α/2)
 ```
 
 ```julia
@@ -932,7 +961,7 @@ c = quantile(Normal(), 1 - α/2)
 n, k = 100, 30
 p̂ = k/n
 SE = √(p̂*(1 - p̂)/n)
-p_L, p_U = p̂ - c*SE, p̂ + c*SE
+p_L, p_U = p̂ - z*SE, p̂ + z*SE
 @show [p_L, p_U]
 @show round.([p_L, p_U]; digits=4);
 ```
@@ -942,7 +971,7 @@ p_L, p_U = p̂ - c*SE, p̂ + c*SE
 n, k = 400, 120
 p̂ = k/n
 SE = √(p̂*(1 - p̂)/n)
-p_L, p_U = p̂ - c*SE, p̂ + c*SE
+p_L, p_U = p̂ - z*SE, p̂ + z*SE
 @show [p_L, p_U]
 @show round.([p_L, p_U]; digits=4);
 ```
@@ -951,7 +980,332 @@ WolframAlphaで
 
 * [quantile(NormalDistribution(0,1), 0.975)](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29)
 
-によって, $c = 1.95996$ を得ることができれば, 後は平方根が計算できる電卓ですべてを計算できる.
+によって, $z = 1.95996$ を得ることができれば, 後は平方根も計算できる任意の電卓ですべてを計算できる.
+
+
+### Waldの信頼区間の基礎
+
+二項分布 $\op{Binomial}(n, p)$ の期待値は $np$ で標準偏差は $\sqrt{np(1-p)}$ になる.
+
+__二項分布の中心極限定理:__ 二項分布は正規分布で近似される:
+
+$$
+\op{Binomial}(n, p) \approx
+\op{Normal}\left(np, \sqrt{np(1-p)}\right).
+$$
+
+__分散だけが少し違う正規分布による近似__: $\hat{p}=k/n$ が $p$ に近いとき,
+
+$$
+\op{Normal}\left(np, \sqrt{np(1-p)}\right) \approx
+\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right).
+$$
+
+この2つの近似が使える状況では, 
+
+$$
+\op{Binomial}(n, p) \approx
+\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right)
+$$
+
+という近似が使えるので, 確率変数 $K$ が $\op{Binomial}(n, p)$ に従うとき,
+
+$$
+\frac{K - np}{\sqrt{n\hat{p}(1-\hat{p})}} \sim
+\op{Normal}(0,1), \text{approximately}
+$$
+
+という近似が使え, $\hat{p}=k/n$, $\widehat{\op{SE}}=\sqrt{p(1-p)/n}$ のとき
+
+$$
+\frac{k - np}{\sqrt{n\hat{p}(1-\hat{p})}} =
+\frac{\hat{p} - p}{\widehat{\op{SE}}}
+$$
+
+なので,
+
+$$
+\begin{aligned}
+&
+(\text{二項分布 $\op{Binomial}(n, p)$ で成功回数が $k$ 以上(以下)になる確率})
+\\ & \approx
+(\text{正規分布 $\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right)$
+において $k=n\hat{p}$ 以上(以下)になる確率})
+\\ & \approx
+(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\big/\widehat{\op{SE}}$ 以上(以下)になる確率}).
+\end{aligned}
+$$
+
+この確率が $\alpha/2$ に等しくなるような $p$ を $p_L$ ($p_U$)と書くと, $z_{\alpha/2} = \op{quantile}(\op{Normal}(0,1), 1-\alpha/2)$ ($\alpha=5\%$ ならば $z_{\alpha/2}\approx 1.96$)のとき, 
+
+$$
+\frac{\hat{p}-p_L}{\widehat{\op{SE}}} \approx z_{\alpha/2}, \quad
+\frac{\hat{p}-p_U}{\widehat{\op{SE}}} \approx -z_{\alpha/2}
+$$
+
+という近似が成立するので,
+
+$$
+p_L \approx \hat{p} - z_{\alpha/2} \widehat{\op{SE}}, \quad
+p_U \approx \hat{p} + z_{\alpha/2} \widehat{\op{SE}}.
+$$
+
+$p_L, p_U$ はClopper-Pearsonの信頼区間の両端の値なので, この近似がうまく行く場合には, Clopper-Pearsonの信頼区間とWaldの信頼区間は近似的に一致することになる. 
+
+この近似がうまく行っていない場合には, __Waldの信頼区間は0から1の範囲をはみ出してしまうことさえある.__
+
+
+### 問題: Waldの信頼区間が0～1の範囲をはみ出す場合
+
+データ「$n=20$ 回中 $k=2$ 回成功」の $95\%$ Wald信頼区間の下限が $0$ 未満になっていることを確認せよ.
+
+__解答例:__ データ「$n=20$ 回中 $k=2$ 回成功」の $95\%$ Wald信頼区間は
+
+$$
+[-0.0315, 0.2315]
+$$
+
+になる. 確かに下限は $0$ 未満になっている.
+
+__解答終__
+
+__注意:__ 対称性から, データ「$n=20$ 回中 $k=18$ 回成功」の $95\%$ Wald信頼区間の上限が $1$ より大きくなることもわかる.  一般に $k/n$ が $0$ または $1$ に非常に近いとWaldの信頼区間の精度は低くなる.
+
+```julia
+n, k = 20, 2
+p̂ = k/n
+SE = √(p̂*(1 - p̂)/n)
+p_L, p_U = p̂ - z*SE, p̂ + z*SE
+@show [p_L, p_U]
+@show round.([p_L, p_U]; digits=4);
+```
+
+### 問題: Wilsonの信頼区間との比較
+
+__Wilsonの信頼区間の定義:__ データ「$n$ 回中 $k$ 回成功」が得られたとする. このとき,
+
+$$
+\hat{p} = \frac{k}{n}, \quad
+\widehat{\op{SE}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \quad
+z = z_{\alpha/2}, \quad
+a = 1 + \frac{z^2}{n}, \quad
+b = \hat{p} + \frac{z^2}{2n}, \quad
+c = \hat{p}^2
+$$
+
+とおき, $p$ に関する方程式 $ap^2-2bp+c=0$ の2つの解を $p_L < p_I$ と書くき, 
+
+$$
+p_L \le p \le p_U
+$$
+
+を成功確率パラメータ $p$ の信頼度 $1-\alpha$ の __Wilsonの信頼区間__ と呼ぶ.
+
+$p_- = p_L$, $p_+ = p_U$ と書くと, 
+
+$$
+p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
+\frac{1}{1+z^2/n}\left(
+\hat{p}+\frac{z^2}{2n} \pm \sqrt{
+\widehat{\op{SE}}^2 + \frac{z^2}{4n^2}
+}
+\right).
+$$
+
+以下の場合に, 信頼度が $95\%$ の場合の, Clopper-Pearson信頼区間, Wald信頼区間, Wilson信頼区間を求めよ.
+
+(1) データが「$n=20$ 回中 $k=2$ 回成功」の場合.
+
+(2) データが「$n=100$ 回中 $k=5$ 回成功」の場合.
+
+(3) データが「$n=400$ 回中 $k=20$ 回成功」の場合.
+
+
+__解答例:__ (1) データ「$n=20$ 回中 $k=2$ 回成功」ときの $95\%$ 信頼区間はそれぞれ
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{Clopper-Pearson} & [0.0123, 0.3170] \\
+\hline
+\text{Wald}            & [-0.0315, 0.2315] \\
+\hline
+\text{Wilson}          & [0.0279, 0.3010] \\
+\hline
+\end{array}
+$$
+
+(2) データ「$n=100$ 回中 $k=5$ 回成功」ときの $95\%$ 信頼区間はそれぞれ
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{Clopper-Pearson} & [0.0164, 0.1128] \\
+\hline
+\text{Wald}            & [0.0073, 0.0927] \\
+\hline
+\text{Wilson}          & [0.0215, 0.1118] \\
+\hline
+\end{array}
+$$
+
+(3) データ「$n=400$ 回中 $k=20$ 回成功」ときの $95\%$ 信頼区間はそれぞれ
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{Clopper-Pearson} & [0.0308, 0.0762] \\
+\hline
+\text{Wald}            & [0.0286, 0.0714] \\
+\hline
+\text{Wilson}          & [0.0326, 0.0760] \\
+\hline
+\end{array}
+$$
+
+```julia
+function clopper_pearson_ci(n, k; α = 0.05)
+    p_L = quantile(Beta(k, n-k+1), α/2)
+    p_U = quantile(Beta(k+1, n-k), 1 - α/2)
+    [p_L, p_U]
+end
+
+function zpse(n, k; α = 0.05)
+    z = quantile(Normal(), 1 - α/2)
+    p̂ = k/n
+    SE = √(p̂ * (1 - p̂) / n)
+    z, p̂, SE
+end
+
+function wald_ci(n, k; α = 0.05)
+    z, p̂, SE = zpse(n, k; α)
+    p_L = p̂ - z*SE
+    p_U = p̂ + z*SE
+    [p_L, p_U]
+end
+
+function zpseabc(n, k; α = 0.05)
+    z, p̂, SE = zpse(n, k; α)
+    a = 1 + z^2/n
+    b = p̂ + z^2/(2n)
+    c = p̂^2
+    z, p̂, SE, a, b, c
+end
+
+function wilson_ci_old(n, k; α = 0.05)
+    z, p̂, SE, a, b, c = zpseabc(n, k; α)
+    D = b^2 - a*c
+    # Solutions of a p² - 2b p + c = 0
+    p_L = (b - √D)/a
+    p_U = (b + √D)/a
+    [p_L, p_U]
+end
+
+function wilson_ci(n, k; α = 0.05)
+    z, p̂, SE, a, b, c = zpseabc(n, k; α)
+    D₀ = SE^2 + z^2/(4n^2)
+    # Solutions of a p² - 2b p + c = 0
+    p_L = (b - z*√D₀)/a
+    p_U = (b + z*√D₀)/a
+    [p_L, p_U]
+end
+
+wilson_ci_old(100, 30) ≈ wilson_ci(100, 30)
+```
+
+```julia
+function print_cis(n, k; α = 0.05)
+    ci_cp = round.(clopper_pearson_ci(n, k; α); digits=4)
+    ci_wald = round.(wald_ci(n, k; α); digits=4)
+    ci_wilson = round.(wilson_ci(n, k; α); digits=4)
+    println("Clopper-Pearson: ", ci_cp)
+    println("Wald:            ", ci_wald)
+    println("Wilson:          ", ci_wilson)
+end
+```
+
+```julia
+# (1)
+print_cis(20, 2)
+```
+
+```julia
+# (2)
+print_cis(100, 5)
+```
+
+```julia
+# (3)
+print_cis(400, 20)
+```
+
+### Wilsonの信頼区間の基礎
+
+Waldの信頼区間では「分散だけが少し違う正規分布による近似」を使っていた.  しかし, その近似を避けて, 二項分布の中心極限定理による近似
+
+$$
+\op{Binomial}(n, p) \approx
+\op{Normal}\left(np, \sqrt{np(1-p)}\right)
+$$
+
+だけで, Clopper-Pearsonの信頼区間の近似を構成できる. それがWilsonの信頼区間である.
+
+二項分布の中心極限定理による近似だけを用いると, 確率変数 $K$ が $\op{Binomial}(n, p)$ に従うとき,
+
+$$
+\frac{K - np}{\sqrt{np(1-p)}} \sim
+\op{Normal}(0,1), \text{approximately}.
+$$
+
+Waldの信頼区間の構成ではこの式の平方根の内側の $p$ が $\hat{p}=k/n$ になっていた. このとき,
+
+$$
+\frac{k - np}{\sqrt{np(1-p)}} =
+\frac{\hat{p} - p}{\sqrt{p(1-p)/n}}
+$$
+
+なので,
+
+$$
+\begin{aligned}
+&
+(\text{二項分布 $\op{Binomial}(n, p)$ で成功回数が $k$ 以上(以下)になる確率})
+\\ & \approx
+(\text{正規分布 $\op{Normal}\left(np, \sqrt{np(1-p)}\right)$
+において $k=n\hat{p}$ 以上(以下)になる確率})
+\\ & \approx
+(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\big/\sqrt{p(1-p)/n}$ 以上(以下)になる確率}).
+\end{aligned}
+$$
+
+この確率が $\alpha/2$ に等しくなるような $p$ を $p_L$ ($p_U$)と書くと, $z = z_{\alpha/2} = \op{quantile}(\op{Normal}(0,1), 1-\alpha/2)$ ($\alpha=5\%$ ならば $z = z_{\alpha/2}\approx 1.96$)のとき, 
+
+$$
+\frac{\hat{p}-p_L}{\sqrt{p(1-p)/n}} \approx z \quad
+\left( \frac{\hat{p}-p_U}{\sqrt{p(1-p)/n}} \approx -z \right)
+$$
+
+という近似が成立する. これはClopper-Pearsonの信頼区間の両端の値 $p_L, p_U$ が $p$ に関する次の方程式の近似解になっていることを意味している:
+
+$$
+\frac{(\hat{p}-p)^2}{p(1-p)/n} = z^2.
+$$
+
+この方程式は次の2次方程式に書き直される:
+
+$$
+\left(1 + \frac{z^2}{n}\right)p^2 -
+2\left(\hat{p} + \frac{z^2}{2n}\right) + \hat{p}^2 = 0.
+$$
+
+Wilsonの信頼区間の定義はこの2次方程式の2つの解で挟まれた区間になっている.
+
+
+### Sterneの信頼区間について
+
+以上ではClopper-Pearsonの信頼区間, Waldの信頼区間, Wilsonの信頼区間の二項分布モデルにおける信頼区間について説明した.  これ以外にも多数の信頼区間の定義がある. それら3つ以外の信頼区間として基本的なのは __Sterneの信頼区間__ である. 
+
+Sterneの信頼区間を与えるP値函数に関する解説が「[標本分布について](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)」のノートの「Sterneの信頼区間とそれを与えるP値函数」の節にある.
 
 
 ### 問題: Poisson分布とガンマ分布の関係
@@ -1232,6 +1586,9 @@ $$
 赤い玉を「成功」とみなすと, この解釈は「最初の才能 $a,b$ は誰もが一定だが, 成功すればするほど成功し易くなり, 失敗すればするほど失敗し易くなる」と要約することができるだろう.  Pólyaの壺の試行は「富める者はさらに富み、貧しい者はさらに貧しくなる」と要約されることがある.
 
 以上の(B)と(P)では話が全然違っている.  (B)と(P)が与える確率分布が等しいという数学的結果は, 生まれ付きの才能で $k$ がランダムに決まっているのか, それとも「富める者はさらに富み、貧しい者はさらに貧しくなる」という仕組みが働いて最終的に差がついたのかが, 成功回数 $k$ を観察しただけではわからないことを意味している.
+
+
+__注意:__ 以上の話題については, 「[大数の法則と中心極限定理](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)」のノートの「大数の法則が成立しない場合: Pólyaの壺」の節での「pがベータ分布に従ってランダムに決まっているベルヌーイ試行」と「富むものがさらに富み, 貧しいものがさらに貧しくなるポリアの壺試行」に関するグラフのプロットも参照せよ.  Pólyaの壺については「[確率分布達の解釈](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb#%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83%E9%81%94%E3%81%AE%E8%A7%A3%E9%87%88)」のノートの「ベータ負の二項分布の解釈 (Pólyaの壺)」の節も参照せよ.
 
 ```julia
 
