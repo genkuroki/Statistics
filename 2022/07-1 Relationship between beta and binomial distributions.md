@@ -136,7 +136,7 @@ $$
 
 $$
 \sum_{i\ge k} \binom{n}{i} p^i (1-p)^{n-i} =
-\frac{\int_0^p t^{k-1} (1-t)^{n-i}\,dt}{B(k, n-k+1)}.
+\frac{\int_0^p t^{k-1} (1-t)^{n-k}\,dt}{B(k, n-k+1)}.
 $$
 
 補事象を取り, 「$k$ 未満になる」という条件を「$k$ 以下になる」に置き換えるために, $k$ を $k+1$ で置き換えると, 以上の結果は以下と同値である: $k=0,1,\ldots,n-1$ のとき,
@@ -192,17 +192,17 @@ $$
 \begin{aligned}
 F'(t) &=
 \sum_{i\ge k}
-\frac{n!}{i!(n-i)!} i t^{i-1}(1-t)^{n-i} +
+\frac{n!}{i!(n-i)!} i t^{i-1}(1-t)^{n-i} -
 \sum_{i\ge k}
 \frac{n!}{i!(n-i)!} (n-i) t^i (1-t)^{n-i-1}
 \\ & =
 \sum_{i\ge k}
-\frac{n!}{(i-1)!(n-i)!} t^{i-1}(1-t)^{n-i} +
+\frac{n!}{(i-1)!(n-i)!} t^{i-1}(1-t)^{n-i} -
 \sum_{i\ge k}
 \frac{n!}{i!(n-i-1)!} t^i (1-t)^{n-i-1}
 \\ & =
 \sum_{i\ge k}
-\frac{n!}{(i-1)!(n-i)!} t^{i-1}(1-t)^{n-i} +
+\frac{n!}{(i-1)!(n-i)!} t^{i-1}(1-t)^{n-i} -
 \sum_{i\ge k+1}
 \frac{n!}{(i-1)!(n-i)!} t^{i-1}(1-t)^{n-i}
 \\ &=
@@ -224,7 +224,7 @@ $$
 F'(t) = \frac{t^{k-1}(1-t)^{n-k}}{B(k,n-k+1)}.
 $$
 
-これと $F(0)=0$ を合わせると,
+これと $F(0)=0$ を合わせると, $F'(t)$ を $t=0$ から $t=p$ まで積分することによって,
 
 $$
 F(p) = \frac{\int_0^p t^{k-1}(1-t)^{n-k}\,dt}{B(k,n-k+1)}.
@@ -433,7 +433,7 @@ $$
 
 の逆函数が必要になることがある.
 
-例えば, データ「$n$ 回中 $k$ 回成功」というデータが得られたとき, それを二項分布モデル $\op{Binomial}(n, p)$ で扱うときに, 成功確率 $p$ の函数
+例えば, 「$n$ 回中 $k$ 回成功」というデータが得られたとき, それを二項分布モデル $\op{Binomial}(n, p)$ で扱うときに, 成功確率 $p$ の函数
 
 $$
 p \mapsto (\text{分布 $\op{Binomial}(n, p)$ で成功回数が $k$ 以上になる確率})
@@ -667,8 +667,8 @@ var"p = 0.42 は n = 100, k = 30 にあまりにも適合しない"
 
 Clopper-Pearsonの信頼区間は具体的には以下のように計算される.
 
-* 二項分布モデル $\op{Binomial}(n, p)$ において成功回数が $k$ 回以上になる確率が $\alpha/2$ に等しくなる $p$ を求め $p_L$ と書く.
-* 二項分布モデル $\op{Binomial}(n, p)$ において成功回数が $k$ 回以下になる確率が $\alpha/2$ に等しくなる $p$ を求め $p_U$ と書く.
+* 二項分布モデル $\op{Binomial}(n, p)$ において成功回数が $k$ 以上になる確率が $\alpha/2$ に等しくなる $p$ を求め $p_L$ と書く.
+* 二項分布モデル $\op{Binomial}(n, p)$ において成功回数が $k$ 以下になる確率が $\alpha/2$ に等しくなる $p$ を求め $p_U$ と書く.
 * Clopper-Pearsonの信頼区間は $[p_L, p_U]$ になる.
 
 以下は $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ の図である.
@@ -715,7 +715,7 @@ p_L = quantile(Beta(k, n-k+1), α/2)
 ```
 
 ```julia
-# 検算
+# 検算: 分布 Binomial(n, p_L) で k 以上になる確率
 ccdf(Binomial(n, p_L), k-1)
 ```
 
@@ -725,8 +725,8 @@ p_U = quantile(Beta(k+1, n-k), 1 - α/2)
 ```
 
 ```julia
-# 検算
-cdf(Binomial(n, p_U), k)
+# 検算: 分布 Binomial(n, p_U) で k 以下になる確率
+cdf(Binomial(n, p_U), k) # k
 ```
 
 ```julia
