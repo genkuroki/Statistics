@@ -1,6 +1,12 @@
 # 数理統計学2022
 
-すべてをまとめたPDF: [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
+記号法などについては次のメモを参照:
+
+* [Memo.md](https://github.com/genkuroki/Statistics/blob/master/2022/Memo.md)
+
+すべてをまとめたPDF:
+
+* [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 
 これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている.
 
