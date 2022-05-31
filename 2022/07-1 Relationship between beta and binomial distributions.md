@@ -1274,7 +1274,7 @@ $$
 (\text{正規分布 $\op{Normal}\left(np, \sqrt{np(1-p)}\right)$
 において $k=n\hat{p}$ 以上(以下)になる確率})
 \\ & \approx
-(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\big/\sqrt{p(1-p)/n}$ 以上(以下)になる確率}).
+(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\Big/\!\sqrt{p(1-p)/n}$ 以上(以下)になる確率}).
 \end{aligned}
 $$
 
