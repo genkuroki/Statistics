@@ -44,7 +44,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#検定" data-toc-modified-id="検定-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#nuisanceパラメータがある場合" data-toc-modified-id="nuisanceパラメータがある場合-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>P値の定義</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#データの数値以上に極端な値の定義の仕方" data-toc-modified-id="データの数値以上に極端な値の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>データの数値以上に極端な値の定義の仕方</a></span><ul class="toc-item"><li><span><a href="#例(二項分布モデル)の場合" data-toc-modified-id="例(二項分布モデル)の場合-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>例(二項分布モデル)の場合</a></span></li><li><span><a href="#例(正規分布の標本分布モデル)の場合" data-toc-modified-id="例(正規分布の標本分布モデル)の場合-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>例(正規分布の標本分布モデル)の場合</a></span></li></ul></li><li><span><a href="#P値は帰無仮説下の統計モデルのデータの数値との整合性の指標" data-toc-modified-id="P値は帰無仮説下の統計モデルのデータの数値との整合性の指標-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>P値は帰無仮説下の統計モデルのデータの数値との整合性の指標</a></span></li></ul></li><li><span><a href="#P値を使った検定" data-toc-modified-id="P値を使った検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>P値を使った検定</a></span></li><li><span><a href="#P値函数を使った信頼区間" data-toc-modified-id="P値函数を使った信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値函数を使った信頼区間</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span><ul class="toc-item"><li><span><a href="#検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合" data-toc-modified-id="検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合</a></span></li><li><span><a href="#仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率" data-toc-modified-id="仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>仮説 $\theta=\theta_0$ 下の統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率</a></span></li><li><span><a href="#二項分布モデルでの視覚化" data-toc-modified-id="二項分布モデルでの視覚化-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>二項分布モデルでの視覚化</a></span></li></ul></li><li><span><a href="#P値函数が「よい」かどうかの判断基準達" data-toc-modified-id="P値函数が「よい」かどうかの判断基準達-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>P値函数が「よい」かどうかの判断基準達</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>よくある誤解</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#検定" data-toc-modified-id="検定-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#nuisanceパラメータがある場合" data-toc-modified-id="nuisanceパラメータがある場合-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>P値の定義</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#データの数値以上に極端な値の定義の仕方" data-toc-modified-id="データの数値以上に極端な値の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>データの数値以上に極端な値の定義の仕方</a></span><ul class="toc-item"><li><span><a href="#例(二項分布モデル)の場合" data-toc-modified-id="例(二項分布モデル)の場合-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>例(二項分布モデル)の場合</a></span></li><li><span><a href="#例(正規分布の標本分布モデル)の場合" data-toc-modified-id="例(正規分布の標本分布モデル)の場合-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>例(正規分布の標本分布モデル)の場合</a></span></li></ul></li><li><span><a href="#P値は帰無仮説下の統計モデルのデータの数値との整合性の指標" data-toc-modified-id="P値は帰無仮説下の統計モデルのデータの数値との整合性の指標-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>P値は帰無仮説下の統計モデルのデータの数値との整合性の指標</a></span></li></ul></li><li><span><a href="#P値を使った検定" data-toc-modified-id="P値を使った検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>P値を使った検定</a></span></li><li><span><a href="#P値函数を使った信頼区間" data-toc-modified-id="P値函数を使った信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値函数を使った信頼区間</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span><ul class="toc-item"><li><span><a href="#検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合" data-toc-modified-id="検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合</a></span></li><li><span><a href="#仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率" data-toc-modified-id="仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>仮説 <span id="MathJax-Element-2442-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>&amp;#x03B8;</mi><mo>=</mo><msub><mi>&amp;#x03B8;</mi><mn>0</mn></msub></math>" role="presentation" style="font-size: 117%; position: relative;"><span id="MJXc-Node-23379" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-23380" class="mjx-mrow"><span id="MJXc-Node-23381" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.477em; padding-bottom: 0.287em;">θ</span></span><span id="MJXc-Node-23382" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.097em; padding-bottom: 0.335em;">=</span></span><span id="MJXc-Node-23383" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-23384" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.477em; padding-bottom: 0.287em;">θ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-23385" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.382em; padding-bottom: 0.382em;">0</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></math></span></span>$\theta=\theta_0$ 下の統計モデル内でパラメータ値 <span id="MathJax-Element-2443-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>&amp;#x03B8;</mi><mo>=</mo><msub><mi>&amp;#x03B8;</mi><mn>0</mn></msub></math>" role="presentation" style="font-size: 117%; position: relative;"><span id="MJXc-Node-23386" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-23387" class="mjx-mrow"><span id="MJXc-Node-23388" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.477em; padding-bottom: 0.287em;">θ</span></span><span id="MJXc-Node-23389" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.097em; padding-bottom: 0.335em;">=</span></span><span id="MJXc-Node-23390" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-23391" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.477em; padding-bottom: 0.287em;">θ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-23392" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.382em; padding-bottom: 0.382em;">0</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></math></span></span>$\theta=\theta_0$ が信頼区間に含まれる確率</a></span></li><li><span><a href="#二項分布モデルでの視覚化" data-toc-modified-id="二項分布モデルでの視覚化-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>二項分布モデルでの視覚化</a></span></li></ul></li><li><span><a href="#P値函数が「よい」かどうかの判断基準達" data-toc-modified-id="P値函数が「よい」かどうかの判断基準達-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>P値函数が「よい」かどうかの判断基準達</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>よくある誤解</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -54,6 +54,8 @@ using Distributions
 using LinearAlgebra
 using Printf
 using QuadGK
+using RCall # reauires installation of R language.
+@rlibrary exactci # reauires the package exactci of R.
 using Random
 Random.seed!(4649373)
 using Roots
@@ -62,7 +64,7 @@ using StaticArrays
 using StatsBase
 using StatsFuns
 using StatsPlots
-default(fmt = :png, titlefontsize = 10, size = (400, 250))
+default(fmt = :png, size = (400, 250), titlefontsize = 10)
 using SymPy
 ```
 
@@ -140,7 +142,7 @@ __P値__ (P-value)は以下を与えることによって定義される:
 
 * データの数値 $x$ 以上に極端な値が条件 $\theta=\theta_0$ の下での統計モデル内で生じる確率もしくはその近似値
 
-と定義される. このとき, 条件 $\theta=\theta_0$ は __帰無仮説__ (null hypothesis)と呼ばれることがある. (「データの数値以上に極端な」の定義は __対立仮説__ (alternative hypothesis)の __集まり__ を与えることによって与えらえると考えられる.)
+と定義される. このとき, 条件 $\theta=\theta_0$ は __帰無仮説__ (null hypothesis)と呼ばれることが多い. (「データの数値以上に極端な」の定義は __対立仮説__ (alternative hypothesis)の __集まり__ を与えることによって与えらえると考えられる.)
 
 このノートでは以上のように定義されたP値を
 
@@ -488,21 +490,27 @@ end
 
 _pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
 
-function _search_boundary(f, x0, Δx, param)
+function _search_boundary(f, x0, Δx, param; maxiters=10^7)
     x = x0
     if f(x, param)
-        while f(x - Δx, param) x -= Δx end
-    else
-        x += Δx
-        while !f(x, param) x += Δx end
+        for _ in 1:maxiters
+            !f(x - Δx, param) && return x
+            x -= Δx
+        end
+    else # if !f(x, param)
+        for _ in 1:maxiters
+            x += Δx
+            f(x, param) && return x
+        end
     end
-    x
+    error("""
+    _search_boundary($f, $x0, $Δx, param = $param; maxiters = $maxiters) \
+    has exceeded the maximum number of iterations.""")
 end
 
 function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
     Px = pdf(dist, x)
-    Px == 0 && return Px
-    Px == 1 && return Px
+    0 < Px < 1 || return Px
     m = mode(dist)
     Px ≈ pdf(dist, m) && return one(Px)
     if x < m
@@ -513,6 +521,7 @@ function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
         cdf(dist, y) + ccdf(dist, x-1)
     end
 end
+
 pvalue_sterne(n, k, p) = pvalue_sterne(Binomial(n, p), k)
 
 # Wilson
@@ -534,11 +543,65 @@ end
 # P値函数 (データ k を固定した場合)
 
 n, k = 20, 6
-plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1; label="Clopper-Pearson")
-plot!(p -> pvalue_sterne(n, k, p), 0, 1; label="Sterne")
-plot!(p -> pvalue_wilson(n, k, p), 0, 1; label="Wilson")
-plot!(p -> pvalue_wald(n, k, p), 0, 1; label="Wald", ls=:dash)
-plot!(; size=(600, 300))
+
+P1 = plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1; label="Clopper-Pearson", c=1)
+P2 = plot(p -> pvalue_sterne(n, k, p), 0, 1; label="Sterne", c=2)
+P3 = plot(p -> pvalue_wilson(n, k, p), 0, 1; label="Wilson", c=3)
+P4 = plot(p -> pvalue_wald(n, k, p), 0, 1; label="Wald", ls=:dash, c=4)
+plot(P1, P2, P3, P4; size=(800, 500), layout=(2, 2))
+plot!(; xtick=0:0.1:1, ytick=0:0.1:1)
+plot!(; xguide="success rate parameter p", yguide="P-value", guidefontsize=10)
+title!("n = $n, k = $k", titlefontsize=12)
+```
+
+以上は「$n=20$ 回中 $k=6$ 回成功」というデータの数値が与えられたときの, P値函数のグラフである.
+
+P値が小さいほどデータの数値と成功確率パラメータ値が $p$ の二項分布モデルのあいだに整合性がないと考える.
+
+上のグラフを見れば, P値函数による判定では, 「$n=20$ 回中 $k=6$ 回成功」というデータの数値に最も整合するパラメータ $p$ の値は $p = 6/20 = 0.3$ になっており, そこから離れると整合性が下がる.
+
+どの場合も,「$n=20$ 回中 $k=6$ 回成功」というデータの数値にあまりにも整合しないパラメータ $p$ の値全体の集合の補集合は大雑把に $0.1$ から $0.6$ までの区間になることもわかる.  これが信頼区間である. ただし, 有意水準を決めずにグラフの見た目で判断してどんぶり勘定で区間を決めた.  信頼区間の正式な定義はP値が有意水準という名の閾値 $\alpha$ 以上になるパラメータの範囲である. 
+
+信頼区間では「そこに含まれるか否か」($\alpha$ 以上か否か)の情報しか残っていないが, P値函数の様子を直接見れば, パラメータを動かしたときの統計モデルとデータの数値の整合性の度合いについても知ることができる.
+
+__注意:__ 有意水準として $\alpha=5\%$ がよく使われているが, そのことに科学的合理性はない. だから閾値 $\alpha=5\%$ で計算した信頼区間を見て一喜一憂するのはバカげている. そのようにバカげたことをするくらいならば, 閾値を決めずにP値函数の様子を直接眺めてどんぶり勘定で判断した方がましだと思われる.
+
+
+__注意:__ R言語では exactci パッケージを入れると,
+Clopper-Pearsonの信頼区間を与えるP値函数(`tsmethod = "central"`)と
+Sterneの信頼区間を与えるP値函数(`tsmethod = "minlik"`)を容易にプロットできる.
+
+* https://rdrr.io/cran/exactci/man/binom.exact.html
+
+のExamplesに適当に `, plot=TRUE` を挿入してRunボタンを押してみよ.
+
+```julia
+binom_exact(6, 20; tsmethod = "central", plot = true)
+```
+
+```julia
+binom_exact(6, 20; tsmethod = "minlik", plot = true)
+```
+
+```julia
+# P値函数 (データ k を動かしてアニメ化)
+# PDFファイルではこの動画を見ることはできない.
+# 
+
+n = 20
+anim = @animate for k in [0:n; n-1:-1:1]
+    plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1; label="Clopper-Pearson")
+    plot!(p -> pvalue_sterne(n, k, p), 0, 1; label="Sterne")
+    plot!(p -> pvalue_wilson(n, k, p), 0, 1; label="Wilson")
+    plot!(p -> pvalue_wald(n, k, p), 0, 1; label="Wald", ls=:dash)
+    plot!(; xtick=0:0.1:1, ytick=0:0.1:1)
+    plot!(; xguide="success rate parameter p", yguide="P-value")
+    title!("n = $n, k = $k")
+    plot!(; size=(600, 300))
+    2k > n && plot!(; legend=:topleft)
+end
+
+gif(anim, "images/pvaluefunction.gif"; fps = 5)
 ```
 
 ```julia
@@ -549,16 +612,21 @@ k = 0:n
 p = 0:0.01:1
 
 P1 = heatmap(k, p, (k, p)->pvalue_clopper_pearson(n, k, p);
-    colorbar=false, title="Clopper-Pearson")
+    colorbar=false, title="Clopper-Pearson, n=$n")
 P2 = heatmap(k, p, (k, p)->pvalue_sterne(n, k, p);
-    colorbar=false, title="Sterne")
+    colorbar=false, title="Sterne, n=$n")
 P3 = heatmap(k, p, (k, p)->pvalue_wilson(n, k, p);
-    colorbar=false, title="Wilson")
+    colorbar=false, title="Wilson, n=$n")
 P4 = heatmap(k, p, (k, p)->pvalue_wald(n, k, p);
-    colorbar=false, title="Wald")
-plot(P1, P2, P3, P4; size=(800, 500), layout=(2, 2),
-    xtick=0:20, ytick=0:0.1:1, tickfontsize=7)
+    colorbar=false, title="Wald, n=$n")
+plot(P1, P2, P3, P4; size=(800, 800), layout=(2, 2),
+    xtick=0:20, ytick=0:0.1:1, tickfontsize=7,
+    xguide="k", yguide="p")
 ```
+
+明るい部分ほどP値が大きい.  P値が小さな部分はほぼ黒色になっている.  そこでは「$n$ 回中 $k$ 回成功」というデータの数値に成功回数パラメータ値が $p$ の二項分布モデルが整合していないと考える.
+
+例えば「$n=20$ 回中 $k=6$ 回成功」というデータの数値が得られたとき $k=6$ でのP値函数の「明るさ」を上のグラフで確認すると, $p=6/20=0.6$ で最も明るくなっており, そこから $p$ が離れると暗くなって行くことがわかる. P値による判定によれば, 「$n=20$ 回中 $k=6$ 回成功」というデータの数値に最も整合する二項分布モデルの成功確率パラメータ $p$ の値は $p=0.3$ であり, そこから $p$ が離れるにつれて整合性は下がって行く.
 
 ```julia
 # pvalue(x|p) ≥ α のヒートマップ
@@ -568,17 +636,23 @@ n = 20
 k = 0:n
 p = 0:0.01:1
 
+c = cgrad([colorant"red", colorant"blue"])
+alpha = 0.5
 P1 = heatmap(k, p, (k, p)->pvalue_clopper_pearson(n, k, p) ≥ α;
-    colorbar=false, title="Clopper-Pearson, α=$α", c=:RdYlBu_4, alpha=0.7)
+    colorbar=false, title="Clopper-Pearson, α=$α", c, alpha)
 P2 = heatmap(k, p, (k, p)->pvalue_sterne(n, k, p) ≥ α;
-    colorbar=false, title="Sterne, α=$α", c=:RdYlBu_4, alpha=0.7)
+    colorbar=false, title="Sterne, α=$α", c, alpha)
 P3 = heatmap(k, p, (k, p)->pvalue_wilson(n, k, p) ≥ α;
-    colorbar=false, title="Wilson, α=$α", c=:RdYlBu_4, alpha=0.7)
+    colorbar=false, title="Wilson, α=$α", c, alpha)
 P4 = heatmap(k, p, (k, p)->pvalue_wald(n, k, p) ≥ α;
-    colorbar=false, title="Wald, α=$α", c=:RdYlBu_4, alpha=0.7)
-plot(P1, P2, P3, P4; size=(800, 500), layout=(2, 2),
-    xtick=0:20, ytick=0:0.1:1, tickfontsize=7)
+    colorbar=false, title="Wald, α=$α", c, alpha)
+plot(P1, P2, P3, P4; size=(800, 800), layout=(2, 2),
+    xtick=0:20, ytick=0:0.1:1, tickfontsize=7,
+    xguide="k", yguide="p")
 ```
+
+薄い赤の領域はP値が $\alpha = 5\%$ 未満になる部分であり, 薄い青の領域はP値が $\alpha = 5\%$ 以上になる部分である.  P値の定義の仕方によって結果は異なるが概ね似たような様子になっている.
+
 
 ## P値函数が「よい」かどうかの判断基準達
 
