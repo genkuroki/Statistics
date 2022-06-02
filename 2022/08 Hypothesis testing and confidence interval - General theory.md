@@ -44,7 +44,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#検定" data-toc-modified-id="検定-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#nuisanceパラメータがある場合" data-toc-modified-id="nuisanceパラメータがある場合-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>P値の定義</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#データの数値以上に極端な値の定義の仕方" data-toc-modified-id="データの数値以上に極端な値の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>データの数値以上に極端な値の定義の仕方</a></span><ul class="toc-item"><li><span><a href="#例(二項分布モデル)の場合" data-toc-modified-id="例(二項分布モデル)の場合-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>例(二項分布モデル)の場合</a></span></li><li><span><a href="#例(正規分布の標本分布モデル)の場合" data-toc-modified-id="例(正規分布の標本分布モデル)の場合-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>例(正規分布の標本分布モデル)の場合</a></span></li></ul></li></ul></li><li><span><a href="#P値を使った検定" data-toc-modified-id="P値を使った検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>P値を使った検定</a></span></li><li><span><a href="#P値函数を使った信頼区間" data-toc-modified-id="P値函数を使った信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値函数を使った信頼区間</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span></li><li><span><a href="#P値函数が「よい」かどうかの判断基準達" data-toc-modified-id="P値函数が「よい」かどうかの判断基準達-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>P値函数が「よい」かどうかの判断基準達</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>よくある誤解</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#検定" data-toc-modified-id="検定-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#nuisanceパラメータがある場合" data-toc-modified-id="nuisanceパラメータがある場合-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>P値の定義</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#データの数値以上に極端な値の定義の仕方" data-toc-modified-id="データの数値以上に極端な値の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>データの数値以上に極端な値の定義の仕方</a></span><ul class="toc-item"><li><span><a href="#例(二項分布モデル)の場合" data-toc-modified-id="例(二項分布モデル)の場合-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>例(二項分布モデル)の場合</a></span></li><li><span><a href="#例(正規分布の標本分布モデル)の場合" data-toc-modified-id="例(正規分布の標本分布モデル)の場合-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>例(正規分布の標本分布モデル)の場合</a></span></li></ul></li><li><span><a href="#P値は帰無仮説下の統計モデルのデータの数値との整合性の指標" data-toc-modified-id="P値は帰無仮説下の統計モデルのデータの数値との整合性の指標-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>P値は帰無仮説下の統計モデルのデータの数値との整合性の指標</a></span></li></ul></li><li><span><a href="#P値を使った検定" data-toc-modified-id="P値を使った検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>P値を使った検定</a></span></li><li><span><a href="#P値函数を使った信頼区間" data-toc-modified-id="P値函数を使った信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値函数を使った信頼区間</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span><ul class="toc-item"><li><span><a href="#検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合" data-toc-modified-id="検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合</a></span></li><li><span><a href="#仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率" data-toc-modified-id="仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>仮説 $\theta=\theta_0$ 下の統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率</a></span></li><li><span><a href="#二項分布モデルでの視覚化" data-toc-modified-id="二項分布モデルでの視覚化-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>二項分布モデルでの視覚化</a></span></li></ul></li><li><span><a href="#P値函数が「よい」かどうかの判断基準達" data-toc-modified-id="P値函数が「よい」かどうかの判断基準達-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>P値函数が「よい」かどうかの判断基準達</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>よくある誤解</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -242,11 +242,11 @@ __例 (正規分布の標本分布モデル):__
 
 ### P値の定義
 
-データ $x$ のモデル化になっているパラメータ $\theta$ を持つ統計モデルが与えられていると仮定する.
+データ $x$ の生成のされ方のモデル化になっているパラメータ $\theta$ を持つ統計モデルが与えられていると仮定する.
 
-データの数値 $x_0$ とパラメータの数値 $\theta = \theta_0$ が与えられたとき, 
+データの数値 $x$ とパラメータの数値 $\theta = \theta_0$ が与えられたとき, 
 
-* データの数値 $x_0$ から定まる仮説 $\theta = \theta_0$ のP値
+* データの数値 $x$ から定まる仮説 $\theta = \theta_0$ のP値
 
 を次によって定める:
 
@@ -257,50 +257,63 @@ __例 (正規分布の標本分布モデル):__
 
 ### データの数値以上に極端な値の定義の仕方
 
-データの数値 $x_0$ とパラメータの数値 $\theta = \theta_0$ が与えられたとき, 統計モデルとそのパラメータ値が与える確率分布において, $x$ がデータの数値 $x_0$ 以上に極端な値であることに定義を目的に合わせて適切に定義する.
+P値の定義を確定させるためには, データの数値 $x$ とパラメータの数値 $\theta = \theta_0$ が与えられたとき, 統計モデルとそのパラメータ値が与える確率分布に従う確率変数 $X$ の値がデータの数値 $x_0$ 以上に極端な値であることに定義を目的に合わせて適切に設定する必要がある.
 
-以下の条件が「仮説 $\theta=\theta_0$ の下で $x$ がデータの数値 $x_0$ 以上に極端な値であること」の定義としてよく使われる:
+以下の条件が「仮説 $\theta=\theta_0$ の下での統計モデルに従う確率変数 $X$ がデータの数値 $x$ 以上に極端な値であること」の定義としてよく使われる:
 
-* $x$ はデータの数値 $x_0$ 以上(または以下)である.
-* $x$ が統計モデルの確率で生じる確率(もしくはその密度)がデータの数値 $x_0$ 以下である.
+(1) $X \ge x$ (または $X \le x$).
 
-$x$ が実数値の変数ではなく, $\R^n$ に属する変数の場合には, $x$ の実数値函数 $S(x|\theta)$ を用意して,
+(1)' $X \ge x$ と $X \le x$ の確率が小さい方の条件.
 
-* $S(x|\theta_0)$ はデータの数値での値 $S(x_0|\theta_0)$ 以上(もしくは以下)である.
+(2) モデル内での $X$ の値が生じる確率(もしくはその密度)がデータの数値 $x$ 以下である.
 
-という条件で「仮説 $\theta=\theta_0$ の下で $x$ がデータの数値 $x_0$ 以上に極端な値であること」を定義することが多い. 函数 $S(x|\theta_0)$ は __検定統計量__ と呼ばれ, 目的ごとに適切に選択する必要がある.
+$X$ が実数値の確率変数ではなく, $\R^n$ 値の確率変数の場合には, $X$ の実数値函数 $S(X|\theta_0)$ を用意して,
+
+(3) $S(X|\theta_0) \ge S(x|\theta_0)$ (もしくは $S(X|\theta_0) \le S(x|\theta_0)$)
+
+という条件で「仮説 $\theta=\theta_0$ の下での統計モデルに従う確率変数 $X$ がデータの数値 $x$ 以上に極端な値であること」を定義することが多い. 函数 $S(x|\theta_0)$ は __検定統計量__ と呼ばれ, 目的ごとに適切に選択する必要がある.
+
+他にも正規分布近似を使う方法も多用される.
 
 
 #### 例(二項分布モデル)の場合
 
-データの数値「$n$ 回中 $k_0$ 回成功」と成功確率パラメータの数値 $p=p_0$ が与えられているとする.  このとき, 「仮説 $p=p_0$ の下での二項分布モデル内での成功回数 $k$ がデータの数値 $k_0$ 以上に極端であること」を以下のように様々な方法で定義できる:
+データの数値「$n$ 回中 $k$ 回成功」と成功確率パラメータの数値 $p=p_0$ が与えられているとする.  さらに, 仮説 $p=p_0$ 下の二項分布 $\op{Binomial}(n, p_0)$ に従う確率変数 $K$ を用意する:
 
-(1) $k \ge k_0$ (または $k\le k_0$).  (これの変種でClopper-Pearsonの信頼区間が得られる.)
+$$
+K \sim \op{Binomial}(n, p_0).
+$$
 
-(2) $P(k|n,p_0)$ を二項分布の確率質量函数とするとき, $P(k|n,p_0)\le P(k_0|n,p_0)$ (Sterneの信頼区間の場合).
+このとき, 「仮説 $p=p_0$ の下での二項分布モデル内での成功回数 $K$ の値がデータの数値 $k$ 以上に極端であること」を以下のように, 互いに同値でない様々な方法で定義できる:
+
+(1) $K \ge k$ (もしくは $K\le k$)という条件で「$k$ 以上に極端」の意味を定義する. この定義は仮説 $p\le p_0$ (もしくは $p \ge p_0$)の __片側検定__ (one-tailed test, one-sided test) で使われる.
+
+(1)' 仮説 $p=p_0$ の下での二項分布モデル内での $K\ge k$ と $K\le k$ の確率の小さい方の2倍(と $1$ の小さい方)を __両側検定__ のP値として使う(Clopper-Pearsonの信頼区間の場合).  以下の定義はどれも両側検定の場合になっている. __検定は通常両側検定を使用する.__
+
+(2) $K$ の値がモデル内で生じる確率がデータの数値 $k$ がモデル内で生じる確率以下になる(二項分布の確率質量函数を $P(k|n,p_0)$ と書くときの $P(K|n,p_0)\le P(k|n,p_0)$)という条件で「$k$ 以上に極端」の意味を定義する(Sterneの信頼区間の場合).
 
 この他にも正規分布近似(中心極限定理)を使って定義することもできる.
 
-(3) 二項分布 $\op{Binomial}(m, p)$ に関する中心極限定理によれば, $(k - np)/\sqrt{np(1-p)}$ に対応する確率変数は近似的に標準正規分布に従う.  「標準正規分布 $\op{Normal}(0, 1)$ に従う確率変数 $Z$ の値がデータの数値 $k_0$ 以上に極端であること」を
+(3) 二項分布 $\op{Binomial}(m, p_0)$ に関する中心極限定理によれば, $(K - np_0)/\sqrt{np_0(1-p_0)}$ は $np$ と $n(1-p)$ が十分に大きければ近似的に標準正規分布に従う.  「標準正規分布 $\op{Normal}(0, 1)$ に従う確率変数 $Z$ の値がデータの数値以上に極端であること」を
 
 $$
-|Z| \ge \frac{|k_0 - np_0|}{\sqrt{np_0(1-p_0)}}
+|Z| \ge \frac{|k - np_0|}{\sqrt{np_0(1-p_0)}}
 $$
 
-という条件で定め, こうなる確率を標準正規分布を使って計算する(近似の一種, Wilsonの信頼区間の場合).
+という条件で定め, こうなる確率を標準正規分布を使って計算してP値とする(近似の一種, Wilsonの信頼区間の場合).
 
 (3)' 上と同値な次の条件を使うこともある:
 
 $$
 Z^2 \ge
-\frac{(k_0 - np_0)^2}{np_0(1-p_0)}.
+\frac{(k - np_0)^2}{np_0(1-p_0)}.
 $$
 
-$Z\sim\op{Normal}(0,1)$ のとき, $Z^2$ は自由度 $1$ のχ²分布に従うので, こうなる確率を自由度 $1$ のχ²分布を用いて計算する(これも近似の一種).  さらに上の条件は次とも同値である(Pearsonのχ²検定の場合):
+$Z\sim\op{Normal}(0,1)$ のとき, $Z^2$ は自由度 $1$ のχ²分布に従うので, こうなる確率を自由度 $1$ のχ²分布を用いて計算してP値とする(これも近似の一種).  さらに上の条件は次とも同値である(Pearsonのχ²検定の場合):
 
 $$
 Z^2 \ge
-\frac{(k_0 - np_0)^2}{np_0} + \frac{((n-k_0) - n(1-p_0))^2}{n(1-p_0)}.
+\frac{(k - np_0)^2}{np_0} + \frac{((n-k) - n(1-p_0))^2}{n(1-p_0)}.
 $$
 
 これの不等式の右辺を __Pearsonのχ²統計量__ と呼ぶ.  これはそのように呼ばれる検定統計量達
@@ -311,14 +324,14 @@ $$
 
 の特別な場合に過ぎない.
 
-(4) 上の(3)における右辺の分母の $p_0$ を $\hat{p} = k_0/n$ で置き換えて得られる次の条件で定義することもある(Waldの信頼区間の場合):
+(4) 上の(3)における右辺の分母の $p_0$ をパラメータの推定量 $\hat{p} = k/n$ で置き換えて得られる次の条件で「データの数値以上に極端であること」を定義することもある(Waldの信頼区間の場合):
 
 $$
 |Z| \ge
-\frac{|k_0 - np_0|}{\sqrt{n\hat{p}(1-\hat{p})}}.
+\frac{|k - np_0|}{\sqrt{n\hat{p}(1-\hat{p})}}.
 $$
 
-以上のように, 同じ二項分布モデルのP値の定義の仕方も沢山ある.  基本的にどれを使ってもよい.  ユーザー側は自分の目的に合わせて合理的だと考えられるものを自由に使えばよい.
+以上のように, 二項分布モデルのP値の定義の仕方も沢山ある.  基本的にどれを使ってもよい.  ユーザー側は自分の目的に合わせて合理的だと考えられるものを自由に使えばよい.
 
 
 #### 例(正規分布の標本分布モデル)の場合
@@ -350,14 +363,222 @@ $$
 これが便利なのは, 仮説 $\mu = \mu_0$ の下での正規分布の標本分布モデル内で $T(x|\mu_0)$ に対応する確率変数が自由度 $n-1$ の $t$ 分布に従うからである.
 
 
+### P値は帰無仮説下の統計モデルのデータの数値との整合性の指標
+
+データの数値 $x$ から計算される帰無仮説 $\theta = \theta_0$ のP値は, 仮説 $\theta=\theta_0$ 下の統計モデルとデータの数値 $x$ の整合性の指標である.
+
+P値が小さいことは, 仮説 $\theta=\theta_0$ 下の統計モデルとデータの数値 $x$ があまり整合していないと考える.
+
+
 ## P値を使った検定
+
+データ $x$ の生成のされ方のモデル化になっているパラメータ $\theta$ を持つ統計モデルが与えられていると仮定する.
+
+さらに有意水準と呼ばれる __閾値__(いきち, しきいち) $0 < \alpha < 1$ が与えられていると仮定する.  $\alpha$ は目的に合わせて適当に小さな値としておく.  (有意水準として $5\%$ がよく用いられているが, そのことに科学的な合理性はない.)
+
+データの数値 $x$ とパラメータの数値 $\theta=\theta_0$ が与えられているとき, 仮説 $\theta = \theta_0$ のP値を求め,  P値が $\alpha$ 未満になるとき, 仮説 $\theta = \theta_0$ 下の統計モデルは __棄却__ (reject)されたという.
+
+この手続きを __仮説検定__ (Hypothesis tesitng)もしくは単に __検定__ と呼ぶ.
+
+すなわち, 検定とは, ある閾値を設けて, その閾値以上に整合性がないモデルのパラメータ値を捨て去る手続きのことである.
+
+ただし, 閾値を設けて捨て去る行為なので間違う危険性がある.  有意水準が小さなほどそのリスクは小さくなるが, その分だけ, 科学的に興味深い結果を見逃してしまうリスクが増える.
 
 
 ## P値函数を使った信頼区間
 
+有意水準 $\alpha$ の検定の手続きをパラメータ $\theta$ のすべての値に適用したとき, 棄却されなかったパラメータ値全体の集合をパラメータ $\theta$ に関する __信頼度__ (信頼係数) $1-\alpha$ の __信頼区間__ (confidence interval)と呼ぶ. ($\alpha = 5\%$ のとき, 信頼度 $1-\alpha$ の信頼区間を $95\%$ 信頼区間と呼ぶことが多い.)
+
+有意水準 $\alpha$ の検定の手続きでパラメータの値 $\theta=\theta_0$ が棄却されることは, 仮説 $\theta=\theta_0$ 下の統計モデルのデータの値 $x$ との整合性(P値)が閾値 $\alpha$ 未満になることであった.  そのような状況を
+
+* 仮説 $\theta=\theta_0$ 下の統計モデルとデータの値 $x$ との整合性が無さすぎる
+
+と言うことにしよう.  このスタイルの下では, 信頼区間は
+
+* 統計モデルの下で, データの数値 $x$ との整合性が無さすぎないパラメータ値全体の集合
+
+であると言える.
+
+「整合性が無さすぎること」は「正しいこと」を意味しないし, 「正しい可能性が高いこと」も意味しない.  信頼区間に含まれるパラメータ値の下での統計モデルの妥当性については判断を保留しなければいけない.
+
+__例:__ 例えば, パラメータ $\theta$ がある治療法の治療効果を意味するパラメータであったとしよう.  そのとき, 現実世界における調査で得たデータの数値 $x$ に関する $\theta$ の信頼区間は
+
+* その区間に含まれる治療効果の数値の各々については現実の正しさについては判断を保留する.
+* その区間のどれかの値が真の治療効果であっても大丈夫なようにしておく.
+* 得られたデータの数値へのその統計モデルの使用が妥当でない可能性についても常に注意を払う.
+
+のような使い方をすることが妥当だと思われる.
+
 
 ## 信頼区間と検定の表裏一体性
 
+
+### 検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合
+
+データ $x$ の生成のされ方のモデル化になっているパラメータ $\theta$ を持つ統計モデルが設定されていると仮定し, データの数値 $x$ に関する仮説 $\theta=\theta_0$ のP値 $\op{pvalue}(x|\theta_0)$ が定義されていると仮定し, 有意水準 $\alpha$ が与えられているとする.
+
+データの数値 $x$ が与えらえたとき, パラメータの数値 $\theta=\theta_0$ をP値 $\op{pvalue}(x|\theta_0)$ に対応させる函数
+
+$$
+\theta_0 \mapsto \op{pvalue}(x|theta_0)
+$$
+
+を __P値函数__ (P-value function)と呼ぶ.  P値函数は無数の仮説 $\theta=\theta_0$ 達の検定結果の情報をすべて持っているので, 信頼区間の情報もそこに含まれる.
+
+このとき, 仮説 $\theta=\theta_0$ を有意水準 $\alpha$ で棄却するようなデータの数値全体の集合を __棄却領域__ (rejection region)と呼び, 次のように書くことにする:
+
+$$
+R_\alpha(\theta_0) =
+\{\, x \mid \op{pvalue}(x|\theta_0) < \alpha\,\}.
+$$
+
+信頼度 $1-\alpha$ の信頼区間 $C_\alpha(x)$ は
+
+$$
+C_\alpha(x) =
+\{\, \theta_0 \mid \op{pvalue}(x|\theta_0) \ge \alpha\,\}
+$$
+
+と書ける.  これらの関係は以下の図のようになっている.
+
+以下の図を見れば, すべてのデータの数値 $x$ について信頼区間 $C_\alpha(x)$ を与えることと, すべてのパラメータの数値 $\theta=\theta_0$ についての棄却領域 $R_\alpha(\theta_0)$ を与えることが同じであることがわかる.  そして, 図中の赤の領域と青の領域の境界上でのP値 $\op{pvalue}(x|\theta_0)$ の値が有意水準 $\alpha$ になる.
+
+
+![HypothesisTesting-ConfidenceInterval.jpg](attachment:HypothesisTesting-ConfidenceInterval.jpg)
+
+
+### 仮説 $\theta=\theta_0$ 下の統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率
+
+$(x, \theta_0)$ がこの図中の(信頼区間を含む)青の領域の点であることは, 仮説 $\theta = \theta_0$ がデータの数値 $x$ によって棄却されないことと同値であり, さらに, データの数値 $x$ から決まる信頼区間にパラメータ値 $\theta = \theta_0$ が含まれることとも同値である.
+
+$X$ がパラメータ値 $\theta=\theta_0$ の統計モデルに従う確率変数であると仮定する. $X$ は仮説 $\theta=\theta_0$ 下の統計モデル内で生成された仮想的なデータの数値だと考えられる.
+
+P値の定義より $\op{pvalue}(X|\theta_0) < \alpha$ となる確率は $\alpha$ もしくはその近似になるので,  $\op{pvalue}(X|\theta_0) \ge \alpha$ となる確率は $1-\alpha$ もしくはその近似値になる.
+
+そして, $\op{pvalue}(X|\theta_0) \ge \alpha$ という条件は仮説 $\theta=\theta_0$ 下の統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間に $\theta_0$ が含まれることと同値である.
+
+ゆえに, 仮説 $\theta=\theta_0$ 下の統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間にパラメータ値 $\theta=\theta_0$ が含まれる確率は $1-\alpha$ またはその近似値になる.
+
+例えば, 大雑把に言うと, $95\%$ 信頼区間に統計モデル内でデータを生成したパラメータ値が含まれる確率は $95\%$ またはその近似値になる.
+
+__注意:__ この事実はP値の定義より, $95\%$ 信頼区間の $95\%$ が確率とみなされることを意味している.  ただし, その確率は数学的フィクションである __統計モデル内で測った確率__ に過ぎない.  何らかの特別な理由があって, 現実のデータの数値 $x$ の生成のされ方を統計モデルが忠実に再現していると考えられるならば, $95\%$ という数値は現実においても意味を持ち得る.  しかし, そうでない場合いは, 単なる __モデル内確率__ であることに十分な注意を払う必要がある.
+
+__注意:__ 「$95\%$ 信頼区間の $95\%$ は確率ではなく, 割合である」というようなことが多くの教科書に書かれているようだが, 以上の説明を読めば分かるように自明に誤りである.
+
+__注意:__ 「$95\%$ 信頼区間の $95\%$ は確率ではなく, 割合である」と言いたい人達は, データの数値 $x$ はすでに確定した数値になっており, 確率的に揺らがないので, データの数値 $x$ から計算される信頼区間も確率的に揺らがないので, パラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率を考えることはできない, というようなことを言いたいのかもしれないが, 上の説明を読めば分かるように的を外している.  $95\%$ 信頼区間の $95\%$ は数学的フィクションであるモデル内確率であり, モデル内で生成されたデータの数値は確率変数になっている.  現実とモデルを混同するという典型的に非科学的な考え方に陥っている疑いもある.
+
+__文献:__ P値函数の使い方については次の文献が詳しい:
+
+* Timothy L. Lash, Tyler J. VanderWeele, Sebastien Haneuse, and Kenneth J. Rothman.<br>Modern Epidemiology, 4th edition, 2020. [Google](https://www.google.com/search?q=Modern+Epidemiology+4th)
+
+第4版よりも古い版でもよい.
+
+
+### 二項分布モデルでの視覚化
+
+```julia
+# Clopper-Pearson
+
+function pvalue_clopper_pearson(n, k, p)
+    bin = Binomial(n, p)
+    min(1, 2cdf(bin, k), 2ccdf(bin, k-1))
+end
+
+# Sterne
+
+_pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
+
+function _search_boundary(f, x0, Δx, param)
+    x = x0
+    if f(x, param)
+        while f(x - Δx, param) x -= Δx end
+    else
+        x += Δx
+        while !f(x, param) x += Δx end
+    end
+    x
+end
+
+function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    Px == 1 && return Px
+    m = mode(dist)
+    Px ≈ pdf(dist, m) && return one(Px)
+    if x < m
+        y = _search_boundary(_pdf_le, 2m - x, 1, (dist, Px))
+        cdf(dist, x) + ccdf(dist, y-1)
+    else # x > m
+        y = _search_boundary(_pdf_le, 2m - x, -1, (dist, Px))
+        cdf(dist, y) + ccdf(dist, x-1)
+    end
+end
+pvalue_sterne(n, k, p) = pvalue_sterne(Binomial(n, p), k)
+
+# Wilson
+
+function pvalue_wilson(n, k, p)
+    z = safediv(k - n*p, √(n*p*(1-p)))
+    2ccdf(Normal(), abs(z))
+end
+
+# Wald
+
+function pvalue_wald(n, k, p)
+    z = safediv(k - n*p, √(k*(n-k)/n))
+    2ccdf(Normal(), abs(z))
+end
+```
+
+```julia
+# P値函数 (データ k を固定した場合)
+
+n, k = 20, 6
+plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1; label="Clopper-Pearson")
+plot!(p -> pvalue_sterne(n, k, p), 0, 1; label="Sterne")
+plot!(p -> pvalue_wilson(n, k, p), 0, 1; label="Wilson")
+plot!(p -> pvalue_wald(n, k, p), 0, 1; label="Wald", ls=:dash)
+plot!(; size=(600, 300))
+```
+
+```julia
+# pvalue(x|p) 達のヒートマップ
+
+n = 20
+k = 0:n
+p = 0:0.01:1
+
+P1 = heatmap(k, p, (k, p)->pvalue_clopper_pearson(n, k, p);
+    colorbar=false, title="Clopper-Pearson")
+P2 = heatmap(k, p, (k, p)->pvalue_sterne(n, k, p);
+    colorbar=false, title="Sterne")
+P3 = heatmap(k, p, (k, p)->pvalue_wilson(n, k, p);
+    colorbar=false, title="Wilson")
+P4 = heatmap(k, p, (k, p)->pvalue_wald(n, k, p);
+    colorbar=false, title="Wald")
+plot(P1, P2, P3, P4; size=(800, 500), layout=(2, 2),
+    xtick=0:20, ytick=0:0.1:1, tickfontsize=7)
+```
+
+```julia
+# pvalue(x|p) ≥ α のヒートマップ
+
+α = 0.05
+n = 20
+k = 0:n
+p = 0:0.01:1
+
+P1 = heatmap(k, p, (k, p)->pvalue_clopper_pearson(n, k, p) ≥ α;
+    colorbar=false, title="Clopper-Pearson, α=$α", c=:RdYlBu_4, alpha=0.7)
+P2 = heatmap(k, p, (k, p)->pvalue_sterne(n, k, p) ≥ α;
+    colorbar=false, title="Sterne, α=$α", c=:RdYlBu_4, alpha=0.7)
+P3 = heatmap(k, p, (k, p)->pvalue_wilson(n, k, p) ≥ α;
+    colorbar=false, title="Wilson, α=$α", c=:RdYlBu_4, alpha=0.7)
+P4 = heatmap(k, p, (k, p)->pvalue_wald(n, k, p) ≥ α;
+    colorbar=false, title="Wald, α=$α", c=:RdYlBu_4, alpha=0.7)
+plot(P1, P2, P3, P4; size=(800, 500), layout=(2, 2),
+    xtick=0:20, ytick=0:0.1:1, tickfontsize=7)
+```
 
 ## P値函数が「よい」かどうかの判断基準達
 
@@ -366,9 +587,6 @@ $$
 
 
 ## よくある誤解
-
-
-$\sqrt{x}/\sqrt{2}$
 
 ```julia
 
