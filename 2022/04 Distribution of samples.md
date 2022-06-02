@@ -915,6 +915,7 @@ end
 function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
     Px = pdf(dist, x)
     Px == 0 && return Px
+    Px == 1 && return Px
     m = mode(dist)
     Px ≈ pdf(dist, m) && return one(Px)
     if x < m
