@@ -55,8 +55,8 @@ using Distributions
 using LinearAlgebra
 using Printf
 using QuadGK
-using RCall # reauires installation of R language.
-@rlibrary exactci # reauires the package exactci of R.
+using RCall # requires the R language.
+@rlibrary exactci # requires the package exactci of R.
 using Random
 Random.seed!(4649373)
 using Roots
