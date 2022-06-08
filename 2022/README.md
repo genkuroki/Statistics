@@ -92,6 +92,7 @@ __定義された確率分布__
 
 * 平均 $\lambda$ の __Poisson分布__(ポアソン分布): $\mathrm{Poisson}(\lambda)$
 * __負の二項分布__: $\mathrm{NegativeBinomial}(\alpha, 1/(1+\theta))$ (Poisson分布の平均パラメータ $\lambda$ がガンマ分布に従う場合)
+* $a$ から $b$ のあいだの __一様分布__: $\mathrm{Uniform}(a, b)$
 * __ベータ二項分布__: $\mathrm{BetaBinomial}(n, \alpha, \beta)$ (二項分布の成功確率パラメータがベータ分布に従う場合)
 * __超幾何分布__: $\mathrm{Hypergeometric}(s, f, n)$ (非復元抽出の分布)
 * __ベータ負の二項分布__: $\mathrm{NegativeBetaBinomial}(n, \alpha, \beta)$ (負の二項分布の成功確率パラメータがベータ分布に従う場合)

@@ -16,7 +16,7 @@ jupyter:
 # 例：ベータ函数と二項分布の関係とその応用
 
 * 黒木玄
-* 2022-05-27～2022-05-31
+* 2022-05-27～2022-06-08
 
 $
 \newcommand\op{\operatorname}
@@ -28,6 +28,24 @@ $
 \newcommand\T[1]{T_{(#1)}}
 \newcommand\bk{\bar\kappa}
 \newcommand\X{{\mathscr X}}
+\newcommand\CP{{\mathrm{CP}}}
+\newcommand\Sterne{{\mathrm{Stern}}}
+\newcommand\Wilson{{\mathrm{Wilson}}}
+\newcommand\Wald{{\mathrm{Wald}}}
+\newcommand\LLR{{\mathrm{LLR}}}
+\newcommand\pdf{\op{pdf}}
+\newcommand\pmf{\op{pmf}}
+\newcommand\cdf{\op{cdf}}
+\newcommand\quantile{\op{quantile}}
+\newcommand\Binomial{\op{Binomial}}
+\newcommand\Beta{\op{Beta}}
+\newcommand\Normal{\op{Normal}}
+\newcommand\Chisq{\op{Chisq}}
+\newcommand\pvalue{\op{pvalue}}
+\newcommand\confint{\op{confint}}
+\newcommand\phat{\hat{p}}
+\newcommand\SE{\op{SE}}
+\newcommand\SEhat{\widehat{\SE}}
 $
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
@@ -891,24 +909,24 @@ var"z_{0.025}の定義"
 __Waldの信頼区間の定義:__ データ「$n$ 回中 $k$ 回成功」が得られたとする. このとき,
 
 $$
-\hat{p} = \frac{k}{n}, \quad
-\widehat{\op{SE}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\phat = \frac{k}{n}, \quad
+\SEhat = \sqrt{\frac{\phat(1-\phat)}{n}}
 $$
 
 とおき, 
 
 $$
-\hat{p} - z_{\alpha/2} \widehat{\op{SE}}
+\phat - z_{\alpha/2} \SEhat
 \le p \le
-\hat{p} + z_{\alpha/2} \widehat{\op{SE}}
+\phat + z_{\alpha/2} \SEhat
 $$
 
 を成功確率パラメータ $p$ の信頼度 $1-\alpha$ の __Waldの信頼区間__ と呼ぶ. $95\%$ Wald信頼区間は近似的に次のように書ける:
 
 $$
-\hat{p} - 1.96 \widehat{\op{SE}}
+\phat - 1.96 \SEhat
 \le p \le
-\hat{p} + 1.96 \widehat{\op{SE}}.
+\phat + 1.96 \SEhat.
 $$
 
 (1) データ「$n=100$ 回中 $k=30$ 回成功」の $95\%$ Wald信頼区間を求めよ.
@@ -994,32 +1012,32 @@ $$
 \op{Normal}\left(np, \sqrt{np(1-p)}\right).
 $$
 
-__分散だけが少し違う正規分布による近似__: $\hat{p}=k/n$ が $p$ に近いとき,
+__分散だけが少し違う正規分布による近似__: $\phat=k/n$ が $p$ に近いとき,
 
 $$
 \op{Normal}\left(np, \sqrt{np(1-p)}\right) \approx
-\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right).
+\op{Normal}\left(np, \sqrt{n\phat(1-\phat)}\right).
 $$
 
 この2つの近似が使える状況では, 
 
 $$
 \op{Binomial}(n, p) \approx
-\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right)
+\op{Normal}\left(np, \sqrt{n\phat(1-\phat)}\right)
 $$
 
 という近似が使えるので, 確率変数 $K$ が $\op{Binomial}(n, p)$ に従うとき,
 
 $$
-\frac{K - np}{\sqrt{n\hat{p}(1-\hat{p})}} \sim
+\frac{K - np}{\sqrt{n\phat(1-\phat)}} \sim
 \op{Normal}(0,1), \text{approximately}
 $$
 
-という近似が使え, $\hat{p}=k/n$, $\widehat{\op{SE}}=\sqrt{p(1-p)/n}$ のとき
+という近似が使え, $\phat=k/n$, $\SEhat=\sqrt{p(1-p)/n}$ のとき
 
 $$
-\frac{k - np}{\sqrt{n\hat{p}(1-\hat{p})}} =
-\frac{\hat{p} - p}{\widehat{\op{SE}}}
+\frac{k - np}{\sqrt{n\phat(1-\phat)}} =
+\frac{\phat - p}{\SEhat}
 $$
 
 なので,
@@ -1029,25 +1047,25 @@ $$
 &
 (\text{二項分布 $\op{Binomial}(n, p)$ で成功回数が $k$ 以上(以下)になる確率})
 \\ & \approx
-(\text{正規分布 $\op{Normal}\left(np, \sqrt{n\hat{p}(1-\hat{p})}\right)$
-において $k=n\hat{p}$ 以上(以下)になる確率})
+(\text{正規分布 $\op{Normal}\left(np, \sqrt{n\phat(1-\phat)}\right)$
+において $k=n\phat$ 以上(以下)になる確率})
 \\ & \approx
-(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\big/\widehat{\op{SE}}$ 以上(以下)になる確率}).
+(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\phat-p)\big/\SEhat$ 以上(以下)になる確率}).
 \end{aligned}
 $$
 
 この確率が $\alpha/2$ に等しくなるような $p$ を $p_L$ ($p_U$)と書くと, $z_{\alpha/2} = \op{quantile}(\op{Normal}(0,1), 1-\alpha/2)$ ($\alpha=5\%$ ならば $z_{\alpha/2}\approx 1.96$)のとき, 
 
 $$
-\frac{\hat{p}-p_L}{\widehat{\op{SE}}} \approx z_{\alpha/2}, \quad
-\frac{\hat{p}-p_U}{\widehat{\op{SE}}} \approx -z_{\alpha/2}
+\frac{\phat-p_L}{\SEhat} \approx z_{\alpha/2}, \quad
+\frac{\phat-p_U}{\SEhat} \approx -z_{\alpha/2}
 $$
 
 という近似が成立するので,
 
 $$
-p_L \approx \hat{p} - z_{\alpha/2} \widehat{\op{SE}}, \quad
-p_U \approx \hat{p} + z_{\alpha/2} \widehat{\op{SE}}.
+p_L \approx \phat - z_{\alpha/2} \SEhat, \quad
+p_U \approx \phat + z_{\alpha/2} \SEhat.
 $$
 
 $p_L, p_U$ はClopper-Pearsonの信頼区間の両端の値なので, この近似がうまく行く場合には, Clopper-Pearsonの信頼区間とWaldの信頼区間は近似的に一致することになる. 
@@ -1085,12 +1103,12 @@ p_L, p_U = p̂ - z*SE, p̂ + z*SE
 __Wilsonの信頼区間の定義:__ データ「$n$ 回中 $k$ 回成功」が得られたとする. このとき,
 
 $$
-\hat{p} = \frac{k}{n}, \quad
-\widehat{\op{SE}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \quad
+\phat = \frac{k}{n}, \quad
+\SEhat = \sqrt{\frac{\phat(1-\phat)}{n}}, \quad
 z = z_{\alpha/2}, \quad
 a = 1 + \frac{z^2}{n}, \quad
-b = \hat{p} + \frac{z^2}{2n}, \quad
-c = \hat{p}^2
+b = \phat + \frac{z^2}{2n}, \quad
+c = \phat^2
 $$
 
 とおき, $p$ に関する方程式 $ap^2-2bp+c=0$ の2つの解を $p_L < p_I$ と書くき, 
@@ -1106,8 +1124,8 @@ $p_- = p_L$, $p_+ = p_U$ と書くと,
 $$
 p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
 \frac{1}{1+z^2/n}\left(
-\hat{p}+\frac{z^2}{2n} \pm \sqrt{
-\widehat{\op{SE}}^2 + \frac{z^2}{4n^2}
+\phat+\frac{z^2}{2n} \pm z\sqrt{
+\SEhat^2 + \frac{z^2}{4n^2}
 }
 \right).
 $$
@@ -1257,11 +1275,11 @@ $$
 \op{Normal}(0,1), \text{approximately}.
 $$
 
-Waldの信頼区間の構成ではこの式の平方根の内側の $p$ が $\hat{p}=k/n$ になっていた. このとき,
+Waldの信頼区間の構成ではこの式の平方根の内側の $p$ が $\phat=k/n$ になっていた. このとき,
 
 $$
 \frac{k - np}{\sqrt{np(1-p)}} =
-\frac{\hat{p} - p}{\sqrt{p(1-p)/n}}
+\frac{\phat - p}{\sqrt{p(1-p)/n}}
 $$
 
 なので,
@@ -1272,33 +1290,73 @@ $$
 (\text{二項分布 $\op{Binomial}(n, p)$ で成功回数が $k$ 以上(以下)になる確率})
 \\ & \approx
 (\text{正規分布 $\op{Normal}\left(np, \sqrt{np(1-p)}\right)$
-において $k=n\hat{p}$ 以上(以下)になる確率})
+において $k=n\phat$ 以上(以下)になる確率})
 \\ & \approx
-(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\hat{p}-p)\Big/\!\sqrt{p(1-p)/n}$ 以上(以下)になる確率}).
+(\text{標準正規分布 $\op{Normal}(0,1)$ において $(\phat-p)\Big/\!\sqrt{p(1-p)/n}$ 以上(以下)になる確率}).
 \end{aligned}
 $$
 
 この確率が $\alpha/2$ に等しくなるような $p$ を $p_L$ ($p_U$)と書くと, $z = z_{\alpha/2} = \op{quantile}(\op{Normal}(0,1), 1-\alpha/2)$ ($\alpha=5\%$ ならば $z = z_{\alpha/2}\approx 1.96$)のとき, 
 
 $$
-\frac{\hat{p}-p_L}{\sqrt{p(1-p)/n}} \approx z \quad
-\left( \frac{\hat{p}-p_U}{\sqrt{p(1-p)/n}} \approx -z \right)
+\frac{\phat-p_L}{\sqrt{p(1-p)/n}} \approx z \quad
+\left( \frac{\phat-p_U}{\sqrt{p(1-p)/n}} \approx -z \right)
 $$
 
 という近似が成立する. これはClopper-Pearsonの信頼区間の両端の値 $p_L, p_U$ が $p$ に関する次の方程式の近似解になっていることを意味している:
 
 $$
-\frac{(\hat{p}-p)^2}{p(1-p)/n} = z^2.
+\frac{(\phat-p)^2}{p(1-p)/n} = z^2.
 $$
 
 この方程式は次の2次方程式に書き直される:
 
 $$
 \left(1 + \frac{z^2}{n}\right)p^2 -
-2\left(\hat{p} + \frac{z^2}{2n}\right) + \hat{p}^2 = 0.
+2\left(\phat + \frac{z^2}{2n}\right)p + \phat^2 = 0.
 $$
 
-Wilsonの信頼区間の定義はこの2次方程式の2つの解で挟まれた区間になっている.
+Wilsonの信頼区間の定義はこの2次方程式の2つの解で挟まれた区間になっている. 実際, 
+
+$$
+a = 1 + \frac{z^2}{n}, \quad
+b = \phat + \frac{z^2}{2n}, \quad
+c = \phat^2, \quad
+f(p)=ap^2-2bp+c
+$$
+
+とおくと, $0\le\phat\le 1$ であることより,
+
+$$
+f(0) = \phat^2 \ge 0, \quad
+f(1) = (1-\phat)^2 \ge 0, \quad
+0 \le \frac{b}{a} = \frac{\phat^2+z^2/(2n)}{1+z^2/n} \le 1 
+$$
+
+でかつ
+
+$$
+\begin{aligned}
+b^2 - ac &=
+\phat^2 + \frac{z^2}{n}\phat + \frac{z^4}{4n^2} - \phat^2 - \frac{z^2}{n}\phat
+\\ &=
+\frac{z^2}{n}\phat(1-\phat) + \frac{z^4}{4n^2} =
+z^2\left(\SEhat^2 + \frac{z^2}{4n^2}\right) \ge 0
+\end{aligned}
+$$
+
+なので, $f(p)=ap^2-2bp+c=0$ の2つの解はどちらも $0$ 以上 $1$ の範囲に含まれ,
+
+$$
+p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
+\frac{1}{1+z^2/n}\left(
+\phat+\frac{z^2}{2n} \pm z\sqrt{
+\SEhat^2 + \frac{z^2}{4n^2}
+}
+\right)
+$$
+
+と表される.
 
 
 ### Sterneの信頼区間について
@@ -1509,10 +1567,10 @@ plot_betas(8, 2, 10, 3)
 
 ### 二項分布モデルでの片側P値のBayes統計での解釈
 
-事前分布無しの試行回数 $n$ の二項分布モデルにおける仮説「成功確率 $p$ は $p_0$ 以下である」のデータ「$n$ 回中 $k$ 回成功」に関する片側検定のP値を二項分布 $\op{Bionmial}(n, p_0)$ において成功回数が $k$ 以上になる確率と定義し, $\op{pvalue}(\le p_0|n, k)$ と書くことにする.  それは, ベータ分布 $\op{Beta}(k,n-k+1)$ において $p_0$ 以下になる確率に等しいのであった:
+事前分布無しの試行回数 $n$ の二項分布モデルにおける仮説「成功確率 $p$ は $p_0$ 以下である」のデータ「$n$ 回中 $k$ 回成功」に関する片側検定のP値を二項分布 $\op{Bionmial}(n, p_0)$ において成功回数が $k$ 以上になる確率と定義し, $\op{pvalue}(k|n, p\le p_0)$ と書くことにする.  それは, ベータ分布 $\op{Beta}(k,n-k+1)$ において $p_0$ 以下になる確率に等しいのであった:
 
 $$
-\op{pvalue}(\le p_0|n, k) =
+\op{pvalue}(k|n, p\le p_0) =
 \sum_{i\ge k}\binom{n}{i}p_0^i(1-p_0)^{n-i} =
 \frac{\int_0^{p_0} p^{k-1}(1-p)^{n-k}}{B(k, n-k+1)}.
 $$
