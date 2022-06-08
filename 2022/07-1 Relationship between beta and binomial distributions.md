@@ -560,7 +560,7 @@ plot!(k -> mypdf(Binomial(n, p), k), k-0.5, kmax+0.5;
 annotate!(k+6, 0.03, text("probability of K ≥ $k", :blue, :left, 10))
 title!("Binomial(n=$n, p=$p)")
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p]; label="np=$(n*p)", c=:red, ls=:dot)
+vline!([n*p]; label="np=$(n*p)", c=:blue, ls=:dash)
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -577,7 +577,7 @@ plot!(k -> mypdf(Binomial(n, p), k), k-0.5, kmax+0.5;
 annotate!(k+1, 0.01, text("probability of K ≥ $k", :blue, :left, 10))
 title!("Binomial(n=$n, p=$p)")
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p]; label="np=$(n*p)", c=:red, ls=:dot)
+vline!([n*p]; label="np=$(n*p)", c=:blue, ls=:dash)
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -591,7 +591,7 @@ plot!(k -> mypdf(Binomial(n, p), k), kmin-0.5, k+0.5;
 annotate!(k-1, 0.01, text("probability of K ≤ $k", :red, :right, 10))
 title!("Binomial(n=$n, p=$p)")
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p]; label="np=$(n*p)", c=:red, ls=:dot)
+vline!([n*p]; label="np=$(n*p)", c=:red, ls=:dashdot)
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -606,7 +606,7 @@ plot!(k -> mypdf(Binomial(n, p_L), k), k-0.5, kmax+0.5;
 annotate!(k+2, 0.01, text("$(100α/2)%", :blue, :left, 10))
 title!("Binomial(n=$n, p=p_L),  p_L=$(round(p_L; digits=4))")
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p_L]; label="n p_L=$(round(n*p_L; digits=2))", c=:red, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -620,7 +620,7 @@ plot!(k -> mypdf(Binomial(n, p_U), k), kmin-0.5, k+0.5;
 annotate!(k-2, 0.01, text("$(100α/2)%", :red, :right, 10))
 title!("Binomial(n=$n, p=p_U),  p_U=$(round(p_U; digits=4))")
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p_U]; label="n p_L=$(round(n*p_U; digits=2))", c=:red, ls=:dot)
+vline!([n*p_U]; label="n p_L = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -640,10 +640,10 @@ plot!(k -> mypdf(Binomial(n, p_U), k), kmin-0.5, k+0.5;
 annotate!(k-2, 0.01, text("$(100α/2)%", :red, :right, 10))
 
 vline!([k]; label="k=$k", c=:black, ls=:dot)
-vline!([n*p_L]; label="n p_L", c=:red, ls=:dot)
-vline!([n*p_U]; label="n p_U", c=:red, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+vline!([n*p_U]; label="n p_U = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
 plot!([n*p_L, n*p_U], fill(-0.003, 2); label="", c=:red, lw=5)
-title!("[n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
+title!("n = $n,  [n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
 plot!(; xguide="K", ylim=(-0.007, 0.105));
 ```
 
@@ -1124,9 +1124,8 @@ $p_- = p_L$, $p_+ = p_U$ と書くと,
 $$
 p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
 \frac{1}{1+z^2/n}\left(
-\phat+\frac{z^2}{2n} \pm z\sqrt{
-\SEhat^2 + \frac{z^2}{4n^2}
-}
+\phat+\frac{z^2}{2n}
+\pm z\sqrt{\SEhat^2 + \frac{z^2}{4n^2}}
 \right).
 $$
 

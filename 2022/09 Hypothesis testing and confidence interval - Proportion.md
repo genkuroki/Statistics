@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-07
+* 2022-05-31～2022-06-08
 
 $
 \newcommand\op{\operatorname}
@@ -63,7 +63,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#比率の検定と信頼区間" data-toc-modified-id="比率の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の検定と信頼区間</a></span></li><li><span><a href="#P値と信頼区間の定義の復習" data-toc-modified-id="P値と信頼区間の定義の復習-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値と信頼区間の定義の復習</a></span></li><li><span><a href="#Clopper-Pearson" data-toc-modified-id="Clopper-Pearson-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Clopper-Pearson</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を与えるP値関数" data-toc-modified-id="Clopper-Pearsonの信頼区間を与えるP値関数-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間" data-toc-modified-id="Clopper-Pearsonの信頼区間-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間</a></span></li><li><span><a href="#問題:-Clopper-Pearsonの信頼区間の導出" data-toc-modified-id="問題:-Clopper-Pearsonの信頼区間の導出-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: Clopper-Pearsonの信頼区間の導出</a></span></li></ul></li><li><span><a href="#Sterne" data-toc-modified-id="Sterne-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Sterne</a></span><ul class="toc-item"><li><span><a href="#Sterneの信頼区間を与えるP値関数" data-toc-modified-id="Sterneの信頼区間を与えるP値関数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Sterneの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Sterneの信頼区間" data-toc-modified-id="Sterneの信頼区間-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Sterneの信頼区間</a></span></li></ul></li><li><span><a href="#Wilson" data-toc-modified-id="Wilson-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Wilson</a></span><ul class="toc-item"><li><span><a href="#Wilsonの信頼区間を与えるP値函数" data-toc-modified-id="Wilsonの信頼区間を与えるP値函数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Wilsonの信頼区間を与えるP値函数</a></span></li><li><span><a href="#Pearsonのχ²検定との関係" data-toc-modified-id="Pearsonのχ²検定との関係-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Pearsonのχ²検定との関係</a></span></li><li><span><a href="#Wilsonの信頼区間" data-toc-modified-id="Wilsonの信頼区間-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Wilsonの信頼区間</a></span></li><li><span><a href="#Wilsonの信頼区間の導出" data-toc-modified-id="Wilsonの信頼区間の導出-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Wilsonの信頼区間の導出</a></span></li></ul></li><li><span><a href="#Wald" data-toc-modified-id="Wald-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Wald</a></span><ul class="toc-item"><li><span><a href="#Waldの信頼区間を与えるP値関数" data-toc-modified-id="Waldの信頼区間を与えるP値関数-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Waldの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Waldの信頼区間" data-toc-modified-id="Waldの信頼区間-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Waldの信頼区間</a></span></li><li><span><a href="#問題:-Waldの信頼区間の導出" data-toc-modified-id="問題:-Waldの信頼区間の導出-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>問題: Waldの信頼区間の導出</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#比率の検定と信頼区間" data-toc-modified-id="比率の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の検定と信頼区間</a></span><ul class="toc-item"><li><span><a href="#P値と信頼区間の定義の復習" data-toc-modified-id="P値と信頼区間の定義の復習-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>P値と信頼区間の定義の復習</a></span></li><li><span><a href="#二項分布モデルのP値達の定義を1枚の図で要約" data-toc-modified-id="二項分布モデルのP値達の定義を1枚の図で要約-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのP値達の定義を1枚の図で要約</a></span></li><li><span><a href="#4種のP値函数のプロット" data-toc-modified-id="4種のP値函数のプロット-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>4種のP値函数のプロット</a></span></li></ul></li><li><span><a href="#Clopper-Pearson" data-toc-modified-id="Clopper-Pearson-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Clopper-Pearson</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を与えるP値関数" data-toc-modified-id="Clopper-Pearsonの信頼区間を与えるP値関数-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間" data-toc-modified-id="Clopper-Pearsonの信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間の図による把握" data-toc-modified-id="Clopper-Pearsonの信頼区間の図による把握-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の図による把握</a></span></li></ul></li><li><span><a href="#Sterne" data-toc-modified-id="Sterne-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Sterne</a></span><ul class="toc-item"><li><span><a href="#Sterneの信頼区間を与えるP値関数" data-toc-modified-id="Sterneの信頼区間を与えるP値関数-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Sterneの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Sterneの信頼区間" data-toc-modified-id="Sterneの信頼区間-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Sterneの信頼区間</a></span></li><li><span><a href="#Sterneの信頼区間の図による把握" data-toc-modified-id="Sterneの信頼区間の図による把握-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Sterneの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のbinom.testについて" data-toc-modified-id="おまけ:-R言語のbinom.testについて-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>おまけ: R言語のbinom.testについて</a></span></li></ul></li><li><span><a href="#Wilson" data-toc-modified-id="Wilson-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Wilson</a></span><ul class="toc-item"><li><span><a href="#Wilsonの信頼区間を与えるP値函数" data-toc-modified-id="Wilsonの信頼区間を与えるP値函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Wilsonの信頼区間を与えるP値函数</a></span></li><li><span><a href="#Wilsonの信頼区間" data-toc-modified-id="Wilsonの信頼区間-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Wilsonの信頼区間</a></span></li><li><span><a href="#Wilsonの信頼区間の図による把握" data-toc-modified-id="Wilsonの信頼区間の図による把握-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Wilsonの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のprop.testについて" data-toc-modified-id="おまけ:-R言語のprop.testについて-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>おまけ: R言語のprop.testについて</a></span></li><li><span><a href="#Pearsonのχ²検定との関係" data-toc-modified-id="Pearsonのχ²検定との関係-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Pearsonのχ²検定との関係</a></span></li><li><span><a href="#おまけ:-多項分布モデルにおけるPearsonのχ²検定" data-toc-modified-id="おまけ:-多項分布モデルにおけるPearsonのχ²検定-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>おまけ: 多項分布モデルにおけるPearsonのχ²検定</a></span></li><li><span><a href="#おまけ:-一般のχ²検定で使うχ²分布の自由度" data-toc-modified-id="おまけ:-一般のχ²検定で使うχ²分布の自由度-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>おまけ: 一般のχ²検定で使うχ²分布の自由度</a></span></li></ul></li><li><span><a href="#Wald" data-toc-modified-id="Wald-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Wald</a></span><ul class="toc-item"><li><span><a href="#Waldの信頼区間を与えるP値関数" data-toc-modified-id="Waldの信頼区間を与えるP値関数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Waldの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Waldの信頼区間" data-toc-modified-id="Waldの信頼区間-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Waldの信頼区間</a></span></li><li><span><a href="#Waldの信頼区間の図による把握" data-toc-modified-id="Waldの信頼区間の図による把握-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Waldの信頼区間の図による把握</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -82,7 +82,8 @@ using StaticArrays
 using StatsBase
 using StatsFuns
 using StatsPlots
-default(fmt = :png, titlefontsize = 10, size = (400, 250))
+default(fmt = :png, size = (400, 250),
+    titlefontsize = 10, plot_titlefontsize = 12)
 using SymPy
 ```
 
@@ -127,6 +128,641 @@ myskewness(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dis
 mykurtosis(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dist, 4) - 3
 ```
 
+__Clopper-Pearsonの節の準備__
+
+```julia
+function pvalue_clopper_pearson(dist::DiscreteUnivariateDistribution, x)
+    min(1, 2cdf(dist, x), 2ccdf(dist, x-1))
+end
+pvalue_clopper_pearson(n, k, p) = pvalue_clopper_pearson(Binomial(n, p), k)
+
+function confint_clopper_pearson(n, k; α = 0.05)
+    p_L = k > 0 ? quantile(Beta(k, n-k+1), α/2) : zero(α)
+    p_U = k < n ? quantile(Beta(k+1, n-k), 1-α/2) : one(α)
+    [p_L, p_U]
+end
+```
+
+```julia
+n = 10
+k = 0:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+]
+```
+
+```julia
+n, k, α = 100, 30, 0.05
+kmin, kmax = 0, 65
+p_L, p_U = confint_clopper_pearson(n, k; α)
+@show [p_L, p_U];
+```
+
+```julia
+dist_L, dist_U = Binomial(n, p_L), Binomial(n, p_U)
+```
+
+```julia
+var"Clopper-Pearson: 下側では p = p_L がぎりぎり" = plot(; size=(500, 300))
+plot!(k -> mypdf(dist_L, k), kmin-0.5, kmax+0.5;
+    label="", c=1)
+plot!(k -> mypdf(dist_L, k), k-0.5, kmax+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(100α/2)%", :blue, :left, 10))
+title!("Binomial(n=$n, p=p_L),  p_L=$(round(p_L; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Clopper-Pearson: 上側では p = p_U がぎりぎり" = plot(; size=(500, 300))
+plot!(k -> mypdf(dist_U, k), kmin-0.5, kmax+0.5;
+    label="", c=2)
+plot!(k -> mypdf(dist_U, k), kmin-0.5, k+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+annotate!(k-2, 0.01, text("$(100α/2)%", :red, :right, 10))
+title!("Binomial(n=$n, p=p_U),  p_U=$(round(p_U; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_U]; label="n p_L = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Clopper-Pearson: n × 95%信頼区間" = plot(; size=(500, 300))
+
+plot!(k -> mypdf(dist_L, k), kmin-0.5, 47+0.5;
+    label="", c=1)
+plot!(k -> mypdf(dist_L, k), k-0.5, 47+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(100α/2)%", :blue, :left, 10))
+
+plot!(k -> mypdf(dist_U, k), 15-0.5, kmax+0.5;
+    label="", c=2)
+plot!(k -> mypdf(dist_U, k), 15-0.5, k+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+annotate!(k-2, 0.01, text("$(100α/2)%", :red, :right, 10))
+
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+vline!([n*p_U]; label="n p_U = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!([n*p_L, n*p_U], fill(-0.003, 2); label="", c=:red, lw=5)
+title!("n = $n,  [n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
+plot!(; ylim=(-0.007, 0.105));
+```
+
+__Sterneの節の準備__
+
+```julia
+_pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
+
+function _search_boundary(f, x0, Δx, param)
+    x = x0
+    if f(x, param)
+        while f(x - Δx, param) x -= Δx end
+    else
+        x += Δx
+        while !f(x, param) x += Δx end
+    end
+    x
+end
+
+function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    Px == 1 && return Px
+    m = mode(dist)
+    Px ≈ pdf(dist, m) && return one(Px)
+    if x < m
+        y = _search_boundary(_pdf_le, 2m - x, 1, (dist, Px))
+        cdf(dist, x) + ccdf(dist, y-1)
+    else # x > m
+        y = _search_boundary(_pdf_le, 2m - x, -1, (dist, Px))
+        cdf(dist, y) + ccdf(dist, x-1)
+    end
+end
+
+function pvalue_sterne(n, k, p)
+    0 < p ≤ 1 ? pvalue_sterne(Binomial(n, p), k) : zero(p)
+end
+
+function confint_sterne(n, k; α = 0.05)
+    find_zeros(p -> log(pvalue_sterne(n, k, p)) - log(α), -1.01, 1.01)
+end
+```
+
+```julia
+n = 10
+k = 0:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+    vcat(confint_sterne.(n, k)'...);;
+]
+```
+
+```julia
+n, k, α = 100, 30, 0.05
+kmin, kmax = 0, 65
+p_L, p_U = confint_sterne(n, k; α)
+@show [p_L, p_U];
+```
+
+```julia
+dist_L = Binomial(n, p_L)
+k_L = minimum(i for i in 0:n if !(pdf(dist_L, i) ⪅ pdf(dist_L, k))) - 1
+cdf_L = cdf(dist_L, k_L)
+ccdf_L = ccdf(dist_L, k-1)
+cdf_L + ccdf_L
+```
+
+```julia
+dist_U = Binomial(n, p_U)
+k_U = maximum(i for i in 0:n if !(pdf(dist_U, i) ⪅ pdf(dist_U, k))) + 1
+cdf_U = cdf(dist_U, k)
+ccdf_U = ccdf(dist_U, k_U-1)
+cdf_U + ccdf_U
+```
+
+```julia
+var"Sterne: 下側では p = p_L がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_L, i), kmin-0.5, kmax+0.5;
+    label="", c=1)
+plot!(i -> mypdf(dist_L, i), k-0.5, kmax+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+plot!(i -> mypdf(dist_L, i), kmin-0.5, k_L+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+plot!([k_L+0.5, k-0.5], fill(pdf(dist_L, k), 2); label="", c=:blue, ls=:dot)
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+title!("Binomial(n=$n, p=p_L),  p_L=$(round(p_L; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Sterne: 上側では p = p_U がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_U, i), kmin-0.5, kmax+0.5;
+    label="", c=2)
+plot!(i -> mypdf(dist_U, i), kmin-0.5, k+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+plot!(i -> mypdf(dist_U, i), k_U-0.5, kmax+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+plot!([k+0.5, k_U-0.5], fill(pdf(dist_U, k), 2); label="", c=:red, ls=:dot)
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+title!("Binomial(n=$n, p=p_U),  p_U=$(round(p_U; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_U]; label="n p_L = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Sterne: n × 95%信頼区間" = plot(; size=(500, 300))
+
+plot!(k -> mypdf(dist_L, k), kmin-0.5, 47+0.5;
+    label="", c=1)
+plot!(k -> mypdf(dist_L, k), k-0.5, 47+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+plot!(i -> mypdf(dist_L, i), kmin-0.5, k_L+0.5;
+    fillrange=0, c=1, fc=:blue, fa=0.5, label="")
+#plot!([k_L+0.5, k-0.5], fill(pdf(dist_L, k), 2); label="", c=:blue, ls=:dot)
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+
+plot!(i -> mypdf(dist_U, i), 15-0.5, kmax+0.5;
+    label="", c=2)
+plot!(i -> mypdf(dist_U, i), 15-0.5, k+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+plot!(i -> mypdf(dist_U, i), k_U-0.5, kmax+0.5;
+    fillrange=0, c=2, fc=:red, fa=0.5, label="")
+#plot!([k+0.5, k_U-0.5], fill(pdf(dist_U, k), 2); label="", c=:red, ls=:dot)
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+vline!([n*p_U]; label="n p_U = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!([n*p_L, n*p_U], fill(-0.003, 2); label="", c=:red, lw=5)
+title!("n = $n,  [n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
+plot!(; ylim=(-0.007, 0.105));
+```
+
+__Wilsonの節の準備__
+
+```julia
+function pvalue_wilson(n, k, p)
+    p̂ = k/n
+    SE = √(p*(1-p)/n)
+    2ccdf(Normal(), abs(p̂ - p)/SE)
+end
+
+function confint_wilson(n, k; α = 0.05)
+    p̂ = k/n
+    z = quantile(Normal(), 1-α/2)
+    a, b, c = 1+z^2/n, p̂+z^2/(2n), p̂^2
+    sqrtD = √(b^2 - a*c)
+    p_L = (b - sqrtD)/a
+    p_U = (b + sqrtD)/a
+    [p_L, p_U]
+end
+```
+
+```julia
+n = 10
+k = 0:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+    vcat(confint_sterne.(n, k)'...);;
+    vcat(confint_wilson.(n, k)'...);;
+]
+```
+
+```julia
+α = 0.05
+z = quantile(Normal(), 1 - α/2)
+
+var"z_{0.025}の定義" = plot()
+plot!(Normal(),  -5,  5; label="")
+plot!(Normal(), -5, -z; label="", c=1, fillrange=0, fc=:red, fa=0.3)
+plot!(Normal(),  z,  5; label="", c=1, fillrange=0, fc=:red, fa=0.3)
+plot!([-z, -z, NaN, z, z],
+    [0, pdf(Normal(), -z), NaN, 0, pdf(Normal(), z)];
+    label="\$\\pm z_{0.025}\$", c=:red)
+title!("Normal(0,1)"; xtick=-10:10)
+annotate!(-2.2, 0.06, text("2.5%", 10, :red, :right))
+annotate!(2.2, 0.06, text("2.5%", 10, :red, :left))
+plot!(; legendfontsize=14);
+```
+
+```julia
+n, k, α = 100, 30, 0.05
+kmin, kmax = 0, 65
+p_L, p_U = confint_wilson(n, k; α)
+@show [p_L, p_U];
+```
+
+```julia
+dist_L, dist_U = Binomial(n, p_L), Binomial(n, p_U)
+normal_L = Normal(n*p_L, √(n*p_L*(1-p_L)))
+normal_U = Normal(n*p_U, √(n*p_U*(1-p_U)))
+k_L, k_U = 2n*p_L - k, 2n*p_U - k
+cdf_L, ccdf_L = cdf(normal_L, k_L), ccdf(normal_L, k)
+cdf_U, ccdf_U = cdf(normal_U, k), ccdf(normal_U, k_U);
+```
+
+```julia
+var"Wilson: 下側では p = p_L がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_L, i), kmin-0.5, kmax+0.5;
+    label="", c=1)
+plot!(normal_L; label="normal approx", c=:blue)
+plot!(x -> pdf(normal_L, x), k, kmax+0.5;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_L, x), kmin-0.5, k_L;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+title!("Binomial(n=$n, p=p_L),  p_L=$(round(p_L; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Wilson: 上側では p = p_U がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_U, i), kmin-0.5, kmax+0.5;
+    label="", c=2)
+plot!(normal_U; label="normal approx", c=:red)
+plot!(x -> pdf(normal_U, x), k_U, kmax+0.5;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_U, x), kmin-0.5, k;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="")
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+title!("Binomial(n=$n, p=p_U),  p_U=$(round(p_U; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_U]; label="n p_L = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Wilson: n × 95%信頼区間" = plot(; size=(500, 300))
+
+plot!(i -> mypdf(dist_L, i), kmin-0.5, 47+0.5;
+    label="", c=1)
+plot!(normal_L; label="normal approx", c=:blue)
+plot!(x -> pdf(normal_L, x), k, 47+0.5;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_L, x), kmin-0.5, k_L;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+
+plot!(i -> mypdf(dist_U, i), 15-0.5, kmax+0.5;
+    label="", c=2)
+plot!(normal_U; label="normal approx", c=:red)
+plot!(x -> pdf(normal_U, x), k_U, kmax+0.5;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_U, x), 15-0.5, k;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="")
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+vline!([n*p_U]; label="n p_U = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!([n*p_L, n*p_U], fill(-0.003, 2); label="", c=:red, lw=5)
+title!("n = $n,  [n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
+plot!(; ylim=(-0.007, 0.105));
+```
+
+__Waldの節の準備__
+
+```julia
+function pvalue_wald(n, k, p)
+    p̂ = k/n
+    SEhat = √(p̂*(1-p̂)/n)
+    2ccdf(Normal(), abs(p̂ - p)/SEhat)
+end
+
+function confint_wald(n, k; α = 0.05)
+    p̂ = k/n
+    SEhat = √(p̂*(1-p̂)/n)
+    z = quantile(Normal(), 1-α/2)
+    p_L = p̂ - z*SEhat
+    p_U = p̂ + z*SEhat
+    [p_L, p_U]
+end
+```
+
+```julia
+n = 10
+k = 0:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+    vcat(confint_sterne.(n, k)'...);;
+    vcat(confint_wilson.(n, k)'...);;
+    vcat(confint_wald.(n, k)'...);;
+]
+```
+
+```julia
+n = 100
+k = 0:10:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+    vcat(confint_sterne.(n, k)'...);;
+    vcat(confint_wilson.(n, k)'...);;
+    vcat(confint_wald.(n, k)'...);;
+]
+```
+
+```julia
+n = 1000
+k = 0:100:n
+[
+    k/n;;
+    vcat(confint_clopper_pearson.(n, k)'...);;
+    vcat(confint_sterne.(n, k)'...);;
+    vcat(confint_wilson.(n, k)'...);;
+    vcat(confint_wald.(n, k)'...);;
+]
+```
+
+```julia
+n, k, α = 100, 30, 0.05
+kmin, kmax = 0, 65
+p_L, p_U = confint_wald(n, k; α)
+@show [p_L, p_U];
+```
+
+```julia
+dist_L, dist_U = Binomial(n, p_L), Binomial(n, p_U)
+p̂ = k/n
+normal_L = Normal(n*p_L, √(n*p̂*(1-p̂)))
+normal_U = Normal(n*p_U, √(n*p̂*(1-p̂)))
+k_L, k_U = 2n*p_L - k, 2n*p_U - k
+cdf_L, ccdf_L = cdf(normal_L, k_L), ccdf(normal_L, k)
+cdf_U, ccdf_U = cdf(normal_U, k), ccdf(normal_U, k_U);
+```
+
+```julia
+var"Wald: 下側では p = p_L がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_L, i), kmin-0.5, kmax+0.5;
+    label="", c=1)
+plot!(normal_L; label="normal approx", c=:blue)
+plot!(x -> pdf(normal_L, x), k, kmax+0.5;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_L, x), kmin-0.5, k_L;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+title!("Binomial(n=$n, p=p_L),  p_L=$(round(p_L; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Wald: 上側では p = p_U がぎりぎり" = plot(; size=(500, 300))
+plot!(i -> mypdf(dist_U, i), kmin-0.5, kmax+0.5;
+    label="", c=2)
+plot!(normal_U; label="normal approx", c=:red)
+plot!(x -> pdf(normal_U, x), k_U, kmax+0.5;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_U, x), kmin-0.5, k;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="")
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+title!("Binomial(n=$n, p=p_U),  p_U=$(round(p_U; digits=4))")
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_U]; label="n p_L = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!(; ylim=(-0.007, 0.105));
+```
+
+```julia
+var"Wald: n × 95%信頼区間" = plot(; size=(500, 300))
+
+plot!(i -> mypdf(dist_L, i), kmin-0.5, 47+0.5;
+    label="", c=1)
+plot!(normal_L; label="normal approx", c=:blue)
+plot!(x -> pdf(normal_L, x), k, 47+0.5;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_L, x), kmin-0.5, k_L;
+    fillrange=0, c=:blue, fc=:blue, fa=0.5, label="")
+annotate!(k+2, 0.01, text("$(round(100ccdf_L; digits=1))%", :blue, :left, 10))
+annotate!(k_L-2, 0.01, text("$(round(100cdf_L; digits=1))%", :blue, :right, 10))
+
+plot!(i -> mypdf(dist_U, i), 15-0.5, kmax+0.5;
+    label="", c=2)
+plot!(normal_U; label="normal approx", c=:red)
+plot!(x -> pdf(normal_U, x), k_U, kmax+0.5;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="", ls=:dot)
+plot!(x -> pdf(normal_U, x), 15-0.5, k;
+    fillrange=0, c=:red, fc=:red, fa=0.5, label="")
+annotate!(k_U+2, 0.01, text("$(round(100ccdf_U; digits=1))%", :red, :left, 10))
+annotate!(k-2, 0.01, text("$(round(100cdf_U; digits=1))%", :red, :right, 10))
+
+vline!([k]; label="k=$k", c=:black, ls=:dot)
+vline!([n*p_L]; label="n p_L = $(round(n*p_L; digits=2))", c=:blue, ls=:dash)
+vline!([n*p_U]; label="n p_U = $(round(n*p_U; digits=2))", c=:red, ls=:dashdot)
+plot!([n*p_L, n*p_U], fill(-0.003, 2); label="", c=:red, lw=5)
+title!("n = $n,  [n p_L, n p_U] = [$(round(n*p_L; digits=2)), $(round(n*p_U; digits=2))]")
+plot!(; ylim=(-0.007, 0.105));
+```
+
+__P値達の説明用__
+
+```julia
+function illustrate_binomial_pvalues()
+    n = 20
+    p = 0.25
+    k = 9
+    
+    p̂ = k/n
+    σ̂² = n*p̂*(1-p̂)
+    
+    null = Binomial(n, p)
+    μ, σ² = mean(null), var(null)
+    nullname = distname(null)
+    
+    f(x) = mypdf(null, x)
+    xlim = (-2, n+1)
+    xlimk = (k-0.5, n+0.5)
+    
+    pval = @sprintf "%.03f" pvalue_clopper_pearson(n, k, p)
+    cval = @sprintf "%.03f" ccdf(null, k-1)
+    P1 = plot(title="(1) Clopper-Pearson")
+    plot!(f, xlim...; label="", c=1)
+    plot!(f, xlimk...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    annotate!(k+5, 4f(k), text("P-value = $pval", 10, :red))
+    plot!([k+7, k+7], [2.4f(k), 3.6f(k)]; arrow=true, c=:red, label="")
+    annotate!(k+6, 3f(k), text("2×", 10, :red, :right))
+    annotate!(k+5, 2f(k), text("one-tailed = $cval", 10, :red))
+    plot!([k+7, k+1], [1.5f(k), 1.5f(k+1)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_sterne(n, k, p)
+    j = _search_boundary(_pdf_le, 2mode(null)-k, -1, (null, pdf(null, k)))
+    xlimj = (-0.5, j+0.5)
+    P2 = plot(title="(2) Sterne")
+    plot!(f, xlim...; label="", c=1)
+    plot!(f, xlimk...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    plot!(f, xlimj...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!([k-0.5, j+0.5], [f(k), f(k)]; label="", c=2, ls=:dash)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+1], [2.5f(k), 0.8f(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+1], [2.5f(k), 0.8f(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_wilson(n, k, p)
+    normal = Normal(μ, √σ²)
+    g(x) = pdf(normal, x)
+    P3 = plot(title="(3) Wilson")
+    plot!(f, xlim...; label="", c=1)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!(g, xlim...; ls=:dash, label="Normal(μ=$μ, σ=√$σ²)", c=2)
+    plot!(g, k, n; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    plot!(g, -2, 2μ-k; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+0.5], [2.5f(k), 0.8g(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+0.2], [2.5f(k), 0.7g(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_wald(n, k, p)
+    normal = Normal(μ, √σ̂²)
+    h(x) = pdf(normal, x)
+    P4 = plot(title="(4) Wald")
+    plot!(f, xlim...; label="", c=1)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!(h, xlim...; ls=:dash, label="Normal(μ=$μ, σ=√$σ̂²)", c=2)
+    plot!(h, k, n; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    plot!(h, -2, 2μ-k; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+0.5], [2.5f(k), 0.8g(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+0.2], [2.5f(k), 0.7g(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+
+    plot(P1, P2, P3, P4; size=(800, 520), layout=(2, 2))
+    plot!(; plot_title="model: $nullname,   data: n=$n, k=$k")
+end
+
+#illustrate_binomial_pvalues()
+```
+
+```julia
+# 二項分布モデルの4種のP値函数のプロット
+
+function plot_binom_pvaluefunctions(; n = 20, k = 6)
+    P1 = plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1;
+        label="", title="Clopper-Pearson", c=1)
+    P2 = plot(p -> pvalue_sterne(n, k, p), 0, 1;
+        label="", title="Sterne", c=2)
+    P3 = plot(p -> pvalue_wilson(n, k, p), 0, 1;
+        label="", title="Wilson", c=3)
+    P4 = plot(p -> pvalue_wald(n, k, p), 0, 1;
+        label="", title="Wald", ls=:dash, c=4)
+    plot(P1, P2, P3, P4; size=(800, 520), layout=(2, 2))
+    plot!(; xtick=0:0.1:1, ytick=0:0.1:1)
+    plot!(; xguide="success rate parameter p",
+            yguide="P-value", guidefontsize=10)
+    plot!(; plot_title="data: n = $n, k = $k",
+            plot_titlefontsize=12)
+    plot!(; titlefontsize=12)
+end
+
+#plot_binomial_pvaluefunctions(; n = 20, k = 6)
+```
+
+```julia
+# 二項分布モデルのP値函数の動画 (データ k を動かしてアニメ化)
+
+function gif_binomtest(; n = 20, fn = "images/pvaluefunction20.gif", fps = 5, step=1)
+    anim = @animate for k in [0:step:n; n-1:-step:1]
+        plot(p -> pvalue_clopper_pearson(n, k, p), 0, 1; label="Clopper-Pearson")
+        plot!(p -> pvalue_sterne(n, k, p), 0, 1; label="Sterne")
+        plot!(p -> pvalue_wilson(n, k, p), 0, 1; label="Wilson")
+        plot!(p -> pvalue_wald(n, k, p), 0, 1; label="Wald", ls=:dash)
+        plot!(; xtick=0:0.1:1, ytick=0:0.1:1)
+        plot!(; xguide="success rate parameter p", yguide="P-value")
+        title!("data: n = $n, k = $k")
+        plot!(; size=(600, 300))
+        2k > n && plot!(; legend=:topleft)
+    end
+    gif(anim, fn; fps)
+end
+```
+
+```julia
+# P値函数と信頼区間を同時プロット
+
+function plot_binom_pvalue_and_confint(
+        pvalfunc, cifunc, n, k;
+        α = 0.05, name = "", size=(500, 300), kwargs...)
+    p_L, p_U = ci = cifunc(n, k; α)
+    plot(p -> pvalfunc(n, k, p), 0, 1;
+        label="P-value function", c=1)
+    plot!(ci, fill(α, 2); label="confidence interval", c=:red, lw=2)
+    vline!([p_L]; label="p_L", c=2, ls=:dash)
+    vline!([p_U]; label="p_U", c=3, ls=:dashdot)
+    plot!(; xtick=0:0.1:1, ytick=0:0.05:1, tickfontsize=7)
+    plot!(; xguide="success rate parameter p", yguide="P-value")
+    title!("$(name)n=$n, k=$k, α=$α")
+    plot!(; size, kwargs...)
+end
+
+#plot_binom_pvalue_and_confint(
+#    pvalue_clopper_pearson, confint_clopper_pearson, 20, 6;
+#    name = "Clopper-Pearson: ")
+```
+
 ## 比率の検定と信頼区間
 
 以下のようなことを行いたい.
@@ -148,7 +784,7 @@ mykurtosis(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dis
 __注意:__ 現実世界の統計分析では「成功」は「死亡」を意味する場合もあって, 良いことばかりとは限らない.
 
 
-## P値と信頼区間の定義の復習
+### P値と信頼区間の定義の復習
 
 比率の二項分布モデルでの取り扱いを例にP値と信頼区間の定義を復習しよう.
 
@@ -204,6 +840,38 @@ $$
 $$
 
 __信頼区間の使い方:__ 信頼区間に含まれるパラメータ値 $p=p_0$ についてはその妥当性についての判断は保留する.  信頼区間に含まれないパラメータ値 $p=p_0$ については, 仮説 $p=p_0$ が検定によって棄却されたと考える. (注意: 実際には統計モデルのすべての前提が疑われることになる.)
+
+
+### 二項分布モデルのP値達の定義を1枚の図で要約
+
+```julia
+illustrate_binomial_pvalues()
+```
+
+### 4種のP値函数のプロット
+
+```julia
+plot_binom_pvaluefunctions()
+```
+
+```julia
+gif_binomtest()
+```
+
+```julia
+plot_binom_pvaluefunctions(n = 100, k = 30)
+```
+
+```julia
+gif_binomtest(; n = 100, fn = "images/pvaluefunction100.gif", fps = 20)
+```
+
+PDFファイルではこの動画を見ることはできない.  作成した動画は
+
+* https://github.com/genkuroki/Statistics/blob/master/2022/images/pvaluefunction20.gif
+* https://github.com/genkuroki/Statistics/blob/master/2022/images/pvaluefunction100.gif
+
+でも見ることができる.
 
 
 ## Clopper-Pearson
@@ -268,15 +936,44 @@ $$
 によって, $p_L, p_U$ を計算可能である.
 
 
-### 問題: Clopper-Pearsonの信頼区間の導出
+### Clopper-Pearsonの信頼区間の図による把握
 
-P値の定義 $\pvalue_\CP(k|n,p=p_0)$ に対応する信頼区間が実際に前節で記述した $\confint_CP(k|n,\alpha)$ になることを示せ.
+以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう.
 
-__ヒント:__ 「例：ベータ函数と二項分布の関係とその応用」のノートの「Clopper-Pearsonの信頼区間の定義」の節を参照せよ.
 
-__解答例:__
+まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
 
-__解答終__
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+
+__しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
+
+```julia
+plot_binom_pvalue_and_confint(
+    pvalue_clopper_pearson, confint_clopper_pearson, 100, 30;
+    name = "Clopper-Pearson: ", xlim=(0.15, 0.5), xtick=0:0.05:1)
+```
+
+$1-\alpha = 95\%$ 信頼区間の下限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を小さくして行って, モデル内でデータの数値 $k$ 以上の値が生成される確率の2倍(＝Clopper-Pearsonの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になる $p$ の値を見つければよい. そのとき, モデル内でデータの数値 $k$ 以上の値が生成される確率は $\alpha/2=2.5\%$ になっている. そのような $p$ を $p_L = p\_L$ とする.
+
+```julia
+var"Clopper-Pearson: 下側では p = p_L がぎりぎり"
+```
+
+$1-\alpha = 95\%$ 信頼区間の上限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を大きくして行って, モデル内でデータの数値 $k$ 以下の値が生成される確率の2倍(＝Clopper-Pearsonの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になる $p$ の値を見つければよい. そのとき, モデル内でデータの数値 $k$ 以下の値が生成される確率は $\alpha/2=2.5\%$ になっている. そのような $p$ を $p_U = p\_U$ とする.
+
+```julia
+var"Clopper-Pearson: 上側では p = p_U がぎりぎり"
+```
+
+以上をまとめると以下のような図を描ける.
+
+```julia
+var"Clopper-Pearson: n × 95%信頼区間"
+```
+
+この場合のClopper-Pearsonの信頼区間は $[0.2124, 0.3998]$ になっている.
+
+以上の図は[「例：ベータ函数と二項分布の関係とその応用」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.ipynb)の「Clopper-Pearsonの信頼区間の定義」の節で使ったのと同じものである.
 
 
 ## Sterne
@@ -332,10 +1029,52 @@ __注意:__ Sterneの信頼区間とClopper-Pearsonの信頼区間などの比�
 * 原茂恵美子, 武藤彬正, 宮島育哉, 榊原伊織, SASによる二項比率における正確な信頼区間の比較, 2014. \[[pdf](https://www.sas.com/content/dam/SAS/ja_jp/doc/event/sas-user-groups/usergroups14-d-05.pdf)\]
 
 
-__注意:__ R言語の `binom.test` がデフォルトで表示するP値はSterneの信頼区間を与えるP値であるが, それと同時に表示される信頼区間はClopper-Pearsonの信頼区間の方になってしまっている.  そのせいで, P値が有意水準未満なのに, 帰無仮説を与える成功確率パラメータ値が信頼区間に含まれてしまう場合がある.
+### Sterneの信頼区間の図による把握
+
+以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう.
+
+
+まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
+
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+
+__しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
 
 ```julia
-R"binom.test(10, 20, p=0.72, conf.level=0.95)"
+plot_binom_pvalue_and_confint(
+    pvalue_sterne, confint_sterne, 100, 30;
+    name = "Sterne: ", xlim=(0.15, 0.5), xtick=0:0.05:1)
+```
+
+$1-\alpha = 95\%$ 信頼区間の下限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を小さくして行って, モデル内でデータの数値 $k$ 以上の値が生成される確率とその反対側の確率の和(＝Sterneの信頼区間を与えるP値)が $\alpha = 5\%$ 以上になるような $p$ の値の下限を見つければよい. そのような $p$ を $p_L = p\_L$ とする.
+
+```julia
+var"Sterne: 下側では p = p_L がぎりぎり"
+```
+
+$1-\alpha = 95\%$ 信頼区間の上限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を大きくして行って, モデル内でデータの数値 $k$ 以下の値が生成される確率とその反対側の確率の和(＝Sterneの信頼区間を与えるP値)が $\alpha = 5\%$ 以上になるような $p$ の値の上限を見つければよい. そのような $p$ を $p_U = p\_U$ とする.
+
+```julia
+var"Sterne: 上側では p = p_U がぎりぎり"
+```
+
+以上をまとめると以下のような図を描ける.
+
+```julia
+var"Sterne: n × 95%信頼区間"
+```
+
+この場合のSterneの信頼区間は $[0.2142, 0.3996]$ になっている.
+
+これは, 同じ場合のClopper-Pearsonの信頼区間の $[0.2124, 0.3998]$ よりもほんの少し狭いが, ほぼ同じであると言ってよいだろう.
+
+
+### おまけ: R言語のbinom.testについて
+
+R言語の `binom.test` がデフォルトで表示するP値はSterneの信頼区間を与えるP値であるが, それと同時に表示される信頼区間はClopper-Pearsonの信頼区間の方になってしまっている.  そのせいで, P値が有意水準未満なのに, 帰無仮説を与える成功確率パラメータ値が信頼区間に含まれてしまう場合がある.
+
+```julia
+R"binom.test(10, 20, p = 0.72, conf.level = 0.95)"
 ```
 
 上のRの`binom.test`の結果と以下を比較してみよ.
@@ -388,9 +1127,9 @@ $$
 \hline
 \text{計算法} & \text{仮説 $p=0.72$ のP値} & \text{信頼区間} \\ 
 \hline
-\text{Sterne} & 4.277\% < \alpha = 5\% & [0.2927095, 0.7072905] \\
+\text{Sterne} & 4.277\% < \alpha = 5\% & 0.72 \not\in [0.2927095, 0.7072905] \\
 \hline
-\text{Clopper-Pearson} & 6.093\% > \alpha = 5\% & [0.2719578, 0.7280422] \\
+\text{Clopper-Pearson} & 6.093\% > \alpha = 5\% & 0.72 \in [0.2719578, 0.7280422] \\
 \hline
 \end{array}
 $$
@@ -410,19 +1149,189 @@ $$
 2\left(1 - \cdf\left(\Normal(0,1), \frac{|k - np_0|}{\sqrt{np_0(1-p_0)}}\right)\right).
 $$
 
-右辺は標準正規分布において, 絶対値が $|k-np_0|/\sqrt{np_0(1-p_0)}$ 以上になる確率である.
+右辺は標準正規分布において絶対値が $|k-np_0|/\sqrt{np_0(1-p_0)}$ 以上になる確率である.
 
-標準正規分布に従う確率変数の2乗は自由度 $1$ のχ²分布に従うことを使えば, これは次のように表される:
+
+### Wilsonの信頼区間
+
+以下で使う記号を準備しよう. $\phat, \SEhat, \SE$ を以下のように定義する:
+
+$$
+\phat = \frac{k}{n}, \quad
+\SEhat = \sqrt{\frac{\phat(1 - \phat)}{n}}, \quad
+\SE = \sqrt{\frac{p(1 - p)}{n}}.
+$$
+
+ハットが付いている記号はデータの数値から計算した推定値であり, $\SE$ は標準誤差(standard error)の略である($\SE$ は $k$ が二項分布 $\Binomial(n,p)$ に従ってランダムに生成されているときの $\phat$ の標準偏差になる).
+
+次が成立していることにも注意せよ(左辺の分子分布を $n$ で割る):
+
+$$
+\frac{k - np}{\sqrt{np_0(1-p)}} =
+\frac{\phat - p}{\SE}.
+$$
+
+$k$ が二項分布 $\op{Binomial}(n,p)$ 従ってランダムに生成されているとき, これは近似的に標準正規分布に従うのであった.
+
+この場合の信頼区間は以下のように記述される.
+
+まず, $z_{\alpha/2}$ を次のように定める:
+
+$$
+z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2).
+$$
+
+これは標準正規分布において $z_{\alpha/2}$ 以上になる確率が $\alpha/2$ になるという意味である.
+
+```julia
+var"z_{0.025}の定義"
+```
+
+以下, 記号の簡単のため次のようにおく:
+
+$$
+z=z_{\alpha/2}.
+$$
+
+このとき, 標準正規分布において絶対値が $(\phat - p)/\SE$ の絶対値以上の値が生成される確率が $\alpha$ に等しいことと
+
+$$
+\frac{(\phat - p)^2}{\SE^2} = z_{\alpha/2}^2 = z^2
+$$
+
+となることは同値である. $\SE^2 = p(1-p)/n$ なので, これは $p$ に関する次の二次方程式と同値である:
+
+$$
+\left(1 + \frac{z^2}{n}\right)p^2 -2\left(\phat + \frac{z^2}{2n}\right)p + \phat^2 = 0.
+$$
+
+そこで, $a,b,c$ を
+
+$$
+a = 1 + \frac{z^2}{n}, \quad
+b = \phat + \frac{z^2}{2n}, \quad
+c = \phat^2
+$$
+
+とおく. このとき, 上の二次方程式の2つの解を $p_- \le p_+$ と書く:
+
+$$
+p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
+\frac{1}{1+z^2/n}\left(
+\phat+\frac{z^2}{2n}
+\pm z\sqrt{\SEhat^2 + \frac{z^2}{4n^2}}
+\right).
+$$
+
+このとき,
+
+$$
+\confint_\Wilson(k|n,\alpha) :=
+\{\, p \in [0, 1] \mid \pvalue_\Wilson(k|n,p) \ge \alpha \,\} =
+[p_-, p_+].
+$$
+
+これを __Wilsonの信頼区間__ と呼ぶ.
+
+__注意:__ Wilsonの信頼区間を与えるP値はシンプルに定義されたが, 対応する信頼区間の計算には二次方程式を解く必要がある.  次の節で説明するWaldの信頼区間はこの部分を簡略化したものとみなされる. 
+
+__注意:__ 上で省略した計算の細部は自分で埋めよ.  Wilsonの信頼区間の導出については [「例：ベータ函数と二項分布の関係とその応用」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.ipynb)の「Wilsonの信頼区間の基礎」の節も参照せよ.
+
+
+### Wilsonの信頼区間の図による把握
+
+以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう.
+
+
+まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
+
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+
+__しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
+
+```julia
+plot_binom_pvalue_and_confint(
+    pvalue_wilson, confint_wilson, 100, 30;
+    name = "Wilson: ", xlim=(0.15, 0.5), xtick=0:0.05:1)
+```
+
+$1-\alpha = 95\%$ 信頼区間の下限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を小さくして行って, その二項分布を近似する正規分布内でデータの数値 $k$ 以上の値が生成される確率とその反対側の確率の和(＝Wilsonの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になるような $p$ を見つければよい. そのような $p$ を $p_L = p\_L$ とする.
+
+```julia
+var"Wilson: 下側では p = p_L がぎりぎり"
+```
+
+$1-\alpha = 95\%$ 信頼区間の上限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を大きくして行って, その二項分布を近似する正規分布内でデータの数値 $k$ 以下の値が生成される確率とその反対側の確率の和(＝Wilsonの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になるような $p$ を見つければよい. そのような $p$ を $p_U = p\_U$ とする.
+
+```julia
+var"Wilson: 上側では p = p_U がぎりぎり"
+```
+
+以上をまとめると以下のような図を描ける.
+
+```julia
+var"Wilson: n × 95%信頼区間"
+```
+
+この場合のWilsonの信頼区間は $[0.2189, 0.3958]$ である.
+
+これは, 同じ場合のClopper-Pearsonの信頼区間の $[0.2124, 0.3998]$ とSterneの信頼区間は $[0.2142, 0.3996]$ の両方よりも少し狭いが, ほぼ同じであると言ってよいだろう.
+
+
+### おまけ: R言語のprop.testについて
+
+R言語では `prop.test` 函数でWilsonの信頼区間を与えるP値とWilsonの信頼区間を計算できる. ただし, `correct = FALSE` として, 連続性補正(continuity correction)をオフにしなければ, 以上で説明したWilsonの信頼区間およびそれを与えるP値とはぴったり一致しない値が表示される.
+
+連続性補正については[「大数の法則と中心極限定理」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)の「連続性補正とmid-P補正」の節を参照せよ.
+
+```julia
+# これは連続性補正有りの計算結果になっており,
+# 上で説明した補正無しのWilsonの信頼区間とそれを与えるP値とは異なる.
+R"prop.test(10, 20, p = 0.72, conf.level = 0.95)"
+```
+
+```julia
+R"prop.test(10, 20, p = 0.72, conf.level = 0.95, correct = FALSE)"
+```
+
+以上のR言語による計算結果と以下のセルでの計算結果を比較してみよ.
+
+```julia
+n, k, p, α = 20, 10, 0.72, 0.05
+@show n k p α
+println()
+@show z = quantile(Normal(), 1-α/2)
+@show p̂ = k/n
+@show SE = √(p*(1-p)/n)
+@show p̂_L, p̂_U = (k - 0.5)/n, (k + 0.5)/n
+
+p_value_wilson_corrected = 2ccdf(Normal(), (abs(p̂ - p)-0.5/n)/SE)
+a, b_L, c_L, b_U, c_U = 1+z^2/n, p̂_L+z^2/(2n), p̂_L^2, p̂_U+z^2/(2n), p̂_U^2
+conf_int_wilson_corrected = [(b_L - √(b_L^2-a*c_L))/a, (b_U + √(b_U^2-a*c_U))/a]
+
+p_value_wilson = 2ccdf(Normal(), abs(p̂ - p)/SE)
+a, b, c = 1+z^2/n, p̂+z^2/(2n), p̂^2
+conf_int_wilson = [(b - √(b^2-a*c))/a, (b + √(b^2-a*c))/a]
+
+println()
+@show p_value_wilson_corrected
+@show conf_int_wilson_corrected
+println()
+@show p_value_wilson
+@show conf_int_wilson
+;
+```
+
+### Pearsonのχ²検定との関係
+
+標準正規分布に従う確率変数の2乗は自由度 $1$ のχ²分布に従うことを使えば, 上のP値は次のように表される:
 
 $$
 \pvalue_\Wilson(k|n,p=p_0) = 
 1 - \cdf\left(\Chisq(1), \frac{(k - np_0)^2}{np_0(1-p_0)}\right).
 $$
 
-
-### Pearsonのχ²検定との関係
-
-上のP値を, スコア統計量(score statistics)に基くP値と呼んだり, Pearsonのχ²統計量
+このP値を, スコア統計量(score statistics)に基くP値と呼んだり, Pearsonのχ²統計量
 
 $$
 \frac{(k - np_0)^2}{np_0(1-p_0)} =
@@ -440,9 +1349,14 @@ $$
 
 のスタイルで定義される.  上の場合には, 観測値が成功回数 $k$ と失敗回数 $n-k$ であり, 対応する帰無仮説下の統計モデル内での期待値はそれぞれ $np_0$, $n(1-p_0)$ である.
 
-__注意:__ Pearsonのχ²統計量は多項分布モデルでの検定や分割表の独立性検定でも大活躍することになる.
+__注意:__ Pearsonのχ²統計量は多項分布モデルでの検定や分割表の独立性検定でも大活躍することになる. 興味がわいた人はおまけの解説も参照せよ.
 
-__注意:__ Pearsonのχ²統計量は多項分布モデルでも利用できる. 例えば, 検定したい仮説「A, B, Cが生じる確率はそれぞれ $p_{A,0}, p_{B,0}, p_{C,0}$ である」($p_{A,0}+p_{B,0}+p_{C,0} = 1$)のとき, 「$n$ 回中 A, B, C がそれぞれ $a, b, c$ 回生じた」というデータに対して, Pearsonのχ²統計量を
+
+### おまけ: 多項分布モデルにおけるPearsonのχ²検定
+
+Pearsonのχ²統計量は多項分布モデルでも利用できる.
+
+例えば, 検定したい仮説「A, B, Cが生じる確率はそれぞれ $p_{A,0}, p_{B,0}, p_{C,0}$ である」($p_{A,0}+p_{B,0}+p_{C,0} = 1$)のとき, 「$n$ 回中 A, B, C がそれぞれ $a, b, c$ 回生じた」というデータに対して, Pearsonのχ²統計量を
 
 $$
 (\text{Pearsonのχ²統計量}) =
@@ -459,133 +1373,122 @@ $$
 (\text{Pearsonのχ²統計量}) = \sum_{i=1}^6 \frac{(a_i - n/6)^2}{n/6}
 $$
 
-になる. その仮説下の多項分布内でこれは, $n$ が大きいければ, 自由度 $5$ のχ²分布に近似的に従う.
+になる. その仮説下の多項分布内でこれは, $n$ が大きいければ, 自由度 $5$ のχ²分布に近似的に従う. このときP値は, 自由度 $5$ のχ²分布において値がPearsonのχ²統計量以上になる確率として定義される.
 
 ```julia
 n, p = 300, [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
 null = Multinomial(n, p) # fair dice model
 df = ncategories(null) - 1 # degree of freedom
 
-chisq_stat(a, n, p) = sum((a - n*p)^2/(n*p) for (a, p) in zip(a, p))
+chisq_multinomial(a, p, n=sum(a)) = sum((a - n*p)^2/(n*p) for (a, p) in zip(a, p))
 tmp = zeros(ncategories(null))
-chisqs = [chisq_stat(rand!(null, tmp), n, p) for _ in 1:10^6]
+chisqs = [chisq_multinomial(rand!(null, tmp), p) for _ in 1:10^6]
 
-histogram(chisqs; norm=true, alpha=0.3, bin=100,
+histogram(chisqs; norm=true, alpha=0.3, bin=0:0.5:40,
     label="Pearson's χ²-statistic")
 plot!(Chisq(df); label="Chisq(df = $df)", lw=1.5)
 title!("fair dice model, n = $n")
-plot!(; xlim=(-0.5, 25))
+plot!(; xlim=(-0.5, 20.5), xtick=0:2:30)
 ```
 
-### Wilsonの信頼区間
-
-以下で使う記号を準備しよう. $\phat, \SEhat, \SE$ を以下のように定義する:
-
-$$
-\phat = \frac{k}{n}, \quad
-\SEhat = \sqrt{\frac{\phat(1 - \phat)}{n}}, \quad
-\SE = \sqrt{\frac{p_0(1 - p_0)}{n}}.
-$$
-
-ハットが付いている記号はデータの数値から計算した推定値であり, $\SE$ は標準誤差(standard error)の略である.
-
-次が成立していることにも注意せよ(分子分布を $n$ で割る):
-
-$$
-\frac{k - np_0}{\sqrt{np_0(1-p_0)}} =
-\frac{\phat - p_0}{\SE}.
-$$
-
-これに対応する統計モデル内の確率変数は近似的に標準正規分布に従うのであった.
-
-この場合の信頼区間は以下のように記述される.
-
-まず, $z_{\alpha/2}$ を次のように定める:
-
-$$
-z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2).
-$$
-
-これは標準正規分布において $z_{\alpha/2}$ 以上になる確率が $\alpha/2$ になるという意味である.
-
-次に, $a,b,c$ を
-
-$$
-a = 1 + \frac{z^2}{n}, \quad
-b = \phat + \frac{z^2}{2n}, \quad
-c = \phat^2
-$$
-
-と定義し, 次の $p$ に関する二次方程式を考える:
-
-$$
-ap^2-2bp+c=0.
-$$
-
-そして, この二次方程式の2つの解を $p_- \le p_+$ と書く: $z=z_{\alpha/2}$ とおくと, 
-
-$$
-p_\pm = \frac{b \pm \sqrt{b^2-ac}}{a} =
-\frac{1}{1+z^2/n}\left(
-\phat+\frac{z^2}{2n}
-\pm \sqrt{\SEhat^2 + \frac{z^2}{4n^2}}
-\right).
-$$
-
-このとき,
-
-$$
-\confint_\Wilson(k|n,\alpha) = [p_-, p_+].
-$$
-
-__注意:__ Wilsonの信頼区間を与えるP値はシンプルに定義されたが, 対応する信頼区間の計算には二次方程式を解く必要がある.  次の節で説明するWaldの信頼区間はこの部分を簡略化したものとみなされる. 
-
-
-__注意:__ $p_\pm$ を表す二次方程式の解の公式は分子を有理化した次を使った方がよい場合がある:
-
-$$
-p_\pm = \frac{c}{b \mp \sqrt{b^2-ac}} =
-\frac{\phat^2}{\displaystyle
-\hat{p}+\frac{z^2}{2n}
-\mp \sqrt{\SEhat^2 + \frac{z^2}{4n^2}}
-}.
-$$
+例えば, 有意水準を $\alpha=0.1\%$ としたとき, $n=300$ 回中 $1,2,\ldots,6$ が出た回数がそれぞれ $75, 31, 43, 45, 47, 60$ ならば, 仮説「すべての目が同じ確率で出る」について, Pearsonのχ²統計量の値は $23.38$ になり, 自由度 $5$ のχ²分布でそれ以上の値になる確率として定義されたP値は $0.03\%$ 未満になるので, 「すべての目が同じ確率で出る」という仮説は有意水準 $\alpha=0.1\%$ で棄却されることになる.
 
 ```julia
-R"prop.test(10, 20, p=0.72, conf.level=0.95)"
+a = [75, 31, 43, 45, 47, 60]
+@show c = chisq_multinomial(a, p)
+pvalue_multinomial = ccdf(Chisq(5), c)
+@show pvalue_multinomial;
+```
+
+### おまけ: 一般のχ²検定で使うχ²分布の自由度
+
+一般のχ²検定で使用するχ²分布の自由度 $\op{df}$ (degree of freedom)は[Wilks' theorem](https://en.wikipedia.org/wiki/Wilks%27_theorem)より次の公式で決定される:
+
+$$
+\begin{aligned}
+\op{df} &=
+(\text{統計モデルの独立なパラメータの個数}) -
+(\text{帰無仮説下の統計モデルの独立なパラメータ個数})
+\\ &=
+(\text{帰無仮説によって減るモデルの独立なパラメータ個数}).
+\end{aligned}
+$$
+
+例えば, 上のサイコロの例では, 六項分布モデルのパラメータ数は $6-1 = 5$ 個である. なぜならば $i=1,2,\ldots,6$ の各々の目が出る確率を $p_i$ と書くとき, それらには $p_1+p_2+\cdots+p_6=1$ という条件が課されるので, 独立なパラメータの個数は $5$ 個になる.  そして, 帰無仮説「すべての目が等確率で出る」を課すとすべての $p_i$ の値が $1/6$ に固定されて, 独立に動けるパラメータの個数は $0$ になる.  帰無仮説によって独立なパラメータの個数が $5$ 個減ったので, χ²検定で使うχ²分布の自由度は $5$ になる.
+
+例えば, 帰無仮説が
+
+$$
+p_1+p_6=1/3, \quad p_2+p_5=1/3, \quad p_3+p_4=1/3
+$$
+
+と書ける. これら3本のうち, 条件 $p_1+p_2+\cdots+p_6=1$ の下で独立な方程式は2本なので, この仮説を課すことによって独立なパラメータの個数は $2$ 個減る. ゆえに, この場合には, χ²検定で使用するχ²分布の自由度は $2$ になる. ただし, この場合には
+
+$$
+(\text{Pearsonのχ²統計量}) = \sum \frac
+{(\text{観測値} - \text{帰無仮説下の統計モデル内での期待値})^2}
+{\text{帰無仮説下の統計モデル内での期待値}}
+$$
+
+における「帰無仮説下の統計モデル内での期待値」は統計モデルのパラメータを帰無仮説の制限の下での最尤法で決定することによって求めることになる.
+
+```julia
+n, p = 1000, [1/4, 1/4, 1/6, 1/6, 1/12, 1/12]
+null = Multinomial(n, p) # P(odd) = P(even)
+df = 2 # degree of freedom
+
+function chisq_multinomial_example2(a)
+    n = sum(a)
+    r = length(a)
+    @assert r == 6
+    mle(i) = if i == 1 || i == 6
+        a[i]/(3(a[1] + a[6]))
+    elseif i == 2 || i == 5
+        a[i]/(3(a[2] + a[5]))
+    else
+        a[i]/(3(a[3] + a[4]))
+    end
+    sum((a[i] - n*mle(i))^2/(n*mle(i)) for i in 1:r)
+end
+tmp = zeros(ncategories(null))
+chisqs = [chisq_multinomial_example2(rand!(null, tmp)) for _ in 1:10^6]
+
+histogram(chisqs; norm=true, alpha=0.3, bin=0:0.25:20,
+    label="Pearson's χ²-statistic")
+plot!(Chisq(df); label="Chisq(df = $df)", lw=1.5)
+title!("n = $n,  p = [1/4, 1/4, 1/6, 1/6, 1/12, 1/12]")
+plot!(; xlim=(-0.5, 10.5), xtick=0:20)
+```
+
+例えば, 有意水準を $\alpha=0.1\%$ としたとき, $n=1000$ 回中 $1,2,\ldots,6$ が出た回数がそれぞれ $235, 195, 175, 175, 195, 225$ ならば, 仮説
+
+$$
+p_1+p_6=1/3, \quad p_2+p_5=1/3, \quad p_3+p_4=1/3
+$$
+
+について, Pearsonのχ²統計量の値は $15.5$ になり, 自由度 $2$ のχ²分布でそれ以上の値になる確率として定義されたP値は $0.05\%$ 未満になるので, 上の仮説は有意水準 $\alpha=0.1\%$ で棄却されることになる.
+
+```julia
+a = [235, 195, 175, 175, 195, 225]
+@show c = chisq_multinomial_example2(a)
+pvalue_multinomial_example2 = ccdf(Chisq(2), c)
+@show pvalue_multinomial_example2;
 ```
 
 ```julia
-n, k, p, α = 20, 10, 0.72, 0.05
+ [1/4, 1/4, 1/6, 1/6, 1/12, 1/12] |> sum
 ```
-
-```julia
-p̂ = k/n
-a, b, c = 
-```
-
-### Wilsonの信頼区間の導出
-
-P値の定義 $\pvalue_\Wilson(k|n,p=p_0)$ に対応する信頼区間が実際に前節で記述した $\confint_\Wilson(k|n,\alpha)$ になることを示せ.
-
-__ヒント:__ 「例：ベータ函数と二項分布の関係とその応用」のノートの「Wilsonの信頼区間の基礎」の節を参照せよ.
-
-__解答例:__
-
-__解答終__
-
 
 ## Wald
 
 
 ### Waldの信頼区間を与えるP値関数
 
-$\phat, \SEhat, z_{\alpha/2}$ を以下のように定義する:
+$\phat, \SEhat$ を以下のように定義する:
 
 $$
 \phat = \frac{k}{n}, \quad
-\SEhat = \sqrt{\frac{\phat(1 - \phat)}{n}}, \quad
-z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2).
+\SEhat = \sqrt{\frac{\phat(1 - \phat)}{n}}.
 $$
 
 データ「$n$ 回中 $k$ 回成功」について, 「データの数値以上に極端な」の意味を「$k$ 以上または $k$ 以下の」とした場合.  ただし, 二項分布の中心極限定理(正規分布近似)と分散を推定値に置き換える粗い近似を使う:
@@ -600,25 +1503,71 @@ $\pvalue_\Wilson(k|n,p=p_0)$ との違うは右辺の $\cdf$ の引数の分母�
 
 ### Waldの信頼区間
 
-この場合に信頼区間は次のように表される:
+$z_{\alpha/2} = z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2)$ とおく.
+
+```julia
+var"z_{0.025}の定義"
+```
+
+この場合の信頼区間 $\{\,p\in[0,1]\mid \pvalue_\Wald(k|n,p)\ge\alpha\,\}$ は次のように表される:
 
 $$
-\confint_\Wald(k|n,p=p_0) =
+\confint_\Wald(k|n,p=p_0) :=
 \left[\phat - z_{\alpha/2}\SEhat,\; \phat + z_{\alpha/2}\SEhat\right].
 $$
+
+これを __Waldの信頼区間__ と呼ぶ.
 
 前節の公式と比較すれば, $n$ を大きくすると, これはWilsonの信頼区間をよく近似するようになることがわかる.
 
 
-### 問題: Waldの信頼区間の導出
+Waldの信頼区間の導出については, [「例：ベータ函数と二項分布の関係とその応用」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.ipynb)の「Waldの信頼区間の基礎」の節も参照せよ.
 
-P値の定義 $\pvalue_\Wald(k|n,p=p_0)$ に対応する信頼区間が実際に上で定義した $\confint_\Wald(k|n,\alpha)$ になることを示せ.
 
-__ヒント:__ 「例：ベータ函数と二項分布の関係とその応用」のノートの「Waldの信頼区間の基礎」の節を参照せよ.
+### Waldの信頼区間の図による把握
 
-__解答例:__
+以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう.
 
-__解答終__
+
+まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
+
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+
+__しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
+
+```julia
+plot_binom_pvalue_and_confint(
+    pvalue_wald, confint_wald, 100, 30;
+    name = "Wald: ", xlim=(0.15, 0.5), xtick=0:0.05:1)
+```
+
+$1-\alpha = 95\%$ 信頼区間の下限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を小さくして行って, その二項分布を近似する正規分布内でデータの数値 $k$ 以上の値が生成される確率とその反対側の確率の和(＝Waldの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になるような $p$ を見つければよい. そのような $p$ を $p_L = p\_L$ とする.
+
+ただし, Waldの信頼区間の場合にはWilsonの信頼区間の場合と違って, 二項分布を正規分布で近似するときには, 正規分布の分散をデータの数値から推定したものに固定する. そのことが原因で二項分布の正規分布近似の誤差は大きくなる.
+
+```julia
+var"Wald: 下側では p = p_L がぎりぎり"
+```
+
+$1-\alpha = 95\%$ 信頼区間の上限を求めるためには, 二項分布モデルの成功確率パラメータ $p$ を大きくして行って, その二項分布を近似する正規分布内でデータの数値 $k$ 以下の値が生成される確率とその反対側の確率の和(＝Waldの信頼区間を与えるP値)がちょうど $\alpha = 5\%$ になるような $p$ を見つければよい. そのような $p$ を $p_U = p\_U$ とする.
+
+ただし, 上でも説明したように, Waldの信頼区間の場合にはWilsonの信頼区間の場合と違って, 二項分布を正規分布で近似するときには, 正規分布の分散をデータの数値から推定したものに固定する. そのことが原因で二項分布の正規分布近似の誤差は大きくなる.
+
+```julia
+var"Wald: 上側では p = p_U がぎりぎり"
+```
+
+以上をまとめると以下のような図を描ける.
+
+```julia
+var"Wald: n × 95%信頼区間"
+```
+
+この場合のWaldの信頼区間は $[0.2102, 0.3998]$ である.
+
+これは, 同じ場合のClopper-Pearsonの信頼区間の $[0.2124, 0.3998]$ とSterneの信頼区間は $[0.2142, 0.3996]$ とWilsonの信頼区間は $[0.2189, 0.3958]$ のどれよりも少し広くなっているが, ほぼ同じであると言ってよいだろう.
+
+ただし, Waldの信頼区間は $\phat$ または $1-\phat$ が小さい場合には誤差が大きくなる場合があるので注意が必要である.
 
 ```julia
 
