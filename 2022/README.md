@@ -241,6 +241,18 @@ __定義された確率分布__
 
 ### 09 検定と信頼区間(2) 比率
 
+* [Jupyter notebook](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
+\[[nbviewer](https://github.com/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.pdf)\]
+
+__定義された信頼区間__
+
+* Clopper-Pearsonの信頼区間
+* Sterneの信頼区間
+* Wilsonの信頼区間
+* Waldの信頼区間
+
 ### 10 検定と信頼区間(3) 平均
 
 ### 11 検定と信頼区間(4) 比率の違い
@@ -262,7 +274,9 @@ __定義された確率分布__
 
 __演習用サンプル__
 
-__定義された分布__
+__定義された確率分布__
+
+__定義された検定__
 
 ---
 
