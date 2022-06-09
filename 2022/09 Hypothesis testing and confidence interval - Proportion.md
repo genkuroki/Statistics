@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-08
+* 2022-05-31～2022-06-09
 
 $
 \newcommand\op{\operatorname}
@@ -132,6 +132,9 @@ mykurtosis(dist::MixtureModel{Univariate, Continuous}) = standardized_moment(dis
 __Clopper-Pearsonの節の準備__
 
 ```julia
+# cdf = 累積分布函数
+# ccdf(dist, x) = 1 - cdf(dist, x)
+
 function pvalue_clopper_pearson(dist::DiscreteUnivariateDistribution, x)
     min(1, 2cdf(dist, x), 2ccdf(dist, x-1))
 end
@@ -244,8 +247,9 @@ end
 function confint_sterne(n, k; α = 0.05)
     a, b = confint_clopper_pearson(n, k; α = α/10)
     ps = find_zeros(a-√eps(), b+√eps()) do p
-        log(pvalue_sterne(n, k, p)) - log(α)
+        logistic(pvalue_sterne(n, k, p)) - logistic(α)
     end
+    # 次の行は稀に区間にならない場合への対策
     [first(ps), last(ps)]
 end
 ```
@@ -351,6 +355,7 @@ function confint_wilson(n, k; α = 0.05)
     p̂ = k/n
     z = quantile(Normal(), 1-α/2)
     a, b, c = 1+z^2/n, p̂+z^2/(2n), p̂^2
+    # ap² - 2bp + c = 0 を解く.
     sqrtD = √(b^2 - a*c)
     p_L = (b - sqrtD)/a
     p_U = (b + sqrtD)/a
@@ -363,7 +368,7 @@ end
 z = quantile(Normal(), 1 - α/2)
 
 var"z_{0.025}の定義" = plot()
-plot!(Normal(),  -5,  5; label="")
+plot!(Normal(), -5,  5; label="")
 plot!(Normal(), -5, -z; label="", c=1, fillrange=0, fc=:red, fa=0.3)
 plot!(Normal(),  z,  5; label="", c=1, fillrange=0, fc=:red, fa=0.3)
 plot!([-z, -z, NaN, z, z],
@@ -371,7 +376,7 @@ plot!([-z, -z, NaN, z, z],
     label="\$\\pm z_{0.025}\$", c=:red)
 title!("Normal(0,1)"; xtick=-10:10)
 annotate!(-2.2, 0.06, text("2.5%", 10, :red, :right))
-annotate!(2.2, 0.06, text("2.5%", 10, :red, :left))
+annotate!( 2.2, 0.06, text("2.5%", 10, :red, :left))
 plot!(; legendfontsize=14);
 ```
 
@@ -709,18 +714,18 @@ end
 __4種の信頼区間の比較__
 
 ```julia
-function plot_binom_confints(n, ks=0:n÷10:n; size=(400, 320), kwargs...)
+function plot_binom_confints(n, ks=0:n÷10:n; α=0.05, size=(400, 320), kwargs...)
     xs = vcat(([k, k, NaN] for k in ks)...)
-    clopper_pearson = vcat(([confint_clopper_pearson(n, k); NaN] for k in ks)...)
-    sterne = vcat(([confint_sterne(n, k); NaN] for k in ks)...)
-    wilson = vcat(([confint_wilson(n, k); NaN] for k in ks)...)
-    wald = vcat(([confint_wald(n, k); NaN] for k in ks)...)
+    clopper_pearson = vcat(([confint_clopper_pearson(n, k; α); NaN] for k in ks)...)
+    sterne = vcat(([confint_sterne(n, k; α); NaN] for k in ks)...)
+    wilson = vcat(([confint_wilson(n, k; α); NaN] for k in ks)...)
+    wald = vcat(([confint_wald(n, k; α); NaN] for k in ks)...)
     P = plot(; legend=:bottomright)
     plot!(xs .- 0.03n, lw=5, clopper_pearson; label="Clopper-Pearson")
     plot!(xs .- 0.01n, lw=5, sterne; label="Sterne")
     plot!(xs .+ 0.01n, lw=5, wilson; label="Wilson")
     plot!(xs .+ 0.03n, lw=5, wald; label="Wald")
-    title!("n = $n", titlefontsize=12)
+    title!("n = $n,  α = $α", titlefontsize=12)
     plot!(; xguide="data k", yguide="success rate parameter p")
     plot!(; xtick=ks, ytick=0:0.1:1)
     plot!(; size, kwargs...)
@@ -793,11 +798,11 @@ __検定:__　P値が有意水準未満ならば仮説 $p=p_0$ は __棄却__ �
 
 データの取得法に問題があった可能性や仮説 $p=p_0$ も含めた統計モデルの前提のどれかが妥当でない可能性を疑うことになる.
 
-仮説 $p=p_0$ が棄却されない場合にはその妥当性に関する判断を保留する.
+仮説 $p=p_0$ がデータの数値によって棄却されない場合にはその妥当性に関する判断を保留する.
 
-__信頼度:__　$1 - \alpha$.
+__信頼度(信頼係数):__　$1 - \alpha$.
 
-__信頼区間:__　検定で棄却されない成功確率パラメータ $p=p_0$ の全体の集合.
+__信頼区間:__　データの数値を用いた検定で棄却されない成功確率パラメータ $p=p_0$ の全体の集合.
 
 以下では信頼区間(confidence interval)を次のように書く:
 
@@ -866,7 +871,7 @@ plot(
 データ「$n$ 回中 $k$ 回成功」について, 「データの数値以上に極端な」の意味を「$k$ 以上の」または「$k$ 以下の」の確率の小さい方とした場合.  ただし, P値はその確率の2倍として定義する($1$ を超えないように $1$ より大きくなったら $1$ に切り詰める):
 
 $$
-\pvalue_\CP(x|n, p=p_0) = \min\begin{pmatrix}
+\pvalue_\CP(k|n, p=p_0) = \min\begin{pmatrix}
 1 \\
 2\cdf(\Binomial(n,p_0), k) \\
 2(1 - \cdf(\Binomial(n,p_0), k-1)) \\
@@ -894,7 +899,7 @@ $$
 
 ### Clopper-Pearsonの信頼区間
 
-信頼区間の下限と上限の値 $p_L, p_U$ を次の条件で定義する:
+信頼区間の下限と上限の値 $p_L, p_U$ ($L$, $U$ はそれぞれ lower, upper の頭文字である)を次の条件で定義する:
 
 $$
 \begin{aligned}
@@ -942,12 +947,12 @@ __復習:__ ベータ分布の分位点函数(quantile function, 累積分布函
 
 ### Clopper-Pearsonの信頼区間の図による把握
 
-以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう.
+以下の図をよく見れば, $\alpha = 5\%$ の場合の $p_L = p\_L$ と $p_U = p\_U$ を直観的に把握できるだろう. ($L$, $U$ はそれぞれ lower, upper の略である.)
 
 
 まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
 
-__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータ値に挟まれた区間になる.__
 
 __しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
 
@@ -1045,7 +1050,7 @@ __注意:__ Sterneの信頼区間とClopper-Pearsonの信頼区間などの比�
 
 まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
 
-__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータ値に挟まれた区間になる.__
 
 __しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
 
@@ -1148,7 +1153,7 @@ $$
 このようにP値と信頼区間の表裏一体性に忠実であれば, P値が有意水準未満であることと, 信頼区間に帰無仮説を与えるパラメータ値が含まれないことが同値になる.  しかし, R言語の `binom.test` は信頼区間の表裏一体正を無視しているので, 整合性がない結果が稀に表示されることがあるので注意が必要である.
 
 
-他にも `binom.test(31, 100, p = 41)` で表示されるP値と $95\%$ 信頼区間も不整合になる.
+他にも `binom.test(31, 100, p = 0.41)` で表示されるP値と $95\%$ 信頼区間も不整合になる.
 
 ```julia
 R"binom.test(31, 100, p = 0.41)"
@@ -1304,7 +1309,7 @@ __注意:__ 上で省略した計算の細部は自分で埋めよ.  Wilsonの�
 
 まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
 
-__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータ値に挟まれた区間になる.__
 
 __しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
 
@@ -1642,7 +1647,7 @@ Waldの信頼区間の導出については, [「例：ベータ函数と二項�
 
 まず, データの数値が与えられたとき, モデルのパラメータ値をP値に対応させる __P値函数__ (P-value function)の立場では, __信頼区間__ (confidence interval)の解釈は易しい. 
 
-__信頼区間はP値函数が有意水準の値を取る2つのパラメータに挟まれた区間になる.__
+__信頼区間はP値函数が有意水準の値を取る2つのパラメータ値に挟まれた区間になる.__
 
 __しかし, P値函数全体のグラフを描けば, 信頼区間を計算しなくても, データとの整合性が低過ぎないパラメータ値の範囲は明らかだろう.__
 
