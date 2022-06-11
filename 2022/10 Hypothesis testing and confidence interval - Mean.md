@@ -65,7 +65,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#平均の検定と信頼区間" data-toc-modified-id="平均の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均の検定と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均の検定で使用されるP値の定義(1)-標準正規分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(1)-標準正規分布を使う場合-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(1) 標準正規分布を使う場合</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(2)-t分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(2)-t分布を使う場合-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(2) t分布を使う場合</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する平均の信頼区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する平均の信頼区間</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#平均の検定と信頼区間" data-toc-modified-id="平均の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均の検定と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均の検定で使用されるP値の定義(1)-標準正規分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(1)-標準正規分布を使う場合-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(1) 標準正規分布を使う場合</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(2)-t-分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(2)-t-分布を使う場合-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(2) t 分布を使う場合</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する平均の信頼区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する平均の信頼区間</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -212,19 +212,18 @@ $$
 T(\mu) \sim \Normal(0,1), \ \text{approximately}.
 $$
 
-データの $t$ 統計量を次のように定める:
+データの $t$ 値を次のように定める:
 
 $$
 t(\mu) := \frac{\bar{x} - \mu}{\sqrt{s^2/n}}.
 $$
 
-__P値の定義:__　仮説 $\mu = \mu_0$ の下で $|T(\mu_0)| \ge |t(\mu_0)|$ となる確率を, 標準正規分布に従ってランダムに生成される値の絶対値が $|t(\mu_0)|$ 以上になる確率として近似的に求めて, その値をP値として採用する. そのP値を次のように書く:
+__P値の定義:__　仮説 $\mu = \mu_0$ の下で $|T(\mu_0)| \ge |t(\mu_0)|$ となる確率を, 標準正規分布に従ってランダムに生成される値の絶対値が $|t(\mu_0)|$ 以上になる確率として近似的に求めて, その値をデータ $x_1,\ldots,x_n$ に関する仮説 $\mu = \mu_0$ のP値として採用する. そのP値を次のように書く:
 
 $$
 \pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) = 
 2(1 - \cdf(\Normal(0,1), |t(\mu_0)|)).
 $$
-
 
 ```julia
 @. round(quantile(Normal(), 1 - (0.05, 0.01, 0.001) / 2); digits=4)
@@ -246,7 +245,7 @@ z_{1\%/2} \approx 2.5758, \quad
 z_{0.1\%/2} \approx 3.2905.
 $$
 
-P値函数 $\pvalue_{\Normal}(\bar{x}, s^2|Q, n, \mu=\mu_0) = 2(1 - \cdf(\Normal(0,1), |t(\mu_0)|))$ に対応する信頼度 $1-\alpha$ の信頼区間を次のようになる:
+P値函数 $\pvalue_{\Normal}(\bar{x}, s^2|Q, n, \mu=\mu_0) = 2(1 - \cdf(\Normal(0,1), |t(\mu_0)|))$ に対応する信頼度 $1-\alpha$ の信頼区間は次のようになる:
 
 $$
 \confint_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) =
@@ -267,7 +266,9 @@ $$
 
 $$
 \begin{aligned}
-\pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha &\iff
+&
+\pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha
+\\ &\iff
 1 - \cdf(\Normal(0,1), |t(\mu_0)|)) \ge \alpha/2
 \\ &\iff
 |t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le z_{\alpha/2}
@@ -282,7 +283,7 @@ $$
 __証明終__
 
 
-### 平均の検定で使用されるP値の定義(2) t分布を使う場合
+### 平均の検定で使用されるP値の定義(2) t 分布を使う場合
 
 分布 $Q$ が左右対称の分布ならば $n=10$ のようなかなり小さな $n$ で中心極限定理による近似の誤差は非常に小さくなる場合がある.  しかし, そういう場合であっても, 大数の法則を使った不偏分散 $S^2$ による $\sigma^2$ の近似の精度は低いままの場合がある.
 
@@ -298,7 +299,7 @@ $$
 
 $X_1,\ldots,X_n$ はこの統計モデルに従う確率変数達であるとし, それらの標本平均と不偏分散をそれぞれ $\bar{X}$, $S^2$ と表す.
 
-__$\bar{x}, s^2$ の同時分布:__　標本平均と不偏分散
+__X̄とS²の同時分布:__　標本平均と不偏分散
 
 $$
 \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
@@ -321,13 +322,136 @@ p(x_1,\ldots,x_n|\mu,\sigma^2) =
 \exp\left(-\frac{1}{2}\frac{(n-1)s^2}{\sigma^2} - \frac{(\bar{x} - \mu)^2}{2\sigma^2/n}\right).
 $$
 
-このことから, $\bar{X}, S^2$ は独立な確率変数であり, $\bar{X}$ は平均 $\mu$, 分散 $\sigma^2/n$ の正規分布に従い, $(n-1)S^2/\sigma^2$ は自由度 $n-1$ のχ²分布に従うことを示せる.  (詳しくは
+このことから, $\bar{X}, S^2$ は独立な確率変数であり, $\bar{X}$ は平均 $\mu$, 分散 $\sigma^2/n$ の正規分布に従い, $(n-1)S^2/\sigma^2$ は自由度 $n-1$ のχ²分布に従うことを示せる:
 
+$$
+\bar{X} \sim \Normal\left(\mu, \sqrt{\sigma^2/n}\right), \quad
+\frac{(n-1)S^2}{\sigma^2} \sim \Chisq(n-1).
+$$
 
+詳しくは「標本分布について」のノートの「正規分布の標本分布の場合」の節を参照せよ.  自由度 $n-1$ のχ²分布の密度函数を作るために必要な, $u=s^2$ とおいたときの因子 $u^{(n-1)/2-1} は
 
+$$
+dy_1\cdots dy_{n-1} \propto
+\left(\sqrt{u}\right)^{n-2}\,d\sqrt{u}\,d\theta \propto
+u^{(n-1)/2-1}\,du\,d\theta
+$$
 
+のような計算で出て来る. ここで $d\theta$ は $n-2$ 次元単位球面の微小面積要素である.
+
+__T統計量が従う分布:__　ゆえに, $T$ 統計量
+
+$$
+T(\mu) = \frac{\bar{X} - \mu}{\sqrt{S^2/n}}
+$$
+
+は自由度 $n-1$ の $t$ 分布に従う:
+
+$$
+T(\mu) \sim \TDist(n-1).
+$$
+
+詳しくは, 「正規分布の標本分布から自然にt分布に従う確率変数が得られること」を参照せよ.
+
+__注意:__ 自由度が大きな $t$ 分布は標準正規分布とほぼ同じになるので, この結果はP値の定義(1)で使った結果と整合的であり, この結果が意味を持つのは $n$ が大きくない場合にのみ意味を持つ.  実践的には $n$ が十分に大きな場合には $\TDist(n-1)$ を標準正規分布で置き換えてよい.
+
+__P値の定義:__　仮説 $\mu = \mu_0$ の下で $|T(\mu_0)| \ge |t(\mu_0)|$ となる確率を, 自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値の絶対値が $|t(\mu_0)|$ 以上になる確率として正確に求めて, その値をデータ $x_1,\ldots,x_n$ に関する仮説 $\mu = \mu_0$ のP値として採用する. そのP値を次のように書く:
+
+$$
+\pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) = 
+2(1 - \cdf(\TDist(n-2), |t(\mu_0)|)).
+$$
+
+このP値は $n$ が大きな場合には定義(1)のP値 $\pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0)$ と近似的に一致する.  ゆえに, P値の定義(1)を使うことを止めて, こちらの定義(2)の方だけを使うことにしても害がないと考えられる.
+
+__我々はこれ以後こちらのP値の定義のみを使用する.__
+
+__注意:__ ただし, こちらの定義(2)のP値は先の定義(1)のP値よりも少し大きくなり, 定義(2)の場合の信頼区間は定義(1)の場合の信頼区間よりも少し広くなる.
+
+```julia
+df = 10:10:100
+α = [0.05, 0.01, 0.001]
+z = @. round(quantile(Normal(), 1-α'/2); digits=4)
+t = @. round(quantile(TDist(df), 1-α'/2); digits=4)
+table_of_t = DataFrame(
+    df = Any[df; Inf],
+    var"α = 5%" = [t[:,1]; z[1]],
+    var"α = 1%" = [t[:,2]; z[2]],
+    var"α = 0.1%" = [t[:,3]; z[3]],
+)
+```
+
+```julia
+quantile(TDist(30), 1-0.05/2) / quantile(Normal(), 1-0.05/2)
+```
 
 ### P値の定義(2)のt分布を使う場合に対応する平均の信頼区間
+
+有意水準を $0\le\alpha\le 1$ と書き, 自由度 $\nu$ の $t$ 分布において $t_{\alpha/2}(\nu)$ 以上になる確率は $\alpha/2$ になると仮定する:
+
+$$
+t_{\alpha/2}(\nu) = \quantile(\TDist(\nu), 1 - \alpha/2).
+$$
+
+例えば,
+
+$$
+t_{5\%/2}(10) \approx 2.2281, \quad
+t_{5\%/2}(20) \approx 2.0860, \quad
+t_{5\%/2}(30) \approx 2.0423.
+$$
+
+自由度を大きくする極限では, $t_{5\%/2}(\infty) = z_{5\%/2} \approx 1.9600$ となる.  $t_{5\%/2}(30) \approx 2.0423$ はその値よりも $4.2\%$ 程度大きい. (信頼区間もその割合で広くなる.)
+
+P値 $\pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) = 2(1 - \cdf(\TDist(n-2), |t(\mu_0)|))$ に対応する信頼度 $1-\alpha$ の信頼区間は次のようになる:
+
+$$
+\confint_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) =
+\left[
+\bar{x} - t_{\alpha/2}(n-1) \sqrt{s^2/n},\;
+\bar{x} + t_{\alpha/2}(n-1) \sqrt{s^2/n}
+\right].
+$$
+
+証明はP値の定義(1)の場合と完全に同様である. 標準正規分布を $t$ 分布で置き換えるだけでよい.
+
+__証明:__ 検定と信頼区間の表裏一体性より, P値函数 $\pvalue_{\TDist}(\bar{x}, s^2|Q, n, \mu=\mu_0)$ に対応する信頼度 $1-\alpha$ の信頼区間は次のように定義されるのであった:
+
+$$
+\confint_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) =
+\{\, \mu_0\in\R \mid \pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha\,\}.
+$$
+
+そして,
+
+$$
+\begin{aligned}
+&
+\pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha
+\\ &\iff
+1 - \cdf(\TDist(n-1), |t(\mu_0)|)) \ge \alpha/2
+\\ &\iff
+|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le t_{\alpha/2}(n-1)
+\\ &\iff
+\bar{x} - t_{\alpha/2}(n-1) \sqrt{s^2/n} \le \mu_0 \le
+\bar{x} + t_{\alpha/2}(n-1) \sqrt{s^2/n}.
+\end{aligned}
+$$
+
+これより, P値の定義(2)に対応する平均の信頼区間が上のようになることがわかった.
+
+__証明終__
+
+
+
+
+```julia
+
+```
+
+```julia
+
+```
 
 ```julia
 
