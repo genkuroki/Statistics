@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-09
+* 2022-05-31～2022-06-11
 
 $
 \newcommand\op{\operatorname}
@@ -239,7 +239,7 @@ function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
 end
 
 function pvalue_sterne(n, k, p)
-    0 < p ≤ 1 ? pvalue_sterne(Binomial(n, p), k) : zero(p)
+    pvalue_sterne(Binomial(n, p), k)
 end
 
 # 大きな n についてもうまく行くように
@@ -247,7 +247,7 @@ end
 function confint_sterne(n, k; α = 0.05)
     a, b = confint_clopper_pearson(n, k; α = α/10)
     ps = find_zeros(a-√eps(), b+√eps()) do p
-        logistic(pvalue_sterne(n, k, p)) - logistic(α)
+        logistic(0 < p ≤ 1 ? pvalue_sterne(n, k, p) : zero(p)) - logistic(α)
     end
     # 次の行は稀に区間にならない場合への対策
     [first(ps), last(ps)]
