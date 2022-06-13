@@ -248,6 +248,8 @@ __定義された確率分布__
 
 __定義された信頼区間__
 
+二項検定に付随する4種の信頼区間
+
 * Clopper-Pearsonの信頼区間
 * Sterneの信頼区間
 * Wilsonの信頼区間
@@ -255,15 +257,42 @@ __定義された信頼区間__
 
 ### 10 検定と信頼区間(3) 平均
 
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.pdf)\]
+
+__定義された信頼区間__
+
+平均の信頼区間
+
+* 標準正規分布を使って計算される信頼区間
+* t分布を使って計算される信頼区間
+
+後者のみを使用する.
+
 __定義された確率分布__
 
 * 自由度 $\nu$ のχ分布: $\mathrm{Chi}(\nu) = \sqrt{\mathrm{Chisq}(\nu)}$
 
-__定義された検定__
-
 ### 11 検定と信頼区間(4) 比率の違い
 
+__定義する予定の信頼区間__
+
+オッズ比の信頼区間
+
+* Pearsonのχ²検定に付随する信頼区間
+* Fisherの正確検定に付随する信頼区間
+
 ### 12 検定と信頼区間(5) 平均の差
+
+__定義する予定の信頼区間__
+
+2群の平均の差の信頼区間
+
+* Welchのt検定に付随する信頼区間
+
+Studentのt検定は使用しない.
 
 ### 13 誤用を避けるための注意
 
@@ -282,7 +311,7 @@ __演習用サンプル__
 
 __定義された確率分布__
 
-__定義された検定__
+__定義された信頼区間__
 
 ---
 
