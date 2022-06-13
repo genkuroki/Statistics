@@ -1,16 +1,17 @@
 ---
 jupyter:
   jupytext:
+    cell_metadata_json: true
     formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.2.1
+      format_version: '1.3'
+      jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.1.1
+    display_name: Julia 1.7.3
     language: julia
-    name: julia-1.1
+    name: julia-1.7
 ---
 
 # 三項分布の尤度函数
