@@ -1092,8 +1092,8 @@ plot_confint_of_mean(x; α)
 
 ```julia
 Random.seed!(4649373)
-dist = Gamma(30, 1)
-x = rand(Gamma(5,3), 640)
+dist = Gamma(5,3)
+x = rand(dist, 640)
 a, b = extrema(x)
 xlim = (a - 0.05(b - a), b + 0.05(b-a))
 ```
