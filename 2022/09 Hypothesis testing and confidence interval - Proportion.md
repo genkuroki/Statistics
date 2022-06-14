@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-11
+* 2022-05-31～2022-06-14
 
 $
 \newcommand\op{\operatorname}
@@ -247,7 +247,7 @@ end
 function confint_sterne(n, k; α = 0.05)
     a, b = confint_clopper_pearson(n, k; α = α/10)
     ps = find_zeros(a-√eps(), b+√eps()) do p
-        logistic(0 < p ≤ 1 ? pvalue_sterne(n, k, p) : zero(p)) - logistic(α)
+        logit(0 < p ≤ 1 ? pvalue_sterne(n, k, p) : zero(p)) - logit(α)
     end
     # 次の行は稀に区間にならない場合への対策
     [first(ps), last(ps)]
