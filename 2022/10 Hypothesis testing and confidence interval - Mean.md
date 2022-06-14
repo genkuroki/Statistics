@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 平均の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-13
+* 2022-05-31～2022-06-14
 
 $
 \newcommand\op{\operatorname}
@@ -67,7 +67,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間" data-toc-modified-id="平均に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合</a></span></li><li><span><a href="#標本平均と不偏分散に関する中心極限定理と大数の法則の可視化" data-toc-modified-id="標本平均と不偏分散に関する中心極限定理と大数の法則の可視化-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>標本平均と不偏分散に関する中心極限定理と大数の法則の可視化</a></span></li><li><span><a href="#問題:-他の様々な分布について-T(μ)-の分布を確認" data-toc-modified-id="問題:-他の様々な分布について-T(μ)-の分布を確認-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>問題: 他の様々な分布について T(μ) の分布を確認</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合</a></span></li><li><span><a href="#標本分布におけるT統計量の分布の視覚化" data-toc-modified-id="標本分布におけるT統計量の分布の視覚化-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>標本分布におけるT統計量の分布の視覚化</a></span></li><li><span><a href="#分布の対数の標本分布のT統計量の視覚化" data-toc-modified-id="分布の対数の標本分布のT統計量の視覚化-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>分布の対数の標本分布のT統計量の視覚化</a></span></li><li><span><a href="#平均に関するP値の使い方" data-toc-modified-id="平均に関するP値の使い方-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>平均に関するP値の使い方</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する平均の信頼区間-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する平均の信頼区間</a></span></li></ul></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間の計算の仕方" data-toc-modified-id="平均に関するP値と信頼区間の計算の仕方-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaでの平均に関するP値と信頼区間の計算例" data-toc-modified-id="WolframAlphaでの平均に関するP値と信頼区間の計算例-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaでの平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語での平均に関するP値と信頼区間の計算例-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語での平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#R言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="R言語での平均に関するP値と信頼区間の計算例-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>R言語での平均に関するP値と信頼区間の計算例</a></span></li></ul></li><li><span><a href="#必修練習問題:-平均に関するP値と信頼区間の計算" data-toc-modified-id="必修練習問題:-平均に関するP値と信頼区間の計算-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修練習問題: 平均に関するP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WaolframAlphaによる必修練習問題の解き方" data-toc-modified-id="WaolframAlphaによる必修練習問題の解き方-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WaolframAlphaによる必修練習問題の解き方</a></span></li><li><span><a href="#Julia言語による必修練習問題の解き方" data-toc-modified-id="Julia言語による必修練習問題の解き方-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による必修練習問題の解き方</a></span></li><li><span><a href="#R言語による必修練習問題の解き方" data-toc-modified-id="R言語による必修練習問題の解き方-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>R言語による必修練習問題の解き方</a></span></li><li><span><a href="#必修練習問題解答例" data-toc-modified-id="必修練習問題解答例-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>必修練習問題解答例</a></span></li></ul></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間" data-toc-modified-id="平均に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="平均に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合</a></span></li><li><span><a href="#標本平均と不偏分散に関する中心極限定理と大数の法則の可視化" data-toc-modified-id="標本平均と不偏分散に関する中心極限定理と大数の法則の可視化-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>標本平均と不偏分散に関する中心極限定理と大数の法則の可視化</a></span></li><li><span><a href="#問題:-他の様々な分布について-T(μ)-の分布を確認" data-toc-modified-id="問題:-他の様々な分布について-T(μ)-の分布を確認-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 他の様々な分布について T(μ) の分布を確認</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合</a></span></li><li><span><a href="#標本分布におけるT統計量の分布の視覚化" data-toc-modified-id="標本分布におけるT統計量の分布の視覚化-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>標本分布におけるT統計量の分布の視覚化</a></span></li><li><span><a href="#分布の対数の標本分布のT統計量の視覚化" data-toc-modified-id="分布の対数の標本分布のT統計量の視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>分布の対数の標本分布のT統計量の視覚化</a></span></li><li><span><a href="#平均に関するP値の使い方" data-toc-modified-id="平均に関するP値の使い方-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>平均に関するP値の使い方</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する平均の信頼区間-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する平均の信頼区間</a></span></li></ul></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間の計算の仕方" data-toc-modified-id="平均に関するP値と信頼区間の計算の仕方-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaでの平均に関するP値と信頼区間の計算例" data-toc-modified-id="WolframAlphaでの平均に関するP値と信頼区間の計算例-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaでの平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語での平均に関するP値と信頼区間の計算例-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語での平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での平均に関するP値と信頼区間のグラフ作成" data-toc-modified-id="Julia言語での平均に関するP値と信頼区間のグラフ作成-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語での平均に関するP値と信頼区間のグラフ作成</a></span></li><li><span><a href="#R言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="R言語での平均に関するP値と信頼区間の計算例-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>R言語での平均に関するP値と信頼区間の計算例</a></span></li></ul></li><li><span><a href="#必修練習問題:-平均に関するP値と信頼区間の計算" data-toc-modified-id="必修練習問題:-平均に関するP値と信頼区間の計算-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修練習問題: 平均に関するP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WaolframAlphaによる必修練習問題の解き方" data-toc-modified-id="WaolframAlphaによる必修練習問題の解き方-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WaolframAlphaによる必修練習問題の解き方</a></span></li><li><span><a href="#Julia言語による必修練習問題の解き方" data-toc-modified-id="Julia言語による必修練習問題の解き方-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による必修練習問題の解き方</a></span></li><li><span><a href="#R言語による必修練習問題の解き方" data-toc-modified-id="R言語による必修練習問題の解き方-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>R言語による必修練習問題の解き方</a></span></li><li><span><a href="#必修練習問題解答例" data-toc-modified-id="必修練習問題解答例-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>必修練習問題解答例</a></span></li></ul></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -247,13 +247,13 @@ function show_confint_of_mean(x; μ = mean(x), α = 0.05)
     println("($(100(1-α))% confidence interval of mean) = ", confint_tdist(x; α))
 end
 
-function plot_confint_of_mean(x; α = 0.05, plot_pvalues = false,
+function plot_confint_of_mean(x; α = 0.05, plot_pvaluefunc = false,
         xtick=-100:100, kwargs...)
     n = length(x)
     a, b = extrema(x)
     a, b = a - 0.05(b-a), b + 0.05(b-a)
     confidence_interval = confint_tdist(x; α)
-    if plot_pvalues
+    if plot_pvaluefunc
         scatter(x, fill(-0.05, n); label="", msc=:auto, alpha=0.7)
         plot!(μ -> pvalue_tdist(x, μ), a, b; label="", c=2)
         plot!(confidence_interval, fill(α, 2); label="", lw=3, c=:red)
@@ -270,13 +270,63 @@ function plot_confint_of_mean(x; α = 0.05, plot_pvalues = false,
     plot!(; xlim=(a, b), xtick)
     plot!(; kwargs...)
 end
-
-x = rand(Normal(2, 3), 100)
-show_confint_of_mean(x; μ = 1, α = 0.05)
-plot_confint_of_mean(x; α = 0.05, plot_pvalues=true)
 ```
 
+```julia
+#Random.seed!(7749); x = rand(Normal(0, 1), 20) # Julia v1.7.3
+x = [
+-0.14468070220160034
+-0.18969247015207036
+ 0.30151049054895623
+-0.18480852071580925
+ 0.5445553231881434
+ 0.429751332626428
+ 2.044565039620567
+-0.3214242933678388
+ 0.10607974695801257
+-0.2046040127070169
+-1.187351237918782
+ 0.3615628094981996
+ 0.42388796016145336
+ 0.6223382190805758
+ 1.4389043328536288
+ 1.300418561526944
+ 0.9756607771970455
+ 0.29276870729869514
+ 1.685408534649871
+-0.23026435459236955
+];
+```
+
+```julia
+show_confint_of_mean(x; μ = 1, α = 0.05)
+plot_confint_of_mean(x; α = 0.05, plot_pvaluefunc=true, size=(600, 300))
+```
+
+__上のグラフの説明__
+
+薄い青のドット達は, 標準正規分布に従う乱数で生成したサイズ $n=20$ の標本の数値(データの数値とも呼ぶ).
+
+青くて太い線は, 標本の数値から計算される平均の $95\%$ 信頼区間.
+
+「とんがり帽子」型の曲線は, そのデータの数値から決まる平均に関するP値函数のグラフ.
+
+横軸が $\mu=\mu_0$ の数値で, そのP値函数は $t$ 分布を使って定義されている.
+
+生成されたデータの数値は大幅に右側に偏っていた.
+
+データを生成した標準正規分布の平均は $0$ なのに, は右側に大きくずれてしまっている.
+
+__以下の目標__
+
+* 上のグラフの意味を理解できるようになる.
+* 平均に関するP値と信頼区間を計算できるようになる.
+
+
 ## 平均に関するP値と信頼区間
+
+
+### 平均に関するP値と信頼区間を使って行いたいこと
 
 以下のようなことを行いたい.
 
@@ -1055,6 +1105,8 @@ quantile(TDistribution(10), 0.975) → [実行](https://www.wolframalpha.com/inp
 
 #### Julia言語での平均に関するP値と信頼区間の計算例
 
+ほとんど定義通りにJulia言語のコードを入力すれば計算できる.
+
 ```julia
 x = [13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6]
 n = length(x)
@@ -1090,50 +1142,76 @@ plot_confint_of_mean(x; α)
 
 サンプルサイズ $n$ を $a$ 倍すると信頼区間の幅はおおよそ $\sqrt{a}$ 分の $1$ になる.
 
+__精度を1桁上げるためには, サンプルサイズ $n$ を $100$ 倍に増やす必要がある!__
+
+
+#### Julia言語での平均に関するP値と信頼区間のグラフ作成
+
+```julia
+plot(Gamma(5, 2); label="pdf of Gamma(5, 2)")
+vline!([mean(Gamma(5, 2))]; label="mean(Gamma(5, 2))", c=1, ls=:dash)
+```
+
 ```julia
 Random.seed!(4649373)
-dist = Gamma(5,3)
+dist = Gamma(5,2)
 x = rand(dist, 640)
 a, b = extrema(x)
 xlim = (a - 0.05(b - a), b + 0.05(b-a))
 ```
 
 ```julia
-plot_confint_of_mean(x[1:10]; xlim, xtick=0:2:100)
+plot_confint_of_mean(x[1:10]; xlim)
 ```
 
 ```julia
-plot_confint_of_mean(x[1:40]; xlim, xtick=0:2:100)
+plot_confint_of_mean(x[1:40]; xlim)
 ```
 
 ```julia
-plot_confint_of_mean(x[1:160]; xlim, xtick=0:2:100)
+plot_confint_of_mean(x[1:160]; xlim)
 ```
 
 ```julia
-plot_confint_of_mean(x; xlim, xtick=0:2:100)
+plot_confint_of_mean(x; xlim)
 ```
 
 P値函数も同時にプロットすると以下のようになる.
 
 ```julia
-plot_confint_of_mean(x[1:10]; xlim, xtick=0:2:100, plot_pvalues=true)
+plot_confint_of_mean(x[1:10]; xlim, plot_pvaluefunc=true)
 ```
 
 ```julia
-plot_confint_of_mean(x[1:40]; xlim, xtick=0:2:100, plot_pvalues=true)
+plot_confint_of_mean(x[1:40]; xlim, plot_pvaluefunc=true)
 ```
 
 ```julia
-plot_confint_of_mean(x[1:160]; xlim, xtick=0:2:100, plot_pvalues=true)
+plot_confint_of_mean(x[1:160]; xlim, plot_pvaluefunc=true)
 ```
 
 ```julia
-plot_confint_of_mean(x; xlim, xtick=0:2:100, plot_pvalues=true)
+plot_confint_of_mean(x; xlim, plot_pvaluefunc=true)
 ```
+
+データはガンマ分布 $\op{Gamma}(5, 2)$ の標本(独立同分布確率変数列の実現値)としてランダムに生成されている. 標本のサイズ $n$ が大きくなるにつれて, P値函数と信頼区間の幅は縮まって行き, データを生成した分布の平均値の $10$ に集中するようになる.
+
+```julia
+L = length(x)
+anim = @animate for n in [fill(10,20); 10:2:L; fill(L, 20)]
+    plot_confint_of_mean(x[1:n]; xlim, xtick=0:2:100, plot_pvaluefunc=true)
+end
+gif(anim, "images/confint_of_mean.gif")
+```
+
+このノートのPDF版で上の動画をみることはできない. しかし, 以下の場所でみることができる:
+
+* https://github.com/genkuroki/Statistics/blob/master/2022/images/confint_of_mean.gif
 
 <!-- #region -->
 #### R言語での平均に関するP値と信頼区間の計算例
+
+ほとんど定義通りにJulia言語のコードを入力すれば計算できる.
 
 ```R
 x = c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6)
@@ -1160,7 +1238,7 @@ cat("t_{alpha/2, n-1} = ", c, "\n")
 cat("conf.int = ", conf.int, "\n")
 ```
 
-以下のようにすれば一発で計算できる:
+以下のようにすれば一発で計算することもできる:
 
 ```R
 t.test(c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6), mu=9)
@@ -1202,12 +1280,12 @@ t.test(c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6), mu=9)
 
 ### 必修練習問題: 平均に関するP値と信頼区間の計算
 
-次のサイズ $20$ データとして次が与えられているとする:
+サイズ $20$ のデータとして次が与えられているとする:
 
 >38.1, 28.9, 30.4, 27.6, 38.0, 35.3, 30.0, 29.3, 32.9, 34.8,<br>
 39.4, 38.4, 28.4, 27.0, 35.9, 30.7, 28.2, 33.2, 33.0, 36.0
 
-以上で説明した方法が以下を求めよ.
+以上で説明した $t$ 分布を使う方法によって以下を求めよ.
 
 (1) 「平均は $\mu = 30.0$ である」という仮説のP値.
 
@@ -1215,7 +1293,10 @@ t.test(c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6), mu=9)
 
 まずは, この問題よりも上の方にある説明だけを見て(これより下の方を見ないで), 計算してみよ.
 
-自力で計算した結果がぴったり正解になっていれば爽快な気分を味わえるだろう.
+自力で計算した結果が正解に一致していれば爽快な気分を味わえるだろう.
+
+
+__勉強の仕方:__ ある程度統計学の勉強が進んだら, 適当に統計分析の報告を見つけて, 同じ結果を数値的に再現できるかどうかを試してみるとよい.
 
 
 #### WaolframAlphaによる必修練習問題の解き方
@@ -1238,6 +1319,8 @@ $\alpha = 0.01$, $n-1=19$ のときの $t_{\alpha/2,n-1}$ の計算: `quantile(T
 #### Julia言語による必修練習問題の解き方
 
 ほぼ定義通りの式をJulia言語のコードとして書けば計算できる.
+
+以下のように函数にまとめてしまうと便利である.
 
 ```julia
 function pvalue_tdist(x̄, s², n, μ)
@@ -1266,14 +1349,14 @@ function show_confint_of_mean(x; μ = mean(x), α = 0.05)
 end
 ```
 
-`plot_confint_of_mean(x; α, plot_pvalues)` の定義についてはこのノートの最初の方を見よ.
+`plot_confint_of_mean(x; α, plot_pvaluefunc)` の定義についてはこのノートの最初の方を見よ.
 <!-- #endregion -->
 
 ```julia
 x = [38.1, 28.9, 30.4, 27.6, 38.0, 35.3, 30.0, 29.3, 32.9, 34.8,
     39.4, 38.4, 28.4, 27.0, 35.9, 30.7, 28.2, 33.2, 33.0, 36.0]
 show_confint_of_mean(x; μ=30.0, α=0.01)
-plot_confint_of_mean(x; α=0.01, plot_pvalues=true, size=(600, 300))
+plot_confint_of_mean(x; α=0.01, plot_pvaluefunc=true, size=(600, 300))
 ```
 
 <!-- #region -->
@@ -1289,7 +1372,9 @@ t.test(x, mu=30, conf.level=0.99)
 
 実際に統計分析を行う場合にはこのような道具を使った方がよいだろう.
 
-しかし, 統計学の仕組みを勉強する過程では, 計算の過程がわかるような勉強の仕方をした方がよいだろう.
+しかし, 統計学の勉強をする場合には, 計算の過程がわかるような道具の使い方をした方がよい.
+
+__あえてエレガントではなく, エレファントな方法を使ってみる__ ことは結構重要でである.
 <!-- #endregion -->
 
 ```julia
@@ -1300,13 +1385,14 @@ t.test(x, mu=30, conf.level=0.99)
 """
 ```
 
+しかし, これはとても便利である.
+
+
 #### 必修練習問題解答例
 
-以下の程度の精度で報告すれば十分過ぎるほど十分である.
+(1) (P値) ≈ 0.006065
 
-(1) P値 ≈ 0.006065
-
-(2) 99%信頼区間 ≈ \[30.20, 35.35\]
+(2) (99%信頼区間) ≈ \[30.20, 35.35\]
 
 ```julia
 
