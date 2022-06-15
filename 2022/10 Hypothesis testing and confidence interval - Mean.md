@@ -31,7 +31,7 @@ $
 \newcommand\bk{\bar\kappa}
 \newcommand\X{{\mathscr X}}
 \newcommand\CP{{\mathrm{CP}}}
-\newcommand\Sterne{{\mathrm{Stern}}}
+\newcommand\Sterne{{\mathrm{Sterne}}}
 \newcommand\Wilson{{\mathrm{Wilson}}}
 \newcommand\Wald{{\mathrm{Wald}}}
 \newcommand\LLR{{\mathrm{LLR}}}
