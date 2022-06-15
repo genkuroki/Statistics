@@ -293,7 +293,7 @@ __定義された信頼区間__
 
 __定義された確率分布__
 
-* 自由度 $\nu$ のχ分布: $\mathrm{Chi}(\nu) = \sqrt{\mathrm{Chisq}(\nu)}$
+* 自由度νのχ分布: $\mathrm{Chi}(\nu) = \sqrt{\mathrm{Chisq}(\nu)}$
 
 __作成された動画__
 
