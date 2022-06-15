@@ -245,7 +245,9 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)\]
 
-__P値函数__ の概念が最も重要.  信頼区間はP値函数を使って定義される.
+__P値函数__ の概念が最も重要.
+
+この一連のノートでは信頼区間は常に対応するP値函数を使って定義されることになる.
 
 ### 09 検定と信頼区間(2) 比率
 
@@ -306,7 +308,7 @@ __作成された動画__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)\]
 
-__定義する予定の信頼区間__
+__定義された信頼区間__
 
 オッズ比の信頼区間
 
@@ -320,6 +322,10 @@ __定義する予定の信頼区間__
 
 * Wald型の信頼区間
 * Pearsonのχ²検定に付随する信頼区間
+
+__定義された確率分布__
+
+Fisherの非心超幾何分布: $\mathrm{FisherNoncentralHypergeometric}(m, n, r, \omega)$ 
 
 ### 12 検定と信頼区間(5) 平均の差
 
