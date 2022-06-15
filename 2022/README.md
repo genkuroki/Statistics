@@ -119,6 +119,12 @@ __定義された確率分布__
 
 * 分布 $D$ のサイズ $n$ の __標本分布__: $D^n$
 
+__作成された動画__
+
+[楕円と回帰直線の関係](https://github.com/genkuroki/Statistics/blob/master/2022/images/ellipse_and_regressionline.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/ellipse_and_regressionline.gif">
+
 ### 05 大数の法則と中心極限定理
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
@@ -239,6 +245,8 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)\]
 
+__P値函数__ の概念が最も重要.  信頼区間はP値函数を使って定義される.
+
 ### 09 検定と信頼区間(2) 比率
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
@@ -254,6 +262,16 @@ __定義された信頼区間__
 * Sterneの信頼区間
 * Wilsonの信頼区間
 * Waldの信頼区間
+
+__作成された動画__
+
+[n=20の二項分布モデルのP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/pvaluefunction20.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/pvaluefunction20.gif">
+
+[n=100の二項分布モデルのP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/pvaluefunction100.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/pvaluefunction100.gif">
 
 ### 10 検定と信頼区間(3) 平均
 
@@ -275,14 +293,33 @@ __定義された確率分布__
 
 * 自由度 $\nu$ のχ分布: $\mathrm{Chi}(\nu) = \sqrt{\mathrm{Chisq}(\nu)}$
 
+__作成された動画__
+
+[n → ∞ でのP値函数と信頼区間の挙動](https://github.com/genkuroki/Statistics/blob/master/2022/images/confint_of_mean.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/confint_of_mean.gif">
+
 ### 11 検定と信頼区間(4) 比率の違い
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)\]
 
 __定義する予定の信頼区間__
 
 オッズ比の信頼区間
 
+* Wald型の信頼区間
 * Pearsonのχ²検定に付随する信頼区間
-* Fisherの正確検定に付随する信頼区間
+* Fisher検定に付随する信頼区間
+  * Sterne型
+  * Clopper-Pearson型
+
+リスク比の信頼区間
+
+* Wald型の信頼区間
+* Pearsonのχ²検定に付随する信頼区間
 
 ### 12 検定と信頼区間(5) 平均の差
 
