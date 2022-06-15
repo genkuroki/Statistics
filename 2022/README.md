@@ -325,7 +325,7 @@ __定義された信頼区間__
 
 __定義された確率分布__
 
-Fisherの非心超幾何分布: $\mathrm{FisherNoncentralHypergeometric}(m, n, r, \omega)$ 
+* Fisherの非心超幾何分布: $\mathrm{FisherNoncentralHypergeometric}(m, n, r, \omega)$ 
 
 ### 12 検定と信頼区間(5) 平均の差
 
