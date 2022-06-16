@@ -93,7 +93,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間" data-toc-modified-id="比率の比較に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="比率の比較に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#2×2の分割表型データとその2つの二項分布モデル" data-toc-modified-id="2×2の分割表型データとその2つの二項分布モデル-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>2×2の分割表型データとその2つの二項分布モデル</a></span></li><li><span><a href="#比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR" data-toc-modified-id="比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>比率の違いを表す2つの指標: オッズ比パラメータ OR とリスク比パラメータ RR</a></span></li></ul></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値函数の視覚化-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.5"><span class="toc-item-num">2.2.5&nbsp;&nbsp;</span>R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li></ul></li><li><span><a href="#確率変数としての対数オッズ比の分散の近似値の導出" data-toc-modified-id="確率変数としての対数オッズ比の分散の近似値の導出-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>確率変数としての対数オッズ比の分散の近似値の導出</a></span></li><li><span><a href="#問題:-対数リスク比の場合の正規分布近似" data-toc-modified-id="問題:-対数リスク比の場合の正規分布近似-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 対数リスク比の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の定義-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の計算例-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値と信頼区間の計算例-2.6.1"><span class="toc-item-num">2.6.1&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるWald版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値函数の視覚化-2.6.2"><span class="toc-item-num">2.6.2&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例" data-toc-modified-id="Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例-2.6.3"><span class="toc-item-num">2.6.3&nbsp;&nbsp;</span>Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例</a></span></li></ul></li><li><span><a href="#必修問題:-別の計算例" data-toc-modified-id="必修問題:-別の計算例-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>必修問題: 別の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる必修問題の解答例" data-toc-modified-id="WolframAlphaによる必修問題の解答例-2.7.1"><span class="toc-item-num">2.7.1&nbsp;&nbsp;</span>WolframAlphaによる必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題の解答例" data-toc-modified-id="Julia言語による必修問題の解答例-2.7.2"><span class="toc-item-num">2.7.2&nbsp;&nbsp;</span>Julia言語による必修問題の解答例</a></span></li><li><span><a href="#必修問題解答例" data-toc-modified-id="必修問題解答例-2.7.3"><span class="toc-item-num">2.7.3&nbsp;&nbsp;</span>必修問題解答例</a></span></li></ul></li></ul></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="WolframAlphaによるPearsonのχ²検定のP値の計算の仕方-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによるPearsonのχ²検定のP値の計算の仕方</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化</a></span></li><li><span><a href="#R言語によるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="R言語によるPearsonのχ²検定のP値の計算の仕方-3.2.5"><span class="toc-item-num">3.2.5&nbsp;&nbsp;</span>R言語によるPearsonのχ²検定のP値の計算の仕方</a></span></li></ul></li><li><span><a href="#「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係" data-toc-modified-id="「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデル全体での最尤法" data-toc-modified-id="2つの二項分布モデル全体での最尤法-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>2つの二項分布モデル全体での最尤法</a></span></li><li><span><a href="#条件OR=ωで制限した2つの二項分布モデルでの最尤法" data-toc-modified-id="条件OR=ωで制限した2つの二項分布モデルでの最尤法-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>条件OR=ωで制限した2つの二項分布モデルでの最尤法</a></span></li><li><span><a href="#Wilks's-theoremの適用" data-toc-modified-id="Wilks's-theoremの適用-3.3.3"><span class="toc-item-num">3.3.3&nbsp;&nbsp;</span>Wilks's theoremの適用</a></span></li></ul></li><li><span><a href="#問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法" data-toc-modified-id="問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: 「リスク比パラメータはRR=ρである」という仮説下での最尤法</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-3.6.1"><span class="toc-item-num">3.6.1&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化-3.6.2"><span class="toc-item-num">3.6.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例-3.6.3"><span class="toc-item-num">3.6.3&nbsp;&nbsp;</span>Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#ニューサンスパラメータの問題に関する注意" data-toc-modified-id="ニューサンスパラメータの問題に関する注意-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>ニューサンスパラメータの問題に関する注意</a></span></li></ul></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#条件付き確率分布を利用するアイデア" data-toc-modified-id="条件付き確率分布を利用するアイデア-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>条件付き確率分布を利用するアイデア</a></span></li><li><span><a href="#Sterne型のFisher検定のP値とそれに付随する信頼区間の定義" data-toc-modified-id="Sterne型のFisher検定のP値とそれに付随する信頼区間の定義-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Sterne型のFisher検定のP値とそれに付随する信頼区間の定義</a></span></li><li><span><a href="#Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間" data-toc-modified-id="Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間</a></span></li><li><span><a href="#問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: Fisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるFisher検定版のP値と信頼区間の計算の仕方" data-toc-modified-id="R言語によるFisher検定版のP値と信頼区間の計算の仕方-4.4.3"><span class="toc-item-num">4.4.3&nbsp;&nbsp;</span>R言語によるFisher検定版のP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例-4.4.4"><span class="toc-item-num">4.4.4&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li></ul></li><li><span><a href="#おまけ:-Bayes信用区間" data-toc-modified-id="おまけ:-Bayes信用区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>おまけ: Bayes信用区間</a></span><ul class="toc-item"><li><span><a href="#オッズ比パラメータとリスク比パラメータのBayes信用区間" data-toc-modified-id="オッズ比パラメータとリスク比パラメータのBayes信用区間-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>オッズ比パラメータとリスク比パラメータのBayes信用区間</a></span></li><li><span><a href="#Bayes信用区間の計算例" data-toc-modified-id="Bayes信用区間の計算例-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Bayes信用区間の計算例</a></span></li><li><span><a href="#Bayes信用区間に付随するP値函数" data-toc-modified-id="Bayes信用区間に付随するP値函数-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Bayes信用区間に付随するP値函数</a></span></li><li><span><a href="#Bayes版P値函数の視覚化" data-toc-modified-id="Bayes版P値函数の視覚化-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Bayes版P値函数の視覚化</a></span></li><li><span><a href="#問題:-別の例" data-toc-modified-id="問題:-別の例-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>問題: 別の例</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間" data-toc-modified-id="比率の比較に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="比率の比較に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#2×2の分割表型データとその2つの二項分布モデル" data-toc-modified-id="2×2の分割表型データとその2つの二項分布モデル-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>2×2の分割表型データとその2つの二項分布モデル</a></span></li><li><span><a href="#比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR" data-toc-modified-id="比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>比率の違いを表す2つの指標: オッズ比パラメータ OR とリスク比パラメータ RR</a></span></li></ul></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値函数の視覚化-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.5"><span class="toc-item-num">2.2.5&nbsp;&nbsp;</span>R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li></ul></li><li><span><a href="#確率変数の対数オッズ比の分散の近似値の導出" data-toc-modified-id="確率変数の対数オッズ比の分散の近似値の導出-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>確率変数の対数オッズ比の分散の近似値の導出</a></span></li><li><span><a href="#問題:-対数リスク比の場合の正規分布近似" data-toc-modified-id="問題:-対数リスク比の場合の正規分布近似-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 対数リスク比の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の定義-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の計算例-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方-2.6.1"><span class="toc-item-num">2.6.1&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値函数の視覚化-2.6.2"><span class="toc-item-num">2.6.2&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるWald版のリスク比に関する信頼区間の計算の仕方" data-toc-modified-id="R言語によるWald版のリスク比に関する信頼区間の計算の仕方-2.6.3"><span class="toc-item-num">2.6.3&nbsp;&nbsp;</span>R言語によるWald版のリスク比に関する信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例" data-toc-modified-id="Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例-2.6.4"><span class="toc-item-num">2.6.4&nbsp;&nbsp;</span>Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例</a></span></li></ul></li><li><span><a href="#問題:-比率の差の場合の正規分布近似" data-toc-modified-id="問題:-比率の差の場合の正規分布近似-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 比率の差の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の定義-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の計算例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方-2.9.1"><span class="toc-item-num">2.9.1&nbsp;&nbsp;</span>Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版の比率の差に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Wald版の比率の差に関するP値と信頼区間の計算の解答例-2.9.2"><span class="toc-item-num">2.9.2&nbsp;&nbsp;</span>Wald版の比率の差に関するP値と信頼区間の計算の解答例</a></span></li></ul></li></ul></li><li><span><a href="#必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間" data-toc-modified-id="必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>必修問題: Wald版のオッズ比とリスク比のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる必修問題の解答例" data-toc-modified-id="WolframAlphaによる必修問題の解答例-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>WolframAlphaによる必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題の解答例" data-toc-modified-id="Julia言語による必修問題の解答例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Julia言語による必修問題の解答例</a></span></li><li><span><a href="#必修問題解答例" data-toc-modified-id="必修問題解答例-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>必修問題解答例</a></span></li></ul></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="WolframAlphaによるPearsonのχ²検定のP値の計算の仕方-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>WolframAlphaによるPearsonのχ²検定のP値の計算の仕方</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化</a></span></li><li><span><a href="#R言語によるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="R言語によるPearsonのχ²検定のP値の計算の仕方-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>R言語によるPearsonのχ²検定のP値の計算の仕方</a></span></li></ul></li><li><span><a href="#「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係" data-toc-modified-id="「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデル全体での最尤法" data-toc-modified-id="2つの二項分布モデル全体での最尤法-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>2つの二項分布モデル全体での最尤法</a></span></li><li><span><a href="#条件OR=ωで制限した2つの二項分布モデルでの最尤法" data-toc-modified-id="条件OR=ωで制限した2つの二項分布モデルでの最尤法-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>条件OR=ωで制限した2つの二項分布モデルでの最尤法</a></span></li><li><span><a href="#Wilks's-theoremの適用" data-toc-modified-id="Wilks's-theoremの適用-4.3.3"><span class="toc-item-num">4.3.3&nbsp;&nbsp;</span>Wilks's theoremの適用</a></span></li></ul></li><li><span><a href="#問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法" data-toc-modified-id="問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>問題: 「リスク比パラメータはRR=ρである」という仮説下での最尤法</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例-4.6.3"><span class="toc-item-num">4.6.3&nbsp;&nbsp;</span>Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#ニューサンスパラメータの問題に関する注意" data-toc-modified-id="ニューサンスパラメータの問題に関する注意-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>ニューサンスパラメータの問題に関する注意</a></span></li></ul></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#条件付き確率分布を利用するアイデア" data-toc-modified-id="条件付き確率分布を利用するアイデア-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>条件付き確率分布を利用するアイデア</a></span></li><li><span><a href="#Sterne型のFisher検定のP値とそれに付随する信頼区間の定義" data-toc-modified-id="Sterne型のFisher検定のP値とそれに付随する信頼区間の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Sterne型のFisher検定のP値とそれに付随する信頼区間の定義</a></span></li><li><span><a href="#Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間" data-toc-modified-id="Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間</a></span></li><li><span><a href="#問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: Fisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるFisher検定版のP値と信頼区間の計算の仕方" data-toc-modified-id="R言語によるFisher検定版のP値と信頼区間の計算の仕方-5.4.3"><span class="toc-item-num">5.4.3&nbsp;&nbsp;</span>R言語によるFisher検定版のP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例-5.4.4"><span class="toc-item-num">5.4.4&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#Fisher検定における第一種の過誤の確率" data-toc-modified-id="Fisher検定における第一種の過誤の確率-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Fisher検定における第一種の過誤の確率</a></span></li></ul></li><li><span><a href="#おまけ:-Bayes信用区間" data-toc-modified-id="おまけ:-Bayes信用区間-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>おまけ: Bayes信用区間</a></span><ul class="toc-item"><li><span><a href="#オッズ比パラメータとリスク比パラメータのBayes信用区間" data-toc-modified-id="オッズ比パラメータとリスク比パラメータのBayes信用区間-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>オッズ比パラメータとリスク比パラメータのBayes信用区間</a></span></li><li><span><a href="#Bayes信用区間の計算例" data-toc-modified-id="Bayes信用区間の計算例-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Bayes信用区間の計算例</a></span></li><li><span><a href="#Bayes信用区間に付随するP値函数" data-toc-modified-id="Bayes信用区間に付随するP値函数-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Bayes信用区間に付随するP値函数</a></span></li><li><span><a href="#Bayes版P値函数の視覚化" data-toc-modified-id="Bayes版P値函数の視覚化-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Bayes版P値函数の視覚化</a></span></li><li><span><a href="#Bayes版P値函数の視覚化の別の例" data-toc-modified-id="Bayes版P値函数の視覚化の別の例-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Bayes版P値函数の視覚化の別の例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -146,7 +146,7 @@ end
 
 ```julia
 safemul(x, y) = x == 0 ? x : x*y
-safediv(x, y) = x == 0 ? x : x/y
+safediv(x, y) = x == 0 ? x : isinf(y) ? zero(y) : x/y
 
 x ⪅ y = x < y || x ≈ y
 
@@ -172,15 +172,15 @@ stderr_logoddsratiohat(a, b, c, d) = √(1/a + 1/b + 1/c + 1/d)
 
 function pvalue_or_wald(a, b, c, d; ω=1)
     logORhat = log(oddsratiohat(a, b, c, d))
-    SElogORhat = stderr_logoddsratiohat(a, b, c, d)
-    2ccdf(Normal(0, 1), abs(logORhat - log(ω))/SElogORhat)
+    SEhat_logORhat = stderr_logoddsratiohat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(logORhat - log(ω)), SEhat_logORhat))
 end
 
 function confint_or_wald(a, b, c, d; α=0.05)
     z = quantile(Normal(), 1-α/2)
     ORhat = oddsratiohat(a, b, c, d)
-    SElogORhat = stderr_logoddsratiohat(a, b, c, d)
-    [exp(-z*SElogORhat)*ORhat, exp(z*SElogORhat)*ORhat]
+    SEhat_logORhat = stderr_logoddsratiohat(a, b, c, d)
+    [exp(-z*SEhat_logORhat)*ORhat, exp(z*SEhat_logORhat)*ORhat]
 end
 ```
 
@@ -190,15 +190,38 @@ stderr_logriskratiohat(a, b, c, d) = √(1/a - 1/(a+b) + 1/c - 1/(c+d))
 
 function pvalue_rr_wald(a, b, c, d; ρ=1)
     logRRhat = log(riskratiohat(a, b, c, d))
-    SElogRRhat = stderr_logriskratiohat(a, b, c, d)
-    2ccdf(Normal(0, 1), abs(logRRhat - log(ρ))/SElogRRhat)
+    SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(logRRhat - log(ρ)), SEhat_logRRhat))
 end
 
 function confint_rr_wald(a, b, c, d; α=0.05)
     z = quantile(Normal(), 1-α/2)
     RRhat = riskratiohat(a, b, c, d)
-    SElogRRhat = stderr_logriskratiohat(a, b, c, d)
-    [exp(-z*SElogRRhat)*RRhat, exp(z*SElogRRhat)*RRhat]
+    SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
+    [exp(-z*SEhat_logRRhat)*RRhat, exp(z*SEhat_logRRhat)*RRhat]
+end
+```
+
+```julia
+riskdiffhat(a, b, c, d) = a/(a+b) - c/(c+d)
+
+function stderr_riskdiffhat(a, b, c, d)
+    m, n = a+b, c+d
+    p̂, q̂ = a/m, c/n
+    √(p̂*(1-p̂)/m + q̂*(1-q̂)/n)
+end
+
+function pvalue_rd_wald(a, b, c, d; Δ=0)
+    RDhat = riskdiffhat(a, b, c, d)
+    SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(RDhat - Δ), SEhat_riskdiffhat))
+end
+
+function confint_rd_wald(a, b, c, d; α=0.05)
+    z = quantile(Normal(), 1-α/2)
+    RDhat = riskdiffhat(a, b, c, d)
+    SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
+    [RDhat - z*SEhat_riskdiffhat, RDhat + z*SEhat_riskdiffhat]
 end
 ```
 
@@ -298,7 +321,12 @@ function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
 end
 
 function pvalue_or_sterne(a, b, c, d; ω=1)
-    pvalue_sterne(FisherNoncentralHypergeometric(a+b, c+d, a+c, ω), a)
+    fnch = if ω == 1
+        Hypergeometric(a+b, c+d, a+c)
+    else
+        FisherNoncentralHypergeometric(a+b, c+d, a+c, ω)
+    end
+    pvalue_sterne(fnch, a)
 end
 
 function confint_or_sterne(a, b, c, d; α = 0.05)
@@ -313,7 +341,11 @@ end
 
 ```julia
 function pvalue_or_clopper_pearson(a, b, c, d; ω=1)
-    fnch = FisherNoncentralHypergeometric(a+b, c+d, a+c, ω)
+    fnch = if ω == 1
+        Hypergeometric(a+b, c+d, a+c)
+    else
+        FisherNoncentralHypergeometric(a+b, c+d, a+c, ω)
+    end
     min(1, 2cdf(fnch, a), 2ccdf(fnch, a-1))
 end
 
@@ -325,14 +357,75 @@ function confint_or_clopper_pearson(a, b, c, d; α = 0.05)
 end
 ```
 
+```julia
+function sim_probabilities_of_type_I_error(m, n, p, q=p;
+        ω=p*(1-q)/((1-p)*q), L=10^5)
+    bina, binc = Binomial(m, p), Binomial(n, q)
+    p_sterne = similar(zeros(), L)
+    p_clopper_pearson = similar(zeros(), L)
+    p_pearson = similar(zeros(), L)
+    p_wald = similar(zeros(), L)
+    @threads for i in 1:L
+        a, c = rand(bina), rand(binc)
+        b, d = m-a, n-c
+        p_sterne[i] = pvalue_or_sterne(a, b, c, d; ω)
+        p_clopper_pearson[i] = pvalue_or_clopper_pearson(a, b, c, d; ω)
+        p_pearson[i] = pvalue_or_pearson(a, b, c, d; ω)
+        p_wald[i] = pvalue_or_wald(a, b, c, d; ω)
+    end
+    (; p_sterne, p_clopper_pearson, p_pearson, p_wald)
+end
+
+function plot_probabilities_of_type_I_error(m, n, p, q=p;
+        ω=p*(1-q)/((1-p)*q), L=10^6, kwargs...)
+    (; p_sterne, p_clopper_pearson, p_pearson, p_wald) =
+        sim_probabilities_of_type_I_error(m, n, p, q; ω, L)
+    F_sterne = ecdf(p_sterne)
+    F_clopper_pearson = ecdf(p_clopper_pearson)
+    F_pearson = ecdf(p_pearson)
+    F_wald = ecdf(p_wald)
+    
+    x = 0:0.001:1
+    tick = 0:0.1:1
+    P = plot(; legend=:topleft)
+    plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
+    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dashdot)
+    plot!(x, x -> F_pearson(x); label="Pearson χ²")
+    plot!(x, x -> F_wald(x); label="Wald", ls=:dash)
+    plot!(x, identity; label="", c=:black, ls=:dot)
+    plot!(; xtick=tick, ytick=tick, tickfontsize=6)
+    plot!(; xguide="α", yguide="probability of type I error",
+        guidefontsize=9)
+    
+    x = 0:0.0001:0.1
+    tick = 0:0.01:1
+    Q = plot(; legend=:topleft)
+    plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
+    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dashdot)
+    plot!(x, x -> F_pearson(x); label="Pearson χ²")
+    plot!(x, x -> F_wald(x); label="Wald", ls=:dash)
+    plot!(x, identity; label="", c=:black, ls=:dot)
+    plot!(; xtick=tick, ytick=tick, tickfontsize=6)
+    plot!(; xguide="α", yguide="probability of type I error",
+        guidefontsize=9)
+    
+    plot(P, Q; size=(700, 350), layout=(1, 2))
+    plot!(; plot_title="Binomial(m=$m, p=$p)×Binomial(n=$n, q=$q)",
+        plot_titlefontsize=10)
+    plot!(; kwargs...)
+end
+```
+
 ## 比率の比較に関するP値と信頼区間
 
 
 ### 比率の比較に関するP値と信頼区間を使って行いたいこと
 
+我々は以下のようなことを知りたいとする.
+
 (1) ウェブページのデザインAとBではどちらの側がどれだけ商品が売れ易いかを知りたい. 
 
-(2) 薬Xを処方した側ではしなかった側よりも快復者の割合がどれだけ増えるかを知りたい.
+(2) 薬Xを処方した側ではしなかった側よりも症状が悪化しなかった人の割合がどれだけ増えるかを知りたい.
 
 例えば, (1)の場合に次のようなデータが得られたとする:
 
@@ -352,7 +445,7 @@ $$
 
 このデータの数値からの印象では, デザインAの方がデザインBの方が商品の購入確率が高いように見える. 実際, デザインAでの購入者割合は $49/1014 \approx 4.8\%$ 程度で, デザインBでの購入者割合の $26/880 \approx 3.0\%$ より大きい.
 
-しかし, データの確率的揺らぎのせいで偶然に, デザインAの側がよく売れるように見えるデータの数値が得られただけなのかもしれない.  (実際には他にも様々な原因で偏ったデータが得られる場合がある.)
+しかし, データの確率的揺らぎのせいで単なる偶然で, デザインAの側がよく売れるように見えるデータの数値が得られただけなのかもしれない.  (実際には他にも様々な原因で偏ったデータが得られる場合がある.)
 
 もしもそうならば, 上のデータに基くウェブページのデザイン採用に関する意思決定は無駄に終わることになってしまう.  だから, そのようなリスクの程度を見積もる必要がある.  そのための道具がP値や信頼区間である.  
 
@@ -379,7 +472,7 @@ X = 1 & a & b & m = a+b \\
 \hline
 X = 0 & c & d & n = c+d \\
 \hline
-      & r = a+c & d = b+d & N=a+b+c+d \\ 
+      & r = a+c & s = b+d & N=a+b+c+d \\ 
 \end{array}
 $$
 
@@ -404,25 +497,29 @@ P(a,b,c,d|m,n,p,q) =
 \end{aligned}
 $$
 
-これを __2つの二項分布モデル__ と呼ぶ.
+これを __2つの二項分布モデル__ と呼ぶことにする.
 
 (3) このモデルは上の分割表において, 以下が成立しているという設定になっている:
 
-* $X=1$ のときには $Y=1$ となる確率は $p$ である.
-* $X=0$ のときには $Y=1$ となる確率は $q$ である.
+* $X=1$ のときには $Y=1$ となる確率は $p$ で, $Y=0$ となる確率は $1-p$ である.
+* $X=0$ のときには $Y=1$ となる確率は $q$ で, $Y=0$ となる確率は $1-q$ である.
 
 そして, $X=1$ となる人達を $m$ 人選び, $X=0$ となる人を $n$ 人選んで $Y$ がどうなるかを調べた.
 
-$X$, $Y$ として以下のような場合を想定している:
+具体的に $X$, $Y$ として以下のような場合を想定している:
 
 * $X=1,0$ はウェブページのデザインがA,Bのどちらであるかを意味し, $Y=1,0$ は商品を購入したかしないかを意味する.
-* $X=1,0$ は薬Xを処方したか否かを意味し, $Y=1,0$ は快復したか否かを意味する.
+* $X=1,0$ は薬Xを処方したか否かを意味し, $Y=1,0$ は症状が悪化したか否かを意味している. ($Y=1$ は何らかの基準で症状が悪化したことを意味する.)
 
-__注意:__ このモデルの採用が妥当であるかどうかはデータの数値とは別の情報を使って判断しなければいけない.  例えば, 比較したい母集団とは異なる偏った母集団からの無作為抽出になってしまっている疑いが強い場合には, モデルを変更するか, データの取得の仕方を変更するか, どちらかの処置が必要になる.
+__注意:__ このモデルの採用が妥当であるかどうかはデータの数値とは別の情報を使って判断しなければいけない.  例えば, 比較したい母集団とは異なる偏った母集団からの無作為抽出になってしまっている疑いが強い場合には, モデルをデータの偏りを考慮したものに変更するか, データの取得の仕方を変更するか, どちらかのもしくは両方の処置が必要になる.
 
-__注意:__ 分割表の縦方向と横方向の役割を逆転させた場合も数学的には同様である.  ただし, データの分析結果の解釈では立場を交換したことによって違いが出るので注意すること.
+__注意:__ 分割表の縦方向と横方向の役割を逆転させた場合も数学的には同様である.  ただし, データの分析結果の解釈では立場を交換したことによって違いが出るので注意する必要がある.
 
-__注意:__ 以上で説明した2つの二項分布モデル以外に, 多項分布(四項分布)モデルや4つのPoisson分布モデルも考えられるが, 以下では省略する.  実は統計モデルをそのように変更しても以下で説明するP値や信頼区間の計算の仕方はどれも同じになることが知られている.  2×2の分割表に関する統計モデルについては, [「条件付き確率分布, 尤度, 推定, 記述統計」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)の「2×2の分割表の分布」の節を参照せよ.
+__注意:__ 以上で説明した2つの二項分布モデル以外に, 多項分布(四項分布)モデルや4つのPoisson分布モデルも考えられるが, 以下では省略する.  実は統計モデルをそのように変更しても以下で説明するP値や信頼区間の計算の仕方はどれも同じになることが知られている.  2×2の分割表に関する統計モデルについては, 
+
+* [「条件付き確率分布, 尤度, 推定, 記述統計」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)
+
+の「2×2の分割表の分布」の節を参照せよ.
 
 
 ### 比率の違いを表す2つの指標: オッズ比パラメータ OR とリスク比パラメータ RR
@@ -433,13 +530,21 @@ $$
 u = \frac{p}{1 - p}
 $$
 
-を __オッズ__(odds)と呼び, 2つの比率 $0<p<1$, $0<q<1$ に関する
+を __オッズ__(odds)と呼び, これの対数 $\log u = \log(p/(1-p))$ を __対数オッズ__ (log odds)と呼ぶ. 逆に $p$ はオッズ $u$ で
+
+$$
+p = \frac{1}{1+u}
+$$
+
+と表されるので, 比率 $p=u/(1+u)$ の代わりにオッズ $u=p/(1-p)$ を扱っても同等のことをできる. (この事実は計算を見通り良くするときに役に立つ.)
+
+2つの比率 $0<p<1$, $0<q<1$ に関する
 
 $$
 \OR = \frac{p/(1-p)}{q/(1-q)} = \frac{p(1-q)}{(1-p)q}
 $$
 
-を __オッズ比__(odds ratio, OR)と呼び, これの対数 $\beta$ を __対数オッズ比__ (log odds ratio)と呼ぶ:
+を __オッズ比__(odds ratio, OR)と呼び, これの対数 $\log\OR$ を __対数オッズ比__ (log odds ratio)と呼ぶ:
 
 $$
 \log \OR = \log \frac{p(1-q)}{(1-p)q} =
@@ -452,7 +557,7 @@ $$
 \RR = \frac{p}{q}
 $$
 
-を __リスク比__(risk ratio, RR)と呼び, これの対数 $\gamma$ を __対数リスク比__ (log risk ratio)と呼ぶ:
+を __リスク比__(risk ratio, RR)と呼び, これの対数 $\log\RR$ を __対数リスク比__ (log risk ratio)と呼ぶ:
 
 $$
 \log\RR = \log\frac{p}{q} = \log p - \log q.
@@ -461,7 +566,7 @@ $$
 もしも, $p,q$ の両方が $0$ に近ければ, $1-p\approx 1$, $1-q\approx 1$ という近似を使えるので, リスク比はオッズ比で近似される:
 
 $$
-1-p\approx 1,\ 1-q\approx 1
+1-p \approx 1,\; 1-q \approx 1
 \implies
 \RR \approx \OR.
 $$
@@ -472,25 +577,31 @@ $$
 p = q \iff \OR = 1 \iff \RR = 1.
 $$
 
-だから, $p$ と $q$ が等しいという仮説は $\OR=1$ や $\RR=1$ のように表現できる. (もちろん, それらの対数版である $\log\OR = 0$ や $\log\RR = 0$ を採用してもよい.)
+だから, $p$ と $q$ が等しいという仮説は $\OR=1$ や $\RR=1$ のように表現できる. (もちろん, $\log\OR = 0$ や $\log\RR = 0$ とも書ける.)
 
-そして, オッズ比 $\OR$ とリスク比 $\RR$ が $1$ からどれだけどのように離れているかは, 2つの比率 $p$, $q$ の違いを表す指標として使える.  (もちろん, それらの対数版である $\log\OR$ や $\log\RR$ が $0$ からどれだけどのように 離れているかを指標として採用してもよい.)
+だから, オッズ比 $\OR$ とリスク比 $\RR$ は2つの比率 $p$, $q$ の違いを表すための指標として使える.  (もちろん, それらの対数版である $\log\OR$ や $\log\RR$ が $0$ を $p$, $q$ の違いを表すための指標として採用してもよい.)
 
-__注意:__ 他にも __比率の差__ $p - q$ も重要な指標だが, このノートでは面倒だという理由で扱わないことにする.
+__注意:__ 他にも __比率の差__ $p - q$ も比率の違いを表す重要な指標だが, このノートでは問題と解答例の形式で軽く触れるだけにする予定である.
 
-__注意:__ オッズは賭け事ではよく使われる用語である. 例えばある勝負で $A$ が勝つことに賭けるときに
+__注意:__ オッズは賭け事ではよく使われる用語である. 例えばある勝負でAが勝つことに賭けるときに
 
 $$
-\text{勝つ確率} : \text{負ける確率} = 1 : 4
+\text{Aが勝つ確率} : \text{Aが負ける確率} = 1 : 4
 $$
 
-だと思っているなら, あなたはオッズは「$1$ 対 $4$」だと思っていることになる.
+だと思っているなら, あなたは「オッズは $1$ 対 $4$ だ」と思っていることになる.
 
-__注意:__ 例えば確率 $p$, $q$ が「死亡確率」ならば「リスク」という呼び方は適切になる.  ここではそうでない場合も $p$, $q$ を「リスク」と呼んでしまい, $p/q$ を「リスク比」と呼ぶことにする.  具体的な応用先で, この呼び方に違和感を感じる場合には適宜別の呼び方をするようにして欲しい.
+__注意:__ 例えば確率 $p$, $q$ が「症状悪化の確率」や「死亡する確率」ならば「リスク」という呼び方は非常に適切だろう.  しかし上ではそうでない場合も $p/q$ を「リスク比」と呼ぶことにした.  具体的な応用先で, この呼び方に違和感を感じる場合には適宜別の呼び方をするようにして欲しい.
 
-__注意:__ このノートでは主にオッズ比を比率の違いを表す指標として利用する.  その理由は. 応用上の理由ではなく, 単に数学的に扱いやすいからである. そして, 以下の注意で説明するように, オッズ比を考えることは, その対数を考えることによって, ロジスティック回帰の話とも関係付けることができる.
+__注意:__ このノートでは比率の違いを表す指標として主にオッズ比を利用する.  その理由は. 応用上の理由ではなく, 単に数学的に扱いやすいからである.  そして, 以下の注意で説明するように, オッズ比を考えることは, その対数を考えることによって, ロジスティック回帰の話とも関係付けることができる.
 
-__注意:__ オッズ $u=p/(1-p)$ の対数を $x$ と書き, __対数オッズ__(log odds)と呼ぶ. このとき, 以下の公式によって $0<p<1$, $0<u<\infty$, $-\infty<x<\infty$ が一対一に対応する:
+__注意:__ $p$ の対数オッズを $x=\log(p/(1-p))$ と書くことにする.  このとき, 以下の公式によって,
+
+$$
+0<p<1, \quad 0<u<\infty, \quad -\infty<x<\infty
+$$
+
+の3つが一対一に対応する:
 
 $$
 \begin{aligned}
@@ -505,7 +616,7 @@ $$
 
 $x$ を $p$ に対応させる函数は __ロジスティック函数__ と呼ばれ, その逆函数は __ロジット函数__ と呼ばれる. 
 
-__注意:__ 対数オッズ比を $\beta = \log\OR$ と書き, さらに $q$ の対数を $\alpha=\log q$ と書くと, $p$, $q$ の対数オッズはそれぞれ次のように表される:
+__注意:__ 対数オッズ比を $\beta = \log\OR$ と書き, さらに $q$ の対数オッズを $\alpha=\log(q/(1-q))$ と書くと, $p$, $q$ の対数オッズはそれぞれ次のように表される:
 
 $$
 \logit(p) = \log\frac{p}{1-p} = \alpha + \beta, \quad
@@ -576,7 +687,9 @@ $$
 \Normal(0,1),\ \text{approximately}.
 $$
 
-([「大数の法則と中心極限定理」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)で解説したデルタ法を使えば示せる.  この点については後の節で説明する.)
+([「大数の法則と中心極限定理」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)で解説したデルタ法を使えば示せる.  この点については後の節で詳しく説明する.)
+
+__記号法に関する注意:__ 以上においてハットがついている $\ORhat$ や $\SEhat_{\log\ORhat}$ は確率変数であることに注意せよ.  ハットがついていない $\OR$ はモデルのパラメータで表された値である.
 
 __P値の構成法:__ 上の近似を使えば, 「オッズ比パラメータは $\OR = \omega$ である」という仮説のP値を次のように定めることができる:
 
@@ -587,7 +700,11 @@ $$
 \right)
 $$
 
-ただし, $\log\ORhat$ と $\SEhat_{\log\ORhat}$ はデータの数値 $a,b,c,d$ から上で示した式で計算された値であるとする.
+ただし, $\log\ORhat$ と $\SEhat_{\log\ORhat}$ はデータの数値 $a,b,c,d$ から上で示した式で計算された値であるとする.  $\pvalue_{\Wald}(a, b, c, d|\OR=\omega)$ の定義式は
+
+* 標準正規分布に従ってランダムに生成される値の絶対値がデータから計算された値 $\left(\log\ORhat - \log\OR\right)\!\Big/\SEhat_{\log\ORhat}$ の絶対値以上になる確率
+
+を意味している.
 
 __対応する信頼区間:__ このP値の定義に対応するオッズ比パラメータ $\OR$ に関する信頼度 $1-\alpha$ の信頼区間は次のようになる:
 
@@ -630,21 +747,31 @@ $$
 
 結果は次のようになる:
 
-* (Wald版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 3.847%
+* (Wald版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 0.03847
 * (Wald版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.0275, 2.7072\]
 
 
 #### WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方
 
+$\SEhat_{\log\ORhat}$ の計算:
+
 `sqrt(1/a+1/b+1/c+1/d) where a=49.0, b=965, c=26, d=854` → [実行](https://www.wolframalpha.com/input?i=sqrt%281%2Fa%2B1%2Fb%2B1%2Fc%2B1%2Fd%29+where+a%3D49.0%2C+b%3D965%2C+c%3D26%2C+d%3D854) → 0.247137
+
+$(\log\ORhat - \log 1)/\SEhat_{\log\ORhat}$ の計算:
 
 `log(a*d/(b*c))/0.247137 where a=49.0, b=965, c=26, d=854` → [実行](https://www.wolframalpha.com/input?i=log%28a*d%2F%28b*c%29%29%2F0.247137+where+a%3D49.0%2C+b%3D965%2C+c%3D26%2C+d%3D854) → 2.06981
 
+P値の計算:
+
 `2(1 - cdf(NormalDistrubution(0,1), 2.06981))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+2.06981%29%29) → 0.0384701 (P値)
+
+$\alpha=0.05$ の場合の $z_{\alpha/2}$ の計算:
 
 `quantile(NormalDistribution(0,1), 0.975))` → [実行](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29) → 1.95996
 
-`{exp(-0.247137z)*a*d/(b*c), exp(0.247137z)*a*d/(b*c)} where a=49.0, b=965, c=26, d=854, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.247137z%29*a*d%2F%28b*c%29%2C+exp%280.247137z%29*a*d%2F%28b*c%29%7D+where+a%3D49.0%2C+b%3D965%2C+c%3D26%2C+d%3D854%2C+z%3D1.95996) → {1.02752, 2.70717} (95%信頼区間)
+95%信頼区間の計算:
+
+`{exp(-0.247137z)*a*d/(b*c), exp(0.247137z)*a*d/(b*c)} where a=49.0, b=965, c=26, d=854, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.247137z%29*a*d%2F%28b*c%29%2C+exp%280.247137z%29*a*d%2F%28b*c%29%7D+where+a%3D49.0%2C+b%3D965%2C+c%3D26%2C+d%3D854%2C+z%3D1.95996) → {1.02752, 2.70717}
 
 
 #### Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)
@@ -683,7 +810,7 @@ P値函数 $\omega\mapsto\pvalue_{\Wald}(a,b,c,d|\OR=\omega)$ のグラフを描
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald's P-value func.")
+plot(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald P-value func.")
 vline!([oddsratiohat(a,b,c,d)]; label="ORhat = (ad)/(bc)", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
@@ -768,7 +895,7 @@ result = epiR::epi.2by2(A, digits=4, conf.level=0.95)
 """
 ```
 
-### 確率変数としての対数オッズ比の分散の近似値の導出
+### 確率変数の対数オッズ比の分散の近似値の導出
 
 この節では $a,b,c,d$ は2つの二項分布モデルに従う確率変数であるとし,
 
@@ -801,7 +928,7 @@ $$
 \frac{p}{1-p} + \frac{\phat - p}{p(1-p)} + O((\phat-p)^2).
 $$
 
-これより, 次の近似が得られる:
+これより, デルタ法を使って, 次の近似が得られる:
 
 $$
 \log\frac{\phat}{1-\phat} \sim
@@ -816,6 +943,12 @@ $$
 \Normal\left(\log\frac{q}{1-q}, \frac{1}{\sqrt{nq(1-q)}}\right),
 \quad\text{approximately}.
 $$
+
+デルタ法については
+
+* [「大数の法則と中心極限定理」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
+
+に解説がある. しかし, 上のように単に一次近似するだけの話に過ぎないので, 自分でよく考えればそちらの解説を読む必要はない可能性が高い.
 
 一般に $X,Y$ が独立な確率変数で $X\sim\Normal(\mu_X, \sigma_X)$, $Y\sim\Normal(\mu_Y, \sigma_Y)$ のとき, $X+Y\sim\Normal\left(\mu_X+\mu_Y, \sqrt{\sigma_X^2+\sigma_Y^2}\right)$ となる.  そして,
 
@@ -841,7 +974,7 @@ $$
 
 $$
 \log\OR = \log\frac{p/(1-p)}{q/(1-q)} =
-\log\frac{p}{1-p} + \log\frac{q}{1-q}
+\log\frac{p}{1-p} - \log\frac{q}{1-q}
 $$
 
 を使うと, 
@@ -902,13 +1035,13 @@ $$
 $$
 
 
-__解答例:__ $f(t)=\log t$ とおくと, $f'(t)=1/t$ なので,
+__解答例:__ デルタ法を利用する.  $f(t)=\log t$ とおくと, $f'(t)=1/t$ なので,
 
 $$
 \log\phat = \log p + \frac{\phat - p}{p} + O((\phat-p)^2).
 $$
 
-これと二項分布の中心極限定理 $\phat \sim \Normal\left(p, \sqrt{p(1-p)/m}\right)$ をから次の近似を得る:
+これと二項分布の中心極限定理より近似的に $\phat \sim \Normal\left(p, \sqrt{p(1-p)/m}\right)$ となるので次の近似を得る:
 
 $$
 \log\phat \sim
@@ -1021,7 +1154,7 @@ $$
 $$
 
 
-#### Julia言語によるWald版のリスク比に関するP値と信頼区間の計算例
+#### Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
@@ -1034,11 +1167,37 @@ a, b, c, d = 49, 965, 26, 854
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald's P-value func.")
+plot(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald P-value func.")
 vline!([riskratiohat(a,b,c,d)]; label="RRhat = (a/m)/(c/n)", ls=:dash)
 plot!(; xguide="RR = ρ", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, m, c, n = $a, $(a+b), $c, $(c+d)")
+```
+
+<!-- #region -->
+#### R言語によるWald版のリスク比に関する信頼区間の計算の仕方
+
+epiRパッケージをRにインストールしておけば,
+
+```R
+A = matrix(c(49, 965, 26, 854), 2, 2, byrow=T)
+result = epiR::epi.2by2(A, digits=4, conf.level=0.95)
+```
+
+でWald版のリスク比に関する信頼区間を計算できる.  色々表示されているが,
+
+```
+Inc risk ratio                                 1.6356 (1.0254, 2.6088)
+```
+
+の行の括弧の中に信頼区間が表示されている.
+<!-- #endregion -->
+
+```julia
+R"""
+A = matrix(c(49, 965, 26, 854), 2, 2, byrow=T)
+result = epiR::epi.2by2(A, digits=4, conf.level=0.95)
+"""
 ```
 
 #### Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例
@@ -1059,11 +1218,155 @@ a, b, c, d = 49, 965, 26, 854
 @show confint_or_wald(a, b, c, d; α = 0.05);
 ```
 
-### 必修問題: 別の計算例
+### 問題: 比率の差の場合の正規分布近似
+
+$a,b,c,d$ は2つの二項分布モデルに従う確率変数であるとし, $\phat = a/m$, $\qhat = c/n$ とおき,  $\SEhat_{\phat-\qhat}$ を
+
+$$
+\SEhat_{\phat-\qhat} =
+\sqrt{\frac{\phat(1-\phat)}{m} + \frac{\qhat(1-\qhat)}{n}}
+$$
+
+と定める. このとき, 二項分布の中心極限定理から, 次の近似が得られることを示せ:
+
+$$
+\phat - \qhat \sim
+\Normal\left(p - q, \SEhat_{\phat-\qhat}\right) 
+\quad\text{approximately}.
+$$
+
+
+__解答例:__ 二項分布の中心極限定理によって,
+
+$$
+\phat\sim\Normal\left(p, \sqrt{\frac{p(1-p)}{m}}\right), \quad
+\qhat\sim\Normal\left(q, \sqrt{\frac{q(1-q)}{n}}\right), \quad
+\text{approximately}.
+$$
+
+$\phat, \qhat$ が独立であることと, 正規分布に従う独立な確率変数達の和が分散がそれらの分散の和であるような正規分布に従うことより,
+
+$$
+\SE_{\phat-\qhat} = \sqrt{\frac{p(1-p)}{m} + \frac{q(1-q)}{n}}
+$$
+
+とおくと,
+
+$$
+\phat - \qhat \sim
+\Normal\left(q, \SE_{\phat-\qhat}\right), \quad
+\text{approximately}.
+$$
+
+ゆえに, $p,q$ が $\phat$, $\qhat$ で近似できているならば,
+
+$$
+\phat - \qhat \sim
+\Normal\left(q, \SEhat_{\phat-\qhat}\right), \quad
+\text{approximately}.
+$$
+
+__解答終__
+
+
+### 問題: Wald版の比率の差に関するP値と信頼区間の定義
+
+上の問題の結果を利用して, 仮説「$p-q=\Delta$」のP値とパラメータ $p-q$ の信頼区間を適切に定義せよ.
+
+
+__解答例:__ 仮説「$p-q=\Delta$」のP値を
+
+$$
+\SEhat_{\phat-\qhat} =
+\sqrt{\frac{\phat(1-\phat)}{m} + \frac{\qhat(1-\qhat)}{n}}
+$$
+
+を用いて,
+
+$$
+\pvalue_{\Wald}(a,b,c,d|p-q=\Delta) =
+2\left(
+1 - \cdf\left(\Normal(0,1), \frac{|\phat - \qhat - \Delta|}{\SEhat_{\phat-\qhat}}\right)
+\right)
+$$
+
+と定める.  対応する信頼度 $1-\alpha$ の信頼区間は次のようになる.
+
+$$
+\confint^{p-q}_{\Wald}(a,b,c,d|\alpha) =
+\left[
+\phat - \qhat - z_{\alpha/2}\SEhat_{\phat-\qhat},\;
+\phat - \qhat + z_{\alpha/2}\SEhat_{\phat-\qhat}
+\right].
+$$
+
+ただし $z_{\alpha/2} = \quantile(\Normal(0,1), 1-\alpha/2)$ (標準正規分布において $z_{\alpha/2}$ 以上になる確率は $\alpha/2$)である.
+
+__解答終__
+
+
+### 問題: Wald版の比率の差に関するP値と信頼区間の計算例
+
+データが次の場合のWald版の仮説「$p-q=0$」のP値と $p-q$ の $95\%$ 信頼区間を計算してみよ:
 
 $$
 \begin{array}{c|c|c|c}
-& \text{28日以内に悪化} & \text{悪化せず} & \text{合計} \\
+& \text{商品を購入した} & \text{購入しなかった} & \text{合計} \\
+\hline
+\text{デザインA} & 49   &  965 & 1014 \\
+\hline
+\text{デザインB} & 26   &  854 &  880 \\
+\hline
+\text{合計}      & 75   & 1819 & 1894 \\ 
+\end{array}
+$$
+
+<!-- #region -->
+#### Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方
+
+以下のようにほぼ定義通りにコードを書けば計算できる.
+
+```julia
+riskdiffhat(a, b, c, d) = a/(a+b) - c/(c+d)
+
+function stderr_riskdiffhat(a, b, c, d)
+    m, n = a+b, c+d
+    p̂, q̂ = a/m, c/n
+    √(p̂*(1-p̂)/m + q̂*(1-q̂)/n)
+end
+
+function pvalue_rd_wald(a, b, c, d; Δ=0)
+    RDhat = riskdiffhat(a, b, c, d)
+    SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(RDhat - Δ), SEhat_riskdiffhat))
+end
+
+function confint_rd_wald(a, b, c, d; α=0.05)
+    z = quantile(Normal(), 1-α/2)
+    RDhat = riskdiffhat(a, b, c, d)
+    SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
+    [RDhat - z*SEhat_riskdiffhat, RDhat + z*SEhat_riskdiffhat]
+end
+```
+<!-- #endregion -->
+
+```julia
+a, b, c, d = 49, 965, 26, 854
+@show pvalue_rd_wald(a, b, c, d; Δ=0)
+@show confint_rd_wald(a, b, c, d; α=0.05);
+```
+
+#### Wald版の比率の差に関するP値と信頼区間の計算の解答例
+
+仮説「$p-q=0$」のP値: 0.03341
+$p-q$ の $95\%$ 信頼区間: \[0.001475, 0.03608\]
+
+
+## 必修問題: Wald版のオッズ比とリスク比のP値と信頼区間
+
+$$
+\begin{array}{c|c|c|c}
+& \text{症状悪化} & \text{悪化せず} & \text{合計} \\
 \hline
 \text{薬Iを処方} & 100 &  579 &  679 \\
 \hline
@@ -1077,56 +1380,167 @@ $$
 
 * Gilmar Reis, M.D., Ph.D. et al., Effect of Early Treatment with Ivermectin among Patients with Covid-19, N Engl J Med 2022; 386:1721-1731. \[[link](https://www.nejm.org/doi/full/10.1056/NEJMoa2115869)\]
 
-の Table 2 から [Intention-to-treat population](https://www.google.com/search?q=Intention-to-treat)の部分だけを抜き出したものである.  「28日以内に悪化」の意味などに関する詳しい説明は論文を参照せよ.
+の Table 2 から [Intention-to-treat population](https://www.google.com/search?q=Intention-to-treat)の部分だけを抜き出したものである.  「症状悪化」の正確な意味などに関する詳しい説明は論文を参照せよ.
 
 上のデータについて, Wald版の以下のP値と信頼区間を計算せよ:
 
-(1) 仮説「オッズ比パラメータは $\OR=1$ である」のP値
+(1) 仮説「オッズ比パラメータは $\OR=1.0$ である」のP値
 
-(2) オッズ比パラメータの $95%$ 信頼区間
+(2) 仮説「オッズ比パラメータは $\OR=0.5$ である」のP値
 
-できればこれより前の節の問題の解答例を見ながら, 以下も計算せよ.
+(3) オッズ比パラメータの $95\%$ 信頼区間
 
-(3) 仮説「リスク比パラメータは $\RR=1$ である」のP値
+可能ならば, 前節の問題の解答例を見ながら, 以下も計算してみよ:
 
-(4) リスク比パラメータの $95%$ 信頼区間
+(4) 仮説「リスク比パラメータは $\RR=1.0$ である」のP値
+
+(5) 仮説「リスク比パラメータは $\RR=0.5$ である」のP値
+
+(6) リスク比パラメータの $95\%$ 信頼区間
 
 
-#### WolframAlphaによる必修問題の解答例
+### WolframAlphaによる必修問題の解答例
 
 (1)
 
+$\SEhat_{\log\ORhat}$ の計算:
+
 `sqrt(1/a+1/b+1/c+1/d) where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=sqrt%281%2Fa%2B1%2Fb%2B1%2Fc%2B1%2Fd%29+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → 0.149989
 
+$(\log\ORhat - \log 1)/\SEhat_{\log\ORhat}$ の計算:
+
 `log(a*d/(b*c))/0.149989 where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=log%28a*d%2F%28b*c%29%29%2F0.149989+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → -0.823668
+
+P値の計算:
 
 `2(1 - cdf(NormalDistrubution(0,1), 0.823668))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+0.823668%29%29) → 0.410128 ((1)のP値)
 
 (2)
 
-`quantile(NormalDistribution(0,1), 0.975)` → [実行](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29) → 1.95996
+$(\log\ORhat - \log 0.5)/\SEhat_{\log\ORhat}$ の計算:
 
-`{exp(-0.149989z)*a*d/(b*c), exp(0.149989z)*a*d/(b*c)} where a=100.0, b=579, c=111, d=568, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.149989z%29*a*d%2F%28b*c%29%2C+exp%280.149989z%29*a*d%2F%28b*c%29%7D+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568%2C+z%3D1.95996) → {0.658683, 1.18582} ((2)の信頼区間)
+`(log(a*d/(b*c)) - log(0.5))/0.149989 where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=%28log%28a*d%2F%28b*c%29%29+-+log%280.5%29%29%2F0.149989+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → 3.79765
+
+P値の計算:
+
+`2(1 - cdf(NormalDistrubution(0,1), 3.79765))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+3.79765%29%29) → 0.000146074 ((2)のP値)
 
 (3)
 
-`sqrt(1/a-1/(a+b)+1/c-1/(c+d)) where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=sqrt%281%2Fa-1%2F%28a%2Bb%29%2B1%2Fc-1%2F%28c%2Bd%29%29+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → 0.126742
-
-`log(a*(c+d)/((a+b)*c))/0.126742 where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=log%28a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%29%2F0.126742+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → -0.823405
-
-`2(1 - cdf(NormalDistrubution(0,1), 0.823405))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+0.823405%29%29) → 0.410278 ((3)のP値)
-
-(4)
+$\alpha=0.05$ のときの $z_{\alpha/2}$ の計算:
 
 `quantile(NormalDistribution(0,1), 0.975)` → [実行](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29) → 1.95996
 
-`{exp(-0.126742z)*a*(c+d)/((a+b)*c), exp(0.126742z)*a*(c+d)/((a+b)*c)} where a=100.0, b=579, c=111, d=568, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.126742z%29*a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%2C+exp%280.126742z%29*a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%7D+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568%2C+z%3D1.95996) → {0.702739, 1.15494} ((4)の信頼区間)
+オッズ比パラメータの信頼区間の計算:
+
+`{exp(-0.149989z)*a*d/(b*c), exp(0.149989z)*a*d/(b*c)} where a=100.0, b=579, c=111, d=568, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.149989z%29*a*d%2F%28b*c%29%2C+exp%280.149989z%29*a*d%2F%28b*c%29%7D+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568%2C+z%3D1.95996) → {0.658683, 1.18582} ((3)の信頼区間)
+
+(4)
+
+$\SEhat_{\log\RRhat}$ の計算:
+
+`sqrt(1/a-1/(a+b)+1/c-1/(c+d)) where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=sqrt%281%2Fa-1%2F%28a%2Bb%29%2B1%2Fc-1%2F%28c%2Bd%29%29+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → 0.126742
+
+$(\log\RRhat - \log 1)/\SEhat_{\log\RRhat}$ の計算:
+
+`log(a*(c+d)/((a+b)*c))/0.126742 where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=log%28a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%29%2F0.126742+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → -0.823405
+
+P値の計算:
+
+`2(1 - cdf(NormalDistrubution(0,1), 0.823405))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+0.823405%29%29) → 0.410278 ((4)のP値)
+
+(5)
+
+$(\log\RRhat - \log 0.5)/\SEhat_{\log\RRhat}$ の計算:
+
+`(log(a*(c+d)/((a+b)*c)) - log(0.5))/0.126742 where a=100.0, b=579, c=111, d=568` → [実行](https://www.wolframalpha.com/input?i=%28log%28a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%29+-+log%280.5%29%29%2F0.126742+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568) → 4.64556
+
+P値の計算:
+
+`2(1 - cdf(NormalDistrubution(0,1), 4.64556))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28NormalDistrubution%280%2C1%29%2C+4.64556%29%29) → 3.39155×10^-6 = 3.39155e-6 ((5)のP値)
+
+このP値は極めて小さい. 2つの二項分布モデルに関するリスク比が $0.5$ であるという仮説はデータとの整合性がほとんどないと考えられる. (この場合にリスク比が $0.5$ であることは症状が悪化することが半分に減るという意味になるが, モデル内におけるその想定はP値が小さ過ぎるという理由で否定される.)
+
+(6)
+
+$\alpha=0.05$ のときの $z_{\alpha/2}$ の計算:
+
+`quantile(NormalDistribution(0,1), 0.975)` → [実行](https://www.wolframalpha.com/input?i=quantile%28NormalDistribution%280%2C1%29%2C+0.975%29) → 1.95996
+
+リスク比パラメータの信頼区間の計算:
+
+`{exp(-0.126742z)*a*(c+d)/((a+b)*c), exp(0.126742z)*a*(c+d)/((a+b)*c)} where a=100.0, b=579, c=111, d=568, z=1.95996` → [実行](https://www.wolframalpha.com/input?i=%7Bexp%28-0.126742z%29*a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%2C+exp%280.126742z%29*a*%28c%2Bd%29%2F%28%28a%2Bb%29*c%29%7D+where+a%3D100.0%2C+b%3D579%2C+c%3D111%2C+d%3D568%2C+z%3D1.95996) → {0.702739, 1.15494} ((6)の信頼区間)
 
 
+<!-- #region -->
+### Julia言語による必修問題の解答例
 
-#### Julia言語による必修問題の解答例
+Julia言語のシンプルな使い方については
 
-各種函数の定義についてはこのノートの上の方を見よ.
+* [Julia言語を使った統計学の勉強の仕方](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
+
+を参照せよ.
+
+分子が $0$ ならば何で割っても $0$ になり, 分母が無限大なら分子が何であっても $0$ になる割り算の定義:
+
+```julia
+safediv(x, y) = x == 0 ? x : isinf(y) ? zero(y) : x/y
+```
+
+これを使うと浮動小数点数に関する計算が少し安全になる場合がある. 
+
+`0/0` は非数 `NaN` になる. 計算の途中で `NaN` が生じることを防ぎたい.  `1/0` は無限大 `Inf` になる.  `Inf` は悪さをせずに済むことがある.  ただし, `Inf - Inf` や `Inf/Inf` も `NaN` になるので注意が必要である.
+<!-- #endregion -->
+
+```julia
+@show 0/0 1/0 Inf-Inf Inf/Inf;
+```
+
+<!-- #region -->
+__オッズ比に関するWald版のP値と信頼区間を計算する函数__
+
+ほぼ定義通りにコードが記述されている.
+
+```julia
+oddsratiohat(a, b, c, d) = safediv(a*d, b*c)
+stderr_logoddsratiohat(a, b, c, d) = √(1/a + 1/b + 1/c + 1/d)
+
+function pvalue_or_wald(a, b, c, d; ω=1)
+    logORhat = log(oddsratiohat(a, b, c, d))
+    SEhat_logORhat = stderr_logoddsratiohat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(logORhat - log(ω)), SEhat_logORhat))
+end
+
+function confint_or_wald(a, b, c, d; α=0.05)
+    z = quantile(Normal(), 1-α/2)
+    ORhat = oddsratiohat(a, b, c, d)
+    SEhat_logORhat = stderr_logoddsratiohat(a, b, c, d)
+    [exp(-z*SEhat_logORhat)*ORhat, exp(z*SEhat_logORhat)*ORhat]
+end
+```
+
+__リスク比に関するWald版のP値と信頼区間を計算する函数__
+
+ほぼ定義通りにコードが記述されている.
+
+```julia
+riskratiohat(a, b, c, d) = safediv(a*(c+d), (a+b)*c)
+stderr_logriskratiohat(a, b, c, d) = √(1/a - 1/(a+b) + 1/c - 1/(c+d))
+
+function pvalue_rr_wald(a, b, c, d; ρ=1)
+    logRRhat = log(riskratiohat(a, b, c, d))
+    SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
+    2ccdf(Normal(0, 1), safediv(abs(logRRhat - log(ρ)), SEhat_logRRhat))
+end
+
+function confint_rr_wald(a, b, c, d; α=0.05)
+    z = quantile(Normal(), 1-α/2)
+    RRhat = riskratiohat(a, b, c, d)
+    SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
+    [exp(-z*SEhat_logRRhat)*RRhat, exp(z*SEhat_logRRhat)*RRhat]
+end
+```
+<!-- #endregion -->
 
 ```julia
 a, b, c, d = 100, 579, 111, 568
@@ -1134,34 +1548,47 @@ a, b, c, d = 100, 579, 111, 568
 
 ```julia
 # (1)
-@show pvalue_or_wald(a, b, c, d; ω=1);
+@show pvalue_or_wald(a, b, c, d; ω=1.0);
 ```
 
 ```julia
 # (2)
-@show confint_or_wald(a, b, c, d; α=0.05);
+@show pvalue_or_wald(a, b, c, d; ω=0.5);
 ```
 
 ```julia
 # (3)
-@show pvalue_rr_wald(a, b, c, d; ρ=1);
+@show confint_or_wald(a, b, c, d; α=0.05);
 ```
 
 ```julia
 # (4)
+@show pvalue_rr_wald(a, b, c, d; ρ=1.0);
+```
+
+```julia
+# (4)
+@show pvalue_rr_wald(a, b, c, d; ρ=0.5);
+```
+
+```julia
+# (6)
 @show confint_rr_wald(a, b, c, d; α=0.05);
 ```
 
-#### 必修問題解答例
+### 必修問題解答例
 
-(1) 41.01%
+(1) 0.4101
 
-(2) \[0.6587, 1.1858\]
+(2) 0.0001461
 
-(3) 41.03%
+(3) \[0.6587, 1.1858\]
 
-(4) \[0.7027, 1.1549\]
+(4) 0.4103
 
+(5) 3.392e-6
+
+(6) \[0.7027, 1.1549\]
 
 
 ## Pearsonのχ²検定版のオッズ比に関するP値と信頼区間
@@ -1462,7 +1889,7 @@ title!("a, b, c, d = $a, $b, $c, $d")
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson(a,b,c,d;ω), 0.5, 3.5; label="Pearson's P-value func.")
+plot(ω -> pvalue_or_pearson(a,b,c,d;ω), 0.7, 3.5; label="Pearson χ² P-value func.")
 vline!([oddsratiohat(a,b,c,d)]; label="ORhat = (ad)/(bc)", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
@@ -1476,8 +1903,8 @@ Wald版のP値函数のグラフと重ねてプロットすると次のように
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 3.5; label="Pearson's P-value func.")
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald's P-value func.", ls=:dash)
+plot(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.7, 3.5; label="Pearson χ² P-value func.")
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5; label="Wald P-value func.", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -1971,8 +2398,8 @@ a, b, c, d = 49, 965, 26, 854
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), 0.5, 3.5; label="Pearson's P-value func.")
-plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald's P-value func.", ls=:dash)
+plot(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), 0.5, 3.5; label="Pearson χ² P-value func.")
+plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald P-value func.", ls=:dash)
 plot!(; xguide="RR = ρ", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -2173,7 +2600,7 @@ a, b, c, d = 49, 965, 26, 854
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 3.5; label="Fisher (Sterne)")
 plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)")
 plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald")
-plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 3.5; label="Pearson", ls=:dash)
+plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -2243,7 +2670,7 @@ a, b, c, d = 16, 4, 4, 6
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 80; label="Fisher (Sterne)")
 plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 80; label="Fisher (CP)")
 plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 80; label="Wald")
-plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 80; label="Pearson", ls=:dash)
+plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 80; label="Pearson χ²", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -2264,6 +2691,38 @@ P値
 * (Clopper-Pearson型のFisher検定版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.006, 2.8213\]
 
 
+### Fisher検定における第一種の過誤の確率
+
+「オッズ比パラメータは $\OR=1$ である」という仮説のP値を条件付き確率を正確に計算することによって計算することによって行われる検定を __Fisher検定__ (Fisherの正確検定, Fisher's exact test) と呼ぶ.
+
+上で説明したように, Fisher検定には少なくともSterne版とClopper-Pearson版の2種類があるが(実はさらに別の変種も考えることができるが), どれを使っても, 第一種の過誤の確率を有意水準 $\alpha$ 以下に抑えることができるという利点を持っている.
+
+しかし, その利点は欠点の裏返しでもあり, Fisher検定での第一種の過誤の確率を有意水準 $\alpha$ よりかなり小さくなってしまいがちである.  第一種の過誤の確率は確率を有意水準 $\alpha$ に近い方がよい.
+
+以下ではFisher検定における第一種の過誤の確率のグラフを描いてみよう.
+
+```julia
+plot_probabilities_of_type_I_error(10, 20, 0.2)
+```
+
+```julia
+plot_probabilities_of_type_I_error(40, 80, 0.2)
+```
+
+```julia
+plot_probabilities_of_type_I_error(160, 320, 0.2)
+```
+
+このように, Fisher検定はデータサイズを大きくしても, 第一種の過誤の確率が有意水準 $\alpha$ になかなか近付かない.
+
+
+__注意:__ これと同じことをR言語で行う場合には以下のことに注意する必要がある:
+
+* R言語の `chisq.test` はデフォルトではYatesの連続性補正を行うので, `correct=F` として補正を無効にする必要がある.
+* R言語の `fisher.test` が表示するP値はSterne版(もしくは "minlik" 版)である.
+* Clopper-Pearson型のP値が必要ならば `exact2x2::exact2x2` を `tsmthod="central"` で使用すること.
+
+
 ## おまけ: Bayes信用区間
 
 
@@ -2275,7 +2734,7 @@ P値
 
 (2) データの数値 $a,b,c,d$ から事後分布 $\Beta(a+1,b+1)\times\Beta(c+1,d+1)$ を作る.
 
-(3) 事後分布の従う乱数を独立に $M=10^6$ 個生成する. その結果を $(p_i,q_i)$ ($i=1,2,\ldots,M$) と表す.
+(3) 事後分布の従う乱数を $M=10^6$ 個生成する. その結果を $(p_i,q_i)$ ($i=1,2,\ldots,M$) と表す.
 
 (4) $i=1,2,\ldots,M$ についてその乱数のオッズ比 $\omega_i = (p_i/(1-p_i))/(q_i(1-q_i))$ とリスク比 $\rho_i = p_i/q_i$ を計算する.
 
@@ -2304,7 +2763,7 @@ $$
 \end{aligned}
 $$
 
-これらの区間は乱数の出目によって確率的に少し揺らぐが $M=10^6$ が大きなおかげで毎回ほぼ同じ区間が得られる.
+これらの区間は乱数の出目によって確率的に少し揺らぐが $M=10^6$ が大きなおかげで微小にしか揺らがない.
 
 ```julia
 function credint_or_bayes(a, b, c, d; α=0.05, M=10^6)
@@ -2391,7 +2850,11 @@ $$
 \end{pmatrix}
 $$
 
-と定める. 
+と定める.  これらのP値達は乱数の出目によって確率的に少し揺らぐが $M=10^6$ が大きなおかげで微小にしか揺らがない.
+
+__注意:__ これは乱数生成による Monte Carlo 法によるP値の計算法である. 数値積分でP値を計算するようにもできる.  以下のノートではリスク比のP値の場合に実際にそれを行っている:
+
+* [イベルメクチン論文の図の再現](https://github.com/genkuroki/public/blob/main/0029/Supplementary%20Appendix%20Figure%20S6.ipynb)
 
 ```julia
 """Bayes版P値函数達を作る函数"""
@@ -2407,13 +2870,14 @@ function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6)
     pvalue_or_bayes, pvalue_rr_bayes
 end
 
-function plot_pvalue_functions(a, b, c, d; xlim=(0.5, 3.5), kwargs...)
+function plot_pvalue_functions(a, b, c, d;
+        xlim=Tuple(confint_or_pearson(a, b, c, d; α=1e-3)), kwargs...)
     pvalue_or_bayes, pvalue_rr_bayes = make_pvalue_or_rr_bayes(a, b, c, d)
 
     P = plot()
     plot!(ω -> pvalue_or_bayes(ω), xlim...; label="Bayes")
     plot!(ω -> pvalue_or_wald(a,b,c,d; ω), xlim...; label="Wald", ls=:dashdot)
-    plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), xlim...; label="Pearson", ls=:dash)
+    plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), xlim...; label="Pearson χ²", ls=:dash)
     #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim...; label="Fisher (Sterne)")
     #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim...; label="Fisher (CP)")
     plot!(; xguide="OR = ω", yguide="P-value")
@@ -2423,7 +2887,7 @@ function plot_pvalue_functions(a, b, c, d; xlim=(0.5, 3.5), kwargs...)
     Q = plot()
     plot!(ρ -> pvalue_rr_bayes(ρ), xlim...; label="Bayes")
     plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), xlim...; label="Wald", ls=:dashdot)
-    plot!(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), xlim...; label="Pearson", ls=:dash)
+    plot!(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), xlim...; label="Pearson χ²", ls=:dash)
     plot!(; xguide="RR = ρ", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
@@ -2438,17 +2902,17 @@ end
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot_pvalue_functions(a, b, c, d; xlim=(0.5, 3.5))
+plot_pvalue_functions(a, b, c, d)
 ```
 
 このように, Bayes版P値函数は通常のWald版およびPearsonのχ²検定版のP値函数によく一致している.
 
 
-### 問題: 別の例
+### Bayes版P値函数の視覚化の別の例
 
 $$
 \begin{array}{c|c|c|c}
-& \text{28日以内に悪化} & \text{悪化せず} & \text{合計} \\
+& \text{症状悪化} & \text{悪化せず} & \text{合計} \\
 \hline
 \text{薬Iを処方} & 100 &  579 &  679 \\
 \hline
@@ -2458,28 +2922,29 @@ $$
 \end{array}
 $$
 
-この既出の表は既出の論文
+この表は次の論文
 
 * Gilmar Reis, M.D., Ph.D. et al., Effect of Early Treatment with Ivermectin among Patients with Covid-19, N Engl J Med 2022; 386:1721-1731. \[[link](https://www.nejm.org/doi/full/10.1056/NEJMoa2115869)\]
 
-の Table 2 から [Intention-to-treat population](https://www.google.com/search?q=Intention-to-treat)の部分だけを抜き出したものである.  「28日以内に悪化」の意味などに関する詳しい説明は論文を参照せよ.
+の Table 2 から [Intention-to-treat population](https://www.google.com/search?q=Intention-to-treat)の部分だけを抜き出したものである.  「症状悪化」の正確な意味などに関する詳しい説明は論文を参照せよ.
+(このデータは必修問題において既出である.)
 
-この論文ではリスク比の区間推定方法としてちょうど上で説明したリスク比のBayes信用区間を採用している.
+__この論文ではリスク比の区間推定方法としてちょうど上で説明したリスク比のBayes信用区間を採用している.__
 
 上の表のデータについてP値函数のグラフを描いてみよう.
 
 ```julia
 a, b, c, d = 100, 579, 111, 568
-plot_pvalue_functions(a, b, c, d; xlim=(0.5, 1.5))
+plot_pvalue_functions(a, b, c, d)
 ```
 
-論文ではBayes統計の方法を使って区間推定しているが, このグラフを見れば分かるように, 通常のWald版やPearsonのχ²検定版の信頼区間を使っても同じ結果が得られる.
+論文ではBayes統計の方法を使って区間推定しているが, P値函数達に関するこのグラフを見れば分かるように, Bayes統計版ではないWald版やPearsonのχ²検定版の信頼区間を使っても同じ結果が得られる.
 
-この一致は偶然ではなく, 十分に $a,b,c,d$ が大きいがゆえに正規分布近似が有効になっているので一致している.
+この一致は偶然ではない. 十分に $a,b,c,d$ が大きいがゆえに正規分布近似が有効になっているので一致している.
 
-巷に溢れる「ベイズ統計入門」の解説では「通常の統計学とは異なる主義・思想・哲学に基くベイズ統計学というものがある」のような感じのものが目立つのだが, そのような解説に騙されないように注意することが必要である.
+巷に溢れる「ベイズ統計入門」では「通常の統計学とは異なる主義・思想・哲学に基くベイズ統計学というものがある」のような感じの解説が目立つ. そのような解説に騙されないように注意することが必要である.
 
-どんなに主義・思想・哲学が違っていても, 実践的には無意味な小さな違いを除いて同じ量を計算していることになっているのであれば, 主義・思想・哲学の違いは実践的には無視できるということを意味している.
+どんなに主義・思想・哲学が違っていても, 実践的には無意味な小さな違いしかない量(実践的には同じ量とみなされる)を計算しているのであれば, 主義・思想・哲学の違いは実践的には無視できるということを意味している.
 
 ```julia
 
