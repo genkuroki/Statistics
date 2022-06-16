@@ -354,16 +354,10 @@ $$
 
 __統計モデル:__　平均 $\mu$ と分散 $\sigma^2$ を持つ未知の確率分布 $D$ のサイズ $n$ の標本分布 $D^n$ を統計モデルとして採用する.
 
-$D$ が連続分布でその確率密度函数が $p(x)$ と書かれるとき, 標本分布 $D^n$ の確率密度函数は次のように表される:
+簡単のため $D$ は連続分布であると仮定し, その確率密度函数を $p(x)$ と書く.  このとき標本分布 $D^n$ の確率密度函数は次のように表される:
 
 $$
 p(x_1,\ldots,x_n) = p(x_1)\cdots p(x_n).
-$$
-
-$D$ が離散分布でその確率質量函数が $P(x)$ と書かれるとき, 標本分布 $D^n$ の確率質量函数は次のように表される:
-
-$$
-P(x_1,\ldots,x_n) = P(x_1)\cdots P(x_n).
 $$
 
 __この設定は, データ $x_1,\ldots,x_n$ がある母集団からの無作為抽出で得られた数値の列である場合に適切になる.__
@@ -952,33 +946,33 @@ __データの数値の生成のされ方に関してなにがしかの知識が
 
 ### P値の定義(2)のt分布を使う場合に対応する平均の信頼区間
 
-有意水準を $0\le\alpha\le 1$ と書き, 自由度 $\nu$ の $t$ 分布において $t_{\alpha/2}(\nu)$ 以上になる確率は $\alpha/2$ になると仮定する:
+有意水準を $0\le\alpha\le 1$ と書き, 自由度 $\nu$ の $t$ 分布において $t_{\nu,\alpha/2}$ 以上になる確率は $\alpha/2$ になると仮定する:
 
 $$
-t_{\alpha/2,\nu} = \quantile(\TDist(\nu), 1 - \alpha/2).
+t_{\nu,\alpha/2} = \quantile(\TDist(\nu), 1 - \alpha/2).
 $$
 
 例えば,
 
 $$
-t_{5\%/2,10} \approx 2.2281, \quad
-t_{5\%/2,20} \approx 2.0860, \quad
-t_{5\%/2,30} \approx 2.0423.
+t_{10,5\%/2} \approx 2.2281, \quad
+t_{20,5\%/2} \approx 2.0860, \quad
+t_{30,5\%/2} \approx 2.0423.
 $$
 
-自由度を大きくする極限では, $t_{5\%/2,\infty} = z_{5\%/2} \approx 1.9600$ となる.  $t_{5\%/2,30} \approx 2.0423$ はその値よりも $4.2\%$ 程度大きい. (信頼区間もその割合で広くなる.)
+自由度を大きくする極限では, $t_{\infty,5\%/2} = z_{5\%/2} \approx 1.9600$ となる.  $t_{30,5\%/2} \approx 2.0423$ はその値よりも $4.2\%$ 程度大きい. (信頼区間もその割合で広くなる.)
 
 P値 $\pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) = 2(1 - \cdf(\TDist(n-2), |t(\mu_0)|))$ に対応する信頼度 $1-\alpha$ の信頼区間は次のようになる:
 
 $$
 \confint_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) =
 \left[
-\bar{x} - t_{\alpha/2,n-1} \sqrt{s^2/n},\;
-\bar{x} + t_{\alpha/2,n-1} \sqrt{s^2/n}
+\bar{x} - t_{n-1,\alpha/2} \sqrt{s^2/n},\;
+\bar{x} + t_{n-1,\alpha/2} \sqrt{s^2/n}
 \right].
 $$
 
-これと $\confint_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0)$ の違いは $z_{\alpha/2}$ を $t_{\alpha/2, n-1}$ に置き換える分の違いしかない.
+これと $\confint_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0)$ の違いは $z_{\alpha/2}$ を $t_{n-1,\alpha/2}$ に置き換える分の違いしかない.
 
 証明もP値の定義(1)の場合と完全に同様である. 標準正規分布を $t$ 分布で置き換えるだけでよい.
 
@@ -998,10 +992,10 @@ $$
 \\ &\iff
 1 - \cdf(\TDist(n-1), |t(\mu_0)|)) \ge \alpha/2
 \\ &\iff
-|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le t_{\alpha/2,n-1}
+|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le t_{n-1,\alpha/2}
 \\ &\iff
-\bar{x} - t_{\alpha/2,n-1} \sqrt{s^2/n} \le \mu_0 \le
-\bar{x} + t_{\alpha/2,n-1} \sqrt{s^2/n}.
+\bar{x} - t_{n-1,\alpha/2} \sqrt{s^2/n} \le \mu_0 \le
+\bar{x} + t_{n-1,\alpha/2} \sqrt{s^2/n}.
 \end{aligned}
 $$
 
@@ -1046,10 +1040,10 @@ $$
 (\text{仮説「平均は $\mu=\mu_0$ である」のP値}) = 2(1 - \cdf(\TDist(n-1), |t(\mu_0)|)).
 $$
 
-(4) 定数 $t_{\alpha/2, n-1}$ を, 自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値が $t_{\alpha/2, n-1}$ 以上になる確率は $\alpha/2$ であるという条件によって定める:
+(4) 定数 $t_{n-1,\alpha/2}$ を, 自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値が $t_{n-1,\alpha/2}$ 以上になる確率は $\alpha/2$ であるという条件によって定める:
 
 $$
-t_{\alpha/2, n-1} = \quantile(\TDist(n-1), 1 - \alpha/2).
+t_{n-1,\alpha/2} = \quantile(\TDist(n-1), 1 - \alpha/2).
 $$
 
 (5) 次の公式によって, 平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間を求める:
@@ -1057,8 +1051,8 @@ $$
 $$
 (\text{平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間}) = 
 \left[
-\bar{x} - t_{\alpha/2,n-1} \sqrt{s^2/n},\;
-\bar{x} + t_{\alpha/2,n-1} \sqrt{s^2/n}
+\bar{x} - t_{n-1,\alpha/2} \sqrt{s^2/n},\;
+\bar{x} + t_{n-1,\alpha/2} \sqrt{s^2/n}
 \right].
 $$
 
@@ -1234,7 +1228,7 @@ cat("t.value = ", t.value, "\n")
 cat("p.value = ", p.value, "\n")
 cat("\n")
 cat("alpha = ", alpha, "\n")
-cat("t_{alpha/2, n-1} = ", c, "\n")
+cat("t_{n-1, alpha/2} = ", c, "\n")
 cat("conf.int = ", conf.int, "\n")
 ```
 
@@ -1267,7 +1261,7 @@ cat("t.value = ", t.value, "\n")
 cat("p.value = ", p.value, "\n")
 cat("\n")
 cat("alpha = ", alpha, "\n")
-cat("t_{alpha/2, n-1} = ", c, "\n")
+cat("t_{n-1, alpha/2} = ", c, "\n")
 cat("conf.int = ", conf.int, "\n")
 """;
 ```
