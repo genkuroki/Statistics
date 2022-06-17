@@ -340,9 +340,9 @@ __定義された確率分布__
 __関連講義動画__
 
 * [聴講コース 臨床研究者のための生物統計学](https://ocw.kyoto-u.ac.jp/course/328/)
-  * 佐藤俊哉, ランダム化ができないとき, 2018/10/25, length 1:02:31) \[[https://youtu.be/tUkyjZXU1vc](https://youtu.be/tUkyjZXU1vc)\]
-  * 佐藤俊哉, 交絡とその調整, 2018/12/20, length 1:00:52) \[[https://youtu.be/ybdkQFEdCPM](https://youtu.be/ybdkQFEdCPM)\]
-  * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, length 1:04:44) \[[https://youtu.be/cOHN444kBlo](https://youtu.be/cOHN444kBlo)\]
+  * 佐藤俊哉, ランダム化ができないとき, 2018/10/25, 長さ 1:02:31) \[[https://youtu.be/tUkyjZXU1vc](https://youtu.be/tUkyjZXU1vc)\]
+  * 佐藤俊哉, 交絡とその調整, 2018/12/20, 長さ 1:00:52) \[[https://youtu.be/ybdkQFEdCPM](https://youtu.be/ybdkQFEdCPM)\]
+  * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, 長さ 1:04:44) \[[https://youtu.be/cOHN444kBlo](https://youtu.be/cOHN444kBlo)\]
 
 ### 12 検定と信頼区間(5) 平均の差
 

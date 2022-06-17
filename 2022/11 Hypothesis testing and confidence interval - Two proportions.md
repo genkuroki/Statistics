@@ -3331,9 +3331,9 @@ plot_pvalue_functions(a, b, c, d)
 
 特に以下の3つの講義動画はこのノートで解説した2×2の分割表の統計学の続きとして非常に楽しめると思われる:
 
-* 佐藤俊哉, ランダム化ができないとき, 2018/10/25, length 1:02:31) \[[link](https://youtu.be/tUkyjZXU1vc)\]
-* 佐藤俊哉, 交絡とその調整, 2018/12/20, length 1:00:52) \[[link](https://youtu.be/ybdkQFEdCPM)\]
-* 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, length 1:04:44) \[[link](https://youtu.be/cOHN444kBlo)\]
+* 佐藤俊哉, ランダム化ができないとき, 2018/10/25, 長さ 1:02:31) \[[link](https://youtu.be/tUkyjZXU1vc)\]
+* 佐藤俊哉, 交絡とその調整, 2018/12/20, 長さ 1:00:52) \[[link](https://youtu.be/ybdkQFEdCPM)\]
+* 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, 長さ 1:04:44) \[[link](https://youtu.be/cOHN444kBlo)\]
 
 
 
