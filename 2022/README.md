@@ -245,9 +245,15 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)\]
 
-__P値函数__ の概念が最も重要.
+__P値函数__ の概念が最も重要である.
 
-この一連のノートでは信頼区間は常に対応するP値函数を使って定義されることになる.
+この一連のノートでは __信頼区間は常に対応するP値函数を使って定義される__ ことになる.
+
+__関連講義動画__
+
+* 京都大学大学院医学研究科 聴講コース<br>臨床研究者のための生物統計学「仮説検定とP値の誤解」<br>佐藤 俊哉 医学研究科教授<br>[https://youtu.be/vz9cZnB1d1c](https://youtu.be/vz9cZnB1d1c)
+
+この講義動画は「[P値に関するASA声明](https://www.biometrics.gr.jp/news/all/ASA.pdf)」の考え方の非常に良い解説になっている.
 
 ### 09 検定と信頼区間(2) 比率
 
@@ -323,13 +329,31 @@ __定義された信頼区間__
 * Wald型の信頼区間
 * Pearsonのχ²検定に付随する信頼区間
 
+比率の差の信頼区間
+
+* Wald型の信頼区間
+
 __定義された確率分布__
 
-* Fisherの非心超幾何分布: $\mathrm{FisherNoncentralHypergeometric}(m, n, r, \omega)$ 
+* Fisherの非心超幾何分布: $\mathrm{FisherNoncentralHypergeometric}(m, n, r, \omega)$
+
+__関連講義動画__
+
+* [聴講コース 臨床研究者のための生物統計学](https://ocw.kyoto-u.ac.jp/course/328/)
+  * 佐藤俊哉, ランダム化ができないとき, 2018/10/25, length 1:02:31) \[[https://youtu.be/tUkyjZXU1vc](https://youtu.be/tUkyjZXU1vc)\]
+  * 佐藤俊哉, 交絡とその調整, 2018/12/20, length 1:00:52) \[[https://youtu.be/ybdkQFEdCPM](https://youtu.be/ybdkQFEdCPM)\]
+  * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, length 1:04:44) \[[https://youtu.be/cOHN444kBlo](https://youtu.be/cOHN444kBlo)\]
 
 ### 12 検定と信頼区間(5) 平均の差
 
-__定義する予定の信頼区間__
+これはまだ書きかけ
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.pdf)\]
+
+__定義された信頼区間__
 
 2群の平均の差の信頼区間
 

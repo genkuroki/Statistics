@@ -93,7 +93,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間" data-toc-modified-id="比率の比較に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="比率の比較に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#2×2の分割表型データとその2つの二項分布モデル" data-toc-modified-id="2×2の分割表型データとその2つの二項分布モデル-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>2×2の分割表型データとその2つの二項分布モデル</a></span></li><li><span><a href="#比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR" data-toc-modified-id="比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>比率の違いを表す2つの指標: オッズ比パラメータ OR とリスク比パラメータ RR</a></span></li></ul></li><li><span><a href="#Wald版のP値と信頼区間" data-toc-modified-id="Wald版のP値と信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Wald版のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値函数の視覚化-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.5"><span class="toc-item-num">2.2.5&nbsp;&nbsp;</span>R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li></ul></li><li><span><a href="#確率変数の対数オッズ比の分散の近似値の導出" data-toc-modified-id="確率変数の対数オッズ比の分散の近似値の導出-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>確率変数の対数オッズ比の分散の近似値の導出</a></span></li><li><span><a href="#問題:-対数リスク比の場合の正規分布近似" data-toc-modified-id="問題:-対数リスク比の場合の正規分布近似-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 対数リスク比の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の定義-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の計算例-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方-2.6.1"><span class="toc-item-num">2.6.1&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値函数の視覚化-2.6.2"><span class="toc-item-num">2.6.2&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるWald版のリスク比に関する信頼区間の計算の仕方" data-toc-modified-id="R言語によるWald版のリスク比に関する信頼区間の計算の仕方-2.6.3"><span class="toc-item-num">2.6.3&nbsp;&nbsp;</span>R言語によるWald版のリスク比に関する信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例" data-toc-modified-id="Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例-2.6.4"><span class="toc-item-num">2.6.4&nbsp;&nbsp;</span>Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例</a></span></li></ul></li><li><span><a href="#問題:-比率の差の場合の正規分布近似" data-toc-modified-id="問題:-比率の差の場合の正規分布近似-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 比率の差の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の定義-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の計算例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方-2.9.1"><span class="toc-item-num">2.9.1&nbsp;&nbsp;</span>Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版の比率の差に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Wald版の比率の差に関するP値と信頼区間の計算の解答例-2.9.2"><span class="toc-item-num">2.9.2&nbsp;&nbsp;</span>Wald版の比率の差に関するP値と信頼区間の計算の解答例</a></span></li></ul></li></ul></li><li><span><a href="#必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間" data-toc-modified-id="必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>必修問題: Wald版のオッズ比とリスク比のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる必修問題の解答例" data-toc-modified-id="WolframAlphaによる必修問題の解答例-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>WolframAlphaによる必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題の解答例" data-toc-modified-id="Julia言語による必修問題の解答例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Julia言語による必修問題の解答例</a></span></li><li><span><a href="#必修問題解答例" data-toc-modified-id="必修問題解答例-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>必修問題解答例</a></span></li></ul></li><li><span><a href="#Pearsonのχ²検定版のP値と信頼区間" data-toc-modified-id="Pearsonのχ²検定版のP値と信頼区間-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Pearsonのχ²検定版のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="WolframAlphaによるPearsonのχ²検定のP値の計算の仕方-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>WolframAlphaによるPearsonのχ²検定のP値の計算の仕方</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化</a></span></li><li><span><a href="#R言語によるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="R言語によるPearsonのχ²検定のP値の計算の仕方-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>R言語によるPearsonのχ²検定のP値の計算の仕方</a></span></li></ul></li><li><span><a href="#「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係" data-toc-modified-id="「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデル全体での最尤法" data-toc-modified-id="2つの二項分布モデル全体での最尤法-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>2つの二項分布モデル全体での最尤法</a></span></li><li><span><a href="#条件OR=ωで制限した2つの二項分布モデルでの最尤法" data-toc-modified-id="条件OR=ωで制限した2つの二項分布モデルでの最尤法-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>条件OR=ωで制限した2つの二項分布モデルでの最尤法</a></span></li><li><span><a href="#Wilks's-theoremの適用" data-toc-modified-id="Wilks's-theoremの適用-4.3.3"><span class="toc-item-num">4.3.3&nbsp;&nbsp;</span>Wilks's theoremの適用</a></span></li></ul></li><li><span><a href="#Wilks'-theoremの数値的確認例" data-toc-modified-id="Wilks'-theoremの数値的確認例-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Wilks' theoremの数値的確認例</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="2つの二項分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>2つの二項分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#2つの二項分布モデルの独立性に関する対数尤度比検定の場合-(OR=1とした場合,--自由度1)" data-toc-modified-id="2つの二項分布モデルの独立性に関する対数尤度比検定の場合-(OR=1とした場合,--自由度1)-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>2つの二項分布モデルの独立性に関する対数尤度比検定の場合 (OR=1とした場合,  自由度1)</a></span></li><li><span><a href="#正規分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="正規分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.3"><span class="toc-item-num">4.4.3&nbsp;&nbsp;</span>正規分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#正規分布モデルでσのみを固定した場合" data-toc-modified-id="正規分布モデルでσのみを固定した場合-4.4.4"><span class="toc-item-num">4.4.4&nbsp;&nbsp;</span>正規分布モデルでσのみを固定した場合</a></span></li><li><span><a href="#正規分布モデルでμのみを固定した場合-(自由度1)" data-toc-modified-id="正規分布モデルでμのみを固定した場合-(自由度1)-4.4.5"><span class="toc-item-num">4.4.5&nbsp;&nbsp;</span>正規分布モデルでμのみを固定した場合 (自由度1)</a></span></li><li><span><a href="#ガンマ分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="ガンマ分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.6"><span class="toc-item-num">4.4.6&nbsp;&nbsp;</span>ガンマ分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#ガンマ分布モデルで形状パラメータαのみを固定した場合-(自由度1)" data-toc-modified-id="ガンマ分布モデルで形状パラメータαのみを固定した場合-(自由度1)-4.4.7"><span class="toc-item-num">4.4.7&nbsp;&nbsp;</span>ガンマ分布モデルで形状パラメータαのみを固定した場合 (自由度1)</a></span></li></ul></li><li><span><a href="#問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法" data-toc-modified-id="問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 「リスク比パラメータはRR=ρである」という仮説下での最尤法</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.7.1"><span class="toc-item-num">4.7.1&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化-4.7.2"><span class="toc-item-num">4.7.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例-4.7.3"><span class="toc-item-num">4.7.3&nbsp;&nbsp;</span>Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#ニューサンスパラメータの問題に関する注意" data-toc-modified-id="ニューサンスパラメータの問題に関する注意-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>ニューサンスパラメータの問題に関する注意</a></span></li></ul></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#条件付き確率分布を利用するアイデア" data-toc-modified-id="条件付き確率分布を利用するアイデア-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>条件付き確率分布を利用するアイデア</a></span></li><li><span><a href="#Sterne型のFisher検定のP値とそれに付随する信頼区間の定義" data-toc-modified-id="Sterne型のFisher検定のP値とそれに付随する信頼区間の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Sterne型のFisher検定のP値とそれに付随する信頼区間の定義</a></span></li><li><span><a href="#Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間" data-toc-modified-id="Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間</a></span></li><li><span><a href="#問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: Fisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるFisher検定版のP値と信頼区間の計算の仕方" data-toc-modified-id="R言語によるFisher検定版のP値と信頼区間の計算の仕方-5.4.3"><span class="toc-item-num">5.4.3&nbsp;&nbsp;</span>R言語によるFisher検定版のP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例-5.4.4"><span class="toc-item-num">5.4.4&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#Fisher検定における第一種の過誤の確率" data-toc-modified-id="Fisher検定における第一種の過誤の確率-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Fisher検定における第一種の過誤の確率</a></span></li></ul></li><li><span><a href="#おまけ:-Bayes信用区間" data-toc-modified-id="おまけ:-Bayes信用区間-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>おまけ: Bayes信用区間</a></span><ul class="toc-item"><li><span><a href="#オッズ比パラメータとリスク比パラメータのBayes信用区間" data-toc-modified-id="オッズ比パラメータとリスク比パラメータのBayes信用区間-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>オッズ比パラメータとリスク比パラメータのBayes信用区間</a></span></li><li><span><a href="#Bayes信用区間の計算例" data-toc-modified-id="Bayes信用区間の計算例-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Bayes信用区間の計算例</a></span></li><li><span><a href="#Bayes信用区間に付随するP値函数" data-toc-modified-id="Bayes信用区間に付随するP値函数-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Bayes信用区間に付随するP値函数</a></span></li><li><span><a href="#Bayes版P値函数の視覚化" data-toc-modified-id="Bayes版P値函数の視覚化-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Bayes版P値函数の視覚化</a></span></li><li><span><a href="#Bayes版P値函数の視覚化の別の例" data-toc-modified-id="Bayes版P値函数の視覚化の別の例-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Bayes版P値函数の視覚化の別の例</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間" data-toc-modified-id="比率の比較に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#比率の比較に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="比率の比較に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>比率の比較に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#2×2の分割表型データとその2つの二項分布モデル" data-toc-modified-id="2×2の分割表型データとその2つの二項分布モデル-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>2×2の分割表型データとその2つの二項分布モデル</a></span></li><li><span><a href="#比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR" data-toc-modified-id="比率の違いを表す2つの指標:-オッズ比パラメータ-OR-とリスク比パラメータ-RR-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>比率の違いを表す2つの指標: オッズ比パラメータ OR とリスク比パラメータ RR</a></span></li></ul></li><li><span><a href="#Wald版のP値と信頼区間" data-toc-modified-id="Wald版のP値と信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Wald版のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Wald版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Wald版のオッズ比に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Wald版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるWald版のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のオッズ比に関するP値函数の視覚化-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>Julia言語によるWald版のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方-2.2.5"><span class="toc-item-num">2.2.5&nbsp;&nbsp;</span>R言語でのWald版のオッズ比に関するP値と信頼区間の計算の仕方</a></span></li></ul></li><li><span><a href="#確率変数の対数オッズ比の分散の近似値の導出" data-toc-modified-id="確率変数の対数オッズ比の分散の近似値の導出-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>確率変数の対数オッズ比の分散の近似値の導出</a></span></li><li><span><a href="#問題:-対数リスク比の場合の正規分布近似" data-toc-modified-id="問題:-対数リスク比の場合の正規分布近似-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>問題: 対数リスク比の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の定義-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版のリスク比に関するP値と信頼区間の計算例-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>問題: Wald版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方-2.6.1"><span class="toc-item-num">2.6.1&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Julia言語によるWald版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるWald版のリスク比に関するP値函数の視覚化-2.6.2"><span class="toc-item-num">2.6.2&nbsp;&nbsp;</span>Julia言語によるWald版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるWald版のリスク比に関する信頼区間の計算の仕方" data-toc-modified-id="R言語によるWald版のリスク比に関する信頼区間の計算の仕方-2.6.3"><span class="toc-item-num">2.6.3&nbsp;&nbsp;</span>R言語によるWald版のリスク比に関する信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例" data-toc-modified-id="Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例-2.6.4"><span class="toc-item-num">2.6.4&nbsp;&nbsp;</span>Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例</a></span></li></ul></li><li><span><a href="#問題:-比率の差の場合の正規分布近似" data-toc-modified-id="問題:-比率の差の場合の正規分布近似-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>問題: 比率の差の場合の正規分布近似</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の定義-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Wald版の比率の差に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Wald版の比率の差に関するP値と信頼区間の計算例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>問題: Wald版の比率の差に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方" data-toc-modified-id="Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方-2.9.1"><span class="toc-item-num">2.9.1&nbsp;&nbsp;</span>Julia言語によるWald版の比率の差に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Wald版の比率の差に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Wald版の比率の差に関するP値と信頼区間の計算の解答例-2.9.2"><span class="toc-item-num">2.9.2&nbsp;&nbsp;</span>Wald版の比率の差に関するP値と信頼区間の計算の解答例</a></span></li></ul></li></ul></li><li><span><a href="#必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間" data-toc-modified-id="必修問題:-Wald版のオッズ比とリスク比のP値と信頼区間-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>必修問題: Wald版のオッズ比とリスク比のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる必修問題の解答例" data-toc-modified-id="WolframAlphaによる必修問題の解答例-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>WolframAlphaによる必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題の解答例" data-toc-modified-id="Julia言語による必修問題の解答例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Julia言語による必修問題の解答例</a></span></li><li><span><a href="#必修問題解答例" data-toc-modified-id="必修問題解答例-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>必修問題解答例</a></span></li></ul></li><li><span><a href="#Pearsonのχ²検定版のP値と信頼区間" data-toc-modified-id="Pearsonのχ²検定版のP値と信頼区間-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Pearsonのχ²検定版のP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="WolframAlphaによるPearsonのχ²検定のP値の計算の仕方-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>WolframAlphaによるPearsonのχ²検定のP値の計算の仕方</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(2)</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化</a></span></li><li><span><a href="#R言語によるPearsonのχ²検定のP値の計算の仕方" data-toc-modified-id="R言語によるPearsonのχ²検定のP値の計算の仕方-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>R言語によるPearsonのχ²検定のP値の計算の仕方</a></span></li></ul></li><li><span><a href="#「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係" data-toc-modified-id="「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>「オッズ比パラメータはOR=ωである」という仮説下での最尤法との関係</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデル全体での最尤法" data-toc-modified-id="2つの二項分布モデル全体での最尤法-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>2つの二項分布モデル全体での最尤法</a></span></li><li><span><a href="#条件OR=ωで制限した2つの二項分布モデルでの最尤法" data-toc-modified-id="条件OR=ωで制限した2つの二項分布モデルでの最尤法-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>条件OR=ωで制限した2つの二項分布モデルでの最尤法</a></span></li><li><span><a href="#Wilks's-theoremの適用" data-toc-modified-id="Wilks's-theoremの適用-4.3.3"><span class="toc-item-num">4.3.3&nbsp;&nbsp;</span>Wilks's theoremの適用</a></span></li></ul></li><li><span><a href="#Wilks'-theoremの数値的確認例" data-toc-modified-id="Wilks'-theoremの数値的確認例-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Wilks' theoremの数値的確認例</a></span><ul class="toc-item"><li><span><a href="#2つの二項分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="2つの二項分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>2つの二項分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#2つの二項分布モデルの独立性に関する対数尤度比検定の場合-(OR=1とした場合,--自由度1)" data-toc-modified-id="2つの二項分布モデルの独立性に関する対数尤度比検定の場合-(OR=1とした場合,--自由度1)-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>2つの二項分布モデルの独立性に関する対数尤度比検定の場合 (OR=1とした場合,  自由度1)</a></span></li><li><span><a href="#正規分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="正規分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.3"><span class="toc-item-num">4.4.3&nbsp;&nbsp;</span>正規分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#正規分布モデルでσのみを固定した場合" data-toc-modified-id="正規分布モデルでσのみを固定した場合-4.4.4"><span class="toc-item-num">4.4.4&nbsp;&nbsp;</span>正規分布モデルでσのみを固定した場合</a></span></li><li><span><a href="#正規分布モデルでμのみを固定した場合-(自由度1)" data-toc-modified-id="正規分布モデルでμのみを固定した場合-(自由度1)-4.4.5"><span class="toc-item-num">4.4.5&nbsp;&nbsp;</span>正規分布モデルでμのみを固定した場合 (自由度1)</a></span></li><li><span><a href="#ガンマ分布モデルのパラメータを2つとも固定した場合-(自由度2)" data-toc-modified-id="ガンマ分布モデルのパラメータを2つとも固定した場合-(自由度2)-4.4.6"><span class="toc-item-num">4.4.6&nbsp;&nbsp;</span>ガンマ分布モデルのパラメータを2つとも固定した場合 (自由度2)</a></span></li><li><span><a href="#ガンマ分布モデルで形状パラメータαのみを固定した場合-(自由度1)" data-toc-modified-id="ガンマ分布モデルで形状パラメータαのみを固定した場合-(自由度1)-4.4.7"><span class="toc-item-num">4.4.7&nbsp;&nbsp;</span>ガンマ分布モデルで形状パラメータαのみを固定した場合 (自由度1)</a></span></li></ul></li><li><span><a href="#問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法" data-toc-modified-id="問題:-「リスク比パラメータはRR=ρである」という仮説下での最尤法-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>問題: 「リスク比パラメータはRR=ρである」という仮説下での最尤法</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義</a></span></li><li><span><a href="#問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例-4.7.1"><span class="toc-item-num">4.7.1&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化-4.7.2"><span class="toc-item-num">4.7.2&nbsp;&nbsp;</span>Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化</a></span></li><li><span><a href="#Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例-4.7.3"><span class="toc-item-num">4.7.3&nbsp;&nbsp;</span>Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#ニューサンスパラメータの問題に関する注意" data-toc-modified-id="ニューサンスパラメータの問題に関する注意-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>ニューサンスパラメータの問題に関する注意</a></span></li></ul></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#条件付き確率分布を利用するアイデア" data-toc-modified-id="条件付き確率分布を利用するアイデア-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>条件付き確率分布を利用するアイデア</a></span></li><li><span><a href="#Sterne型のFisher検定のP値とそれに付随する信頼区間の定義" data-toc-modified-id="Sterne型のFisher検定のP値とそれに付随する信頼区間の定義-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Sterne型のFisher検定のP値とそれに付随する信頼区間の定義</a></span></li><li><span><a href="#Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間" data-toc-modified-id="Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Clopper-Pearson型のFisher検定のP値とそれに付随する信頼区間</a></span></li><li><span><a href="#問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="問題:-Fisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>問題: Fisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>Julia言語によるFisher検定版のオッズ比に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化" data-toc-modified-id="Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化</a></span></li><li><span><a href="#R言語によるFisher検定版のP値と信頼区間の計算の仕方" data-toc-modified-id="R言語によるFisher検定版のP値と信頼区間の計算の仕方-5.4.3"><span class="toc-item-num">5.4.3&nbsp;&nbsp;</span>R言語によるFisher検定版のP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例" data-toc-modified-id="Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例-5.4.4"><span class="toc-item-num">5.4.4&nbsp;&nbsp;</span>Fisher検定版のオッズ比に関するP値と信頼区間の計算の解答例</a></span></li></ul></li><li><span><a href="#Fisher検定における第一種の過誤の確率" data-toc-modified-id="Fisher検定における第一種の過誤の確率-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Fisher検定における第一種の過誤の確率</a></span></li></ul></li><li><span><a href="#おまけ:-Bayes信用区間" data-toc-modified-id="おまけ:-Bayes信用区間-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>おまけ: Bayes信用区間</a></span><ul class="toc-item"><li><span><a href="#オッズ比パラメータとリスク比パラメータのBayes信用区間" data-toc-modified-id="オッズ比パラメータとリスク比パラメータのBayes信用区間-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>オッズ比パラメータとリスク比パラメータのBayes信用区間</a></span></li><li><span><a href="#Bayes信用区間の計算例" data-toc-modified-id="Bayes信用区間の計算例-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Bayes信用区間の計算例</a></span></li><li><span><a href="#Bayes信用区間に付随するP値函数" data-toc-modified-id="Bayes信用区間に付随するP値函数-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Bayes信用区間に付随するP値函数</a></span></li><li><span><a href="#Bayes版P値函数の視覚化" data-toc-modified-id="Bayes版P値函数の視覚化-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Bayes版P値函数の視覚化</a></span></li><li><span><a href="#Bayes版P値函数の視覚化の別の例" data-toc-modified-id="Bayes版P値函数の視覚化の別の例-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Bayes版P値函数の視覚化の別の例</a></span></li></ul></li><li><span><a href="#関連講義動画" data-toc-modified-id="関連講義動画-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>関連講義動画</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -185,6 +185,17 @@ end
 ```
 
 ```julia
+@show confint_or_wald(0, 1, 1, 1) confint_or_wald(1e-4, 1, 1, 1)
+@show confint_or_wald(1, 0, 1, 1) confint_or_wald(1, 1e-4, 1, 1)
+@show confint_or_wald(1, 1, 0, 1) confint_or_wald(1, 1, 1e-4, 1)
+@show confint_or_wald(1, 1, 1, 0) confint_or_wald(1, 1, 1, 1e-4)
+@show confint_or_wald(0, 0, 1, 1) confint_or_wald(1e-4, 1e-4, 1, 1)
+@show confint_or_wald(1, 1, 0, 0) confint_or_wald(1, 1, 1e-4, 1e-4)
+@show confint_or_wald(0, 1, 0, 1) confint_or_wald(1e-4, 1, 1e-4, 1)
+@show confint_or_wald(1, 0, 1, 0) confint_or_wald(1, 1e-4, 1, 1e-4);
+```
+
+```julia
 riskratiohat(a, b, c, d) = safediv(a*(c+d), (a+b)*c)
 stderr_logriskratiohat(a, b, c, d) = √(1/a - 1/(a+b) + 1/c - 1/(c+d))
 
@@ -195,11 +206,23 @@ function pvalue_rr_wald(a, b, c, d; ρ=1)
 end
 
 function confint_rr_wald(a, b, c, d; α=0.05)
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
     z = quantile(Normal(), 1-α/2)
     RRhat = riskratiohat(a, b, c, d)
     SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
     [safemul(exp(-z*SEhat_logRRhat), RRhat), safemul(exp(z*SEhat_logRRhat), RRhat)]
 end
+```
+
+```julia
+@show confint_rr_wald(0, 1, 1, 1) confint_rr_wald(1e-4, 1, 1, 1)
+@show confint_rr_wald(1, 0, 1, 1) confint_rr_wald(1, 1e-4, 1, 1)
+@show confint_rr_wald(1, 1, 0, 1) confint_rr_wald(1, 1, 1e-4, 1)
+@show confint_rr_wald(1, 1, 1, 0) confint_rr_wald(1, 1, 1, 1e-4)
+@show confint_rr_wald(0, 0, 1, 1) confint_rr_wald(1e-4, 1e-4, 1, 1)
+@show confint_rr_wald(1, 1, 0, 0) confint_rr_wald(1, 1, 1e-4, 1e-4)
+@show confint_rr_wald(0, 1, 0, 1) confint_rr_wald(1e-4, 1, 1e-4, 1)
+@show confint_rr_wald(1, 0, 1, 0) confint_rr_wald(1, 1e-4, 1, 1e-4);
 ```
 
 ```julia
@@ -218,11 +241,23 @@ function pvalue_rd_wald(a, b, c, d; Δ=0)
 end
 
 function confint_rd_wald(a, b, c, d; α=0.05)
+    (a+b==0 || c+d==0) && return [-Inf, Inf]
     z = quantile(Normal(), 1-α/2)
     RDhat = riskdiffhat(a, b, c, d)
     SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
     [RDhat - z*SEhat_riskdiffhat, RDhat + z*SEhat_riskdiffhat]
 end
+```
+
+```julia
+@show confint_rd_wald(0, 1, 1, 1) confint_rd_wald(1e-4, 1, 1, 1)
+@show confint_rd_wald(1, 0, 1, 1) confint_rd_wald(1, 1e-4, 1, 1)
+@show confint_rd_wald(1, 1, 0, 1) confint_rd_wald(1, 1, 1e-4, 1)
+@show confint_rd_wald(1, 1, 1, 0) confint_rd_wald(1, 1, 1, 1e-4)
+@show confint_rd_wald(0, 0, 1, 1) confint_rd_wald(1e-4, 1e-6, 1, 1)
+@show confint_rd_wald(1, 1, 0, 0) confint_rd_wald(1, 1, 1e-4, 1e-6)
+@show confint_rd_wald(0, 1, 0, 1) confint_rd_wald(1e-4, 1, 1e-6, 1)
+@show confint_rd_wald(1, 0, 1, 0) confint_rd_wald(1, 1e-4, 1, 1e-6);
 ```
 
 ```julia
@@ -248,18 +283,36 @@ function pvalue_or_pearson(a, b, c, d; ω=1, correction=0.0)
 end
 
 function confint_or_pearson(a, b, c, d; α=0.05, correction=0.0)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0.0, Inf]
-    f(ω) = logit(pvalue_or_pearson(a, b, c, d; ω, correction)) - logit(α)
-    if a == 0 || d == 0
-        [0.0, find_zero(f, 1.0)]
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
+    f(logω) = logit(pvalue_or_pearson(a, b, c, d; ω=exp(logω), correction)) - logit(α)
+    ps = if a == 0 || d == 0
+        [0, exp(find_zero(f, 0.0))]
     elseif b == 0 || c == 0
-        [find_zero(f, 1.0), Inf]
+        [exp(find_zero(f, 0.0)), Inf]
     else
-        ω_L, ω_U = confint_or_wald(a, b, c, d; α)
-        [find_zero(f, ω_L), find_zero(f, ω_U)]
+        ORhat = oddsratiohat(a, b, c, d)
+        ω_L, ω_U = ORhat/2, 2ORhat
+        [exp(find_zero(f, log(ω_L))), exp(find_zero(f, log(ω_U)))]
     end
 end
 ```
+
+```julia
+@show confint_or_pearson(0, 1, 1, 1) confint_or_pearson(1e-4, 1, 1, 1)
+@show confint_or_pearson(1, 0, 1, 1) confint_or_pearson(1, 1e-4, 1, 1)
+@show confint_or_pearson(1, 1, 0, 1) confint_or_pearson(1, 1, 1e-4, 1)
+@show confint_or_pearson(1, 1, 1, 0) confint_or_pearson(1, 1, 1, 1e-4)
+@show confint_or_pearson(0, 0, 1, 1) confint_or_pearson(1e-4, 1e-4, 1, 1)
+@show confint_or_pearson(1, 1, 0, 0) confint_or_pearson(1, 1, 1e-4, 1e-4)
+@show confint_or_pearson(0, 1, 0, 1) confint_or_pearson(1e-4, 1, 1e-4, 1)
+@show confint_or_pearson(1, 0, 1, 0) confint_or_pearson(1, 1e-4, 1, 1e-4);
+```
+
+次のセルの計算結果を Cornfeild (1956), p.139, (4.2) と比較せよ.
+
+* Jerome Cornfield, A Statistical Problem Arising from Retrospective Studies, Berkeley Symposium on Mathematical Statistics and Probability, 1956: 135-148 (1956)
+
+![Cornfield_1956_%284.2%29.png](attachment:Cornfield_1956_%284.2%29.png)
 
 ```julia
 # Cornfeild (1956), p.139, (4.2) と比較せよ.
@@ -268,6 +321,8 @@ a, b, c, d = 3, 11, 60, 32
 @show confint_or_pearson(a, b, c, d)
 @show confint_or_pearson(a, b, c, d; correction=0.5);
 ```
+
+上のセルで計算した連続補正版の信頼区間の値が Cornfeild (1956), p.139, (4.2) の値に一致している.
 
 ```julia
 function Delta(a, b, c, d; ρ=1)
@@ -292,17 +347,33 @@ function pvalue_rr_pearson(a, b, c, d; ρ=1)
 end
 
 function confint_rr_pearson(a, b, c, d; α=0.05)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0.0, Inf]
-    f(ρ) = logit(pvalue_rr_pearson(a, b, c, d; ρ)) - logit(α)
-    if a == 0 || d == 0
-        [0.0, find_zero(f, 1.0)]
-    elseif b == 0 || c == 0
-        [find_zero(f, 1.0), Inf]
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
+    f(logρ) = logit(pvalue_rr_pearson(a, b, c, d; ρ=exp(logρ))) - logit(α)
+    RRhat = riskratiohat(a, b, c, d)
+    if a == 0
+        [0.0, exp(find_zero(f, 0.0))]
+    elseif c == 0
+        [exp(find_zero(f, 0.0)), Inf]
+    elseif b == 0
+        [0.0, exp(find_zero(f, log(2RRhat)))]
+    elseif d == 0
+        [exp(find_zero(f, log(RRhat/2))), Inf]
     else
-        ρ_L, ρ_U = confint_rr_wald(a, b, c, d; α)
-        [find_zero(f, ρ_L), find_zero(f, ρ_U)]
+        ρ_L, ρ_U = RRhat/2, 2RRhat
+        [exp(find_zero(f, log(ρ_L))), exp(find_zero(f, log(ρ_U)))]
     end
 end
+```
+
+```julia
+@show confint_rr_pearson(0, 1, 1, 1) confint_rr_pearson(1e-4, 1, 1, 1)
+@show confint_rr_pearson(1, 0, 1, 1) confint_rr_pearson(1, 1e-4, 1, 1)
+@show confint_rr_pearson(1, 1, 0, 1) confint_rr_pearson(1, 1, 1e-4, 1)
+@show confint_rr_pearson(1, 1, 1, 0) confint_rr_pearson(1, 1, 1, 1e-4)
+@show confint_rr_pearson(0, 0, 1, 1) confint_rr_pearson(1e-4, 1e-4, 1, 1)
+@show confint_rr_pearson(1, 1, 0, 0) confint_rr_pearson(1, 1, 1e-4, 1e-4)
+@show confint_rr_pearson(0, 1, 0, 1) confint_rr_pearson(1e-4, 1, 1e-4, 1)
+@show confint_rr_pearson(1, 0, 1, 0) confint_rr_pearson(1, 1e-4, 1, 1e-4);
 ```
 
 ```julia
@@ -344,19 +415,30 @@ function pvalue_or_sterne(a, b, c, d; ω=1)
 end
 
 function confint_or_sterne(a, b, c, d; α = 0.05)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0.0, Inf]
-    f(ω) = logit(pvalue_or_sterne(a, b, c, d; ω)) - logit(α)
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
+    f(logω) = logit(pvalue_or_sterne(a, b, c, d; ω=exp(logω))) - logit(α)
     if a == 0 || d == 0
-        [0.0, find_zero(f, 1.0)]
+        [0.0, exp(find_zero(f, 0.0))]
     elseif b == 0 || c == 0
-        [find_zero(f, 1.0), Inf]
+        [exp(find_zero(f, 0.0)), Inf]
     else
         ω_L, ω_U = confint_or_wald(a, b, c, d; α = α/10)
-        ps = find_zeros(f, ω_L, ω_U)
+        ps = exp.(find_zeros(f, log(ω_L), log(ω_U)))
         # 次の行は稀に区間にならない場合への対策
         [first(ps), last(ps)]
     end
 end
+```
+
+```julia
+@show confint_or_sterne(0, 10, 10, 10) confint_or_pearson(1e-4, 10, 10, 10)
+@show confint_or_sterne(10, 0, 10, 10) confint_or_pearson(10, 1e-4, 10, 10)
+@show confint_or_sterne(10, 10, 0, 10) confint_or_pearson(10, 10, 1e-4, 10)
+@show confint_or_sterne(10, 10, 10, 0) confint_or_pearson(10, 10, 10, 1e-4)
+@show confint_or_sterne(0, 0, 10, 10) confint_or_pearson(1e-4, 1e-4, 10, 10)
+@show confint_or_sterne(10, 10, 0, 0) confint_or_pearson(10, 10, 1e-4, 1e-4)
+@show confint_or_sterne(0, 10, 0, 10) confint_or_pearson(1e-4, 10, 1e-4, 10)
+@show confint_or_sterne(10, 0, 10, 0) confint_or_pearson(10, 1e-4, 10, 1e-4);
 ```
 
 ```julia
@@ -370,7 +452,7 @@ function pvalue_or_clopper_pearson(a, b, c, d; ω=1)
 end
 
 function confint_or_clopper_pearson(a, b, c, d; α = 0.05)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0.0, Inf]
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
     f(ω) = logit(pvalue_or_clopper_pearson(a, b, c, d; ω)) - logit(α)
     if a == 0 || d == 0
         [0.0, find_zero(f, 1.0)]
@@ -381,6 +463,17 @@ function confint_or_clopper_pearson(a, b, c, d; α = 0.05)
         find_zeros(f, ω_L, ω_U)
     end
 end
+```
+
+```julia
+@show confint_or_clopper_pearson(0, 10, 10, 10) confint_or_sterne(0, 10, 10, 10)
+@show confint_or_clopper_pearson(10, 0, 10, 10) confint_or_sterne(10, 0, 10, 10)
+@show confint_or_clopper_pearson(10, 10, 0, 10) confint_or_sterne(10, 10, 0, 10)
+@show confint_or_clopper_pearson(10, 10, 10, 0) confint_or_sterne(10, 10, 10, 0)
+@show confint_or_clopper_pearson(0, 0, 10, 10) confint_or_sterne(0, 0, 10, 10)
+@show confint_or_clopper_pearson(10, 10, 0, 0) confint_or_sterne(10, 10, 0, 0)
+@show confint_or_clopper_pearson(0, 10, 0, 10) confint_or_sterne(0, 10, 0, 10)
+@show confint_or_clopper_pearson(10, 0, 10, 0) confint_or_sterne(10, 0, 10, 0);
 ```
 
 ```julia
@@ -3221,13 +3314,28 @@ a, b, c, d = 100, 579, 111, 568
 plot_pvalue_functions(a, b, c, d)
 ```
 
-論文ではBayes統計の方法を使って区間推定しているが, P値函数達に関するこのグラフを見れば分かるように, Bayes統計版ではないWald版やPearsonのχ²検定版の信頼区間を使っても同じ結果が得られる.
+論文ではBayes統計の方法を使って区間推定しているが, P値函数達に関するこのグラフを見れば分かるように, この場合には, Bayes統計版ではないWald版やPearsonのχ²検定版の信頼区間を使っても同じ結果が得られる.
 
 この一致は偶然ではない. 十分に $a,b,c,d$ が大きいがゆえに正規分布近似が有効になっているので一致している.
 
-巷に溢れる「ベイズ統計入門」では「通常の統計学とは異なる主義・思想・哲学に基くベイズ統計学というものがある」のような感じの解説が目立つ. そのような解説に騙されないように注意することが必要である.
+巷に溢れる「ベイズ統計入門」では「ベイズ統計学は通常の統計学とは異なる主義・思想・哲学に基く本質的に異なる統計学である」のような感じの解説が目立つ. そのような解説に騙されないように注意することが必要である.
 
 どんなに主義・思想・哲学が違っていても, 実践的には無意味な小さな違いしかない量(実践的には同じ量とみなされる)を計算しているのであれば, 主義・思想・哲学の違いは実践的には無視できるということを意味している.
+
+
+## 関連講義動画
+
+ここから先のより進んだ話題については
+
+* [聴講コース 臨床研究者のための生物統計学](https://ocw.kyoto-u.ac.jp/course/328/)
+
+特に以下の3つの講義動画はこのノートで解説した2×2の分割表の統計学の続きとして非常に楽しめると思われる:
+
+* 佐藤俊哉, ランダム化ができないとき, 2018/10/25, length 1:02:31) \[[link](https://youtu.be/tUkyjZXU1vc)\]
+* 佐藤俊哉, 交絡とその調整, 2018/12/20, length 1:00:52) \[[link](https://youtu.be/ybdkQFEdCPM)\]
+* 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, length 1:04:44) \[[link](https://youtu.be/cOHN444kBlo)\]
+
+
 
 ```julia
 
