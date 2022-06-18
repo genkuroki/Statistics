@@ -346,8 +346,6 @@ __関連講義動画__
 
 ### 12 検定と信頼区間(5) 平均の差
 
-これはまだ書きかけ
-
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.pdf)
@@ -360,6 +358,12 @@ __定義された信頼区間__
 * Welchのt検定に付随する信頼区間
 
 Studentのt検定は使用しない.
+
+__作成された動画__
+
+[データサイズを大きくしたときのP値函数と信頼区間の挙動](https://github.com/genkuroki/Statistics/blob/master/2022/images/confint_of_diffmeans.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/confint_of_diffmeans.gif">
 
 ### 13 誤用を避けるための注意
 

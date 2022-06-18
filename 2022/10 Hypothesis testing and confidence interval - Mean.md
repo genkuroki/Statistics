@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 平均の検定と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-14
+* 2022-05-31～2022-06-18
 
 $
 \newcommand\op{\operatorname}
@@ -161,7 +161,6 @@ function plot_T(dist, n; L=10^6,
         μ, σ = mean(dist), std(dist)
     end
     println("skewness = ", myskewness(dist), ",  kurtosis = ", mykurtosis(dist))
-    ku = mykurtosis(dist)
     
     se = σ/√n
     Z = Vector{Float64}(undef, L)
@@ -247,11 +246,17 @@ function show_confint_of_mean(x; μ = mean(x), α = 0.05)
     println("($(100(1-α))% confidence interval of mean) = ", confint_tdist(x; α))
 end
 
-function plot_confint_of_mean(x; α = 0.05, plot_pvaluefunc = false,
+function plot_confint_of_mean(x; α = 0.05,
+        xlim = nothing,
+        plot_pvaluefunc = false,
         xtick=-100:100, kwargs...)
     n = length(x)
-    a, b = extrema(x)
-    a, b = a - 0.05(b-a), b + 0.05(b-a)
+    if isnothing(xlim)
+        a, b = extrema(x)
+        a, b = a - 0.05(b-a), b + 0.05(b-a)
+    else
+        a, b = xlim
+    end
     confidence_interval = confint_tdist(x; α)
     if plot_pvaluefunc
         scatter(x, fill(-0.05, n); label="", msc=:auto, alpha=0.7)
@@ -259,7 +264,7 @@ function plot_confint_of_mean(x; α = 0.05, plot_pvaluefunc = false,
         plot!(confidence_interval, fill(α, 2); label="", lw=3, c=:red)
         plot!(; ylim=(-0.1, 1.02), ytick=0:0.1:1, yguide="P-value")
         title!("P-value function and $(100(1-α))% conf. int. of mean for data of size n=$n")
-        plot!(; size=(600, 200), leftmargin=3Plots.mm)
+        plot!(; size=(600, 200), leftmargin=4Plots.mm)
     else
         scatter(x, fill(-0.05, n); label="", msc=:auto, alpha=0.7)
         plot!(confidence_interval, fill(0.06, 2); label="", lw=6, c=:red)
