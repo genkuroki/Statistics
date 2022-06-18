@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の比較
 
 * 黒木玄
-* 2022-06-14～2022-06-17
+* 2022-06-14～2022-06-18
 
 $
 \newcommand\op{\operatorname}
@@ -206,7 +206,7 @@ function pvalue_rr_wald(a, b, c, d; ρ=1)
 end
 
 function confint_rr_wald(a, b, c, d; α=0.05)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
+    (a+b==0 || c+d==0) && return [0, Inf]
     z = quantile(Normal(), 1-α/2)
     RRhat = riskratiohat(a, b, c, d)
     SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
@@ -277,14 +277,14 @@ function chisqstat_or(a, b, c, d; ω=1, correction=0.0)
     _chisqstat_or(a, b, c, d, δ; correction)
 end
 
-function pvalue_or_pearson(a, b, c, d; ω=1, correction=0.0)
+function pvalue_or_pearson_chisq(a, b, c, d; ω=1, correction=0.0)
     χ² = chisqstat_or(a, b, c, d; ω, correction)
     ccdf(Chisq(1), χ²)
 end
 
-function confint_or_pearson(a, b, c, d; α=0.05, correction=0.0)
+function confint_or_pearson_chisq(a, b, c, d; α=0.05, correction=0.0)
     (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
-    f(logω) = logit(pvalue_or_pearson(a, b, c, d; ω=exp(logω), correction)) - logit(α)
+    f(logω) = logit(pvalue_or_pearson_chisq(a, b, c, d; ω=exp(logω), correction)) - logit(α)
     ps = if a == 0 || d == 0
         [0, exp(find_zero(f, 0.0))]
     elseif b == 0 || c == 0
@@ -298,19 +298,19 @@ end
 ```
 
 ```julia
-@show confint_or_pearson(0, 1, 1, 1) confint_or_pearson(1e-4, 1, 1, 1)
-@show confint_or_pearson(1, 0, 1, 1) confint_or_pearson(1, 1e-4, 1, 1)
-@show confint_or_pearson(1, 1, 0, 1) confint_or_pearson(1, 1, 1e-4, 1)
-@show confint_or_pearson(1, 1, 1, 0) confint_or_pearson(1, 1, 1, 1e-4)
-@show confint_or_pearson(0, 0, 1, 1) confint_or_pearson(1e-4, 1e-4, 1, 1)
-@show confint_or_pearson(1, 1, 0, 0) confint_or_pearson(1, 1, 1e-4, 1e-4)
-@show confint_or_pearson(0, 1, 0, 1) confint_or_pearson(1e-4, 1, 1e-4, 1)
-@show confint_or_pearson(1, 0, 1, 0) confint_or_pearson(1, 1e-4, 1, 1e-4);
+@show confint_or_pearson_chisq(0, 1, 1, 1) confint_or_pearson_chisq(1e-4, 1, 1, 1)
+@show confint_or_pearson_chisq(1, 0, 1, 1) confint_or_pearson_chisq(1, 1e-4, 1, 1)
+@show confint_or_pearson_chisq(1, 1, 0, 1) confint_or_pearson_chisq(1, 1, 1e-4, 1)
+@show confint_or_pearson_chisq(1, 1, 1, 0) confint_or_pearson_chisq(1, 1, 1, 1e-4)
+@show confint_or_pearson_chisq(0, 0, 1, 1) confint_or_pearson_chisq(1e-4, 1e-4, 1, 1)
+@show confint_or_pearson_chisq(1, 1, 0, 0) confint_or_pearson_chisq(1, 1, 1e-4, 1e-4)
+@show confint_or_pearson_chisq(0, 1, 0, 1) confint_or_pearson_chisq(1e-4, 1, 1e-4, 1)
+@show confint_or_pearson_chisq(1, 0, 1, 0) confint_or_pearson_chisq(1, 1e-4, 1, 1e-4);
 ```
 
 次のセルの計算結果を Cornfeild (1956), p.139, (4.2) と比較せよ.
 
-* Jerome Cornfield, A Statistical Problem Arising from Retrospective Studies, Berkeley Symposium on Mathematical Statistics and Probability, 1956: 135-148 (1956)
+* Jerome Cornfield, A Statistical Problem Arising from Retrospective Studies, Berkeley Symposium on Mathematical Statistics and Probability, 1956: 135-148 (1956)  \[[link](https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%204:%20Contributions%20to%20Biology%20and%20Problems%20of%20Health/chapter/A%20Statistical%20Problem%20Arising%20from%20Retrospective%20Studies/bsmsp/1200502552)\]
 
 ![Cornfield_1956_%284.2%29.png](attachment:Cornfield_1956_%284.2%29.png)
 
@@ -318,8 +318,8 @@ end
 # Cornfeild (1956), p.139, (4.2) と比較せよ.
 a, b, c, d = 3, 11, 60, 32
 @show confint_or_wald(a, b, c, d)
-@show confint_or_pearson(a, b, c, d)
-@show confint_or_pearson(a, b, c, d; correction=0.5);
+@show confint_or_pearson_chisq(a, b, c, d)
+@show confint_or_pearson_chisq(a, b, c, d; correction=0.5);
 ```
 
 上のセルで計算した連続補正版の信頼区間の値が Cornfeild (1956), p.139, (4.2) の値に一致している.
@@ -341,14 +341,14 @@ function chisqstat_rr(a, b, c, d; ρ=1)
     _chisqstat_rr(a, b, c, d, Δ)
 end
 
-function pvalue_rr_pearson(a, b, c, d; ρ=1)
+function pvalue_rr_pearson_chisq(a, b, c, d; ρ=1)
     χ² = chisqstat_rr(a, b, c, d; ρ)
     ccdf(Chisq(1), χ²)
 end
 
-function confint_rr_pearson(a, b, c, d; α=0.05)
+function confint_rr_pearson_chisq(a, b, c, d; α=0.05)
     (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
-    f(logρ) = logit(pvalue_rr_pearson(a, b, c, d; ρ=exp(logρ))) - logit(α)
+    f(logρ) = logit(pvalue_rr_pearson_chisq(a, b, c, d; ρ=exp(logρ))) - logit(α)
     RRhat = riskratiohat(a, b, c, d)
     if a == 0
         [0.0, exp(find_zero(f, 0.0))]
@@ -366,14 +366,14 @@ end
 ```
 
 ```julia
-@show confint_rr_pearson(0, 1, 1, 1) confint_rr_pearson(1e-4, 1, 1, 1)
-@show confint_rr_pearson(1, 0, 1, 1) confint_rr_pearson(1, 1e-4, 1, 1)
-@show confint_rr_pearson(1, 1, 0, 1) confint_rr_pearson(1, 1, 1e-4, 1)
-@show confint_rr_pearson(1, 1, 1, 0) confint_rr_pearson(1, 1, 1, 1e-4)
-@show confint_rr_pearson(0, 0, 1, 1) confint_rr_pearson(1e-4, 1e-4, 1, 1)
-@show confint_rr_pearson(1, 1, 0, 0) confint_rr_pearson(1, 1, 1e-4, 1e-4)
-@show confint_rr_pearson(0, 1, 0, 1) confint_rr_pearson(1e-4, 1, 1e-4, 1)
-@show confint_rr_pearson(1, 0, 1, 0) confint_rr_pearson(1, 1e-4, 1, 1e-4);
+@show confint_rr_pearson_chisq(0, 1, 1, 1) confint_rr_pearson_chisq(1e-4, 1, 1, 1)
+@show confint_rr_pearson_chisq(1, 0, 1, 1) confint_rr_pearson_chisq(1, 1e-4, 1, 1)
+@show confint_rr_pearson_chisq(1, 1, 0, 1) confint_rr_pearson_chisq(1, 1, 1e-4, 1)
+@show confint_rr_pearson_chisq(1, 1, 1, 0) confint_rr_pearson_chisq(1, 1, 1, 1e-4)
+@show confint_rr_pearson_chisq(0, 0, 1, 1) confint_rr_pearson_chisq(1e-4, 1e-4, 1, 1)
+@show confint_rr_pearson_chisq(1, 1, 0, 0) confint_rr_pearson_chisq(1, 1, 1e-4, 1e-4)
+@show confint_rr_pearson_chisq(0, 1, 0, 1) confint_rr_pearson_chisq(1e-4, 1, 1e-4, 1)
+@show confint_rr_pearson_chisq(1, 0, 1, 0) confint_rr_pearson_chisq(1, 1e-4, 1, 1e-4);
 ```
 
 ```julia
@@ -431,18 +431,18 @@ end
 ```
 
 ```julia
-@show confint_or_sterne(0, 10, 10, 10) confint_or_pearson(1e-4, 10, 10, 10)
-@show confint_or_sterne(10, 0, 10, 10) confint_or_pearson(10, 1e-4, 10, 10)
-@show confint_or_sterne(10, 10, 0, 10) confint_or_pearson(10, 10, 1e-4, 10)
-@show confint_or_sterne(10, 10, 10, 0) confint_or_pearson(10, 10, 10, 1e-4)
-@show confint_or_sterne(0, 0, 10, 10) confint_or_pearson(1e-4, 1e-4, 10, 10)
-@show confint_or_sterne(10, 10, 0, 0) confint_or_pearson(10, 10, 1e-4, 1e-4)
-@show confint_or_sterne(0, 10, 0, 10) confint_or_pearson(1e-4, 10, 1e-4, 10)
-@show confint_or_sterne(10, 0, 10, 0) confint_or_pearson(10, 1e-4, 10, 1e-4);
+@show confint_or_sterne(0, 10, 10, 10) confint_or_pearson_chisq(1e-4, 10, 10, 10)
+@show confint_or_sterne(10, 0, 10, 10) confint_or_pearson_chisq(10, 1e-4, 10, 10)
+@show confint_or_sterne(10, 10, 0, 10) confint_or_pearson_chisq(10, 10, 1e-4, 10)
+@show confint_or_sterne(10, 10, 10, 0) confint_or_pearson_chisq(10, 10, 10, 1e-4)
+@show confint_or_sterne(0, 0, 10, 10) confint_or_pearson_chisq(1e-4, 1e-4, 10, 10)
+@show confint_or_sterne(10, 10, 0, 0) confint_or_pearson_chisq(10, 10, 1e-4, 1e-4)
+@show confint_or_sterne(0, 10, 0, 10) confint_or_pearson_chisq(1e-4, 10, 1e-4, 10)
+@show confint_or_sterne(10, 0, 10, 0) confint_or_pearson_chisq(10, 1e-4, 10, 1e-4);
 ```
 
 ```julia
-function pvalue_or_clopper_pearson(a, b, c, d; ω=1)
+function pvalue_or_clopper_pearson_chisq(a, b, c, d; ω=1)
     fnch = if ω == 1
         Hypergeometric(a+b, c+d, a+c)
     else
@@ -451,9 +451,9 @@ function pvalue_or_clopper_pearson(a, b, c, d; ω=1)
     min(1, 2cdf(fnch, a), 2ccdf(fnch, a-1))
 end
 
-function confint_or_clopper_pearson(a, b, c, d; α = 0.05)
+function confint_or_clopper_pearson_chisq(a, b, c, d; α = 0.05)
     (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
-    f(ω) = logit(pvalue_or_clopper_pearson(a, b, c, d; ω)) - logit(α)
+    f(ω) = logit(pvalue_or_clopper_pearson_chisq(a, b, c, d; ω)) - logit(α)
     if a == 0 || d == 0
         [0.0, find_zero(f, 1.0)]
     elseif b == 0 || c == 0
@@ -466,14 +466,14 @@ end
 ```
 
 ```julia
-@show confint_or_clopper_pearson(0, 10, 10, 10) confint_or_sterne(0, 10, 10, 10)
-@show confint_or_clopper_pearson(10, 0, 10, 10) confint_or_sterne(10, 0, 10, 10)
-@show confint_or_clopper_pearson(10, 10, 0, 10) confint_or_sterne(10, 10, 0, 10)
-@show confint_or_clopper_pearson(10, 10, 10, 0) confint_or_sterne(10, 10, 10, 0)
-@show confint_or_clopper_pearson(0, 0, 10, 10) confint_or_sterne(0, 0, 10, 10)
-@show confint_or_clopper_pearson(10, 10, 0, 0) confint_or_sterne(10, 10, 0, 0)
-@show confint_or_clopper_pearson(0, 10, 0, 10) confint_or_sterne(0, 10, 0, 10)
-@show confint_or_clopper_pearson(10, 0, 10, 0) confint_or_sterne(10, 0, 10, 0);
+@show confint_or_clopper_pearson_chisq(0, 10, 10, 10) confint_or_sterne(0, 10, 10, 10)
+@show confint_or_clopper_pearson_chisq(10, 0, 10, 10) confint_or_sterne(10, 0, 10, 10)
+@show confint_or_clopper_pearson_chisq(10, 10, 0, 10) confint_or_sterne(10, 10, 0, 10)
+@show confint_or_clopper_pearson_chisq(10, 10, 10, 0) confint_or_sterne(10, 10, 10, 0)
+@show confint_or_clopper_pearson_chisq(0, 0, 10, 10) confint_or_sterne(0, 0, 10, 10)
+@show confint_or_clopper_pearson_chisq(10, 10, 0, 0) confint_or_sterne(10, 10, 0, 0)
+@show confint_or_clopper_pearson_chisq(0, 10, 0, 10) confint_or_sterne(0, 10, 0, 10)
+@show confint_or_clopper_pearson_chisq(10, 0, 10, 0) confint_or_sterne(10, 0, 10, 0);
 ```
 
 ```julia
@@ -488,8 +488,8 @@ function sim_probabilities_of_type_I_error(m, n, p, q=p;
         a, c = rand(bina), rand(binc)
         b, d = m-a, n-c
         p_sterne[i] = pvalue_or_sterne(a, b, c, d; ω)
-        p_clopper_pearson[i] = pvalue_or_clopper_pearson(a, b, c, d; ω)
-        p_pearson[i] = pvalue_or_pearson(a, b, c, d; ω)
+        p_clopper_pearson[i] = pvalue_or_clopper_pearson_chisq(a, b, c, d; ω)
+        p_pearson[i] = pvalue_or_pearson_chisq(a, b, c, d; ω)
         p_wald[i] = pvalue_or_wald(a, b, c, d; ω)
     end
     (; p_sterne, p_clopper_pearson, p_pearson, p_wald)
@@ -508,8 +508,8 @@ function plot_probabilities_of_type_I_error(m, n, p, q=p;
     tick = 0:0.1:1
     P = plot(; legend=:topleft)
     plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
-    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dash)
-    plot!(x, x -> F_pearson(x); label="Pearson χ²", ls=:dashdot)
+    plot!(x, x -> F_clopper_pearson_chisq(x); label="Fisher (CP)", ls=:dash)
+    plot!(x, x -> F_pearson_chisq(x); label="Pearson χ²", ls=:dashdot)
     plot!(x, x -> F_wald(x); label="Wald", ls=:dot, lw=2)
     plot!(x, identity; label="", c=:black, ls=:dot)
     plot!(; xtick=tick, ytick=tick, tickfontsize=6)
@@ -520,8 +520,8 @@ function plot_probabilities_of_type_I_error(m, n, p, q=p;
     tick = 0:0.01:1
     Q = plot(; legend=:topleft)
     plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
-    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dash)
-    plot!(x, x -> F_pearson(x); label="Pearson χ²", ls=:dashdot)
+    plot!(x, x -> F_clopper_pearson_chisq(x); label="Fisher (CP)", ls=:dash)
+    plot!(x, x -> F_pearson_chisq(x); label="Pearson χ²", ls=:dashdot)
     plot!(x, x -> F_wald(x); label="Wald", ls=:dot, lw=2)
     plot!(x, identity; label="", c=:black, ls=:dot)
     plot!(; xtick=tick, ytick=tick, tickfontsize=6)
@@ -850,7 +850,7 @@ $$
 
 ### Wald版のオッズ比に関するP値と信頼区間の計算例
 
-データが次の場合のWald版の仮説「オッズ比パラメータは $\OR=1$ である」のP値とオッズ比パラメータ $\OR$ の $95\%$ 信頼区間を計算してみよう:
+データが次の場合の仮説「オッズ比パラメータは $\OR=1$ である」のWald版のP値とオッズ比パラメータ $\OR$ の $95\%$ 信頼区間を計算してみよう:
 
 $$
 \begin{array}{c|c|c|c}
@@ -866,8 +866,8 @@ $$
 
 結果は次のようになる:
 
-* (Wald版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 0.03847
-* (Wald版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.0275, 2.7072\]
+* (仮説「オッズ比パラメータは $\OR=1$ である」のWald版のP値) ≈ 0.03847
+* (オッズ比パラメータ $\OR$ のWald版の $95\%$ 信頼区間) ≈ \[1.0275, 2.7072\]
 
 
 #### WolframAlphaによるWald版のオッズ比に関するP値と信頼区間の計算の仕方
@@ -1321,8 +1321,8 @@ result = epiR::epi.2by2(A, digits=4, conf.level=0.95)
 
 #### Wald版のリスク比に関するP値と信頼区間の計算例の問題の解答例
 
-* (Wald版の仮説「リスク比パラメータは $\RR=1$ である」のP値) ≈ 3.890%
-* (Wald版のリスク比パラメータ $\RR$ の $95\%$ 信頼区間) ≈ \[1.0254, 2.6088\]
+* (仮説「リスク比パラメータは $\RR=1$ である」のWald版のP値) ≈ 0.03890
+* (リスク比パラメータ $\RR$ のWald版の $95\%$ 信頼区間) ≈ \[1.0254, 2.6088\]
 
 
 __注意:__ この場合にはリスク比がオッズ比で近似される場合になっている.
@@ -1426,7 +1426,7 @@ __解答終__
 
 ### 問題: Wald版の比率の差に関するP値と信頼区間の計算例
 
-データが次の場合のWald版の仮説「$p-q=0$」のP値と $p-q$ の $95\%$ 信頼区間を計算してみよ:
+データが次の場合の仮説「$p-q=0$」のP値と $p-q$ のWald版の $95\%$ 信頼区間を計算してみよ:
 
 $$
 \begin{array}{c|c|c|c}
@@ -1654,6 +1654,7 @@ function pvalue_rr_wald(a, b, c, d; ρ=1)
 end
 
 function confint_rr_wald(a, b, c, d; α=0.05)
+    (a+b==0 || c+d==0 ) && return [0, Inf]
     z = quantile(Normal(), 1-α/2)
     RRhat = riskratiohat(a, b, c, d)
     SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
@@ -1891,12 +1892,12 @@ $$
 
 __文献:__ この節の構成は次の論文に書いてある方法の連続補正無し版になっている:
 
-* Jerome Cornfield, A Statistical Problem Arising from Retrospective Studies, Berkeley Symposium on Mathematical Statistics and Probability, 1956: 135-148 (1956)  [link](https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%204:%20Contributions%20to%20Biology%20and%20Problems%20of%20Health/chapter/A%20Statistical%20Problem%20Arising%20from%20Retrospective%20Studies/bsmsp/1200502552)
+* Jerome Cornfield, A Statistical Problem Arising from Retrospective Studies, Berkeley Symposium on Mathematical Statistics and Probability, 1956: 135-148 (1956)  \[[link](https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings%20of%20the%20Third%20Berkeley%20Symposium%20on%20Mathematical%20Statistics%20and%20Probability,%20Volume%204:%20Contributions%20to%20Biology%20and%20Problems%20of%20Health/chapter/A%20Statistical%20Problem%20Arising%20from%20Retrospective%20Studies/bsmsp/1200502552)\]
 <!-- #endregion -->
 
 ### Pearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算例
 
-データが次の場合のPearsonのχ²検定版仮説「オッズ比パラメータは $\OR=1$ である」のP値とオッズ比 $\OR$ の $95\%$ 信頼区間を計算してみよう:
+データが次の場合の仮説「オッズ比パラメータは $\OR=1$ である」のPearsonのχ²検定版のP値とオッズ比 $\OR$ の $95\%$ 信頼区間を計算してみよう:
 
 $$
 \begin{array}{c|c|c|c}
@@ -1912,8 +1913,8 @@ $$
 
 結果は次のようになる:
 
-* (Pearsonのχ²検定版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 3.661%
-* (Pearsonのχ²検定版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.0318, 2.6957\]
+* (仮説「オッズ比パラメータは $\OR=1$ である」のPearsonのχ²検定版のP値) ≈ 0.03661
+* (オッズ比パラメータ $\OR$ のPearsonのχ²検定版の $95\%$ 信頼区間) ≈ \[1.0318, 2.6957\]
 
 信頼区間ついてはJulia言語版の計算例のみを示す.  WolframAlphaでこの信頼区間を求めることはかなり面倒である.
 
@@ -1935,7 +1936,7 @@ $$
 
 #### Julia言語によるPearsonのχ²検定版のオッズ比に関するP値と信頼区間の計算の仕方(1)
 
-$\omega = 1$ の場合のPearsonのχ²検定版のオッズ比に関するP値は, 独立性に関するPearsonのχ²検定のP値そのものになる.  それを上でやったのと同じ方法で計算する.
+$\omega = 1$ の場合のオッズ比に関するPearsonのχ²検定版のP値は, 独立性に関するPearsonのχ²検定のP値そのものになる.  それを上でやったのと同じ方法で計算する.
 
 信頼区間の側は函数の零点を見つけてくれる函数を使って求めてみよう.
 
@@ -1975,8 +1976,8 @@ end
 a, b, c, d = 49, 965, 26, 854
 @show a, b, c, d
 @show chisqstat_or(a, b, c, d; ω=1)
-@show pvalue_or_pearson(a, b, c, d; ω=1)
-@show confint_or_pearson(a, b, c, d; α=0.05);
+@show pvalue_or_pearson_chisq(a, b, c, d; ω=1)
+@show confint_or_pearson_chisq(a, b, c, d; α=0.05);
 ```
 
 #### Julia言語によるPearsonのχ²検定版のオッズ比に関するP値の視覚化
@@ -2009,7 +2010,7 @@ title!("a, b, c, d = $a, $b, $c, $d")
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson(a,b,c,d;ω), 0.7, 3.5; label="Pearson χ² P-value func.")
+plot(ω -> pvalue_or_pearson_chisq(a,b,c,d;ω), 0.7, 3.5; label="Pearson χ² P-value func.")
 vline!([oddsratiohat(a,b,c,d)]; label="ORhat = (ad)/(bc)", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
@@ -2023,7 +2024,7 @@ Wald版のP値函数のグラフと重ねてプロットすると次のように
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.7, 3.5; label="Pearson χ² P-value func.")
+plot(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.7, 3.5; label="Pearson χ² P-value func.")
 plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5; label="Wald P-value func.", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
@@ -2037,12 +2038,12 @@ title!("a, b, c, d = $a, $b, $c, $d")
 P値と $95\%$ 信頼区間も以下のようにほぼ同じになっている:
 
 * P値の比較:
-  * (Pearsonのχ²検定版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 3.7%
-  * (Wald版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 3.8%
+  * (仮説「オッズ比パラメータは $\OR=1$ である」のPearsonのχ²検定版のP値) ≈ 3.7%
+  * (仮説「オッズ比パラメータは $\OR=1$ である」のWald版のP値) ≈ 3.8%
 
 * 信頼区間の比較:
-  * (Pearsonのχ²検定版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.03, 2.70\]
-  * (Wald版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.03, 2.71\]
+  * (オッズ比パラメータ $\OR$ のPearsonのχ²検定版の $95\%$ 信頼区間) ≈ \[1.03, 2.70\]
+  * (オッズ比パラメータ $\OR$ のWald版の $95\%$ 信頼区間) ≈ \[1.03, 2.71\]
 
 
 __数学的注意:__ 数学の世界では, 定義が全く異なる2つの量がある条件のもとで近似的によく一致するというようなことが起こる.  異なる動機や思想のもとで定義された2つの量が現実世界での応用では「同じ」とみなしてよいだけ近似的によく一致することがある.  そのような場合に元の動機や思想にこだわって解釈しようとすることは誤りである.
@@ -2052,10 +2053,10 @@ __注意:__ $a,b,c,d$ が小さい場合には違いが大きくなる場合が�
 
 ```julia
 a, b, c, d = 4, 1, 1, 5
-@show pvalue_or_pearson(a,b,c,d)
+@show pvalue_or_pearson_chisq(a,b,c,d)
 @show pvalue_or_wald(a,b,c,d)
 println()
-@show confint_or_pearson(a,b,c,d)
+@show confint_or_pearson_chisq(a,b,c,d)
 @show confint_or_wald(a,b,c,d);
 ```
 
@@ -2193,7 +2194,7 @@ n\qtilde = c + \delta, \quad
 n(1-\qtilde) = d - \delta
 $$
 
-になる.  __これでPearsonのχ²検定版のオッズ比に関するP値の構成法の(1)のステップが本質的に条件 $\OR = \omega$ の下での最尤法そのものであったことがわかった.__
+になる.  __これでオッズ比に関するPearsonのχ²検定版のP値の構成法の(1)のステップが本質的に条件 $\OR = \omega$ の下での最尤法そのものであったことがわかった.__
 
 
 #### Wilks's theoremの適用
@@ -2610,7 +2611,7 @@ __解答終__
 
 ### 問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の定義
 
-上の問題の結果を用いてPearsonのχ²検定版のリスク比に関するP値と信頼区間を適切に定義せよ.
+上の問題の結果を用いてリスク比に関するPearsonのχ²検定版のP値と信頼区間を適切に定義せよ.
 
 __注意:__ 適切な定義を自分で考えることは物事を楽に理解するために必要なことである.
 
@@ -2724,7 +2725,7 @@ __解答終__
 
 ### 問題: Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算例
 
-データが次の場合のPearsonのχ²検定版の仮説「リスク比パラメータは $\RR=1$ である」のP値とリスク比パラメータ $\RR$ の $95\%$ 信頼区間を計算してみよ:
+データが次の場合の仮説「リスク比パラメータは $\RR=1$ である」のPearsonのχ²検定版のP値とリスク比パラメータ $\RR$ の $95\%$ 信頼区間を計算してみよ:
 
 $$
 \begin{array}{c|c|c|c}
@@ -2747,19 +2748,19 @@ a, b, c, d = 49, 965, 26, 854
 @show riskratiohat(a, b, c, d)
 @show pvalue_rr_wald(a, b, c, d)
 @show pvalue_or_wald(a, b, c, d)
-@show pvalue_rr_pearson(a, b, c, d)
-@show pvalue_or_pearson(a, b, c, d)
+@show pvalue_rr_pearson_chisq(a, b, c, d)
+@show pvalue_or_pearson_chisq(a, b, c, d)
 @show confint_rr_wald(a, b, c, d)
 @show confint_or_wald(a, b, c, d)
-@show confint_rr_pearson(a, b, c, d)
-@show confint_or_pearson(a, b, c, d);
+@show confint_rr_pearson_chisq(a, b, c, d)
+@show confint_or_pearson_chisq(a, b, c, d);
 ```
 
 #### Julia言語によるPearsonのχ²検定版のリスク比に関するP値函数の視覚化
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), 0.5, 3.5; label="Pearson χ² P-value func.")
+plot(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), 0.5, 3.5; label="Pearson χ² P-value func.")
 plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald P-value func.", ls=:dash)
 plot!(; xguide="RR = ρ", yguide="P-value")
 plot!(; ytick=0:0.1:1)
@@ -2771,8 +2772,8 @@ title!("a, b, c, d = $a, $b, $c, $d")
 
 #### Pearsonのχ²検定版のリスク比に関するP値と信頼区間の計算の解答例
 
-* (Pearsonのχ²検定版の仮説「リスク比パラメータは $\RR=1$ である」のP値) ≈ 3.661%
-* (Pearsonのχ²検定版のリスク比パラメータ $\RR$ の $95\%$ 信頼区間) ≈ \[1.0305, 2.5998\]
+* (仮説「リスク比パラメータは $\RR=1$ である」のPearsonのχ²検定版P値) ≈ 0.03661
+* (リスク比パラメータ $\RR$ のPearsonのχ²検定版 $95\%$ 信頼区間) ≈ \[1.0305, 2.5998\]
 
 
 ### ニューサンスパラメータの問題に関する注意
@@ -2945,13 +2946,13 @@ $$
 a, b, c, d = 49, 965, 26, 854
 @show oddsratiohat(a, b, c, d)
 @show pvalue_or_wald(a, b, c, d)
-@show pvalue_or_pearson(a, b, c, d)
+@show pvalue_or_pearson_chisq(a, b, c, d)
 @show pvalue_or_sterne(a, b, c, d)
-@show pvalue_or_clopper_pearson(a, b, c, d)
+@show pvalue_or_clopper_pearson_chisq(a, b, c, d)
 @show confint_or_wald(a, b, c, d)
-@show confint_or_pearson(a, b, c, d)
+@show confint_or_pearson_chisq(a, b, c, d)
 @show confint_or_sterne(a, b, c, d)
-@show confint_or_clopper_pearson(a, b, c, d);
+@show confint_or_clopper_pearson_chisq(a, b, c, d);
 ```
 
 #### Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化
@@ -2959,9 +2960,9 @@ a, b, c, d = 49, 965, 26, 854
 ```julia
 a, b, c, d = 49, 965, 26, 854
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 3.5; label="Fisher (Sterne)")
-plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)")
+plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)")
 plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald")
-plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dash)
+plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -3029,9 +3030,9 @@ exact2x2::exact2x2(matrix(c(16, 4, 4, 6), 2, 2, byrow=T), tsmethod="central", pl
 ```julia
 a, b, c, d = 16, 4, 4, 6
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 80; label="Fisher (Sterne)")
-plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 80; label="Fisher (CP)")
+plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), 0.5, 80; label="Fisher (CP)")
 plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 80; label="Wald")
-plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), 0.5, 80; label="Pearson χ²", ls=:dash)
+plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 80; label="Pearson χ²", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -3043,13 +3044,13 @@ plot!(; xscale=:log, xtick=([1,2,5,10,20,50], string.([1,2,5,10,20,50])))
 
 P値
 
-* (Sterne型のFisher検定版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 4.408%
-* (Clopper-Pearson型のFisher検定版の仮説「オッズ比パラメータは $\OR=1$ である」のP値) ≈ 4.708%
+* (仮説「オッズ比パラメータは $\OR=1$ である」のSterne型のFisher検定版P値) ≈ 4.408%
+* (仮説「オッズ比パラメータは $\OR=1$ である」のClopper-Pearson型のFisher検定版P値) ≈ 4.708%
 
 95%信頼区間
 
-* (Sterne型のFisher検定版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.0202, 2.7657\]
-* (Clopper-Pearson型のFisher検定版のオッズ比パラメータ $\OR$ の $95\%$ 信頼区間) ≈ \[1.006, 2.8213\]
+* (オッズ比パラメータ $\OR$ の $95\%$ Sterne型のFisher検定版の信頼区間) ≈ \[1.0202, 2.7657\]
+* (オッズ比パラメータ $\OR$ の $95\%$ Clopper-Pearson型のFisher検定版の信頼区間) ≈ \[1.006, 2.8213\]
 
 
 ### Fisher検定における第一種の過誤の確率
@@ -3058,9 +3059,12 @@ P値
 
 上で説明したように, Fisher検定には少なくともSterne版とClopper-Pearson版の2種類があるが(実はさらに別の変種も考えることができるが), どれを使っても, 第一種の過誤の確率を有意水準 $\alpha$ 以下に抑えることができるという利点を持っている.
 
-しかし, その利点は欠点の裏返しでもあり, Fisher検定での第一種の過誤の確率を有意水準 $\alpha$ よりかなり小さくなってしまいがちである.  第一種の過誤の確率は確率を有意水準 $\alpha$ に近い方がよい.
+しかし, その利点は欠点の裏返しでもあり, Fisher検定での第一種の過誤の確率を有意水準 $\alpha$ よりかなり小さくなってしまいがちである.  第一種の過誤の確率は有意水準 $\alpha$ に近い方がよい.
 
-以下ではFisher検定における第一種の過誤の確率のグラフを描いてみよう.
+以下ではFisher検定における第一種の過誤の確率のグラフとPearsonのχ²検定およびWald検定での第一種の過誤の確率を重ねてプロットしてみよう.  良し悪しの基準は次の2つである:
+
+* 第一種の過誤の確率は有意水準 $\alpha$ に近い方がよい. (グラフでは45度線に近い方がよい.)
+* 第一種の過誤の確率は有意水準 $\alpha$ 以下であって欲しい.  (グラフでは45度線の上にはみ出していない方がよい.)
 
 ```julia
 plot_probabilities_of_type_I_error(10, 20, 0.2)
@@ -3141,6 +3145,10 @@ $$
 
 これらの区間は乱数の出目によって確率的に少し揺らぐが $M=10^6$ が大きなおかげで微小にしか揺らがない.
 
+__注意:__ 以上はMonte Carlo法によるP値と信頼区間の計算の仕方の説明である.  数値積分で実装することも可能である.  リスク比の場合の数値積分による実装については次のノートを参照せよ:
+
+* [イベルメクチン論文の図の再現](https://github.com/genkuroki/public/blob/main/0029/Supplementary%20Appendix%20Figure%20S6.ipynb)
+
 ```julia
 function credint_or_bayes(a, b, c, d; α=0.05, M=10^6)
     p = rand(Beta(a+1, b+2), M)
@@ -3178,13 +3186,13 @@ a, b, c, d = 49, 965, 26, 854
 @show a, b, c, d
 println()
 @show confint_or_wald(a, b, c, d)
-@show confint_or_pearson(a, b, c, d)
+@show confint_or_pearson_chisq(a, b, c, d)
 @show confint_or_sterne(a, b, c, d)
-@show confint_or_clopper_pearson(a, b, c, d)
+@show confint_or_clopper_pearson_chisq(a, b, c, d)
 @show credint_or_bayes(a, b, c, d)
 println()
 @show confint_rr_wald(a, b, c, d)
-@show confint_rr_pearson(a, b, c, d)
+@show confint_rr_pearson_chisq(a, b, c, d)
 @show credint_rr_bayes(a, b, c, d);
 ```
 
@@ -3247,15 +3255,15 @@ function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6)
 end
 
 function plot_pvalue_functions(a, b, c, d;
-        xlim=Tuple(confint_or_pearson(a, b, c, d; α=1e-3)), kwargs...)
+        xlim=Tuple(confint_or_pearson_chisq(a, b, c, d; α=1e-3)), kwargs...)
     pvalue_or_bayes, pvalue_rr_bayes = make_pvalue_or_rr_bayes(a, b, c, d)
 
     P = plot()
     plot!(ω -> pvalue_or_bayes(ω), xlim...; label="Bayesian")
     plot!(ω -> pvalue_or_wald(a,b,c,d; ω), xlim...; label="Wald", ls=:dashdot)
-    plot!(ω -> pvalue_or_pearson(a,b,c,d; ω), xlim...; label="Pearson χ²", ls=:dash)
+    plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), xlim...; label="Pearson χ²", ls=:dash)
     #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim...; label="Fisher (Sterne)")
-    #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim...; label="Fisher (CP)")
+    #plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), xlim...; label="Fisher (CP)")
     plot!(; xguide="OR = ω", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
@@ -3263,7 +3271,7 @@ function plot_pvalue_functions(a, b, c, d;
     Q = plot()
     plot!(ρ -> pvalue_rr_bayes(ρ), xlim...; label="Bayesian")
     plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), xlim...; label="Wald", ls=:dashdot)
-    plot!(ρ -> pvalue_rr_pearson(a,b,c,d; ρ), xlim...; label="Pearson χ²", ls=:dash)
+    plot!(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), xlim...; label="Pearson χ²", ls=:dash)
     plot!(; xguide="RR = ρ", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
@@ -3325,17 +3333,17 @@ plot_pvalue_functions(a, b, c, d)
 
 ## 関連講義動画
 
-ここから先のより進んだ話題については
+このノートの内容に関連したより先のより進んだ話題については
 
 * [聴講コース 臨床研究者のための生物統計学](https://ocw.kyoto-u.ac.jp/course/328/)
 
-特に以下の3つの講義動画はこのノートで解説した2×2の分割表の統計学の続きとして非常に楽しめると思われる:
+にある以下の3つの講義動画は視聴せよ:
 
 * 佐藤俊哉, ランダム化ができないとき, 2018/10/25, 長さ 1:02:31) \[[link](https://youtu.be/tUkyjZXU1vc)\]
 * 佐藤俊哉, 交絡とその調整, 2018/12/20, 長さ 1:00:52) \[[link](https://youtu.be/ybdkQFEdCPM)\]
 * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, 長さ 1:04:44) \[[link](https://youtu.be/cOHN444kBlo)\]
 
-
+このノートで解説した2×2の分割表の統計学の続きとして非常に楽しめるように思われる.
 
 ```julia
 
