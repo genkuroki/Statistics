@@ -226,12 +226,12 @@ end
 ```
 
 ```julia
-riskdiffhat(a, b, c, d) = a/(a+b) - c/(c+d)
+riskdiffhat(a, b, c, d) = safediv(a, a+b) - safediv(c, c+d)
 
 function stderr_riskdiffhat(a, b, c, d)
     m, n = a+b, c+d
-    p̂, q̂ = a/m, c/n
-    √(p̂*(1-p̂)/m + q̂*(1-q̂)/n)
+    p̂, q̂ = safediv(a, m), safediv(c, n)
+    √(safediv(p̂*(1-p̂), m) + safediv(q̂*(1-q̂), n))
 end
 
 function pvalue_rd_wald(a, b, c, d; Δ=0)
@@ -241,7 +241,6 @@ function pvalue_rd_wald(a, b, c, d; Δ=0)
 end
 
 function confint_rd_wald(a, b, c, d; α=0.05)
-    (a+b==0 || c+d==0) && return [-Inf, Inf]
     z = quantile(Normal(), 1-α/2)
     RDhat = riskdiffhat(a, b, c, d)
     SEhat_riskdiffhat = stderr_riskdiffhat(a, b, c, d)
@@ -254,10 +253,10 @@ end
 @show confint_rd_wald(1, 0, 1, 1) confint_rd_wald(1, 1e-4, 1, 1)
 @show confint_rd_wald(1, 1, 0, 1) confint_rd_wald(1, 1, 1e-4, 1)
 @show confint_rd_wald(1, 1, 1, 0) confint_rd_wald(1, 1, 1, 1e-4)
-@show confint_rd_wald(0, 0, 1, 1) confint_rd_wald(1e-4, 1e-6, 1, 1)
-@show confint_rd_wald(1, 1, 0, 0) confint_rd_wald(1, 1, 1e-4, 1e-6)
-@show confint_rd_wald(0, 1, 0, 1) confint_rd_wald(1e-4, 1, 1e-6, 1)
-@show confint_rd_wald(1, 0, 1, 0) confint_rd_wald(1, 1e-4, 1, 1e-6);
+@show confint_rd_wald(0, 0, 1, 1) confint_rd_wald(1e-4, 1e-8, 1, 1)
+@show confint_rd_wald(1, 1, 0, 0) confint_rd_wald(1, 1, 1e-4, 1e-8)
+@show confint_rd_wald(0, 1, 0, 1) confint_rd_wald(1e-4, 1, 1e-8, 1)
+@show confint_rd_wald(1, 0, 1, 0) confint_rd_wald(1, 1e-4, 1, 1e-8);
 ```
 
 ```julia
@@ -442,7 +441,7 @@ end
 ```
 
 ```julia
-function pvalue_or_clopper_pearson_chisq(a, b, c, d; ω=1)
+function pvalue_or_clopper_pearson(a, b, c, d; ω=1)
     fnch = if ω == 1
         Hypergeometric(a+b, c+d, a+c)
     else
@@ -451,9 +450,9 @@ function pvalue_or_clopper_pearson_chisq(a, b, c, d; ω=1)
     min(1, 2cdf(fnch, a), 2ccdf(fnch, a-1))
 end
 
-function confint_or_clopper_pearson_chisq(a, b, c, d; α = 0.05)
+function confint_or_clopper_pearson(a, b, c, d; α = 0.05)
     (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
-    f(ω) = logit(pvalue_or_clopper_pearson_chisq(a, b, c, d; ω)) - logit(α)
+    f(ω) = logit(pvalue_or_clopper_pearson(a, b, c, d; ω)) - logit(α)
     if a == 0 || d == 0
         [0.0, find_zero(f, 1.0)]
     elseif b == 0 || c == 0
@@ -466,14 +465,14 @@ end
 ```
 
 ```julia
-@show confint_or_clopper_pearson_chisq(0, 10, 10, 10) confint_or_sterne(0, 10, 10, 10)
-@show confint_or_clopper_pearson_chisq(10, 0, 10, 10) confint_or_sterne(10, 0, 10, 10)
-@show confint_or_clopper_pearson_chisq(10, 10, 0, 10) confint_or_sterne(10, 10, 0, 10)
-@show confint_or_clopper_pearson_chisq(10, 10, 10, 0) confint_or_sterne(10, 10, 10, 0)
-@show confint_or_clopper_pearson_chisq(0, 0, 10, 10) confint_or_sterne(0, 0, 10, 10)
-@show confint_or_clopper_pearson_chisq(10, 10, 0, 0) confint_or_sterne(10, 10, 0, 0)
-@show confint_or_clopper_pearson_chisq(0, 10, 0, 10) confint_or_sterne(0, 10, 0, 10)
-@show confint_or_clopper_pearson_chisq(10, 0, 10, 0) confint_or_sterne(10, 0, 10, 0);
+@show confint_or_clopper_pearson(0, 10, 10, 10) confint_or_sterne(0, 10, 10, 10)
+@show confint_or_clopper_pearson(10, 0, 10, 10) confint_or_sterne(10, 0, 10, 10)
+@show confint_or_clopper_pearson(10, 10, 0, 10) confint_or_sterne(10, 10, 0, 10)
+@show confint_or_clopper_pearson(10, 10, 10, 0) confint_or_sterne(10, 10, 10, 0)
+@show confint_or_clopper_pearson(0, 0, 10, 10) confint_or_sterne(0, 0, 10, 10)
+@show confint_or_clopper_pearson(10, 10, 0, 0) confint_or_sterne(10, 10, 0, 0)
+@show confint_or_clopper_pearson(0, 10, 0, 10) confint_or_sterne(0, 10, 0, 10)
+@show confint_or_clopper_pearson(10, 0, 10, 0) confint_or_sterne(10, 0, 10, 0);
 ```
 
 ```julia
@@ -482,33 +481,33 @@ function sim_probabilities_of_type_I_error(m, n, p, q=p;
     bina, binc = Binomial(m, p), Binomial(n, q)
     p_sterne = similar(zeros(), L)
     p_clopper_pearson = similar(zeros(), L)
-    p_pearson = similar(zeros(), L)
+    p_pearson_chisq = similar(zeros(), L)
     p_wald = similar(zeros(), L)
     @threads for i in 1:L
         a, c = rand(bina), rand(binc)
         b, d = m-a, n-c
         p_sterne[i] = pvalue_or_sterne(a, b, c, d; ω)
-        p_clopper_pearson[i] = pvalue_or_clopper_pearson_chisq(a, b, c, d; ω)
-        p_pearson[i] = pvalue_or_pearson_chisq(a, b, c, d; ω)
+        p_clopper_pearson[i] = pvalue_or_clopper_pearson(a, b, c, d; ω)
+        p_pearson_chisq[i] = pvalue_or_pearson_chisq(a, b, c, d; ω)
         p_wald[i] = pvalue_or_wald(a, b, c, d; ω)
     end
-    (; p_sterne, p_clopper_pearson, p_pearson, p_wald)
+    (; p_sterne, p_clopper_pearson, p_pearson_chisq, p_wald)
 end
 
 function plot_probabilities_of_type_I_error(m, n, p, q=p;
         ω=p*(1-q)/((1-p)*q), L=10^6, kwargs...)
-    (; p_sterne, p_clopper_pearson, p_pearson, p_wald) =
+    (; p_sterne, p_clopper_pearson, p_pearson_chisq, p_wald) =
         sim_probabilities_of_type_I_error(m, n, p, q; ω, L)
     F_sterne = ecdf(p_sterne)
     F_clopper_pearson = ecdf(p_clopper_pearson)
-    F_pearson = ecdf(p_pearson)
+    F_pearson_chisq = ecdf(p_pearson_chisq)
     F_wald = ecdf(p_wald)
     
     x = 0:0.001:1
     tick = 0:0.1:1
     P = plot(; legend=:topleft)
     plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
-    plot!(x, x -> F_clopper_pearson_chisq(x); label="Fisher (CP)", ls=:dash)
+    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dash)
     plot!(x, x -> F_pearson_chisq(x); label="Pearson χ²", ls=:dashdot)
     plot!(x, x -> F_wald(x); label="Wald", ls=:dot, lw=2)
     plot!(x, identity; label="", c=:black, ls=:dot)
@@ -520,7 +519,7 @@ function plot_probabilities_of_type_I_error(m, n, p, q=p;
     tick = 0:0.01:1
     Q = plot(; legend=:topleft)
     plot!(x, x -> F_sterne(x); label="Fisher (Sterne)")
-    plot!(x, x -> F_clopper_pearson_chisq(x); label="Fisher (CP)", ls=:dash)
+    plot!(x, x -> F_clopper_pearson(x); label="Fisher (CP)", ls=:dash)
     plot!(x, x -> F_pearson_chisq(x); label="Pearson χ²", ls=:dashdot)
     plot!(x, x -> F_wald(x); label="Wald", ls=:dot, lw=2)
     plot!(x, identity; label="", c=:black, ls=:dot)
@@ -533,6 +532,8 @@ function plot_probabilities_of_type_I_error(m, n, p, q=p;
         plot_titlefontsize=10)
     plot!(; kwargs...)
 end
+
+plot_probabilities_of_type_I_error(20, 30, 0.4)
 ```
 
 ## 比率の比較に関するP値と信頼区間
@@ -1446,12 +1447,14 @@ $$
 以下のようにほぼ定義通りにコードを書けば計算できる.
 
 ```julia
-riskdiffhat(a, b, c, d) = a/(a+b) - c/(c+d)
+safediv(x, y) = x == 0 ? x : isinf(y) ? zero(y) : x/y
+
+riskdiffhat(a, b, c, d) = safediv(a, a+b) - safediv(c, c+d)
 
 function stderr_riskdiffhat(a, b, c, d)
     m, n = a+b, c+d
-    p̂, q̂ = a/m, c/n
-    √(p̂*(1-p̂)/m + q̂*(1-q̂)/n)
+    p̂, q̂ = safediv(a, m), safediv(c, n)
+    √(safediv(p̂*(1-p̂), m) + safediv(q̂*(1-q̂), n))
 end
 
 function pvalue_rd_wald(a, b, c, d; Δ=0)
@@ -2948,11 +2951,11 @@ a, b, c, d = 49, 965, 26, 854
 @show pvalue_or_wald(a, b, c, d)
 @show pvalue_or_pearson_chisq(a, b, c, d)
 @show pvalue_or_sterne(a, b, c, d)
-@show pvalue_or_clopper_pearson_chisq(a, b, c, d)
+@show pvalue_or_clopper_pearson(a, b, c, d)
 @show confint_or_wald(a, b, c, d)
 @show confint_or_pearson_chisq(a, b, c, d)
 @show confint_or_sterne(a, b, c, d)
-@show confint_or_clopper_pearson_chisq(a, b, c, d);
+@show confint_or_clopper_pearson(a, b, c, d);
 ```
 
 #### Julia言語によるFisher²検定のオッズ比に関するP値函数の視覚化
@@ -2960,9 +2963,9 @@ a, b, c, d = 49, 965, 26, 854
 ```julia
 a, b, c, d = 49, 965, 26, 854
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 3.5; label="Fisher (Sterne)")
-plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)")
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald")
-plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dash)
+plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)", ls=:dash)
+plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dashdot)
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald", ls=:dot)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -3030,9 +3033,9 @@ exact2x2::exact2x2(matrix(c(16, 4, 4, 6), 2, 2, byrow=T), tsmethod="central", pl
 ```julia
 a, b, c, d = 16, 4, 4, 6
 plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 80; label="Fisher (Sterne)")
-plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), 0.5, 80; label="Fisher (CP)")
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 80; label="Wald")
-plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 80; label="Pearson χ²", ls=:dash)
+plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 80; label="Fisher (CP)", ls=:dash)
+plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 80; label="Pearson χ²", ls=:dashdot)
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 80; label="Wald", ls=:dot)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -3188,7 +3191,7 @@ println()
 @show confint_or_wald(a, b, c, d)
 @show confint_or_pearson_chisq(a, b, c, d)
 @show confint_or_sterne(a, b, c, d)
-@show confint_or_clopper_pearson_chisq(a, b, c, d)
+@show confint_or_clopper_pearson(a, b, c, d)
 @show credint_or_bayes(a, b, c, d)
 println()
 @show confint_rr_wald(a, b, c, d)
@@ -3263,7 +3266,7 @@ function plot_pvalue_functions(a, b, c, d;
     plot!(ω -> pvalue_or_wald(a,b,c,d; ω), xlim...; label="Wald", ls=:dashdot)
     plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), xlim...; label="Pearson χ²", ls=:dash)
     #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim...; label="Fisher (Sterne)")
-    #plot!(ω -> pvalue_or_clopper_pearson_chisq(a,b,c,d; ω), xlim...; label="Fisher (CP)")
+    #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim...; label="Fisher (CP)")
     plot!(; xguide="OR = ω", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
