@@ -564,7 +564,7 @@ $$
 
 このデータの数値は, デザインAの側にアクセスした1014人中の49人が商品を購入し, デザインBの側にアクセスした880人中の26人が商品を購入したことを表している.
 
-このデータの数値からの印象では, デザインAの方がデザインBの方が商品の購入確率が高いように見える. 実際, デザインAでの購入者割合は $49/1014 \approx 4.8\%$ 程度で, デザインBでの購入者割合の $26/880 \approx 3.0\%$ より大きい.
+このデータの数値からの印象では, デザインAの方がデザインBよりも商品の購入確率が高いように見える. 実際, デザインAでの購入者割合は $49/1014 \approx 4.8\%$ 程度で, デザインBでの購入者割合の $26/880 \approx 3.0\%$ より大きい.
 
 しかし, データの確率的揺らぎのせいで単なる偶然で, デザインAの側がよく売れるように見えるデータの数値が得られただけなのかもしれない.  (実際には他にも様々な原因で偏ったデータが得られる場合がある.)
 
@@ -654,7 +654,7 @@ $$
 を __オッズ__(odds)と呼び, これの対数 $\log u = \log(p/(1-p))$ を __対数オッズ__ (log odds)と呼ぶ. 逆に $p$ はオッズ $u$ で
 
 $$
-p = \frac{1}{1+u}
+p = \frac{u}{1+u}
 $$
 
 と表されるので, 比率 $p=u/(1+u)$ の代わりにオッズ $u=p/(1-p)$ を扱っても同等のことをできる. (この事実は計算を見通り良くするときに役に立つ.)
@@ -821,13 +821,13 @@ $$
 \right)
 $$
 
-ただし, $\log\ORhat$ と $\SEhat_{\log\ORhat}$ はデータの数値 $a,b,c,d$ から上で示した式で計算された値であるとする.  $\pvalue_{\Wald}(a, b, c, d|\OR=\omega)$ の定義式は
+ただし, $\log\ORhat$ と $\SEhat_{\log\ORhat}$ は __データの数値 $a,b,c,d$ から上で示した式で計算された値である__ とする.  $\pvalue_{\Wald}(a, b, c, d|\OR=\omega)$ の定義式は
 
 * 標準正規分布に従ってランダムに生成される値の絶対値がデータから計算された値 $\left(\log\ORhat - \log\OR\right)\!\Big/\SEhat_{\log\ORhat}$ の絶対値以上になる確率
 
 を意味している.
 
-__対応する信頼区間:__ このP値の定義に対応するオッズ比パラメータ $\OR$ に関する信頼度 $1-\alpha$ の信頼区間は次のようになる:
+__対応する信頼区間:__ このP値の定義に対応する対数オッズ比パラメータ $\log\OR$ に関する信頼度 $1-\alpha$ の信頼区間は次のようになる:
 
 $$
 \confint^{\log\OR}_{\Wald}(a, b, c, d|\alpha) =
@@ -910,8 +910,7 @@ a, b, c, d = 49, 965, 26, 854
 α = 0.05
 @show α
 @show z = quantile(Normal(), 1-α/2)
-@show confint = [exp(-z*SEhat)*ORhat, exp(z*SEhat)*ORhat]
-;
+@show confint = [exp(-z*SEhat)*ORhat, exp(z*SEhat)*ORhat];
 ```
 
 #### Julia言語によるWald版のオッズ比に関するP値と信頼区間の計算の仕方(2)
@@ -1042,20 +1041,29 @@ $$
 
 $a,c$ は独立なので $\phat,\qhat$ も独立になる.
 
-$f(t) = \log(t/(1-t)) = \log(1/(1-t)-1)$ とおくと, $f'(t) = ((1-t)/t)(1/(1-t)^2) = 1/(t(1-t))$ なので,
+$f(t) = \log(t/(1-t)) = \log t - \log(1-t)$ とおくと, $f'(t) = 1/t - 1/(1-t) = 1/(t(1-t))$ なので,
 
 $$
 \log\frac{\phat}{1-\phat} =
-\frac{p}{1-p} + \frac{\phat - p}{p(1-p)} + O((\phat-p)^2).
+\log\frac{p}{1-p} + \frac{\phat - p}{p(1-p)} + O((\phat-p)^2).
 $$
 
-これより, デルタ法を使って, 次の近似が得られる:
+これより, デルタ法を使って, すなわち,
+
+$$
+\log\frac{\phat}{1-\phat} \approx
+\log\frac{p}{1-p} + \frac{\phat - p}{p(1-p)}
+$$
+
+と近似することによって, 次の近似が得られる:
 
 $$
 \log\frac{\phat}{1-\phat} \sim
 \Normal\left(\log\frac{p}{1-p}, \frac{1}{\sqrt{mp(1-p)}}\right),
 \quad\text{approximately}.
 $$
+
+右辺の平均 $\log(p/(1-p))$ は上の近似式の右辺の期待値として得られ($E[\phat]=p$ を使う), 右辺の標準偏差 $1/\sqrt{mp(1-p)}$ は $\phat$ の標準偏差 $\sqrt{p(1-p)/m}$ を $p(1-p)$ で割ることによって得られる.
 
 同様にして,
 
@@ -1936,7 +1944,7 @@ $$
 \end{aligned}
 $$
 
-ここで, $\delta = \delta(a,b,c,d|\omega)$ は $a,b,c,d,\omega$ のみを使って計算できる数値なので, この $\chi^2$ = \chi^2(a,b,c,d|\delta)$ も $a,b,c,d,\omega$ のみを使って計算できる数値になっている.
+ここで, $\delta = \delta(a,b,c,d|\omega)$ は $a,b,c,d,\omega$ のみを使って計算できる数値なので, この $\chi^2 = \chi^2(a,b,c,d|\delta)$ も $a,b,c,d,\omega$ のみを使って計算できる数値になっている.
 
 上の $\chi^2$ に関する後者の表示はPearsonのχ²統計量の一般的な表示
 
@@ -2147,8 +2155,10 @@ Wald版のP値函数のグラフと重ねてプロットすると次のように
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.7, 3.5; label="Pearson χ² P-value func.")
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5; label="Wald P-value func.", ls=:dash)
+plot(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.7, 3.5;
+    label="Pearson χ² P-value func.")
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5;
+    label="Wald P-value func.", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
 plot!(; ytick=0:0.1:1)
 title!("a, b, c, d = $a, $b, $c, $d")
@@ -2911,7 +2921,7 @@ title!("a, b, c, d = $a, $b, $c, $d")
 
 以上で紹介したP値の定義にはこのような非常に巧妙な方法が使われている.
 
-ニューサンスパラメータの問題への対処の仕方にはそれら以外にも, 以下の節で説明する条件付き確率分布を利用する方法がある. その方法による検定は __Fisher検定__ と呼ばれている.
+ニューサンスパラメータの問題への対処の仕方にはそれら以外にも, 以下の節で説明する条件付き確率分布を利用する方法がある. その方法による検定は __Fisher検定__ (Fisher's test, Fisher exact test)と呼ばれている.
 
 
 ## Fisher検定版のオッズ比に関するP値と信頼区間
@@ -3028,12 +3038,16 @@ $$
 さらに続けて, Clopper-Pearson型Fisher検定のP値を次のように定める:
 
 $$
-\pvalue_{\CP}(a,b,c,d|\OR=\omega) =
+\begin{aligned}
+&
+\pvalue_{\CP}(a,b,c,d|\OR=\omega) 
+\\ &=
 \min\begin{pmatrix}
 1 \\
 2\cdf(\FisherNoncentralHypergeometric(a+b, c+d, a+c, \omega), a) \\
 2(1 - \cdf(\FisherNoncentralHypergeometric(a+b, c+d, a+c, \omega), a-1)) \\
 \end{pmatrix}
+\end{aligned}
 $$
 
 これに対応する信頼度 $1-\alpha$ の信頼区間を
@@ -3235,9 +3249,9 @@ __注意:__ 以上と同じことをR言語で行う場合には以下のこと�
 
 以下の手続きでオッズ比パラメータ $\OR$ やリスク比パラメータ $\RR$ の区間推定を行うことができる.
 
-(1) パラメータ $(p,q)$ の事前分布 $\Beta(1,1)\times \Beta(1,1)$ を用意する.
+(1) パラメータ $(p,q)$ に関する事前分布 $\Beta(1,1)\times \Beta(1,1)$ を用意する. (モデルのパラメータ $p,q$ を確率変数とみなす.)
 
-(2) データの数値 $a,b,c,d$ から事後分布 $\Beta(a+1,b+1)\times\Beta(c+1,d+1)$ を作る.
+(2) データの数値 $a,b,c,d$ から事後分布 $\Beta(a+1,b+1)\times\Beta(c+1,d+1)$ を作る. (事後分布はデータの数値を加味することによって得られたモデル内条件付き確率分布において確率変数 $p,q$ が従う分布である.)
 
 (3) 事後分布の従う乱数を $M=10^6$ 個生成する. その結果を $(p_i,q_i)$ ($i=1,2,\ldots,M$) と表す.
 
