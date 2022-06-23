@@ -54,6 +54,8 @@ $
 \newcommand\phat{\hat{p}}
 \newcommand\SE{\op{SE}}
 \newcommand\SEhat{\widehat{\SE}}
+\newcommand\se{\op{se}}
+\newcommand\sehat{\widehat{\se}}
 \newcommand\logistic{\op{logistic}}
 \newcommand\logit{\op{logit}}
 \newcommand\OR{\op{OR}}
@@ -78,6 +80,7 @@ $
 \newcommand\Fisher{\op{Fisher}}
 \newcommand\Bayes{\op{Bayes}}
 \newcommand\Welch{\op{Welch}}
+\newcommand\Student{\op{Student}}
 \newcommand\FisherNoncentralHypergeometric{\op{FisherNoncentralHypergeometric}}
 \newcommand\xbar{\bar{x}}
 \newcommand\ybar{\bar{y}}
@@ -101,7 +104,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#平均の差に関するP値と信頼区間" data-toc-modified-id="平均の差に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均の差に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均の差に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="平均の差に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均の差に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#平均の差の検定で使用されるP値の定義" data-toc-modified-id="平均の差の検定で使用されるP値の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>平均の差の検定で使用されるP値の定義</a></span></li></ul></li><li><span><a href="#データサイズを大きくしたときの信頼区間の収束の視覚化" data-toc-modified-id="データサイズを大きくしたときの信頼区間の収束の視覚化-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>データサイズを大きくしたときの信頼区間の収束の視覚化</a></span><ul class="toc-item"><li><span><a href="#信頼区間のみを静的にプロット" data-toc-modified-id="信頼区間のみを静的にプロット-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>信頼区間のみを静的にプロット</a></span></li><li><span><a href="#信頼区間とP値函数を同時に静的にプロット" data-toc-modified-id="信頼区間とP値函数を同時に静的にプロット-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>信頼区間とP値函数を同時に静的にプロット</a></span></li><li><span><a href="#動画" data-toc-modified-id="動画-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>動画</a></span></li></ul></li><li><span><a href="#Welchの-t-検定のP値と信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#必修問題:-Welchの-t-検定のP値と信頼区間の計算" data-toc-modified-id="必修問題:-Welchの-t-検定のP値と信頼区間の計算-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>必修問題: Welchの t 検定のP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.2"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題のデータの視覚化" data-toc-modified-id="Julia言語による必修問題のデータの視覚化-3.1.3"><span class="toc-item-num">3.1.3&nbsp;&nbsp;</span>Julia言語による必修問題のデータの視覚化</a></span></li><li><span><a href="#Julia言語による必修問題のP値函数の視覚化" data-toc-modified-id="Julia言語による必修問題のP値函数の視覚化-3.1.4"><span class="toc-item-num">3.1.4&nbsp;&nbsp;</span>Julia言語による必修問題のP値函数の視覚化</a></span></li><li><span><a href="#R言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="R言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.5"><span class="toc-item-num">3.1.5&nbsp;&nbsp;</span>R言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Welchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.6"><span class="toc-item-num">3.1.6&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li><li><span><a href="#必修問題:-12歳の男子と女子の平均身長の差" data-toc-modified-id="必修問題:-12歳の男子と女子の平均身長の差-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>必修問題: 12歳の男子と女子の平均身長の差</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化" data-toc-modified-id="Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化</a></span></li><li><span><a href="#R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.5"><span class="toc-item-num">3.2.5&nbsp;&nbsp;</span>12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li></ul></li></ul></li><li><span><a href="#Welchの-t-検定で使う自由度の式の導出" data-toc-modified-id="Welchの-t-検定で使う自由度の式の導出-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Welchの t 検定で使う自由度の式の導出</a></span><ul class="toc-item"><li><span><a href="#2つの正規分布の標本分布の設定" data-toc-modified-id="2つの正規分布の標本分布の設定-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>2つの正規分布の標本分布の設定</a></span></li><li><span><a href="#χ²分布で近似することによる自由度の式の導出" data-toc-modified-id="χ²分布で近似することによる自由度の式の導出-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>χ²分布で近似することによる自由度の式の導出</a></span></li><li><span><a href="#t-分布による近似" data-toc-modified-id="t-分布による近似-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>t 分布による近似</a></span></li></ul></li><li><span><a href="#Welchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="Welchの-t-検定での第一種の過誤の確率の視覚化-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Welchの t 検定での第一種の過誤の確率の視覚化</a></span><ul class="toc-item"><li><span><a href="#異なる分散を持つ正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる分散を持つ正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>異なる分散を持つ正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なる分散を持つ一様分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる分散を持つ一様分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>異なる分散を持つ一様分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#正規分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="正規分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>正規分布とガンマ分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#一様分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="一様分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>一様分布とガンマ分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#同一のガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="同一のガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>同一のガンマ分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なるガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なるガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>異なるガンマ分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#正規分布と対数正規分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="正規分布と対数正規分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>正規分布と対数正規分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#同一の対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="同一の対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>同一の対数正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なる対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>異なる対数正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#平均の差に関するP値と信頼区間" data-toc-modified-id="平均の差に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均の差に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均の差に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="平均の差に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均の差に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#平均の差の検定で使用されるP値の定義" data-toc-modified-id="平均の差の検定で使用されるP値の定義-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>平均の差の検定で使用されるP値の定義</a></span></li></ul></li><li><span><a href="#データサイズを大きくしたときの信頼区間の収束の視覚化" data-toc-modified-id="データサイズを大きくしたときの信頼区間の収束の視覚化-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>データサイズを大きくしたときの信頼区間の収束の視覚化</a></span><ul class="toc-item"><li><span><a href="#信頼区間のみを静的にプロット" data-toc-modified-id="信頼区間のみを静的にプロット-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>信頼区間のみを静的にプロット</a></span></li><li><span><a href="#信頼区間とP値函数を同時に静的にプロット" data-toc-modified-id="信頼区間とP値函数を同時に静的にプロット-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>信頼区間とP値函数を同時に静的にプロット</a></span></li><li><span><a href="#動画" data-toc-modified-id="動画-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>動画</a></span></li></ul></li><li><span><a href="#Welchの-t-検定のP値と信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#必修問題:-Welchの-t-検定のP値と信頼区間の計算" data-toc-modified-id="必修問題:-Welchの-t-検定のP値と信頼区間の計算-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>必修問題: Welchの t 検定のP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.2"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語による必修問題のデータの視覚化" data-toc-modified-id="Julia言語による必修問題のデータの視覚化-3.1.3"><span class="toc-item-num">3.1.3&nbsp;&nbsp;</span>Julia言語による必修問題のデータの視覚化</a></span></li><li><span><a href="#Julia言語による必修問題のP値函数の視覚化" data-toc-modified-id="Julia言語による必修問題のP値函数の視覚化-3.1.4"><span class="toc-item-num">3.1.4&nbsp;&nbsp;</span>Julia言語による必修問題のP値函数の視覚化</a></span></li><li><span><a href="#R言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="R言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.5"><span class="toc-item-num">3.1.5&nbsp;&nbsp;</span>R言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Welchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.1.6"><span class="toc-item-num">3.1.6&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li><li><span><a href="#必修問題:-12歳の男子と女子の平均身長の差" data-toc-modified-id="必修問題:-12歳の男子と女子の平均身長の差-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>必修問題: 12歳の男子と女子の平均身長の差</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによる12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化" data-toc-modified-id="Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>Julia言語による12歳の男子と女子の平均身長の差のP値函数の視覚化</a></span></li><li><span><a href="#R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>R言語による12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#12歳の男子と女子の平均身長の差に関する必修問題の解答例" data-toc-modified-id="12歳の男子と女子の平均身長の差に関する必修問題の解答例-3.2.5"><span class="toc-item-num">3.2.5&nbsp;&nbsp;</span>12歳の男子と女子の平均身長の差に関する必修問題の解答例</a></span></li><li><span><a href="#仮に2012年のデータのサンプルサイズだけが実際のサイズの2倍だったとしたら" data-toc-modified-id="仮に2012年のデータのサンプルサイズだけが実際のサイズの2倍だったとしたら-3.2.6"><span class="toc-item-num">3.2.6&nbsp;&nbsp;</span>仮に2012年のデータのサンプルサイズだけが実際のサイズの2倍だったとしたら</a></span></li></ul></li></ul></li><li><span><a href="#Welchの-t-検定で使う自由度の式の導出" data-toc-modified-id="Welchの-t-検定で使う自由度の式の導出-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Welchの t 検定で使う自由度の式の導出</a></span><ul class="toc-item"><li><span><a href="#2つの正規分布の標本分布の設定" data-toc-modified-id="2つの正規分布の標本分布の設定-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>2つの正規分布の標本分布の設定</a></span></li><li><span><a href="#χ²分布で近似することによる自由度の式の導出" data-toc-modified-id="χ²分布で近似することによる自由度の式の導出-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>χ²分布で近似することによる自由度の式の導出</a></span></li><li><span><a href="#t-分布による近似" data-toc-modified-id="t-分布による近似-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>t 分布による近似</a></span></li></ul></li><li><span><a href="#Welchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="Welchの-t-検定での第一種の過誤の確率の視覚化-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Welchの t 検定での第一種の過誤の確率の視覚化</a></span><ul class="toc-item"><li><span><a href="#異なる分散を持つ正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる分散を持つ正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>異なる分散を持つ正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なる分散を持つ一様分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる分散を持つ一様分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>異なる分散を持つ一様分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#正規分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="正規分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>正規分布とガンマ分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#一様分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="一様分布とガンマ分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>一様分布とガンマ分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#同一のガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="同一のガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>同一のガンマ分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なるガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なるガンマ分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>異なるガンマ分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#正規分布と対数正規分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="正規分布と対数正規分布の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>正規分布と対数正規分布の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#同一の対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="同一の対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>同一の対数正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li><li><span><a href="#異なる対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="異なる対数正規分布達の標本でのWelchの-t-検定での第一種の過誤の確率の視覚化-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>異なる対数正規分布達の標本でのWelchの t 検定での第一種の過誤の確率の視覚化</a></span></li></ul></li><li><span><a href="#補足:-Studentの-t-検定について" data-toc-modified-id="補足:-Studentの-t-検定について-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>補足: Studentの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Studentの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Studentの-t-検定のP値と信頼区間の定義-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Studentの t 検定のP値と信頼区間の定義</a></span></li><li><span><a href="#Studentの-t-検定とWelchの-t-検定に付随する信頼区間の比較" data-toc-modified-id="Studentの-t-検定とWelchの-t-検定に付随する信頼区間の比較-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Studentの t 検定とWelchの t 検定に付随する信頼区間の比較</a></span></li><li><span><a href="#Studentの-t-検定とWelchの-t-検定で使用する-t-分布の自由度の比較" data-toc-modified-id="Studentの-t-検定とWelchの-t-検定で使用する-t-分布の自由度の比較-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Studentの t 検定とWelchの t 検定で使用する t 分布の自由度の比較</a></span></li><li><span><a href="#Studentの-t-検定とWelchの-t-検定が異なる結果を与える例" data-toc-modified-id="Studentの-t-検定とWelchの-t-検定が異なる結果を与える例-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Studentの t 検定とWelchの t 検定が異なる結果を与える例</a></span></li><li><span><a href="#Studentの-t-検定での第一種の過誤の確率の視覚化" data-toc-modified-id="Studentの-t-検定での第一種の過誤の確率の視覚化-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Studentの t 検定での第一種の過誤の確率の視覚化</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -218,6 +221,45 @@ function confint_welch(x, y; α=0.05)
     m, x̄, sx² = length(x), mean(x), var(x)
     n, ȳ, sy² = length(y), mean(y), var(y)
     confint_welch(m, x̄, sx², n, ȳ, sy²; α)
+end
+```
+
+```julia
+s²_student(m, sx², n, sy²) = ((m-1)*sx² + (n-1)*sy²)/(m+n-2)
+
+function tvalue_student(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+    s² = s²_student(m, sx², n, sy²)
+    (x̄ - ȳ - Δμ) / √(s²*(1/m + 1/n))
+end
+
+function tvalue_student(x, y; Δμ=0)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    tvalue_student(m, x̄, sx², n, ȳ, sy²; Δμ)
+end
+
+function pvalue_student(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+    t = tvalue_student(m, x̄, sx², n, ȳ, sy²; Δμ)
+    2ccdf(TDist(m+n-2), abs(t))
+end
+
+function pvalue_student(x, y; Δμ=0)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    pvalue_student(m, x̄, sx², n, ȳ, sy²; Δμ)
+end
+
+function confint_student(m, x̄, sx², n, ȳ, sy²; α=0.05)
+    c = quantile(TDist(m+n-2), 1-α/2)
+    s² = s²_student(m, sx², n, sy²)
+    SEhat = √(s²*(1/m + 1/n))
+    [x̄-ȳ-c*SEhat, x̄-ȳ+c*SEhat]
+end
+
+function confint_student(x, y; α=0.05)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    confint_student(m, x̄, sx², n, ȳ, sy²; α)
 end
 ```
 
@@ -349,6 +391,91 @@ function plot_welch(;
 end
 
 plot_welch(distx=Gamma(2,3), m=40, disty=Gamma(3,2), n=80)
+```
+
+```julia
+rd(x) = @sprintf "%.3f" x
+
+function plot_student(;
+        distx=Normal(0,1), m=10, distxlim=nothing,
+        disty=Normal(0,2), n=20, distylim=nothing,
+        L=10^6, M=10^4, kwargs...)
+    μ_x, σ_x = mean(distx), std(distx)
+    μ_y, σ_y = mean(disty), std(disty)
+    Δμ = μ_x - μ_y
+    
+    println("m = ", m,
+        ",  μ_x = ", rd(μ_x),
+        ",  σ_x = ", rd(σ_x),
+        ",  skewness_x = ", rd(myskewness(distx)),
+        ",  kurtosis_x = ", rd(mykurtosis(distx)))
+    println("n = ", n,
+        ",  μ_y = ", rd(μ_y),
+        ",  σ_y = ", rd(σ_y),
+        ",  skewness_y = ", rd(myskewness(disty)),
+        ",  kurtosis_y = ", rd(mykurtosis(disty)))
+    @show Δμ
+    
+    pval_student = similar(zeros(), L)
+    pval_welch = similar(zeros(), L)
+    T_student = similar(zeros(), L)
+    T_welch = similar(zeros(), L)
+    tmpx = [similar(zeros(), m) for _ in 1:nthreads()]
+    tmpy = [similar(zeros(), n) for _ in 1:nthreads()]
+    @threads for i in 1:L
+        x = rand!(distx, tmpx[threadid()])
+        y = rand!(disty, tmpy[threadid()])
+        pval_student[i] = pvalue_student(x, y; Δμ)
+        pval_welch[i] = pvalue_welch(x, y; Δμ)
+        T_student[i] = tvalue_student(x, y; Δμ)
+        T_welch[i] = tvalue_welch(x, y; Δμ)
+    end
+    ecdf_pval_student = ecdf(pval_student)
+    ecdf_pval_welch = ecdf(pval_welch)
+    f_student(x) = ecdf_pval_student(x)
+    f_welch(x) = ecdf_pval_welch(x)
+    
+    P1 = if isnothing(distxlim)
+        plot(distx; label="", title="$(distname(distx)), m=$m")
+    else
+        plot(distx, distxlim...; label="", title="$(distname(distx)), m=$m")
+    end
+    plot!(; xguide="x", yguide="density", guidefontsize=9)
+    plot!(; leftmargin=4Plots.mm)#, bottommargin=4Plots.mm)
+    plot!(; tickfontsize=6)
+
+    P2 = if isnothing(distylim)
+        plot(disty; label="", title="$(distname(disty)), n=$n")
+    else
+        plot(disty, distylim...; label="", title="$(distname(disty)), n=$n")
+    end
+    plot!(; xguide="y", yguide="density", guidefontsize=9)
+    plot!(; leftmargin=4Plots.mm)#, bottommargin=4Plots.mm)
+    plot!(; tickfontsize=6)
+
+    P4 = stephist(T_student; norm=true, label="Student's T")
+    stephist!(T_welch; norm=true, label="Welch's T", ls=:dashdot)
+    plot!(TDist(m+n-2); label="TDist(m+n-2)", ls=:dash)
+    plot!(; xlim=(-5, 5), xtick=-5:5)
+    plot!(; xguide="t", yguide="density", guidefontsize=9)
+    plot!(; leftmargin=4Plots.mm)#, bottommargin=4Plots.mm)
+    plot!(; tickfontsize=6)
+
+    P6 = plot(; legend=:bottomright)
+    plot!(f_student, 0, 0.1; label="Student")
+    plot!(f_welch, 0, 0.1; label="Welch", ls=:dashdot)
+    plot!(identity, 0, 0.1; label="", ls=:dot)
+    plot!(; xtick=0:0.01:1, ytick=0:0.01:1)
+    plot!(; xguide="significance level α", yguide="probability of type I error",
+        guidefontsize=9)
+    plot!(; tickfontsize=6, xrotation=30)
+
+    P12 = plot(P1, P2; layout=@layout [a b])
+    P46 = plot(P4, P6; layout=@layout [a{0.6w} b])
+    plot(P12, P46; size=(700, 480), layout=@layout [a{0.4h}; b])
+end
+
+plot_student(distx=Gamma(2,3), m=40, disty=Gamma(3,2), n=80)
 ```
 
 ## 平均の差に関するP値と信頼区間
@@ -533,14 +660,16 @@ $$
 このとき, 平均の差 $\mu_x-\mu_y$ の信頼度 $1-\alpha$ の信頼区間が次のように定義される:
 
 $$
-\confint_{\Welch}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha) =
+\begin{aligned}
+&
+\confint_{\Welch}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha)
+\\ &=
 \left[
 \xbar - \ybar - t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}},\;
 \xbar - \ybar + t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}}\;
 \right].
+\end{aligned}
 $$
-
-
 
 
 ## データサイズを大きくしたときの信頼区間の収束の視覚化
@@ -916,6 +1045,45 @@ __注意:__ このことから, データの要約値を報告する場合には
 
 __注意:__ 以上の計算結果は通常「そのデータだけからは, 2012年と2018年における12歳の男子と女子の平均身長に差があるかどうかは分からない」と解釈される.
 
+
+#### 仮に2012年のデータのサンプルサイズだけが実際のサイズの2倍だったとしたら
+
+仮に2012年のデータのサンプルサイズだけが実際のサイズの2倍ならば(すなわち $m,n$ が実際のサイズ $m=31$, $n=19$ の2倍だったならば), 「男女の平均の差は $0$ である」という仮説のP値は約 $13\%$ から約 $3\%$ に下がり, 信頼区間の幅も狭くなる.
+
+サンプルサイズはデータに関する最も重要な情報になる.
+
+```julia
+# 2012年のデータのサンプルサイズだけが実際のデータの2倍だった場合
+m, x̄, sx² = 31*2, 153.1, 7.9^2
+n, ȳ, sy² = 19*2, 150.1, 5.7^2
+@show tvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+@show degree_of_freedom_welch(m, sx², n, sy²)
+@show pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+@show confint_welch(m, x̄, sx², n, ȳ, sy²; α=0.05);
+```
+
+```julia
+plot()
+m, x̄, sx² = 111, 149.9, 7.1^2
+n, ȳ, sy² = 131, 151.1, 6.3^2
+plot(Δμ -> pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ), -5, 10;
+    label="2012", c=1)
+vline!([x̄-ȳ]; label="", ls=:dash, c=1)
+m, x̄, sx² = 31, 153.1, 7.9^2
+n, ȳ, sy² = 19, 150.1, 5.7^2
+plot!(Δμ -> pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ), -5, 10;
+    label="2018", c=2)
+vline!([x̄-ȳ]; label="", ls=:dash, c=2)
+m, x̄, sx² = 31*2, 153.1, 7.9^2
+n, ȳ, sy² = 19*2, 150.1, 5.7^2
+plot!(Δμ -> pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ), -5, 10;
+    label="2018 with\ndoubled m,n", c=3)
+vline!([x̄-ȳ]; label="", ls=:dash, c=3)
+plot!(; xtick=-100:1:100, ytick=0:0.1:1)
+vline!([0]; label="", ls=:dot, c=:black)
+title!("P-value functions")
+plot!(;size=(500, 250))#, legend=:outertopright)
+```
 
 ## Welchの t 検定で使う自由度の式の導出
 
@@ -1302,6 +1470,394 @@ plot_welch(distx=LogNormal(), m=160, disty=LogNormal(1), n=640)
 ```julia
 plot_welch(distx=LogNormal(), m=640, disty=LogNormal(1), n=640)
 ```
+
+## 補足: Studentの t 検定について
+
+このノートでは2群の平均の比較に関するStudentの t 検定は扱わずに, Welchの t 検定のP値と信頼区間で押し通すことにした.  しかし, 読者の便のためにStudentの t 検定のP値と信頼区間についても補足しておくことにする.
+
+
+### Studentの t 検定のP値と信頼区間の定義
+
+扱うデータの形式はWelchの t 検定の場合と同じである.
+
+__データ:__　$m$ 個の実数値 $x_1,\ldots,x_m$ と $n$ 個の実数値 $y_1,\ldots,y_n$.
+
+$x_i$ 達と $y_i$ 達の標本平均と不偏分散を以下のように書くことにする:
+
+$$
+\begin{alignedat}{2}
+&
+\xbar = \frac{1}{m}\sum_{i=1}^m x_i, \quad
+& &
+s_x^2 = \frac{1}{m-1}\sum_{i=1}^m (x_i - \xbar)^2,
+\\ &
+\ybar = \frac{1}{n}\sum_{i=1}^n y_i, \quad
+& &
+s_y^2 = \frac{1}{n-1}\sum_{i=1}^m (y_i - \ybar)^2.
+\end{alignedat}
+$$
+
+Studentの t 検定ではWelchの t 検定の場合と違って __等分散の条件を仮定__ をする.
+
+__統計モデル:__ 平均 $\mu_x$ と分散 $\sigma_x^2$ を持つ確率分布 $D_x$ のサイズ $m$ の標本分布 $D_x^m$ と平均 $\mu_y$ と分散 $\sigma_y^2$ を持つ確率分布 $D_y$ のサイズ $n$ の標本分布 $D_y^n$ の直積分布 $D_x^m\times D_y^n$ を統計モデルとして採用する. ただし, __等分散の条件 $\sigma_x^2 = \sigma_y^2 = \sigma^2$ を仮定する.__
+
+このモデルの確率分布に従う確率変数達(独立になる)を $X_1,\ldots,X_m,Y_1,\ldots,Y_n$ と書き, $X_i$ 達と $Y_i$ 達の標本平均と不偏分散を以下のように書くことにする:
+
+$$
+\begin{alignedat}{2}
+&
+\Xbar = \frac{1}{m}\sum_{i=1}^m X_i, \quad
+& &
+S_x^2 = \frac{1}{m-1}\sum_{i=1}^m (X_i - \Xbar)^2,
+\\ &
+\Ybar = \frac{1}{n}\sum_{i=1}^n Y_i, \quad
+& &
+S_y^2 = \frac{1}{n-1}\sum_{i=1}^m (Y_i - \Ybar)^2.
+\end{alignedat}
+$$
+
+__この統計モデルが適用可能な場合:__ 分散が等しい(もしくはほぼ等しい)2つの母集団からの無作為抽出で $x_i$, $y_j$ のそれぞれが得られている場合には上のモデルの適用は適切になる.
+
+__検定したい仮説:__　$\mu_x - \mu_y = \dmu$　($\dmu$ は具体的な数値).
+
+__中心極限定理:__ モデル内確率変数としての2つの標本平均達の分布について, 中心極限定理による正規分布近似が使えると仮定する. (等分散の条件 $\sigma_x^2=\sigma_y^2=\sigma^2$ が仮定されていることに注意せよ.)
+
+$\Xbar$, $\Ybar$ の平均(期待値)と分散は以下のようになる:
+
+$$
+E[\Xbar] = \mu_x, \quad
+E[\Ybar] = \mu_y, \quad
+\var(\Xbar) = \frac{\sigma^2}{m}, \quad
+\var(\Ybar) = \frac{\sigma^2}{n}.
+$$
+
+さらに, $\Xbar$ と $\Ybar$ が確率変数として独立であることより,
+
+$$
+E[\Xbar - \Ybar] = \mu_x - \mu_y, \quad
+\var(\Xbar - \Ybar) = \sigma^2\left(\frac{1}{m} + \frac{1}{n}\right).
+$$
+
+さらに, 中心極限定理より, 次の近似が使える:
+
+$$
+\Xbar - \Ybar \sim
+\Normal\left(\mu_x - \mu_y,\; \sqrt{\sigma^2\left(\frac{1}{m} + \frac{1}{n}\right)}\right),
+\quad\text{approximately}.
+$$
+
+すなわち,
+
+$$
+\frac
+{(\Xbar - \Ybar) - (\mu_x - \mu_y)}
+{\ds \sqrt{\sigma^2\left(\frac{1}{m} + \frac{1}{n}\right)}} \sim \Normal(0,1),
+\quad\text{approximately}.
+$$
+
+__大数の法則:__ 確率変数 $S^2$ を次のように定義する:
+
+$$
+S^2 = \frac{(m-1)S_x^2 + (n-1)S_y^2}{m+n-2}.
+$$
+
+このとき,
+
+$$
+E[S^2] =
+\frac{(m-1)E[S_x^2]+(n-1)E[S_y^2]}{m+n-2} =
+\frac{(m-1)\sigma^2+(n-1)\sigma^2}{m+n-2} = \sigma^2
+$$
+
+より, $S^2$ は $\sigma^2$ の不偏推定量である.  そして, さらに大数の法則によって, $m,n$ が十分に大きいならば, $S^2$ は $\sigma^2$ をよく近似するようになる.
+
+このとき, 次の近似が使える:
+
+$$
+T :=
+\frac
+{(\Xbar - \Ybar) - (\mu_x - \mu_y)}
+{\ds \sqrt{S^2\left(\frac{1}{m} + \frac{1}{n}\right)}} \sim \Normal(0,1),
+\quad\text{approximately}.
+$$
+
+この $T$ の定義はWelchの t 検定で使った $T$ の定義とは分母の形が本質的に異なる.
+
+__P値の定義:__ これを用いて, 具体的に与えられた数値 $\dmu$ に関する仮説「$\mu_x - \mu_y = \dmu$」のP値を以下のように定義する.  まず, 
+
+$$
+s^2 = \frac{(m-1)s_x^2 + (n-1)s_y^2}{m+n-2}
+$$
+
+とおき, データの数値の $t$ 値 $t=t(\dmu)$ を次のように定義する: 
+
+$$
+t = t(\dmu) =
+\frac
+{(\xbar - \ybar) - \dmu}
+{\ds \sqrt{s^2\left(\frac{1}{m} + \frac{1}{n}\right)}}.
+$$
+
+この $t=t(\dmu)$ の定義はWelchの t 検定で使った $t=t(\dmu)$ の定義とは分母の形が本質的に異なる.
+
+仮説「$\mu_x - \mu_y = \dmu$」のP値を, その仮説下のモデル内の確率変数としての $t$ 値 $T$ の値の絶対値がデータから計算した $t$ 値 $t=t(\dmu)$ の絶対値以上になる確率の近似値として定義する:
+
+$$
+\pvalue_{\Normal}(\xbar, \ybar, s_x^2, s_y^2|m,n, \mu_x-\mu_y=\dmu) =
+2(1-\cdf(\Normal(0,1), |t(\dmu)|)).
+$$
+
+しかし, 実際に使用されるのは以下のようにして $t$ 分布を使って補正されたP値の方である.
+
+__モデルの分布として正規分布を採用:__ モデルの分布 $D_x$, $D_y$ は正規分布であると仮定する.
+
+__正規分布の標本分布で成立していること:__ そのとき, 上のように定義された $\Xbar, \Ybar, S_x^2, S_y^2$ は独立になり, 以下を近似無しで満たしている:
+
+$$
+\begin{alignedat}{2}
+&
+\Xbar \sim \Normal\left(\mu_x, \sqrt{\frac{\sigma^2}{m}}\right), \quad
+& &
+\Ybar \sim \Normal\left(\mu_y, \sqrt{\frac{\sigma^2}{n}}\right),
+\\ &
+\frac{(m-1)S_x^2}{\sigma^2} \sim \Chisq(m-1), \quad
+& &
+\frac{(n-1)S_y^2}{\sigma^2} \sim \Chisq(n-1).
+\end{alignedat}
+$$
+
+前者の2つより
+
+$$
+Z :=
+\frac{(\Xbar-\Ybar)-(\mu_x-\mu_y)}
+{\ds \sqrt{\sigma^2\left(\frac{1}{m} + \frac{1}{n}\right)}} \sim \Normal(0,1)
+$$
+
+が導かれ, 一般に $A,B$ がそれぞれ $\Chisq(a)$, $\Chisq(b)$ に従う独立な確率変数達であるとき $A+B$ が $\Chisq(a+b)$ に従うことを使うと,
+
+$$
+W := \frac{(m+n-2)S^2}{\sigma^2} =
+\frac{(m-1)S_x^2 + (n-1)S_y^2}{\sigma^2} \sim \Chisq(m+n-2)
+$$
+
+が得られる.  このことから, 上で定義した $T$ について
+
+$$
+T = \frac{Z}{\sqrt{W/(m+n-2)}} \sim \TDist(m+n-2)
+$$
+
+が成立していることが導かれる.
+
+__t分布を使って補正されたP値の定義:__ Studentの t 検定のP値を定義しよう:
+
+$$
+\pvalue_{\Student}(\xbar, \ybar, s_x^2, s_y^2|m,n, \mu_x-\mu_y=\dmu) =
+2(1-\cdf(\TDist(m+n-2), |t(\dmu)|)).
+$$
+
+右辺の形がWelchの t 検定と似ているが, $t(\dmu)$ の定義式の分母がWelchの t 検定の場合と本質的に異なり, $t$ 分布の自由度が $m+n-2$ と定数になる点が違っている.
+
+この補正は, $m+n-2$ が大きなとき, $\TDist(m+n-2)$ はほぼ標準正規分布になるので, 些細な補正に留まる.
+
+__信頼区間:__ Welchの $t$ 検定のP値から定まる信頼区間は以下のように書ける.
+
+まず, 自由度 $\nu$ の $t$ 分布において $t_{\nu,\alpha/2}$ 以上になる確率は $\alpha/2$ になると仮定する:
+
+$$
+t_{\nu,\alpha/2} = \quantile(\TDist(\nu), 1 - \alpha/2).
+$$
+
+このとき, 平均の差 $\mu_x-\mu_y$ の信頼度 $1-\alpha$ の信頼区間が次のように定義される:
+
+$$
+\begin{aligned}
+&
+\confint_{\Student}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha)
+\\ &=
+\left[
+\xbar - \ybar - t_{m+n-2,\alpha/2}\sqrt{s^2\left(\frac{1}{m} + \frac{1}{n}\right)},\;
+\xbar - \ybar + t_{m+n-2,\alpha/2}\sqrt{s^2\left(\frac{1}{m} + \frac{1}{n}\right)}\;
+\right].
+\end{aligned}
+$$
+
+ここで,
+
+$$
+s^2 = \frac{(m-1)s_x^2 + (n-1)s_y^2}{m+n-2}.
+$$
+
+
+### Studentの t 検定とWelchの t 検定に付随する信頼区間の比較
+
+2つの信頼区間の定義を並べて書いてみよう:
+
+$$
+\begin{aligned}
+&
+\confint_{\Welch}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha)
+\\ &=
+\left[
+\xbar - \ybar - t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}},\;
+\xbar - \ybar + t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}}\;
+\right],
+\\ &
+\confint_{\Student}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha)
+\\ &=
+\left[
+\xbar - \ybar - t_{m+n-2,\alpha/2}\sqrt{s^2\left(\frac{1}{m} + \frac{1}{n}\right)},\;
+\xbar - \ybar + t_{m+n-2,\alpha/2}\sqrt{s^2\left(\frac{1}{m} + \frac{1}{n}\right)}\;
+\right].
+\end{aligned}
+$$
+
+ここで,
+
+$$
+s^2 = \frac{(m-1)s_x^2 + (n-1)s_y^2}{m+n-2}.
+$$
+
+$\nu$ の定義式は省略した.  しかし, $m,n$ が大きいとき, $\nu$ と $m+n-2$ も大きくなり, $t_{\nu,\alpha/2}$ と $t_{m+n-2,\alpha/2}$ の値はほぼ等しくなる.  その場合に, これら2つの信頼区間の違いは
+
+$$
+\begin{aligned}
+&
+\sehat_{\Welch}^2 = \frac{s_x^2}{m} + \frac{s_y^2}{n},
+\\ &
+\sehat_{\Student}^2 = s^2\left(\frac{1}{m} + \frac{1}{n}\right) =
+\frac{(m-1)s_x^2 + (n-1)s_y^2}{m+n-2}\left(\frac{1}{m} + \frac{1}{n}\right)
+\end{aligned}
+$$
+
+の大きさの違いによって生じることになる. これらの差は次のようになる:
+
+$$
+\sehat_{\Student}^2 - \sehat_{\Welch}^2 =
+\frac{m+n-1}{mn(m+n-2)}(m - n)(s_x^2 - s_y^2).
+$$
+
+手計算による証明も難しくないが, 数式処理による証明については以下を見よ.
+
+```julia
+@vars s²_x s²_y m n
+expr = ((m-1)*s²_x+(n-1)*s²_y)/(m+n-2)*(1/m+1/n) - (s²_x/m + s²_y/n)
+Eq(expr, expr.expand().factor())
+```
+
+したがって, 以下が成立している.
+
+(1) $s_x^2 \approx s_y^2$ または $m \approx n$ のとき, $\sehat_{\Student}^2 \approx \sehat_{\Welch}^2$ となり, 2つの信頼区間はほぼ等しくなる.
+
+すなわち, 等サンプルサイズまたは等分散の場合にはStundentの t 検定とWelchの t 検定のP値達およびそれらに付随する信頼区間達はほぼ同じになる.
+
+(2) $\sehat_{\Student}^2$ は $\sehat_{\Welch}^2$ よりも $(m-n)(s_x^2 - s_y^2)$ に比例して大きくなる. 例えば, $m<n$ のとき, $s_x^2 > s_y^2$ ならば $\sehat_{\Student}^2 > \sehat_{\Welch}^2$ となり, $s_x^2 < s_y^2$ ならば $\sehat_{\Student}^2 < \sehat_{\Welch}^2$ となる.
+
+等サンプルサイズでも等分散でない場合にはStundentの t 検定とWelchの t 検定のP値達およびそれらに付随する信頼区間達のあいだには違いが生じる.
+
+等分散でない場合の標準誤差の推定量として正しいのは $\sehat_{\Welch}$ の方なので, 等サンプルサイズでも等分散でない場合には, Studentの t 検定のP値とそれに付随する信頼区間の誤差は大きくなる.
+
+
+### Studentの t 検定とWelchの t 検定で使用する t 分布の自由度の比較
+
+Welchの t 検定で使用する $t$ 分布の自由度は
+
+$$
+\nu =
+\frac
+{\ds \left(s_x^2/m + s_y^2/n\right)^2}
+{\ds \frac{(s_x^2/m)^2}{m-1} + \frac{(s_y^2/n)^2}{n-1}}.
+$$
+
+であった. このとき,
+
+$$
+(m+n-2) - \nu =
+\frac
+{\left(s_x^2/(m(m-1)) - s_y^2/(n(n-1))\right)^2}
+{\ds \frac{(s_x^2/(m(m-1)))^2}{n-1} + \frac{(s_y^2/(n(n-1)))^2}{m-1}}
+\ge 0.
+$$
+
+これの手計算での確認は面倒なので数式処理を使って確認してみよう.
+
+```julia
+@vars s²_x s²_y m n ν
+ν = (s²_x/m + s²_y/n)^2/((s²_x/m)^2/(m-1) + (s²_y/n)^2/(n-1))
+lhs = (m+n-2) - ν
+rhsnum = (s²_x/(m*(m-1)) - s²_y/(n*(n-1)))^2
+rhsden = (s²_x/(m*(m-1)))^2/(n-1) + (s²_y/(n*(n-1)))^2/(m-1)
+@show (lhs - rhsnum/rhsden).simplify()
+Eq(lhs, rhsnum/rhsden)
+```
+
+このことから, Welchの t 検定で使用する自由度 $\nu$ はStudentの t 検定で使用する自由度 $m+n-2$ 以下になることがわかる.
+
+
+### Studentの t 検定とWelchの t 検定が異なる結果を与える例
+
+
+以下のデータではStudentの t 検定側のP値が小さくなり, 信頼区間も狭くなる.
+
+```julia
+x = [-3.5, 0.0, 0.5, 0.8, 1.3, 0.3, 1.8, 0.6, -0.2, 0.2,
+    0.8, 0.7, 0.4, -0.2, 1.2, -0.3, 0.9, 2.1, 0.2, -1.0,
+    -1.0, 1.2, -0.7, 0.5, 0.4, -0.3, -1.8, -1.0, 0.4, 0.8,
+    0.0, 2.2, -0.3, -0.4, -0.9, -1.0, 0.5, -1.7, 2.1, -0.1]
+y = [-3.9, 0.0, -1.8, 3.3, -3.6, 2.2, 1.4, -1.4, -0.7, -0.7,
+    -1.7, 1.2, -0.7, 1.0, -3.7, -1.8, -0.7, 0.3, -1.0, -1.3];
+```
+
+```julia
+@show pvalue_student(x, y)
+@show pvalue_welch(x, y);
+```
+
+```julia
+@show confint_student(x, y)
+@show confint_welch(x, y);
+```
+
+```julia
+plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true)
+plot!(Δμ -> pvalue_student(x, y; Δμ); label="Student P-value", ls=:dash, c=:magenta)
+plot!(confint_student(x, y), fill(0.03, 2); label="Student conf. int.", lw=3, c=6)
+plot!(; size=(600, 300), legend=:topleft)
+```
+
+### Studentの t 検定での第一種の過誤の確率の視覚化
+
+
+以下のグラフを見ると, 等分散でなくても等サンプルサイズならばStudentの t 検定は使えそうに見える.
+
+```julia
+plot_student(distx=Normal(), m=40, disty=Normal(0,2), n=40)
+```
+
+しかし, 以下のように等分散でなくてかつ等サンプルサイズでない場合にはStudentの t 検定の方法では大きな誤差が生じてしまう.
+
+```julia
+plot_student(distx=Normal(), m=40, disty=Normal(0,2), n=80)
+```
+
+```julia
+plot_student(distx=Normal(), m=80, disty=Normal(0,2), n=40)
+```
+
+以上の2つの場合にはStudentの t 検定の脆弱さとWelchの t 検定の頑健さが印象的である.
+
+
+以下のように等サンプルサイズにすれば左右非対称で等分散でない場合にもStudentの t 検定は十分に使用可能なように見える.
+
+```julia
+plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3,2), n=40)
+```
+
+```julia
+plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3,2), n=50)
+```
+
+このように等サンプルサイズになるように($m=n$ になるように)注意を払っていれば, Studentの t 検定も十分に実用的であると考えられる.
 
 ```julia
 
