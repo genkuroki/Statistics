@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 平均の比較
 
 * 黒木玄
-* 2022-06-16～2022-06-18
+* 2022-06-16～2022-06-27
 
 $
 \newcommand\ds{\displaystyle}
@@ -264,10 +264,11 @@ end
 ```
 
 ```julia
-"""平均0を持つ分布のサンプルをx,yとして与えること"""
+"""引数 x, y として平均0を持つ分布のサンプルを与えること"""
 function plot_confint_of_diffmeans(x, y; α = 0.05,
         xlim = nothing, 
         plot_pvaluefunc = false,
+        plot_student = false,
         xtick=-100:100, kwargs...)
     m, n = length(x), length(y)
     if isnothing(xlim)
@@ -276,21 +277,41 @@ function plot_confint_of_diffmeans(x, y; α = 0.05,
     else
         a, b = xlim
     end
-    confidence_interval = confint_welch(x, y; α)
     if plot_pvaluefunc
         scatter(x, fill(-0.05, m); label="", msc=:auto, alpha=0.7, c=1)
         scatter!(y, fill(-0.10, n); label="", msc=:auto, alpha=0.7, c=2)
-        plot!(Δμ -> pvalue_welch(x, y; Δμ), a, b; label="", c=:blue)
-        plot!(confidence_interval, fill(α, 2); label="", lw=3, c=:red)
+        if plot_student
+            plot!(Δμ -> pvalue_welch(x, y; Δμ), a, b;
+                label="Welch P-value", c=:blue)
+            plot!(confint_welch(x, y; α), fill(α, 2);
+                label="Welch conf. int.", lw=3, c=:red)
+            plot!(Δμ -> pvalue_student(x, y; Δμ);
+                label="Student P-value", ls=:dash, c=:magenta)
+            plot!(confint_student(x, y; α), fill(0.03, 2);
+                label="Student conf. int.", lw=3, c=6)
+        else
+            plot!(Δμ -> pvalue_welch(x, y; Δμ), a, b; label="", c=:blue)
+            plot!(confint_welch(x, y; α), fill(α, 2); label="", lw=3, c=:red)
+        end
         plot!(; ylim=(-0.15, 1.03), ytick=0:0.1:1, yguide="P-value")
-        title!("P-value func. and $(100(1-α))% conf. int. of Δμ for data of size m=$m, n=$n")
+        title!("P-value func. and $(100(1-α))% conf. int." *
+            " of Δμ for data of size m=$m, n=$n")
         plot!(; size=(600, 200), leftmargin=4Plots.mm)
     else
         scatter(x, fill(-0.05, m); label="", msc=:auto, alpha=0.7, c=1)
         scatter!(y, fill(-0.13, n); label="", msc=:auto, alpha=0.7, c=2)
-        plot!(confidence_interval, fill(0.06, 2); label="", lw=6, c=:red)
+        if plot_student
+            plot!(confint_welch(x, y; α), fill(0.06, 2);
+                label="Welch conf. int.", lw=6, c=:red)
+            plot!(confint_student(x, y; α), fill(0.06, 2);
+                label="Student conf. int.", lw=6, c=:red)
+        else
+            plot!(confint_welch(x, y; α), fill(0.06, 2);
+                label="", lw=6, c=:red)
+        end
         plot!(; ylim=(-0.2, 0.2), yaxis=false, ytick=false)
-        title!("$(100(1-α))% confidence interval of Δμ for data of size m=$m, n=$n")
+        title!("$(100(1-α))% confidence interval"
+            * " of Δμ for data of size m=$m, n=$n")
         plot!(; size=(600, 80))
     end
     plot!(; xlim=(a, b), xtick)
@@ -299,7 +320,10 @@ end
 
 x, y = rand(Gamma(3,2)-6, 20), rand(Gamma(2,3)-6, 30)
 plot_confint_of_diffmeans(x, y) |> display
-plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true)
+plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true) |> display
+plot_confint_of_diffmeans(x, y; 
+    plot_pvaluefunc=true, plot_student=true,
+    size=(600, 300))
 ```
 
 ```julia
@@ -1819,10 +1843,8 @@ y = [-3.9, 0.0, -1.8, 3.3, -3.6, 2.2, 1.4, -1.4, -0.7, -0.7,
 ```
 
 ```julia
-plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true)
-plot!(Δμ -> pvalue_student(x, y; Δμ); label="Student P-value", ls=:dash, c=:magenta)
-plot!(confint_student(x, y), fill(0.03, 2); label="Student conf. int.", lw=3, c=6)
-plot!(; size=(600, 300), legend=:topleft)
+plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true, plot_student=true,
+    size=(600, 300), legend=:topleft)
 ```
 
 ### Studentの t 検定での第一種の過誤の確率の視覚化
