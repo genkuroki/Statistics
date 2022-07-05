@@ -372,7 +372,7 @@ __さらに, 箱ひげ図に限らず, グラフのもとになったデータ�
 
 からの引用である.
 
-<img src="https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/images/TraceyWeissgerber.jpg">
+<img src="https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/images/TraceyWeissgerber.jpg" width=95%>
 
 例えば, box plot (箱ひげ図)については,
 

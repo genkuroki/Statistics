@@ -201,6 +201,7 @@ riskratiohat(a, b, c, d) = safediv(a*(c+d), (a+b)*c)
 stderr_logriskratiohat(a, b, c, d) = √(1/a - 1/(a+b) + 1/c - 1/(c+d))
 
 function pvalue_rr_wald(a, b, c, d; ρ=1)
+    (a+b==0 || c+d==0) && return 1.0
     logRRhat = log(riskratiohat(a, b, c, d))
     SEhat_logRRhat = stderr_logriskratiohat(a, b, c, d)
     2ccdf(Normal(0, 1), safediv(abs(logRRhat - log(ρ)), SEhat_logRRhat))
