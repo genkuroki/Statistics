@@ -101,7 +101,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予想の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予想の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予想の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予想の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予想の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予想の失敗</a></span></li></ul></li><li><span><a href="#統計モデルと調査実験観察の不整合性を無くす" data-toc-modified-id="統計モデルと調査実験観察の不整合性を無くす-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>統計モデルと調査実験観察の不整合性を無くす</a></span><ul class="toc-item"><li><span><a href="#多段階検定は避ける" data-toc-modified-id="多段階検定は避ける-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>多段階検定は避ける</a></span></li><li><span><a href="#モデルが不適切なせいでP値の値が歪むことがある" data-toc-modified-id="モデルが不適切なせいでP値の値が歪むことがある-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>モデルが不適切なせいでP値の値が歪むことがある</a></span></li></ul></li><li><span><a href="#交絡の問題に注意する" data-toc-modified-id="交絡の問題に注意する-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>交絡の問題に注意する</a></span></li><li><span><a href="#統計学用語の「誤用」には寛容であるべき" data-toc-modified-id="統計学用語の「誤用」には寛容であるべき-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>統計学用語の「誤用」には寛容であるべき</a></span><ul class="toc-item"><li><span><a href="#標本数" data-toc-modified-id="標本数-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>標本数</a></span></li><li><span><a href="#母数" data-toc-modified-id="母数-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>母数</a></span></li></ul></li><li><span><a href="#概念そのものの誤解には厳しくあるべき" data-toc-modified-id="概念そのものの誤解には厳しくあるべき-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>概念そのものの誤解には厳しくあるべき</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予測の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予測の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#選挙の予測に関する参考文献" data-toc-modified-id="選挙の予測に関する参考文献-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>選挙の予測に関する参考文献</a></span></li></ul></li><li><span><a href="#2つのグループを比較するときの注意" data-toc-modified-id="2つのグループを比較するときの注意-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>2つのグループを比較するときの注意</a></span><ul class="toc-item"><li><span><a href="#データは偏っていることが多い" data-toc-modified-id="データは偏っていることが多い-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>データは偏っていることが多い</a></span></li><li><span><a href="#2つのグループを比較するときの注意に関する参考資料" data-toc-modified-id="2つのグループを比較するときの注意に関する参考資料-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>2つのグループを比較するときの注意に関する参考資料</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用" data-toc-modified-id="P値や信頼区間の誤用-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値や信頼区間の誤用</a></span><ul class="toc-item"><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#P値の正しい使い方" data-toc-modified-id="P値の正しい使い方-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>P値の正しい使い方</a></span></li><li><span><a href="#信頼区間の定義" data-toc-modified-id="信頼区間の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>信頼区間の定義</a></span></li><li><span><a href="#信頼区間の正しい解釈の仕方" data-toc-modified-id="信頼区間の正しい解釈の仕方-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>信頼区間の正しい解釈の仕方</a></span></li><li><span><a href="#P値や信頼区間の誤用に関する参考資料" data-toc-modified-id="P値や信頼区間の誤用に関する参考資料-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>P値や信頼区間の誤用に関する参考資料</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -226,6 +226,134 @@ for name in datanames
 end
 layout = @layout[_ a _; b c d; e f g; h i j; k l m]
 Datasaurus_dozen = plot(PP...; layout, size=(800, 1000));
+```
+
+```julia
+function pvalue_clopper_pearson(dist::DiscreteUnivariateDistribution, x)
+    min(1, 2cdf(dist, x), 2ccdf(dist, x-1))
+end
+pvalue_clopper_pearson(n, k, p) = pvalue_clopper_pearson(Binomial(n, p), k)
+
+_pdf_le(x, (dist, y)) =  pdf(dist, x) ⪅ y
+
+function _search_boundary(f, x0, Δx, param)
+    x = x0
+    if f(x, param)
+        while f(x - Δx, param) x -= Δx end
+    else
+        x += Δx
+        while !f(x, param) x += Δx end
+    end
+    x
+end
+
+function pvalue_sterne(dist::DiscreteUnivariateDistribution, x)
+    Px = pdf(dist, x)
+    Px == 0 && return Px
+    Px == 1 && return Px
+    m = mode(dist)
+    Px ≈ pdf(dist, m) && return one(Px)
+    if x < m
+        y = _search_boundary(_pdf_le, 2m - x, 1, (dist, Px))
+        cdf(dist, x) + ccdf(dist, y-1)
+    else # x > m
+        y = _search_boundary(_pdf_le, 2m - x, -1, (dist, Px))
+        cdf(dist, y) + ccdf(dist, x-1)
+    end
+end
+
+function pvalue_sterne(n, k, p)
+    pvalue_sterne(Binomial(n, p), k)
+end
+
+function pvalue_wilson(n, k, p)
+    p̂ = k/n
+    SE = √(p*(1-p)/n)
+    2ccdf(Normal(), abs(p̂ - p)/SE)
+end
+
+function pvalue_wald(n, k, p)
+    p̂ = k/n
+    SEhat = √(p̂*(1-p̂)/n)
+    2ccdf(Normal(), abs(p̂ - p)/SEhat)
+end
+
+function illustrate_binomial_pvalues()
+    n = 20
+    p = 0.25
+    k = 9
+    
+    p̂ = k/n
+    σ̂² = n*p̂*(1-p̂)
+    
+    null = Binomial(n, p)
+    μ, σ² = mean(null), var(null)
+    nullname = distname(null)
+    
+    f(x) = mypdf(null, x)
+    xlim = (-2, n+1)
+    xlimk = (k-0.5, n+0.5)
+    
+    pval = @sprintf "%.03f" pvalue_clopper_pearson(n, k, p)
+    cval = @sprintf "%.03f" ccdf(null, k-1)
+    P1 = plot(title="(1) Clopper-Pearson")
+    plot!(f, xlim...; label="", c=1)
+    plot!(f, xlimk...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    annotate!(k+5, 4f(k), text("P-value = $pval", 10, :red))
+    plot!([k+7, k+7], [2.4f(k), 3.6f(k)]; arrow=true, c=:red, label="")
+    annotate!(k+6, 3f(k), text("2×", 10, :red, :right))
+    annotate!(k+5, 2f(k), text("one-tailed = $cval", 10, :red))
+    plot!([k+7, k+1], [1.5f(k), 1.5f(k+1)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_sterne(n, k, p)
+    j = _search_boundary(_pdf_le, 2mode(null)-k, -1, (null, pdf(null, k)))
+    xlimj = (-0.5, j+0.5)
+    P2 = plot(title="(2) Sterne")
+    plot!(f, xlim...; label="", c=1)
+    plot!(f, xlimk...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    plot!(f, xlimj...; label="", fillrange=0, c=1, fc=:red, fa=0.5)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!([k-0.5, j+0.5], [f(k), f(k)]; label="", c=2, ls=:dash)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+1], [2.5f(k), 0.8f(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+1], [2.5f(k), 0.8f(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_wilson(n, k, p)
+    normal = Normal(μ, √σ²)
+    g(x) = pdf(normal, x)
+    P3 = plot(title="(3) Wilson")
+    plot!(f, xlim...; label="", c=1)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!(g, xlim...; ls=:dash, label="Normal(μ=$μ, σ=√$σ²)", c=2)
+    plot!(g, k, n; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    plot!(g, -2, 2μ-k; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+0.5], [2.5f(k), 0.8g(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+0.2], [2.5f(k), 0.7g(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+    
+    pval = @sprintf "%.03f" pvalue_wald(n, k, p)
+    normal = Normal(μ, √σ̂²)
+    h(x) = pdf(normal, x)
+    P4 = plot(title="(4) Wald")
+    plot!(f, xlim...; label="", c=1)
+    vline!([μ]; label="μ=$μ", c=1, lw=0.5, ls=:dash)
+    plot!(h, xlim...; ls=:dash, label="Normal(μ=$μ, σ=√$σ̂²)", c=2)
+    plot!(h, k, n; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    plot!(h, -2, 2μ-k; label="", fillrange=0, c=2, fc=:red, fa=0.5)
+    annotate!(k+5, 3f(k), text("P-value = $pval", 10, :red))
+    plot!([k+5, k+0.5], [2.5f(k), 0.8g(k)]; arrow=true, c=:red, label="")
+    plot!([k+5, j+0.2], [2.5f(k), 0.7g(j)]; arrow=true, c=:red, label="")
+    plot!(; xtick=0:n, tickfontsize=7)
+
+    plot(P1, P2, P3, P4; size=(800, 520), layout=(2, 2))
+    plot!(; plot_title="model: $nullname,   data: n=$n, k=$k")
+end
+
+#illustrate_binomial_pvalues()
 ```
 
 ## データ全体の様子を適切なグラフ作画によって確認せよ！
@@ -359,7 +487,7 @@ __さらに, 箱ひげ図に限らず, グラフのもとになったデータ�
 
 <img src="https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/images/fujii2018-3.png" width=500>
 
-このように, ほんの数個の数値からなるデータをこのように箱ひげ図で「要約」することは不適切な行為である.
+東北地方, 関東地方, … の各々には数県しか含まれていない.  このように, 各々のグループがほんの数個の数値からなるデータをこのように箱ひげ図で「要約」することは不適切な行為である.
 
 この不適切なグラフの描き方を見れば, データサイズの情報が非常に重要なことも分かる.
 
@@ -513,41 +641,349 @@ __問題:__ 隣り合っている20代と30代ではどちらの割合が大き�
 
 ## 無作為抽出の失敗に注意を払う
 
+「独立同分布」という条件を満たす確率分布を統計モデルとして採用した場合には, 調べたい母集団からの適切な無作為抽出でデータを得ることが適切な統計分析のために必要になる.
 
-### 1936年のアメリカ大統領選挙の結果の予想の失敗
+しかし, 実際にはそれはそう簡単ではない.
 
+調べたい母集団よりも狭い集団からの偏ったサンプルの抽出になってしまっている危険がいつでも生じる.
 
-### 1948年のアメリカ大統領選挙の結果の予想の失敗
-
-
-## 統計モデルと調査実験観察の不整合性を無くす
-
-
-### 多段階検定は避ける
+そのような例として有名な事例を以下で紹介しよう.
 
 
-### モデルが不適切なせいでP値の値が歪むことがある
+### 1936年のアメリカ大統領選挙の結果の予測の失敗
+
+1936年のアメリカ大統領選挙は民主党のルーズベルトと共和党のランドンの対決になった.
+
+以下の得票率の予測の表は, 鈴木督久『世論調査の真実』(日経BP 日本経済新聞出版本部, 2021年)の図表5-1の孫引きであり, そこには
+
+>(出所) 小山栄三(1946)『輿論調査概要』時事通信社(名称を一部省略)
+
+と書いてある.
+
+$$
+\begin{array}{l|c|c}
+\hline
+& \text{ルーズベルト} & \text{ランドン} \\
+\hline
+\text{実際の得票率 ($\%$)} & 60.2 & 39.8 \\
+\hline
+\text{リテラリー・ダイジェスト} & 42.6 & 57.4 \\
+\text{ギャラップ} & 54 & 46 \\
+\text{フォーチュン} & 74 & 26 \\
+\text{クロスレー} & 52 & 48 \\
+\text{バルチモア・サン} & 64 & 36 \\
+\text{ファーム・ジャーナル} & 43 & 57 \\
+\text{グラスルーツ} & 39.5 & 60.5 \\
+\hline
+\end{array}
+$$
+
+ここで, リテラリ―・ダイジェスト, ギャラップ, … は予測を出した主体の名前(会社や雑誌の名前など)である. 
+
+例えば, リテラリ―・ダイジェスト誌は, ルーズベルト候補は $42.6\%$, ランドン候補は $57.4\%$ の票を得て, ランドン候補が勝利するだろうと予想した.  しかし, 実際にはルーズベルト候補が $60.2\%$ の票を得て勝利することになった.
+
+リテラリ―・ダイジェスト誌は, 1936年8月22日号で調査開始を宣言し, 9回にわたる連載で最終的に237万6523票分のアンケート結果を集計して, 上の予測を立てた.
+
+母集団中の6割がルーズベルト支持で残りの4割がランドン支持のとき, 200万人を理想的に無作為抽出したならば, その中のルーズベルト支持者の割合が $43\%$ 以下(86万人以下)になってしまう確率はほぼ $0$ である:
+
+$$
+\cdf(\Binomial(2000000, 0.6), 860000) \approx 2\times 10^{-50925}.
+$$
+
+このことから, リテラリー・ダイジェスト誌によるアンケート調査には大きな偏りがあったと考えられる.
+
+リテラリ―・ダイジェスト誌が調査対象としていた人達は富裕層が多く, 偏っていたことが問題だった.
+
+この事例から, たとえサイズ200万の __ビッグデータ__ であっても, その内訳が偏っているならば, そのデータを使った予測は大外れしてしまうことがわかる.
+
+```julia
+setprecision(50) do
+    @time sum(pdf(Binomial(2000000, big"0.6"), k) for k in 0:860000)
+end
+```
+
+### 1948年のアメリカ大統領選挙の結果の予測の失敗
+
+以下の表は
+
+* [なるほど統計学園 アメリカ大統領選挙の番狂わせ（後編）標本調査における偏り2](https://www.stat.go.jp/naruhodo/15_episode/episode/senkyo2.html)
+
+にあった表のフォーマットを変えたものである.  そこには
+
+>候補者の当選予想と得票率のグラフ
+
+>（注）上記2人の他にも候補者がいたため、合計は100％にならない。
+
+と書いてある.
+
+$$
+\begin{array}{l|c|c}
+& \text{民主党 トルーマン} & \text{共和党 デューイ} \\
+\hline
+\text{実際の得票率 ($\%$)} & 〇49.5 & 45.1 \\
+\hline
+\text{ギャラップの予想} & 44.5 & 〇49.5 \\
+\text{ローバーの予想} & 37.1 & 〇52.2 \\
+\text{クロスレーの予想} & 44.8 & 〇49.9 \\
+\hline
+\end{array}
+$$
+
+歴史的には1936年の大統領選挙でルーズベルトが当選することを正しく予測できたギャラップは1948年の大統領選挙では予測に失敗することになった.
+
+ギャラップによる調査方法は無作為抽出法ではなく, 割り当て法であった. 詳しくは上のリンク先を参照して欲しい.
+
+このように, アンケート調査の結果は偏っていることがあり, 信頼できる予測を統計学的な方法で行うためにはデータの取得時に特別な注意が必要になる.
 
 
-## 交絡の問題に注意する
+### 選挙の予測に関する参考文献
+
+以上については以下の文献を参考にした.
+
+* なるほど統計学園
+  * [アメリカ大統領選挙の番狂わせ（前編）標本調査における偏り1](https://www.stat.go.jp/naruhodo/15_episode/episode/senkyo1.html)
+  * [アメリカ大統領選挙の番狂わせ（後編）標本調査における偏り2](https://www.stat.go.jp/naruhodo/15_episode/episode/senkyo2.html)
+* 鈴木督久, 『世論調査の真実』, 日経BP 日本経済新聞出版本部, 2021年
+<!--  * [『世論調査の真実』　追加の文献・図表・注など](http://www.suzuki-tokuhisa.com/poll/) -->
+
+歴史的には1936年の米大統領選挙の予測についてはギャラップ氏達の予測が有名である. その物語に興味がある人はこれらの文献を参照して欲しい.
 
 
-## 統計学用語の「誤用」には寛容であるべき
+## 2つのグループを比較するときの注意
 
 
-### 標本数
+### データは偏っていることが多い
+
+我々は別のノートで「2つのグループの比率の違いは〇〇である」の型の仮説や「2つのグループの平均の違いは〇〇である」の型の仮説に関するP値や信頼区間の計算の仕方について学んだ.
+
+* [検定と信頼区間: 比率の比較](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
+* [検定と信頼区間: 平均の比較](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
+
+例えば, 風邪をひいた人に薬Xを与えることに効果があるかどうかを知るために, 薬Xを与えたグループと薬を与えずに経過観察したグループに分けて取得した「5日以内に回復した人数」のデータを利用する場合には, 薬Xを与えたかどうか以外の条件が2つのグループで揃っていることが必要である.
+
+風邪症状が重い人達には薬Xを与える傾向が強く, 症状が軽い人達は経過観察する傾向が強い場合には, 薬Xに本当は効き目があったとしても, 重い症状の人達に特に薬Xを与えてしまったせいで, 経過観察グループとの比較で, 回復にかかる日数が平均的に増えてしまうかもしれない.
+
+統計学の現実での応用時にはこのような問題が発生することの方が普通なので注意が必要である.
+
+例えば, 〇〇ウイルス対策としてワクチンを接種したグループと接種しなかったグループを比較するために, 〇〇ウイルスによって重症になった人数を調べたとしよう.
+
+このときもしもワクチンを重症になりやすい人達に優先的に接種しているならば, ワクチンに効き目があったとしても, ワクチン接種群の方が非接種群よりも重傷者の割合が多くなってしまうこともあり得る.
+
+このような問題は, 〇〇ウイルスによって重症になりやすいか否かを完全に無視してワクチン接種するようにすれば解消されるのだが, 人の命を守るために行われるべきワクチン接種ではそういうことは倫理的にするべきではない.
+
+他にも様々な要因でデータが偏ってしまうことがありえる.
+
+特別な場合を除けば, データは必ず偏っており, 問題はその程度がどのくらい重大であるかということになる.
 
 
-### 母数
+### 2つのグループを比較するときの注意に関する参考資料
+
+次の動画が参考になるだろう.
+
+* 佐藤俊哉, [ランダム化ができないとき](https://youtu.be/tUkyjZXU1vc), 2018年10月25日
+
+同じ著者による次の本も参考になる.
+
+* 佐藤俊哉, 宇宙怪人しまりす　医療統計を学ぶ　検定の巻, 岩波科学ライブラリー 194, 2012年
+
+データの偏りについて語るときの統計学的なキーワードの一つは __交絡__ (confounding)である.  「交絡」の正確な定義を知りたい人は次の講義動画の18:00あたりをみて欲しい.
+
+* 佐藤俊哉, [交絡とその調整](https://youtu.be/ybdkQFEdCPM), 2018年12月20日
 
 
-## 概念そのものの誤解には厳しくあるべき
+## P値や信頼区間の誤用
 
 
-### P値
+### P値の定義
+
+データの数値 $x$ とデータの数値の生成のされ方に関するパラメータ $\theta$ を持つ統計モデル $M(\theta)$ と具体的なパラメータ値 $\theta_0$ が与えられたとき, 仮説 $\theta = \theta_0$ のP値はその仮説下での統計モデル $M(\theta=\theta_0)$ 内でデータの数値 $x$ 以上に極端な値が生成される確率またはその近似値として定義される.
+
+「～以上に極端な」や「近似値」の意味を適切に与えるごとにP値の正確な定義が得られる.
+
+例えば, データの数値が「$n$ 回中 $k$ 回成功」の形をしていて, 統計モデル $M(p)$ が試行回数 $n$, 成功確率パラメータ $p$ の二項分布モデルのとき, $p=p_0$ という仮説のClopper-Pearson型のP値は, モデル $M(p=p_0)$ 内でデータの数値 $k$ 以下の値が生成される確率と $k$ 以上の値が生成される確率の小さい方の2倍として定義される. 実際には, P値の値が $1$ を超えないように, その値と $1$ の小さな方として, Clopper-Pearson型のP値が定義される.  具体的に式で書くと以下の通り:
+
+$$
+\pvalue_{\CP}(k|n, p=p_0) =
+\min
+\begin{pmatrix}
+1 \\
+2\cdf(\Binomial(n, p_0), k) \\
+2(1-\cdf(\Binomial(n, p_0), k-1)) \\
+\end{pmatrix}.
+$$
+
+「～以上に極端な」の大雑把な意味は「モデル内確率分布の平均値 $np_0$ からの距離がデータの数値 $k$ 以上に大きい」という意味に設定しているが, モデルの分布が左右非対称になっていることを考慮してこのような定義になっている.  この他にも
+
+* [「検定と信頼区間: 比率の検定と信頼区間」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
+
+では, Sterne型のP値と
+
+* [「大数の法則と中心極限定理」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
+
+で説明した二項分布の中心極限定理(正規分布近似)を使って定義されたP値を2種類定義した(Wilson型, Wald型).
+
+二項分布モデルの場合のそれら4種のP値の定義で使われた考え方は他の統計モデルでのP値を定義するときにも使われる.  その意味で非常に基本的である.
+
+```julia
+illustrate_binomial_pvalues()
+```
+
+### P値の正しい使い方
+
+__仮説 $\theta = \theta_0$ のP値は, その仮説下での統計モデル $M(\theta=\theta_0)$ とデータの数値 $x$ の整合性の指標として使われる.__
+
+P値が非常に小さい場合には整合性がほとんどないと考える.
+
+P値が $0$ より十分に大きな場合には, モデル $M(p)$ の下での仮説 $p=p_0$ のデータの数値 $x$ との整合性がある程度あると考える.  しかし, 整合性がある程度あることと, そのパラメータ値が真実を表しているかもしれないことは別の話になるので注意すること.
+
+__P値だけから出せる結論は常に弱い__ という点を強調したいががめに, 「P値は整合性の指標である」と述べていることにも注意せよ!
+
+__妥当ではないものどうしのあいだで整合性がある場合もあり得ることに注意せよ.__
+
+例えば, 仮説 $\theta=\theta_0$ 下で妥当でない統計モデル $M(\theta=\theta_0)$ とデータの数値 $x$ のあいだに整合性があることもあるし, モデルと信頼できないデータの数値 $x$ とのあいだに整合性があることもありえる.
+
+P値を使った統計的推論は, 使用した統計モデルが妥当でかつ, 用いたデータの数値も信頼できる場合にのみ, 真っ当な結論を出し得る.
+
+実際には, データが偏っている可能性は常に心配する必要があるし, 使用した統計モデルがそのようなデータの偏りを考慮していない不適切なモデルになっている可能性も常に心配する必要がある.  (モデルが妥当でなくなるパターンは他にもありえる.)
+
+__注意:__ 使用している統計モデルが妥当であることの意味は, 目的ごとにユーザー側が決める必要があり, さらに妥当であることの証拠の提出もユーザー側の責任になる.  統計学入門の解説に書いてある統計分析の手続きに機械的に従えば何らかの意味のある統計分析が可能になるという考え方は完全に誤りである.  使用した統計モデルの妥当性やデータの数値の信頼性のような最も重要な事柄についてはユーザー側が責任を負う必要がある.
 
 
-### 信頼区間と検定の表裏一体性
+### 信頼区間の定義
+
+データの数値 $x$ とデータの数値の生成のされ方に関するパラメータ $\theta$ を持つ統計モデル $M(\theta)$ についてP値 $\pvalue(x|\theta=\theta_0)$ が定義されているとき, 有意水準 $0<\alpha<1$ について, パラメータ $\theta$ に関する信頼度 $1-\alpha$ の信頼区間は, $\pvalue(x|\theta=\theta_0) \ge \alpha$ となるパラメータ値 $\theta_0$ 全体の集合として定義される:
+
+$$
+\confint(x|\alpha) = \{\, \theta_0 \mid \pvalue(x|\theta=\theta_0) \ge \alpha \,\}.
+$$
+
+例えば, 二項分布モデルのClopper-Pearson型のP値の定義から得られる信頼区間はClopper-Pearsonの信頼区間と呼ばれ, 具体的には,
+
+$$
+\begin{aligned}
+&
+1 - \cdf(\Binomial(n, p_L), k-1) = \alpha/2,
+\\ &
+\cdf(\Binomial(n, p_U), k) = \alpha/2.
+\end{aligned}
+$$
+
+によって $p_L, p_U$ を定義することによって得られる区間
+
+$$
+[p_L, p_U] = \{\, p_0 \mid p_L\le p_0 \le p_U \,\}
+$$
+
+になる.  どうやって $p_L, p_U$ を求めるかが問題になるが, この場合には, 二項分布とベータ分布の累積分布函数のあいだの素晴らしい関係
+
+$$
+\begin{aligned}
+&
+1 - \cdf(\Binomial(n, p), k-1) = \cdf(\Beta(k, n-k+1), p),
+\\ &
+\cdf(\Binomial(n, p), k) = 1 - \cdf(\Beta(k+1, n-k), p)
+\end{aligned}
+$$
+
+を使えば, ベータ分布の分位点函数(quantile function, 累積分布函数 cdf の逆函数)を使って,
+
+$$
+\begin{aligned}
+&
+p_L = \quantile(\Beta(k, n-k+1), \alpha/2),
+\\ &
+p_U = \quantile(\Beta(k+1, n-k), 1-\alpha/2).
+\end{aligned}
+$$
+
+によって, $p_L, p_U$ を効率的に求められるのであった.
+
+Sterne型のP値に対応する信頼区間の計算はこのようにきれいにはまとまらない.  正規分布近似を使って定義されたP値から得られる信頼区間の計算は標準正規分布の分位点函数の $1-\alpha/2$ での値
+
+$$
+z_{\alpha/2} = \quantile(\Normal(0,1), 1-\alpha/2)
+$$
+
+の計算に帰着することになる. 二項分布モデルの場合の信頼区間に関する非常に詳しい説明が
+
+* [「検定と信頼区間: 比率の検定と信頼区間」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
+
+にある.
+
+二項分布モデルの場合の信頼区間の構成法のパターンは他の統計モデルにおける信頼区間の計算でも同様に使われる.  標準正規分布が $t$ 分布で置き換えられる場合もある.
+
+
+### 信頼区間の正しい解釈の仕方
+
+P値は __統計モデル内部__ の確率分布におけるデータの数値以上に極端な値が生じる確率またはその近似値であった.
+
+P値は現実における何らかの意味での確率ではなく, 数学的フィクションであるモデル内部における確率またはその近似値であるにすぎない.
+
+ゆえに, 信頼度 $1-\alpha$ の信頼区間すなわち $100(1-\alpha)\%$ の信頼区間における $1-\alpha = 100(1-\alpha)\%$ は __モデル内部__ における確率またはその近似値になる.
+
+すなわち, $X$ をモデル $M(\theta=\theta_0)$ に従う確率変数とするとき, $\pvalue(X|\theta=\theta_0) \ge \alpha$ となる確率は $1-\alpha$ またはその近似値になる.
+
+これは, 信頼度 $1-\alpha$ の信頼区間 $\confint(X|\alpha) = \{\, \theta_0 \mid \pvalue(X|\theta=\theta_0) \ge \alpha \,\}$ に $\theta_0$ が含まれる確率が $1-\alpha$ またはその近似値になることを意味している. 
+
+そのとき, 確率変数 $X$ の値は確率的にランダムに決まると考えるので, その函数である信頼区間 $\confint(X|\alpha)$ も確率的にランダムに決まる.  すなわち区間の両端の点がランダムに決まる.  そのような状況でその区間に定数 $\theta_0$ が含まれる確率が $1-\alpha$ またはその近似値になる.  しかもその確率は数学的フィクションであるモデル内部における確率に過ぎない.
+
+現実の未知の母集団から標本を何度も取り直すことによって $95\%$ 信頼区間の $95\%$ の意味を説明しようとしている解説をよくみかけるが, ミスリーディング(misleading, 誤誘導的)なので注意が必要である. 
+
+__実はこの節における以上の解説全体がミスリーディングであるという考え方もできる.__
+
+この節での以上の解説では $95\%$ 信頼区間の $95\%$ をどのような確率(またはその近似値)とみなすことができるかを説明した.
+
+確かにそういう知識を持っていた方が良いのであるが, __信頼区間を解釈する場合には「P値はデータの数値とモデル＋パラメータ値の整合性の指標である」というP値の解釈の基本に戻った方が分かり易い.__
+
+P値から真っ当な結論を出すためには, データの数値が信頼できてかつ, 使用した統計モデルも何らかの意味で妥当である必要があるのであった.  以下ではこの条件を仮定する.
+
+このとき, パラメータ $\theta$ に関する $100(1-\alpha)\%$ 信頼区間は, 閾値 $\alpha$ でデータと整合性がないと判断されずにすむパラメータ値 $\theta_0$ 全体の集合になる.
+
+P値から導かれる結論は弱いので, __信頼区間に含まれるパラメータ値についてはその現実における適切さについて判断保留することが正しい.__
+
+例えば, パラメータ $\theta$ が商用ウェブサイトのデザインAのデザインBに対する優位性の指標であるときには, パラメータ $\theta$ に関する信頼区間については以下のように考える.
+
+(1) 信頼区間がゼロを含むならばデザインAとデザインBは同等の働きをしている可能性を排除できないと考える.
+
+(2) 信頼区間がたとえ正の値を含んでいても, 単にデザインAの方がデザインBよりも優れている可能性を排除できないと考えるだけにとどめ, デザインAの方がデザインBよりも優れているとは結論しない.
+
+(3) 信頼区間の左端の値が十分にゼロよりも大きいならば, デザインAの方が優れていると判断できる.  ただし, 上で「以下ではこの条件を仮定する」と述べていたことが重要であることに注意せよ! データが信用できなかったり, モデルが妥当でなかったりする場合にはこのような判断はひどい失敗を招く可能性がある.
+
+
+
+
+
+
+
+
+
+
+
+### P値や信頼区間の誤用に関する参考資料
+
+次の文献は必読である:
+
+* [統計的有意性と P 値に関する ASA 声明](https://www.biometrics.gr.jp/news/all/ASA.pdf), (翻訳: 佐藤俊哉, 2017年4月23日, 英語の原著は2016年)
+
+ただし, そこにおける
+
+>2. P 値とは?<br>　おおざっぱにいうと、P値とは特定の統計モデルのもとで、データの統計的要約（たとえば、2グループ比較での標本平均の差）が観察された値と等しいか、それよりも極端な値をとる確率である。
+
+における「データ」は統計モデル内部で生成された仮想的なデータであることに注意する必要がある. 次のように言い直した方が誤解が少ないように思われる.
+
+* おおざっぱにいうと, P値とは特定の統計モデル内で生成された仮想的データの統計的要約(たとえば, 2グループでの比較での標本平均の差)が現実で観察されたデータの値以上に極端な値になる確率もしくはその近似値である.
+
+P値に関するASA声明の翻訳者によるP値に関する解説動画が次の場所にある.
+
+* 佐藤俊哉, [仮説検定とP値の誤解](https://youtu.be/vz9cZnB1d1c), 2017年10月19日
+
+分かり難いとよく言われている「信頼区間」については, 検定(もしくはP値函数)と信頼区間の表裏一体性に基いて信頼区間について理解しようとすることが正しい理解の方針で思われる.  検定と信頼区間の表裏一体性については, すぐ上の動画の48:37からの解説にある.
+
+可能ならば以下の論文も参照せよ:
+
+* Valentin Amrhein, Sander Greenland.  Discuss practical importance of results based on interval estimates and p-value functions, not only on point estimates and null p-values.  First Published June 3, 2022.  \[[DOI](https://doi.org/10.1177%2F02683962221105904)\]
+
+この一連のノートの内容はこの論文が出る前に計画されていたのであるが, P値の使い方については内容的に非常に近いものになっている.
 
 ```julia
 
