@@ -240,7 +240,7 @@ end
 #
 # に書いてある. そこでは, 次の文献が引用されている:
 #
-# Guangyong Zou and Allan Donnerb
+# Guangyong Zou and Allan Donner
 # A simple alternative confidence interval for the difference between two proportions
 # Controlled Clinical Trials, Volume 25, Issue 1, February 2004, Pages 3-12
 # https://doi.org/10.1016/j.cct.2003.08.010
@@ -1519,7 +1519,7 @@ $p-q$ の $95\%$ 信頼区間: \[0.001475, 0.03608\]
 
 の Chapter 14. Instroduction to Categorical Statistics の Two Study Groups: Large-Sample Methods, pp.299-300 に書いてある. そこでは, 次の文献が引用されている:
 
-* Guangyong Zou and Allan Donnerb, A simple alternative confidence interval for the difference between two proportions, Controlled Clinical Trials, Volume 25, Issue 1, February 2004, Pages 3-12. https://doi.org/10.1016/j.cct.2003.08.010
+* Guangyong Zou and Allan Donner, A simple alternative confidence interval for the difference between two proportions, Controlled Clinical Trials, Volume 25, Issue 1, February 2004, Pages 3-12. https://doi.org/10.1016/j.cct.2003.08.010
 
 
 ## オッズ比とリスク比に関するWald版のP値と信頼区間の必修計算問題
