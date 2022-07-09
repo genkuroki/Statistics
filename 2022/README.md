@@ -367,6 +367,11 @@ __作成された動画__
 
 ### 13 誤用を避けるための注意
 
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.ipynb)\]
+* [pdf]()
+\[[download]()\]
+
 ### 14 例
 
 ### 15 例
@@ -375,8 +380,8 @@ __作成された動画__
 
 * [Jupyter notebook]()
 \[[nbviewer]()\]
-* [pdf]()
-\[[download]()\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/13%20How%20to%20avoid%20misuse.pdf)\]
 
 __演習用サンプル__
 
