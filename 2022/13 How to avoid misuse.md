@@ -16,7 +16,7 @@ jupyter:
 # 誤用を避けるための注意
 
 * 黒木玄
-* 2022-07-01～2022-07-01
+* 2022-07-01～2022-07-11
 
 $
 \newcommand\ds{\displaystyle}
@@ -419,108 +419,91 @@ end
 ```
 
 ```julia
-a, b, c, d = 14, 5, 5, 9
+risk_ratio_example1 = plot()
 
-@show oddsratiohat(a, b, c, d)
-@show pvalue_or_wald(a, b, c, d)
-@show confint_or_wald(a, b, c, d)
+xlim = (0.1, 1.5)
 
-xlim = (0.5, 80)
-plot(ω -> pvalue_or_wald(a, b, c, d; ω), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_or_wald")
+k=250
+a, b, c, d = 10000-k, 10000+k, 10000, 10000
+RRhat = riskratiohat(a, b, c, d)
+pval = pvalue_rr_wald(a, b, c, d)
+ci = confint_rr_wald(a, b, c, d)
+label = """
+---------- A ----------
+Data:  $a  $b
+         $c $d
+RRhat: $(round(RRhat; digits=3))
+95% CI: $(round.(ci; digits=3))
+RR=1 P-val.: $(round(100pval; digits=2))%
+"""
+plot!(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label)
+
+a, b, c, d = 4, 16, 10, 10
+RRhat = riskratiohat(a, b, c, d)
+pval = pvalue_rr_wald(a, b, c, d)
+ci = confint_rr_wald(a, b, c, d)
+label = """
+---------- B ----------
+Data:  $a  $b
+         $c $d
+RRhat: $(round(RRhat; digits=3))
+95% CI: $(round.(ci; digits=3))
+RR=1 P-val.: $(round(100pval; digits=2))%
+"""
+plot!(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label, ls=:dash)
+
+plot!(xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
+#plot!(ytick=0:0.1:1)
+vline!([1]; label="", c=:red, lw=0.8)
+plot!(xguide="RR (risk ratio)", yguide="P-value")
+plot!(size=(800, 300), legend=:outertopright)
+plot!(leftmargin=4Plots.mm, bottommargin=4Plots.mm)
+
+risk_ratio_example1;
 ```
 
 ```julia
-a, b, c, d = 14, 5, 5, 9
+risk_ratio_example2 = plot()
 
-@show riskratiohat(a, b, c, d)
-@show pvalue_rr_wald(a, b, c, d)
-@show confint_rr_wald(a, b, c, d)
+xlim = (0.8, 3.5)
 
-xlim = (0.5, 10)
-plot(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_rr_wald")
-```
+k=250
+a, b, c, d = 10000+k, 10000-k, 10000, 10000
+RRhat = riskratiohat(a, b, c, d)
+pval = pvalue_rr_wald(a, b, c, d)
+ci = confint_rr_wald(a, b, c, d)
+label = """
+---------- A ----------
+Data: $a  $b
+         $c $d
+RRhat: $(round(RRhat; digits=3))
+95% CI: $(round.(ci; digits=3))
+RR=1 P-val.: $(round(100pval; digits=2))%
+"""
+plot!(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label)
 
-```julia
-a, b, c, d = 14, 5, 5, 10
+a, b, c, d = 16, 4, 10, 10
+RRhat = riskratiohat(a, b, c, d)
+pval = pvalue_rr_wald(a, b, c, d)
+ci = confint_rr_wald(a, b, c, d)
+label = """
+---------- B ----------
+Data: $a  $b
+         $c $d
+RRhat: $(round(RRhat; digits=3))
+95% CI: $(round.(ci; digits=3))
+RR=1 P-val.: $(round(100pval; digits=2))%
+"""
+plot!(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label, ls=:dash)
 
-@show riskratiohat(a, b, c, d)
-@show pvalue_rr_wald(a, b, c, d)
-@show confint_rr_wald(a, b, c, d)
+plot!(xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
+#plot!(ytick=0:0.1:1)
+vline!([1]; label="", c=:red, lw=0.8)
+plot!(xguide="RR (risk ratio)", yguide="P-value")
+plot!(size=(800, 300), legend=:outertopright)
+plot!(leftmargin=4Plots.mm, bottommargin=4Plots.mm)
 
-xlim = (0.5, 10)
-plot(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_rr_wald")
-```
-
-```julia
-a, b, c, d = 14, 6, 5, 9
-
-@show oddsratiohat(a, b, c, d)
-@show pvalue_or_wald(a, b, c, d)
-@show confint_or_wald(a, b, c, d)
-
-xlim = (0.5, 80)
-plot(ω -> pvalue_or_wald(a, b, c, d; ω), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_or_wald")
-```
-
-```julia
-a, b, c, d = 110, 91, 90, 110
-
-@show oddsratiohat(a, b, c, d)
-@show pvalue_or_wald(a, b, c, d)
-@show confint_or_wald(a, b, c, d)
-
-xlim = (0.7, 3)
-plot(ω -> pvalue_or_wald(a, b, c, d; ω), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_or_wald")
-```
-
-```julia
-a, b, c, d = 1000, 930, 930, 1000
-
-@show oddsratiohat(a, b, c, d)
-@show pvalue_or_wald(a, b, c, d)
-@show confint_or_wald(a, b, c, d)
-
-xlim = (0.7, 3)
-plot(ω -> pvalue_or_wald(a, b, c, d; ω), xlim...; label="")
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_or_wald")
-```
-
-```julia
-xlim = (0.5, 10)
-
-@show a, b, c, d = 1000, 930, 930, 1000
-@show riskratiohat(a, b, c, d)
-@show pvalue_rr_wald(a, b, c, d)
-@show confint_rr_wald(a, b, c, d)
-plot(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label="")
-
-@show a, b, c, d = 10, 5, 4, 10
-@show riskratiohat(a, b, c, d)
-@show pvalue_rr_wald(a, b, c, d)
-@show confint_rr_wald(a, b, c, d)
-plot!(ρ -> pvalue_rr_wald(a, b, c, d; ρ), xlim...; label="")
-
-plot!(; xscale=:log10, xtick=logtick(; xlim), ytick=0:0.1:1)
-vline!([1]; label="", ls=:dot)
-title!("pvalue_rr_wald")
-plot!(size=(600, 400))
+risk_ratio_example2;
 ```
 
 ## データ全体の様子を適切なグラフ作画によって確認せよ！
@@ -688,19 +671,19 @@ __さらに, 箱ひげ図に限らず, グラフのもとになったデータ�
 
 * Itai Yanai & Martin Lercher, [A hypothesis is a liability](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w), Genome Biology volume 21, Article number: 231 (2020)
 
-で使われた擬似データセットである. 以下で使う図はこの論文からの引用になっている.
+で使われた擬似データセットのお話である. 以下で使う図はこの論文からの引用になっている.
 
 論文の著者たちは, 学生達に以下のように伝えた:
 
->データセットには, 1786人のボディマス指数(BMI)とある特定の日にそれぞれが歩いた歩数(steps)が, 男性用と女性用の2つのファイルに含まれている.
+>データセットには1786人分のボディマス指数(BMI)とある特定の日にそれぞれが歩いた歩数(steps)が記録されており, 男性と女性について2つのファイル分けて格納されている.
 
-学生に私たデータセットの様子は以下の通り:
+学生に配布したデータセットの様子は以下の通り:
 
 <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w/figures/1"><img src="https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/images/gorilla_a.png" width=300></a>
 
 そして, 学生を次の2つのグループに分けた.
 
-1つ目の「仮説あり」の(hypthothesis-focusedの)グループの学生は, 以下の3つの仮説を検討するように求めた
+1つ目の「仮説あり」の(hypthothesis-focusedの)グループの学生には, 以下の3つの仮説を検討するように求めた.
 
 (i) 男性と女性の平均歩数に統計的に有意な差があること
 (ii) 女性では歩数とBMIの間には負の相関があること
@@ -708,18 +691,18 @@ __さらに, 箱ひげ図に限らず, グラフのもとになったデータ�
 
 さらに, データセットから結論できることが他にあるかどうかも質問した.
 
-2つ目の「仮説なし」の(hypothesis-freeの)グループの学生には単に「データセットから何を結論付けますか?」と聞いた.
+2つ目の「仮説なし」の(hypothesis-freeの)グループの学生には, 単に「データセットから何を結論付けますか?」と質問した.
 
 その結果は以下の通り.
 
 <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02133-w/figures/1"><img src="https://raw.githubusercontent.com/genkuroki/Statistics/master/2022/images/gorilla_c.png" width=400></a>
 
-この表を翻訳すると以下の通り:
+この表の日本語訳:
 
 $$
 \begin{array}{|c|c|c|}
 \hline
-& \text{ゴリラは発見されなかった} & \text{ゴリラが発見された} \\
+& \text{ゴリラを発見できなかった} & \text{ゴリラを発見した} \\
 \hline
 \text{仮説ありグループ} & 14 & 5 \\
 \hline
@@ -728,7 +711,7 @@ $$
 \end{array}
 $$
 
-「ゴリラは発見されなかった」と「ゴリラが発見された」とは一体どういう意味なのだろうか?
+「ゴリラを発見できなかった」と「ゴリラを発見した」とは一体どういう意味なのだろうか?
 
 その理由はデータの散布図を描くとわかる!
 
@@ -1194,7 +1177,9 @@ __注意:__ 「ベイズ統計では仮説が正しい確率を扱える」と�
 
 P値以外の他の条件も確認する必要がある.
 
-例えば, データから予想される薬Aの効き目は実生活においては無視できるほど些細な大きさなのに, P値が $\alpha$ 未満になる場合があり得る. その他にも注意するべきことが沢山ある.
+例えば, データから予想される薬Aの効き目は実生活においては無視できるほど些細な大きさなのに, P値が $\alpha$ 未満になる場合があり得る. 
+
+その他にも注意するべきことが沢山ある.
 
 * データの数値が偏っている可能性も心配する必要がある.
 * 使用した統計モデルが不適切な可能性にも配慮する必要がある.
@@ -1215,6 +1200,30 @@ P値以外の他の条件も確認する必要がある.
 
 ある研究においてP値が有意水準 $\alpha$ 以上になったとしても, その後の研究によって「薬Aには十分な大きさの効果がある」という結論が出る可能性があり得る.
 
+```julia
+risk_ratio_example1
+```
+
+上のグラフは仮想的なデータに関するP値函数のプロットであり, 薬Aと薬Bの効き目を推定しようとしている状況を想定している.
+
+「薬Aを処方してもリスクは変わらない」という仮説のP値は1.24%で, 有意水準5%で棄却される.  しかし, リスクはほんの少ししか減らないように見える.
+
+「薬Bを処方してもリスクは変わらない」という仮説のP値は6.69%で, 有意水準5%で棄却されない.  しかし, リスクは大きく減る可能性がある. 薬Bについては, 効果の大きさを期待しつつ判断を保留する必要がある.
+
+このようなときに, 「リスクは変わらない」という仮説のP値が5%を切ったかどうかだけで, 薬Aには価値があり, 薬Bには価値がないと判断することは誤りである.
+
+```julia
+risk_ratio_example2
+```
+
+上のグラフも仮想的なデータに関するP値函数のプロットであり, 物質Aと物質Bにさらされたときのリスクの大きさを推定している状況を想定している.
+
+「物質Aにさらされてもリスクは変わらない」という仮説のP値は1.24%で, 有意水準5%で棄却される. しかし, 物質Aにさらされることによってリスクは少ししか増えないと考えられる.
+
+「物質Bにさらされてもリスクは変わらない」という仮説のP値は6.01%で, 有意水準5%で棄却されない.  しかし, 物質Bにさらされることによってリスクが大きく増える可能性があるかもしれない.  物質Bについては, さらされることのリスクの大きさに注意しながら, 判断を保留し, 必要ならば研究を継続する必要がある.
+
+このようなときに, 「さらされてもリスクは変わらない」という仮説のP値だけを見て, 物質Aにさらされることによって増えるリスクは気にする必要はあるが, 物質Bについては気にする必要はないと考えることは明らかに間違っている.
+
 
 #### すべてを正直に報告しなければいけない
 
@@ -1222,7 +1231,7 @@ P値以外の他の条件も確認する必要がある.
 
 薬A,B,C,…のすべてに効き目がゼロ(害もゼロ)であるとき, その中の $\alpha=5\%$ についてはデータから計算したP値が $\alpha=5\%$ 未満になる.  有意水準 $\alpha=5\%$ という閾値はかなり緩く, 色々試してみれば容易にP値を $\alpha=5\%$ 未満にできる.
 
-都合の良い結果だけを選択的に報告してしまうと, その研究結果がどれだけどのように信頼できるかが全く分からなくなってしまう.
+都合の良い結果だけを選択的に報告してしまうと, その研究結果がどれだけどのように信頼できるかが分からなくなってしまう.
 
 自分が所属する研究室のボスが部下に対して, 「統計的に有意になった結果のみを報告すればよい」と指示している場合には, 研究不正を意識的に指示している疑いがあるので, 適切な窓口に相談した方が良いと思われる.
 
@@ -1247,11 +1256,11 @@ P値に関するASA声明の翻訳者によるP値に関する解説動画が次
 
 * 佐藤俊哉, [仮説検定とP値の誤解](https://youtu.be/vz9cZnB1d1c), 2017年10月19日
 
-分かり難いとよく言われている「信頼区間」については, 検定(もしくはP値函数)と信頼区間の表裏一体性に基いて信頼区間について理解しようとすることが正しい理解の方針で思われる.  検定と信頼区間の表裏一体性については, すぐ上の動画の48:37からの解説にある.
+分かり難いとよく言われている「信頼区間」については, 検定(もしくはP値函数)と信頼区間の表裏一体性に基いて信頼区間について理解しようとすることが正しい理解の方針で思われる.  検定と信頼区間の表裏一体性については, すぐ上の動画の48:37以降で解説されている.
 
 可能ならば以下の論文も参照せよ:
 
-* Valentin Amrhein, Sander Greenland.  Discuss practical importance of results based on interval estimates and p-value functions, not only on point estimates and null p-values.  First Published June 3, 2022.  \[[DOI](https://doi.org/10.1177%2F02683962221105904)\]
+* Valentin Amrhein, Sander Greenland.  Discuss practical importance of results based on interval estimates and p-value functions, not only on point estimates and null p-values.  First Published June 3, 2022.  \[[doi](https://doi.org/10.1177%2F02683962221105904)\]
 
 この一連のノートの内容はこの論文が出る前に計画されていたのであるが, P値の使い方については内容的に非常に近いものになっている.
 

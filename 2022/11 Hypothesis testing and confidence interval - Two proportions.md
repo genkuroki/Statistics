@@ -244,6 +244,12 @@ end
 # A simple alternative confidence interval for the difference between two proportions
 # Controlled Clinical Trials, Volume 25, Issue 1, February 2004, Pages 3-12
 # https://doi.org/10.1016/j.cct.2003.08.010
+#
+# Zou-Donnerの信頼区間に対応するP値函数の実装については
+#
+# https://github.com/genkuroki/public/blob/main/0033/probability%20of%20alpha%20error%20of%20Zou-Donner.ipynb
+#
+# を参照せよ.
 
 riskdiffhat(a, b, c, d) = safediv(a, a+b) - safediv(c, c+d)
 
@@ -1520,6 +1526,12 @@ $p-q$ の $95\%$ 信頼区間: \[0.001475, 0.03608\]
 の Chapter 14. Instroduction to Categorical Statistics の Two Study Groups: Large-Sample Methods, pp.299-300 に書いてある. そこでは, 次の文献が引用されている:
 
 * Guangyong Zou and Allan Donner, A simple alternative confidence interval for the difference between two proportions, Controlled Clinical Trials, Volume 25, Issue 1, February 2004, Pages 3-12. https://doi.org/10.1016/j.cct.2003.08.010
+
+この論文の方法による比率の差の信頼区間と対応するP値函数の実装例が
+
+* [probability of alpha error of Zou-Donner.ipynb](https://github.com/genkuroki/public/blob/main/0033/probability%20of%20alpha%20error%20of%20Zou-Donner.ipynb)
+
+にある.  そこでは比率の差に関するWald型P値函数とZou-Donner型P値函数の第一種の過誤の確率を比較している.  確かにZou-Donnerの方法の方が優れているようだ.
 
 
 ## オッズ比とリスク比に関するWald版のP値と信頼区間の必修計算問題
@@ -3410,9 +3422,10 @@ __注意:__ これは乱数生成による Monte Carlo 法によるP値の計算
 
 ```julia
 """Bayes版P値函数達を作る函数"""
-function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6)
-    p = rand(Beta(a+1, b+2), M)
-    q = rand(Beta(c+1, d+2), M)
+function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6, conjprior=(1, 1))
+    α, β = conjprior
+    p = rand(Beta(α+a, β+b), M)
+    q = rand(Beta(α+c, β+d), M)
     ω = @. (p*(1-q))/((1-p)*q)
     ρ = @. p/q
     ecdf_OR = ecdf(ω)
@@ -3423,23 +3436,25 @@ function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6)
 end
 
 function plot_pvalue_functions(a, b, c, d;
-        xlim=Tuple(confint_or_pearson_chisq(a, b, c, d; α=1e-3)), kwargs...)
-    pvalue_or_bayes, pvalue_rr_bayes = make_pvalue_or_rr_bayes(a, b, c, d)
+        xlim_or=Tuple(confint_or_pearson_chisq(a, b, c, d; α=1e-3)),
+        xlim_rr=Tuple(confint_rr_pearson_chisq(a, b, c, d; α=1e-3)),
+        M=10^6, conjprior=(1, 1), kwargs...)
+    pvalue_or_bayes, pvalue_rr_bayes = make_pvalue_or_rr_bayes(a, b, c, d; M, conjprior)
 
     P = plot()
-    plot!(ω -> pvalue_or_bayes(ω), xlim...; label="Bayesian")
-    plot!(ω -> pvalue_or_wald(a,b,c,d; ω), xlim...; label="Wald", ls=:dashdot)
-    plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), xlim...; label="Pearson χ²", ls=:dash)
-    #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim...; label="Fisher (Sterne)")
-    #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim...; label="Fisher (CP)")
+    plot!(ω -> pvalue_or_bayes(ω), xlim_or...; label="Bayesian")
+    plot!(ω -> pvalue_or_wald(a,b,c,d; ω), xlim_or...; label="Wald", ls=:dashdot)
+    plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), xlim_or...; label="Pearson χ²", ls=:dash)
+    #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim_or...; label="Fisher (Sterne)")
+    #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim_or...; label="Fisher (CP)")
     plot!(; xguide="OR = ω", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
 
     Q = plot()
-    plot!(ρ -> pvalue_rr_bayes(ρ), xlim...; label="Bayesian")
-    plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), xlim...; label="Wald", ls=:dashdot)
-    plot!(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), xlim...; label="Pearson χ²", ls=:dash)
+    plot!(ρ -> pvalue_rr_bayes(ρ), xlim_rr...; label="Bayesian")
+    plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), xlim_rr...; label="Wald", ls=:dashdot)
+    plot!(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), xlim_rr...; label="Pearson χ²", ls=:dash)
     plot!(; xguide="RR = ρ", yguide="P-value")
     plot!(; ytick=0:0.1:1)
     title!("a, b, c, d = $a, $b, $c, $d")
@@ -3459,6 +3474,18 @@ plot_pvalue_functions(a, b, c, d)
 
 このように, Bayes版P値函数は通常のWald版およびPearsonのχ²検定版のP値函数によく一致している.
 
+
+以下のように事前分布は $\Beta(0.5, 0.5)$ にした方がよく一致する.
+
+```julia
+a, b, c, d = 10, 3, 5, 9
+plot_pvalue_functions(a, b, c, d; conjprior=(1, 1))
+```
+
+```julia
+a, b, c, d = 10, 3, 5, 9
+plot_pvalue_functions(a, b, c, d; conjprior=(0.5, 0.5))
+```
 
 ### Bayes版P値函数の視覚化の別の例
 
