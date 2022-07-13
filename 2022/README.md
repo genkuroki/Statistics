@@ -372,7 +372,16 @@ __作成された動画__
 * [pdf]()
 \[[download]()\]
 
-### 14 例
+### 14 例: 回帰
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/14%20Regression.pdf)\]
+
+__定義された確率分布__
+
+* 多変量正規分布: $\MvNormal(\mu, \Sigma)$
 
 ### 15 例
 
@@ -380,8 +389,8 @@ __作成された動画__
 
 * [Jupyter notebook]()
 \[[nbviewer]()\]
-* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.pdf)
-\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/13%20How%20to%20avoid%20misuse.pdf)\]
+* [pdf]()
+\[[download]()\]
 
 __演習用サンプル__
 
