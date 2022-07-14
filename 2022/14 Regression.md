@@ -97,7 +97,7 @@ $
 \newcommand\tr{\op{tr}}
 \newcommand\diag{\op{diag}}
 \newcommand\pred{\op{pred}}
-\$
+$
 
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
 
