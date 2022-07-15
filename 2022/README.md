@@ -348,13 +348,13 @@ __Julia言語を使うためのヒント__
 
 [上のノートブック](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb) の中の
 
-<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/2022-07-15-01.png" height="400">
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/2022-07-15-01.png">
 
 の部分を直接 Julia ([download](https://julialang.org/downloads/))で実行するためには以下のようにすればよい.
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/2022-07-15-02.png">
 
-注意するべきポイントは `using Distributions, Roots` を忘れないことである.
+__注意するべきポイントは `using Distributions, Roots` を忘れないことである.__
 
 しかし, どのくらい前もって `using` しておけばよいのか分かり難いので, 上のノートブックの上の方にある `using` 達をすべて前持って実行しておくという手もある. `using` には少し時間が取られるので, そのようにしたJuliaの窓をそのまま閉じずに放置しておき, 超高級電卓として利用し続けると便利だと思われる.
 
