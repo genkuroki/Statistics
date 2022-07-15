@@ -111,7 +111,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#データ" data-toc-modified-id="データ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>データ</a></span></li><li><span><a href="#モデルの構成要素" data-toc-modified-id="モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>モデルの構成要素</a></span></li><li><span><a href="#デザイン行列(計画行列,-design-matrix)の定義" data-toc-modified-id="デザイン行列(計画行列,-design-matrix)の定義-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列(計画行列, design matrix)の定義</a></span></li><li><span><a href="#統計モデルの記述" data-toc-modified-id="統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>統計モデルの記述</a></span></li><li><span><a href="#最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-χ²分布" data-toc-modified-id="問題:-χ²分布-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題: χ²分布</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#データ" data-toc-modified-id="データ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>データ</a></span></li><li><span><a href="#モデルの構成要素" data-toc-modified-id="モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>モデルの構成要素</a></span></li><li><span><a href="#デザイン行列-(計画行列,-design-matrix)" data-toc-modified-id="デザイン行列-(計画行列,-design-matrix)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列 (計画行列, design matrix)</a></span></li><li><span><a href="#正規分布による統計モデルの記述" data-toc-modified-id="正規分布による統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>正規分布による統計モデルの記述</a></span></li><li><span><a href="#正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-多変量正規分布とχ²分布の関係" data-toc-modified-id="問題:-多変量正規分布とχ²分布の関係-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題: 多変量正規分布とχ²分布の関係</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -261,20 +261,23 @@ $$
 とおく. このとき,
 
 $$
-\sum_{j=1}^r \beta_j f_j(x_i) = f(x_i)^T \beta.
+f(x_i)^T \beta = \sum_{j=1}^r \beta_j f_j(x_i)
 $$
 
-ここで, $f(x_i)^T$ は縦ベクトル $f(x_i)$ を転置して得られる横ベクトルであるとする.
+ここで, $f(x_i)^T$ は縦ベクトル $f(x_i)$ を転置して得られる横ベクトルを意味する.
 
 さらに, 分散パラメータ $\sigma^2 > 0$ が与えられているとする. 
 
 
-### デザイン行列(計画行列, design matrix)の定義
+### デザイン行列 (計画行列, design matrix)
 
 デザイン行列 $X$ を次のように定める:
 
 $$
-X =
+\begin{aligned}
+X &=
+\begin{bmatrix} f(x_1) & f(x_2) & \cdots & f(x_n) \end{bmatrix}^T
+\\ &=
 \begin{bmatrix} f(x_1)^T \\ f(x_2)^T \\ \vdots \\ f(x_n)^T \\ \end{bmatrix} =
 \begin{bmatrix}
 f_1(x_1) & f_2(x_1) & \cdots & f_r(x_1) \\
@@ -282,7 +285,10 @@ f_1(x_2) & f_2(x_2) & \cdots & f_r(x_2) \\
 \vdots & \vdots & \ddots & \vdots \\
 f_1(x_n) & f_2(x_n) & \cdots & f_r(x_n) \\
 \end{bmatrix}.
+\end{aligned}
 $$
+
+すなわち, 以上の文脈において, デザイン行列 $X$ は $r$ 次元の縦ベクトル $f(x_i)$ 達を横に $n$ 個並べてできる行列の転置として定義され, $n\times r$ 行列になる.  $r<n$ と仮定していたので, $X$ は縦方向に長い行列になる.
 
 このとき,
 
@@ -293,14 +299,16 @@ X\beta =
 \right]_{i=1}^n.
 $$
 
-以下では簡単のため, デザイン行列 $X$ のランクは可能な最大値の $r$ であると仮定する.
+以下では簡単のため, デザイン行列 $X$ のランクは可能な最大値である $r$ であると仮定する. (数値的にはほとんどの場合にそうなる.)
 
-このとき $\R^n$ の部分空間 $X\R^r$ の次元は $r$ になり, 行列 $X$ の定める線形写像 $X:\R^r\to\R^n$ は単射になる.
+このとき $\R^n$ の部分空間 $X\R^r = \{\,X\beta\mid\beta\in\R^r\,\}$ の次元は $r$ になり, 行列 $X$ の定める線形写像 $X:\R^r\to\R^n$, $\beta\mapsto X\beta$ は単射になる.
+
+さらに, そのとき $r\times r$ 行列 $X^T X$ が可逆になることも示せる. ここで $X^T$ は $X$ の転置を表す.
 
 
-### 統計モデルの記述
+### 正規分布による統計モデルの記述
 
-$y$ に関する次の確率密度函数を統計モデルとして採用する:
+統計モデルとして, $y$ に関する次の確率密度函数を採用する:
 
 $$
 p(y|X,\beta,\sigma^2) =
@@ -308,20 +316,20 @@ p(y|X,\beta,\sigma^2) =
 \exp\left(-\frac{1}{2\sigma^2}\|y - X\beta\|^2\right).
 $$
 
-ここで,
+ここで, $\|\ \|$ は通常のEuclidノルム(成分の2乗の和の平方根)を意味する:
 
 $$
 \|y - X\beta\|^2 = 
 \sum_{i=1}^n \left(y_i - \sum_{j=1}^r \beta_j f_j(x_i) \right)^2.
 $$
 
-$Y=[Y_i]_{i=1}^n$ をこの統計モデルに従う確率変数とすると,
+$Y=[Y_i]_{i=1}^n$ をこの統計モデルに従うベクトル値確率変数とすると,
 
 $$
-Y = X\beta + \eps.
+Y = X\beta + \eps
 $$
 
-ここで, $\eps = [\eps_i]_{i=1}^n$ と書くとき, $\eps_1,\ldots,\eps_n$ はそれぞれが平均 $0$, 分散 $\sigma^2$ の正規分布に従う独立な確率変数達になる.  ゆえに,
+と書ける. ここで, ベクトル値確率変数 $\eps = [\eps_i]_{i=1}^n$ の成分達 $\eps_1,\ldots,\eps_n$ はそれぞれが平均 $0$, 分散 $\sigma^2$ の正規分布に従う独立な確率変数達になる.  ゆえに,
 
 $$
 E[Y] = X\beta, \quad E[\eps \eps^T] = \sigma^2 I.
@@ -329,14 +337,20 @@ $$
 
 ここで $I$ は $n$ 次の単位行列を表す.
 
-このモデル内では, 仮想的なデータの数値 $Y_i$ が $f_j(x_i)$ 達の一次結合 $\sum_{j=1}^r \beta_j f_j(x_i)$ で近似され, それらの差が平均 $0$, 分散 $\sigma^2$ の正規分布に従ってランダムに決まっている.
+このモデル内では, 仮想的なデータの数値 $Y_i$ が $f_j(x_i)$ 達の一次結合 $\sum_{j=1}^r \beta_j f_j(x_i)$ で近似され, それらの差
 
-<!-- #region -->
-### 最尤法から最小二乗法による線形回帰が得られること
+$$
+Y_i - \sum_{j=1}^r \beta_j f_j(x_i)
+$$
 
-上の統計モデルのデータの数値 $x,y$ に関する尤度函数 $(\beta,\sigma^2)\mapsto p(y|X,\beta,\sigma^2)$ を最小化するパラメータ $\beta, \sigma^2$ の値から, 最小二乗法が得られることを説明しよう.
+が平均 $0$, 分散 $\sigma^2$ の正規分布に従ってランダムに決まっていると考える.
+
+__注意:__ $Y$ はベクトル値確率変数だが, デザイン行列 $X$ は確率変数では __ない__.
 
 
+### 正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること
+
+上の統計モデルのデータの数値 $x,y$ に関する尤度函数 $(\beta,\sigma^2)\mapsto p(y|X,\beta,\sigma^2)$ を最小化するパラメータ $\beta, \sigma^2$ の値から, 最小二乗法が得られることを説明しよう.  (デザイン行列 $X$ は $x$ から決まる.)
 
 尤度函数の対数の $-2$ 倍は次の形になる:
 
@@ -347,29 +361,55 @@ $$
 
 これを最小にする $\beta,\sigma^2$ を求めよう.
 
-$y$ と $X\beta$ の距離の2乗 $\|y-X\beta\|^2$ を最小にする $X\beta$ は $y\in\R^n$ の部分空間 $X\R^r$ への直交射影 $\yhat$ になる.
+データの数値として与えられた $y$ とパラメータ $\beta$ に依存する $X\beta$ の距離の2乗 $\|y-X\beta\|^2$ を最小にする $X\beta$ はベクトル $y\in\R^n$ の部分空間 $X\R^r$ への直交射影 $\yhat$ になる.
 
-$X:\R^r\to\R^n$ は単射なので $\yhat=X\betahat$, $\betahat\in\R^r$ と一意に表される.
+そのとき, $X:\R^r\to\R^n$ は単射なので $\yhat=X\betahat$, $\betahat\in\R^r$ と一意に表される.
 
-$\sigmahat^2$ を $\sigmahat^2 = \|y-\yhat\|^2/n = \|y-X\betahat\|^2/n$ と定める. このとき,
+以下の図を見よ.
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/orthogonal_projection.jpg" width=80%>
+
+$\sigmahat^2$ を $y$ とその直交射影 $\yhat$ の距離の2乗と定める:
+
+$$
+\sigmahat^2 =
+\frac{1}{n}\|y-\yhat\|^2 =
+\frac{1}{n}\|y-X\betahat\|^2.
+$$
+
+このとき,
 
 $$
 L(\betahat, \sigma^2) =
 \frac{n\sigmahat^2}{\sigma^2} + n\log\sigma^2 + n\log(2\pi).
 $$
 
-を最小化する $\sigma^2$ は $\sigma^2 = \sigmahat^2$ になることを確認できる. (一般に 函数 $\sigma^2\mapsto a^2/\sigma^2 + \log\sigma^2$ は $\sigma^2=a^2$ で最小になる.)
+を最小化する $\sigma^2$ は $\sigma^2 = \sigmahat^2$ になることを確認できる.
 
-$y$ の $X\R^r$ への直交射影 $\yhat = X\betahat$ の具体的な形を求めよう.
+(一般に $\sigma^2 > 0$ の函数 $\sigma^2\mapsto a/\sigma^2 + \log\sigma^2$ ($a>0$) は $\sigma^2=a$ で最小になる.  実際, $f(s) = a/s+log s$ について $f'(s)=(s-a)/s^2$ なので, $s<a$ のとき $f'(s)<0$ で $f(s)$ は単調減少し, $s>a$ のとき $f'(s)>0$ で $f(s)$ は単調増加する. ゆえに $f(s)$ は $s=a$ で最小になる.)
 
-$y - \yhat = y - X\betahat$ は $X\R^r$ と直交するので,
+```julia
+plot(s -> 3/s + log(s), 2, 4; label="f(s) = 3/s + log(s)", xguide="s")
+```
+
+ベクトル $y$ の部分空間 $X\R^r$ への直交射影 $\yhat = X\betahat$ の具体的な形を求めよう.
+
+ベクトル $y - \yhat = y - X\betahat$ は部分空間 $X\R^r$ と直交するので, 任意の $\gamma\in\R^r$ について
+
+$$
+0 = (X\gamma, y-X\betahat) =
+(X\gamma)^T(y - X\betahat) =
+\gamma^T X^T(y - X\betahat).
+$$
+
+ここで, $(\ ,\ )$ は通常の内積(成分の積の和)を表す. ベクトル $\gamma\in\R^r$ は任意なので, 
 
 $$
 X^T(y - X\betahat) = 0, \quad
 \text{すなわち}\quad X^T X \betahat = X^T y.
 $$
 
-ゆえに,
+$X$ のランクが可能な最大値 $r$ になると仮定していたので, $X^T X$ は可逆になるのであった. ゆえに
 
 $$
 \betahat = (X^T X)^{-1} X^T y, \quad
@@ -384,10 +424,14 @@ $$
 
 を合わせると, 尤度函数 $(\beta,\sigma^2)\mapsto p(y|X,\beta,\sigma^2)$ を最小化するパラメータ値が得られる.
 
+これが正規分布で記述された統計モデルの最尤法の解である.
+
 $x,y$ から $\betahat = (X^T X)^{-1} X^T y$ を求めて, $\beta=\betahat$ とおくと, 二乗和 $\|y - X\beta\|$ が最小化されるので, 回帰係数 $\beta$ をその $\betahat$ として求める方法を __最小二乗法__ と呼ぶ.
 
-$y-\yhat = y - X\betahat$ を __残差__ と呼ぶ.
-<!-- #endregion -->
+$y-\yhat = y - X\betahat$ を __残差__ (residual error)と呼ぶ.
+
+__注意:__ 以上の議論によって, 最小二乗法は本質的に直交射影を作る操作であることも分かる. このように内積に関する線形代数を理解していれば, その中に最小二乗法の理論も含まれていると考えることができる. 線形代数は普遍的に役に立つ道具である.
+
 
 ### βとσ²の不偏推定量
 
@@ -397,7 +441,13 @@ $$
 y = X\beta + e, \quad E[e] = 0, \quad E[e e^T] = \sigma^2 I.
 $$
 
-これはベクトル値($\R^n$ 値)の確率変数 $e = y - X\beta$ に関する仮定になっている.  $E[e e^T] = \sigma^2 I$ という条件は $e$ の分散共分散行列が $\sigma^2 I$ になることを意味している.  このとき, $y$ の平均と分散共分散行列はそれぞれ次のようになる:
+このベクトル値確率変数 $y$ を使うことは, 正規分布で記述された統計モデルの設定を大幅にゆるめることを意味している.  この節ではそのような状況を扱う.
+
+上の条件中の $E[e e^T] = \sigma^2 I$ の左辺は $e$ の分散共分散行列であることに注意せよ.
+
+(一般に $n$ 次元ベクトル値確率変数 $V=[V_i]_{i=1}^n$ について, $\mu = E[V]$ のとき, $n\times n$ の対称行列 $E[(V-\mu)(V-\mu)^T]$ を $V$ の分散共分散行列 (variance-covariance matrix) と呼ぶ.  その $(i,i)$ 成分は $V_i$ の分散になっており, $i\ne j$ に関する $(i,j)$ 成分は $V_i$ と $V_j$ の共分散になっている.)
+
+上の仮定の下で, $y$ の平均と分散共分散行列はそれぞれ次のようになる:
 
 $$
 E[y] = X\beta, \quad
@@ -421,7 +471,7 @@ $$
 
 以下では $\sigma^2$ の不偏推定量を構成する.
 
-$\betahat$ の分散共分散行列は
+ベクトル値確率変数 $\betahat = (X^T X)^{-1} X^T y$ の分散共分散行列は
 
 $$
 \betahat - \beta = (X^T X)^{-1} X^T(X\beta + e) - \beta =
@@ -456,26 +506,40 @@ $$
 
 $$
 E[(X\betahat - X\beta)(X\betahat - X\beta)^T] =
+X E[(\betahat - \beta)(\betahat - \beta)^T]X^T =
 \sigma^2 X(X^T X)^{-1}X^T.
 $$
 
-$X(X^T X)^{-1}X^T$ は $\R^n$ から $X\R^r$ への直交射影を与える行列であった. (対称行列になっていることにも注意せよ.)
+2つ目の等号で, 上で示した $E[(\betahat - \beta)(\betahat - \beta)^T] = \sigma^2 (X^T X)^{-1}$ を使った.
 
-残差 $y - X\betahat$ (これの期待値は $0$ になる)の分散共分散行列は,
+$X(X^T X)^{-1}X^T$ は $\R^n$ からその部分空間 $X\R^r$ への直交射影を与える行列であった. (特に対称行列でかつ二乗しても不変であることにも注意せよ.)
+
+残差 $y - X\betahat$ の分散共分散行列は,
 
 $$
+\begin{aligned}
+&
 y - X\betahat = y - X(X^T X)^{-1}X^T y = (I - X(X^T X)^{-1}X^T)y
+\\ &
+E[y - X\betahat] = E[y] - X(X^T X)^{-1}X^T E[y] =
+X\beta - X(X^T X)^{-1}X^T X\beta = 0
+\end{aligned}
 $$
 
 より, 次のように計算される:
 
 $$
-E[(y - X\betahat)(y - X\betahat)^T] =
-\sigma^2(I - X(X^T X)^{-1}X^T)(I - X(X^T X)^{-1}X^T)^T =
+\begin{aligned}
+E[(y - X\betahat)(y - X\betahat)^T] &=
+(I - X(X^T X)^{-1}X^T)E[yy^T](I - X(X^T X)^{-1}X^T)^T
+\\ &=
+\sigma^2(I - X(X^T X)^{-1}X^T)(I - X(X^T X)^{-1}X^T)^T
+\\ &=
 \sigma^2(I - X(X^T X)^{-1}X^T).
+\end{aligned}
 $$
 
-ここで, $E[yy^T]=\sigma^2 I$ および, $X(X^T X)^{-1}X^T$ が $\R^n$ から $X\R^r$ への直交射影を与える行列であったことから, $I - X(X^T X)^{-1}X^T$ が $\R^n$ から $X\R^r$ の直交補空間への射影を与える行列であること(特に対称行列でかつ二乗しても不変なこと)を使った.
+ここで, $E[yy^T]=\sigma^2 I$ および, $X(X^T X)^{-1}X^T$ が $\R^n$ から $X\R^r$ への直交射影を与える行列であったことから, $I - X(X^T X)^{-1}X^T$ が $\R^n$ から $X\R^r$ の直交補空間への射影を与える行列になり, 特に対称行列でかつ二乗しても不変になることを使った.
 
 トレースの中で行列の順序を巡回的に回してもトレースの値は不変なので,
 
@@ -493,9 +557,16 @@ $$
 を使うと,
 
 $$
-E[\|y - X\betahat\|^2] = \sigma^2\tr(I - X(X^T X)^{-1}X^T) =
+\begin{aligned}
+E[\|y - X\betahat\|^2] &=
+\tr\left(E[(y - X\betahat)(y - X\betahat)^T]\right)
+\\ &=
+\sigma^2\tr(I - X(X^T X)^{-1}X^T) =
 (n-r)\sigma^2.
+\end{aligned}
 $$
+
+2つめの等号で上で示した $E[(y - X\betahat)(y - X\betahat)^T] = \sigma^2(I - X(X^T X)^{-1}X^T)$ を用い, 3つ目の等号で上で示した $\tr(X(X^T X)^{-1}X^T) = r$ を使った.
 
 ゆえに,
 
@@ -511,14 +582,14 @@ $$
 
 すなわち, $\shat^2 = \|y - X\betahat\|^2/(n-r)$ は $\sigma^2$ の不偏推定量である.
 
-__注意:__ 分散 $\sigma^2$ の不偏推定量を得るためには $n$ ではなく, $n-r$ で割らなければいけない. この結果は $r=1$, $f_1(x)=1$ のとき(この場合には $x_i$ に $f_1(x_i)=1$ に依存しないので $x_i$ は無用になる), 独立同分布確率変数達 $y_1,\ldots,y_n$ の不偏分散が $n-1$ で割ることによって構成されることを含んでいる. 次の節を見よ.
+$\sigma^2$ の不偏推定量を作るためには残差の二乗和 $\|y - X\betahat\|^2$ を $n$ ではなく, $n-r$ で割らなければいけない.
 
 
 ### 例: 平均の推定の場合
 
 線形回帰は平均の推定を含む.
 
-$r=1$ とし, $\beta_i$ のインデックス $i$ を $1$ とせずに $0$ と書くことにし, 
+$r=1$ とし, $f_j(x_i)$ と $\beta_j$ のインデックス $j$ として $1$ ではなく $0$ を使うことにし, 
 
 $$
 f_0(x_i)=1, \quad
@@ -526,14 +597,14 @@ f_0(x_i)=1, \quad
 \betahat_0 = \muhat
 $$
 
-の場合について考える. このとき, 
+の場合について考える. このとき, 計画行列 $X$ は $n$ 次元縦ベクトルになり,
 
 $$
 X = \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \\ \end{bmatrix}, \quad
 X\beta = \begin{bmatrix} \mu \\ \mu \\ \vdots \\ \mu \\ \end{bmatrix}.
 $$
 
-ゆえに, $X^T X = n$, $X^T y=\sum_{i=1}^n y_i$ より,
+ゆえに, $X^T X = n$, $X^T y=\sum_{i=1}^n y_i$ となるので, 
 
 $$
 \muhat = (X^T X)^{-1}X^T y = \frac{1}{n}\sum_{i=1}^n y_i =: \ybar.
@@ -545,16 +616,20 @@ $$
 \sigmahat^2 = \frac{1}{n}\|y-X\betahat\| = \frac{1}{n}\sum_{i=1}^n (y_i - \ybar)^2.
 $$
 
-これは, $\sigma^2$ の不偏推定量になるように $n-1$ で割らずに, $n$ で割った場合の標本分散になっている.  前節で示したように $\sigma^2$ の不偏推定量 $\shat^2$ は, $n-1$ で割ることによって次のようにして得られる:
+これは, $\sigma^2$ の不偏推定量になるように $n-1$ で割らずに, $n$ で割って作った場合の標本分散になっている. 
+
+前節で示したように $\sigma^2$ の不偏推定量 $\shat^2$ は $n-r=n-1$ で割ることによって得られる:
 
 $$
 \shat^2 = \frac{1}{n-1}\|y-X\betahat\| = \frac{1}{n-1}\sum_{i=1}^n (y_i - \ybar)^2.
 $$
 
+この結果は不偏分散の話の線形回帰の理論を使った再現になっている.
+
 
 ### 例: 単回帰の場合
 
-$r=2$ とし, $\beta_i$ のインデックス $i$ を $1,2$ とせずに $0,1$ とすることにし, 
+$r=2$ とし, $f_j(x_i)$ と $\beta_j$ のインデックス $j$ として $1,2$ ではなく $0,1$ を使うことにし, 
 
 $$
 f_0(x_i)=1, \quad
@@ -575,16 +650,27 @@ $$
 \end{aligned}
 $$
 
-このとき, 偏補正をしていない $x_i$ 達と $y_i$ 達の標本分散と標本共分散はそれぞれ次のように書ける:
+このとき, $x_i$ 達と $y_i$ 達の不変補正をしていない標本分散と標本共分散はそれぞれ次のように書ける:
 
 $$
-\sigmahat_x^2 = \overline{x^2} - \xbar^2, \quad
-\sigmahat_y^2 = \overline{y^2} - \ybar^2, \quad
-\sigmahat_{xy} = \overline{xy} - \xbar\ybar.
+\begin{aligned}
+&
+\sigmahat_x^2 =
+\frac{1}{n}\sum_{i=1}^n(x_i - \xbar)^2 =
+\overline{x^2} - \xbar^2,
+\\ &
+\sigmahat_y^2 =
+\frac{1}{n}\sum_{i=1}^n(y_i - \ybar)^2 =
+\overline{y^2} - \ybar^2,
+\\ &
+\sigmahat_{xy} = 
+\frac{1}{n}\sum_{i=1}^n(x_i - \xbar)(y_i - \ybar) =
+\overline{xy} - \xbar\ybar.
+\end{aligned}
 \tag{$*$}
 $$
 
-デザイン行列 $X$ については, 次が成立する:
+このとき, デザイン行列 $X$ については, 以下が成立していることをちょっとした計算で確認できる(自分で確認してみよ):
 
 $$
 \begin{alignedat}{2}
@@ -628,7 +714,8 @@ $$
 が成立していることに注意すれば, 
 
 $$
-\betahat = [\betahat_j]_{j=0}^1 =
+\begin{bmatrix} \betahat_0 \\ \betahat_1\\ \end{bmatrix} =
+\betahat =
 (X^T X)^{-1}X^T y =
 \begin{bmatrix}
 \ybar - (\sigmahat_{xy}/\sigmahat_x^2)\xbar \\
@@ -731,7 +818,7 @@ $$
 \MvNormal(\mu, \Sigma)
 $$
 
-の確率密度函数が
+の確率密度函数を次のように定める:
 
 $$
 p(y|\mu, \Sigma) =
@@ -739,8 +826,6 @@ p(y|\mu, \Sigma) =
 \exp\left(-\frac{1}{2}(y-\mu)^T\Sigma^{-1}(y-\mu)\right)
 \quad (y\in\R^n)
 $$
-
-と定義される.
 
 例えば, $\mu=(m,m,\ldots,m)$, $\Sigma = \sigma^2 I$ ($I$ は $n$ 次の単位行列で $\sigma^2>0$)のとき,
 
@@ -753,7 +838,7 @@ $$
 これは正規分布の標本分布 $\Normal(m,\sigma^2)^n$ の密度函数に等しい.
 
 
-### 問題: χ²分布
+### 問題: 多変量正規分布とχ²分布の関係
 
 前節の $n$ 変量正規分布 $\MvNormal(\mu, \Sigma)$ を考える:
 
@@ -846,9 +931,9 @@ __注意:__ 真の回帰函数の「真の」の意味は「現実における�
 
 ### 信頼区間 (標準正規分布版)
 
-この節では, 「βとσ²の不偏推定量」の節で仮定した条件に加えて, $\betahat = (X^T X)^{-1}X^T y$ が近似的に多変量正規分布に従い, $\shat^2 \approx \sigma^2$ となっていると仮定する.
+この節では, 「βとσ²の不偏推定量」の節で仮定した条件に加えて, ベクトル値 $\betahat = (X^T X)^{-1}X^T y$ が近似的に多変量正規分布に従い, $\shat^2 \approx \sigma^2$ という近似が成立していると仮定する.
 
-このとき, βとσ²の不偏推定量」の節で示した結果
+このとき, 「βとσ²の不偏推定量」の節で示した結果
 
 $$
 E[\betahat] = \beta, \quad
@@ -916,11 +1001,13 @@ $$
 
 前節の標準正規分布を使って定義されたP値と信頼区間の $t$ 分布を使った補正を構成しよう.
 
-そのために, 前節までに仮定した条件よりもさらに強い以下の条件を仮定する:
+そのために, 前節までに仮定していた条件よりもさらに強い次の条件を仮定する:
 
 $$
 e = [e_i]_{i=1}^n \sim \Normal(0,\sigma)^n = \MvNormal(0, \sigma^2 I).
 $$
+
+これは正規分布で記述されていた統計モデル内の設定に戻ったことを意味している.
 
 このとき, 
 
@@ -941,15 +1028,28 @@ $$
 \SE_{f(x_*)^T\betahat} = \sigma\sqrt{f(x_*)^T(X^T X)^{-1}f(x_*)}.
 $$
 
-そして,
+さらに, 
 
 $$
-\frac{(n-r)\shat^2}{\sigma} = \|y - X\betahat\|^2 \sim \Chisq(n-r)
+y - X\betahat = (X\beta + e) - X(X^T X)^{-1}X^T(X\beta + e) =
+(I - X(X^T X)^{-1}X^T)e
 $$
 
-となることを示せる.
+が部分空間 $X\R^r$ の直交補空間($n-r$ 次元になる)へのベクトル値確率変数 $e \sim \MvNormal(0, \sigma^2 I)$ の直交射影であることから, 
 
-$\yhat = X\betahat$ と $y-\yhat = y-X\betahat$ が独立であることより, $f(x_*)^T\betahat$ と $(n-r)\shat^2/\sigma = \|y - X\betahat\|^2$ は独立になるので, 
+$$
+\frac{(n-r)\shat^2}{\sigma^2} = \|y - X\betahat\|^2 \sim \Chisq(n-r)
+$$
+
+となることを示せる. (「多変量正規分布とχ²分布の関係」を使えば容易に示される.)
+
+$\yhat = X\betahat$ と $y-\yhat = y-X\betahat$ が独立であることより(その独立性はそれらが直交することから導かれる), $f(x_*)^T\betahat$ と $(n-r)\shat^2/\sigma^2 = \|y - X\betahat\|^2$ が独立になることも導かれるので, 一般に独立な確率変数達 $Z\sim\Normal(0,1)$ と $Y\sim\Chisq(\nu)$ について,
+
+$$
+\frac{Z}{\sqrt{Y/\nu}} \sim \TDist(\nu)
+$$
+
+となることより, 
 
 $$
 t(x_*, \beta) =
@@ -1003,13 +1103,13 @@ $$
 
 ### 予測区間
 
-以上の仮定に加えて、さらに
+前節の仮定 $e\sim \Normal(0,\sigma)^n$ に加えて、さらに
 
 $$
 \begin{bmatrix}e \\ e_*\\ \end{bmatrix} \sim \Normal(0,\sigma)^{n+1}
 $$
 
-と仮定し, $x_*\in\R$ を取り,
+と仮定し, 任意に $x_*\in\R$ を取り,
 
 $$
 y_* = f(x_*)^T\beta + e_*
@@ -1038,7 +1138,7 @@ $$
 \shat\sqrt{1 + f(x_*)^T(X^T X)^{-1}f(x_*)}.
 $$
 
-とおくと,
+とおくと, 前節と同様にして,
 
 $$
 \frac{y_* - f(x_*)^T\betahat}{\SEhat_{y_* - f(x_*)^T\betahat}}
@@ -1059,6 +1159,97 @@ $$
 
 ## 線形回帰の計算例
 
+```julia
+function plot_linreg_confint_predint(x, y, F...; α = 0.05, kwargs...)
+    n = length(x)
+    r = length(F)
+    X = [fⱼ(xᵢ) for xᵢ in x, fⱼ in F] # design matrix
+    β̂ = X \ y # equivalent to β̂ = X*(X'X)\X'y
+    ŷ = X * β̂ # orthogonal projection of y onto Xℝʳ
+    
+    f̂(xstar) = sum(β̂ⱼ * fⱼ(xstar) for (β̂ⱼ, fⱼ) in zip(β̂, F))
+    ŝ = norm(y - ŷ)/√(n - r)  # ŝ² is the unbiased estimator of σ²
+    f(xstar) = [fⱼ(xstar) for fⱼ in F]
+    invXX = inv(X'X)
+    g(xstar) = ŝ * √(    f(xstar)' * invXX * f(xstar))
+    h(xstar) = ŝ * √(1 + f(xstar)' * invXX * f(xstar))
+    t = quantile(TDist(n - r), 1 - α/2)
+
+    @show β̂ ŝ
+
+    a, b = extrema(x)
+    a, b = a - 0.05(b-a), b + 0.05(b-a)
+    scatter(x, y; label="data", msc=:auto, c=1)
+    plot!(f̂, a, b; label="", c=:red)
+    plot!(xstar -> f̂(xstar) - g(xstar), a, b; label="$(100(1-α))% CI", c=2, ls=:dash)
+    plot!(xstar -> f̂(xstar) + g(xstar), a, b; label="", c=2, ls=:dash)
+    plot!(xstar -> f̂(xstar) - h(xstar), a, b; label="$(100(1-α))% PI", c=3, ls=:dashdot)
+    plot!(xstar -> f̂(xstar) + h(xstar), a, b; label="", c=3, ls=:dashdot)
+    plot!(; size=(520, 250), legend=:outertopright)
+    plot!(; kwargs...)
+end
+```
+
+```julia
+x = 1:5
+y = [0.5, 0.44, 0.5, 0.47, 0.56]
+scatter(x, y; label="data", legend=:topleft, msc=:auto)
+plot!(; size=(520, 250), legend=:outertopright)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+```
+
+```julia
+Random.seed!(4649373)
+
+n = 40
+f_true(x) = -1 + 2x
+x = rand(Normal(0,1), n)
+y = f_true.(x) + 4randn(n)
+scatter(x, y; label="data", legend=:topleft, msc=:auto)
+plot!(f_true, extrema(x)...; label="y = f_true(x)", c=:blue)
+plot!(; size=(520, 250), legend=:outertopright)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:0)...)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+```
+
+```julia
+n = 30
+f_true(x) = sin(x)
+x = range(-π, π, n)
+y = f_true.(x) + 0.3randn(n)
+scatter(x, y; label="data", legend=:topleft, msc=:auto)
+plot!(f_true, extrema(x)...; label="y = f_true(x)", c=:blue)
+plot!(; size=(520, 250), legend=:outertopright)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:0)...)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:2)...)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:3)...)
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:7)...)
+```
 
 ## ロジスティック回帰
 

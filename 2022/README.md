@@ -344,6 +344,20 @@ __関連講義動画__
   * 佐藤俊哉, 交絡とその調整, 2018/12/20, 長さ 1:00:52) \[[https://youtu.be/ybdkQFEdCPM](https://youtu.be/ybdkQFEdCPM)\]
   * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, 長さ 1:04:44) \[[https://youtu.be/cOHN444kBlo](https://youtu.be/cOHN444kBlo)\]
 
+__Julia言語を使うためのヒント__
+
+[上のノートブック](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb) の中の
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/2022-07-15-01.png" height="400">
+
+の部分を直接 Julia ([download](https://julialang.org/downloads/))で実行するためには以下のようにすればよい.
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/2022-07-15-02.png">
+
+注意するべきポイントは `using Distributions, Roots` を忘れないことである.
+
+しかし, どのくらい前もって `using` しておけばよいのか分かり難いので, 上のノートブックの上の方にある `using` 達をすべて前持って実行しておくという手もある. `using` には少し時間が取られるので, そのようにしたJuliaの窓をそのまま閉じずに放置しておき, 超高級電卓として利用し続けると便利だと思われる.
+
 ### 12 検定と信頼区間(5) 平均の差
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
