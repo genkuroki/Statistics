@@ -111,7 +111,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#データ" data-toc-modified-id="データ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>データ</a></span></li><li><span><a href="#モデルの構成要素" data-toc-modified-id="モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>モデルの構成要素</a></span></li><li><span><a href="#デザイン行列-(計画行列,-design-matrix)" data-toc-modified-id="デザイン行列-(計画行列,-design-matrix)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列 (計画行列, design matrix)</a></span></li><li><span><a href="#正規分布による統計モデルの記述" data-toc-modified-id="正規分布による統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>正規分布による統計モデルの記述</a></span></li><li><span><a href="#正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-多変量正規分布とχ²分布の関係" data-toc-modified-id="問題:-多変量正規分布とχ²分布の関係-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>問題: 多変量正規分布とχ²分布の関係</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#データ" data-toc-modified-id="データ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>データ</a></span></li><li><span><a href="#モデルの構成要素" data-toc-modified-id="モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>モデルの構成要素</a></span></li><li><span><a href="#デザイン行列-(計画行列,-design-matrix)" data-toc-modified-id="デザイン行列-(計画行列,-design-matrix)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列 (計画行列, design matrix)</a></span></li><li><span><a href="#正規分布による統計モデルの記述" data-toc-modified-id="正規分布による統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>正規分布による統計モデルの記述</a></span></li><li><span><a href="#正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#Julia言語による回帰直線の計算の最も簡単な例" data-toc-modified-id="Julia言語による回帰直線の計算の最も簡単な例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Julia言語による回帰直線の計算の最も簡単な例</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-多変量正規分布とχ²分布の関係" data-toc-modified-id="問題:-多変量正規分布とχ²分布の関係-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 多変量正規分布とχ²分布の関係</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.15"><span class="toc-item-num">2.15&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のプロット" data-toc-modified-id="信頼区間と予測区間のプロット-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>信頼区間と予測区間のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のテストプロット" data-toc-modified-id="信頼区間と予測区間のテストプロット-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>信頼区間と予測区間のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間" data-toc-modified-id="回帰直線の信頼区間と予測区間-3.1.2"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)" data-toc-modified-id="多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)-3.1.3"><span class="toc-item-num">3.1.3&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間 (オーバーフィッティングの例)</a></span></li></ul></li><li><span><a href="#信頼区間と予測区間に対応するP値函数のプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のプロット-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間に対応するP値函数のテストプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のテストプロット-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="回帰直線の信頼区間と予測区間に対応するP値函数-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間に対応するP値函数</a></span></li><li><span><a href="#回帰直線の信頼区間に対応するP値函数の動画" data-toc-modified-id="回帰直線の信頼区間に対応するP値函数の動画-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>回帰直線の信頼区間に対応するP値函数の動画</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="多項式回帰の信頼区間と予測区間に対応するP値函数-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間に対応するP値函数</a></span></li></ul></li></ul></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -125,6 +125,7 @@ using Memoization
 using Printf
 using QuadGK
 using RCall
+@rimport stats as R
 using Random
 Random.seed!(4649373)
 using Roots
@@ -810,6 +811,74 @@ $$
 の「最小二乗法による線形回帰」の節で得た公式に一致する.
 
 
+### Julia言語による回帰直線の計算の最も簡単な例
+
+```julia
+# パッケージの読み込みなど
+using Distributions
+using StatsPlots
+using Random
+Random.seed!(4649373)
+
+# テストデータのランダム生成
+n = 100
+x = rand(Normal(0, 1), n);
+e = rand(Normal(0, 1), n);
+y = @. -1 + 2x + 2e;
+scatter(x, y; label="data", legend=:topleft)
+```
+
+```julia
+# デザイン行列
+X = x .^ (0:1)';
+
+# デザイン行列の上から5行分を表示
+X[1:5, :]
+```
+
+```julia
+# 線形回帰
+# 以下は β̂ = X'X\X'y もしくは β̂ = inv(X'*X)*X'*y と同値
+β̂ = X \ y
+```
+
+```julia
+# 結果をプロット
+scatter(x, y; label="data", legend=:topleft)
+plot!(xstar -> β̂[1] + β̂[2]*xstar; label="regression line", lw=2)
+```
+
+[Julia言語](https://julialang.org/)([download](https://julialang.org/downloads/)) の current stable release をダウンロードして, インストールして, 実行して,
+
+```
+julia> 
+```
+
+で `]` を押した後に,
+
+```
+pkg> add Distributions, StatsPlots
+```
+
+を実行し,
+
+```
+pkg> 
+```
+
+でバックスペースキーを押して,
+
+```
+julia> 
+```
+
+の状態に上のコードを貼り付ければ上と同じことをできるはずである.
+
+Julia言語では最小二乗法による回帰は `β̂ = X \ y` だけで可能である.
+
+`X'` は `X` の転置(の複素共役)を意味する.
+
+
 ### 多変量正規分布の定義
 
 $\mu\in\R^n$ と固有値がすべて正の $n$ 次の実対称行列 $\Sigma$ に対して, 多変量正規分布
@@ -1159,6 +1228,16 @@ $$
 
 ## 線形回帰の計算例
 
+以下において CI, PI はそれぞれ
+
+* 真の回帰函数の値の信頼区間 (confidence interval)
+* 真の回帰函数＋ノイズの予測区間 (prediction interval)
+
+の略である.
+
+
+### 信頼区間と予測区間のプロット
+
 ```julia
 function plot_linreg_confint_predint(x, y, F...; α = 0.05, kwargs...)
     n = length(x)
@@ -1166,40 +1245,65 @@ function plot_linreg_confint_predint(x, y, F...; α = 0.05, kwargs...)
     X = [fⱼ(xᵢ) for xᵢ in x, fⱼ in F] # design matrix
     β̂ = X \ y # equivalent to β̂ = X*(X'X)\X'y
     ŷ = X * β̂ # orthogonal projection of y onto Xℝʳ
+    ŝ = norm(y - ŷ)/√(n - r)  # ŝ² is the unbiased estimator of σ²
+    @show n r α
+    m = @show quantile(TDist(n-r), 1-α/2)
+    @show β̂ ŝ
     
     f̂(xstar) = sum(β̂ⱼ * fⱼ(xstar) for (β̂ⱼ, fⱼ) in zip(β̂, F))
-    ŝ = norm(y - ŷ)/√(n - r)  # ŝ² is the unbiased estimator of σ²
     f(xstar) = [fⱼ(xstar) for fⱼ in F]
     invXX = inv(X'X)
-    g(xstar) = ŝ * √(    f(xstar)' * invXX * f(xstar))
-    h(xstar) = ŝ * √(1 + f(xstar)' * invXX * f(xstar))
-    t = quantile(TDist(n - r), 1 - α/2)
-
-    @show β̂ ŝ
+    g(xstar) = ŝ * √(    f(xstar)' * invXX * f(xstar)) # for CI
+    h(xstar) = ŝ * √(1 + f(xstar)' * invXX * f(xstar)) # for PI
 
     a, b = extrema(x)
     a, b = a - 0.05(b-a), b + 0.05(b-a)
     scatter(x, y; label="data", msc=:auto, c=1)
-    plot!(f̂, a, b; label="", c=:red)
-    plot!(xstar -> f̂(xstar) - g(xstar), a, b; label="$(100(1-α))% CI", c=2, ls=:dash)
-    plot!(xstar -> f̂(xstar) + g(xstar), a, b; label="", c=2, ls=:dash)
-    plot!(xstar -> f̂(xstar) - h(xstar), a, b; label="$(100(1-α))% PI", c=3, ls=:dashdot)
-    plot!(xstar -> f̂(xstar) + h(xstar), a, b; label="", c=3, ls=:dashdot)
-    plot!(; size=(520, 250), legend=:outertopright)
+    plot!(xstar -> f̂(xstar), a, b; label="", c=:red)
+    plot!(xstar -> f̂(xstar) - m*g(xstar), a, b;
+        label="$(100(1-α))% CI", c=2, ls=:dash)
+    plot!(xstar -> f̂(xstar) + m*g(xstar), a, b;
+        label="", c=2, ls=:dash)
+    plot!(xstar -> f̂(xstar) - m*h(xstar), a, b;
+        label="$(100(1-α))% PI", c=3, ls=:dashdot)
+    plot!(xstar -> f̂(xstar) + m*h(xstar), a, b;
+        label="", c=3, ls=:dashdot)
+    plot!(size=(520, 250), legend=:outertopright)
     plot!(; kwargs...)
 end
 ```
 
+#### 信頼区間と予測区間のテストプロット
+
 ```julia
 x = 1:5
-y = [0.5, 0.44, 0.5, 0.47, 0.56]
-scatter(x, y; label="data", legend=:topleft, msc=:auto)
-plot!(; size=(520, 250), legend=:outertopright)
+y = [5, 4, 5, 5, 6]
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+plot!(ylim=(1.7, 8.3))
 ```
 
 ```julia
-plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+@rput x y
+reg = R"""reg = lm(y ~ x)"""
+R"""
+xstars = data.frame(x = seq(-0.5, 5.5, 0.02))
+conf.interval = predict(reg, newdata = xstars, interval = 'confidence', level = 0.95)
+pred.interval = predict(reg, newdata = xstars, interval = 'prediction', level = 0.95)
+
+plot(x, y, ylim = c(1.7, 8.3), yaxp=c(2, 9, 7))
+lines(xstars$x, conf.interval[, 1], col = 'red')
+lines(xstars$x, conf.interval[, 2], col = 'orange', lty=2)
+lines(xstars$x, conf.interval[, 3], col = 'orange', lty=2)
+lines(xstars$x, pred.interval[, 2], col = 'darkgreen', lty=4)
+lines(xstars$x, pred.interval[, 3], col = 'darkgreen', lty=4)
+"""
+reg
 ```
+
+以上によって, このノートのコードの結果とRによる計算結果のプロットは一致していることがわかった.
+
+
+#### 回帰直線の信頼区間と予測区間
 
 ```julia
 Random.seed!(4649373)
@@ -1207,48 +1311,258 @@ Random.seed!(4649373)
 n = 40
 f_true(x) = -1 + 2x
 x = rand(Normal(0,1), n)
-y = f_true.(x) + 4randn(n)
+y = f_true.(x) + rand(Normal(0, 2), n)
 scatter(x, y; label="data", legend=:topleft, msc=:auto)
 plot!(f_true, extrema(x)...; label="y = f_true(x)", c=:blue)
-plot!(; size=(520, 250), legend=:outertopright)
+plot!(size=(520, 250), legend=:outertopright)
+plot!(ylim=(-8, 6))
 ```
 
 ```julia
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:0)...)
+plot!(ylim=(-8, 6))
 ```
 
 ```julia
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
+plot!(ylim=(-8, 6))
 ```
 
+#### 多項式回帰の信頼区間と予測区間 (オーバーフィッティングの例)
+
 ```julia
+Random.seed!(4649373)
+
 n = 30
 f_true(x) = sin(x)
 x = range(-π, π, n)
-y = f_true.(x) + 0.3randn(n)
+y = f_true.(x) + rand(Normal(0, 0.3), n)
 scatter(x, y; label="data", legend=:topleft, msc=:auto)
 plot!(f_true, extrema(x)...; label="y = f_true(x)", c=:blue)
-plot!(; size=(520, 250), legend=:outertopright)
+plot!(size=(520, 250), legend=:outertopright)
+plot!(ylim=(-2.5, 2.5))
 ```
 
 ```julia
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:0)...)
+plot!(ylim=(-2.5, 2.5))
 ```
 
 ```julia
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
-```
-
-```julia
-plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:2)...)
+plot!(ylim=(-2.5, 2.5))
 ```
 
 ```julia
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:3)...)
+plot!(ylim=(-2.5, 2.5))
 ```
 
 ```julia
-plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:7)...)
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:5)...)
+plot!(ylim=(-2.5, 2.5))
+```
+
+```julia
+plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:19)...)
+plot!(ylim=(-2.5, 2.5))
+```
+
+サンプルサイズ $n=30$ のときに, $r-1=19$ 次の多項式函数で推定された回帰函数はぐちゃぐちゃになってしまっており, 左右の端の方で信頼区間と予測区間の幅が爆発している.
+
+これは __過剰適合__ (オーバーフィッティング, overfitting)の典型例になっている.
+
+パラメータが多いモデルで推定を行うと過剰適合が起こり易い.
+
+この問題に対処するための方法に, パラメータの動き方に制限を付ける正則化やモデルの適切な複雑さを知るための赤池情報量規準 (AIC)やベイズ統計でのWAICなどがある. 以下はそれらの検索のためのリンクである.
+
+* [正則化 回帰](https://www.google.com/search?q=%E6%AD%A3%E5%89%87%E5%8C%96+%E5%9B%9E%E5%B8%B0%E3%83%A2%E3%83%87%E3%83%AB)
+* [赤池情報量規準](https://www.google.com/search?q=%E8%B5%A4%E6%B1%A0%E6%83%85%E5%A0%B1%E9%87%8F%E8%A6%8F%E6%BA%96)
+* [WAIC ベイズ](https://www.google.com/search?q=WAIC+%E3%83%99%E3%82%A4%E3%82%BA)
+
+
+### 信頼区間と予測区間に対応するP値函数のプロット
+
+```julia
+function plot_linreg_pvalue_functions(x, y, F...;
+        α = 0.05, xstars=nothing, ystars=nothing, kwargs...)
+    n = length(x)
+    r = length(F)
+    X = [fⱼ(xᵢ) for xᵢ in x, fⱼ in F] # design matrix
+    β̂ = X \ y # equivalent to β̂ = X*(X'X)\X'y
+    ŷ = X * β̂ # orthogonal projection of y onto Xℝʳ
+    ŝ = norm(y - ŷ)/√(n - r) # ŝ² is the unbiased estimator of σ²
+    @show n r α
+    m = @show quantile(TDist(n - r), 1-α/2)
+    @show β̂ ŝ
+    
+    f̂(xstar) = sum(β̂ⱼ * fⱼ(xstar) for (β̂ⱼ, fⱼ) in zip(β̂, F))
+    f(xstar) = [fⱼ(xstar) for fⱼ in F]
+    invXX = inv(X'X)
+    g(xstar) = ŝ * √(    f(xstar)' * invXX * f(xstar)) # for CI
+    h(xstar) = ŝ * √(1 + f(xstar)' * invXX * f(xstar)) # for PI
+    tdist = TDist(n - r)
+    G(xstar, ystar) = 2ccdf(tdist, abs(ystar - f̂(xstar))/g(xstar)) # pval of CI
+    H(xstar, ystar) = 2ccdf(tdist, abs(ystar - f̂(xstar))/h(xstar)) # pval of PI
+
+    if isnothing(xstars)
+        a, b = extrema(x)
+        a, b = a - 0.05(b-a), b + 0.05(b-a)
+        xstars = range(a, b, 400)
+    end
+    a, b = extrema(xstars)
+    if isnothing(ystars)
+        c, d = extrema(y)
+        c, d = c - 0.1m*(d-c), d + 0.1m*(d-c)
+        ystars = range(c, d, 400)
+    end
+    c, d = extrema(ystars)
+    
+    P = plot(; legend=:topleft, colorbar=false)
+    heatmap!(xstars, ystars, sqrt∘G)
+    scatter!(x, y; label="", c=:cyan, msc=1)
+    plot!(xstar -> f̂(xstar) - m*g(xstar), a, b;
+        label="$(100(1-α))% CI", c=:orange, ls=:dash)
+    plot!(xstar -> f̂(xstar) + m*g(xstar), a, b;
+        label="", c=:orange, ls=:dash)
+    plot!(; xlim=(a, b), ylim=(c, d))
+    title!("√P-value functon of CI")
+    
+    Q = plot(; legend=:topleft, colorbar=false)
+    heatmap!(xstars, ystars, sqrt∘H)
+    scatter!(x, y; label="", c=:cyan, msc=1)
+    plot!(xstar -> f̂(xstar) - m*h(xstar), a, b;
+        label="$(100(1-α))% PI", c=:lightgreen, ls=:dash)
+    plot!(xstar -> f̂(xstar) + m*h(xstar), a, b;
+        label="", c=:lightgreen, ls=:dash)
+    plot!(; xlim=(a, b), ylim=(c, d))
+    title!("√P-value function of PI")
+    
+    plot(P, Q; size=(800, 300), layout=(1, 2), kwargs...)
+end
+```
+
+#### 信頼区間と予測区間に対応するP値函数のテストプロット
+
+```julia
+x = 1:5
+y = [5, 4, 5, 5, 6]
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:1)...;
+    ystars=range(2, 8, 400))
+```
+
+#### 回帰直線の信頼区間と予測区間に対応するP値函数
+
+```julia
+Random.seed!(4649373)
+
+n = 40
+f_true(x) = -1 + 2x
+x = rand(Normal(0,1), n)
+y = f_true.(x) + rand(Normal(0, 2), n)
+
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:0)...;
+    ystars=range(-8, 6, 400))
+```
+
+```julia
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:1)...;
+    ystars=range(-8, 6, 400))
+```
+
+#### 回帰直線の信頼区間に対応するP値函数の動画
+
+```julia
+function plot_linreg_confint_pvalfunc_3d(x, y, F...;
+        α = 0.05, camera=(60, 60), xstars=nothing, ystars=nothing, kwargs...)
+    n = length(x)
+    r = length(F)
+    X = [fⱼ(xᵢ) for xᵢ in x, fⱼ in F] # design matrix
+    β̂ = X \ y # equivalent to β̂ = X*(X'X)\X'y
+    ŷ = X * β̂ # orthogonal projection of y onto Xℝʳ
+    ŝ = norm(y - ŷ)/√(n - r) # ŝ² is the unbiased estimator of σ²
+    tdist = TDist(n - r)
+    m = quantile(tdist, 1 - α/2)
+    
+    f̂(xstar) = sum(β̂ⱼ * fⱼ(xstar) for (β̂ⱼ, fⱼ) in zip(β̂, F))
+    f(xstar) = [fⱼ(xstar) for fⱼ in F]
+    invXX = inv(X'X)
+    g(xstar) = ŝ * √(f(xstar)' * invXX * f(xstar))
+    G(xstar, ystar) = 2ccdf(tdist, abs(ystar - f̂(xstar))/g(xstar))
+
+    if isnothing(xstars)
+        a, b = extrema(x)
+        a, b = a - 0.05(b-a), b + 0.05(b-a)
+        xstars = range(a, b, 400)
+    end
+    a, b = extrema(xstars)
+    if isnothing(ystars)
+        c, d = extrema(y)
+        c, d = c - 0.1m*(d-c), d + 0.1m*(d-c)
+        ystars = range(c, d, 400)
+    end
+    c, d = extrema(ystars)
+    
+    P = plot(; colorbar=false)
+    surface!(xstars, ystars, G; camera, alpha=0.9)
+    scatter3d!(x, y, zeros(length(x)); label="", c=:cyan, msc=:auto)
+    plot!(size=(600, 500))
+    plot!(; kwargs...)
+end
+
+Random.seed!(4649373)
+
+n = 40
+f_true(x) = -1 + 2x
+x = rand(Normal(0,1), n)
+y = f_true.(x) + rand(Normal(0, 2), n)
+
+plot_linreg_confint_pvalfunc_3d(x, y, (x -> x^k for k in 0:1)...)
+```
+
+```julia
+anim = @animate for t in 0:5:359
+    plot_linreg_confint_pvalfunc_3d(x, y, (x->x^k for k in 0:1)...; camera=(t, 60))
+end
+gif(anim, "images/anim_linreg_confint_pvalfunc_3d.gif")
+```
+
+PDFファイルではこのアニメーションは動かない.  動いている様子を見たい人は以下のリンク先を参照せよ.
+
+* [線形回帰の信頼区間に対応するP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif)
+
+
+#### 多項式回帰の信頼区間と予測区間に対応するP値函数
+
+```julia
+Random.seed!(4649373)
+
+n = 30
+f_true(x) = sin(x)
+x = range(-π, π, n)
+y = f_true.(x) + rand(Normal(0, 0.3), n)
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:0)...;
+    ystars=range(-2.5, 2.5, 400))
+```
+
+```julia
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:1)...;
+    ystars=range(-2.5, 2.5, 400))
+```
+
+```julia
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:3)...;
+    ystars=range(-2.5, 2.5, 400))
+```
+
+```julia
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:5)...;
+    ystars=range(-2.5, 2.5, 400))
+```
+
+```julia
+plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:19)...;
+    ystars=range(-2.5, 2.5, 400))
 ```
 
 ## ロジスティック回帰

@@ -411,6 +411,21 @@ __作成された動画__
 * [pdf]()
 \[[download]()\]
 
+P値に関する誤用を避けるために最初に読むべき基本文献は
+
+* [統計的有意性とP値に関するASA声明](https://www.biometrics.gr.jp/news/all/ASA.pdf)
+
+である.  ただし, 以下の部分の「データ」は「統計モデル内でランダムに生成された仮想的なデータ」の意味であると解釈する必要がある. (「現実で得た観察データ」であると解釈してはいけない.)
+
+>2. P 値とは?<br>
+おおざっぱにいうと、P 値とは特定の統計モ
+デルのもとで、データの統計的要約（たとえば、
+2 グループ比較での標本平均の差）が観察され
+た値と等しいか、それよりも極端な値をとる確率
+である。
+
+一連の講義では, 通常の統計学入門の教科書とは違って, 「統計モデル」という用語を多用した. このP値の定義の具体例については他のノートで詳しく説明した.
+
 ### 14 例: 回帰
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)
@@ -418,9 +433,23 @@ __作成された動画__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/14%20Regression.pdf)\]
 
+__定義された区間推定__
+
+線形回帰の場合の
+
+* 回帰函数の値の信頼区間
+* 回帰函数＋残差の予測区間
+
 __定義された確率分布__
 
 * 多変量正規分布: $\mathrm{MvNormal}(\mu, \Sigma)$
+
+__作成された動画__
+
+[線形回帰の信頼区間に対応するP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif">
+
 
 ### 15 例: 雑多な例
 
