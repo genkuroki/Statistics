@@ -16,7 +16,7 @@ jupyter:
 # 回帰 (regression)
 
 * 黒木玄
-* 2022-07-13～2022-07-13
+* 2022-07-13～2022-07-17
 
 $
 \newcommand\ds{\displaystyle}
