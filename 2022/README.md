@@ -449,7 +449,7 @@ __定義された信頼推定__
 __定義された確率分布__
 
 * 多変量正規分布: $\mathrm{MvNormal}(\mu, \Sigma)$
-* ロジスティックモデル: $\mathrm{LogisticModel}(x,\beta) = \prod_{i=1}^n \mathrm{Bernoulli}(\mathrm{logistic}(\beta_0 + \beta_1 x_i))$
+* ロジスティックモデル: $\mathrm{LogisticModel}(x,\beta)$
 
 __作成された動画__
 
