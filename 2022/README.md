@@ -433,16 +433,23 @@ P値に関する誤用を避けるために最初に読むべき基本文献は
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/14%20Regression.pdf)\]
 
-__定義された区間推定__
+__定義された信頼推定__
 
-線形回帰の場合の
+線形回帰の場合:
 
 * 回帰函数の値の信頼区間
 * 回帰函数＋残差の予測区間
 
+線形回帰の場合:
+
+* $t_* = \beta_0 + \beta_1 x_*$ の信頼区間
+* $p_* = \mathrm{logistic}(\beta_0 + \beta_1 x_*)$ の信頼区間
+* $\beta_1$ の信頼区間
+
 __定義された確率分布__
 
 * 多変量正規分布: $\mathrm{MvNormal}(\mu, \Sigma)$
+* ロジスティックモデル: $\mathrm{LogisticModel}(x,\beta) = \prod_{i=1}^n \mathrm{Bernoulli}(\mathrm{logistic}(\beta_0 + \beta_1 x_i))$
 
 __作成された動画__
 
