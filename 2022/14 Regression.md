@@ -78,6 +78,9 @@ $
 \newcommand\tb{\tilde{b}}
 \newcommand\tc{\tilde{c}}
 \newcommand\td{\tilde{d}}
+\newcommand\tp{\tilde{p}}
+\newcommand\tq{\tilde{q}}
+\newcommand\deltatilde{\tilde{\delta}}
 \newcommand\tx{\tilde{x}}
 \newcommand\phat{\hat{p}}
 \newcommand\qhat{\hat{q}}
@@ -99,6 +102,7 @@ $
 \newcommand\yhat{\hat{y}}
 \newcommand\alphahat{\hat{\alpha}}
 \newcommand\betahat{\hat{\beta}}
+\newcommand\betatilde{\tilde{\beta}}
 \newcommand\muhat{\hat{\mu}}
 \newcommand\sigmahat{\hat{\sigma}}
 \newcommand\shat{\hat{s}}
@@ -119,7 +123,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#線形回帰のデータ" data-toc-modified-id="線形回帰のデータ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>線形回帰のデータ</a></span></li><li><span><a href="#線形回帰モデルの構成要素" data-toc-modified-id="線形回帰モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>線形回帰モデルの構成要素</a></span></li><li><span><a href="#デザイン行列-(計画行列,-design-matrix)" data-toc-modified-id="デザイン行列-(計画行列,-design-matrix)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列 (計画行列, design matrix)</a></span></li><li><span><a href="#正規分布による線形回帰の統計モデルの記述" data-toc-modified-id="正規分布による線形回帰の統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>正規分布による線形回帰の統計モデルの記述</a></span></li><li><span><a href="#正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#Julia言語による回帰直線の計算の最も簡単な例" data-toc-modified-id="Julia言語による回帰直線の計算の最も簡単な例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Julia言語による回帰直線の計算の最も簡単な例</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-多変量正規分布とχ²分布の関係" data-toc-modified-id="問題:-多変量正規分布とχ²分布の関係-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 多変量正規分布とχ²分布の関係</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.15"><span class="toc-item-num">2.15&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のプロット" data-toc-modified-id="信頼区間と予測区間のプロット-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>信頼区間と予測区間のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のテストプロット" data-toc-modified-id="信頼区間と予測区間のテストプロット-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>信頼区間と予測区間のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間" data-toc-modified-id="回帰直線の信頼区間と予測区間-3.1.2"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)" data-toc-modified-id="多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)-3.1.3"><span class="toc-item-num">3.1.3&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間 (オーバーフィッティングの例)</a></span></li></ul></li><li><span><a href="#信頼区間と予測区間に対応するP値函数のプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のプロット-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間に対応するP値函数のテストプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のテストプロット-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="回帰直線の信頼区間と予測区間に対応するP値函数-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間に対応するP値函数</a></span></li><li><span><a href="#回帰直線の信頼区間に対応するP値函数の動画" data-toc-modified-id="回帰直線の信頼区間に対応するP値函数の動画-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>回帰直線の信頼区間に対応するP値函数の動画</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="多項式回帰の信頼区間と予測区間に対応するP値函数-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間に対応するP値函数</a></span></li></ul></li></ul></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span><ul class="toc-item"><li><span><a href="#ロジスティック函数" data-toc-modified-id="ロジスティック函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>ロジスティック函数</a></span></li><li><span><a href="#ロジスティック回帰のデータ" data-toc-modified-id="ロジスティック回帰のデータ-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>ロジスティック回帰のデータ</a></span></li><li><span><a href="#ロジスティック回帰の統計モデル" data-toc-modified-id="ロジスティック回帰の統計モデル-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>ロジスティック回帰の統計モデル</a></span></li><li><span><a href="#最尤法" data-toc-modified-id="最尤法-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>最尤法</a></span></li><li><span><a href="#スコア統計量とFisher情報量行列" data-toc-modified-id="スコア統計量とFisher情報量行列-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>スコア統計量とFisher情報量行列</a></span></li><li><span><a href="#ロジスティック回帰における-β₀+β₁x-に関するP値函数の構成" data-toc-modified-id="ロジスティック回帰における-β₀+β₁x-に関するP値函数の構成-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>ロジスティック回帰における β₀+β₁x に関するP値函数の構成</a></span></li><li><span><a href="#ロジスティック回帰における-β₀+β₁x-の信頼区間" data-toc-modified-id="ロジスティック回帰における-β₀+β₁x-の信頼区間-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>ロジスティック回帰における β₀+β₁x の信頼区間</a></span></li><li><span><a href="#ロジスティック回帰における-β₁-に関するP値函数" data-toc-modified-id="ロジスティック回帰における-β₁-に関するP値函数-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>ロジスティック回帰における β₁ に関するP値函数</a></span></li><li><span><a href="#xᵢ-の値がすべて1または0の場合" data-toc-modified-id="xᵢ-の値がすべて1または0の場合-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>xᵢ の値がすべて1または0の場合</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#回帰-(regression)" data-toc-modified-id="回帰-(regression)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>回帰 (regression)</a></span><ul class="toc-item"><li><span><a href="#回帰の超一般論" data-toc-modified-id="回帰の超一般論-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>回帰の超一般論</a></span></li></ul></li><li><span><a href="#線形回帰" data-toc-modified-id="線形回帰-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>線形回帰</a></span><ul class="toc-item"><li><span><a href="#線形回帰のデータ" data-toc-modified-id="線形回帰のデータ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>線形回帰のデータ</a></span></li><li><span><a href="#線形回帰モデルの構成要素" data-toc-modified-id="線形回帰モデルの構成要素-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>線形回帰モデルの構成要素</a></span></li><li><span><a href="#デザイン行列-(計画行列,-design-matrix)" data-toc-modified-id="デザイン行列-(計画行列,-design-matrix)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>デザイン行列 (計画行列, design matrix)</a></span></li><li><span><a href="#正規分布による線形回帰の統計モデルの記述" data-toc-modified-id="正規分布による線形回帰の統計モデルの記述-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>正規分布による線形回帰の統計モデルの記述</a></span></li><li><span><a href="#正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること" data-toc-modified-id="正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>正規分布で書かれた統計モデルの最尤法から最小二乗法による線形回帰が得られること</a></span></li><li><span><a href="#βとσ²の不偏推定量" data-toc-modified-id="βとσ²の不偏推定量-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>βとσ²の不偏推定量</a></span></li><li><span><a href="#例:-平均の推定の場合" data-toc-modified-id="例:-平均の推定の場合-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>例: 平均の推定の場合</a></span></li><li><span><a href="#例:-単回帰の場合" data-toc-modified-id="例:-単回帰の場合-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>例: 単回帰の場合</a></span></li><li><span><a href="#Julia言語による回帰直線の計算の最も簡単な例" data-toc-modified-id="Julia言語による回帰直線の計算の最も簡単な例-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Julia言語による回帰直線の計算の最も簡単な例</a></span></li><li><span><a href="#多変量正規分布の定義" data-toc-modified-id="多変量正規分布の定義-2.10"><span class="toc-item-num">2.10&nbsp;&nbsp;</span>多変量正規分布の定義</a></span></li><li><span><a href="#問題:-多変量正規分布とχ²分布の関係" data-toc-modified-id="問題:-多変量正規分布とχ²分布の関係-2.11"><span class="toc-item-num">2.11&nbsp;&nbsp;</span>問題: 多変量正規分布とχ²分布の関係</a></span></li><li><span><a href="#真の回帰函数と推定された回帰函数" data-toc-modified-id="真の回帰函数と推定された回帰函数-2.12"><span class="toc-item-num">2.12&nbsp;&nbsp;</span>真の回帰函数と推定された回帰函数</a></span></li><li><span><a href="#信頼区間-(標準正規分布版)" data-toc-modified-id="信頼区間-(標準正規分布版)-2.13"><span class="toc-item-num">2.13&nbsp;&nbsp;</span>信頼区間 (標準正規分布版)</a></span></li><li><span><a href="#信頼区間-(t分布版)" data-toc-modified-id="信頼区間-(t分布版)-2.14"><span class="toc-item-num">2.14&nbsp;&nbsp;</span>信頼区間 (t分布版)</a></span></li><li><span><a href="#予測区間" data-toc-modified-id="予測区間-2.15"><span class="toc-item-num">2.15&nbsp;&nbsp;</span>予測区間</a></span></li></ul></li><li><span><a href="#線形回帰の計算例" data-toc-modified-id="線形回帰の計算例-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>線形回帰の計算例</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のプロット" data-toc-modified-id="信頼区間と予測区間のプロット-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>信頼区間と予測区間のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間のテストプロット" data-toc-modified-id="信頼区間と予測区間のテストプロット-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>信頼区間と予測区間のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間" data-toc-modified-id="回帰直線の信頼区間と予測区間-3.1.2"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)" data-toc-modified-id="多項式回帰の信頼区間と予測区間-(オーバーフィッティングの例)-3.1.3"><span class="toc-item-num">3.1.3&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間 (オーバーフィッティングの例)</a></span></li></ul></li><li><span><a href="#信頼区間と予測区間に対応するP値函数のプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のプロット-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のプロット</a></span><ul class="toc-item"><li><span><a href="#信頼区間と予測区間に対応するP値函数のテストプロット" data-toc-modified-id="信頼区間と予測区間に対応するP値函数のテストプロット-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>信頼区間と予測区間に対応するP値函数のテストプロット</a></span></li><li><span><a href="#回帰直線の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="回帰直線の信頼区間と予測区間に対応するP値函数-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>回帰直線の信頼区間と予測区間に対応するP値函数</a></span></li><li><span><a href="#回帰直線の信頼区間に対応するP値函数の動画" data-toc-modified-id="回帰直線の信頼区間に対応するP値函数の動画-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>回帰直線の信頼区間に対応するP値函数の動画</a></span></li><li><span><a href="#多項式回帰の信頼区間と予測区間に対応するP値函数" data-toc-modified-id="多項式回帰の信頼区間と予測区間に対応するP値函数-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>多項式回帰の信頼区間と予測区間に対応するP値函数</a></span></li></ul></li></ul></li><li><span><a href="#ロジスティック回帰" data-toc-modified-id="ロジスティック回帰-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>ロジスティック回帰</a></span><ul class="toc-item"><li><span><a href="#ロジスティック函数とロジット函数" data-toc-modified-id="ロジスティック函数とロジット函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>ロジスティック函数とロジット函数</a></span></li><li><span><a href="#ロジスティック回帰のデータ" data-toc-modified-id="ロジスティック回帰のデータ-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>ロジスティック回帰のデータ</a></span></li><li><span><a href="#ロジスティック回帰でのリンク函数" data-toc-modified-id="ロジスティック回帰でのリンク函数-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>ロジスティック回帰でのリンク函数</a></span></li><li><span><a href="#ロジスティック回帰の統計モデル" data-toc-modified-id="ロジスティック回帰の統計モデル-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>ロジスティック回帰の統計モデル</a></span></li><li><span><a href="#最尤法" data-toc-modified-id="最尤法-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>最尤法</a></span></li><li><span><a href="#スコア統計量とFisher情報量行列" data-toc-modified-id="スコア統計量とFisher情報量行列-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>スコア統計量とFisher情報量行列</a></span></li><li><span><a href="#問題:-一般の場合のスコア統計量とFisher情報量行列" data-toc-modified-id="問題:-一般の場合のスコア統計量とFisher情報量行列-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>問題: 一般の場合のスコア統計量とFisher情報量行列</a></span></li><li><span><a href="#βの推定量の分布の正規分布近似" data-toc-modified-id="βの推定量の分布の正規分布近似-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>βの推定量の分布の正規分布近似</a></span></li><li><span><a href="#ロジスティック回帰における-β₀+β₁x-に関するWald型のP値函数と信頼区間" data-toc-modified-id="ロジスティック回帰における-β₀+β₁x-に関するWald型のP値函数と信頼区間-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>ロジスティック回帰における β₀+β₁x に関するWald型のP値函数と信頼区間</a></span></li><li><span><a href="#ロジスティック回帰における-β₁-に関するWald型のP値函数と信頼区間" data-toc-modified-id="ロジスティック回帰における-β₁-に関するWald型のP値函数と信頼区間-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>ロジスティック回帰における β₁ に関するWald型のP値函数と信頼区間</a></span></li></ul></li><li><span><a href="#xᵢ-達の値も1または0の場合のロジスティック回帰" data-toc-modified-id="xᵢ-達の値も1または0の場合のロジスティック回帰-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合のロジスティック回帰</a></span><ul class="toc-item"><li><span><a href="#xᵢ-達の値も1または0の場合にロジスティック回帰モデルは2つの二項分布モデルに等しい" data-toc-modified-id="xᵢ-達の値も1または0の場合にロジスティック回帰モデルは2つの二項分布モデルに等しい-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合にロジスティック回帰モデルは2つの二項分布モデルに等しい</a></span></li><li><span><a href="#xᵢ-達の値も1または0の場合のスコア統計量とFisher情報行行列" data-toc-modified-id="xᵢ-達の値も1または0の場合のスコア統計量とFisher情報行行列-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合のスコア統計量とFisher情報行行列</a></span></li><li><span><a href="#xᵢ-達の値も1または0の場合のWald型のP値函数と信頼区間" data-toc-modified-id="xᵢ-達の値も1または0の場合のWald型のP値函数と信頼区間-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合のWald型のP値函数と信頼区間</a></span></li><li><span><a href="#xᵢ-達の値も1または0の場合のWilson型のP値函数と信頼区間" data-toc-modified-id="xᵢ-達の値も1または0の場合のWilson型のP値函数と信頼区間-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合のWilson型のP値函数と信頼区間</a></span><ul class="toc-item"><li><span><a href="#A=0で定まる条件付き確率分布の正規分布近似" data-toc-modified-id="A=0で定まる条件付き確率分布の正規分布近似-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>A=0で定まる条件付き確率分布の正規分布近似</a></span></li><li><span><a href="#与えられた対数オッズ比パラメータの値-β₁-に対する-β₀-の推定量に関する公式" data-toc-modified-id="与えられた対数オッズ比パラメータの値-β₁-に対する-β₀-の推定量に関する公式-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>与えられた対数オッズ比パラメータの値 β₁ に対する β₀ の推定量に関する公式</a></span></li><li><span><a href="#対数オッズ比パラメータ-β₁-に関するWilson型のP値函数と信頼区間の構成" data-toc-modified-id="対数オッズ比パラメータ-β₁-に関するWilson型のP値函数と信頼区間の構成-5.4.3"><span class="toc-item-num">5.4.3&nbsp;&nbsp;</span>対数オッズ比パラメータ β₁ に関するWilson型のP値函数と信頼区間の構成</a></span></li></ul></li><li><span><a href="#xᵢ-達の値も1または0の場合にロジスティック回帰の一般化の役に立ち方" data-toc-modified-id="xᵢ-達の値も1または0の場合にロジスティック回帰の一般化の役に立ち方-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>xᵢ 達の値も1または0の場合にロジスティック回帰の一般化の役に立ち方</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -130,6 +134,7 @@ using DataFrames
 using Distributions
 using LinearAlgebra
 using Memoization
+using Optim
 using Printf
 using QuadGK
 using RCall
@@ -143,7 +148,7 @@ using StatsBase
 using StatsFuns
 using StatsPlots
 default(fmt = :png, size = (400, 250),
-    titlefontsize = 10, plot_titlefontsize = 12)
+    titlefontsize = 10, guidefontsize=9, plot_titlefontsize = 12)
 using SymPy
 ```
 
@@ -830,8 +835,11 @@ Random.seed!(4649373)
 n = 100
 x = rand(Normal(0, 1), n);
 e = rand(Normal(0, 1), n);
-y = @. -1 + 2x + 2e;
-scatter(x, y; label="data", legend=:topleft)
+β = [-1, 2]
+σ = 2
+y = @. β[1] + β[2]*x + σ*e;
+scatter(x, y; label="data", legend=:topleft, msc=:auto)
+plot!(xstar -> β[1] + β[2]*xstar; label="true model", c=:black, ls=:dash)
 ```
 
 ```julia
@@ -850,8 +858,9 @@ X[1:5, :]
 
 ```julia
 # 結果をプロット
-scatter(x, y; label="data", legend=:topleft)
-plot!(xstar -> β̂[1] + β̂[2]*xstar; label="regression line", lw=2)
+scatter(x, y; label="data", legend=:topleft, msc=:auto)
+plot!(xstar -> β[1] + β[2]*xstar; label="true model", c=:black, ls=:dash)
+plot!(xstar -> β̂[1] + β̂[2]*xstar; label="estimate", c=2, lw=1.5)
 ```
 
 [Julia言語](https://julialang.org/)([download](https://julialang.org/downloads/)) の current stable release をダウンロードして, インストールして, 実行して,
@@ -1573,24 +1582,173 @@ plot_linreg_pvalue_functions(x, y, (x -> x^k for k in 0:19)...;
 
 ## ロジスティック回帰
 
+```julia
+"""ロジスティック回帰のunlink函数"""
+p_(xᵢ, β) = logistic(β[1] + β[2]*xᵢ)
 
-### ロジスティック函数
+"""ロジスティック回帰のunlink函数の導函数"""
+function dp_(xᵢ, β)
+    pᵢ = logistic(β[1] + β[2]*xᵢ)
+    pᵢ * (1 - pᵢ)
+end
 
-__ロジスティック函数__ を
+"""ロジスティック回帰モデルの尤度函数の-1倍"""
+function logistic_negloglik(y, x, β)
+    -sum(logpdf(Bernoulli(p_(xᵢ, β)), yᵢ) for (xᵢ, yᵢ) in zip(x, y))
+end
+
+"""ロジスティック回帰のスコア統計量A"""
+function score_A(y, x, β)
+    sum(p_(xᵢ, β) - yᵢ for (xᵢ, yᵢ) in zip(x, y))
+end
+
+"""ロジスティック回帰のスコア統計量B"""
+function score_B(y, x, β)
+    sum(xᵢ * (p_(xᵢ, β) - yᵢ) for (xᵢ, yᵢ) in zip(x, y))
+end
+
+"""ロジスティック回帰のフィッシャー情報量行列の成分a"""
+function fisherinfo_a(x, β)
+    sum(dp_(xᵢ, β) for xᵢ in x)
+end
+
+"""ロジスティック回帰のフィッシャー情報量行列の成分b"""
+function fisherinfo_b(x, β)
+    sum(xᵢ * dp_(xᵢ, β) for xᵢ in x)
+end
+
+"""ロジスティック回帰のフィッシャー情報量行列の成分c"""
+function fisherinfo_c(x, β)
+    sum(xᵢ^2 * dp_(xᵢ, β) for xᵢ in x)
+end
+
+"""ロジスティック回帰のフィッシャー情報量行列のすべての成分"""
+function fisherinfo(x, β)
+    a = fisherinfo_a(x, β)
+    b = fisherinfo_b(x, β)
+    c = fisherinfo_c(x, β)
+    a, b, c
+end
+
+"""ロジスティック回帰モデルの最尤法"""
+function logistic_mle(y, x; alg=LBFGS())
+    f(β) = logistic_negloglik(y, x, β)
+    o = optimize(f, MVector(0.0, 0.0), alg)
+    β̂ = o.minimizer
+end
+```
+
+```julia
+"""β̂とSEhatの計算"""
+function betahat_sehat(y, x, xstar; alg=LBFGS())
+    β̂ = logistic_mle(y, x; alg)
+    â, b̂, ĉ = fisherinfo(x, β̂)
+    SEhat = √max(0, safediv(ĉ - 2b̂*xstar + â*xstar^2, â*ĉ - b̂^2))
+    β̂, SEhat
+end
+
+"""β̂とSEhatとẑの計算"""
+function betahat_sehat_zhat(y, x, xstar, tstar; alg=LBFGS())
+    β̂, SEhat = betahat_sehat(y, x, xstar; alg)
+    ẑ = safediv(β̂[1] + β̂[2]*xstar - tstar, SEhat)
+    β̂, SEhat, ẑ
+end
+
+"""ロジスティック回帰モデルの乱数"""
+function logistic_rand(x, β)
+    rand.(Bernoulli.(p_.(x, Ref(β))))
+end
+
+"""ロジスティック回帰のMonte Carloシミュレーション"""
+function sim_logistic_regression(;
+        β=[4, 2], xstar=1, n=200,
+        x=rand(Normal(-β[1]/β[2], 1), n),
+        L=10^4, alg=LBFGS()
+    )
+    betahat = Vector{MVector{2, Float64}}(undef, L)
+    sehat = Vector{Float64}(undef, L)
+    zhat = Vector{Float64}(undef, L)
+    tstar = β[1] + β[2]*xstar
+    @threads for i in 1:L
+        y = logistic_rand(x, β)
+        β̂, SEhat, ẑ = betahat_sehat_zhat(y, x, xstar, tstar; alg)
+        betahat[i] =  β̂
+        sehat[i] = SEhat
+        zhat[i] = ẑ
+    end
+    betahat, sehat, zhat
+end
+```
+
+```julia
+"""tstarに関するWald型P値函数"""
+function pvalue_tstar_wald(y, x, xstar, tstar; alg=LBFGS())
+    ẑ = betahat_sehat_zhat(y, x, xstar, tstar; alg)[3]
+    2ccdf(Normal(), abs(ẑ))
+end
+
+"""pstarに関するWald型P値函数"""
+function pvalue_pstar_wald(y, x, xstar, pstar; alg=LBFGS())
+    tstar = logit(pstar)
+    pvalue_tstar_wald(y, x, xstar, tstar; alg)
+end
+
+"""tstarに関する信頼区間"""
+function confint_tstar_wald(y, x, xstar; α = 0.05, alg=LBFGS())
+    z = quantile(Normal(), 1-α/2)
+    β̂, SEhat = betahat_sehat(y, x, xstar; alg)
+    m = β̂[1] + β̂[2]*xstar
+    m - z*SEhat, m + z*SEhat
+end
+
+"""pstarに関する信頼区間"""
+function confint_pstar_wald(y, x, xstar; α = 0.05, alg=LBFGS())
+    tL, tU = confint_tstar_wald(y, x, xstar; α, alg)
+    logistic(tL), logistic(tU)
+end
+```
+
+```julia
+"""β₁のWald型のP値"""
+function pvalue_beta1_wald(y, x, β₁; alg=LBFGS())
+    β̂₁ = logistic_mle(y, x; alg)[2]
+    â, b̂, ĉ = fisherinfo(x, β̂)
+    SEhat = safediv(â, â*ĉ - b̂^2)
+    zhat = safediv(β̂₁ - β₁, SEhat)
+    2ccdf(Normal(), abs(zhat))
+end
+
+"""β₁のWald型信頼区間"""
+function confint_beta1_wald(y, x; α=0.05, alg=LBFGS())
+    z = quantile(Normal(), 1-α/2)
+    β̂₁ = logistic_mle(y, x; alg)[2]
+    â, b̂, ĉ = fisherinfo(x, β̂)
+    SEhat = safediv(â, â*ĉ - b̂^2)
+    [β̂₁ - z*SEhat, β̂₁ + z*SEhat]
+end
+```
+
+### ロジスティック函数とロジット函数
+
+__ロジスティック函数__ を次のように定める:
 
 $$
 \logistic(t) = \frac{1}{1+e^{-t}} \quad (t\in\R)
 $$
 
-と定める. ロジスティック函数 $f(t)=\logistic(t)$ は条件
+ロジスティック函数 $f(t)=\logistic(t)$ は微分方程式
 
 $$
 f'(t) = f(t)(1-f(t)),  \quad f(0) = \frac{1}{2}
 $$
 
-を満たしており, この条件を満たす函数 $f(t)$ はロジスティック函数になる. ロジスティック函数の微分が出て来る計算はこの公式を使うと楽に計算できる.
+を満たしており(自分で確認せよ), この条件を満たす函数 $f(t)$ はロジスティック函数になる.
+
+ロジスティック函数の微分が出て来る計算は上の微分方程式を使うと楽にできる.
 
 ロジスティック函数は狭義単調増加函数で, $t\to-\infty$ のとき $0$ に収束し, $t\to\infty$ で $1$ に収束する.
+
+ロジスティック函数 $p=\logistic(t)$ ($t\in\R$) の値域は $0 < p < 1$ になる.
 
 ロジスティック函数 $p=\logistic(t)$ の逆函数は __ロジット函数__ と呼ばれている. ロジット函数は対数オッズ函数であり, 次のように表される:
 
@@ -1598,6 +1756,18 @@ $$
 \logit(p) = \log\frac{p}{1-p} \quad (0<t<1).
 $$
 
+```julia
+P1 = plot(logistic, -8, 8;
+    label="", title = "p = logistic(t)",
+    xguide="t", yguide="p", legend=:topleft,
+    xtick=-10:2:10, ytick=0:0.1:1)
+P2 = plot(logit, 0, 1;
+    label="", title="t = logit(p)",
+    ytick=-10:2:10, xtick=0:0.1:1,
+    xguide="p", yguide="t", legend=:topleft,
+    ylim=(-8.4, 8.4), bottommargin=4Plots.mm)
+plot(P1, P2; size=(600, 300), tickfontsize=7)
+```
 
 ### ロジスティック回帰のデータ
 
@@ -1619,12 +1789,18 @@ y = \begin{bmatrix} y_1 \\ \vdots \\ y_n \\ \end{bmatrix} \in \{1,0\}^n.
 $$
 
 
-### ロジスティック回帰の統計モデル
+### ロジスティック回帰でのリンク函数
 
-$\beta=[\beta_0, \beta_1]^T\in\R^2$ であるとし, $0 < p_i < 1$ を次のように定める:
+ベクトル値の回帰係数パラメータ
 
 $$
-p_i = \logistic(\beta_0 + \beta_1 x_i)
+\beta=\begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix} \in\R^2
+$$
+
+を考え, 確率パラメータ達 $0 < p_i < 1$ が次のように表されていると仮定する:
+
+$$
+p_i = \logistic(\beta_0 + \beta_1 x_i).
 $$
 
 すなわち, 
@@ -1633,9 +1809,25 @@ $$
 \logit(p_i) = \log\frac{p_i}{1-p_i} = \beta_0 + \beta_1 x_i.
 $$
 
-このときロジット函数を __リンク函数__ と呼ぶことがある.
+このときロジット函数を __リンク函数__ (link function)と呼び, ロジスティック函数を __アンリンク函数__ (unlink function)と呼ぶことがある.
 
-統計モデルとして, $y\in\{1,0\}^n$ に関する以下の確率質量函数を採用する:
+__注意:__ $p_i$ 達のリンク函数として対数函数を使った場合には
+
+$$
+\log p_i = \beta_0 + \beta_1 x_i
+$$
+による回帰を考え, リンク函数として恒等函数を使った場合には
+
+$$
+p_i = \beta_0 + \beta_1 x_i
+$$
+
+による回帰を考える. __注意終__
+
+
+### ロジスティック回帰の統計モデル
+
+前節までの記号の下で, 統計モデルとして $y\in\{1,0\}^n$ に関する以下の確率質量函数を採用する:
 
 $$
 P(y|x,\beta) =
@@ -1647,10 +1839,10 @@ p_i^{y_i}(1 - p_i)^{1-y_i}
 \right)
 $$
 
-このモデルの確率分布を $\LogisticModel(n, x, \beta)$ と書くと,
+このモデルの確率分布を $\LogisticModel(x, \beta)$ と書くと,
 
 $$
-\LogisticModel(n, x, \beta) = \prod_{i=1}^n \Bernoulli(\logistic(\beta_0+\beta_1 x_i)).
+\LogisticModel(x, \beta) = \prod_{i=1}^n \Bernoulli(\logistic(\beta_0+\beta_1 x_i)).
 $$
 
 これは最も簡単な場合でもっと複雑なモデルを考えることもできる. (例えば $\beta_0+\beta_1 x_i$ の部分をもっと複雑にできる).
@@ -1663,13 +1855,38 @@ $Y=[Y_i]_{i=1}^n$ をこの統計モデルに従う確率変数であるとす�
 
 (2) $Y_i$ の値はランダムに決まり, 確率 $p_i$ で $1$ になり, 確率 $1-p_i$ で $0$ になる.
 
+$x_i$ 達から $Y_i=1,0$ 達の値を確率的に決定する確率パラメータ達を
+
+$$
+\logit(p_i) = \log\frac{p_i}{1-p_i} = \beta_0 + \beta_1 x_i,
+$$
+
+の形式で推定することが, __ロジスティック回帰__ と呼ばれている.
+
+```julia
+# ロジスティック回帰モデルのサンプル(データ)の生成
+Random.seed!(4649373)
+β = [-4, 2]
+n = 50
+x = rand(Normal(-β[1]/β[2], 1), n)
+y = logistic_rand(x, β)
+
+# モデルとデータの視覚化
+scatter(x, y; label="sample", msc=:auto, alpha=0.7)
+plot!(xstar -> logistic(β[1] + β[2]*xstar);
+    label="p = logistic($(β[1])+$(β[2])x)", c=:blue, ls=:dot)
+plot!(ytick=0:0.1:1, yguide="y, p", xguide="x")
+title!("size-$n sample of logistic model with β = $β")
+plot!(legend=:left, size=(600, 250))
+```
 
 ### 最尤法
 
-データの数値 $x\in\R^n$, $y\in\{1,0\}^n$ に対して, 前節で定義した統計モデルの尤度函数の対数の $-1$ 倍 $L(\beta)$ は次のようになる:
+データの数値 $x\in\R^n$, $y\in\{1,0\}^n$ に対して, 前節で定義した統計モデルの尤度函数の対数の $-1$ 倍 $L = L(\beta)$ は次の形になる:
 
 $$
-L = L(\beta) = -\sum_{i=1}^n\left(y_i\log p_i + (1-y_i)\log(1-p_i)\right).
+L = L(\beta) = -\log p(y|x,\beta) = -
+\sum_{i=1}^n\left(y_i\log p_i + (1-y_i)\log(1-p_i)\right).
 $$
 
 ここで,
@@ -1678,16 +1895,29 @@ $$
 p_i = \logistic(\beta_0 + \beta_1 x_i) \quad (i=1,\ldots,n).
 $$
 
-対数尤度函数の $-1$ 倍 $L(\beta)$ を最小化する $\beta$ を $\betahat=[\betahat_0, \betahat_1]^T$ と書く.
+対数尤度函数の $-1$ 倍 $L(\beta)$ を最小化する $\beta$ を $\betahat=[\betahat_0, \betahat_1]^T$ と書き, __最尤法の解__ (さいゆうほうの解)と呼ぶことにする.
 
-その計算はコンピュータによる数値計算によって行う.
+特別な場合を除いて, 最尤法の計算はコンピュータによる最適化の数値計算によって行うことになる. (その手法も色々ある.)
 
+```julia
+# ロジスティック回帰の実行例
+@show β̂ = logistic_mle(y, x)
+
+# ロジスティック回帰の実行結果の視覚化
+scatter(x, y; label="sample", msc=:auto, alpha=0.7)
+plot!(xstar -> logistic(β[1] + β[2]*xstar);
+    label="true model", c=:blue, ls=:dot)
+plot!(xstar -> logistic(β̂[1] + β̂[2]*xstar); label="esitimate", c=2)
+plot!(ytick=0:0.1:1, yguide="y, p", xguide="x")
+title!("size-$n sample of logistic model with β = $β")
+plot!(legend=:left, size=(600, 250))
+```
 
 ### スコア統計量とFisher情報量行列
 
 この節では $y=[y_i]_{i=1}^n$ はロジスティック回帰の統計モデルに従う確率変数であるとする. (「ロジスティック回帰の統計モデル」の節ではこれを $Y$ と書いていたが, 前節の記号をそのまま使いたいので, $y=[y_i]_{i=1}^n$ と書くことにする. 一種の手抜き.)
 
-以下では次の公式を自由に用いる:
+以下では, ロジスティック函数が満たす微分方程式から得られる次の公式を自由に用いる:
 
 $$
 \frac{\partial p_i}{\partial\beta_0} = p_i(1-p_i), \quad
@@ -1725,9 +1955,9 @@ $$
 U = U(\beta) = \begin{bmatrix} A(\beta) \\ B(\beta) \end{bmatrix}
 $$
 
-この $U$ をもスコア統計量と呼ぶことにする.
+この $U$ をも __スコア統計量__ と呼ぶことにする.
 
-$a = a(\beta)$, $b = b(\beta)$, $c = c(\beta)$ を以下のように定める:
+__Fisher情報量行列__ の成分 $a = a(\beta)$, $b = b(\beta)$, $c = c(\beta)$ を以下のように定める:
 
 $$
 \begin{aligned}
@@ -1743,7 +1973,7 @@ c = c(\beta) =
 \end{aligned}
 $$
 
-$E[(y_i-p_i)^2]=E[y_i^2]-E[y_i]^2=E[y_i]-E[y_i]^2=p_i-p_i^2=p_i(1-p_i)$ を使った直接的な計算によって, $a$, $c$ はそれぞれ $A$, $B$ の分散に等しく, $b$ は $A,B$ の共分散に等しいことを示せる:
+$E[(y_i-p_i)^2]=E[y_i^2]-E[y_i]^2=E[y_i]-E[y_i]^2=p_i-p_i^2=p_i(1-p_i)$ を使った直接的な計算によって, $a$, $c$ はそれぞれスコア統計量 $A$, $B$ の分散に等しく, $b$ はスコア統計量 $A,B$ の共分散に等しいことを示せる(実はこのようなことは一般的に成立している):
 
 $$
 a = E[A^2], \quad b = E[AB], \quad c = E[B^2].
@@ -1763,17 +1993,95 @@ Fisher情報量行列 $I(\beta)$ はスコア統計量 $U(\beta) = [A(\beta), B(
 
 __注意:__ Fisher情報量行列を $I(\beta)$ と単位行列を混同しないこと!
 
+__注意:__ 「Fisher情報量行列」のような何か非常に高級で難しそうな名前が付いているという理由で「これは難しいものだ」と判断してはいけない. 上の場合には, その成分は対数尤度函数の $-1$ 倍 $L=L(\beta)$ を2回偏微分しただけのものに過ぎず, $L=L(\beta)$ を1回偏微分して得られるスコア統計量の分散共分散行列を与える量になっている行列であるに過ぎない. 付けられた名前の権威に負けて恐れを持ってはいけない.  恐れを持たずに数学的な内容だけを見ればよい.
 
-### ロジスティック回帰における β₀+β₁x に関するP値函数の構成
+__注意:__ Fisher情報量行列の一般的な場合の定義では, 成分を定義するときには2回偏微分した後に期待値を取る. 上でそうなっていない理由は期待値を取る前の2階の偏微分の段階ですでに定数になってしまっているからである.
 
-$U(\beta) = [A(\beta), B(\beta)]^T$ は次のように多変量正規分布に近似的に従っていると仮定する:
+
+### 問題: 一般の場合のスコア統計量とFisher情報量行列
+
+一般のパラメータ $\theta=(\theta_1,\ldots,\theta_d)$ を持つ統計モデル $p(y|\theta)$ とそれに従う確率変数 $y$ が与えられていて, $y$ の対数尤度函数の $-1$ 倍を $L(\theta) = -\log p(y|\theta)$ と書くとき(これは確率変数 $y$ に依存するので確率変数になる), __スコア統計量__ $U=[U_i]_{i=1}^n$ が
+
+$$
+U_i = \frac{\partial}{\partial\theta_i} L(\theta)
+$$
+
+と定義され, __Fisher情報量行列__ $I(\theta)$ の $(i,j)$ 成分 $I_{ij}(\theta)$ が
+
+$$
+I_{ij}(\theta) =
+E\left[\frac{\partial^2}{\partial\theta_i\partial\theta_j} L(\theta)\right]
+$$
+
+と定義される. ここで $E[\ ]$ は確率変数 $y$ に関する期待値を取る操作である. 次が成立することを示せ:
+
+$$
+E[U_i] = 0, \quad
+E[U_i U_j] = I_{ij}(\theta).
+$$
+
+__解答例:__ $E[U_i]=0$ を示そう.  $p(y|\theta)$ の $\theta_i$ に関する偏導函数を $p_{\theta_i}(y|\theta)$ と書くと,
+
+$$
+\begin{aligned}
+E[U_i] &=
+E\left[\frac{\partial}{\partial\theta_i} L(\theta)\right] =
+-E\left[\frac{\partial}{\partial\theta_i} \log p(y|\theta)\right] =
+-E\left[\frac{p_{\theta_i}(y|\theta)}{p(y|\theta)}\right]
+\\ &=
+-\int \frac{p_{\theta_i}(y|\theta)}{p(y|\theta)}\,p(y|\theta)\,dy =
+-\int p_{\theta_i}(y|\theta)\,dy \\ &=
+-\frac{\partial}{\partial\theta_i} \int p(y|\theta)\,dy =
+-\frac{\partial}{\partial\theta_i} 1 =
+0.
+\end{aligned}
+$$
+
+$I_{ij}(\theta) = E[U_i U_j]$ を示そう. $p(y|\theta)$ の2階の偏導函数を $p_{\theta_i\theta_j}(y|\theta)$ と書くと, 上と同様にして,
+
+$$
+E\left[\frac{p_{\theta_i\theta_j}(y|\theta)}{p(y|\theta)}\right] =
+\int p_{\theta_i\theta_j}(y|\theta)\,dy =
+\frac{\partial^2}{\partial\theta_i\partial\theta_j} \int p(y|\theta)\,dy =
+0.
+$$
+
+これを使うと,
+
+$$
+\begin{aligned}
+I_{ij}(\theta) &=
+E\left[\frac{\partial^2}{\partial\theta_i\partial\theta_j} L(\theta)\right] =
+-E\left[\frac{\partial^2}{\partial\theta_i\partial\theta_j} \log p(y|\theta)\right]
+\\ &=
+-E\left[
+\frac{p_{\theta_i\theta_j}(y|\theta)}{p(y|\theta)} -
+\frac{p_{\theta_i}(y|\theta)p_{\theta_j}(y|\theta)}{p(y|\theta)^2}
+\right]
+\\ &=
+E\left[
+\frac{p_{\theta_i}(y|\theta)}{p(y|\theta)^2}
+\frac{p_{\theta_j}(y|\theta)}{p(y|\theta)^2}
+\right] =
+E[U_i U_j].
+\end{aligned}
+$$
+
+__解答終__
+
+__注意:__ 前節の最後の注意で「Fisher情報量行列という名前に権威を感じて恐れを持つな」と述べたが, ここまで来れた人は数理統計学の面白い部分まで十分に到達できていると考えられるので, 自分自身を誇って良いと思われる.
+
+
+### βの推定量の分布の正規分布近似
+
+スコア統計量 $U(\beta) = [A(\beta), B(\beta)]^T$ は次のように多変量正規分布に近似的に従っていると仮定する:
 
 $$
 U(\beta) = \begin{bmatrix} A(\beta) \\ B(\beta) \end{bmatrix}
 \sim \MvNormal(0, I(\beta)), \ \text{approximately}.
 $$
 
-$\ha, \hb, \hc$ を次のように定める:
+最尤法の解で得られる $\beta$ の推定量 $\betahat$ を使って, 統計量 $\ha, \hb, \hc$ を次のように定める:
 
 $$
 \ha = a(\betahat), \quad
@@ -1789,7 +2097,24 @@ b = \frac{\partial A}{\partial\beta_1} = \frac{\partial B}{\partial\beta_0}, \qu
 c = \frac{\partial B}{\partial\beta_1}
 $$
 
-なので, 次の一次近似が成立している:
+なので, 次の一次近似が成立している(1次までのTaylor展開):
+
+$$
+\begin{aligned}
+&
+A(\beta) \approx A(\betahat) +
+\frac{\partial A}{\partial\beta_0}(\betahat)(\beta_0 - \betahat_0) +
+\frac{\partial A}{\partial\beta_1}(\betahat)(\beta_1 - \betahat_1) =
+\ha(\beta_0 - \betahat_0) + \hb(\beta_1 - \betahat_1),
+\\ &
+B(\beta) \approx B(\betahat) +
+\frac{\partial B}{\partial\beta_0}(\betahat)(\beta_0 - \betahat_0) +
+\frac{\partial B}{\partial\beta_1}(\betahat)(\beta_1 - \betahat_1) =
+\hb(\beta_0 - \betahat_0) + \hc(\beta_1 - \betahat_1).
+\end{aligned}
+$$
+
+すなわち, 
 
 $$
 \begin{bmatrix} A \\ B \end{bmatrix} \approx
@@ -1830,9 +2155,32 @@ $$
 
 $$
 \betahat
-\sim \MvNormal(\beta,\; I(\beta)^{-1}),
+\sim \MvNormal(\beta,\; I(\betahat)^{-1}),
 \ \text{approximately}.
 $$
+
+```julia
+# ẑの分布が標準正規分布で近似されることの確認
+# β̂の分布の視覚化
+PP = []
+QQ = []
+for n in (100, 400)
+    @time betahat, sehat, zhat = sim_logistic_regression(; n)
+    P = stephist(zhat; norm=true, label="zhat")
+    plot!(Normal(), -5, 5; label="Normal(0,1)")
+    title!("n = $n case")
+    push!(PP, P)
+    Q = scatter(first.(betahat), last.(betahat);
+        label="betahat", msc=:auto, alpha=0.5, ms=1)
+    title!("n = $n case")
+    plot!(xlim=(0.5, 8.5), ylim=(0.5, 4.5), xtick=0:10)
+    push!(QQ, Q)
+end
+plot(PP...; size=(800, 250), layout=(1, 2)) |> display
+plot(QQ...; size=(800, 250), layout=(1, 2)) |> display
+```
+
+### ロジスティック回帰における β₀+β₁x に関するWald型のP値函数と信頼区間
 
 一般にベクトル値確率変数 $V=[V_i]_{i=1}^n\sim\MvNormal(\mu, \Sigma)$ と $c\in\R^n$ について,
 
@@ -1868,49 +2216,6 @@ $$
 なので,
 
 $$
-\SE_{\betahat_0+\betahat_1 x_*} =
-\sqrt{\frac{c - 2b x_* + a x_*^2}{ac-b^2}}
-$$
-
-とおくと,
-
-$$
-\betahat_0 + \betahat_1 x_* \sim
-\Normal\left(
-\beta_0+\beta_1 x_*,\;
-\SE_{\betahat_0+\betahat_1 x_*}
-\right),
-\ \text{approximately}.
-$$
-
-$\SE_{\betahat_0+\betahat_1 x_*}$ は $x_*$ と $\beta$ から計算されることに注意せよ.
-
-以上の結果を使うと, 「$x_*$ に対応する $y_*$ の値が $1$ になる確率が $p_* = \logistic(\beta_0 + \beta_1 x_*)$ である」という仮説のWilson型のP値を次のように定めることができる:
-
-$$
-\pvalue_{\Wilson}(y|x,x_*,\beta) =
-2(1 - \cdf(\Normal(0,1), z(x_*,\beta)).
-$$
-
-ここで,
-
-$$
-z(x_*,\beta) =
-\frac{(\betahat_0+\betahat_1 x_*) - (\beta_0+\beta_1 x_*)}{\SE_{\betahat_0+\betahat_1 x_*}} =
-\frac{(\betahat_0-\beta_0)+(\betahat_1-\beta_1)x_*}{\SE_{\betahat_0+\betahat_1 x_*}}
-$$
-
-$I(\beta)^{-1}$ を $I(\betahat)^{-1}$ で置き換えて,
-
-$$
-\betahat
-\sim \MvNormal(\beta,\; I(\betahat)^{-1}),
-\ \text{approximately}.
-$$
-
-という近似を使えば, 上と同様にして,
-
-$$
 \SEhat_{\betahat_0+\betahat_1 x_*} =
 \sqrt{\frac{\hc - 2\hb x_* + \ha x_*^2}{\ha\hc-\hb^2}}
 $$
@@ -1923,10 +2228,10 @@ $$
 \beta_0+\beta_1 x_*,\;
 \SEhat_{\betahat_0+\betahat_1 x_*}
 \right),
-\ \text{approximately}
+\ \text{approximately}.
 $$
 
-が得られるので, Wald型のP値函数を次のように定めることができる:
+以上の結果を使うと, 「$x_*$ に対応する $y_*$ の値が $1$ になる確率が $p_* = \logistic(\beta_0 + \beta_1 x_*)$ である」という仮説のWald型のP値を次のように定めることができる:
 
 $$
 \pvalue_{\Wald}(y|x,x_*,\beta) =
@@ -1937,22 +2242,16 @@ $$
 
 $$
 \hz(x_*,\beta) =
-\frac{(\betahat_0+\betahat_1 x_*) - (\beta_0+\beta_1 x_*)}{\SEhat_{\betahat_0+\betahat_1 x_*}} =
-\frac{(\betahat_0-\beta_0)+(\betahat_1-\beta_1)x_*}{\SEhat_{\betahat_0+\betahat_1 x_*}}.
+\frac{(\betahat_0+\betahat_1 x_*) - (\beta_0+\beta_1 x_*)}{\SEhat_{\betahat_0+\betahat_1 x_*}}.
 $$
 
-$\SEhat_{\betahat_0+\betahat_1 x_*}$ は $\beta$ を使わずに最尤法の解 $\betahat$ のみを使って計算できることに注意せよ.
-
-
-### ロジスティック回帰における β₀+β₁x の信頼区間
-
-有意水準 $0<\alpha<1$ を任意に取り,
+有意水準 $0<\alpha<1$ を任意に取り, $z_{\alpha/2}$ を次のように定める:
 
 $$
 z_{\alpha/2} = \quantile(\Normal(0,1), 1-\alpha/2).
 $$
 
-Wald型P値函数には $\beta_0+\beta_1 x_*$ に関する次の信頼区間が対応している:
+Wald型P値函数には $t_* = \beta_0+\beta_1 x_*$ に関する次の信頼区間が対応している:
 
 $$
 \confint^{\beta_0+\beta_1 x_*}_{\Wald}(y|x,x_*,\alpha) =
@@ -1962,10 +2261,71 @@ $$
 \right].
 $$
 
+これを $p_* = \logistic(\beta_0+\beta_1 x_*)$ に関する信頼区間に書き直すと,
 
-### ロジスティック回帰における β₁ に関するP値函数
+$$
+\begin{aligned}
+&
+\confint^{p_*}_{\Wald}(y|x,x_*,\alpha)
+\\ &=
+\left[
+\logistic\left(
+\betahat_0+\betahat_1 x_* - z_{\alpha/2}\SEhat_{\betahat_0+\betahat_1 x_*}
+\right),\;
+\logistic\left(
+\betahat_0+\betahat_1 x_* + z_{\alpha/2}\SEhat_{\betahat_0+\betahat_1 x_*}
+\right)
+\right].
+\end{aligned}
+$$
 
-次の近似が使えると仮定する:
+```julia
+# ロジスティック回帰モデルのサンプル(データ)の生成
+Random.seed!(4649373)
+β = [-4, 2]
+n = 50
+x = rand(Normal(-β[1]/β[2], 1), n)
+y = logistic_rand(x, β)
+
+# ロジスティック回帰
+@show β̂ = logistic_mle(y, x)
+println()
+
+# P値の例
+for pstar in 0.2:0.1:0.6
+    @eval @show pvalue_pstar_wald(y, x, 2, $pstar)
+end
+
+# 95%信頼区間の視覚化
+scatter(x, (yᵢ -> yᵢ==0 ? -0.05 : 1.05).(y); label="sample", msc=:auto, alpha=0.7)
+plot!(xstar -> logistic(β[1] + β[2]*xstar);
+    label="true model", c=:blue, ls=:dot)
+plot!(xstar -> logistic(β̂[1] + β̂[2]*xstar); label="esitimate", c=2)
+plot!(xstar -> confint_pstar_wald(y, x, xstar)[1];
+    fillrange = xstar -> confint_pstar_wald(y, x, xstar)[2],
+    label="95% CI", c=:red, ls=:dash, fillalpha=0.2)
+plot!(xstar -> confint_pstar_wald(y, x, xstar)[2];
+    label="", c=:red, ls=:dash)
+plot!(ytick=0:0.1:1, yguide="p", xguide="x")
+title!("size-$n sample of logistic model with β = $β")
+plot!(legend=:left, size=(600, 250))
+```
+
+```julia
+# P値函数の視覚化
+
+xstars = range(0, 4, 200)
+pstars = range(0, 1, 100)
+heatmap(xstars, pstars, (xstar, pstar) -> pvalue_pstar_wald(y, x, xstar, pstar);
+    clim=(-0.1, 1), colorbar=false)
+scatter!(x, (yᵢ -> yᵢ==0 ? -0.05 : 1.05).(y); label="", msc=:auto, alpha=0.7, c=1)
+plot!(xlim=extrema(xstars))
+plot!(size=(600, 250))
+```
+
+### ロジスティック回帰における β₁ に関するWald型のP値函数と信頼区間
+
+この節でも次の近似が使えると仮定する:
 
 $$
 \betahat
@@ -1986,7 +2346,7 @@ $$
 \ \text{approximately}.
 $$
 
-これにより, 「一次の項の係数が $\beta_1$ である」という仮説のWald型P値を次のように定めることができる:
+これにより, 「一次の項の係数が $\beta_1$ である」という仮説のWald型のP値を次のように定めることができる:
 
 $$
 \pvalue_{\Wald}(y|x,\beta_1) = 2(1 - \cdf(\Normal(0,1), |\hz(\beta_1)|)).
@@ -2008,28 +2368,37 @@ $$
 \right].
 $$
 
-以上と同様にして, 
+```julia
+# ロジスティック回帰モデルのサンプル(データ)の生成
+Random.seed!(4649373)
+β = [-4, 2]
+n = 50
+x = rand(Normal(-β[1]/β[2], 1), n)
+y = logistic_rand(x, β)
 
-$$
-\SE_{\betahat_1} = \sqrt{\frac{a}{ac - b^2}}
-$$
+# ロジスティック回帰
+@show β̂ = logistic_mle(y, x)
 
-とおくことによって, Wilson型のP値函数を次のように定義できる: 
+# 信頼区間
+@show ci = confint_beta1_wald(y, x)
 
-$$
-\pvalue_{\Wilson}(y|x,\beta_1) = 2(1 - \cdf(\Normal(0,1), |z(\beta_1)|)).
-$$
+# P値函数と信頼区間の視覚化
+plot(β₁ -> pvalue_beta1_wald(y, x, β₁), 0.5, 3; label="")
+plot!(ytick=0:0.1:1, yguide="P-value", xguide="β₁")
+plot!(ci, fill(0.05, 2); label="95% CI")
+title!("true β₁ = $(β[2]), n = $n")
+```
 
-ここで,
+## xᵢ 達の値も1または0の場合のロジスティック回帰
 
-$$
-z(\beta_1) = \frac{\betahat_1 - \beta_1}{\SE_{\betahat_1}}.
-$$
+$x_i$ 達の値も1または0の場合のロジスティック回帰によって, 
 
-__注意:__ 以上と同様にして $\beta_0$ に関するWald型のP値函数と信頼区間およびWilson型のP値函数も構成できる.
+* [「検定と信頼区間: 比率の比較」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
+
+におけるオッズ比パラメータに関する検定や信頼区間に関する結果を再現できることを説明しよう.
 
 
-### xᵢ の値がすべて1または0の場合
+### xᵢ 達の値も1または0の場合にロジスティック回帰モデルは2つの二項分布モデルに等しい
 
 $x=[x_i]_{i=1}^n\in\{1,0\}^n$ であると仮定する.
 
@@ -2046,10 +2415,10 @@ X=0 & n_{01} & n_{00} & n_0 \\
 \qquad \left(\sum_{X,Y} n_{X,Y} = \sum_X n_X = n\right).
 $$
 
-行列 $A$ を次のように定める:
+行列 $N$ を次のように定める:
 
 $$
-A = \begin{bmatrix}
+N = \begin{bmatrix}
 n_{11} & n_{10} \\
 n_{01} & n_{00} \\
 \end{bmatrix}
@@ -2076,15 +2445,18 @@ $$
 (\text{パラメータの対数オッズ比}).
 $$
 
-ロジスティック回帰の統計モデルの確率質量函数は $A$ に関する次の確率質量函数に書き直される:
+ロジスティック回帰の統計モデルの確率質量函数は $N$ に関する次の確率質量函数に書き直される:
 
 $$
-P(A|n_1, n_0, p, q) =
+P(N|n_1, n_0, p, q) =
 \binom{n_1}{n_{11}}p^{n_{11}}(1-p)^{n_{10}}\cdot
 \binom{n_0}{n_{01}}q^{n_{01}}(1-q)^{n_{00}}.
 $$
 
 要するにこの節で扱っている最も簡単な場合のロジスティック回帰モデルは2つの二項分布モデルを含んでいる.
+
+
+### xᵢ 達の値も1または0の場合のスコア統計量とFisher情報行行列
 
 このとき, スコア統計量は次のようになる:
 
@@ -2129,17 +2501,15 @@ $$
 \hc = \frac{n_{11}n_{10}}{n_1}.
 $$
 
+
+### xᵢ 達の値も1または0の場合のWald型のP値函数と信頼区間
+
 したがって,
 
 $$
-\begin{aligned}
-\SE_{\betahat_1} &=
-\sqrt{\frac{n_1 p(1-p) + n_0 q(1-q)}{n_1 p(1-p) n_0 q(1-q)}} \\ &=
-\sqrt{\frac{1}{n_1 p}+\frac{1}{n_1(1-p)}+\frac{1}{n_0 q}+\frac{1}{n_0(1-q)}},
-\\
-\SEhat_{\betahat_1} &=
+\SEhat_{\betahat_1} =
+\sqrt{\frac{\ha}{\ha\hc-\hb^2}} =
 \sqrt{\frac{1}{n_{11}}+\frac{1}{n_{10}}+\frac{1}{n_{01}}+\frac{1}{n_{00}}}.
-\end{aligned}
 $$
 
 ゆえに
@@ -2151,24 +2521,272 @@ $$
 の分母の形がよくわかり, パラメータの対数オッズ比が $\beta_1$ であるという仮説のWald型P値函数
 
 $$
-\pvalue_{\Wald}(y|x,\beta_1) = 2(1 - \cdf(\Normal(0,1), |\hz(\beta_1)|))
+\pvalue_{\Wald}(N|\beta_1) = 2(1 - \cdf(\Normal(0,1), |\hz(\beta_1)|))
 $$
 
 や対数オッズ比 $\beta_1$ に関するWald型信頼区間
 
 $$
-\confint^{\beta_1}_{\Wald}(y|x,\alpha) =
+\confint^{\beta_1}_{\Wald}(N|\alpha) =
 \left[
 \betahat_1 - z_{\alpha/2}\SEhat_{\betahat_1},\;
 \betahat_1 + z_{\alpha/2}\SEhat_{\betahat_1}
 \right]
 $$
 
-の計算の仕方がよく分かった.  以上の結果は
+の計算の仕方がよく分かったことになる. 
+
+以上の結果は
 
 * [「検定と信頼区間: 比率の比較」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
 
 における「Wald版のオッズ比に関するP値と信頼区間」の再現になっている.
+
+
+### xᵢ 達の値も1または0の場合のWilson型のP値函数と信頼区間
+
+
+#### A=0で定まる条件付き確率分布の正規分布近似
+
+この節ではスコア統計量の分布の正規分布近似に戻って考え直す:
+
+$$
+U(\beta) = \begin{bmatrix} A(\beta) \\ B(\beta) \end{bmatrix}
+\sim \MvNormal(0, I(\beta)), \ \text{approximately}.
+$$
+
+$I(\beta)$ の成分は $a(\beta), b(\beta), c(\beta)$ と表されているのであった.
+
+回帰係数パラメータの片方の $\beta_1$ (対数オッズ比パラメータ)を任意に固定して, $\beta_0$ のみを動かして得られる最尤法(尤度最大化)の解を $\betatilde_0$ と書き,
+
+$$
+\betatilde = \begin{bmatrix} \betatilde_0 \\ \beta_1 \end{bmatrix}
+$$
+
+とおく.  このとき, $\betatilde_0$ は, 与えられた $\beta_1$ に対する方程式
+
+$$
+A = A(\beta) = A\left(\begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix}\right) = 0
+$$
+
+の解になる. ゆえに, $U(\betatilde)$ が従う分布は $U(\beta)$ が従う分布を $A(\beta)=0$ の場合に制限して得られる条件付き確率分布になる.  このことから, 次が成立することがわかる:
+
+$$
+B(\betatilde) \sim \Normal\left(0, \sqrt{\frac{\ta\tc-\tb^2}{\ta}}\right), \ \text{approximately}.
+$$
+
+ここで, $\ta, \tb, \tc$ は $\beta=\betatilde$ のときの $a,b,c$ である:
+
+$$
+\ta = a(\betatilde), \quad
+\tb = a(\betatilde), \quad
+\tc = a(\betatilde).
+$$
+
+$\ta/(\ta\tc-\tb^2)$ が $I(\betatilde)^{-1}$ の $(2,2)$ 成分に等しいことに注意せよ. (2変量正規分布の条件付き確率分布について自分で計算してみて, そうなる理由を確認せよ.)
+
+この結果を有用にするためには $\betatilde_0$ を求め, $\ta, \tb, \tc, B(\betatilde)$ の具体的な形を決定する必要がある. 以下ではそれを実行しよう.
+
+
+#### 与えられた対数オッズ比パラメータの値 β₁ に対する β₀ の推定量に関する公式
+
+__公式:__ $\betatilde_0$ と $\ta, \tb, \tc, B(\betatilde)$ の具体的な形は次のようになる:
+
+$$
+\begin{aligned}
+&
+\betahat_0 = \log\frac{n_{01}+\deltatilde}{n_{00}-\deltatilde}, 
+\\ &
+\ta = 
+\frac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1} +
+\frac{(n_{01}+\deltatilde)(n_{00}-\deltatilde)}{n_0},
+\\ &
+\tb = \tc = \frac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1},
+\\ &
+B(\betatilde) =  -\deltatilde.
+\end{aligned}
+$$
+
+ただし, $\deltatilde$ は
+
+$$
+\omega = \exp(\beta_1), \quad
+A = 1 - \omega, \quad
+B = n_{11} + n_{00} + \omega(n_{10} + n_{01}), \quad
+C = n_{11}n_{00} - \omega n_{01}n_{10}
+$$
+
+とおいて, 次のように定義される:
+
+$$
+\deltatilde = \frac{2C}{B + \sqrt{B^2 - 4AC}}.
+$$
+
+__証明:__ $A(\beta)$ の具体的な形は
+
+$$
+\begin{aligned}
+&
+A(\beta) = -n_{11}(1-p) + n_{10}p - n_{01}(1-q) + n_{00}q = n_1 p - n_{11} + n_0 q - n_{01},
+\\ &
+\frac{q}{1-q} = \exp(\beta_0),
+\quad
+\frac{p(1-q)}{(1-p)q} = \exp(\beta_1)
+\end{aligned}
+$$
+
+だったので, 与えられた $\beta_1$ に対する $\beta_0$ に関する方程式 $A(\beta)=0$ は次と同値である:
+
+$$
+\delta := n_{11} - n_1 p = -(n_{01} - n_0 q).
+$$
+
+このとき,
+
+$$
+p = \frac{n_{11}-\delta}{n_1}, \quad 1-p=\frac{n_{10}+\delta}{n_1}, \quad
+q = \frac{n_{01}+\delta}{n_0}, \quad 1-q=\frac{n_{00}-\delta}{n_0}
+$$
+
+なので, 条件 $((p(1-q))/((1-p)q)) = \exp(\beta_1)$ は次のように書き直される:
+
+$$
+\frac{(n_{11}-\delta)(n_{00}-\delta)}{(n_{10}+\delta)(n_{00}+\delta)} = \exp(\beta_1).
+$$
+
+これを $\delta$ に関する2次方程式に直してから解くと, その解は
+
+$$
+\deltatilde = \frac{2C}{B + \sqrt{B^2 - 4AC}}.
+$$
+
+ここで, 
+
+$$
+\omega = \exp(\beta_1), \quad
+A = 1 - \omega, \quad
+B = n_{11} + n_{00} + \omega(n_{10} + n_{01}), \quad
+C = n_{11}n_{00} - \omega n_{01}n_{10}.
+$$
+
+$\tp, \tq$ を次のように定める:
+
+$$
+\tp = \frac{n_{11}-\deltatilde}{n_1}, \quad
+\tq = \frac{n_{01}+\deltatilde}{n_0}.
+$$
+
+このとき, $\beta_0$ に関する方程式 $A(q)=0$ は次のように解ける:
+
+$$
+\betahat_0 = \log\frac{\tq}{1 - \tq} =
+\log\frac{n_{01}+\deltatilde}{n_{00}-\deltatilde}.
+$$
+
+そして, このとき,
+
+$$
+\begin{aligned}
+&
+\ta = n_1 \tp(1-\tp) + n_0 \tq(1-\tq) =
+\frac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1} +
+\frac{(n_{01}+\deltatilde)(n_{00}-\deltatilde)}{n_0},
+\\ &
+\tb = \tc = n_1 \tp(1-\tp) =
+\frac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1},
+\\ &
+B(\betatilde) = n_1 \tp - n_{11} = -\deltatilde.
+\end{aligned}
+$$
+
+これで $B(\betatilde)$ の具体的な形がわかった. __証明終__
+
+
+#### 対数オッズ比パラメータ β₁ に関するWilson型のP値函数と信頼区間の構成
+
+以上の結果と $n_{11}+n_{10}=n_1$, $n_{01}+n_{00}=n_0$ より,
+
+$$
+\begin{aligned}
+\frac{\ta}{\ta\tc-\tb^2} &=
+\frac
+{\dfrac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1} +
+\dfrac{(n_{01}+\deltatilde)(n_{00}-\deltatilde)}{n_0}}
+{\dfrac{(n_{11}-\deltatilde)(n_{10}+\deltatilde)}{n_1}
+\dfrac{(n_{01}+\deltatilde)(n_{00}-\deltatilde)}{n_0}}
+\\ &=
+\frac{n_1}{(n_{11}-\deltatilde)(n_{10}+\deltatilde)} +
+\frac{n_1}{(n_{01}+\deltatilde)(n_{00}-\deltatilde)}
+\\ &=
+\frac{1}{n_{11}-\deltatilde} + \frac{1}{n_{10}+\deltatilde} +
+\frac{1}{n_{01}+\deltatilde} + \frac{1}{n_{00}-\deltatilde}.
+\end{aligned}
+$$
+
+したがって, 
+
+$$
+B(\betatilde) \sim \Normal\left(0, \sqrt{\frac{\ta\tc-\tb^2}{\ta}}\right), \ \text{approximately}.
+$$
+
+という結果は次のように書き直される:
+
+$$
+z(\beta_1) := \deltatilde\,\SEhat_{\deltatilde}^{-1} \sim \Normal(0,1), \ \text{approximately}. 
+$$
+
+ここで,
+
+$$
+\SEhat_{\deltatilde}^{-1} =
+\sqrt{\frac{\ta}{\ta\tc-\tb^2}} =
+\sqrt{\frac{1}{n_{11}-\deltatilde} + \frac{1}{n_{10}+\deltatilde} +
+\frac{1}{n_{01}+\deltatilde} + \frac{1}{n_{00}-\deltatilde}}.
+$$
+
+さらにこれは, 次と同値である:
+
+$$
+\chi^2(\beta_1) := z(\beta_1)^2 =
+\deltatilde^2\,\SEhat_{\deltatilde}^{-2} \sim \Chisq(1), \ \text{approximately}. 
+$$
+
+これより, 「対数オッズ比パラメータは $\beta_1$ である」という仮説のWilson型の(スコア検定の)P値函数が以下のように定義される:
+
+$$
+\pvalue_{\Wilson}(N|\beta_1) =
+2(1-\cdf(\Normal(0,1), |z(\beta_1)|) =
+\cdf(\Chisq(1), \chi^2(\beta_1)).
+$$
+
+さらに, Wilson型(スコア検定に付随する)信頼区間が次のように得られる:
+
+$$
+\confint^{\beta_1}_{\Wilson}(N|\alpha) =
+\{\,\beta_1\in\R\mid \pvalue_{\Wilson}(N|\beta_1) \ge \alpha\,\}.
+$$
+
+以上の結果は
+
+* [「検定と信頼区間: 比率の比較」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
+
+における「Pearsonのχ²検定版のオッズ比に関するP値と信頼区間」の再現になっている.  信頼区間の計算法のより詳しい説明や計算の例もそちらにある.
+
+
+### xᵢ 達の値も1または0の場合にロジスティック回帰の一般化の役に立ち方
+
+$x_i=(X_i, k)\in\{1,0\}\times\{1,\ldots,K\}$ が $X_i = 1,0$ と $k=1,2,\ldots,K$ の組である場合への以上の話の一般化は, $K$ 個の統計分析の結果をまとめあげる __メタアナリシス__ などでも役に立っている.
+
+例えば, $K$ 個の統計分析に関する共通オッズ比を推定するためのMantel-Haenszel統計量の話やMantel-Haenszel検定の話をインターネットで検索してみよ.  共通オッズ比のMantel-Haenszel検定はロジスティック回帰を使った検定と本質的に同値になっている.
+
+* [共通オッズ比 Mantel-Haenszel統計量](https://www.google.com/search?q=%E5%85%B1%E9%80%9A%E3%82%AA%E3%83%83%E3%82%BA%E6%AF%94+Mantel-Haenszel%E7%B5%B1%E8%A8%88%E9%87%8F)
+* [Mantel-Haenszel検定](https://www.google.com/search?q=Mantel-Haenszel%E6%A4%9C%E5%AE%9A)
+
+検索すれば, $x_i$ 達が離散的な値を取る場合のロジスティック回帰は医療統計の分野でよく使われていることがわかるだろう.
+
+このように, ロジスティック回帰は機械学習の文脈で解説されることが多いが, 医療統計でも使われている.
+
+将来, 機械学習の技術を利用しようと思っている人も, それとは毛色が違う医療統計についても学んでおけば, アイデアの幅が広がり, オリジナルな仕事をできるかもしれない.
 
 ```julia
 
