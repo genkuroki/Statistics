@@ -462,6 +462,7 @@ __作成された動画__
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/anim_logisticreg_beta1_confint_pvalfunc.gif">
 
+<!--
 ### 15 例: 雑多な例
 
 この節はまだ何も書いていない.
@@ -483,6 +484,7 @@ __演習用サンプル__
 __定義された確率分布__
 
 __定義された信頼区間__
+-->
 
 ---
 
