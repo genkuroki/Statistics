@@ -444,6 +444,7 @@ __定義された信頼推定__
 
 * $t_* = \beta_0 + \beta_1 x_*$ の信頼区間
 * $p_* = \mathrm{logistic}(\beta_0 + \beta_1 x_*)$ の信頼区間
+* $x_*=0$ の場合から $\beta_0$ の信頼区間が得られる.
 * $\beta_1$ の信頼区間
 
 __定義された確率分布__
@@ -453,10 +454,13 @@ __定義された確率分布__
 
 __作成された動画__
 
-[線形回帰の信頼区間に対応するP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif)
+[線形回帰の信頼区間に対応するP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif) (x軸は-2から2まで)
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/anim_linreg_confint_pvalfunc_3d.gif">
 
+[ロジスティック回帰のβ₁の信頼区間に対応するP値函数](https://github.com/genkuroki/Statistics/blob/master/2022/images/anim_logisticreg_beta1_confint_pvalfunc.gif)
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/anim_logisticreg_beta1_confint_pvalfunc.gif">
 
 ### 15 例: 雑多な例
 
