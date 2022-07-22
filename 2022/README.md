@@ -426,7 +426,7 @@ P値に関する誤用を避けるために最初に読むべき基本文献は
 
 一連の講義では, 通常の統計学入門の教科書とは違って, 「統計モデル」という用語を多用した. このP値の定義の具体例については他のノートで詳しく説明した.
 
-### 14 例: 回帰
+### 14 回帰
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)\]
@@ -462,22 +462,25 @@ __作成された動画__
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/anim_logisticreg_beta1_confint_pvalfunc.gif">
 
+### 15 まとめ
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/15%20Summary.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/15%20Summary.pdf)\]
+
+1. 二項分布モデルでのClopper-Pearsonの信頼区間
+2. P値函数について
+3. Welchの t 検定について
+
 <!--
-### 15 例: 雑多な例
-
-この節はまだ何も書いていない.
-
-* [Jupyter notebook]()
-\[[nbviewer]()\]
-* [pdf]()
-\[[download]()\]
-
 ### 99 テンプレート
 
 * [Jupyter notebook]()
 \[[nbviewer]()\]
 * [pdf]()
 \[[download]()\]
+
 
 __演習用サンプル__
 
