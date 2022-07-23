@@ -1,15 +1,27 @@
 # 数理統計学2022
 
-記号法などについては次のメモを参照:
-
-* [Memo.md](https://github.com/genkuroki/Statistics/blob/master/2022/Memo.md)
-
 すべてをまとめたPDF:
 
 * [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 * [Statistics2022handwritten.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/Statistics2022handwritten.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/Statistics2022handwritten.pdf)\]
 
 これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている.
+
+このファイルのipynb版とpdf版:
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/00-0%20README.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/00-0%20README.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/00-0%20README.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/00-0%20README.pdf)\]
+
+
+記号法については次のメモも参照せよ:
+
+* [Memo.md](https://github.com/genkuroki/Statistics/blob/master/2022/Memo.md)
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/00-1%20Memo.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/00-1%20Memo.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/00-1%20Memo.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/00-1%20Memo.pdf)\]
 
 ## 目標
 
