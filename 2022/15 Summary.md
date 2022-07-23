@@ -16,8 +16,7 @@ jupyter:
 # まとめ
 
 * 黒木玄
-* 2022-07-20～2022-07-22
-
+* 2022-07-20～2022-07-23
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}
@@ -125,7 +124,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#二項分布でのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布でのClopper-Pearsonの信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>二項分布でのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明" data-toc-modified-id="Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明</a></span></li><li><span><a href="#二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方" data-toc-modified-id="二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方</a></span></li><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#P値とBayes統計の関係" data-toc-modified-id="P値とBayes統計の関係-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値とBayes統計の関係</a></span></li><li><span><a href="#復習:-二項分布とベータ分布の関係の証明" data-toc-modified-id="復習:-二項分布とベータ分布の関係の証明-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>復習: 二項分布とベータ分布の関係の証明</a></span><ul class="toc-item"><li><span><a href="#両辺を-p--で微分して確認する方法" data-toc-modified-id="両辺を-p--で微分して確認する方法-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>両辺を p  で微分して確認する方法</a></span></li><li><span><a href="#ベータ分布の一様分布の順序統計量の分布として解釈を使う方法" data-toc-modified-id="ベータ分布の一様分布の順序統計量の分布として解釈を使う方法-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>ベータ分布の一様分布の順序統計量の分布として解釈を使う方法</a></span></li></ul></li></ul></li><li><span><a href="#P値函数について" data-toc-modified-id="P値函数について-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値函数について</a></span><ul class="toc-item"><li><span><a href="#P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される" data-toc-modified-id="P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される</a></span></li><li><span><a href="#P値は信頼区間を考えたいすべてのパラメータ値について定義されている" data-toc-modified-id="P値は信頼区間を考えたいすべてのパラメータ値について定義されている-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>P値は信頼区間を考えたいすべてのパラメータ値について定義されている</a></span></li><li><span><a href="#分割表の場合のP値函数" data-toc-modified-id="分割表の場合のP値函数-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>分割表の場合のP値函数</a></span></li><li><span><a href="#P値函数から信頼区間が定義される" data-toc-modified-id="P値函数から信頼区間が定義される-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>P値函数から信頼区間が定義される</a></span></li><li><span><a href="#2×2の分割表のP値と信頼区間とP値函数の例" data-toc-modified-id="2×2の分割表のP値と信頼区間とP値函数の例-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>2×2の分割表のP値と信頼区間とP値函数の例</a></span></li><li><span><a href="#2×2の分割表での検定ではどれを使うべきか" data-toc-modified-id="2×2の分割表での検定ではどれを使うべきか-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>2×2の分割表での検定ではどれを使うべきか</a></span></li><li><span><a href="#P値函数と最尤法の関係" data-toc-modified-id="P値函数と最尤法の関係-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>P値函数と最尤法の関係</a></span></li></ul></li><li><span><a href="#Welchの-t-検定について" data-toc-modified-id="Welchの-t-検定について-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Welchの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の定義</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明" data-toc-modified-id="Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明</a></span></li><li><span><a href="#二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方" data-toc-modified-id="二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方</a></span></li><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#P値とBayes統計の関係" data-toc-modified-id="P値とBayes統計の関係-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値とBayes統計の関係</a></span></li><li><span><a href="#復習:-二項分布とベータ分布の関係の証明" data-toc-modified-id="復習:-二項分布とベータ分布の関係の証明-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>復習: 二項分布とベータ分布の関係の証明</a></span><ul class="toc-item"><li><span><a href="#両辺を-p--で微分して確認する方法" data-toc-modified-id="両辺を-p--で微分して確認する方法-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>両辺を p  で微分して確認する方法</a></span></li><li><span><a href="#ベータ分布の一様分布の順序統計量の分布として解釈を使う方法" data-toc-modified-id="ベータ分布の一様分布の順序統計量の分布として解釈を使う方法-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>ベータ分布の一様分布の順序統計量の分布として解釈を使う方法</a></span></li></ul></li></ul></li><li><span><a href="#P値函数について" data-toc-modified-id="P値函数について-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値函数について</a></span><ul class="toc-item"><li><span><a href="#P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される" data-toc-modified-id="P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される</a></span></li><li><span><a href="#P値は信頼区間を考えたいすべてのパラメータ値について定義されている" data-toc-modified-id="P値は信頼区間を考えたいすべてのパラメータ値について定義されている-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>P値は信頼区間を考えたいすべてのパラメータ値について定義されている</a></span></li><li><span><a href="#分割表の場合のP値函数" data-toc-modified-id="分割表の場合のP値函数-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>分割表の場合のP値函数</a></span></li><li><span><a href="#P値函数から信頼区間が定義される" data-toc-modified-id="P値函数から信頼区間が定義される-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>P値函数から信頼区間が定義される</a></span></li><li><span><a href="#2×2の分割表のP値と信頼区間とP値函数の例" data-toc-modified-id="2×2の分割表のP値と信頼区間とP値函数の例-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>2×2の分割表のP値と信頼区間とP値函数の例</a></span></li><li><span><a href="#2×2の分割表での検定ではどれを使うべきか" data-toc-modified-id="2×2の分割表での検定ではどれを使うべきか-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>2×2の分割表での検定ではどれを使うべきか</a></span></li><li><span><a href="#P値函数と最尤法の関係" data-toc-modified-id="P値函数と最尤法の関係-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>P値函数と最尤法の関係</a></span></li><li><span><a href="#以上のまとめの図" data-toc-modified-id="以上のまとめの図-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>以上のまとめの図</a></span></li><li><span><a href="#おまけ:-Bayes統計の方法を使った場合" data-toc-modified-id="おまけ:-Bayes統計の方法を使った場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>おまけ: Bayes統計の方法を使った場合</a></span></li></ul></li><li><span><a href="#Welchの-t-検定について" data-toc-modified-id="Welchの-t-検定について-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Welchの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の定義</a></span></li><li><span><a href="#Welchの-t-検定のP値や信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値や信頼区間の計算例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Welchの t 検定のP値や信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li></ul></li><li><span><a href="#数学的な補足:-大数の法則と中心極限定理について" data-toc-modified-id="数学的な補足:-大数の法則と中心極限定理について-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数学的な補足: 大数の法則と中心極限定理について</a></span><ul class="toc-item"><li><span><a href="#二項分布の大数の法則" data-toc-modified-id="二項分布の大数の法則-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布の大数の法則</a></span></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span></li><li><span><a href="#他の分布の場合" data-toc-modified-id="他の分布の場合-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>他の分布の場合</a></span></li><li><span><a href="#標本分布の場合" data-toc-modified-id="標本分布の場合-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>標本分布の場合</a></span></li><li><span><a href="#再掲:-大数の法則と中心極限定理のイメージ" data-toc-modified-id="再掲:-大数の法則と中心極限定理のイメージ-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>再掲: 大数の法則と中心極限定理のイメージ</a></span></li><li><span><a href="#統計学の基礎になる確率論の三種の神器" data-toc-modified-id="統計学の基礎になる確率論の三種の神器-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>統計学の基礎になる確率論の三種の神器</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -224,7 +223,7 @@ end
 # logtick()
 ```
 
-## 二項分布でのClopper-Pearsonの信頼区間
+## 二項分布モデルでのClopper-Pearsonの信頼区間
 
 
 ### Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明
@@ -725,12 +724,21 @@ $$
 一方, $t \le \T{k} \le t + dt$ となる確率は
 
 $$
+\begin{aligned}
+&
 (\text{$t \le \T{k} \le t + dt$ となる確率})
-\approx
-\frac{n!}{(k-1)!1!(n-k)!} t^{k-1}(1-t)^{n-k}\,dt
+\\ &=
+(\text{$\T{1}\le\cdots\le\T{k-1}\le\T{k}\le t+dt$ かつ $t\le\T{k}\le\T{k+1}\le\cdots\le\T{n}$ となる確率})
+\\ &\approx
+(\text{$\T{1}\le\cdots\le\T{k-1}\le t\le\T{k}\le t+dt\le\T{k+1}\le\cdots\le\T{n}$ となる確率})
+\\ &=
+(\text{$T_1,\ldots,T_n$ のうち $k-1$ 個が $t$ 以下で, 1個が $[t, t+dt]$ に含まれ, $n-k$ 個が $t+dt$ 以上の確率})
+\\ &=
+\frac{n!}{(k-1)!1!(n-k)!} t^{k-1}\,dt\,(1-t)^{n-k}
+\end{aligned}
 $$
 
-と近似される.  $n!/((k-1)!1!(n-k)!)$ は $n$ 個の $T_1,\dots,T_n$ を $p$ より小さな $i-1$ 個と $t$ と $t+dt$ の間に含まれる $1$ 個と残りの $n-k$ 個にグループ分けする方法の個数である. そして, 
+と近似され, 誤差は $dt$ より高次の微小量になる.  $\T{1}\le\T{2}\le\cdots\le\T{n}$ が $T_i$ 達を小さな順序に並べたものになっていることおよび, $n!/((k-1)!1!(n-k)!)$ が $n$ 個の $T_1,\dots,T_n$ を $k-1$ 個, $1$ 個, $n-k$ 個にグループ分けする方法全体の個数(多項係数の特別な場合)になっていることに注意せよ. そして, 
 
 $$
 \frac{n!}{(k-1)!1!(n-k)!} =
@@ -748,6 +756,7 @@ $$
 
 $$
 (\text{$\T{k}\le p$ となる確率}) =
+\int_0^p p(t)\,dt =
 \frac{\int_0^p t^{k-1}(1-t)^{n-k}\,dt}{B(k, n-k+1)}.
 $$
 
@@ -990,15 +999,16 @@ function plot_pvalue_function_of_or_wald(;
     @show CI = confint_or_wald(a, b, c, d; α)
     
     plot(ω -> pvalue_or_wald(a, b, c, d; ω), xlim...;
-        label="P-value function (Wald)")
-    vline!([ORhat]; label="ORhat=$(round(ORhat; digits=5))", ls=:dash)
-    plot!(CI, fill(α, 2); label="$(100(1-α))% CI", lw=2)
+        label="P-value function (Wald)", c=:black)
+    vline!([ORhat]; label="ORhat = $(round(ORhat; digits=5))", ls=:dash, c=2)
+    plot!(CI, fill(α, 2); label="$(100(1-α))% CI", lw=2, c=3)
+    scatter!([ω], [α]; label="significance level α = $(100α)%", c=3, msc=:auto)
     vline!([ω]; label="", c=:black, lw=0.5)
-    scatter!([ω], [P_value]; label="P-value of OR = $ω", c=:red)
+    scatter!([ω], [P_value]; label="P-value of OR = $ω", c=:red, msc=:auto)
     plot!(xguide="OR = ω     (log scale)", yguide="P-value")
     plot!(xscale=:log, xtick=logtick(; xlim), ytick=0:0.05:1)
     title!("a, b, c, d = $a, $b, $c, $d")
-    plot!(size=(600, 400))
+    plot!(size=(720, 350))
 end
 ```
 
@@ -1076,6 +1086,8 @@ $z_{\alpha/2}$ → `quantile(Normal(0,1), 0.975)` → \[[実行](https://www.wol
 __注意:__ よく使われているのは, Pearsonの $\chi^2$ 検定とFisher検定である.  標本サイズが小さい場合にはFisher検定を使えと解説されている場合もあるようだが, 実際に色々計算するとそれは誤りだと分かる.  実際には標本サイズが小さなとき, Fisher検定には過剰にP値が大きくなり過ぎるという欠点がある. しかし, その欠点は「第一種の過誤の確率が常に有意水準以下である」というFisher検定の優れた性質の裏返しなので, どの条件を重視するかによって, (Yatesの連続性補正をかけない)Pearsonの $\chi^2$ 検定と使い分けるとよいと思われる.  次の解説も参考になる:
 
 * 朝倉こう子, 濱﨑俊光, 連載 第3回　医学データの統計解析の基本　２つの割合の比較　\[[PDF](https://www.jstage.jst.go.jp/article/dds/30/3/30_235/_pdf)\]
+
+第一種の過誤の確率を確実に名目有意水準以下にしたければFisher検定を使う方がよいし, 平均的により高い検出力を得たいならば(連続補正されていない)Pearsonの $\chi^2$ 検定を使えばよいだろう.
 <!-- #endregion -->
 
 ### P値函数と最尤法の関係
@@ -1151,6 +1163,189 @@ __注意:__ 尤度(ゆうど, likelihood)については
 における「尤度 (ゆうど)と推定」の節を参照せよ.  尤度の定義は __統計モデル内でデータと同じ数値が生成される確率もしくは確率の密度__ であり,  モデルのデータの数値への適合度の指標としては使えるが, 「もっともらしさ」の指標としては不適切であることに注意せよ.
 
 
+### 以上のまとめの図
+
+以下の図のように, P値函数全体の形を見れば多くのことを一目で確認できる.
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/P-value_function_and_etc.jpg" width=60%>
+
+
+__注意:__ Bayes統計における事後分布も以上で説明したP値函数とほぼ同じ使い方をできる.  P値函数について十分に理解しておけば, Bayes統計について学習するときにも役に立つだろう.
+
+
+### おまけ: Bayes統計の方法を使った場合
+
+このノート群の中ではできるだけBayes統計の方法には触れないように気を使ったが, 何も触れないわけには行かなかった. 現代においては, P値函数を使う方法だけではなく, Bayes統計の方法も「統計学の道具箱」の中に入れておいた方がよいと思われる.
+
+
+2つの二項分布モデル $\Binomial(m, p)\times\Binomial(n, q)$ の事前分布として, 2つのJeffreya事前分布 $\Beta(1/2, 1/2)\times\Beta(1/2, 1/2)$ を採用する. 
+
+このとき, 2×2の分割表のデータの数値
+
+$$
+\begin{array}{|c|cc|c|}
+\hline
+& \text{当たり} & \text{はずれ} \\
+\hline
+\text{A} & a=30 & b=70 \\
+\text{B} & c=20 & d=80 \\
+\hline
+\end{array}
+$$
+
+から得られる事後分布は, $\Beta(30+1/2, 70+1/2)\times\Beta(20+1/2, 80+1/2)$ になる.
+
+```julia
+a, b, c, d = 30, 70, 20, 80
+posterior = product_distribution([Beta(a+1/2, b+1/2), Beta(c+1/2, d+1/2)])
+```
+
+事後分布のサイズ100万のサンプルを作る.
+
+```julia
+sample_of_posterior = rand(posterior, 10^6)
+```
+
+事後分布でのオッズ比のサンプルを構成する.
+
+```julia
+@views p, q = sample_of_posterior[1,:], sample_of_posterior[2,:]
+sample_of_posterior_odds_ratio = @. (p*(1-q))/((1-p)*q)
+sample_of_posterior_odds_ratio'
+```
+
+オッズ比の点推定値として, 事後分布での中央値を採用しよう.
+
+```julia
+ORhat_posterior_median = median(sample_of_posterior_odds_ratio)
+```
+
+```julia
+ORhat = oddsratiohat(a, b, c, d) # 最尤推定値
+```
+
+最尤推定値の `ORhat` との違いは小さい.
+
+```julia
+ORhat_posterior_median / ORhat - 1
+```
+
+オッズ比の区間推定として, 事後分布での $2.5\%$ と $97.5\%$ 分位点の間を採用しよう.
+
+これを $95\%$ 信用区間(確信区間, credible interval)と呼ぶ.
+
+```julia
+credible_interval = quantile.(Ref(sample_of_posterior_odds_ratio), [0.025, 0.975])
+print(credible_interval)
+```
+
+```julia
+confidence_interval = confint_or_wald(a, b, c, d; α=0.05)
+print(confidence_interval)
+```
+
+信頼区間(confidence interval)と信用区間(credible interval)の違いは小さい.
+
+```julia
+credible_interval ./ confidence_interval .- 1 |> print
+```
+
+オッズ比パラメータが $1$ という仮説のP値のBayes的代替物として, 事後分布で $1$ 以下になる確率と $1$ 以上になる確率の小さい方の2倍(と $1$ の小さい方)を採用する.  (これはClopper-Pearson型のP値函数の定義の類似になっている.)
+
+```julia
+ecdf_OR = ecdf(sample_of_posterior_odds_ratio)
+pvalue_or_bayesian = ω -> min(1, 2ecdf_OR(ω), 2(1 - ecdf_OR(ω)))
+P_value_Bayesian = pvalue_or_bayesian(1)
+```
+
+```julia
+Pvalue_Wald = pvalue_or_wald(a, b, c, d; ω=1)
+```
+
+通常のP値とそのBayes的類似の違いは小さい.
+
+```julia
+P_value_Bayesian/Pvalue_Wald - 1
+```
+
+以上をまとめてプロットしてみよう.
+
+```julia
+ORs = sample_of_posterior_odds_ratio
+CI = credible_interval
+α = 0.05
+
+xlim = quantile.(Ref(ORs), (1e-4, 1-1e-4))
+bin = range(xlim..., 201)
+h = Plots._make_hist((ORs,), bin, normed=true)
+y = h.weights
+
+plot(bin, y; seriestype=:stepbins)
+stephist(ORs; norm=true, bin,
+    label="posterior of odds ratio")
+vline!([ORhat_posterior_median];
+    label="median = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
+plot!(xguide="OR = ω", yguide="P-value")
+plot!(xtick=0:0.5:10, ytick=0:0.05:1)
+title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
+plot!(size=(720, 350))
+
+imin = findlast(i -> ecdf_OR(bin[i]) < 0.025, eachindex(bin))
+imax = findlast(i -> ecdf_OR(bin[i]) > 0.975, reverse(eachindex(bin)))
+@show ecdf_OR(bin[imin]), ecdf_OR(bin[imax])
+
+plot!(CI, fill(α, 2); label="$(100(1-α))% credible interval (Bayesian CI)", lw=2, c=3)
+plot!(bin[begin:imin], y[begin:imin-1]; seriestype=:stepbins,
+    label="probability = 2.5%", c=4, fillrange=0, alpha=0.5)
+plot!(bin[imax:end], y[imax:end]; seriestype=:stepbins,
+    label="probability = 2.5%", c=5, fillrange=0, alpha=0.5)
+```
+
+```julia
+plot(bin, y; seriestype=:stepbins)
+stephist(ORs; norm=true, bin,
+    label="posterior of odds ratio")
+vline!([ORhat_posterior_median];
+    label="median = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
+plot!(xguide="OR = ω", yguide="P-value")
+plot!(xtick=0:0.5:10, ytick=0:0.05:1)
+title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
+plot!(size=(720, 350))
+
+inull = findlast(i -> bin[i] < 1, eachindex(bin)) + 1
+
+plot!(bin[begin:inull], y[begin:inull-1]; seriestype=:stepbins,
+    label="half of P-value = $(round(P_value_Bayesian; digits=5))/2", c=6, fillrange=0, alpha=0.5)
+```
+
+通常のP値函数(Wald)とBayes的なP値函数の類似物のグラフを同時に描くとほぼぴったり重なる.
+
+```julia
+a, b, c, d = 30, 70, 20, 80
+plot(ω -> pvalue_or_wald(a, b, c, d; ω);
+    label="P-value function (Wald)")
+plot!(ω -> pvalue_or_bayesian(ω);
+    label="P-value function (Bayesian analogue)", ls=:dash)
+plot!(xtick=0:0.5:10, ytick=0:0.05:1)
+title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
+plot!(size=(720, 350))
+```
+
+サンプルサイズがもっと小さいな場合にはここまでぴったり一致しないが, この場合には非常によく一致している.
+
+この一致を見てしまった人が, 「ベイズ統計とP値を使う統計学は水と油である」のような考え方をすることは難しいように思われる.
+
+以上によって, 通常のP値を使った統計分析をBayes統計の方法でどのようにすれば置き換えることができるかがわかった.
+
+Bayes統計の方法では事前分布(prior)という新しい道具を使えるので, 別の新しいことも可能になる.
+
+次の論文では以上と本質的に同じ方法をオッズ比ではなくリスク比の場合に適用して, Bayes統計の方法を使って統計分析を行っている:
+
+* https://www.nejm.org/doi/full/10.1056/NEJMoa2115869
+
+この論文ではBayes統計の方法を使っているが, 通常のP値を使う方法でも実質的に同じ結果が得られる.
+
+
 ## Welchの t 検定について
 
 2つの群の平均の差に関するWelchの $t$ 検定に付随するP値と信頼区間については
@@ -1161,6 +1356,655 @@ __注意:__ 尤度(ゆうど, likelihood)については
 
 
 ### Welchの t 検定のP値と信頼区間の定義
+
+データは別の母集団Aから抽出されたサイズ $m$ の標本 $x_1,\ldots,x_m$ と別の母集団Bから抽出されたサイズ $n$ の標本 $y_1,\ldots,y_n$ であると仮定する.
+
+母集団Aからのサイズ $m$ の標本についてその標本平均が従う分布は中心極限定理によって正規分布で十分に近似されていると仮定する.  母集団Bとサイズ $n$ についても同様であると仮定しておく.
+
+母集団Aの(真の)平均を $\mu_x$ と書き, 母集団Bの(真の)平均を $\mu_y$ と書く.
+
+標本 $x_1,\ldots,x_m$ の標本平均を $\xbar$ と書き, 標本 $y_1,\ldots,y_n$ の標本平均を $\ybar$ と書く.
+
+母集団Aから一意的に決まっている定数 $\mu_x$ と標本を取り直すごとに確率的に変化する標本平均 $\xbar$ を混同しないように注意せよ.  $\mu_y$ と $\ybar$ についても同様に混同しないようにして欲しい.
+
+さらに, 標本 $x_1,\ldots,x_m$ の不偏分散を $s_x^2$ と書き, 標本 $y_1,\ldots,y_n$ の不偏分散を $s_y^2$ と書く:
+
+$$
+s_x^2 = \frac{1}{m-1}\sum_{i=1}^m (x_i - \xbar)^2, \quad
+s_y^2 = \frac{1}{n-1}\sum_{j=1}^n (y_j - \ybar)^2.
+$$
+
+これらを, 母集団Aの(真の)分散 $\sigma_x^2$ と母集団Bの(真の)分散 $\sigma_y^2$ と混同しないように注意せよ.
+
+以上の状況で, 任意に与えられた実数 $\dmu$ に対して, $\mu_x - \mu_y = \dmu$ という仮説のP値を定義しよう.
+
+まず, $t$ 統計量 $t = t(\dmu)$ を次のように定義する:
+
+$$
+t = t(\dmu) =
+\frac
+{(\xbar - \ybar) - \dmu}
+{\ds \sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}}}.
+$$
+
+さらに, 自由度と呼ばれる統計量 $\nu$ を次のように定義する:
+
+$$
+\nu =
+\frac
+{\ds \left(s_x^2/m + s_y^2/n\right)^2}
+{\ds \frac{(s_x^2/m)^2}{m-1} + \frac{(s_y^2/n)^2}{n-1}}.
+$$
+
+そして, P値を次のように定義する:
+
+$$
+\pvalue_{\Welch}(\xbar, \ybar, s_x^2, s_y^2|m,n, \mu_x-\mu_y=\dmu) =
+2(1-\cdf(\TDist(\nu), |t(\dmu)|)).
+$$
+
+ここで, $\cdf(\TDist(\nu), x)$ は自由度 $\nu$ の $t$ 分布の累積分布函数(cumulative distribution function, cdf)である.
+
+以上に対応する平均の差 $\mu_x - \mu_y$ に関する信頼度 $1-\alpha$ の信頼区間は次のようになる:
+
+$$
+\begin{aligned}
+&
+\confint_{\Welch}(\xbar, \ybar, s_x^2, s_y^2|m,n,\alpha)
+\\ &=
+\left[
+\xbar - \ybar - t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}},\;
+\xbar - \ybar + t_{\nu,\alpha/2}\sqrt{\frac{s_x^2}{m} + \frac{s_y^2}{n}}\;
+\right].
+\end{aligned}
+$$
+
+ここで, $t_{\nu,\alpha/2} = \quantile(\TDist(\nu), 1-\alpha/2)$.  ただし, $\quantile(\TDist(\nu), p)$ は自由度 $\nu$ の $t$ 分布の分位点函数(quantile function, 累積分布函数の逆函数)である.
+
+
+__注意:__ 自由度 $\nu$ をそのように定義する理由については
+
+* [「検定と信頼区間: 平均の比較」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
+
+の「Welchの t 検定で使う自由度の式の導出」の節を参照せよ. さらにその「Studentの t 検定とWelchの t 検定で使用する t 分布の自由度の比較」の節では
+
+$$
+(m+n-2) - \nu =
+\frac
+{\left(s_x^2/(m(m-1)) - s_y^2/(n(n-1))\right)^2}
+{\ds \frac{(s_x^2/(m(m-1)))^2}{n-1} + \frac{(s_y^2/(n(n-1)))^2}{m-1}}
+\ge 0
+$$
+
+となることも注意している. これより $\nu \le m+n-2$ となっている.
+
+```julia
+@vars s²_x s²_y m n ν
+ν = (s²_x/m + s²_y/n)^2/((s²_x/m)^2/(m-1) + (s²_y/n)^2/(n-1))
+lhs = (m+n-2) - ν
+rhsnum = (s²_x/(m*(m-1)) - s²_y/(n*(n-1)))^2
+rhsden = (s²_x/(m*(m-1)))^2/(n-1) + (s²_y/(n*(n-1)))^2/(m-1)
+@show (lhs - rhsnum/rhsden).simplify()
+Eq(lhs, rhsnum/rhsden)
+```
+
+__注意:__ $X_1,\ldots,X_n$ は分散 $\sigma^2$ を持つ分布の標本で, $\Xbar$ はその標本平均であるとする.  このとき, 不偏分散を計算するときに $n$ ではなく, $n-1$ で割る理由は単に
+
+$$
+E\left[\sum_{i=1}^n (X_i - \Xbar)^2\right] = (n-1)\sigma^2
+$$
+
+となるからである.  両辺を $n$ ではなく, $n-1$ で割らないと $\sigma^2$ が期待値として得られない. このような事実に関するより深い理解は __線形回帰が直交射影そのものであること__ を学べば得られる.  線形回帰に一般化された場合の不偏分散は, $n$ 次元空間の中の $r$ 次元部分空間の直交補空間の次元 $n-r$ で割ることによって得られる. 詳しい説明は
+
+* [「回帰 (regression)」に関するノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)
+
+の「βとσ²の不偏推定量」の節にある.  通常の標本の不偏分散は部分空間が1次元の $\{\,(t,t,\ldots,t)\mid t\in\R\,\}$ の場合になっている.
+
+<!-- #region -->
+### Welchの t 検定のP値や信頼区間の計算例
+
+以下の例は
+
+* [「検定と信頼区間: 平均の比較」に関するノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb#Welch%E3%81%AE-t-%E6%A4%9C%E5%AE%9A%E3%81%AEP%E5%80%A4%E3%81%A8%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E8%A8%88%E7%AE%97%E3%81%AE%E5%BF%85%E4%BF%AE%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E7%AD%94%E4%BE%8B)
+
+における
+
+* [必修問題: Welchの t 検定のP値と信頼区間の計算](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb#%E5%BF%85%E4%BF%AE%E5%95%8F%E9%A1%8C:-Welch%E3%81%AE-t-%E6%A4%9C%E5%AE%9A%E3%81%AEP%E5%80%A4%E3%81%A8%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E8%A8%88%E7%AE%97)
+
+の再掲である. 
+
+サイズが `m = 20`, `n = 30` のデータ
+
+```julia
+x = [19.2, 22.7, 7.8, 138.5, 70.5, 44.3, 84.0, 35.6, 72.4, 23.9,
+    11.7, 26.6, 73.8, 118.3, 54.2, 57.6, 40.5, 117.4, 102.3, 67.6]
+
+y = [44.3, 66.9, 62.9, 78.4, 71.2, 32.5, 111.4, 38.2, 68.2, 50.7,
+    74.5, 46.2, 65.7, 58.7, 42.5, 57.4, 63.0, 67.9, 72.1, 117.7,
+    124.1, 48.9, 91.8, 80.8, 60.2, 76.8, 76.3, 59.9, 70.7, 46.4]
+```
+
+について以下を求めよ.
+
+(1) 仮説 $\mu_x − \mu_y = 0$ のP値.
+
+(2) 仮説 $\mu_x − \mu_y = −30$ のP値.
+
+(3) Welchの t 検定に付随する 95% 信頼区間.
+<!-- #endregion -->
+
+#### WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例
+
+WoldramAlphaで標本の標本平均は `mean {a, b, c, …}` のように入力すれば計算できる.
+
+WoldramAlphaで標本の不偏分散は `var {a, b, c, …}` のように入力すれば計算できる. 
+
+__注意:__ 統計学の慣習では, 標本の分散は $n$ ではなく $n-1$ で割る方の不偏分散を意味することが多く, ソフトウェア側でもその慣習に従っていることが多い.  WoldramAlphaやJuliaやRの `var` はデフォルトで不偏分散を計算するが, Pythonのnumpyの `np.var` はそうではないので注意せよ. `np.var(x, ddof=1)` のように `ddof=1` が必要になる. 詳しくは公式ドキュメントの
+
+* https://numpy.org/doc/stable/reference/generated/numpy.var.html
+
+を参照せよ.  コンピュータで標本の分散の値を計算する場合にはそのための函数の仕様を確認しておいた方がよい. __注意終__
+
+$\xbar$ → `mean {19.2, 22.7, 7.8, 138.5, 70.5, 44.3, 84.0, 35.6, 72.4, 23.9, 11.7, 26.6, 73.8, 118.3, 54.2, 57.6, 40.5, 117.4, 102.3, 67.6}` → [実行](https://www.wolframalpha.com/input?i=mean+%7B19.2%2C+22.7%2C+7.8%2C+138.5%2C+70.5%2C+44.3%2C+84.0%2C+35.6%2C+72.4%2C+23.9%2C+11.7%2C+26.6%2C+73.8%2C+118.3%2C+54.2%2C+57.6%2C+40.5%2C+117.4%2C+102.3%2C+67.6%7D) → 59.445
+
+$s_x^2$ → `var {19.2, 22.7, 7.8, 138.5, 70.5, 44.3, 84.0, 35.6, 72.4, 23.9, 11.7, 26.6, 73.8, 118.3, 54.2, 57.6, 40.5, 117.4, 102.3, 67.6}` → [実行](https://www.wolframalpha.com/input?i=var+%7B19.2%2C+22.7%2C+7.8%2C+138.5%2C+70.5%2C+44.3%2C+84.0%2C+35.6%2C+72.4%2C+23.9%2C+11.7%2C+26.6%2C+73.8%2C+118.3%2C+54.2%2C+57.6%2C+40.5%2C+117.4%2C+102.3%2C+67.6%7D) → 1448.48
+
+$\ybar$ → `mean {44.3, 66.9, 62.9, 78.4, 71.2, 32.5, 111.4, 38.2, 68.2, 50.7, 74.5, 46.2, 65.7, 58.7, 42.5, 57.4, 63.0, 67.9, 72.1, 117.7, 124.1, 48.9, 91.8, 80.8, 60.2, 76.8, 76.3, 59.9, 70.7, 46.4}` → [実行](https://www.wolframalpha.com/input?i=mean+%7B44.3%2C+66.9%2C+62.9%2C+78.4%2C+71.2%2C+32.5%2C+111.4%2C+38.2%2C+68.2%2C+50.7%2C+74.5%2C+46.2%2C+65.7%2C+58.7%2C+42.5%2C+57.4%2C+63.0%2C+67.9%2C+72.1%2C+117.7%2C+124.1%2C+48.9%2C+91.8%2C+80.8%2C+60.2%2C+76.8%2C+76.3%2C+59.9%2C+70.7%2C+46.4%7D) → 67.5433
+
+$s_y^2$ → `var {44.3, 66.9, 62.9, 78.4, 71.2, 32.5, 111.4, 38.2, 68.2, 50.7, 74.5, 46.2, 65.7, 58.7, 42.5, 57.4, 63.0, 67.9, 72.1, 117.7, 124.1, 48.9, 91.8, 80.8, 60.2, 76.8, 76.3, 59.9, 70.7, 46.4}` → [実行](https://www.wolframalpha.com/input?i=var+%7B44.3%2C+66.9%2C+62.9%2C+78.4%2C+71.2%2C+32.5%2C+111.4%2C+38.2%2C+68.2%2C+50.7%2C+74.5%2C+46.2%2C+65.7%2C+58.7%2C+42.5%2C+57.4%2C+63.0%2C+67.9%2C+72.1%2C+117.7%2C+124.1%2C+48.9%2C+91.8%2C+80.8%2C+60.2%2C+76.8%2C+76.3%2C+59.9%2C+70.7%2C+46.4%7D) → 479.481
+
+以下において, `x`, `v`, `y`, `w` はそれぞれ $\xbar$, $s_x^2$, $\ybar$, $s_y^2$ を意味する.
+
+自由度 $\nu$ → `(v/m+w/n)^2/((v/m)^2/(m-1)+(w/n)^2/(n-1)) where {m=20, x=59.445, v=1448.48, n=30, y=67.5433, w=479.481}` → [実行](https://www.wolframalpha.com/input?i=%28v%2Fm%2Bw%2Fn%29%5E2%2F%28%28v%2Fm%29%5E2%2F%28m-1%29%2B%28w%2Fn%29%5E2%2F%28n-1%29%29+where+%7Bm%3D20%2C+x%3D59.445%2C+v%3D1448.48%2C+n%3D30%2C+y%3D67.5433%2C+w%3D479.481%7D) → 27.4358
+
+(1)
+
+仮説 $\mu_x-\mu_y = 0$ の $t$ 値 → `(x-y-0)/sqrt(v/m+w/n) where {m=20, x=59.445, v=1448.48, n=30, y=67.5433, w=479.481}` → [実行](https://www.wolframalpha.com/input?i=%28x-y-0%29%2Fsqrt%28v%2Fm%2Bw%2Fn%29+where+%7Bm%3D20%2C+x%3D59.445%2C+v%3D1448.48%2C+n%3D30%2C+y%3D67.5433%2C+w%3D479.481%7D) → -0.861294
+
+仮説 $\mu_x-\mu_y = 0$ のP値 → `2(1 - cdf(TDistribution(27.4358), 0.861294))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28TDistribution%2827.4358%29%2C+0.861294%29%29) → 0.396541
+
+(2)
+
+仮説 $\mu_x-\mu_y = -30$ の $t$ 値 → `(x-y+30)/sqrt(v/m+w/n) where {m=20, x=59.445, v=1448.48, n=30, y=67.5433, w=479.481}` → [実行](https://www.wolframalpha.com/input?i=%28x-y%2B30%29%2Fsqrt%28v%2Fm%2Bw%2Fn%29+where+%7Bm%3D20%2C+x%3D59.445%2C+v%3D1448.48%2C+n%3D30%2C+y%3D67.5433%2C+w%3D479.481%7D) → 2.32935
+
+仮説 $\mu_x-\mu_y = -30$ のP値 → `2(1 - cdf(TDistribution(27.4358), 2.32935))` → [実行](https://www.wolframalpha.com/input?i=2%281+-+cdf%28TDistribution%2827.4358%29%2C+2.32935%29%29) → 0.0274389
+
+(3)
+
+$\alpha=0.05$ のときの $t_{\nu, \alpha/2}$ → `quantile(TDistribution(27.4358), 0.975)` → [実行](https://www.wolframalpha.com/input?i=quantile%28TDistribution%2827.4358%29%2C+0.975%29) → 2.05031
+
+$\mu_x - \mu_y$ の $95\%$ 信頼区間 → `{x-y-2.05031*sqrt(v/m+w/n), x-y+2.05031*sqrt(v/m+w/n)} where {m=20, x=59.445, v=1448.48, n=30, y=67.5433, w=479.481}` → [実行](https://www.wolframalpha.com/input?i=%7Bx-y-2.05031*sqrt%28v%2Fm%2Bw%2Fn%29%2C+x-y%2B2.05031*sqrt%28v%2Fm%2Bw%2Fn%29%7D+where+%7Bm%3D20%2C+x%3D59.445%2C+v%3D1448.48%2C+n%3D30%2C+y%3D67.5433%2C+w%3D479.481%7D) → {-27.3763, 11.1797}
+
+
+#### Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例
+
+まず, 定義通りにJulia言語のコードで必要な函数を書く.
+
+Julia言語対応環境において
+
+* `x̄` は `x\bar` と入力してタブキーを押せば入力できる.
+* `sx²` は `sx\^2` と入力してタブキーを押せば入力できる.
+* `Δ` は `\Delta` と入力してタブキーを押せば入力できる.
+* `ν` は `\nu` と入力してタブキーを押せば入力できる.
+* `√` は `\sqrt` と入力してタブキーを押せば入力できる.
+
+ユニコードの文字をプログラムのコードとして使いたくない人は `x̄` や `sx²` の代わりに `xbar`, `sx2` のように書いても全然問題ない.
+
+以下ではほとんど数式通りにコードが書かれている
+
+```julia
+# 確率分布を扱う場合には常に以下を前もって実行しておく.
+
+using Distributions
+
+# t値の計算の仕方 (デフォルトで Δμ = 0 にしておく)
+
+function tvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+    (x̄ - ȳ - Δμ) / √(sx²/m + sy²/n)
+end
+
+function tvalue_welch(x, y; Δμ=0)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    tvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ)
+end
+
+# 自由度 ν の計算の仕方
+
+function degree_of_freedom_welch(m, sx², n, sy²)
+    (sx²/m + sy²/n)^2 / ((sx²/m)^2/(m-1) + (sy²/n)^2/(n-1))
+end
+
+function degree_of_freedom_welch(x, y)
+    m, sx² = length(x), var(x)
+    n, sy² = length(y), var(y)
+    degree_of_freedom_welch(m, sx², n, sy²)
+end
+
+# P値の計算の仕方
+
+function pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ=0)
+    t = tvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ)
+    ν = degree_of_freedom_welch(m, sx², n, sy²)
+    2ccdf(TDist(ν), abs(t))
+end
+
+function pvalue_welch(x, y; Δμ=0)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    pvalue_welch(m, x̄, sx², n, ȳ, sy²; Δμ)
+end
+
+# 信頼区間の計算の仕方 (デフォルトでは α = 0.05 にしておく)
+
+function confint_welch(m, x̄, sx², n, ȳ, sy²; α=0.05)
+    ν = degree_of_freedom_welch(m, sx², n, sy²)
+    c = quantile(TDist(ν), 1-α/2)
+    SEhat = √(sx²/m + sy²/n)
+    [x̄-ȳ-c*SEhat, x̄-ȳ+c*SEhat]
+end
+
+function confint_welch(x, y; α=0.05)
+    m, x̄, sx² = length(x), mean(x), var(x)
+    n, ȳ, sy² = length(y), mean(y), var(y)
+    confint_welch(m, x̄, sx², n, ȳ, sy²; α)
+end
+```
+
+以上のコードを何も考えずにコピー＆ペーストして使っても勉強にならない.
+
+可能ならば全部自分で書き直してみるべきである.
+
+そのためには, 出て来たビルトイン函数のすべてについて公式ドキュメントを参照した方がよい. 
+
+Juliaの場合には公式ドキュメントはほぼ `?` で表示されるドキュメントに等しい.
+
+Julia対応環境では例えば `?TDist` と入力すれば `TDist` のドキュメントを読むことができる.
+
+```julia
+?TDist
+```
+
+```julia
+# x, y に標本の値を代入する.
+x = [19.2, 22.7, 7.8, 138.5, 70.5, 44.3, 84.0, 35.6, 72.4, 23.9,
+    11.7, 26.6, 73.8, 118.3, 54.2, 57.6, 40.5, 117.4, 102.3, 67.6];
+y = [44.3, 66.9, 62.9, 78.4, 71.2, 32.5, 111.4, 38.2, 68.2, 50.7,
+    74.5, 46.2, 65.7, 58.7, 42.5, 57.4, 63.0, 67.9, 72.1, 117.7,
+    124.1, 48.9, 91.8, 80.8, 60.2, 76.8, 76.3, 59.9, 70.7, 46.4];
+```
+
+```julia
+# (1)
+pval1 = pvalue_welch(x, y; Δμ = 0)
+```
+
+統計学関係のコードを自分で書いた場合には, 何らかの方法で実装を間違っていないことを確認した方がよい. そのための1つの方法は別の方法で計算して確認することである.  例えばR言語で計算し直すと次のようになる.
+
+```julia
+@rput x y
+pval1_R = rcopy(R"""t.test(x, y, mu = 0)""")[:p_value]
+```
+
+浮動小数点計算で生じる微小な誤差を除いてよく一致している.
+
+```julia
+pval1 - pval1_R
+```
+
+__注意:__ Julia言語から[R言語](https://cran.r-project.org/)を使うためには, 自分のパソコンにR言語一式をインストールし, さらにJulia言語の側で
+
+* https://github.com/JuliaInterop/RCall.jl
+
+をインストールしておく必要がある.
+
+統計学を勉強するためには, 自分のパソコンで Julia, Python, R の3つを使えるようにしておくと非常に便利である.  しかし, そのためにはまた別のスキルが必要になる.  数年計画で身に付けるようにしておくとよいと思われる.  トラブルに出会ったら, 表示されたエラーメッセージをインターネットで検索してみるとよい.  コンピュータやプログラミングでは英語で書かれたトラブルの解決法を読むことは普通であり, そのために英語にも慣れておくことが必要になる.  結局のところ, __統計学を十分にマスターするために, コンピュータの使い方と技術英語もマスターする必要が生じる.__  しかし, 統計学を含めたそれら諸々のスキルを身に付けた人達は我々の社会の中で少数派であり, 学生時代のうちに身に付けることに成功した人達は相当に自信を持ってよいと思う.  繰り返しになるが, 数年計画で無理せずに身に付ければ十分である.  あせる必要はない.  就職した後にも勉強を続けることが普通である. __注意終__
+
+
+WolframAlphaで求めた値の相対誤差が十分に小さいことの確認.
+
+```julia
+0.396541/pval1 - 1
+```
+
+```julia
+# (2)
+pval2 = pvalue_welch(x, y; Δμ = -30)
+```
+
+R言語で計算し直すと次のようになる.
+
+```julia
+@rput x y
+pval2_R = rcopy(R"""t.test(x, y, mu = -30)""")[:p_value]
+```
+
+```julia
+pval2 - pval2_R
+```
+
+WolframAlphaで求めた値の相対誤差が十分に小さいことの確認.
+
+```julia
+0.0274389/pval2 - 1
+```
+
+```julia
+# (3)
+ci3 = confint_welch(x, y; α = 0.05)
+print(ci3)
+```
+
+R言語で計算し直すと次のようになる.
+
+```julia
+@rput x y
+ci3_R = rcopy(R"""t.test(x, y, conf.level = 0.95)""")[:conf_int]
+print(ci3_R)
+```
+
+```julia
+ci3 - ci3_R |> print
+```
+
+WolframAlphaで求めた値の相対誤差が十分に小さいことの確認.
+
+```julia
+[-27.3763, 11.1797] ./ ci3 .- 1 |> print
+```
+
+Julia言語では要素ごとの演算(broadcast)にするためにはこのように演算記号に `.` を付ける.
+
+
+せっかくなのでP値函数もプロットしておこう.
+
+```julia
+@show xlim = confint_welch(x, y; α=1e-3)
+plot(Δμ -> pvalue_welch(x, y; Δμ), xlim...; label="P-value function", c=:black)
+vline!([mean(x) - mean(y)]; label="Δμ = x̄ - ȳ", ls=:dash, c=2)
+plot!(ci3, fill(0.05, 2); label="95% conf. int.", lw=2, c=3)
+scatter!([0], [0.05]; label="sig. level α = 5%", c=3, msc=:auto)
+vline!([0]; label="", lw=0.5, c=:black)
+scatter!([0], [pval1]; label="P-value of Δμ = 0", c=:red, msc=:auto)
+plot!(xguide="μ_x - μ_y = Δμ", yguide="P-value")
+plot!(ytick=0:0.05:1)
+plot!(size=(640, 350))
+```
+
+これと以下を比較せよ.
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/P-value_function_and_etc.jpg" width=60%>
+
+
+上のWelchの $t$ 検定でのP値函数のグラフでは, パラメータ $\theta$ は2つの群の平均の差を意味する $\dmu$ になっている. 
+
+そして, 点推定値は $\dmu = \xbar - \ybar$ になっている.  (この点推定値は正規分布の標本分布モデルにおける最尤推定値にもなっている.)
+
+母集団からの標本の無作為抽出(random samplping, ランダム・サンプリング)を行うごとに変化するデータの数値の確率的揺らぎも考慮すると, 標本を取得した2つの母集団の平均の差 $\mu_x - \mu_y$ (これの値は未知)がぴったり点推定値 $\xbar - \ybar$ になっているとは考えられないことに注意せよ.
+
+データの数値と $\mu_x - \mu_y = \dmu$ という仮説の整合性がP値函数のグラフを見ればわかる.
+
+大雑把に, $\dmu$ の値が $-43$ 未満だったり, $27$ より大きいとき, $\mu_x - \mu_y = \dmu$ という仮説とデータの整合性はほぼないように見える. (この判断は有意水準を $\alpha=0.1\%$ とした場合に相当している.)
+
+さらに大雑把に閾値 $\alpha = 5\%$ で切断した場合の信頼区間は大体 $[-27, 11]$ でそれよりは狭くなっている.
+
+
+## 数学的な補足: 大数の法則と中心極限定理について
+
+以下で $f(x)$ は有界な連続函数であると仮定する.
+
+
+### 二項分布の大数の法則
+
+二項分布
+
+$$
+P(k|n,p) = \binom{n}{k} p^k (1-p)^{n-k} \quad (k=0,1,\ldots,n)
+$$
+
+に関する大数の法則は, $n$ が大きなとき, $k/n$ の分布が $p$ の近くに集中することを意味する. これは
+
+$$
+\lim_{n\to\infty}
+\sum_{k=0}^n f\left(\frac{k}{n}\right) \binom{n}{k} p^k (1-p)^{n-k} = f(p)
+$$
+
+が成立することを意味している. 
+
+__注意:__ この結果の厳密な直接的証明は
+
+* 高木貞治『解析概論』岩波書店
+
+の「§78. Weierstrassの定理」の節にある.  そこの式(8)を見よ.  すなわち, 閉区間上の連続函数が多項式函数で一様近似できるというWeierstrassの定理は二項分布の大数の法則(の精密化)から得られる.  この方法は Serge Bernstein による.  __注意終__
+
+
+$f(x)=\cos(\pi x)$, $p=1/3$ の場合について, 二項分布の大数の法則を数値的に確認してみよう.
+
+```julia
+f(x) = cospi(x)
+n, p = 10^6, 1/3
+@show bin = Binomial(n, p)
+@show LHS = sum(f(k/n)*pdf(bin, k) for k in support(bin))
+@show RHS = f(p)
+@show LHS/RHS - 1;
+```
+
+### 二項分布の中心極限定理
+
+二項分布
+
+$$
+P(k|n,p) = \binom{n}{k} p^k (1-p)^{n-k} \quad (k=0,1,\ldots,n)
+$$
+
+に関する大数の法則は, $n$ が大きなとき, $k$ の分布が二項分布と同じ平均 $np$ と分散 $np(1-p)$ を持つ正規分布で近似されることを意味する.  すなわち, $n$ が大きなとき, 
+
+$$
+z = \frac{k - np}{\sqrt{np(1-p)}}
+$$
+
+の分布が標準正規分布で近似されることを意味する.  このことは次が成立することを意味する:
+
+$$
+\lim_{n\to\infty}
+\sum_{k=0}^n f\left(\frac{k-np}{\sqrt{np(1-p)}}\right) \binom{n}{k} p^k (1-p)^{n-k} =
+\int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
+$$
+
+
+$f(x)=\cos(x)$, $p=1/3$ の場合について, 二項分布の中心極限定理を数値的に確認してみよう.
+
+```julia
+f(x) = cos(x)
+n, p = 10^6, 1/3
+@show bin = Binomial(n, p)
+@show LHS = sum(f((k-n*p)/√(n*p*(1-p)))*pdf(bin, k) for k in support(bin))
+g(z) = f(z) * pdf(Normal(0, 1), z)
+@show RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+@show LHS/RHS - 1;
+```
+
+実は次が成立している:
+
+$$
+\int_{-\infty}^\infty \cos(tz) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz =
+\int_{-\infty}^\infty e^{itz} \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz =
+E\left[e^{itZ}\right] =
+e^{-t^2/2}.
+$$
+
+ここで $Z$ は標準正規分布に従う確率変数である.
+
+```julia
+@vars z t real=true
+g_sym(z) = cos(t*z) * exp(-z^2/2)/√(2Sym(π))
+expr = sympy.Integral(g_sym(z), (z, -oo, oo))
+sol_exact = expr.doit()
+Eq(expr, sol_exact)
+```
+
+```julia
+@show sol_numeriacal = float(sol_exact(t=>1))
+@show RHS/sol_numeriacal - 1;
+```
+
+### 他の分布の場合
+
+正規分布で近似される他の分布の場合にも同様の結果が成立している.
+
+__例:__ Poisson分布
+
+$$
+P(k|\lambda) = \frac{e^{-\lambda}\lambda^k}{k!} \quad (k=0,1,2,\ldots)
+$$
+
+の平均と分散は共に $\lambda$ であり, $\lambda$ が大きなとき同じ平均と分散を持つ正規分布で近似されるので,
+
+$$
+\lim_{\lambda\to\infty}
+\sum_{k=0}^\infty
+f\left(\frac{k-\lambda}{\sqrt{\lambda}}\right)
+\frac{e^{-\lambda}\lambda^k}{k!} =
+\int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
+$$
+
+```julia
+f(x) = cos(x)
+λ = 10^6
+@show poi = Poisson(λ)
+m, s = mean(poi), std(poi)
+supp = max(0, round(Int, m-6s)):round(Int, m+6s)
+@show LHS = sum(f((k-λ)/√λ) * pdf(poi, k) for k in supp)
+g(z) = f(z) * pdf(Normal(0, 1), z)
+@show RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+@show LHS/RHS - 1;
+```
+
+__例:__ Gamma分布
+
+$$
+p(x|\alpha,\theta) = \frac{e^{-x/\theta}x^{\alpha-1}}{\theta^\alpha\Gamma(\alpha)}
+$$
+
+は 平均 $\alpha\theta$, 分散 $\alpha\theta^2$ を持ち, $\alpha$ が大きなとき同じ平均と分散を持つ正規分布で近似されるので,
+
+$$
+\lim_{\lambda\to\infty}
+\int_0^\infty
+f\left(\frac{x-\alpha\lambda}{\sqrt{\alpha\theta^2}}\right)
+\frac{e^{-x/\theta}x^{\alpha-1}}{\theta^\alpha\Gamma(\alpha)}
+\,dx =
+\int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
+$$
+
+```julia
+f(x) = cos(x)
+α, θ = 10^6, 2
+@show gam = Gamma(α, θ)
+F(x) = f((x - α*θ)/√(α*θ^2)) * pdf(gam, x)
+m, s = mean(gam), std(gam)
+a, b = m-5s, m+5s
+@show LHS = quadgk(F, a, b)[1]
+g(z) = f(z) * pdf(Normal(0, 1), z)
+@show RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+@show LHS/RHS - 1;
+```
+
+### 標本分布の場合
+
+平均 $\mu$, 分散 $\sigma^2$ を持つ分布 $D$ の標本分布 $D^n$ に従う確率変数 $(X_1,\ldots,X_n)$ について,
+
+$$
+\Xbar_n = \frac{1}{n}\sum_{i=1}^n X_i
+$$
+
+は平均 $\mu$, 分散 $\sigma^2/n$ を持ち, 大数の法則より, $n$ が大きなとき $\mu$ の近くにその分布は集中する.  このことは次が成立することを意味している:
+
+$$
+\lim_{n\to\infty} E[f(\Xbar_n)] = f(\mu).
+$$
+
+さらに, 中心極限定理より, $\Xbar_n$ は$n$ が大きなとき同じ平均と分散を持つ正規分布に近似的に従う.  すなわち,
+
+$$
+Z_n = \frac{\Xbar_n - \mu}{\sqrt{\sigma^2/n}} =
+\frac{\sqrt{n}\,(\Xbar_n - \mu)}{\sigma}
+$$
+
+は $n$ が大きなとき近似的に標準正規分布に従う.  このことは次が成立することを意味している:
+
+$$
+\lim_{n\to\infty} E[f(Z_n)] = \int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
+$$
+
+
+### 再掲: 大数の法則と中心極限定理のイメージ
+
+以下の図は
+
+* [「大数の法則と中心極限定理」に関するノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
+
+にあった図の再掲である.
+
+確率統計に関する入門的教科書の中には, 大数の法則や中心極限定理について説明するために, 確率変数や確率分布に関する様々な種類の収束性の数学的に正確な定義を説明しているものが結構ある.
+
+この一連のノート群においては, そのような説明を意図的に避けた.
+
+なぜならば, 統計学を実践的に使うことが目標の人は以下のイメージを大事した方がよいように思われるからである.
+
+数学的に正確な理解を目指す場合であっても, 最初のうちは以下の図のようなイメージを大事にして, むしろこのイメージを元に, 確率変数や確率分布の収束に関する数学的に適切な定義について, 自分で考えるようにした方が良いように思われる.
+
+教科書に書いてある天下り的な定義から出発しようとすると数学の理解は苦しくなることが多い.
+
+自分の力で適切な定義を作るために十分な「論理的スキル」と「健全な直観」の組み合わせの習得を目指す方が楽に理解できる可能性が増えるように思われる.
+
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/CTL.png" width=90%>
+
+
+### 統計学の基礎になる確率論の三種の神器
+
+これは筆者の個人的な意見に過ぎないのだが, 統計学の基礎になる確率論の三種の神器は次の3つである:
+
+* 大数の法則
+* 中心極限定理
+* Kullback-Leibler情報量に関するSanovの定理
+
+この一連のノート群で3つ目の __Kullback-Leibler情報量に関するSanovの定理__ にはほとんど触れることができなかった.
+
+Kullback-Leibler情報量のSanovの定理については
+
+* [「大数の法則と中心極限定理」に関するノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.ipynb)
+
+の「問題: Kullback-Leibler情報量とGibbsの情報不等式」と
+
+* [「大数の法則と中心極限定理」に関するノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
+
+の「注意: Kullback-Leibler情報量とSanovの定理との関係」で簡単に触れただけで終わった.
+
+Kullback-Leibler情報量のSanovの定理は __大偏差原理__ (large deviation principle)の特別な場合になっているので, 三種の神器の3番目は「大偏差原理」に一般化しておいてもよい.  大偏差原理は統計力学的な意味でのエントロピーや除法理論における情報量の概念を扱う話だと思ってよい.
+
+Kullback-Leibler情報量のSanovの定理は赤池情報量規準(AIC)などの情報量規準の基礎になる.
+
+Sanovの定理の易しい解説が以下の場所にある:
+
+* [Kullback-Leibler情報量とSanovの定理](https://genkuroki.github.io/documents/20160616KullbackLeibler.pdf)
+
+確率論で役に立つ解析学については次のノートも参考になるかもしれない:
+
+* [ガンマ分布の中心極限定理とStirlingの公式](https://genkuroki.github.io/documents/20160501StirlingFormula.pdf)
+
+ついでに紹介しておくと, ガンマ函数やベータ函数などについては次の場所にあるノート群が詳しい:
+
+* [「微分積分学」に関するノート群](https://github.com/genkuroki/Calculus)
+
+さらに, 図書館で次の文献も参照できれば, 統計学の基礎になる確率論の三種の神器について理解を深め易いと思われる:
+
+* 高橋陽一郎, 確率論の広がり, 数学のたのしみ, no.8 (1998) pp.26-35　([関連情報を検索](https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E9%99%BD%E4%B8%80%E9%83%8E+%E7%A2%BA%E7%8E%87%E8%AB%96%E3%81%AE%E5%BA%83%E3%81%8C%E3%82%8A+%E6%95%B0%E5%AD%A6%E3%81%AE%E3%81%9F%E3%81%AE%E3%81%97%E3%81%BF+1998))
+
+__面白いことはたくさんある(ありすぎる).__
+
+__あせらずに楽しみながら勉強して欲しいと思います.__
 
 ```julia
 

@@ -17,7 +17,8 @@
 * よく使われる確率分布達に関する知識
 * 尤度と推定と要約統計
 * 検定と信頼区間を表裏一体のものとして理解すること
-* __簡単な場合について具体的な数値の計算を行えること(重要!)__
+* P値函数について理解すること
+* __簡単な場合について具体的な数値の計算を行えるようになること(重要!)__
 
 ## 資料
 
@@ -472,6 +473,7 @@ __作成された動画__
 1. 二項分布モデルでのClopper-Pearsonの信頼区間
 2. P値函数について
 3. Welchの t 検定について
+4. 数学的な補足: 大数の法則と中心極限定理について
 
 <!--
 ### 99 テンプレート
@@ -503,4 +505,3 @@ __定義された信頼区間__
 * ベイズ統計入門 (手書きのノート, 2019) \[[pdf](https://genkuroki.github.io/documents/2019-09-03_BayesianStatistics.pdf)\]
 * ベイズ統計の枠組みと解釈について (2019) \[[Jupyter notebook](https://nbviewer.org/github/genkuroki/Statistics/blob/master/Introduction%20to%20Bayesian%20Statistics.ipynb)\]
 * Kullback-Leibler情報量と記述統計 (2019-2020) \[[Jupyter notebook](https://nbviewer.org/github/genkuroki/Statistics/blob/master/KL%20information%20and%20descriptive%20statistics.ipynb)\]
-
