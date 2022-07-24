@@ -124,7 +124,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明" data-toc-modified-id="Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明</a></span></li><li><span><a href="#二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方" data-toc-modified-id="二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方</a></span></li><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#P値とBayes統計の関係" data-toc-modified-id="P値とBayes統計の関係-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値とBayes統計の関係</a></span></li><li><span><a href="#復習:-二項分布とベータ分布の関係の証明" data-toc-modified-id="復習:-二項分布とベータ分布の関係の証明-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>復習: 二項分布とベータ分布の関係の証明</a></span><ul class="toc-item"><li><span><a href="#両辺を-p--で微分して確認する方法" data-toc-modified-id="両辺を-p--で微分して確認する方法-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>両辺を p  で微分して確認する方法</a></span></li><li><span><a href="#ベータ分布の一様分布の順序統計量の分布として解釈を使う方法" data-toc-modified-id="ベータ分布の一様分布の順序統計量の分布として解釈を使う方法-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>ベータ分布の一様分布の順序統計量の分布として解釈を使う方法</a></span></li></ul></li></ul></li><li><span><a href="#P値函数について" data-toc-modified-id="P値函数について-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値函数について</a></span><ul class="toc-item"><li><span><a href="#P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される" data-toc-modified-id="P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される</a></span></li><li><span><a href="#P値は信頼区間を考えたいすべてのパラメータ値について定義されている" data-toc-modified-id="P値は信頼区間を考えたいすべてのパラメータ値について定義されている-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>P値は信頼区間を考えたいすべてのパラメータ値について定義されている</a></span></li><li><span><a href="#分割表の場合のP値函数" data-toc-modified-id="分割表の場合のP値函数-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>分割表の場合のP値函数</a></span></li><li><span><a href="#P値函数から信頼区間が定義される" data-toc-modified-id="P値函数から信頼区間が定義される-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>P値函数から信頼区間が定義される</a></span></li><li><span><a href="#2×2の分割表のP値と信頼区間とP値函数の例" data-toc-modified-id="2×2の分割表のP値と信頼区間とP値函数の例-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>2×2の分割表のP値と信頼区間とP値函数の例</a></span></li><li><span><a href="#2×2の分割表での検定ではどれを使うべきか" data-toc-modified-id="2×2の分割表での検定ではどれを使うべきか-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>2×2の分割表での検定ではどれを使うべきか</a></span></li><li><span><a href="#P値函数と最尤法の関係" data-toc-modified-id="P値函数と最尤法の関係-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>P値函数と最尤法の関係</a></span></li><li><span><a href="#以上のまとめの図" data-toc-modified-id="以上のまとめの図-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>以上のまとめの図</a></span></li><li><span><a href="#おまけ:-Bayes統計の方法を使った場合" data-toc-modified-id="おまけ:-Bayes統計の方法を使った場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>おまけ: Bayes統計の方法を使った場合</a></span></li></ul></li><li><span><a href="#Welchの-t-検定について" data-toc-modified-id="Welchの-t-検定について-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Welchの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の定義</a></span></li><li><span><a href="#Welchの-t-検定のP値や信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値や信頼区間の計算例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Welchの t 検定のP値や信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li></ul></li><li><span><a href="#数学的な補足:-大数の法則と中心極限定理について" data-toc-modified-id="数学的な補足:-大数の法則と中心極限定理について-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数学的な補足: 大数の法則と中心極限定理について</a></span><ul class="toc-item"><li><span><a href="#二項分布の大数の法則" data-toc-modified-id="二項分布の大数の法則-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布の大数の法則</a></span></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span></li><li><span><a href="#他の分布の場合" data-toc-modified-id="他の分布の場合-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>他の分布の場合</a></span></li><li><span><a href="#標本分布の場合" data-toc-modified-id="標本分布の場合-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>標本分布の場合</a></span></li><li><span><a href="#再掲:-大数の法則と中心極限定理のイメージ" data-toc-modified-id="再掲:-大数の法則と中心極限定理のイメージ-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>再掲: 大数の法則と中心極限定理のイメージ</a></span></li><li><span><a href="#統計学の基礎になる確率論の三種の神器" data-toc-modified-id="統計学の基礎になる確率論の三種の神器-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>統計学の基礎になる確率論の三種の神器</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明" data-toc-modified-id="Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明</a></span></li><li><span><a href="#二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方" data-toc-modified-id="二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方</a></span></li><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#P値とBayes統計の関係" data-toc-modified-id="P値とBayes統計の関係-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値とBayes統計の関係</a></span></li><li><span><a href="#復習:-二項分布とベータ分布の関係の証明" data-toc-modified-id="復習:-二項分布とベータ分布の関係の証明-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>復習: 二項分布とベータ分布の関係の証明</a></span><ul class="toc-item"><li><span><a href="#両辺を-p--で微分して確認する方法" data-toc-modified-id="両辺を-p--で微分して確認する方法-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>両辺を p  で微分して確認する方法</a></span></li><li><span><a href="#ベータ分布の一様分布の順序統計量の分布として解釈を使う方法" data-toc-modified-id="ベータ分布の一様分布の順序統計量の分布として解釈を使う方法-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>ベータ分布の一様分布の順序統計量の分布として解釈を使う方法</a></span></li></ul></li></ul></li><li><span><a href="#P値函数について" data-toc-modified-id="P値函数について-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値函数について</a></span><ul class="toc-item"><li><span><a href="#P値はモデルのパラメータ値とデータの数値の整合性の指標の1つ" data-toc-modified-id="P値はモデルのパラメータ値とデータの数値の整合性の指標の1つ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値はモデルのパラメータ値とデータの数値の整合性の指標の1つ</a></span></li><li><span><a href="#P値は信頼区間を考えたいすべてのパラメータ値について定義されている" data-toc-modified-id="P値は信頼区間を考えたいすべてのパラメータ値について定義されている-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>P値は信頼区間を考えたいすべてのパラメータ値について定義されている</a></span></li><li><span><a href="#分割表の場合のP値函数" data-toc-modified-id="分割表の場合のP値函数-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>分割表の場合のP値函数</a></span></li><li><span><a href="#P値函数から信頼区間が定義される" data-toc-modified-id="P値函数から信頼区間が定義される-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>P値函数から信頼区間が定義される</a></span></li><li><span><a href="#2×2の分割表のP値と信頼区間とP値函数の例" data-toc-modified-id="2×2の分割表のP値と信頼区間とP値函数の例-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>2×2の分割表のP値と信頼区間とP値函数の例</a></span></li><li><span><a href="#2×2の分割表での検定ではどれを使うべきか" data-toc-modified-id="2×2の分割表での検定ではどれを使うべきか-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>2×2の分割表での検定ではどれを使うべきか</a></span></li><li><span><a href="#P値函数と最尤法の関係" data-toc-modified-id="P値函数と最尤法の関係-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>P値函数と最尤法の関係</a></span></li><li><span><a href="#以上のまとめの図" data-toc-modified-id="以上のまとめの図-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>以上のまとめの図</a></span></li><li><span><a href="#おまけ:-Bayes統計の方法を使った場合" data-toc-modified-id="おまけ:-Bayes統計の方法を使った場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>おまけ: Bayes統計の方法を使った場合</a></span></li></ul></li><li><span><a href="#Welchの-t-検定について" data-toc-modified-id="Welchの-t-検定について-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Welchの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の定義</a></span></li><li><span><a href="#Welchの-t-検定のP値や信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値や信頼区間の計算例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Welchの t 検定のP値や信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li></ul></li><li><span><a href="#数学的な補足:-大数の法則と中心極限定理について" data-toc-modified-id="数学的な補足:-大数の法則と中心極限定理について-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数学的な補足: 大数の法則と中心極限定理について</a></span><ul class="toc-item"><li><span><a href="#二項分布の大数の法則" data-toc-modified-id="二項分布の大数の法則-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布の大数の法則</a></span></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span></li><li><span><a href="#他の分布の場合" data-toc-modified-id="他の分布の場合-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>他の分布の場合</a></span><ul class="toc-item"><li><span><a href="#例:-Poisson分布" data-toc-modified-id="例:-Poisson分布-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>例: Poisson分布</a></span></li><li><span><a href="#例:-Gamma分布" data-toc-modified-id="例:-Gamma分布-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>例: Gamma分布</a></span></li></ul></li><li><span><a href="#標本分布の場合" data-toc-modified-id="標本分布の場合-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>標本分布の場合</a></span></li><li><span><a href="#再掲:-大数の法則と中心極限定理のイメージ" data-toc-modified-id="再掲:-大数の法則と中心極限定理のイメージ-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>再掲: 大数の法則と中心極限定理のイメージ</a></span></li><li><span><a href="#統計学の基礎になる確率論の三種の神器" data-toc-modified-id="統計学の基礎になる確率論の三種の神器-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>統計学の基礎になる確率論の三種の神器</a></span></li><li><span><a href="#Kullback-Leibler情報量に関するSanovの定理の数値例" data-toc-modified-id="Kullback-Leibler情報量に関するSanovの定理の数値例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Kullback-Leibler情報量に関するSanovの定理の数値例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -576,7 +576,7 @@ __結論:__ $k$ と $n-k$ が大きければ, 以上の3つのP値 $\pvalue_{\CP
 これを $n=100$, $k=30$ の場合に数値的に確認してみよう.
 
 ```julia
-# 上に書いてある通りのP値の定義
+# 上に書いてある定義の通りのP値の実装
 
 function pvalue_cp(k, n, p)
     bin = Binomial(n, p)
@@ -774,27 +774,29 @@ P値函数に関する考え方の簡潔な説明については次の論文を�
 * Valentin Amrhein and Sander Greenland, Discuss practical importance of results based on interval estimates and p-value functions, not only on point estimates and null p-values, Journal of Information Technology, First Published June 3, 2022. \[[doi](https://doi.org/10.1177%2F02683962221105904)\]
 
 
-### P値はモデルのパラメータ値とデータの数値の整合性の指標の1つとして定義される
+### P値はモデルのパラメータ値とデータの数値の整合性の指標の1つ
 
-我々は, データとそれの生成のされ方を確率分布でモデル化し, そのとき使われたパラメータ付きの確率分布を統計モデルと呼ぶのであった.
+我々は, データの数値の生成のされ方(未知の法則)をパラメータ付きの確率分布でモデル化し, それを統計モデルと呼ぶのであった.
 
 例えば, 「$n$ 回中 $k$ 回当たりが出た」の形のデータの生成のされ方の統計モデルの代表例は二項分布モデル $\Binomial(n,p)$ であり, 当たりが出る確率は成功確率パラメータ $p$ でモデル化される.
 
 以下では, データの数値 $x$ の生成のされ方をパラメータ $\theta$ を持つ統計モデル $M(\theta)$ でモデル化している状況を考える.
 
-そしてさらに, データの数値 $x$ に関する仮説 $\theta=\theta_0$ のP値 $\pvalue(x|\theta=\theta_0)$ が適切に定義されている状況を考える.
+そしてさらに, データの数値 $x$ に関する仮説 $\theta=\theta_0$ のP値 $\pvalue(x|\theta=\theta_0)$ が適切に定義されているという一般的な状況も考える.
 
 P値は, データの数値 $x$ と仮説 $\theta=\theta_0$ の下での統計モデル $M(\theta=\theta_0)$ の整合性の指標の1つである. 
 
 ここでの整合性は英語では compatibility や consititency という意味である.
 
-例えば, 上の二項分布モデルの場合には, 「$100$ 回中 $40$ 回当たりが出た」というデータが得られたとき, 仮説 $p=1/2$ のP値(Clopper-Pearsonの信頼区間を与えるP値)は約 $5.7\%$ になる. 
+例えば, 二項分布モデルの場合には, 「$100$ 回中 $40$ 回当たりが出た」というデータが得られたとき, 仮説 $p=1/2$ のP値(Clopper-Pearsonの信頼区間を与えるP値)は約 $5.7\%$ になる. 
 
 __その $5.7\%$ というP値は「$100$ 回中 $40$ 回当たりが出た」というデータと「当たりが出る確率は $p=1/2$ である」という仮説の整合性の指標として使われることになる.__
 
-そのとき, 背景にある統計モデルの妥当性に注意を払う必要がある.
+ただし, __統計モデルの妥当性に注意を払う必要がある.__
 
-P値の定義の仕方によって, その値は微妙に異なった値になる. そういう細かな違いに結果が影響されないような頑健な議論を目指すべきである.
+P値の定義の仕方によって, その値は微妙に異なった値になる.
+
+そういう細かな違いに結果が影響されないような頑健な議論を目指すべきである.
 
 ```julia
 @show k, n, p = 40, 100, 1/2
@@ -806,15 +808,25 @@ P値の定義の仕方によって, その値は微妙に異なった値にな�
 
 ### P値は信頼区間を考えたいすべてのパラメータ値について定義されている
 
-二項分布モデルの場合には仮説 $p=1/2$ に限らず, $0$ から $1$ のあいだの任意の数値 $p_0$ について, 仮説 $p=p_0$ についてP値が定義されている.
+二項分布モデルの場合には仮説 $p=1/2$ に限らず, $0$ から $1$ のあいだの任意の数値 $p_0$ に関する仮説 $p=p_0$ についてP値が定義されている.
 
 それによって, 「$100$ 回中 $40$ 回当たりが出た」というデータが得られたとき, 仮説 $p=p_0$ における $p_0$ を動かしながらP値を計算することによって, $p=1/2$ の場合以外についても仮説 $p=p_0$ と「$100$ 回中 $40$ 回当たりが出た」というデータの整合性達がどうなっているかを知ることができる.
 
-一般に, 値 $p_0$ に対して, データ $x$ に関する仮説 $p=p_0$ のP値を対応させる函数を __P値函数__ (P-value function)と呼ぶ.
+例えば, 仮説 $p=0.3$ とデータの数値の整合性を知ることができる.
+
+```julia
+@show k, n, p = 40, 100, 0.3
+@show pvalue_cp(k, n, p)
+@show pvalue_sterne(k, n, p)
+@show pvalue_wilson(k, n, p)
+@show pvalue_wald(k, n, p);
+```
+
+一般に, パラメータ値 $\theta_0$ に対して, データ $x$ に関する仮説 $\theta=\theta_0$ のP値を対応させる函数 $\theta_0\mapsto\pvalue(x|\theta=\theta_0)$ を __P値函数__ (P-value function)と呼ぶ.
 
 P値函数は, 統計モデルについて, データの数値とパラメータ値のあいだの整合性(相性)の様子全体の情報を持っている重要な函数である.
 
-以下で4種のP値函数のグラフをプロットしてみよう.
+以下では, 二項分布モデルにおける4種のP値函数のグラフをプロットしてみよう.
 
 ```julia
 k, n = 40, 100
@@ -852,7 +864,7 @@ $$
 
 このようなデータの生成のされ方の統計モデルとして, 2つの二項分布モデル $\Binomial(m,p)\times\Binomial(n,q)$ を採用しよう.
 
-このモデル内で, $a$ の値は分布 $\Binomial(m,p)$ に従ってランダムに決まり, $c$ の値はそれとは独立に分布 $\Binomial(n,q)$ に従ってランダムに決まっていると考える.  $a+b=m$, $c+d=n$ は固定されているので, $a,c$ から $b,d$ が自動的に決まる.
+このモデル内で, $a$ の値は二項分布 $\Binomial(m,p)$ に従ってランダムに決まり, $c$ の値はそれとは独立に二項分布 $\Binomial(n,q)$ に従ってランダムに決まっていると考える. ($m=a+b$ と $n=c+d$ は固定されているので, $a,c$ から $b,d$ が自動的に決まる.)
 
 応用時に重要になるのは, $p$ と $q$ の違いである.
 
@@ -870,7 +882,9 @@ __入門的な多くの教科書では非常に残念なことに, 仮説 $p=q$ 
 * リスク比パラメータ $\ds \RR = \frac{p}{q}$,
 * リスク差パラメータ $\ds \RD = p - q$.
 
-この点は入門的な教科書の多くとは一線を画する点である. この点に関しては, Rothmanさん達の有名な疫学の教科書
+これは, このノート群が入門的な教科書の多くと一線を画する点である.
+
+この点に関しては, Rothmanさん達の有名な疫学の教科書
 
 * Rothman, Lash, and Greenland, Modern Epidemiology \[[Googleで検索](https://www.google.com/search?q=Rothman+Lash+Greenland+Modern+Epidemiology)\]
 
@@ -894,11 +908,13 @@ $$
 
 すなわち, データの数値 $x$ について仮説 $\theta = \theta_0$ のP値が $\alpha$ 以上になるような $\theta_0$ 全体の集合が信頼区間になる.
 
-ここで使われている閾値 $\alpha$ は有意水準と呼ばれることがある.
+ここで使われている閾値 $\alpha$ は __有意水準__ (significance level)と呼ばれる.
+
+$1-\alpha$ は __信頼度__ (信頼水準, confidence level)と呼ばれる.
 
 コンピュータで計算するときには, $\pvalue(x|\theta=\theta_0)=\alpha$ を満たす $\theta_0$ の値を2分法やNewton法などで計算すれば, 一般的な場合にも信頼区間を概ね計算できる.
 
-しかし, それだとバグも発生し易くなるし, 計算効率も悪くなりがちなので, 信頼区間を直接できるシンプルな公式がある場合にはそれを使うことになる.
+しかし, それだとバグも発生し易くなるし, 計算効率も悪くなりがちなので, 信頼区間を直接できるシンプルな公式がある場合にはそちらを使うことになる.
 
 
 ### 2×2の分割表のP値と信頼区間とP値函数の例
@@ -918,7 +934,7 @@ $$
 
 に関するP値と信頼区間の例を示そう.
 
-簡単のためオッズ比パラメータ $\OR$ の場合(実際には対数オッズ比パラメータ $\log\OR$ を扱う場合)のWald型のP値函数のみを扱う.
+簡単のためオッズ比パラメータ $\OR$ を扱う場合(実際には対数オッズ比パラメータ $\log\OR$ を扱う場合)のWald型のP値函数のみを扱う.
 
 $a+b=m$, $c+d=n$ が十分に大きければ, 仮説 $\OR=\omega$ の統計モデル内で, モデル内での仮想的データの数値の対数オッズ比が次のように近似的に正規分布に従うことを示せる:
 
@@ -940,7 +956,7 @@ $$
 
 の「Wald版のオッズ比に関するP値と信頼区間の定義」に関する節を参照せよ.
 
-これによって, 以下のように仮説 $\OR=\omega$ のP値と $\OR$ の信頼区間が定義される:
+これによって, 以下のように仮説 $\OR=\omega$ のP値と $\OR$ の信頼区間が定義できる:
 
 $$
 \begin{aligned}
@@ -961,7 +977,7 @@ $$
 ここで, $z_{\alpha/2} = \quantile(\Normal(0,1), 1-\alpha/2)$.
 
 ```julia
-# 上の定義通りのP値函数と信頼区間函数の定義
+# 上の定義通りのP値函数と信頼区間函数の実装
 
 oddsratiohat(a, b, c, d) = safediv(a*d, b*c)
 stderrhat_logoddsratiohat(a, b, c, d) = √(1/a + 1/b + 1/c + 1/d)
@@ -1284,8 +1300,8 @@ plot(bin, y; seriestype=:stepbins)
 stephist(ORs; norm=true, bin,
     label="posterior of odds ratio")
 vline!([ORhat_posterior_median];
-    label="median = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
-plot!(xguide="OR = ω", yguide="P-value")
+    label="median of posterior = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
+plot!(xguide="OR = ω", yguide="probability density")
 plot!(xtick=0:0.5:10, ytick=0:0.05:1)
 title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
 plot!(size=(720, 350))
@@ -1306,8 +1322,8 @@ plot(bin, y; seriestype=:stepbins)
 stephist(ORs; norm=true, bin,
     label="posterior of odds ratio")
 vline!([ORhat_posterior_median];
-    label="median = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
-plot!(xguide="OR = ω", yguide="P-value")
+    label="median of posterior = $(round(ORhat_posterior_median; digits=5))", ls=:dash, c=2)
+plot!(xguide="OR = ω", yguide="probability density")
 plot!(xtick=0:0.5:10, ytick=0:0.05:1)
 title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
 plot!(size=(720, 350))
@@ -1315,7 +1331,7 @@ plot!(size=(720, 350))
 inull = findlast(i -> bin[i] < 1, eachindex(bin)) + 1
 
 plot!(bin[begin:inull], y[begin:inull-1]; seriestype=:stepbins,
-    label="half of P-value = $(round(P_value_Bayesian; digits=5))/2", c=6, fillrange=0, alpha=0.5)
+    label="half of P-value = $(round(P_value_Bayesian; digits=5)) / 2", c=6, fillrange=0, alpha=0.5)
 ```
 
 通常のP値函数(Wald)とBayes的なP値函数の類似物のグラフを同時に描くとほぼぴったり重なる.
@@ -1323,9 +1339,10 @@ plot!(bin[begin:inull], y[begin:inull-1]; seriestype=:stepbins,
 ```julia
 a, b, c, d = 30, 70, 20, 80
 plot(ω -> pvalue_or_wald(a, b, c, d; ω);
-    label="P-value function (Wald)")
+    label="ordinary P-value function (Wald)")
 plot!(ω -> pvalue_or_bayesian(ω);
-    label="P-value function (Bayesian analogue)", ls=:dash)
+    label="Bayesian analogue of P-value function", ls=:dash)
+plot!(xguide="OR = ω", yguide="P-value")
 plot!(xtick=0:0.5:10, ytick=0:0.05:1)
 title!("data: a, b, c, d = $a, $b, $c, $d,     prior = Jeffreys")
 plot!(size=(720, 350))
@@ -1789,6 +1806,23 @@ n, p = 10^6, 1/3
 @show LHS/RHS - 1;
 ```
 
+```julia
+f(x) = cospi(x)
+ns, p = 10 .^ (1:0.5:6), 1/3
+LHSs = [(n = round(Int, n); bin = Binomial(n, p);
+        sum(f(k/n)*pdf(bin, k) for k in support(bin))) for n in ns]
+RHS = f(p)
+plot(ns, LHSs; xscale=:log10, xtick=ns, marker=:o,
+    label="LHS", legend=:right)
+hline!([RHS]; label="RHS")
+```
+
+```julia
+plot((plot(x -> pdf(Binomial(10^k, 1/3), round(Int, x)), 0, 1.05*10^k;
+            label="", title="Binomial($(10^k), 1/3)") for k in 2:5)...;
+    size=(800, 500), layout=(2,2))
+```
+
 ### 二項分布の中心極限定理
 
 二項分布
@@ -1848,11 +1882,31 @@ Eq(expr, sol_exact)
 @show RHS/sol_numeriacal - 1;
 ```
 
+```julia
+f(x) = cos(x)
+ns, p = 10 .^ (1:0.5:4), 1/3
+LHSs = [(n = round(Int, n); bin = Binomial(n, p);
+        sum(f((k-n*p)/√(n*p*(1-p)))*pdf(bin, k) for k in support(bin))) for n in ns]
+g(z) = f(z) * pdf(Normal(0, 1), z)
+RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+plot(ns, LHSs; xscale=:log10, xtick=ns, marker=:o,
+    label="LHS", legend=:right)
+hline!([RHS]; label="RHS")
+```
+
+```julia
+plot((plot(x -> pdf(Binomial(n, 1/3), round(Int, x)),
+            round(Int, n/3 - 5√(n*1/3*2/3)),
+            round(Int, n/3 + 5√(n*1/3*2/3));
+            label="", title="Binomial($n, 1/3)") for n in (3, 10, 100, 1000))...;
+    size=(800, 500), layout=(2,2))
+```
+
 ### 他の分布の場合
 
 正規分布で近似される他の分布の場合にも同様の結果が成立している.
 
-__例:__ Poisson分布
+#### 例: Poisson分布
 
 $$
 P(k|\lambda) = \frac{e^{-\lambda}\lambda^k}{k!} \quad (k=0,1,2,\ldots)
@@ -1880,7 +1934,29 @@ g(z) = f(z) * pdf(Normal(0, 1), z)
 @show LHS/RHS - 1;
 ```
 
-__例:__ Gamma分布
+```julia
+f(x) = cos(x)
+λs = 10 .^ (1:0.5:4)
+LHSs = [(poi = Poisson(λ);
+        (m, s) = (mean(poi), std(poi));
+        supp = max(0, round(Int, m-6s)):round(Int, m+6s);
+        sum(f((k-λ)/√λ) * pdf(poi, k) for k in supp)) for λ in λs]
+g(z) = f(z) * pdf(Normal(0, 1), z)
+RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+plot(λs, LHSs; xscale=:log10, xtick=λs, marker=:o,
+    label="LHS", legend=:right)
+hline!([RHS]; label="RHS")
+```
+
+```julia
+plot((plot(x -> pdf(Poisson(λ), round(Int, x)),
+            round(Int, λ - 5√(λ)),
+            round(Int, λ + 5√(λ));
+            label="", title="Poisson($λ)") for λ in (3, 10, 100, 1000))...;
+    size=(800, 500), layout=(2,2))
+```
+
+#### 例: Gamma分布
 
 $$
 p(x|\alpha,\theta) = \frac{e^{-x/\theta}x^{\alpha-1}}{\theta^\alpha\Gamma(\alpha)}
@@ -1910,6 +1986,27 @@ g(z) = f(z) * pdf(Normal(0, 1), z)
 @show LHS/RHS - 1;
 ```
 
+```julia
+f(x) = cos(x)
+αs, θ = 10 .^ (1:0.5:4), 2
+LHSs = [(gam = Gamma(α, θ);
+        F(x) = f((x - α*θ)/√(α*θ^2)) * pdf(gam, x);
+        (m, s) = (mean(gam), std(gam));
+        (a, b) = (m-5s, m+5s);
+        quadgk(F, a, b)[1]) for α in αs]
+g(z) = f(z) * pdf(Normal(0, 1), z)
+RHS = quadgk(g, -Inf, Inf)[1] # using QuadGK すると使える数値積分函数
+plot(αs, LHSs; xscale=:log10, xtick=αs, marker=:o,
+    label="LHS", legend=:right)
+hline!([RHS]; label="RHS")
+```
+
+```julia
+plot((plot(x -> pdf(Gamma(α, θ), x), α*θ - 5√(α*θ^2), α*θ + 5√(α*θ^2);
+            label="", title="Gamma($α, θ)") for α in (3, 10, 100, 1000))...;
+    size=(800, 500), layout=(2,2))
+```
+
 ### 標本分布の場合
 
 平均 $\mu$, 分散 $\sigma^2$ を持つ分布 $D$ の標本分布 $D^n$ に従う確率変数 $(X_1,\ldots,X_n)$ について,
@@ -1928,7 +2025,8 @@ $$
 
 $$
 Z_n = \frac{\Xbar_n - \mu}{\sqrt{\sigma^2/n}} =
-\frac{\sqrt{n}\,(\Xbar_n - \mu)}{\sigma}
+\frac{\sqrt{n}\,(\Xbar_n - \mu)}{\sigma} =
+\frac{1}{\sqrt{n}\;\sigma}\sum_{i=1}^n (X_i - \mu)
 $$
 
 は $n$ が大きなとき近似的に標準正規分布に従う.  このことは次が成立することを意味している:
@@ -1936,6 +2034,29 @@ $$
 $$
 \lim_{n\to\infty} E[f(Z_n)] = \int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
 $$
+
+例えば, 平均 $\mu$, 分散 $\sigma^2$ の分布 $D$ が確率密度函数 $p(x)$ を持つとき,
+
+$$
+\begin{aligned}
+&
+\lim_{n\to\infty}
+\int\!\!\cdots\!\!\int
+f\left(\frac{x_1+\cdots+x_n}{n}\right)
+p(x_1)\cdots p(x_n)\,dx_1\cdots dx_n =
+f(\mu),
+\\ &
+\lim_{n\to\infty}
+\int\!\!\cdots\!\!\int
+f\left(\frac{(x_1-\mu)+\cdots+(x_n-\mu)}{\sqrt{n}\;\sigma}\right)
+p(x_1)\cdots p(x_n)\,dx_1\cdots dx_n =
+\int_{-\infty}^\infty f(z) \frac{e^{-z^2/2}}{\sqrt{2\pi}}\,dz.
+\end{aligned}
+$$
+
+ここで $\int$ は適切な範囲の定積分を意味し, 各 $n$ ごとに $n$ 重の積分を考えている.
+
+このような $n$ 重積分の $n\to\infty$ での極限公式は非常に複雑な形に見えるが, 大数の法則と中心極限定理を理解していれば直観的に当然そうなるべき結果だと理解できる.
 
 
 ### 再掲: 大数の法則と中心極限定理のイメージ
@@ -1946,17 +2067,17 @@ $$
 
 にあった図の再掲である.
 
-確率統計に関する入門的教科書の中には, 大数の法則や中心極限定理について説明するために, 確率変数や確率分布に関する様々な種類の収束性の数学的に正確な定義を説明しているものが結構ある.
+確率統計に関する入門的教科書の中には, 大数の法則や中心極限定理について説明するために, 確率変数や確率分布に関する様々な種類の収束性の定義を説明しているものが多い. (確率収束, 概収束, 法収束(法則収束, 分布収束)など. 他にも色々ある.)
 
 この一連のノート群においては, そのような説明を意図的に避けた.
 
-なぜならば, 統計学を実践的に使うことが目標の人は以下のイメージを大事した方がよいように思われるからである.
+なぜならば, 統計学を実践的に使うことが目標の人達は以下の図のイメージを大事した方がよいように思われるからである.
 
 数学的に正確な理解を目指す場合であっても, 最初のうちは以下の図のようなイメージを大事にして, むしろこのイメージを元に, 確率変数や確率分布の収束に関する数学的に適切な定義について, 自分で考えるようにした方が良いように思われる.
 
 教科書に書いてある天下り的な定義から出発しようとすると数学の理解は苦しくなることが多い.
 
-自分の力で適切な定義を作るために十分な「論理的スキル」と「健全な直観」の組み合わせの習得を目指す方が楽に理解できる可能性が増えるように思われる.
+自分の力で適切な定義を作るために十分な「論理的スキル」と「健全な直観」の組み合わせの習得を目指す方が楽に理解できる可能性が増えるだろう.
 
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/CTL.png" width=90%>
@@ -2005,6 +2126,45 @@ Sanovの定理の易しい解説が以下の場所にある:
 __面白いことはたくさんある(ありすぎる).__
 
 __あせらずに楽しみながら勉強して欲しいと思います.__
+
+
+### Kullback-Leibler情報量に関するSanovの定理の数値例
+
+__二項分布の場合のSanovの定理の1つの形:__ $n\to\infty$, $k\sim np$ のとき
+
+$$
+\lim_{n\to\infty} \frac{-1}{n}\log\left(\binom{n}{k}q^k(1-q)^{n-k}\right) =
+p\log\frac{p}{q} + (1-p)\log\frac{1-p}{1-q}.
+$$
+
+この公式の右辺はKullback-Leibler情報量の最も簡単な場合になっている.  これは
+
+$$
+\begin{aligned}
+&
+(\text{二項分布 $\Binomial(n, q)$ で $np$ に近い値 $k$ が生成される確率})
+\\ &=
+\exp\left(-n\left(p\log\frac{p}{q} + (1-p)\log\frac{1-p}{1-q}\right) + o(n)\right).
+\end{aligned}
+$$
+
+と書き直される.  これは, 二項分布 $\Binomial(n, q)$ で $np$ に近い値 $k$ が生成される確率の大きさがほぼKullback-Leibler情報量で決まっていることを意味している.
+
+これを数値的に確認してみよう.
+
+```julia
+n, p, q = 10^16, 1/3, 1/2
+@show LHS = (-1/n)*logpdf(Binomial(n, q), round(Int, n*p))
+@show RHS = p*log(p/q) + (1-p)*log((1-p)/(1-q));
+```
+
+```julia
+ns, p, q = 10 .^ (1:0.5:4), 1/3, 1/2
+LHSs = [(-1/n)*logpdf(Binomial(round(Int, n), q), round(Int, n*p)) for n in ns]
+RHS = p*log(p/q) + (1-p)*log((1-p)/(1-q))
+plot(ns, LHSs; xscale=:log10, xtick=ns, marker=:o, label="LHS")
+hline!([RHS]; label="RHS")
+```
 
 ```julia
 
