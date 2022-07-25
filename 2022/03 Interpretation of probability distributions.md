@@ -43,13 +43,13 @@ $
 以下の図の内容を理解できればこのノートの内容をかなりよく理解できたことになる.
 
 
-![BetaDistWorld00.PNG](attachment:BetaDistWorld00.PNG)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/BetaDistWorld00.PNG">
 
 
-![BetaDistWorld01.PNG](attachment:BetaDistWorld01.PNG)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/BetaDistWorld01.PNG">
 
 
-![BetaDistWorld02.PNG](attachment:BetaDistWorld02.PNG)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/BetaDistWorld02.PNG">
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
