@@ -1202,6 +1202,11 @@ __注意:__ 尤度(ゆうど, likelihood)については
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/P-value_function_and_etc.jpg" width=60%>
 
 
+仮説 $\theta=0$ のP値のみ, 点推定値のみ, 信頼区間のみをP値函数のグラフ抜きにばらばらに描くと以下のようになり, 全体の関係がどうなっているかがひどく分かり難くなる.
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/P-value_function_not_displayed.jpg" width=90%>
+
+
 __注意:__ Bayes統計における事後分布も以上で説明したP値函数とほぼ同じ使い方をできる.  P値函数について十分に理解しておけば, Bayes統計について学習するときにも役に立つだろう.
 
 
