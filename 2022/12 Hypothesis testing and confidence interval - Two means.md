@@ -1894,7 +1894,7 @@ $$
 \frac{(a+b)^2}{a^2/b + b^2} > 1.
 $$
 
-__以上のまとめ:__ $m$ が大きなとき, 
+__下からの評価のまとめ:__ $m$ が大きなとき, 
 
 $$
 \nu \gtrapprox \frac{(a+b)^2}{a^2/b + b^2}(m-1)
@@ -1915,33 +1915,50 @@ $$
 
 以上の結果を数式処理で確認してみよう.
 
+
+$s_y^2 = a s_y^2$, $n = bm$ とおくと, Welchの $t$ 検定で使う自由度 $\nu$ の式はこのように整理される.
+
 ```julia
 @vars a b
-ν(s²_y => a*s²_x, n => b*m).factor()
+nulhs = ν(s²_y => a*s²_x, n => b*m).factor()
 ```
+
+$m\to\infty$ で $b$ に収束する $b_m$ を次のように定義する.
 
 ```julia
 b_m = (b*m - 1)/(m - 1)
 ```
 
+$b_m - b = (b-1)/(m-1)$ となる.
+
 ```julia
 factor(b_m - b)
 ```
 
+$1/b_m - 1/b = -(b-1)/(b(bm-1))$ となる.
+
 ```julia
 factor(1/b_m - 1/b)
 ```
+
+$\nu$ の式は次のように整理される.
 
 ```julia
 nurhs =  (a + b)^2/(a^2/b_m + b^2)*(m-1)
 ```
 
 ```julia
-simplify(ν(s²_y => a*s²_x, n => b*m) - nurhs)
+simplify(nulhs - nurhs)
 ```
 
 ```julia
 Eq(ν(s²_y => a*s²_x, n => b*m), nurhs)
+```
+
+$m\to\infty$ での $\nu/(m-1)$ の収束先は $C = (a+b)^2/(a^2/b+b^2)$ になる. (これは $b_m\to b$ なので当たり前.)
+
+```julia
+Ctmp = limit(nurhs/(m-1), m=>oo)
 ```
 
 ```julia
@@ -1949,21 +1966,87 @@ C = (a + b)^2/(a^2/b + b^2)
 ```
 
 ```julia
+simplify(Ctmp - C)
+```
+
+$C$ の $a$ による偏導函数は次のようになる.
+
+```julia
 diff(C, a).factor()
 ```
+
+$(a+b)^2/(a^2/b+b^2)$ は $a$ の函数として, $a=b^2$ で最大値 $b+1$ になり, $a\searrow 1$ で $0$ に単調に収束し, $a\to\infty$ で $b$ に単調に収束する.
+
+```julia
+P1 = plot(a -> C(b=>2)(a), 0, 10; label="(a+b)²/(a²/b+b²)")
+plot!(legend=:bottomright, xguide="a", title="b = 2", xtick=0:10)
+P2 = plot(a -> C(b=>2)(a), 0, 200; label="(a+b)²/(a²/b+b²)")
+plot!(legend=:bottomright, xguide="a", title="b = 2")
+plot(P1, P2; size=(800, 250), bottommargin=4Plots.mm)
+```
+
+```julia
+P1 = plot(a -> C(b=>0.5)(a), 0, 2; label="(a+b)²/(a²/b+b²)")
+plot!(legend=:topright, xguide="a", title="b = 0.5",
+    xtick=0:0.25:2, ytick=0:0.25:2)
+P2 = plot(a -> C(b=>0.5)(a), 0, 200; label="(a+b)²/(a²/b+b²)")
+plot!(legend=:topright, xguide="a", title="b = 0.5",
+    ylim=(0.4, 0.8))
+plot(P1, P2; size=(800, 250), bottommargin=4Plots.mm)
+```
+
+```julia
+C(a=>b^2).factor()
+```
+
+$\nu/(m-1) - C$ は次のように整理される.
 
 ```julia
 D = factor(nurhs/(m-1) - C)
 ```
 
 ```julia
-Dnum = a^2*(a+b)^2*(b_m-b)
-Dden = (a^2+b^3)*(a^2+b^2*b_m)
-simplify(D - Dnum/Dden)
+Dnum1 = a^2*(a+b)^2*(b_m-b)
+Dden1 = (a^2+b^3)*(a^2+b^2*b_m)
+simplify(D - Dnum1/Dden1)
 ```
 
 ```julia
-Eq(nurhs/(m-1) - C, Dnum/Dden)
+Eq(nurhs/(m-1) - C, Dnum1/Dden1)
+```
+
+```julia
+Dnum2 = a^2*(a+b)^2*((b-1)/(m-1))
+Dden1 = (a^2+b^3)*(a^2+b^2*b_m)
+simplify(D - Dnum2/Dden1)
+```
+
+```julia
+Eq(nurhs/(m-1) - C, Dnum2/Dden1)
+```
+
+$b > 1$ のとき $m\to\infty$ で $\nu/(m-1)$ は単調減少しながら $C$ に収束する.
+
+```julia
+@show c = float(C(a=>2, b=>2))
+plot(m -> nurhs(a=>2, b=>2)(m)/(m-1), 1, 30; label="ν(a=2, b=2, m)/(m-1)")
+plot!(ylim=(0.9c, 1.4c), xguide="m")
+```
+
+$b < 1$ のとき $m\to\infty$ で $\nu/(m-1)$ は単調増加しながら $C$ に収束する.
+
+```julia
+@show c = float(C(a=>2, b=>0.5))
+plot(m -> nurhs(a=>2, b=>0.5)(m)/(m-1), 10, 200; label="ν(a=2, b=0.5, m)/(m-1)")
+plot!(ylim=(0.9c, 1.025c), xguide="m")
+```
+
+$b=1$ だと $\nu/(m-1)=C$ となる.
+
+```julia
+@show c = float(C(a=>2, b=>1))
+plot(m -> nurhs(a=>2, b=>1)(m)/(m-1), 1.1, 10; label="ν(a=2, b=1, m)/(m-1)")
+plot!(ylim=(0.8c, 1.2c), xguide="m")
 ```
 
 ### Studentの t 検定とWelchの t 検定が異なる結果を与える例
