@@ -86,7 +86,7 @@
 
 ● [2×2の分割表の独立性検定とオッズ比の信頼区間 2019-11-28](https://nbviewer.jupyter.org/gist/genkuroki/b4775b869870ac8e5b4dbd7806f3c9d7)
 
-● [正規分布の共役事前分布(正規ガンマ分布) 2017-11-28～2018-10-11](https://nbviewer.jupyter.org/gist/genkuroki/8a342d0b7b249e279dd8ad6ae283c5db): 1次元の正規分布モデルの場合の共役事前分布を用いたベイズ統計に関するWAICやWBICを丸め誤差を除いて正確に計算する函数を含む. 何もかもexactな公式を計算できる正規分布モデルの場合を扱いたい人は必見!
+● [正規分布の共役事前分布(正規ガンマ分布) 2017-11-28～2018-10-11, 2022-08-09](https://nbviewer.org/github/genkuroki/Statistics/blob/master/Congugate%20normal-Gamma%20prior%20of%20normal%20distribution.ipynb): 1次元の正規分布モデルの場合の共役事前分布を用いたベイズ統計に関するWAICやWBICを丸め誤差を除いて正確に計算する函数を含む. 何もかもexactな公式を計算できる正規分布モデルの場合を扱いたい人は必見!
 
 ● [正規分布と混合正規分布のKL情報量のプロット 2018-04-10 (Julia v0.6)](https://nbviewer.jupyter.org/gist/genkuroki/b4697ce70f356cebd27e784fe556263f): Q(a,b)を混合正規分布とし, P(μ,σ)を正規分布とするときのKL(P(μ,σ), Q(a,b))を最小化するμ,σをプロットした. (a,b)について, KL(P(μ,σ), Q(a,b))を最小化する(μ,σ)は不連続函数になることがわかる.
 
