@@ -16,8 +16,7 @@ jupyter:
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-06-08
-
+* 2022-04-11～2022-06-08, 2022-08-10
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -3317,6 +3316,9 @@ plot(plot_hg_bin_bb(10, 3, 9), plot_hg_bin_bb(10, 10, 30); size=(800, 250))
 ```julia
 plot(plot_hg_bin_bb(10, 30, 90), plot_hg_bin_bb(10, 100, 300); size=(800, 250))
 ```
+
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/hypergeom-binom-betabinom.PNG">
+
 
 ### 問題: 超幾何分布, 二項分布,  ベータ二項分布の期待値と分散の統一的な公式
 
