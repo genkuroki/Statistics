@@ -449,7 +449,7 @@ __定義された信頼推定__
 * 回帰函数の値の信頼区間
 * 回帰函数＋残差の予測区間
 
-線形回帰の場合:
+ロジスティック回帰の場合:
 
 * $t_* = \beta_0 + \beta_1 x_*$ の信頼区間
 * $p_* = \mathrm{logistic}(\beta_0 + \beta_1 x_*)$ の信頼区間
@@ -459,7 +459,7 @@ __定義された信頼推定__
 __定義された確率分布__
 
 * 多変量正規分布: $\mathrm{MvNormal}(\mu, \Sigma)$
-* ロジスティックモデル: $\mathrm{LogisticModel}(x,\beta)$
+* ロジスティックモデル: $\mathrm{LogisticModel}(x, \beta)$
 
 __作成された動画__
 
