@@ -3243,7 +3243,7 @@ P(k|n,\alpha,\beta,-1) &=
 \frac
 {\alpha(\alpha-1)\cdots(\alpha-(k-1))
 \cdot
-\beta(\beta-1)\cdots(\beta-(n-k-1)}
+\beta(\beta-1)\cdots(\beta-(n-k-1))}
 {(\alpha+\beta)(\alpha+\beta-1)\cdots(\alpha+\beta-(n-1))}
 \\ &=
 \left.
@@ -3275,7 +3275,7 @@ P(k|n,\alpha,\beta,1) &=
 \frac
 {\alpha(\alpha+1)\cdots(\alpha+(k-1))
 \cdot
-\beta(\beta+1)\cdots(\beta+(n-k-1)}
+\beta(\beta+1)\cdots(\beta+(n-k-1))}
 {(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+(n-1))}
 \\ &=
 \binom{n}{k}
