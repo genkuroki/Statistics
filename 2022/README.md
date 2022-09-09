@@ -304,6 +304,14 @@ __作成された動画__
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/pvaluefunction100.gif">
 
+__追加資料__
+
+* 比率のP値函数達
+  * [Jupyter notebook](https://github.com/genkuroki/public/blob/main/0036/P-value%20functions%20of%20proportions.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/public/blob/main/0036/P-value%20functions%20of%20proportions.ipynb)\]
+  * [pdf](https://github.com/genkuroki/public/blob/main/0036/P-value%20functions%20of%20proportions.pdf)
+\[[download](https://github.com/genkuroki/public/raw/main/0036/P-value%20functions%20of%20proportions.pdf)\]
+
 ### 10 検定と信頼区間(3) 平均
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)
