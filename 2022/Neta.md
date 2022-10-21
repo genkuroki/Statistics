@@ -28,6 +28,8 @@ x ⪅ y = x < y || x ≈ y
 
 __例:__ 2×2におけるSterne型のFisher検定
 
+https://github.com/genkuroki/public/blob/main/0038/On%20implementation%20of%20fisher%20test.ipynb
+
 __例:__ permutation版のBrunner-Munzel検定
 
 https://twitter.com/genkuroki/status/1555575621086253056?s=20&t=sE5oOD1HQD8HBQFdyLqohw
