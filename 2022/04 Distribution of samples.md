@@ -8,15 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.7.3
+    display_name: Julia 1.9.0
     language: julia
-    name: julia-1.7
+    name: julia-1.9
 ---
 
 # 標本分布について
 
 * 黒木玄
-* 2022-04-11～2022-07-13. 2022-08-04
+* 2022-04-11～2022-07-13. 2022-08-04, 2023-03-23
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -1793,12 +1793,12 @@ n = 10^4
 XY = [(r = √rand(); t = 2π*rand(); (r*cos(t), r*sin(t))) for _ in 1:n]
 X, Y = first.(XY), last.(XY)
 @show cov(X, Y) cor(X, Y)
-P1 = scatter(X, Y; msc=:auto, ms=2, alpha=0.7, label="", xlabel="x", ylabel="y")
+P1 = scatter(X, Y; msc=:auto, ms=1, alpha=0.7, label="", xlabel="x", ylabel="y")
 P2 = histogram(X; norm=true, alpha=0.3, bin=41, label="X")
 plot!(x -> 2/π*√(1 - x^2), -1, 1; label="", lw=2)
 P3 = histogram(X; norm=true, alpha=0.3, bin=41, label="Y")
 plot!(y -> 2/π*√(1 - y^2), -1, 1; label="", lw=2)
-plot(P1, P2, P3; size=(800, 400), layout=@layout [a [b; c]])
+plot(P1, P2, P3; size=(600, 300), layout=@layout [a [b; c]])
 ```
 
 単位円盤上の一様分布は「無相関だが独立ではない場合」の例になっている.
@@ -1812,7 +1812,7 @@ X, Y = first.(XY), last.(XY)
 @show cov(X, Y) cor(X, Y)
 P1 = scatter(X, Y; msc=:auto, label="", xlabel="x", ylabel="y")
 plot!(; xlim=(-1.05, 1.05), ylim=(-1.05, 1.05))
-plot!(; size=(400, 400))
+plot!(; size=(300, 300))
 ```
 
 上の場合において $X$, $Y$ はどちらも __半円分布__ (semicircle distribution)に従っているが, 独立ではない.  $X$, $Y$ の分布が以上と同じ半円分布のときと $X, Y$ が独立になるならば, $(X, Y)$ の分布のサンプルは以下のようになる. 
@@ -1822,12 +1822,12 @@ n = 10^4
 sc = Semicircle(1)
 X, Y = rand(sc, n), rand(sc, n)
 @show cov(X, Y) cor(X, Y)
-P1 = scatter(X, Y; msc=:auto, ms=2, alpha=0.7, label="", xlabel="x", ylabel="y")
+P1 = scatter(X, Y; msc=:auto, ms=1, alpha=0.7, label="", xlabel="x", ylabel="y")
 P2 = histogram(X; norm=true, alpha=0.3, bin=41, label="X")
 plot!(x -> 2/π*√(1 - x^2), -1, 1; label="", lw=2)
 P3 = histogram(X; norm=true, alpha=0.3, bin=41, label="Y")
 plot!(y -> 2/π*√(1 - y^2), -1, 1; label="", lw=2)
-plot(P1, P2, P3; size=(800, 400), layout=@layout [a [b; c]])
+plot(P1, P2, P3; size=(600, 300), layout=@layout [a [b; c]])
 ```
 
 これは $X$, $Y$ が独立な場合であり, ゆえに無相関にもなっている.
@@ -1841,7 +1841,7 @@ X, Y = rand(sc, n), rand(sc, n)
 @show cov(X, Y)
 P1 = scatter(X, Y; msc=:auto, label="", xlabel="x", ylabel="y")
 plot!(; xlim=(-1.05, 1.05), ylim=(-1.05, 1.05))
-plot!(; size=(400, 400))
+plot!(; size=(300, 300))
 ```
 
 ### 問題:  対ごとに無相関な確率変数達の和の分散はそれぞれの分散の和になる
@@ -3007,7 +3007,7 @@ function plot_ols(x, y, α̂, β̂; xlim=nothing,
     scatter(x, y; label="", msw=0)
     plot!(x -> α̂ + β̂*x, xlim...; label="", lw=2)
     plot!(; xlabel="x", ylabel="y", msw=0)
-    plot!(; size=(400, 300))
+    plot!(; size=(300, 250))
     plot!(; title, kwargs...)
 end
 ```
@@ -4785,7 +4785,7 @@ function plot_dist(dist; m = 4, xlim = :auto, kwargs...)
     end
 end
 
-function plot_X̄_and_SX²(dist; n = 10, L = 10^4,
+function plot_X̄_and_SX²(dist; n = 10, L = 5000,
         sk = myskewness(dist), ku = mykurtosis(dist),
         size = (400, 350), legend = :topleft, alpha = 0.4, kwargs...)
     μ, σ = mean(dist), std(dist)
@@ -4815,7 +4815,7 @@ end
 
 function plot_X̄_and_SX²_2x2(dist;
         m = 4, distxlim = :auto, distylim = :auto,
-        ns = (10, 40, 160, 640), size=(700, 700), kwargs...)
+        ns = (10, 40, 160, 640), size=(600, 600), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²
@@ -5486,7 +5486,7 @@ end
 
 function plot_X̄_S²_T_4x3(dist; ns = (10, 40, 160, 640),
         m = 4, distxlim = :auto, distylim = :auto,
-        size = (800, 750), kwargs...)
+        size = (720, 675), kwargs...)
     μ, σ², sk, ku = mean(dist), var(dist), myskewness(dist), mykurtosis(dist)
     println(dist)
     @show μ σ²

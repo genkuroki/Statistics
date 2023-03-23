@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.8.0
+    display_name: Julia 1.9.0
     language: julia
-    name: julia-1.8
+    name: julia-1.9
 ---
 
 # 誤用を避けるための注意

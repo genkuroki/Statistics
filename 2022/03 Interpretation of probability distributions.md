@@ -8,15 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.7.3
+    display_name: Julia 1.9.0
     language: julia
-    name: julia-1.7
+    name: julia-1.9
 ---
 
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-06-08, 2022-08-10
+* 2022-04-11～2022-06-08, 2022-08-10, 2023-03-18
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}

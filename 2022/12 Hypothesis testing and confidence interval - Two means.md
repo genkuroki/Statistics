@@ -8,16 +8,16 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.7.3
+    display_name: Julia 1.9.0
     language: julia
-    name: julia-1.7
+    name: julia-1.9
 ---
 
 <!-- #region -->
 # 検定と信頼区間: 平均の比較
 
 * 黒木玄
-* 2022-06-16～2022-06-27, 2022-07-29
+* 2022-06-16～2022-06-27, 2022-07-29, 2023-03-23
 
 $
 \newcommand\ds{\displaystyle}
@@ -332,7 +332,7 @@ rd(x) = @sprintf "%.3f" x
 function plot_welch(;
         distx=Normal(0,1), m=10, distxlim=nothing,
         disty=Normal(0,2), n=20, distylim=nothing,
-        L=10^6, M=10^4, kwargs...)
+        L=10^6, M=5000, kwargs...)
     μ_x, σ_x = mean(distx), std(distx)
     μ_y, σ_y = mean(disty), std(disty)
     Δμ = μ_x - μ_y
@@ -411,7 +411,7 @@ function plot_welch(;
     plot!(; tickfontsize=6)
 
     layout = @layout [a{0.25h} b{0.25h}; c{0.25*h} d{0.25*h}; e f]
-    plot(P1, P2, P3, P4, P5, P6; size=(700, 700), layout)
+    plot(P1, P2, P3, P4, P5, P6; size=(600, 600), layout)
 end
 
 plot_welch(distx=Gamma(2,3), m=40, disty=Gamma(3,2), n=80)
@@ -423,7 +423,7 @@ rd(x) = @sprintf "%.3f" x
 function plot_student(;
         distx=Normal(0,1), m=10, distxlim=nothing,
         disty=Normal(0,2), n=20, distylim=nothing,
-        L=10^6, M=10^4, kwargs...)
+        L=10^6, M=5000, kwargs...)
     μ_x, σ_x = mean(distx), std(distx)
     μ_y, σ_y = mean(disty), std(disty)
     Δμ = μ_x - μ_y
@@ -496,7 +496,7 @@ function plot_student(;
 
     P12 = plot(P1, P2; layout=@layout [a b])
     P46 = plot(P4, P6; layout=@layout [a{0.6w} b])
-    plot(P12, P46; size=(700, 480), layout=@layout [a{0.4h}; b])
+    plot(P12, P46; size=(600, 400), layout=@layout [a{0.4h}; b])
 end
 
 plot_student(distx=Gamma(2,3), m=40, disty=Gamma(3,2), n=80)
@@ -1982,7 +1982,7 @@ P1 = plot(a -> C(b=>2)(a), 0, 10; label="(a+b)²/(a²/b+b²)")
 plot!(legend=:bottomright, xguide="a", title="b = 2", xtick=0:10)
 P2 = plot(a -> C(b=>2)(a), 0, 200; label="(a+b)²/(a²/b+b²)")
 plot!(legend=:bottomright, xguide="a", title="b = 2")
-plot(P1, P2; size=(800, 250), bottommargin=4Plots.mm)
+plot(P1, P2; size=(600, 200), bottommargin=4Plots.mm)
 ```
 
 ```julia
@@ -1992,7 +1992,7 @@ plot!(legend=:topright, xguide="a", title="b = 0.5",
 P2 = plot(a -> C(b=>0.5)(a), 0, 200; label="(a+b)²/(a²/b+b²)")
 plot!(legend=:topright, xguide="a", title="b = 0.5",
     ylim=(0.4, 0.8))
-plot(P1, P2; size=(800, 250), bottommargin=4Plots.mm)
+plot(P1, P2; size=(600, 200), bottommargin=4Plots.mm)
 ```
 
 ```julia
