@@ -259,7 +259,7 @@ __定義された確率分布__
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
-\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-1%20Relationship%20between%20beta%20and%20binomial%20distributions.pdf)\]
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)\]
 
 ### 08 検定と信頼区間(1) 一般論
 
