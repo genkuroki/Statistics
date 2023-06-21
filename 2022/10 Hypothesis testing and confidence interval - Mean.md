@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.1
     language: julia
     name: julia-1.9
 ---
@@ -404,7 +404,7 @@ $$
 __不偏分散に関する大数の法則:__　大数の法則より, $n$ を十分に大きくすると, モデルの確率分布 $D$ の分散 $\sigma^2$ の値は, モデル内でランダムに生成された仮想的標本 $X_1,\ldots,X_n$ の不偏分散(不偏推定量になるように補正された標本分散)
 
 $$
-S^2 = \frac{1}{n-1}\sum_{i=1}^n \left(X_i - \bar{X}\right)
+S^2 = \frac{1}{n-1}\sum_{i=1}^n \left(X_i - \bar{X}\right)^2
 $$
 
 で近似される:
@@ -623,7 +623,7 @@ $$
 P値函数 $\pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) = 2(1 - \cdf(\Normal(0,1), |t(\mu_0)|))$ に対応する信頼度 $1-\alpha$ の信頼区間は次のようになる:
 
 $$
-\confint_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) =
+\confint_{\Normal}(\bar{x}, s^2|n, \alpha) =
 \left[
 \bar{x} - z_{\alpha/2} \sqrt{s^2/n},\;
 \bar{x} + z_{\alpha/2} \sqrt{s^2/n}
@@ -633,7 +633,7 @@ $$
 __証明:__ 検定と信頼区間の表裏一体性より, P値函数 $\pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0)$ に対応する信頼度 $1-\alpha$ の信頼区間は次のように定義されるのであった:
 
 $$
-\confint_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) =
+\confint_{\Normal}(\bar{x}, s^2|n, \alpha) =
 \{\, \mu_0\in\R \mid \pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha\,\}.
 $$
 
@@ -685,7 +685,7 @@ $$
 
 $$
 \sum_{i=1}^n (x_i - \mu)^2 =
-\sum_{i=1}^n ((x_i - \bar{x}) (\bar{x} - \mu))^2 =
+\sum_{i=1}^n ((x_i - \bar{x}) + (\bar{x} - \mu))^2 =
 (n-1)s^2 + n(\bar{x} - \mu))^2.
 $$
 
@@ -940,7 +940,7 @@ __データの数値の生成のされ方に関してなにがしかの知識が
 
 母集団からの無作為抽出で得たサイズ $n$ のデータ $x_1,\ldots,x_n$ の標本平均と不偏分散をそれぞれ $\bar{x}$, $s^2$ と書くとき, そのデータの数値に関する仮説「平均は $\mu = \mu_0$ である」のP値は
 
-　データの数値と仮説「平均は $\mu = \mu_0$ である」の整合性の指標
+　データの数値と(帰無)仮説「平均は $\mu = \mu_0$ である」の整合性の指標
  
 として使われる.
  
@@ -1092,7 +1092,7 @@ __検定:__ 上にデータに関する仮説「平均は $\mu = 9.0$ である�
 
 __t分布の分位点:__ $c = t_{n-1,\alpha/2}$ = quantile(TDistribution(10), 0.975) ≈ 2.22814
 
-__信頼区間:__ 6.6 - 2.22814 sqrt(15.35/11), 6.6 - 2.22814 sqrt(15.35/11) ≈ 3.96791, 9.23209
+__信頼区間:__ 6.6 - 2.22814 sqrt(15.35/11), 6.6 + 2.22814 sqrt(15.35/11) ≈ 3.96791, 9.23209
 
 以上の計算法は[WolframAlpha](https://www.wolframalpha.com/)でそのまま使える.
 
