@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.1
     language: julia
     name: julia-1.9
 ---
@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の比較
 
 * 黒木玄
-* 2022-06-14～2022-06-18
+* 2022-06-14～2022-06-18, 2023-06-28
 
 $
 \newcommand\op{\operatorname}
@@ -438,13 +438,20 @@ function pvalue_or_sterne(a, b, c, d; ω=1)
     pvalue_sterne(fnch, a)
 end
 
+function find_pos(f, x)
+    while f(x) ≤ 0
+        x *= 2
+    end
+    x
+end
+
 function confint_or_sterne(a, b, c, d; α = 0.05)
     (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
     f(logω) = logit(pvalue_or_sterne(a, b, c, d; ω=exp(logω))) - logit(α)
     if a == 0 || d == 0
-        [0.0, exp(find_zero(f, 0.0))]
+        [0.0, exp(find_zero(f, (find_pos(f, -1.0), 0.0)))]
     elseif b == 0 || c == 0
-        [exp(find_zero(f, 0.0)), Inf]
+        [exp(find_zero(f, (0.0, find_pos(f, 1.0)))), Inf]
     else
         ω_L, ω_U = confint_or_wald(a, b, c, d; α = α/10)
         ps = exp.(find_zeros(f, log(ω_L), log(ω_U)))
@@ -1687,7 +1694,7 @@ $$
 
 (5) 仮説「リスク比パラメータは $\RR=0.5$ である」のP値
 
-(6) リスク比パラメータ $\OR$ の $95\%$ 信頼区間
+(6) リスク比パラメータ $\RR$ の $95\%$ 信頼区間
 
 
 ### WolframAlphaによる必修問題の解答例
