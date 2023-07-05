@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.1
     language: julia
     name: julia-1.9
 ---
@@ -401,14 +401,14 @@ function plot_welch(;
     plot!(; xtick=0:0.1:1, ytick=0:0.1:1)
     plot!(; xguide="significance level α", yguide="probability of type I error",
         guidefontsize=9)
-    plot!(; tickfontsize=6)
+    plot!(; tickfontsize=6, xrotation=30)
     
     P6 = plot(f, 0, 0.1; label="")
     plot!(identity, 0, 0.1; label="", ls=:dot)
     plot!(; xtick=0:0.01:1, ytick=0:0.01:1)
     plot!(; xguide="significance level α", yguide="probability of type I error",
         guidefontsize=9)
-    plot!(; tickfontsize=6)
+    plot!(; tickfontsize=6, xrotation=30)
 
     layout = @layout [a{0.25h} b{0.25h}; c{0.25*h} d{0.25*h}; e f]
     plot(P1, P2, P3, P4, P5, P6; size=(600, 600), layout)
@@ -549,7 +549,7 @@ s_x^2 = \frac{1}{m-1}\sum_{i=1}^m (x_i - \xbar)^2,
 \\ &
 \ybar = \frac{1}{n}\sum_{i=1}^n y_i, \quad
 & &
-s_y^2 = \frac{1}{n-1}\sum_{i=1}^m (y_i - \ybar)^2.
+s_y^2 = \frac{1}{n-1}\sum_{i=1}^n (y_i - \ybar)^2.
 \end{alignedat}
 $$
 
@@ -2084,17 +2084,17 @@ plot_confint_of_diffmeans(x, y; plot_pvaluefunc=true, plot_student=true,
 以下のグラフを見ると, 等分散でなくても等サンプルサイズならばStudentの t 検定は使えそうに見える.
 
 ```julia
-plot_student(distx=Normal(), m=40, disty=Normal(0,2), n=40)
+plot_student(distx=Normal(), m=40, disty=Normal(0, 2), n=40)
 ```
 
 しかし, 以下のように等分散でなくてかつ等サンプルサイズでない場合にはStudentの t 検定の方法では大きな誤差が生じてしまう.
 
 ```julia
-plot_student(distx=Normal(), m=40, disty=Normal(0,2), n=80)
+plot_student(distx=Normal(), m=40, disty=Normal(0, 2), n=80)
 ```
 
 ```julia
-plot_student(distx=Normal(), m=80, disty=Normal(0,2), n=40)
+plot_student(distx=Normal(), m=80, disty=Normal(0, 2), n=40)
 ```
 
 以上の2つの場合にはStudentの t 検定の脆弱さとWelchの t 検定の頑健さが印象的である.
@@ -2103,11 +2103,11 @@ plot_student(distx=Normal(), m=80, disty=Normal(0,2), n=40)
 以下のように等サンプルサイズにすれば左右非対称で等分散でない場合にもStudentの t 検定は十分に使用可能なように見える.
 
 ```julia
-plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3,2), n=40)
+plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3, 2), n=40)
 ```
 
 ```julia
-plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3,2), n=50)
+plot_student(distx=Gamma(2, 3), m=40, disty=Gamma(3, 2), n=50)
 ```
 
 このように等サンプルサイズに近くなるように($m=n$ に近くなるように)注意を払っていれば, Studentの t 検定も十分に実用的であると考えられる.
