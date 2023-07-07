@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -1204,7 +1204,7 @@ $$
 これによって, 単位球面上の面積は以下のようにして計算できることがわかる.
 
 1. $(x_1,x_2)$ 平面上の単位円周上の弧の長さは $d\omega_1 = d\theta_1 = \cos^0\theta_1 \,d\theta_1$ の積分で計算できる.
-2. $(x_1,x_2,x_3)$ 空間内の単位球面上の面積は $d\omega_1$ を $\cos\theta_2$ 倍に縮小した結果と $d\theta_2$ の積である $d\omega_2 = \cos^0\theta_1 \cos^2\theta_2 \,d\theta_1\,d\theta_2$ を積分すれば計算できる.
+2. $(x_1,x_2,x_3)$ 空間内の単位球面上の面積は長さ $d\omega_1$ を $\cos\theta_2$ 倍に縮小した結果と $d\theta_2$ の積である $d\omega_2 = \cos^0\theta_1 \cos^1\theta_2 \,d\theta_1\,d\theta_2$ を積分すれば計算できる.
 3. $(x_1,x_2,x_3,x_4)$ 空間内の単位球面上の面積は $d\omega_2$ が2次元の面積要素なのでそれを $\cos\theta_2$ の2乗倍した結果と $d\theta_3$ の積である $d\omega_2 = \cos^0\theta_1 \cos^1\theta_2 \cos^2\theta_3 \,d\theta_1\,d\theta_2\,d\theta_3$ を積分すれば計算できる.
 4. 以下これを繰り返す.
 
