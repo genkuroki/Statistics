@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 誤用を避けるための注意
 
 * 黒木玄
-* 2022-07-01～2022-07-11, 2022-08-24
+* 2022-07-01～2022-07-11, 2022-08-24, 2023-07-12
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}
@@ -550,7 +550,7 @@ Anscombe 2は直線で近似するには適さない場合である.
 
 の最後の方の問題で紹介した.  データサウルスについては
 
-* https://www.autodesk.com/research/publications/same-stats-different-graphs
+* https://www.research.autodesk.com/publications/same-stats-different-graphs/
 
 に英語による詳しい説明があり, 
 
@@ -584,7 +584,7 @@ Datasaurus_dozen
 
 以下の図は既出のデータサウルスの解説ページ
 
-* https://www.autodesk.com/research/publications/same-stats-different-graphs
+* https://www.research.autodesk.com/publications/same-stats-different-graphs/
 
 の最後の方にある動画のスクリーンショットとして取得したものである.
 
@@ -901,18 +901,24 @@ end
 
 と書いてある.
 
-$$
+<!-- $$
 \begin{array}{l|c|c}
 & \text{民主党 トルーマン} & \text{共和党 デューイ} \\
 \hline
-\text{実際の得票率 ($\%$)} & 〇49.5 & 45.1 \\
+\text{実際の得票率 ($\%$)} & \text{〇}49.5 & 45.1 \\
 \hline
-\text{ギャラップの予想} & 44.5 & 〇49.5 \\
-\text{ローバーの予想} & 37.1 & 〇52.2 \\
-\text{クロスレーの予想} & 44.8 & 〇49.9 \\
-\hline
+\text{ギャラップの予想} & 44.5 & \text{〇}49.5 \\
+\text{ローバーの予想} & 37.1 & \text{〇}52.2 \\
+\text{クロスレーの予想} & 44.8 & \text{〇}49.9 \\
 \end{array}
-$$
+$$ -->
+
+| | 民主党 トルーマン | 共和党 デューイ |
+| :---: | :---: | :---: |
+| 実際の得票率 (%) | 〇 49.5 | 45.1 |
+| ギャラップの予想 | 44.5 | 〇 49.5 |
+| ローバーの予想   | 37.1 | 〇 52.2 |
+| クロスレーの予想 | 44.8 | 〇 49.9 |
 
 歴史的には1936年の大統領選挙でルーズベルトが当選することを正しく予測できたギャラップは1948年の大統領選挙では予測に失敗することになった.
 
@@ -980,6 +986,18 @@ $$
 
 
 ### P値の定義
+
+P値は以下の3つから計算される:
+
+* データの数値 $x$
+* 統計モデル $M(\theta)$
+* パラメータ $\theta$ の値に関する仮説 $\theta = \theta_0$
+
+P値は具体的には以下で説明されるように構成(計算)されるが, P値は
+
+* 上の3つの間の相性の良さもしくは整合性もしくは適合度
+
+の指標の1つとして使われることになる.
 
 データの数値 $x$ とデータの数値の生成のされ方に関するパラメータ $\theta$ を持つ統計モデル $M(\theta)$ と具体的なパラメータ値 $\theta_0$ が与えられたとき, 仮説 $\theta = \theta_0$ のP値はその仮説下での統計モデル $M(\theta=\theta_0)$ 内でデータの数値 $x$ 以上に極端な値が生成される確率またはその近似値として定義される.
 
@@ -1080,6 +1098,16 @@ $$
 ```
 
 ### 信頼区間の定義
+
+パラメータ $\theta$ に関する信頼水準(信頼度, 信頼係数) $1-\alpha$ の信頼区間は
+
+* データの数値 $x$ が与えられたときの, P値が $\alpha$ 以上になる $\theta=\theta_0$ の値全体のなす集合
+
+と定義される. 値 $\theta_0$ が信頼区間に含まれることは
+
+* データの数値 $x$ と統計モデル $M(\theta)$ とパラメータ値に関する仮説 $\theta=\theta_0$ の相性が閾値 $\alpha$ によって悪過ぎないと判定されないこと
+
+を意味している.
 
 データの数値 $x$ とデータの数値の生成のされ方に関するパラメータ $\theta$ を持つ統計モデル $M(\theta)$ についてP値 $\pvalue(x|\theta=\theta_0)$ が定義されているとき, 有意水準 $0<\alpha<1$ について, パラメータ $\theta$ に関する信頼度 $1-\alpha$ の信頼区間は, $\pvalue(x|\theta=\theta_0) \ge \alpha$ となるパラメータ値 $\theta_0$ 全体の集合として定義される:
 
