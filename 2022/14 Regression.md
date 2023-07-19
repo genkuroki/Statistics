@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -270,14 +270,26 @@ $$
 __例:__ __ロジスティック回帰__ (logistic regression)の最も簡単な場合の統計モデルは次になる:
 
 $$
-P(y|x,\beta_0,\beta_1) =
-\prod_{i=1}^n\left(
-f(\beta_0+\beta_1 x_i)^{y_i}(1 - f(\beta_0+\beta_1 x_i)^{y_i})^{1-y_i}
+\begin{aligned}
+P(y|x,\beta) &=
+\prod_{i=1}^n \left(
+p_i^{y_i}(1 - p_i)^{1-y_i}
 \right)
-\quad(y_i\in\{1,0\}).
+\\ &=
+\prod_{i=1}^n \left(
+f(\beta_0+\beta_1 x_i)^{y_i}(1 - f(\beta_0+\beta_1 x_i))^{1-y_i}
+\right)
+\qquad (y_i\in\{1,0\}).
+\end{aligned}
 $$
 
-ここで $f(t)=\logistic(t)=1/(1+e^{-t})$ である.  この統計モデルは各 $x_i$ ごとに, $y_i$ が $1$ になる確率 $p_i$ が $x_i$ から
+ここで
+
+$$
+f(t)=\logistic(t)=\frac{1}{1+e^{-t}}, \quad p_i = f(\beta_0+\beta_1 x_i)
+$$
+
+である.  この統計モデルは各 $x_i$ ごとに, $y_i$ が $1$ になる確率 $p_i$ が $x_i$ から
 
 $$
 p_i = \logistic(\beta_0 + \beta_1 x_i) = \frac{1}{1+\exp(-(\beta_0 + \beta_1 x_i))}
@@ -538,7 +550,7 @@ $$
 
 を最小化する $\sigma^2$ は $\sigma^2 = \sigmahat^2$ になることを確認できる.
 
-(一般に $\sigma^2 > 0$ の函数 $\sigma^2\mapsto a/\sigma^2 + \log\sigma^2$ ($a>0$) は $\sigma^2=a$ で最小になる.  実際, $f(s) = a/s+log s$ について $f'(s)=(s-a)/s^2$ なので, $s<a$ のとき $f'(s)<0$ で $f(s)$ は単調減少し, $s>a$ のとき $f'(s)>0$ で $f(s)$ は単調増加する. ゆえに $f(s)$ は $s=a$ で最小になる.)
+(一般に $\sigma^2 > 0$ の函数 $\sigma^2\mapsto a/\sigma^2 + \log\sigma^2$ ($a>0$) は $\sigma^2=a$ で最小になる.  実際, $f(s) = a/s+\log s$ について $f'(s)=(s-a)/s^2$ なので, $s<a$ のとき $f'(s)<0$ で $f(s)$ は単調減少し, $s>a$ のとき $f'(s)>0$ で $f(s)$ は単調増加する. ゆえに $f(s)$ は $s=a$ で最小になる.)
 
 以上のようにして, 直交射影で求めた $\betahat$ と $\sigmahat^2$ は最尤法の解になっている.
 
@@ -952,10 +964,10 @@ $$
 $$
 \begin{aligned}
 &
-\beta_0 = \ybar - \frac{\sigmahat_{xy}}{\sigmahat_x^2}\xbar =
+\betahat_0 = \ybar - \frac{\sigmahat_{xy}}{\sigmahat_x^2}\xbar =
 \ybar - \frac{s_{xy}}{s_x^2}\xbar,
 \quad
-\beta_1 = \frac{\sigmahat_{xy}}{\sigmahat_x^2} =
+\betahat_1 = \frac{\sigmahat_{xy}}{\sigmahat_x^2} =
 \frac{s_{xy}}{s_x^2},
 \\ &
 \sigmahat^2 =
@@ -1422,10 +1434,15 @@ $$
 これを使って, $y_*$ の __予測区間__ (prediction interval)を次のように定義できる:
 
 $$
-\predint^{y_*}_{\TDist}(y|X, x_*) = \left[
+\begin{aligned}
+&
+\predint^{y_*}_{\TDist}(y|X, x_*) 
+\\&=
+\left[
 f(x_*)^T\betahat - t_{n-r, \alpha/2}\SEhat_{y_* - f(x_*)^T\betahat},\;
 f(x_*)^T\betahat + t_{n-r, \alpha/2}\SEhat_{y_* - f(x_*)^T\betahat}
 \right].
+\end{aligned}
 $$
 
 前節の $\SEhat_{f(x_*)^T\betahat}$ と $\SEhat_{y_* - f(x_*)^T\betahat}$ の違いは, 後者の定義式の平方根中に $1$ が含まれていることである. だから, 予測区間は信頼区間よりも必ず広くなる.  そうなる理由は $y_*$ の定義を見れば明らかで, $y_*$ の定義にはノイズの項 $e_*$ が含まれている.  その分だけ区間の幅が広くなる.
@@ -2078,13 +2095,16 @@ $$
 前節までの記号の下で, 統計モデルとして $y\in\{1,0\}^n$ に関する以下の確率質量函数を採用する:
 
 $$
-P(y|x,\beta) =
+\begin{aligned}
+P(y|x,\beta) &=
 \prod_{i=1}^n \left(
 p_i^{y_i}(1 - p_i)^{1-y_i}
-\right)=
+\right)
+\\ &=
 \prod_{i=1}^n \left(
 \logistic(\beta_0+\beta_1 x_i)^{y_i}(1 - \logistic(\beta_0+\beta_1 x_i))^{1-y_i}
 \right)
+\end{aligned}
 $$
 
 このモデルの確率分布を $\LogisticModel(x, \beta)$ と書くと,
