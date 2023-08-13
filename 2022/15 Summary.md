@@ -16,7 +16,7 @@ jupyter:
 # まとめ
 
 * 黒木玄
-* 2022-07-20～2022-07-23
+* 2022-07-20～2022-07-23, 2023-08-02
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}

@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 標本分布について
 
 * 黒木玄
-* 2022-04-11～2022-07-13. 2022-08-04, 2023-03-23
+* 2022-04-11～2022-07-13. 2022-08-04, 2023-03-23, 2023-08-02
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -3232,6 +3232,7 @@ data4 = collect(zip(anscombe.X4, anscombe.Y4))
 ```julia
 function solve_anscombe(x, y;
         title="", xlim=(3, 20), ylim=(2, 14), size=(250, 225))
+    @show n = length(x)
     @show x̄ = mean(x)
     @show ȳ = mean(y)
     @show sx² = var(x)
@@ -3243,6 +3244,23 @@ function solve_anscombe(x, y;
     @show α̂ β̂ σ̂
     
     plot_ols(x, y, α̂, β̂; title, xlim, ylim, size)
+end
+
+function solve_anscombe_optim(x, y;
+        title="", xlim=(3, 20), ylim=(2, 14), size=(250, 225))
+    o = optimize(((α, β, t),) -> f(x, y, α, β, t), zeros(3), LBFGS())
+    α̂, β̂, t̂ = o.minimizer
+    σ̂ = exp(t̂)
+    println("$title")
+    @show α̂ β̂ σ̂
+    α̂, β̂, σ̂
+end
+```
+
+```julia
+for k in 1:4
+    solve_anscombe_optim(anscombe[!, "X$k"], anscombe[!, "Y$k"], title="Anscombe $k (Solved by Optim.jl)")
+    println()
 end
 ```
 

@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 条件付き確率分布, 尤度, 推定, 記述統計
 
 * 黒木玄
-* 2022-05-22～2022-05-31, 2022-07-22
+* 2022-05-22～2022-05-31, 2022-07-22, 2023-08-02
 
 $
 \newcommand\op{\operatorname}
@@ -2750,6 +2750,7 @@ end
 
 function solve_anscombe(x, y;
         title="", xlim=(3, 20), ylim=(2, 14), size=(250, 225))
+    @show n = length(x)
     @show x̄ = mean(x)
     @show ȳ = mean(y)
     @show sx² = var(x)
