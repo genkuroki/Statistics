@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.1
+    display_name: Julia 1.9.2
     language: julia
     name: julia-1.9
 ---
@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の比較
 
 * 黒木玄
-* 2022-06-14～2022-06-18, 2023-06-28
+* 2022-06-14～2022-06-18, 2023-06-28, 2023-08-21
 
 $
 \newcommand\op{\operatorname}
@@ -146,7 +146,7 @@ end
 ```
 
 ```julia
-safemul(x, y) = x == 0 ? x : isinf(x) ? typeof(x)(Inf) : x*y
+safemul(x, y) = x == 0 ? x : isinf(x) ? oftype(x, Inf) : x*y
 safediv(x, y) = x == 0 ? x : isinf(y) ? zero(y) : x/y
 
 x ⪅ y = x < y || x ≈ y
@@ -287,7 +287,7 @@ end
 ```julia
 function delta(a, b, c, d; ω=1)
     A, B, C = 1-ω, a+d+ω*(b+c), a*d-ω*b*c
-    isinf(ω) ? typeof(ω)(-min(b, c)) : safediv(2C, B + √(B^2 - 4A*C))
+    isinf(ω) ? oftype(ω, -min(b, c)) : safediv(2C, B + √(B^2 - 4A*C))
 end
 
 # correction = 0.5 は連続性補正を与える.
@@ -352,7 +352,7 @@ a, b, c, d = 3, 11, 60, 32
 function Delta(a, b, c, d; ρ=1)
     m, n = a+b, c+d
     A, B, C = ρ-1, n-a+ρ*(m-c), a*n-ρ*m*c
-    isinf(ρ) ? typeof(ω)(-c) : safediv(2C, B + √(B^2 - 4A*C))
+    isinf(ρ) ? oftype(ω, -c) : safediv(2C, B + √(B^2 - 4A*C))
 end
 
 function _chisqstat_rr(a, b, c, d, Δ)
@@ -1782,7 +1782,7 @@ Julia言語のシンプルな使い方については
 左から $0$ をかけると常に $0$ になり, 左から $\op{Inf}$ をかけると常に $\op{Inf}$ になる掛け算と分子が $0$ ならば何で割っても $0$ になり, 分母が無限大なら分子が何であっても $0$ になる割り算の定義:
 
 ```julia
-safemul(x, y) = x == 0 ? x : isinf(x) ? typeof(x)(Inf) : x*y
+safemul(x, y) = x == 0 ? x : isinf(x) ? oftype(x, Inf) : x*y
 safediv(x, y) = x == 0 ? x : isinf(y) ? zero(y) : x/y
 ```
 
@@ -3482,7 +3482,7 @@ plot_pvalue_functions(a, b, c, d)
 このように, Bayes版P値函数は通常のWald版およびPearsonのχ²検定版のP値函数によく一致している.
 
 
-以下のように事前分布は $\Beta(0.5, 0.5)$ にした方がよく一致する.
+以下のように事前分布は $\Beta(1/3, 1/3)$ にした方がよく一致する.
 
 ```julia
 a, b, c, d = 10, 3, 5, 9
@@ -3491,8 +3491,11 @@ plot_pvalue_functions(a, b, c, d; conjprior=(1, 1))
 
 ```julia
 a, b, c, d = 10, 3, 5, 9
-plot_pvalue_functions(a, b, c, d; conjprior=(0.5, 0.5))
+plot_pvalue_functions(a, b, c, d; conjprior=(1/3, 1/3))
 ```
+
+事前分布を $\Beta(1/3, 1/3)$ にした方がよく一致する理由は, Bayes版P値函数として, 等裾区間(とうきょくかん, equal-tailed interval, ETI)な信用区間を与えるものを採用したからである.  Bayes版P値函数を最高密度区間(highest density interval, HDI)の信用区間を与えるものを採用すれば, 一様事前分布 $\Beta(1,1)$ での一致が良くなる.
+
 
 ### Bayes版P値函数の視覚化の別の例
 
