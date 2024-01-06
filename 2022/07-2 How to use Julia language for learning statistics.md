@@ -8,15 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.9.0
+    display_name: Julia 1.10.0
     language: julia
-    name: julia-1.9
+    name: julia-1.10
 ---
 
 # Julia言語を使った統計学の勉強の仕方
 
 * 黒木玄
-* 2022-05-28～2022-05-31
+* 2022-05-28～2022-05-31, 2024-01-06
 
 $
 \newcommand\op{\operatorname}
@@ -695,8 +695,4 @@ plot_dist_clt(Poisson(), 10)
 
 ```julia
 plot_dist_clt(Poisson(), 100)
-```
-
-```julia
-
 ```
