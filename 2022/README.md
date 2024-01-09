@@ -86,7 +86,7 @@ __定義された確率分布__
 
 __定義された確率分布__
 
-* 正規分布 (再): $\mathrm{Normal}(\mu, \sigma) = \mu + \sigma\,\mathrm{Normal}(0, 1)$
+* 正規分布 (再): $\mathrm{Normal}(\mu, \sigma) = \mu + \sigma\mathrm{Normal}(0, 1)$
 * 形状 $\alpha$, スケール $\theta$ の __ガンマ分布__: $\mathrm{Gamma}(\alpha, \theta) = \theta\,\mathrm{Gamma}(\alpha, 1)$ (平均的なイベント発生間隔が $\theta$ のときにちょうど $\alpha$ 回イベントが生じるまでにかかる時間の分布)
 * 平均 $\theta$ の __指数分布__: $\mathrm{Exponential}(\theta) = \mathrm{Gamma}(1, \theta)$ (平均的なイベント発生間隔が $\theta$ のときにイベントが発生するまでにかかる時間の分布)
 * 中央値 $a$, スケール $b$ の __Laplace分布__: $\mathrm{Laplace}(a, b)$
