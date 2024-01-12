@@ -17,7 +17,7 @@ jupyter:
 # 検定と信頼区間: 比率の比較
 
 * 黒木玄
-* 2022-06-14～2022-06-18, 2023-06-28, 2023-08-21, 2024-01-06
+* 2022-06-14～2022-06-18, 2023-06-28, 2023-08-21, 2024-01-06, 2024-01-12
 
 $
 \newcommand\op{\operatorname}
@@ -336,10 +336,12 @@ a, b, c, d = 3, 11, 60, 32
 上のセルで計算した連続補正版の信頼区間の値が Cornfeild (1956), p.139, (4.2) の値に一致している.
 
 ```julia
-function Delta(a, b, c, d; ρ=1)
+_riskratiohat(a, b, c, d) = safediv(a*(c+d), (a+b)*c)
+
+function Delta(a, b, c, d; ρ=1.0)
     m, n = a+b, c+d
     A, B, C = ρ-1, n-a+ρ*(m-c), a*n-ρ*m*c
-    isinf(ρ) ? oftype(ρ, -c) : safediv(2C, B + √(B^2 - 4A*C))
+    Δ = isinf(ρ) ? oftype(ρ, -c) : ρ==0 ? oftype(ρ, a) : safediv(2C, B + √(B^2 - 4A*C))
 end
 
 function _chisqstat_rr(a, b, c, d, Δ)
@@ -347,32 +349,34 @@ function _chisqstat_rr(a, b, c, d, Δ)
     safemul(Δ^2, safediv(b, m*(a-Δ)) + safediv(d, n*(c+Δ)))
 end
 
-function chisqstat_rr(a, b, c, d; ρ=1)
+function chisqstat_rr(a, b, c, d; ρ=1.0)
     Δ = Delta(a, b, c, d; ρ)
     _chisqstat_rr(a, b, c, d, Δ)
 end
 
-function pvalue_rr_pearson_chisq(a, b, c, d; ρ=1)
+function pvalue_rr_pearson_chisq(a, b, c, d; ρ=1.0)
     χ² = chisqstat_rr(a, b, c, d; ρ)
     ccdf(Chisq(1), χ²)
 end
 
 function confint_rr_pearson_chisq(a, b, c, d; α=0.05)
-    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0, Inf]
+    (a+b==0 || c+d==0 || a+c==0 || b+d==0) && return [0.0, Inf]
     f(logρ) = logit(pvalue_rr_pearson_chisq(a, b, c, d; ρ=exp(logρ))) - logit(α)
-    RRhat = riskratiohat(a, b, c, d)
-    if a == 0
-        [0.0, exp(find_zero(f, 0.0))]
-    elseif c == 0
-        [exp(find_zero(f, 0.0)), Inf]
-    elseif b == 0
-        [0.0, exp(find_zero(f, log(2RRhat)))]
-    elseif d == 0
-        [exp(find_zero(f, log(RRhat/2))), Inf]
+    L = if f(-Inf) > 0
+        -Inf
     else
-        ρ_L, ρ_U = RRhat/2, 2RRhat
-        [exp(find_zero(f, log(ρ_L))), exp(find_zero(f, log(ρ_U)))]
+        logRRhat = log(_riskratiohat(a, b, c, d))
+        x0 = logRRhat == -Inf ? -10.0 : logRRhat == Inf ? 10.0 : logRRhat - 1
+        find_zero(f, x0)
     end
+    U = if f(Inf) > 0
+        Inf
+    else
+        logRRhat = log(_riskratiohat(a, b, c, d))
+        x0 = logRRhat == -Inf ? -10.0 : logRRhat == Inf ? 10.0 : logRRhat + 1
+        find_zero(f, x0)
+    end
+    [exp(L), exp(U)]
 end
 ```
 
