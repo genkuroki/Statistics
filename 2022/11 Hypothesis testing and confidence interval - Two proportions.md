@@ -339,7 +339,7 @@ a, b, c, d = 3, 11, 60, 32
 function Delta(a, b, c, d; ρ=1)
     m, n = a+b, c+d
     A, B, C = ρ-1, n-a+ρ*(m-c), a*n-ρ*m*c
-    isinf(ρ) ? oftype(ω, -c) : safediv(2C, B + √(B^2 - 4A*C))
+    isinf(ρ) ? oftype(ρ, -c) : safediv(2C, B + √(B^2 - 4A*C))
 end
 
 function _chisqstat_rr(a, b, c, d, Δ)
