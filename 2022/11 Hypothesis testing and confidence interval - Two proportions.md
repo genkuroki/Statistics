@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.1
     language: julia
     name: julia-1.10
 ---
@@ -218,7 +218,7 @@ end
 # 警告: 以下の実装の精度は低い. 改良の仕方が
 # 
 # Kenneth J. Rothman, Sander Greenland, and Timothy L. Lash
-# Modern Epistemology, Third Edition, 2008, 888 pages
+# Modern Epidemiology, Third Edition, 2008, 888 pages
 #
 # の
 #
