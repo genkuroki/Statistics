@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.3
     language: julia
     name: julia-1.10
 ---
@@ -55,6 +55,8 @@ default(fmt = :png)
 
 ### Juliaのインストールと実行
 
+注意: 本当は [juliaup](https://www.google.com/search?q=juliaup)を使うと楽になる.
+
 (1) [JuliaLangについて検索](https://www.google.com/search?q=JuliaLang)する.
 
 (2) [Julia言語のウェブサイト](https://julialang.org/)に移動する.
@@ -64,6 +66,8 @@ default(fmt = :png)
 (4) 自分のパソコンに合わせて, current stable release のインストーラをダウンロード
 
 (5) それを実行してJulia言語の公式バイナリを自分のパソコンにインストールする.
+
+__重要な注意:__ Windowsユーザーはjuliaを日本語の文字が含まれた名前のディレクトリの下にインストールしないように注意して下さい.  おそらくjuliaを正常に実行できなくなります.  最も安直な解決作は `C:\julia-1.10.3` のようにCドライブ直下にインストールするという手があります.
 
 (6) juliaを実行すると以下のように表示される.
 
@@ -108,6 +112,17 @@ julia> using StatsPlots
 ```
 
 を実行するだけでよい.  インストールするかどうかをjuliaが聞いて来た場合には `y` と答える.
+
+__重要な注意:__ 上の方法でうまく行かない場合には, 
+
+```
+julia> ]を押す
+pkg> add StatsPlots
+数分時間がかかる
+pkg> BackSpaceキーを押す
+```
+
+のようにしてパッケージをインストールして下さい.
 
 __問題:__ 自分のパソコンで `using StatsPlots` の後に以下を実行してグラフを作画してみよ.
 
