@@ -8,16 +8,16 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.4
     language: julia
     name: julia-1.10
 ---
 
 <!-- #region -->
-# 検定と信頼区間: 平均の検定と信頼区間
+# 検定と信頼区間: 母平均のP値と信頼区間
 
 * 黒木玄
-* 2022-05-31～2022-06-18, 2024-01-06
+* 2022-05-31～2022-06-18, 2024-01-06, 2024-06-12
 
 $
 \newcommand\op{\operatorname}
@@ -67,7 +67,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間" data-toc-modified-id="平均に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>平均に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="平均に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>平均に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合</a></span></li><li><span><a href="#標本平均と不偏分散に関する中心極限定理と大数の法則の可視化" data-toc-modified-id="標本平均と不偏分散に関する中心極限定理と大数の法則の可視化-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>標本平均と不偏分散に関する中心極限定理と大数の法則の可視化</a></span></li><li><span><a href="#問題:-他の様々な分布について-T(μ)-の分布を確認" data-toc-modified-id="問題:-他の様々な分布について-T(μ)-の分布を確認-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 他の様々な分布について T(μ) の分布を確認</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間</a></span></li><li><span><a href="#平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合" data-toc-modified-id="平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合</a></span></li><li><span><a href="#標本分布におけるT統計量の分布の視覚化" data-toc-modified-id="標本分布におけるT統計量の分布の視覚化-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>標本分布におけるT統計量の分布の視覚化</a></span></li><li><span><a href="#分布の対数の標本分布のT統計量の視覚化" data-toc-modified-id="分布の対数の標本分布のT統計量の視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>分布の対数の標本分布のT統計量の視覚化</a></span></li><li><span><a href="#平均に関するP値の使い方" data-toc-modified-id="平均に関するP値の使い方-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>平均に関するP値の使い方</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する平均の信頼区間-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する平均の信頼区間</a></span></li></ul></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#平均に関するP値と信頼区間の計算の仕方" data-toc-modified-id="平均に関するP値と信頼区間の計算の仕方-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#平均に関するP値と信頼区間の計算例" data-toc-modified-id="平均に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaでの平均に関するP値と信頼区間の計算例" data-toc-modified-id="WolframAlphaでの平均に関するP値と信頼区間の計算例-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaでの平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語での平均に関するP値と信頼区間の計算例-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語での平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での平均に関するP値と信頼区間のグラフ作成" data-toc-modified-id="Julia言語での平均に関するP値と信頼区間のグラフ作成-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語での平均に関するP値と信頼区間のグラフ作成</a></span></li><li><span><a href="#R言語での平均に関するP値と信頼区間の計算例" data-toc-modified-id="R言語での平均に関するP値と信頼区間の計算例-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>R言語での平均に関するP値と信頼区間の計算例</a></span></li></ul></li><li><span><a href="#必修練習問題:-平均に関するP値と信頼区間の計算" data-toc-modified-id="必修練習問題:-平均に関するP値と信頼区間の計算-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修練習問題: 平均に関するP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WaolframAlphaによる必修練習問題の解き方" data-toc-modified-id="WaolframAlphaによる必修練習問題の解き方-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WaolframAlphaによる必修練習問題の解き方</a></span></li><li><span><a href="#Julia言語による必修練習問題の解き方" data-toc-modified-id="Julia言語による必修練習問題の解き方-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による必修練習問題の解き方</a></span></li><li><span><a href="#R言語による必修練習問題の解き方" data-toc-modified-id="R言語による必修練習問題の解き方-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>R言語による必修練習問題の解き方</a></span></li><li><span><a href="#必修練習問題解答例" data-toc-modified-id="必修練習問題解答例-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>必修練習問題解答例</a></span></li></ul></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#母平均に関するP値と信頼区間" data-toc-modified-id="母平均に関するP値と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>母平均に関するP値と信頼区間</a></span><ul class="toc-item"><li><span><a href="#母平均に関するP値と信頼区間を使って行いたいこと" data-toc-modified-id="母平均に関するP値と信頼区間を使って行いたいこと-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>母平均に関するP値と信頼区間を使って行いたいこと</a></span></li><li><span><a href="#母平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合" data-toc-modified-id="母平均の検定で使用されるP値の定義(1)-中心極限定理経由で標準正規分布を使う場合-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>母平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合</a></span></li><li><span><a href="#標本平均と不偏分散に関する中心極限定理と大数の法則の可視化" data-toc-modified-id="標本平均と不偏分散に関する中心極限定理と大数の法則の可視化-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>標本平均と不偏分散に関する中心極限定理と大数の法則の可視化</a></span></li><li><span><a href="#問題:-他の様々な分布について-T(μ)-の分布を確認" data-toc-modified-id="問題:-他の様々な分布について-T(μ)-の分布を確認-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: 他の様々な分布について T(μ) の分布を確認</a></span></li><li><span><a href="#P値の定義(1)の標準正規分布を使う場合に対応する母平均の信頼区間" data-toc-modified-id="P値の定義(1)の標準正規分布を使う場合に対応する母平均の信頼区間-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>P値の定義(1)の標準正規分布を使う場合に対応する母平均の信頼区間</a></span></li><li><span><a href="#母平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合" data-toc-modified-id="母平均の検定で使用されるP値の定義(2)-さらに-t-分布を使う場合-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>母平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合</a></span></li><li><span><a href="#標本分布におけるT統計量の分布の視覚化" data-toc-modified-id="標本分布におけるT統計量の分布の視覚化-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>標本分布におけるT統計量の分布の視覚化</a></span></li><li><span><a href="#分布の対数の標本分布のT統計量の視覚化" data-toc-modified-id="分布の対数の標本分布のT統計量の視覚化-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>分布の対数の標本分布のT統計量の視覚化</a></span></li><li><span><a href="#母平均に関するP値の使い方" data-toc-modified-id="母平均に関するP値の使い方-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>母平均に関するP値の使い方</a></span></li><li><span><a href="#P値の定義(2)のt分布を使う場合に対応する母平均の信頼区間" data-toc-modified-id="P値の定義(2)のt分布を使う場合に対応する母平均の信頼区間-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>P値の定義(2)のt分布を使う場合に対応する母平均の信頼区間</a></span></li></ul></li><li><span><a href="#母平均に関するP値と信頼区間の計算例" data-toc-modified-id="母平均に関するP値と信頼区間の計算例-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>母平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#母平均に関するP値と信頼区間の計算の仕方" data-toc-modified-id="母平均に関するP値と信頼区間の計算の仕方-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>母平均に関するP値と信頼区間の計算の仕方</a></span></li><li><span><a href="#母平均に関するP値と信頼区間の計算例" data-toc-modified-id="母平均に関するP値と信頼区間の計算例-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>母平均に関するP値と信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaでの母平均に関するP値と信頼区間の計算例" data-toc-modified-id="WolframAlphaでの母平均に関するP値と信頼区間の計算例-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>WolframAlphaでの母平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での母平均に関するP値と信頼区間の計算例" data-toc-modified-id="Julia言語での母平均に関するP値と信頼区間の計算例-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Julia言語での母平均に関するP値と信頼区間の計算例</a></span></li><li><span><a href="#Julia言語での母平均に関するP値と信頼区間のグラフ作成" data-toc-modified-id="Julia言語での母平均に関するP値と信頼区間のグラフ作成-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Julia言語での母平均に関するP値と信頼区間のグラフ作成</a></span></li><li><span><a href="#R言語での母平均に関するP値と信頼区間の計算例" data-toc-modified-id="R言語での母平均に関するP値と信頼区間の計算例-2.2.4"><span class="toc-item-num">2.2.4&nbsp;&nbsp;</span>R言語での母平均に関するP値と信頼区間の計算例</a></span></li></ul></li><li><span><a href="#必修練習問題:-母平均に関するP値と信頼区間の計算" data-toc-modified-id="必修練習問題:-母平均に関するP値と信頼区間の計算-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>必修練習問題: 母平均に関するP値と信頼区間の計算</a></span><ul class="toc-item"><li><span><a href="#WaolframAlphaによる必修練習問題の解き方" data-toc-modified-id="WaolframAlphaによる必修練習問題の解き方-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>WaolframAlphaによる必修練習問題の解き方</a></span></li><li><span><a href="#Julia言語による必修練習問題の解き方" data-toc-modified-id="Julia言語による必修練習問題の解き方-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Julia言語による必修練習問題の解き方</a></span></li><li><span><a href="#R言語による必修練習問題の解き方" data-toc-modified-id="R言語による必修練習問題の解き方-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>R言語による必修練習問題の解き方</a></span></li><li><span><a href="#必修練習問題解答例" data-toc-modified-id="必修練習問題解答例-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>必修練習問題解答例</a></span></li></ul></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -299,26 +299,26 @@ __上のグラフの説明__
 
 薄い青のドット達は, 標準正規分布に従う乱数で生成したサイズ $n=20$ の標本の数値(データの数値とも呼ぶ).
 
-青くて太い線は, 標本の数値から計算される平均の $95\%$ 信頼区間.
+青くて太い線は, 標本の数値から計算される母平均の $95\%$ 信頼区間.
 
-「とんがり帽子」型の曲線は, そのデータの数値から決まる平均に関するP値函数のグラフ.
+「とんがり帽子」型の曲線は, そのデータの数値から決まる母平均に関するP値函数のグラフ.
 
 横軸が $\mu=\mu_0$ の数値で, そのP値函数は $t$ 分布を使って定義されている.
 
 生成されたデータの数値は大幅に右側に偏っていた.
 
-データを生成した標準正規分布の平均は $0$ なのに, は右側に大きくずれてしまっている.
+データを生成した標準正規分布の母平均は $0$ なのに, は右側に大きくずれてしまっている.
 
 __以下の目標__
 
 * 上のグラフの意味を理解できるようになる.
-* 平均に関するP値と信頼区間を計算できるようになる.
+* 母平均に関するP値と信頼区間を計算できるようになる.
 
 
-## 平均に関するP値と信頼区間
+## 母平均に関するP値と信頼区間
 
 
-### 平均に関するP値と信頼区間を使って行いたいこと
+### 母平均に関するP値と信頼区間を使って行いたいこと
 
 以下のようなことを行いたい.
 
@@ -326,14 +326,14 @@ __以下の目標__
 
 (2) とある店で出されるフライドポテトの長さを $n$ 本分測って得た数値のデータ $x_1,\ldots,x_n$ から, その店で出されるフライドポテトの長さの平均値を推定したい.
 
-このような推定を以下では __平均の推定__ と呼ぶことにする.
+このような推定を以下では __母平均の推定__ と呼ぶことにする.
 
-目標は平均の信頼区間の構成である.
+目標は母平均の信頼区間の構成である.
 
 そのためには, 検定と信頼区間の表裏一体性より, P値を適切に定義すればよい.
 
 
-### 平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合
+### 母平均の検定で使用されるP値の定義(1) 中心極限定理経由で標準正規分布を使う場合
 
 __データ:__　$n$ 個の実数値 $x_1,\ldots,x_n$.
 
@@ -341,10 +341,10 @@ __データ:__　$n$ 個の実数値 $x_1,\ldots,x_n$.
 
 $$
 \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \quad
-s^2 = \frac{1}{n-1}\sum_{i=1}^n \left(x_i - \bar{x}\right).
+s^2 = \frac{1}{n-1}\sum_{i=1}^n \left(x_i - \bar{x}\right)^2.
 $$
 
-__統計モデル:__　平均 $\mu$ と分散 $\sigma^2$ を持つ未知の確率分布 $D$ のサイズ $n$ の標本分布 $D^n$ を統計モデルとして採用する.
+__統計モデル:__　平均 $\mu$ (母平均のモデル化)と分散 $\sigma^2$ (母分散のモデル化)を持つ未知の確率分布 $D$ のサイズ $n$ の標本分布 $D^n$ を統計モデルとして採用する.
 
 簡単のため $D$ は連続分布であると仮定し, その確率密度函数を $p(x)$ と書く.  このとき標本分布 $D^n$ の確率密度函数は次のように表される:
 
@@ -591,7 +591,7 @@ __次節で使う $z_{\alpha/2}$ の値の例:__ $\alpha=5\%, 1\%, 0.1\%$ のそ
 @. round(quantile(Normal(), 1 - (0.05, 0.01, 0.001) / 2); digits=4)
 ```
 
-### P値の定義(1)の標準正規分布を使う場合に対応する平均の信頼区間
+### P値の定義(1)の標準正規分布を使う場合に対応する母平均の信頼区間
 
 有意水準を $0\le\alpha\le 1$ と書き, 標準正規分布において $z_{\alpha/2}$ 以上になる確率は $\alpha/2$ になると仮定する:
 
@@ -645,7 +645,7 @@ $$
 __証明終__
 
 
-### 平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合
+### 母平均の検定で使用されるP値の定義(2) さらに t 分布を使う場合
 
 分布 $D$ が左右対称の分布ならば $n=10$ のようなかなり小さな $n$ で中心極限定理による近似の誤差は非常に小さくなる場合がある.  しかし, そういう場合であっても, 大数の法則を使った不偏分散 $S^2$ による $\sigma^2$ の近似の精度は低いままの場合がある.
 
@@ -923,11 +923,11 @@ plot_T(Gamma(2,3), 10, plot_chi=true, plot_t=true, logsample=true)
 __データの数値の生成のされ方に関してなにがしかの知識がある場合には, その知識をうまく統計分析の枠組みに取り入れた方が誤差が小さな分析が可能になる可能性が増える.__
 
 
-### 平均に関するP値の使い方
+### 母平均に関するP値の使い方
 
-母集団からの無作為抽出で得たサイズ $n$ のデータ $x_1,\ldots,x_n$ の標本平均と不偏分散をそれぞれ $\bar{x}$, $s^2$ と書くとき, そのデータの数値に関する仮説「平均は $\mu = \mu_0$ である」のP値は
+母集団からの無作為抽出で得たサイズ $n$ のデータ $x_1,\ldots,x_n$ の標本平均と不偏分散をそれぞれ $\bar{x}$, $s^2$ と書くとき, そのデータの数値に関する仮説「母平均は $\mu = \mu_0$ である」のP値は
 
-　データの数値と(帰無)仮説「平均は $\mu = \mu_0$ である」の整合性の指標
+　データの数値と(帰無)仮説「母平均は $\mu = \mu_0$ である」の整合性の指標
  
 として使われる.
  
@@ -935,7 +935,7 @@ __データの数値の生成のされ方に関してなにがしかの知識が
  
 有意水準と呼ばれる閾値 $0\le \alpha\le 1$ を最初に決めておいて(目的に合わせて小さな正の値に取る), P値が有意水準 $\alpha$ 未満になったときに,
 
-　データの数値と仮説「平均は $\mu = \mu_0$ である」のあいだに整合性が無さすぎる
+　データの数値と仮説「母平均は $\mu = \mu_0$ である」のあいだに整合性が無さすぎる
  
  と判定し,
  
@@ -944,7 +944,7 @@ __データの数値の生成のされ方に関してなにがしかの知識が
  と言うことがある.  このような手続きを __検定__(testing, test)と呼ぶのであった.
 
 
-### P値の定義(2)のt分布を使う場合に対応する平均の信頼区間
+### P値の定義(2)のt分布を使う場合に対応する母平均の信頼区間
 
 有意水準を $0\le\alpha\le 1$ と書き, 自由度 $\nu$ の $t$ 分布において $t_{\nu,\alpha/2}$ 以上になる確率は $\alpha/2$ になると仮定する:
 
@@ -1004,22 +1004,22 @@ $$
 __証明終__
 
 
-## 平均に関するP値と信頼区間の計算例
+## 母平均に関するP値と信頼区間の計算例
 
 
-### 平均に関するP値と信頼区間の計算の仕方
+### 母平均に関するP値と信頼区間の計算の仕方
 
 (0) 前提
 
 __有意水準:__ $0 < \alpha < 1$.
 
-__検定したい仮説:__ 平均は $\mu=\mu_0$ である.
+__検定したい仮説:__ 母平均は $\mu=\mu_0$ である.
 
 __データの数値:__ $x_1,\ldots,x_n$.
 
 母集団からの無作為抽出(または同分布の独立試行)で得られたサイズ $n$ のデータの数値 $x_1,\ldots,x_n$ が得られていると仮定する.
 
-__計算したい信頼区間:__ 平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間.
+__計算したい信頼区間:__ 母平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間.
 
 (1) データの数値の標本平均 $\bar{x}$ と不偏分散 $s^2$ を計算する:
 
@@ -1028,16 +1028,16 @@ $$
 s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2.
 $$
 
-(2) データの数値の数値に関する仮説「平均は $\mu=\mu_0$ である」の $t$ 値 $t = t(\mu_0)$ を計算する:
+(2) データの数値に関する仮説「母平均は $\mu=\mu_0$ である」の $t$ 値 $t = t(\mu_0)$ を計算する:
 
 $$
 t = t(\mu_0) = \frac{\bar{x} - \mu_0}{\sqrt{s^2/n}}.
 $$
 
-(3) データの数値に関する仮説「平均は $\mu=\mu_0$ である」のP値を自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値の絶対値が データの数値の $t$ 値の絶対値以上になる確率として求める:
+(3) データの数値に関する仮説「母平均は $\mu=\mu_0$ である」のP値を自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値の絶対値が データの数値の $t$ 値の絶対値以上になる確率として求める:
 
 $$
-(\text{仮説「平均は $\mu=\mu_0$ である」のP値}) = 2(1 - \cdf(\TDist(n-1), |t(\mu_0)|)).
+(\text{仮説「母平均は $\mu=\mu_0$ である」のP値}) = 2(1 - \cdf(\TDist(n-1), |t(\mu_0)|)).
 $$
 
 (4) 定数 $t_{n-1,\alpha/2}$ を, 自由度 $n-1$ の $t$ 分布に従ってランダムに生成される値が $t_{n-1,\alpha/2}$ 以上になる確率は $\alpha/2$ であるという条件によって定める:
@@ -1046,10 +1046,10 @@ $$
 t_{n-1,\alpha/2} = \quantile(\TDist(n-1), 1 - \alpha/2).
 $$
 
-(5) 次の公式によって, 平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間を求める:
+(5) 次の公式によって, 母平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間を求める:
 
 $$
-(\text{平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間}) = 
+(\text{母平均 $\mu$ に関する信頼度 $1-\alpha$ の信頼区間}) = 
 \left[
 \bar{x} - t_{n-1,\alpha/2} \sqrt{s^2/n},\;
 \bar{x} + t_{n-1,\alpha/2} \sqrt{s^2/n}
@@ -1059,7 +1059,7 @@ $$
 __注意・警告:__ 中心極限定理による近似がうまく行っていない場合には, 以上のようにして求めたP値や信頼区間の誤差は大きくなる.  特にデータを取得した母集団の分布が左右非対称で外れ値を含んでいる場合には, サンプルサイズ $n$ を相当に大きくしないと誤差が小さくならない.  そのような場合には何らかの工夫や別の方法を検討した方がよいだろう. (上で説明した方法の使用にこだわる必要はない.)
 
 
-### 平均に関するP値と信頼区間の計算例
+### 母平均に関するP値と信頼区間の計算例
 
 __有意水準:__ α = 5% = 0.05
 
@@ -1069,13 +1069,13 @@ __標本平均:__ mean(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6)
 
 __不偏分散:__ var(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6) = 15.35
 
-__検定したい仮説:__ 平均は $\mu = 9.0$ である.
+__検定したい仮説:__ 母平均は $\mu = 9.0$ である.
 
 __t値:__ (6.6 - 9.0)/sqrt(15.35/11) ≈ -2.03167106
 
 __P値:__ 2(1 - cdf(TDistribution(10),  2.03167106)) ≈ 0.0696099
 
-__検定:__ 上にデータに関する仮説「平均は $\mu = 9.0$ である」のP値は約 $7\%$ で最初に設定した有意水準 $\alpha$ より大きいので, 上にデータよって仮説「平均は $\mu = 9.0$ である」は棄却され __ない__.
+__検定:__ 上にデータに関する仮説「母平均は $\mu = 9.0$ である」のP値は約 $7\%$ で最初に設定した有意水準 $\alpha$ より大きいので, 上にデータよって仮説「母平均は $\mu = 9.0$ である」は棄却され __ない__.
 
 __t分布の分位点:__ $c = t_{n-1,\alpha/2}$ = quantile(TDistribution(10), 0.975) ≈ 2.22814
 
@@ -1084,7 +1084,7 @@ __信頼区間:__ 6.6 - 2.22814 sqrt(15.35/11), 6.6 + 2.22814 sqrt(15.35/11) ≈
 以上の計算法は[WolframAlpha](https://www.wolframalpha.com/)でそのまま使える.
 
 
-#### WolframAlphaでの平均に関するP値と信頼区間の計算例
+#### WolframAlphaでの母平均に関するP値と信頼区間の計算例
 
 mean(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6) → [実行](https://www.wolframalpha.com/input?i=mean%2813.7%2C+12.9%2C+4.4%2C+5.2%2C+3.1%2C+2.9%2C+7.2%2C+10.3%2C+4.7%2C+4.6%2C+3.6%29)
 
@@ -1099,7 +1099,7 @@ quantile(TDistribution(10), 0.975) → [実行](https://www.wolframalpha.com/inp
 6.6 - 2.22814 sqrt(15.35/11), 6.6 - 2.22814 sqrt(15.35/11)  → [実行](https://www.wolframalpha.com/input?i=6.6+-+2.22814+sqrt%2815.35%2F11%29%2C+6.6+-+2.22814+sqrt%2815.35%2F11%29)
 
 
-#### Julia言語での平均に関するP値と信頼区間の計算例
+#### Julia言語での母平均に関するP値と信頼区間の計算例
 
 ほとんど定義通りにJulia言語のコードを入力すれば計算できる.
 
@@ -1134,14 +1134,14 @@ plot_confint_of_mean(x; α)
  
 と思ってしまいがちだが, この区間はデータの分布の範囲を表す区間ではなく, モデルの分布の平均パラメータ $\mu$ に関する区間であることを思い出せばこれで問題ないことがわかる.
 
-以下の図のようにサンプルサイズ $n$ を大きくすれば, 平均の信頼区間の幅は狭くなる.
+以下の図のようにサンプルサイズ $n$ を大きくすれば, 母平均の信頼区間の幅は狭くなる.
 
 サンプルサイズ $n$ を $a$ 倍すると信頼区間の幅はおおよそ $\sqrt{a}$ 分の $1$ になる.
 
 __精度を1桁上げるためには, サンプルサイズ $n$ を $100$ 倍に増やす必要がある!__
 
 
-#### Julia言語での平均に関するP値と信頼区間のグラフ作成
+#### Julia言語での母平均に関するP値と信頼区間のグラフ作成
 
 ```julia
 plot(Gamma(5, 2); label="pdf of Gamma(5, 2)")
@@ -1205,7 +1205,7 @@ gif(anim, "images/confint_of_mean.gif")
 * https://github.com/genkuroki/Statistics/blob/master/2022/images/confint_of_mean.gif
 
 <!-- #region -->
-#### R言語での平均に関するP値と信頼区間の計算例
+#### R言語での母平均に関するP値と信頼区間の計算例
 
 ほとんど定義通りにJulia言語のコードを入力すれば計算できる.
 
@@ -1274,7 +1274,7 @@ t.test(c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6), mu=9)
 """
 ```
 
-### 必修練習問題: 平均に関するP値と信頼区間の計算
+### 必修練習問題: 母平均に関するP値と信頼区間の計算
 
 サイズ $20$ のデータとして次が与えられているとする:
 
@@ -1283,9 +1283,9 @@ t.test(c(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6), mu=9)
 
 以上で説明した $t$ 分布を使う方法によって以下を求めよ.
 
-(1) 「平均は $\mu = 30.0$ である」という仮説のP値.
+(1) 「母平均は $\mu = 30.0$ である」という仮説のP値.
 
-(2) 平均の $99\%$ 信頼区間.
+(2) 母平均の $99\%$ 信頼区間.
 
 まずは, この問題よりも上の方にある説明だけを見て(これより下の方を見ないで), 計算してみよ.
 

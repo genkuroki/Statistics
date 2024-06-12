@@ -8,13 +8,13 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.3
     language: julia
     name: julia-1.10
 ---
 
 <!-- #region -->
-# 検定と信頼区間: 比率の検定と信頼区間
+# 検定と信頼区間: 母比率の検定と信頼区間
 
 * 黒木玄
 * 2022-05-31～2022-06-14, 2024-01-06
@@ -63,7 +63,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#比率の検定と信頼区間" data-toc-modified-id="比率の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>比率の検定と信頼区間</a></span><ul class="toc-item"><li><span><a href="#P値と信頼区間の定義の復習" data-toc-modified-id="P値と信頼区間の定義の復習-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>P値と信頼区間の定義の復習</a></span></li><li><span><a href="#二項分布モデルのP値達の定義を1枚の図で要約" data-toc-modified-id="二項分布モデルのP値達の定義を1枚の図で要約-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのP値達の定義を1枚の図で要約</a></span></li><li><span><a href="#4種のP値函数のプロット" data-toc-modified-id="4種のP値函数のプロット-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>4種のP値函数のプロット</a></span></li><li><span><a href="#4種の信頼区間の同時プロット" data-toc-modified-id="4種の信頼区間の同時プロット-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>4種の信頼区間の同時プロット</a></span></li></ul></li><li><span><a href="#Clopper-Pearson" data-toc-modified-id="Clopper-Pearson-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Clopper-Pearson</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を与えるP値関数" data-toc-modified-id="Clopper-Pearsonの信頼区間を与えるP値関数-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間" data-toc-modified-id="Clopper-Pearsonの信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間の図による把握" data-toc-modified-id="Clopper-Pearsonの信頼区間の図による把握-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の図による把握</a></span></li></ul></li><li><span><a href="#Sterne" data-toc-modified-id="Sterne-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Sterne</a></span><ul class="toc-item"><li><span><a href="#Sterneの信頼区間を与えるP値関数" data-toc-modified-id="Sterneの信頼区間を与えるP値関数-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Sterneの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Sterneの信頼区間" data-toc-modified-id="Sterneの信頼区間-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Sterneの信頼区間</a></span></li><li><span><a href="#Sterneの信頼区間の図による把握" data-toc-modified-id="Sterneの信頼区間の図による把握-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Sterneの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のbinom.testについて" data-toc-modified-id="おまけ:-R言語のbinom.testについて-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>おまけ: R言語のbinom.testについて</a></span></li><li><span><a href="#おまけ関連問題:-R言語のコードを実行してみよ." data-toc-modified-id="おまけ関連問題:-R言語のコードを実行してみよ.-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>おまけ関連問題: R言語のコードを実行してみよ.</a></span></li></ul></li><li><span><a href="#Wilson" data-toc-modified-id="Wilson-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Wilson</a></span><ul class="toc-item"><li><span><a href="#Wilsonの信頼区間を与えるP値函数" data-toc-modified-id="Wilsonの信頼区間を与えるP値函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Wilsonの信頼区間を与えるP値函数</a></span></li><li><span><a href="#Wilsonの信頼区間" data-toc-modified-id="Wilsonの信頼区間-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Wilsonの信頼区間</a></span></li><li><span><a href="#Wilsonの信頼区間の図による把握" data-toc-modified-id="Wilsonの信頼区間の図による把握-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Wilsonの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のprop.testについて" data-toc-modified-id="おまけ:-R言語のprop.testについて-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>おまけ: R言語のprop.testについて</a></span></li><li><span><a href="#Pearsonのχ²検定との関係" data-toc-modified-id="Pearsonのχ²検定との関係-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Pearsonのχ²検定との関係</a></span></li><li><span><a href="#おまけ:-多項分布モデルにおけるPearsonのχ²検定" data-toc-modified-id="おまけ:-多項分布モデルにおけるPearsonのχ²検定-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>おまけ: 多項分布モデルにおけるPearsonのχ²検定</a></span></li><li><span><a href="#おまけ(より進んだ話題):-一般のχ²検定で使うχ²分布の自由度" data-toc-modified-id="おまけ(より進んだ話題):-一般のχ²検定で使うχ²分布の自由度-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>おまけ(より進んだ話題): 一般のχ²検定で使うχ²分布の自由度</a></span></li></ul></li><li><span><a href="#Wald" data-toc-modified-id="Wald-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Wald</a></span><ul class="toc-item"><li><span><a href="#Waldの信頼区間を与えるP値関数" data-toc-modified-id="Waldの信頼区間を与えるP値関数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Waldの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Waldの信頼区間" data-toc-modified-id="Waldの信頼区間-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Waldの信頼区間</a></span></li><li><span><a href="#Waldの信頼区間の図による把握" data-toc-modified-id="Waldの信頼区間の図による把握-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Waldの信頼区間の図による把握</a></span></li><li><span><a href="#必修問題:-大阪都構想に関する住民投票の結果から得られる信頼区間達" data-toc-modified-id="必修問題:-大阪都構想に関する住民投票の結果から得られる信頼区間達-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>必修問題: 大阪都構想に関する住民投票の結果から得られる信頼区間達</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の仕方" data-toc-modified-id="Julia言語による計算の仕方-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>Julia言語による計算の仕方</a></span></li><li><span><a href="#WolframAlphaによる計算の仕方" data-toc-modified-id="WolframAlphaによる計算の仕方-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>WolframAlphaによる計算の仕方</a></span></li></ul></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#母比率の検定と信頼区間" data-toc-modified-id="母比率の検定と信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>母比率の検定と信頼区間</a></span><ul class="toc-item"><li><span><a href="#P値と信頼区間の定義の復習" data-toc-modified-id="P値と信頼区間の定義の復習-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>P値と信頼区間の定義の復習</a></span></li><li><span><a href="#二項分布モデルのP値達の定義を1枚の図で要約" data-toc-modified-id="二項分布モデルのP値達の定義を1枚の図で要約-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのP値達の定義を1枚の図で要約</a></span></li><li><span><a href="#4種のP値函数のプロット" data-toc-modified-id="4種のP値函数のプロット-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>4種のP値函数のプロット</a></span></li><li><span><a href="#4種の信頼区間の同時プロット" data-toc-modified-id="4種の信頼区間の同時プロット-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>4種の信頼区間の同時プロット</a></span></li></ul></li><li><span><a href="#Clopper-Pearson" data-toc-modified-id="Clopper-Pearson-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Clopper-Pearson</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を与えるP値関数" data-toc-modified-id="Clopper-Pearsonの信頼区間を与えるP値関数-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間" data-toc-modified-id="Clopper-Pearsonの信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間</a></span></li><li><span><a href="#Clopper-Pearsonの信頼区間の図による把握" data-toc-modified-id="Clopper-Pearsonの信頼区間の図による把握-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の図による把握</a></span></li></ul></li><li><span><a href="#Sterne" data-toc-modified-id="Sterne-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Sterne</a></span><ul class="toc-item"><li><span><a href="#Sterneの信頼区間を与えるP値関数" data-toc-modified-id="Sterneの信頼区間を与えるP値関数-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Sterneの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Sterneの信頼区間" data-toc-modified-id="Sterneの信頼区間-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Sterneの信頼区間</a></span></li><li><span><a href="#Sterneの信頼区間の図による把握" data-toc-modified-id="Sterneの信頼区間の図による把握-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Sterneの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のbinom.testについて" data-toc-modified-id="おまけ:-R言語のbinom.testについて-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>おまけ: R言語のbinom.testについて</a></span></li><li><span><a href="#おまけ関連問題:-R言語のコードを実行してみよ." data-toc-modified-id="おまけ関連問題:-R言語のコードを実行してみよ.-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>おまけ関連問題: R言語のコードを実行してみよ.</a></span></li></ul></li><li><span><a href="#Wilson" data-toc-modified-id="Wilson-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Wilson</a></span><ul class="toc-item"><li><span><a href="#Wilsonの信頼区間を与えるP値函数" data-toc-modified-id="Wilsonの信頼区間を与えるP値函数-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Wilsonの信頼区間を与えるP値函数</a></span></li><li><span><a href="#Wilsonの信頼区間" data-toc-modified-id="Wilsonの信頼区間-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Wilsonの信頼区間</a></span></li><li><span><a href="#Wilsonの信頼区間の図による把握" data-toc-modified-id="Wilsonの信頼区間の図による把握-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Wilsonの信頼区間の図による把握</a></span></li><li><span><a href="#おまけ:-R言語のprop.testについて" data-toc-modified-id="おまけ:-R言語のprop.testについて-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>おまけ: R言語のprop.testについて</a></span></li><li><span><a href="#Pearsonのχ²検定との関係" data-toc-modified-id="Pearsonのχ²検定との関係-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Pearsonのχ²検定との関係</a></span></li><li><span><a href="#おまけ:-多項分布モデルにおけるPearsonのχ²検定" data-toc-modified-id="おまけ:-多項分布モデルにおけるPearsonのχ²検定-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>おまけ: 多項分布モデルにおけるPearsonのχ²検定</a></span></li><li><span><a href="#おまけ(より進んだ話題):-一般のχ²検定で使うχ²分布の自由度" data-toc-modified-id="おまけ(より進んだ話題):-一般のχ²検定で使うχ²分布の自由度-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>おまけ(より進んだ話題): 一般のχ²検定で使うχ²分布の自由度</a></span></li></ul></li><li><span><a href="#Wald" data-toc-modified-id="Wald-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Wald</a></span><ul class="toc-item"><li><span><a href="#Waldの信頼区間を与えるP値関数" data-toc-modified-id="Waldの信頼区間を与えるP値関数-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Waldの信頼区間を与えるP値関数</a></span></li><li><span><a href="#Waldの信頼区間" data-toc-modified-id="Waldの信頼区間-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Waldの信頼区間</a></span></li><li><span><a href="#Waldの信頼区間の図による把握" data-toc-modified-id="Waldの信頼区間の図による把握-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Waldの信頼区間の図による把握</a></span></li><li><span><a href="#必修問題:-大阪都構想に関する住民投票の結果から得られる信頼区間達" data-toc-modified-id="必修問題:-大阪都構想に関する住民投票の結果から得られる信頼区間達-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>必修問題: 大阪都構想に関する住民投票の結果から得られる信頼区間達</a></span><ul class="toc-item"><li><span><a href="#Julia言語による計算の仕方" data-toc-modified-id="Julia言語による計算の仕方-5.4.1"><span class="toc-item-num">5.4.1&nbsp;&nbsp;</span>Julia言語による計算の仕方</a></span></li><li><span><a href="#WolframAlphaによる計算の仕方" data-toc-modified-id="WolframAlphaによる計算の仕方-5.4.2"><span class="toc-item-num">5.4.2&nbsp;&nbsp;</span>WolframAlphaによる計算の仕方</a></span></li></ul></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -724,19 +724,19 @@ end
 #plot_binom_confints(100, 0:10:100)
 ```
 
-## 比率の検定と信頼区間
+## 母比率の検定と信頼区間
 
 以下のようなことを行いたい.
 
 (1) 当たりが未知の確率で出るルーレットを $n$ 回まわしたときに, $k$ 回当たりが出たというデータから, ルーレットで当たりが出る確率を推定する.
 
-(2) 壺の中に赤い玉と白い玉が大量に入っているとき, そこから $n$ 個を無作為抽出したときに $k$ 個が赤い玉であったというデータから, 壺の赤い玉の割合を推定する.
+(2) 壺の中に赤い玉と白い玉が大量に入っているとき, そこから $n$ 個を無作為抽出したときに $k$ 個が赤い玉であったというデータから, 壺の中の赤い玉の割合を推定する.
 
-このような推定を以下では __比率の推定__ と呼ぶことにする.
+このような推定を以下では __母比率の推定__ と呼ぶことにする.
 
 ルーレットでの当たりの確率や壺の中の赤い玉の割合を総称して __比率__ (proportion) と呼んでいる.
 
-目標は比率の信頼区間の構成である.
+目標は母比率の信頼区間の構成である.
 
 そのためには, 検定と信頼区間の表裏一体性より, P値を適切に定義すればよい.
 
@@ -771,7 +771,7 @@ __P値の大雑把な定義:__　仮説 $p = p_0$ 下の統計モデル内でデ
 
 「データの数値以上に極端な」の正確な定義や近似の仕方については別に与えることになる.
 
-__P値の使い方:__ データの数値「$n$ 回中 $k$ 回成功」に関する仮説 $p=p_0$ のP値は, 仮説 $p=p_0$ 下の __統計モデルとデータの数値の整合性__ の指標として使われる.
+__P値の使い方:__ データの数値「$n$ 回中 $k$ 回成功」に関する仮説 $p=p_0$ のP値は, 仮説 $p=p_0$ 下の __統計モデルとデータの数値の整合性__ (__相性の良さ__)の指標として使われる.
 
 以下ではP値を次のように書く:
 
@@ -780,9 +780,9 @@ $$
 (\text{データ「$n$ 回中 $k$ 回成功」に関する仮説 $p=p_0$ のP値}).
 $$
 
-__有意水準:__　$0\le \alpha \le 1$　($5\%$ や $1\%$ など小さな値にする).
+__有意水準:__　$0\le \alpha \le 1$　($5\%$ や $1\%$ などの小さな値にする).
 
-__検定:__　P値が有意水準未満ならば仮説 $p=p_0$ は __棄却__ されたという.
+__検定:__　P値が有意水準未満ならば仮説 $p=p_0$ は __棄却__ されたという. <br>(「棄却」は過剰に強い言葉なので要注意.)
 
 ただし, これは閾値 $\alpha$ に基いて, 単に仮説 $p=p_0$ 下の統計モデルとデータの数値の整合性が低過ぎると判断することを超えた意味を持たないことには注意しなければいけない.
 
@@ -790,7 +790,7 @@ __検定:__　P値が有意水準未満ならば仮説 $p=p_0$ は __棄却__ �
 
 仮説 $p=p_0$ がデータの数値によって棄却されない場合にはその妥当性に関する判断を保留する.
 
-__信頼度(信頼係数, 信頼水準):__　$1 - \alpha$.
+__信頼度(信頼係数, 信頼水準, confidence level):__　$1 - \alpha$.
 
 __信頼区間:__　データの数値を用いた検定で棄却されない成功確率パラメータ $p=p_0$ の全体の集合.
 
@@ -1616,7 +1616,7 @@ $\pvalue_\Wilson(k|n,p=p_0)$ との違うは右辺の $\cdf$ の引数の分母�
 
 ### Waldの信頼区間
 
-$z_{\alpha/2} = z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2)$ とおく.
+$z_{\alpha/2} = \op{quantile}(\op{Normal(0, 1)}, 1 - \alpha/2)$ とおく.
 
 ```julia
 var"z_{0.025}の定義"
