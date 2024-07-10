@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.4
     language: julia
     name: julia-1.10
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 回帰 (regression)
 
 * 黒木玄
-* 2022-07-13～2022-07-18, 2023-03-23, 2024-01-06
+* 2022-07-13～2022-07-18, 2023-03-23, 2024-01-06, 2024-07-10
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}
@@ -322,7 +322,7 @@ $r$ 個の函数 $f_1,\ldots,f_r:\R\to\R$ が与えられているとし, その
 
 $$
 \beta = \begin{bmatrix} \beta_1 \\ \vdots \\ \beta_r \\ \end{bmatrix}, \quad
-f(x_i) = \begin{bmatrix} f_1(x_i) \\ \vdots \\ f_r(x_n) \\ \end{bmatrix}
+f(x_i) = \begin{bmatrix} f_1(x_i) \\ \vdots \\ f_r(x_i) \\ \end{bmatrix}
 $$
 
 とおく. このとき,
@@ -1502,6 +1502,10 @@ e = rand(Normal(0, 5), length(x))
 y = @. 1 + x + e
 plot_linreg_confint_predint(x, y, (x -> x^k for k in 0:1)...)
 ```
+
+橙色の破線で囲まれた信頼区間はデータと確率的に相性が良い回帰直線が含まれる範囲だと考えて良い.
+
+緑色のdashdot線で囲まれた予測区間は既知のデータと相性が良い新たなもう１つのデータ点 $(x_{n+1} y_{n+1})$ が含まれる範囲だと考えてよい.
 
 ```julia
 @rput x y

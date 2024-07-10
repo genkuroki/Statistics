@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.10.4
     language: julia
     name: julia-1.10
 ---
@@ -16,7 +16,7 @@ jupyter:
 # 誤用を避けるための注意
 
 * 黒木玄
-* 2022-07-01～2022-07-11, 2022-08-24, 2023-07-12, 2024-01-06, 2024-01-13
+* 2022-07-01～2022-07-11, 2022-08-24, 2023-07-12, 2024-01-06, 2024-01-13, 202-07-03
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}
@@ -100,7 +100,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予測の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予測の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#選挙の予測に関する参考文献" data-toc-modified-id="選挙の予測に関する参考文献-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>選挙の予測に関する参考文献</a></span></li></ul></li><li><span><a href="#2つのグループを比較するときの注意" data-toc-modified-id="2つのグループを比較するときの注意-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>2つのグループを比較するときの注意</a></span><ul class="toc-item"><li><span><a href="#データは偏っていることが多い" data-toc-modified-id="データは偏っていることが多い-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>データは偏っていることが多い</a></span></li><li><span><a href="#2つのグループを比較するときの注意に関する参考資料" data-toc-modified-id="2つのグループを比較するときの注意に関する参考資料-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>2つのグループを比較するときの注意に関する参考資料</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用" data-toc-modified-id="P値や信頼区間の誤用-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値や信頼区間の誤用</a></span><ul class="toc-item"><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#P値の正しい使い方" data-toc-modified-id="P値の正しい使い方-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>P値の正しい使い方</a></span></li><li><span><a href="#復習:-累積分布函数-cdf-と分位点函数-quantile-の定義" data-toc-modified-id="復習:-累積分布函数-cdf-と分位点函数-quantile-の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>復習: 累積分布函数 cdf と分位点函数 quantile の定義</a></span></li><li><span><a href="#信頼区間の定義" data-toc-modified-id="信頼区間の定義-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>信頼区間の定義</a></span></li><li><span><a href="#信頼区間の正しい解釈の仕方" data-toc-modified-id="信頼区間の正しい解釈の仕方-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>信頼区間の正しい解釈の仕方</a></span></li><li><span><a href="#P値の誤用の例" data-toc-modified-id="P値の誤用の例-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>P値の誤用の例</a></span><ul class="toc-item"><li><span><a href="#P値は仮説が正しい確率ではない" data-toc-modified-id="P値は仮説が正しい確率ではない-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>P値は仮説が正しい確率ではない</a></span></li><li><span><a href="#単独のP値のみを使って重要な決定をしてはいけない" data-toc-modified-id="単独のP値のみを使って重要な決定をしてはいけない-5.6.2"><span class="toc-item-num">5.6.2&nbsp;&nbsp;</span>単独のP値のみを使って重要な決定をしてはいけない</a></span></li><li><span><a href="#すべてを正直に報告しなければいけない" data-toc-modified-id="すべてを正直に報告しなければいけない-5.6.3"><span class="toc-item-num">5.6.3&nbsp;&nbsp;</span>すべてを正直に報告しなければいけない</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用に関する参考資料" data-toc-modified-id="P値や信頼区間の誤用に関する参考資料-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>P値や信頼区間の誤用に関する参考資料</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予測の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予測の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#選挙の予測に関する参考文献" data-toc-modified-id="選挙の予測に関する参考文献-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>選挙の予測に関する参考文献</a></span></li></ul></li><li><span><a href="#2つのグループを比較するときの注意" data-toc-modified-id="2つのグループを比較するときの注意-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>2つのグループを比較するときの注意</a></span><ul class="toc-item"><li><span><a href="#データは偏っていることが多い" data-toc-modified-id="データは偏っていることが多い-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>データは偏っていることが多い</a></span></li><li><span><a href="#2つのグループを比較するときの注意に関する参考資料" data-toc-modified-id="2つのグループを比較するときの注意に関する参考資料-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>2つのグループを比較するときの注意に関する参考資料</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用" data-toc-modified-id="P値や信頼区間の誤用-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値や信頼区間の誤用</a></span><ul class="toc-item"><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#P値の正しい使い方" data-toc-modified-id="P値の正しい使い方-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>P値の正しい使い方</a></span></li><li><span><a href="#復習:-累積分布函数-cdf-と分位点函数-quantile-の定義" data-toc-modified-id="復習:-累積分布函数-cdf-と分位点函数-quantile-の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>復習: 累積分布函数 cdf と分位点函数 quantile の定義</a></span></li><li><span><a href="#信頼区間の定義" data-toc-modified-id="信頼区間の定義-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>信頼区間の定義</a></span></li><li><span><a href="#信頼区間の正しい解釈の仕方" data-toc-modified-id="信頼区間の正しい解釈の仕方-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>信頼区間の正しい解釈の仕方</a></span></li><li><span><a href="#P値の誤用の例" data-toc-modified-id="P値の誤用の例-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>P値の誤用の例</a></span><ul class="toc-item"><li><span><a href="#P値は仮説が正しい確率ではない" data-toc-modified-id="P値は仮説が正しい確率ではない-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>P値は仮説が正しい確率ではない</a></span></li><li><span><a href="#単独のP値のみを使って重要な決定をしてはいけない" data-toc-modified-id="単独のP値のみを使って重要な決定をしてはいけない-5.6.2"><span class="toc-item-num">5.6.2&nbsp;&nbsp;</span>単独のP値のみを使って重要な決定をしてはいけない</a></span></li><li><span><a href="#扱う仮説達の中で正しいものの割合も重要" data-toc-modified-id="扱う仮説達の中で正しいものの割合も重要-5.6.3"><span class="toc-item-num">5.6.3&nbsp;&nbsp;</span>扱う仮説達の中で正しいものの割合も重要</a></span></li><li><span><a href="#すべてを正直に報告しなければいけない" data-toc-modified-id="すべてを正直に報告しなければいけない-5.6.4"><span class="toc-item-num">5.6.4&nbsp;&nbsp;</span>すべてを正直に報告しなければいけない</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用に関する参考資料" data-toc-modified-id="P値や信頼区間の誤用に関する参考資料-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>P値や信頼区間の誤用に関する参考資料</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -1020,15 +1020,17 @@ illustrate_binomial_pvalues()
 
 ### P値の正しい使い方
 
-__仮説 $\theta = \theta_0$ のP値は, その仮説下での統計モデル $M(\theta=\theta_0)$ とデータの数値 $x$ の整合性の指標として使われる.__
+__仮説 $\theta = \theta_0$ のP値は, その仮説の下での統計モデル $M(\theta=\theta_0)$ とデータの数値 $x$ の相性の良さ(整合性, 適合度)の指標として使われる.__
 
-P値が非常に小さい場合には整合性がほとんどないと考える.
+P値が非常に小さい場合には相性が非常に悪いと考える.
 
-P値が $0$ より十分に大きな場合には, モデル $M(p)$ の下での仮説 $p=p_0$ のデータの数値 $x$ との整合性がある程度あると考える.  しかし, 整合性がある程度あることと, そのパラメータ値が真実を表しているかもしれないことは別の話になるので注意すること.
+P値が $0$ より十分に大きな場合には, モデル $M(\theta)$ の下での仮説 $\theta=\theta_0$ のデータの数値 $x$ との相性が良いと考える.  
 
-__P値だけから得られる結論は弱い__ という点を強調したいががめに, 「P値は整合性の指標である」と述べていることにも注意せよ!
+しかし, 相性の良さがある程度あることとそのパラメータ値が真実を表しているかもしれないことは __別の話になる__ ので注意すること.
 
-__例えば, 統計モデルとデータの数値のどちらかに問題があるせいで整合性があるように見えてしまったり, 整合性がないように見えてしまったりすることがあり得る.__
+__P値だけから得られる結論は弱い__ という点を強調したいががめに, 「P値は相性の良さの指標である」と述べていることにも注意せよ!
+
+__例えば, 統計モデルとデータの数値のどちらかに問題があるせいで相性が良いかのように見えてしまったり, 相性が悪いかのように見えてしまったりすることがあり得る.__
 
 __P値を使った統計的推論は, 使用した統計モデルが妥当でかつ, 用いたデータの数値も信頼できる場合にのみ, 真っ当な結論を出し得る.__
 
@@ -1036,7 +1038,7 @@ __P値を使った統計的推論は, 使用した統計モデルが妥当でか
 
 __注意:__ 使用している統計モデルが妥当であることの意味は, 目的ごとにユーザー側が決める必要があり, さらに妥当であることの証拠の提出もユーザー側の責任になる.  統計学入門の解説に書いてある統計分析の手続きに機械的に従えば適切な統計的推論が可能になるという考え方は完全に誤りである.  使用した統計モデルの妥当性やデータの数値の信憑性のような重要な事柄については統計学のユーザー側が責任を持つ必要がある.
 
-__注意:__ __P値__ (P-value)はデータの数値とモデル＋パラメータ値の __整合性の指標の1つに過ぎない__.  別の考え方で整合性を測ることもあり得る.  例えば, __尤度__ (likelihood)やその拡張版としてのベイズ統計における __事後分布__ (posterior)の値もデータの数値とモデル＋パラメータ値の整合性の指標とみなされる.  どの道具を使うにしても, 安易に強い結論を出すことを控えて, 検挙になることが重要である.
+__注意:__ __P値__ (P-value)はデータの数値とモデル＋パラメータの値の __相性の良さの指標の1つに過ぎない__.  別の考え方で相性の良さを測ることもあり得る.  例えば, __尤度__ (likelihood)やその拡張版としてのベイズ統計における __事後分布__ (posterior)の値もデータの数値とモデル(事前分布を含む)＋パラメータの値の相性の良さの指標とみなされる.  どの道具を使うにしても, 安易に強い結論を出すことを控えて, 謙虚になることが重要である.
 
 
 ### 復習: 累積分布函数 cdf と分位点函数 quantile の定義
@@ -1092,7 +1094,7 @@ $$
 
 と定義される. 値 $\theta_0$ が信頼区間に含まれることは
 
-* データの数値 $x$ と統計モデル $M(\theta)$ とパラメータ値に関する仮説 $\theta=\theta_0$ の相性が閾値 $\alpha$ によって悪過ぎないと判定されないこと
+* データの数値 $x$ と統計モデル $M(\theta)$ とパラメータ値に関する仮説 $\theta=\theta_0$ の相性が閾値 $\alpha$ によって良いと判定されること
 
 を意味している.
 
@@ -1178,11 +1180,11 @@ __この節における以上の部分もミスリーディングであるとい
 
 この節での以上の解説では $95\%$ 信頼区間の $95\%$ をどのような確率(またはその近似値)とみなすことができるかを説明した.
 
-確かにそういう知識を持っていた方が良いのだが, __信頼区間については「P値はデータの数値とモデル＋パラメータ値の整合性の指標である」というP値の解釈の基本に戻った方が分かり易い.__
+確かにそういう知識を持っていた方が良いのだが, __信頼区間については「P値はデータの数値とモデル＋パラメータの値の相性の良さの指標である」というP値の解釈の基本に戻った方が分かり易い.__
 
 P値から真っ当な結論を出すためには, データの数値が信頼できてかつ, 使用した統計モデルも何らかの意味で妥当でなければいけないのであった.  以下ではこの条件を仮定する.
 
-このとき, パラメータ $\theta$ に関する $100(1-\alpha)\%$ 信頼区間は, 閾値 $\alpha$ によってデータと整合性がないと判断されずにすむパラメータ値 $\theta_0$ 全体の集合になる.
+このとき, パラメータ $\theta$ に関する $100(1-\alpha)\%$ 信頼区間は, 閾値 $\alpha$ によってデータと相性が悪いと判断されずにすむパラメータ値 $\theta_0$ 全体の集合になる.
 
 P値から導かれる結論は弱いので, __信頼区間に含まれるパラメータ値についてはその現実における適切さについて判断保留することが正しい.__
 
@@ -1217,7 +1219,7 @@ __注意:__ 「ベイズ統計では仮説が正しい確率を扱える」と�
 
 #### 単独のP値のみを使って重要な決定をしてはいけない
 
-事前に有意水準と呼ばれる整合性に関する閾値 $\alpha$ を決めてあったと仮定する(よく使われているのは $\alpha=5\%$).
+事前に有意水準と呼ばれる相性の良さに関する閾値 $\alpha$ を決めてあったと仮定する(よく使われているのは $\alpha=5\%$).
 
 さらに, データ中の回復者の割合を比較すると薬Aを与えた側の $a/m$ の方が与えなかった側の $c/n$ より大きい状況を仮定する.
 
@@ -1244,7 +1246,7 @@ P値以外の他の条件も確認する必要がある.
 
 そのときに「統計的に有意ではない」という理由で, 「ゆえに薬Aには効き目がない」と判断してはいけない.
 
-なぜならば, P値が有意水準 $\alpha$ 以上であることは, 仮説 $p=q$ の下での統計モデルとデータの数値の整合性が閾値 $\alpha$ によって無さすぎると判定されないことを意味するに過ぎないからである. 
+なぜならば, P値が有意水準 $\alpha$ 以上であることは, 仮説 $p=q$ の下での統計モデルとデータの数値の相性の良さが閾値 $\alpha$ によって無さすぎると判定されないことを意味するに過ぎないからである. 
 
 「ゆえに薬Aには効き目がない」と結論を出すことは誤りで, 「薬Aに効き目があるかどうかを閾値 $\alpha$ によって判定できなかった」と __判断を保留__ しなければいけない.
 
@@ -1274,6 +1276,69 @@ risk_ratio_example2
 
 このようなときに, 「さらされてもリスクは変わらない」という仮説のP値だけを見て, 物質Aにさらされることによって増えるリスクは気にする必要はあるが, 物質Bについては気にする必要はないと考えることは明らかに間違っている.
 
+
+#### 扱う仮説達の中で正しいものの割合も重要
+
+テストする薬達の中で実際に効くものの割合が $w$ であると仮定する.
+
+データ取得と仮説検定による判定によって(P値が有意水準未満なら効くと判定して良いと仮定している), 効かない薬が誤って効くと判定される確率は $\alpha$ (有意水準)で, 効く薬が正しく効くと判定される確率は $1-\beta$ (検出力)であるとする.
+
+以上の設定は実践的に仮説検定が使われる状況としてはほぼ理想的な状態であると考えられる.
+
+このとき, 全確率の表は以下のようになる:
+
+$$
+\begin{array}{l|c|c}
+                  & \text{効くと判定} & \text{効かないと判定} \\
+\hline
+\text{効く薬}     & (1-\beta)w  & \beta w \\
+\text{効かない薬} & \alpha(1-w) & (1-\alpha)(1-w) \\
+\end{array}
+$$
+
+この表より,
+
+$$
+R_1 = (\text{効くと判定された薬の中での効かない薬の割合}) =
+\frac{\alpha(1-w)}{(1-\beta)w + \alpha(1-w)}.
+$$
+
+以下では $\alpha=2.5\%$ (両側検定での有意水準 $5\%$ の片側検定換算), $1-\beta=80\$ (よく使われている標準的な検出力)と仮定する:
+
+$$
+R_1 = \frac{0.025(1-w)}{0.8w + 0.025(1-w)}.
+$$
+
+例えば $w=0.5$ ならば $R_1 \approx 3\%$ になる(以下のグラフも参照).
+
+そのことから, 効くと判定された薬の中での実際には効かない薬の割合 $R_1$ を $3\%$ 程度以下に抑えたければ, テストする薬の中での効く薬の割合を半分以上にすればよいことが分かる.
+
+しかし $w=0.05$ ならば $R_1 \approx 37\%$ になる.
+
+このことから, もしもテストする薬の中での効く薬の割合が $5\%$ しか無ければ(こういう場合は珍しくないだろう), 仮説検定によって効くと判定されら薬の中での実際には効かない薬の割合が $37\%$ 程度と高くなってしまう.
+
+このようにテストする薬の中での効く薬の割合が小さい場合には, 仮説検定を理想的に利用できたとしても, 効くと判定した薬の中での効かないものの割合あ大きくなってしまう.
+
+P値を使った判断では以上のようなことも気にする必要がある.
+
+__P値単体には科学的に信頼できる結論を出す力はない!__
+
+__P値はそれ以外の情報と組み合わせて使う必要がある.__
+
+```julia
+R_1(α, β, w) = α*(1-w) / ((1-β)*w + α*(1-w))
+α = 0.025
+β = 0.2
+
+@show R_1(α, β, 0.5)
+@show R_1(α, β, 0.05)
+
+plot(w -> R_1(α, β, w), 0, 1; label="")
+plot!(xtick=0:0.05:1, ytick=0:0.05:1, xrotation=30)
+plot!(xguide="w", yguide="R₁")
+plot!(size=(600, 400))
+title!("R₁ for α=$α, 1-β=$(1-β)")
+```
 
 #### すべてを正直に報告しなければいけない
 
@@ -1308,8 +1373,18 @@ P値に関するASA声明の翻訳者によるP値に関する解説動画が次
 
 分かり難いとよく言われている「信頼区間」については, 検定(もしくはP値函数)と信頼区間の表裏一体性に基いて信頼区間について理解しようとすることが正しい理解の方針で思われる.  検定と信頼区間の表裏一体性については, すぐ上の動画の48:37以降で解説されている.
 
+同著者による次の本には非常に役に立つ話が書いてある:
+
+* 佐藤俊哉, 『宇宙怪人しまりす統計よりも重要なことを学ぶ』, 朝倉書店, 2024年03月01日 ([公式サイト](https://www.asakura.co.jp/detail.php?book_code=12297))
+
 可能ならば以下の論文も参照せよ:
 
 * Valentin Amrhein, Sander Greenland.  Discuss practical importance of results based on interval estimates and p-value functions, not only on point estimates and null p-values.  First Published June 3, 2022.  \[[doi](https://doi.org/10.1177%2F02683962221105904)\]
 
 この一連のノートの内容はこの論文が出る前に計画されていたのであるが, P値の使い方については内容的に非常に近いものになっている.
+
+さらに次の文献も参考になる:
+
+* アレックス・ラインハート著 (西原史暁訳), 『ダメな統計学 Statistics Done Wrong』, 2014年12月28日 日本語版公開 \[[PDF](https://repun-app.fish.hokudai.ac.jp/pluginfile.php/6536/mod_resource/content/1/%E3%82%BF%E3%82%99%E3%83%A1%E3%81%AA%E7%B5%B1%E8%A8%88%E5%AD%A6.pdf)\]
+
+特に第5章「p値と基準率の誤り」は必読である.
