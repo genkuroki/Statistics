@@ -8,15 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.10.0
+    display_name: Julia 1.11.1
     language: julia
-    name: julia-1.10
+    name: julia-1.11
 ---
 
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-06-08, 2022-08-10, 2023-03-18, 2024-01-06
+* 2022-04-11～2022-06-08, 2022-08-10, 2023-03-18, 2024-01-06, 2024-10-30
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -1284,7 +1284,7 @@ $$
 1. 分布 $\op{Gamma}(\alpha, \theta)$ に従って乱数 $\Lambda$ を生成する.
 2. 分布 $\op{Poisson}(\Lambda)$ に従って乱数 $M$ を生成する.
 
-このとき, $M$ の分布が従う確率質量函数は次になることを示せ:
+このとき, $M$ が従う分布の確率質量函数は次になることを示せ:
 
 $$
 P(m|\alpha,\theta) =
