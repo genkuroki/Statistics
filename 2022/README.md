@@ -1,3 +1,21 @@
+# 数理統計学2022目次
+
+* <a href="#01-bernoulli試行と関連確率分布">01 Bernoulli試行と関連確率分布</a>
+* <a href="#02-gauss積分-ガンマ函数-ベータ函数">02 Gauss積分, ガンマ函数, ベータ函数</a>
+* <a href="#03-確率分布達の解釈">03 確率分布達の解釈</a>
+* <a href="#04-標本分布について">04 標本分布について</a>
+* <a href="#05-大数の法則と中心極限定理">05 大数の法則と中心極限定理</a>
+* <a href="#06-条件付き確率分布-尤度-推定-記述統計">06 条件付き確率分布, 尤度, 推定, 記述統計</a>
+* <a href="#07-例">07 例</a>
+* <a href="#08-検定と信頼区間1-一般論">8 検定と信頼区間(1) 一般論</a>
+* <a href="#09-検定と信頼区間2-比率">09 検定と信頼区間(2) 比率</a>
+* <a href="#10-検定と信頼区間3-平均">10 検定と信頼区間(3) 平均</a>
+* <a href="#11-検定と信頼区間4-比率の違い">11 検定と信頼区間(4) 比率の違い</a>
+* <a href="#12-検定と信頼区間5-平均の差">12 検定と信頼区間(5) 平均の差</a>
+* <a href="#13-誤用を避けるための注意">13 誤用を避けるための注意</a>
+* <a href="#14-回帰">14 回帰</a>
+* <a href="#15-まとめ">15 まとめ</a>
+
 # 数理統計学2022
 
 すべてをまとめたPDF:
@@ -5,7 +23,7 @@
 * [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 * [Statistics2022handwritten.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/Statistics2022handwritten.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/Statistics2022handwritten.pdf)\]
 
-これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている.
+これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている. ファイル名に2022とあるので2022年の資料だと思う人もいるかもしれないが, 2023年以降も少しずつ書き変えている.
 
 このファイルのipynb版とpdf版:
 
@@ -13,7 +31,6 @@
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/00-0%20README.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/00-0%20README.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/00-0%20README.pdf)\]
-
 
 記号法については次のメモも参照せよ:
 
@@ -35,9 +52,7 @@
 
 ## 資料
 
-[Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [__nbviewer__](https://nbviewer.org/) 経由の閲覧がおすすめです。
-
-オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください.
+[Jupyter](https://jupyter.org/) notebook をオンラインで読むなら [nbviewer](https://nbviewer.org/) 経由の閲覧がおすすめです。オフラインでも読めるようにするためには pdf ファイルをダウンロードしてください.
 
 [Julia言語](https://julialang.org/)を使って数値の計算やグラフの作画を行っています。必要最小限の使い方については次の資料を見て下さい:
 
@@ -46,24 +61,6 @@
 [WolframAlpha](https://www.wolframalpha.com/)も併用しています.
 
 __明らかな誤りをまだ大量に含んでいるものと思われます. ごめんなさい. 適切に訂正しながら読んでください. 随時訂正更新しています.__
-
-## 資料目次
-
-* <a href="#01-bernoulli試行と関連確率分布">01 Bernoulli試行と関連確率分布</a>
-* <a href="#02-gauss積分-ガンマ函数-ベータ函数">02 Gauss積分, ガンマ函数, ベータ函数</a>
-* <a href="#03-確率分布達の解釈">03 確率分布達の解釈</a>
-* <a href="#04-標本分布について">04 標本分布について</a>
-* <a href="#05-大数の法則と中心極限定理">05 大数の法則と中心極限定理</a>
-* <a href="#06-条件付き確率分布-尤度-推定-記述統計">06 条件付き確率分布, 尤度, 推定, 記述統計</a>
-* <a href="#07-例">07 例</a>
-* <a href="#08-検定と信頼区間1-一般論">8 検定と信頼区間(1) 一般論</a>
-* <a href="#09-検定と信頼区間2-比率">09 検定と信頼区間(2) 比率</a>
-* <a href="#10-検定と信頼区間3-平均">10 検定と信頼区間(3) 平均</a>
-* <a href="#11-検定と信頼区間4-比率の違い">11 検定と信頼区間(4) 比率の違い</a>
-* <a href="#12-検定と信頼区間5-平均の差">12 検定と信頼区間(5) 平均の差</a>
-* <a href="#13-誤用を避けるための注意">13 誤用を避けるための注意</a>
-* <a href="#14-回帰">14 回帰</a>
-* <a href="#15-まとめ">15 まとめ</a>
 
 ### 01 Bernoulli試行と関連確率分布
 
@@ -106,8 +103,8 @@ __定義された確率分布__
 
 __定義された確率分布__
 
-* 正規分布 (再): $\mathrm{Normal}(\mu, \sigma) = \mu + \sigma\mathrm{Normal}(0, 1)$
-* 形状 $\alpha$, スケール $\theta$ の __ガンマ分布__: $\mathrm{Gamma}(\alpha, \theta) = \theta\mathrm{Gamma}(\alpha, 1)$ (平均的なイベント発生間隔が $\theta$ のときにちょうど $\alpha$ 回イベントが生じるまでにかかる時間の分布)
+* 正規分布 (再): $\mathrm{Normal}(\mu, \sigma) = \mu + \sigma\,\mathrm{Normal}(0, 1)$
+* 形状 $\alpha$, スケール $\theta$ の __ガンマ分布__: $\mathrm{Gamma}(\alpha, \theta) = \theta\,\mathrm{Gamma}(\alpha, 1)$ (平均的なイベント発生間隔が $\theta$ のときにちょうど $\alpha$ 回イベントが生じるまでにかかる時間の分布)
 * 平均 $\theta$ の __指数分布__: $\mathrm{Exponential}(\theta) = \mathrm{Gamma}(1, \theta)$ (平均的なイベント発生間隔が $\theta$ のときにイベントが発生するまでにかかる時間の分布)
 * 中央値 $a$, スケール $b$ の __Laplace分布__: $\mathrm{Laplace}(a, b)$
 * 形状 $\alpha$, スケール $\theta$ の __逆ガンマ分布__: $\mathrm{InverseGamma}(\alpha, \theta) = 1/\mathrm{Gamma}(\alpha, 1/\theta)$
@@ -281,7 +278,7 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)\]
 
-### 08 検定と信頼区間(1) 一般論
+### 08 P値と仮説検定と信頼区間(1) 一般論
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.ipynb)\]
@@ -298,7 +295,7 @@ __関連講義動画__
 
 この講義動画は「[P値に関するASA声明](https://www.biometrics.gr.jp/news/all/ASA.pdf)」の考え方の非常に良い解説になっている.
 
-### 09 検定と信頼区間(2) 比率
+### 09 P値と仮説検定と信頼区間(2) 母比率
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)\]
@@ -332,7 +329,7 @@ __追加資料__
   * [pdf](https://github.com/genkuroki/public/blob/main/0036/P-value%20functions%20of%20proportions.pdf)
 \[[download](https://github.com/genkuroki/public/raw/main/0036/P-value%20functions%20of%20proportions.pdf)\]
 
-### 10 検定と信頼区間(3) 平均
+### 10 P値と仮説検定と信頼区間(3) 母平均
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)\]
@@ -358,7 +355,7 @@ __作成された動画__
 
 <img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/confint_of_mean.gif">
 
-### 11 検定と信頼区間(4) 比率の違い
+### 11 P値と仮説検定と信頼区間(4) 母比率の違い
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)\]
@@ -395,7 +392,7 @@ __関連講義動画__
   * 佐藤俊哉, 交絡とその調整, 2018/12/20, 長さ 1:00:52) \[[https://youtu.be/ybdkQFEdCPM](https://youtu.be/ybdkQFEdCPM)\]
   * 佐藤俊哉, 回帰モデルと傾向スコア, 2019/02/21, 長さ 1:04:44) \[[https://youtu.be/cOHN444kBlo](https://youtu.be/cOHN444kBlo)\]
 
-#### __「検定と信頼区間(4) 比率の違い」のノートブックの内容をJulia言語で直接実行するためのヒント__
+#### __「P値と仮説検定と信頼区間(4) 母比率の違い」のノートブックの内容をJulia言語で直接実行するためのヒント__
 
 [「検定と信頼区間(4) 比率の違い」のノートブック](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb) の中の
 
@@ -418,7 +415,7 @@ __注意するべきポイントは `using Distributions, Roots` を忘れない
 
 と表示されている. すなわち, `\chi` と入力してタブキーを押し, さらに `\^2` と入力してタブキーを押せば `χ²` と入力できる.
 
-### 12 検定と信頼区間(5) 平均の差
+### 12 P値と仮説検定と信頼区間(5) 母平均の差
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)\]
@@ -508,22 +505,6 @@ __作成された動画__
 2. P値函数について
 3. Welchの t 検定について
 4. 数学的な補足: 大数の法則と中心極限定理について
-
-<!--
-### 99 テンプレート
-
-* [Jupyter notebook]()
-\[[nbviewer]()\]
-* [pdf]()
-\[[download]()\]
-
-
-__演習用サンプル__
-
-__定義された確率分布__
-
-__定義された信頼区間__
--->
 
 ---
 
