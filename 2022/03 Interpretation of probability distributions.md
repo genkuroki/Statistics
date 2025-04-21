@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia 1.11.5
     language: julia
     name: julia-1.11
 ---
@@ -190,7 +190,7 @@ $$
 となっているならば,
 
 $$
-X + Y = \op{Normal}\left(\mu_X+\mu_Y, \sqrt{\sigma_X^2+\sigma_Y^2}\right)
+X + Y \sim \op{Normal}\left(\mu_X+\mu_Y, \sqrt{\sigma_X^2+\sigma_Y^2}\right)
 $$
 
 となることを示せ.
