@@ -289,6 +289,16 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)\]
 
+#### 07-3
+
+#### 07-4 ColabでJuliaを使うためのノートブック
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb?hl=ja#scrollTo=6a19f097)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)\]
+
 ### 08 P値と仮説検定と信頼区間(1) 一般論
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.ipynb)
