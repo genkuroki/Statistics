@@ -29,11 +29,11 @@ $
 \newcommand\X{{\mathscr X}}
 $
 
-このノートは[Google Colab](https://colab.research.google.com/)で使用できるように書いたつもりである.
+このノートは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb?hl=ja).
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#ColabでのJulia言語の使い方" data-toc-modified-id="ColabでのJulia言語の使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ColabでのJulia言語の使い方</a></span><ul class="toc-item"><li><span><a href="#Juliaのインストールと実行" data-toc-modified-id="Juliaのインストールと実行-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Juliaのインストールと実行</a></span></li><li><span><a href="#グラフの描き方" data-toc-modified-id="グラフの描き方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>グラフの描き方</a></span></li><li><span><a href="#標準正規分布乱数のプロット" data-toc-modified-id="標準正規分布乱数のプロット-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>標準正規分布乱数のプロット</a></span></li><li><span><a href="#確率分布の扱い方" data-toc-modified-id="確率分布の扱い方-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>確率分布の扱い方</a></span></li><li><span><a href="#正規分布の確率密度函数のプロット" data-toc-modified-id="正規分布の確率密度函数のプロット-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>正規分布の確率密度函数のプロット</a></span></li></ul></li><li><span><a href="#Anscombeの例のプロット" data-toc-modified-id="Anscombeの例のプロット-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Anscombeの例のプロット</a></span><ul class="toc-item"><li><span><a href="#RDatasets.jlパッケージのインストール" data-toc-modified-id="RDatasets.jlパッケージのインストール-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>RDatasets.jlパッケージのインストール</a></span></li><li><span><a href="#データのプロットの仕方" data-toc-modified-id="データのプロットの仕方-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>データのプロットの仕方</a></span></li></ul></li><li><span><a href="#Datasaurusの散布図のプロット" data-toc-modified-id="Datasaurusの散布図のプロット-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Datasaurusの散布図のプロット</a></span><ul class="toc-item"><li><span><a href="#データの取得" data-toc-modified-id="データの取得-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>データの取得</a></span></li><li><span><a href="#散布図の作成" data-toc-modified-id="散布図の作成-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>散布図の作成</a></span></li></ul></li><li><span><a href="#中心極限定理のプロット" data-toc-modified-id="中心極限定理のプロット-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>中心極限定理のプロット</a></span><ul class="toc-item"><li><span><a href="#素朴なワークフロー" data-toc-modified-id="素朴なワークフロー-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>素朴なワークフロー</a></span></li><li><span><a href="#Revise.jlを使うワークフロー" data-toc-modified-id="Revise.jlを使うワークフロー-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Revise.jlを使うワークフロー</a></span></li><li><span><a href="#問題:-Revise.jlを実際に使ってみよ" data-toc-modified-id="問題:-Revise.jlを実際に使ってみよ-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: Revise.jlを実際に使ってみよ</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Google-ColabでのJulia言語の使い方" data-toc-modified-id="Google-ColabでのJulia言語の使い方-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Google ColabでのJulia言語の使い方</a></span><ul class="toc-item"><li><span><a href="#ColabでのJuliaの実行" data-toc-modified-id="ColabでのJuliaの実行-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ColabでのJuliaの実行</a></span></li><li><span><a href="#グラフの描き方" data-toc-modified-id="グラフの描き方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>グラフの描き方</a></span></li><li><span><a href="#標準正規分布乱数のプロット" data-toc-modified-id="標準正規分布乱数のプロット-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>標準正規分布乱数のプロット</a></span></li><li><span><a href="#確率分布の扱い方" data-toc-modified-id="確率分布の扱い方-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>確率分布の扱い方</a></span></li><li><span><a href="#正規分布の確率密度函数のプロット" data-toc-modified-id="正規分布の確率密度函数のプロット-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>正規分布の確率密度函数のプロット</a></span></li></ul></li><li><span><a href="#Anscombeの例のプロット" data-toc-modified-id="Anscombeの例のプロット-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Anscombeの例のプロット</a></span><ul class="toc-item"><li><span><a href="#RDatasets.jlパッケージのインストール" data-toc-modified-id="RDatasets.jlパッケージのインストール-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>RDatasets.jlパッケージのインストール</a></span></li><li><span><a href="#データのプロットの仕方" data-toc-modified-id="データのプロットの仕方-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>データのプロットの仕方</a></span></li></ul></li><li><span><a href="#Datasaurusの散布図のプロット" data-toc-modified-id="Datasaurusの散布図のプロット-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Datasaurusの散布図のプロット</a></span><ul class="toc-item"><li><span><a href="#データの取得" data-toc-modified-id="データの取得-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>データの取得</a></span></li><li><span><a href="#散布図の作成" data-toc-modified-id="散布図の作成-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>散布図の作成</a></span></li></ul></li><li><span><a href="#中心極限定理のプロット" data-toc-modified-id="中心極限定理のプロット-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>中心極限定理のプロット</a></span><ul class="toc-item"><li><span><a href="#素朴なワークフロー" data-toc-modified-id="素朴なワークフロー-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>素朴なワークフロー</a></span></li><li><span><a href="#Revise.jlを使うワークフロー" data-toc-modified-id="Revise.jlを使うワークフロー-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Revise.jlを使うワークフロー</a></span></li><li><span><a href="#問題:-自分で関数を定義して実行してみよ." data-toc-modified-id="問題:-自分で関数を定義して実行してみよ.-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>問題: 自分で関数を定義して実行してみよ.</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -74,7 +74,19 @@ default(fmt = :png)
 
 (2) [Google Colab](https://colab.research.google.com/)にアクセスする.
 
-(3) 「ノートブックを開く」の「GitHub」を選択して, 
+(3) 「ノートブックを開く」の「GitHub」を選択する.
+
+(4) GitHubにおいてある `ipynb` ファイルのURLを入力してEnterキーを押す.  例えば
+
+ * `https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb`
+
+というURLを入力する.
+
+(5) 実際にその例のURLを入力してEnterキーを押すと, このファイルがGoogle Colabで開かれる.
+
+(6) そのノートブックの全体をColabで実行し直したければ, 「ランタイム」→「すべてのセルを実行」を選択する.
+
+(7) 適当にGoogle Colabの使い方を検索して調べればより詳しい使い方が分かる.
 
 
 * 各セルの先頭に `?` と入力した後に関数名などを入れるとヘルプを読むことができる.
@@ -97,58 +109,32 @@ sin(pi/6)
 sinpi(1/6)
 ```
 
+<!-- #region -->
 ### グラフの描き方
 
-(7) 統計学対応のグラフ作画パッケージを入れるためには
-
-```
-julia> using StatsPlots
-```
-
-を実行するだけでよい.  インストールするかどうかをjuliaが聞いて来た場合には `y` と答える.
-
-__重要な注意1:__ 上の方法でうまく行かない場合には, 
-
-```
-julia> ]を押す
-pkg> add StatsPlots
-数分時間がかかる
-pkg> BackSpaceキーを押す
-```
-
-のようにしてパッケージをインストールして下さい.
-
-__重要な注意2:__ StatsPlots.jlパッケージのインストールに成功した後に
-
-```
-julia> using StatsPlots
-julia> plot(sin)
-```
-
-としても,
-
-```
-Plot{Plots.GRBackend() n=1}
-```
-
-と表示されるだけでグラフが作画されない場合には, 
-
-```
-julia> default(gui=true)
-```
-
-を実行して下さい.
-
-__問題:__ 自分のパソコンで `using StatsPlots` の後に以下を実行してグラフを作画してみよ.
+(7) Colabで統計学対応のグラフ作画パッケージを使うためには次を実行する:
 
 ```julia
+import Pkg
+Pkg.add("StatsPlots")
 using StatsPlots
+```
+
+このノートブックでは最初のセルでこれと同等のことを実行できるようにしてあるので, 最初のセルを実行しておけばよい.
+<!-- #endregion -->
+
+```julia
 plot(sin)
+```
+
+```julia
+plot(Normal(3, 10))
 ```
 
 ### 標準正規分布乱数のプロット
 
 ```julia
+# 標準正規分布の乱数を10^4個生成
 Z = randn(10^4);
 ```
 
@@ -160,41 +146,28 @@ histogram(Z; norm=true, alpha=0.5, label="")
 plot!(x -> exp(-x^2/2)/sqrt(2pi), -4, 4; label="", lw=3)
 ```
 
+<!-- #region -->
 ### 確率分布の扱い方
 
-(7) 確率分布を扱うためのパッケージを入れるためには
+(7) 確率分布を扱うためのパッケージを使うためには次を実行する:
 
-```
-julia> using Distributions
-```
-
-を実行するだけでよい. インストールするかどうかをjuliaが聞いて来た場合には `y` と答える.
-
-しかし, この機会にパッケージモードでのパッケージの入れ方についてもこの機会に学んでおいた方がよい.
-
-```
-julia> ]
+```julia
+import Pkg
+Pkg.add("StatsPlots")
+using StatsPlots
 ```
 
-と `]` を入力すると,
+このノートブックでは最初のセルでこれと同等のことを実行できるようにしてあるので, 最初のセルを実行しておけばよい.
+<!-- #endregion -->
 
+```julia
+dist = Binomial(20, 0.3)
+bar(dist; alpha=0.5, label="Binomial(20, 0.3)")
 ```
-pkg> 
-```
-
-と表示されてパッケージ管理モードに移行できる(戻るには `pkg> ` プロンプトの直後にバックスペースを押せばよい).
-
-以下を実行すると, `Distributions.jl` パッケージをjuliaの環境にインストールできる.
-
-```
-pkg> add Distributions
-```
-
 
 ### 正規分布の確率密度函数のプロット
 
 ```julia
-using Distributions
 X = rand(Normal(2, 3), 10^4);
 ```
 
@@ -208,25 +181,21 @@ plot!(Normal(2, 3); label="Normal(2, 3)", lw=2)
 
 ## Anscombeの例のプロット
 
-
+<!-- #region -->
 ### RDatasets.jlパッケージのインストール
 
-確率分布を扱うためのパッケージを入れるためには
-
-```
-julia> using RDatasets
-```
-
-を実行するだけでよい. インストールするかどうかをjuliaが聞いて来た場合には `y` と答える. もしくはパッケージ管理モードで
-
-```
-pkg> add RDatasets
-```
-
-を実行してもよい.  その場合には `julia> ` プロンプトで改めて `using RDatasets` を実行する必要がある.
+確率分布を扱うためのパッケージを入れるためには次を実行する:
 
 ```julia
+import Pkg
+Pkg.add("RDatasets")
 using RDatasets
+```
+
+このノートブックでは最初のセルでこれと同等のことを実行できるようにしてあるので, 最初のセルを実行しておけばよい.
+<!-- #endregion -->
+
+```julia
 anscombe = dataset("datasets", "anscombe")
 ```
 
@@ -479,7 +448,6 @@ datasaurus = [
 ```
 
 ```julia
-using StatsPlots
 scatter(datasaurus[:,1], datasaurus[:,2]; label="", title="Datasaurus")
 ```
 
@@ -492,10 +460,6 @@ __問題:__ [Datasaurusについて検索](https://www.google.com/search?q=Datas
 ### 素朴なワークフロー
 
 以下のセルの内容を julia の `julia> ` プロンプトに順番に入力すれば(コピー＆ペーストすれば)同じ結果が得られる.  各行の最後にセミコロン `;` を追加すれば計算結果の出力を抑制できる.
-
-```julia
-using StatsPlots, Distributions
-```
 
 ```julia
 # 確率分布を dist と書く.
@@ -590,30 +554,10 @@ pkg> add Revise
 
 でインストールできる.
 
-<!-- #region -->
-### 問題: Revise.jlを実際に使ってみよ
 
-`using Revise` を実際に使ってみよ.
+### 問題: 自分で関数を定義して実行してみよ.
 
-例えば, 以下のセルの内容で `central_limit_theorem.jl` という名前のファイルを作成し,
-
-```julia
-julia> using Revise
-julia> includet("central_limit_theorem.jl")
-julia> hello_sine()
-```
-
-を実行してみよ. 他の函数の実行例については下の方を参考にせよ.
-
-`using Revise` 後に `includet` (最後の `t` を忘れずに)したファイルの内容を変更すると自動的に `julia> ` プロンプト側(juliaのREPL側(read-eval-print loop側))に反映されるので, それ以後は
-
-* `includet` で読み込んだファイルを変更する.
-* 例えば, 函数の内容を変更したり, 新しい函数を書いたりする.
-* その結果は自動的に `julia> ` プロンプト側に反映される.
-* ファイルの変更結果をテストするために函数を実行する.
-
-の繰り返して, 色々な仕事をできるようになる.
-<!-- #endregion -->
+以下のセルのように関数を定義しておくと, 同じような仕事を何度も楽に実行できるようになる.
 
 ```julia
 using StatsPlots
@@ -729,4 +673,8 @@ plot_dist_clt(Poisson(), 10)
 
 ```julia
 plot_dist_clt(Poisson(), 100)
+```
+
+```julia
+
 ```
