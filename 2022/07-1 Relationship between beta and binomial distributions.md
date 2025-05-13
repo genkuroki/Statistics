@@ -63,18 +63,26 @@ $
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
 import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト"""
 packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""必要ならPkg.assした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
     if pkg in packages_added
-        println("# $(pkg).jl is already added.")
+        println("# $(pkg).jl is already added."); flush(stdout)
     else
-        println("# $(pkg).jl is not added yet, so let's add it.")
+        println("# $(pkg).jl is not added yet, so let's add it."); flush(stdout)
         Pkg.add(pkg)
     end    
-    println("> using $(pkg)")
+    println("> using $(pkg)"); flush(stdout)
     @eval using $(Symbol(pkg))
 end
+
+"""必要ならPkg.addした後にusingしてくれるマクロ"""
 macro _using(pkg) :(_using($(string(pkg)))) end
 
 ENV["LINES"], ENV["COLUMNS"] = 100, 100

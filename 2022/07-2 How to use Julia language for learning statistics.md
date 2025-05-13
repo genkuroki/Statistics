@@ -46,18 +46,26 @@ $
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
 import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト"""
 packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""必要ならPkg.assした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
     if pkg in packages_added
-        println("# $(pkg).jl is already added.")
+        println("# $(pkg).jl is already added."); flush(stdout)
     else
-        println("# $(pkg).jl is not added yet, so let's add it.")
+        println("# $(pkg).jl is not added yet, so let's add it."); flush(stdout)
         Pkg.add(pkg)
     end    
-    println("> using $(pkg)")
+    println("> using $(pkg)"); flush(stdout)
     @eval using $(Symbol(pkg))
 end
+
+"""必要ならPkg.addした後にusingしてくれるマクロ"""
 macro _using(pkg) :(_using($(string(pkg)))) end
 
 @_using Distributions
@@ -338,9 +346,13 @@ __問題:__ 他のアンスコムのデータについて同様のグラフを�
 
 ### データの取得
 
+<!--
 * http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html
   * https://www.dropbox.com/sh/xaxpz3pm5r5awes/AADUbGVagF9i4RmM9JkPtviEa?dl=0
+-->
+* https://www.dropbox.com/sh/xaxpz3pm5r5awes/AADUbGVagF9i4RmM9JkPtviEa?dl=0
 * https://visualizing.jp/the-datasaurus-dozen/
+* https://www.openintro.org/data/index.php?data=datasaurus
 
 ```julia
 datasaurus = [
