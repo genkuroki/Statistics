@@ -62,8 +62,8 @@
 Jupyter notebookの実行のためには[Google Colab](https://colab.research.google.com/)が便利です. 
 ただし, [Google Colab](https://colab.research.google.com/)にアクセスする前に __Googleアカウントにログインしておいてください.__
 
-* 07-3 [ColabでJulia言語を使った統計学の勉強の仕方]()
-\[[Colab]()\]
+* 07-3 [ColabでJulia言語を使った統計学の勉強の仕方](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb?hl=ja)\]
 * 07-4 [ColabでJuliaを使うためのノートブック](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb?hl=ja#scrollTo=6a19f097)\]
 
@@ -289,13 +289,19 @@ __定義された確率分布__
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)\]
 
-#### 07-3
+#### 07-3 ColabでJulia言語を使った統計学の勉強の仕方
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]
 
 #### 07-4 ColabでJuliaを使うためのノートブック
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
-\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb?hl=ja#scrollTo=6a19f097)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)\]
 
