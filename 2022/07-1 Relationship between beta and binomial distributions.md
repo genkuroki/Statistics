@@ -65,47 +65,38 @@ $
 ```julia
 import Pkg
 packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
-##@show packages_added
-
-pkgs = [
-    "BenchmarkTools"
-    "Distributions"
-#    "QuadGK"
-#    "Roots"
-    "SpecialFunctions"
-#    "StaticArrays"
-#    "StatsBase"
-    "StatsFuns"
-    "StatsPlots"
-#    "SymPy"
-]
-for pkg in pkgs
+function _using(pkg::AbstractString)
     if pkg in packages_added
         println("# $(pkg).jl is already added.")
     else
         println("# $(pkg).jl is not added yet, so let's add it.")
         Pkg.add(pkg)
-    end
+    end    
+    println("> using $(pkg)")
+    @eval using $(Symbol(pkg))
+end
+macro _using(pkg)
+    :(_using($(string(pkg))))
 end
 ```
 
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
-using BenchmarkTools
-using Distributions
+@_using BenchmarkTools
+@_using Distributions
 using LinearAlgebra
 using Printf
-#using QuadGK
+##@_using QuadGK
 using Random
 Random.seed!(4649373)
-#using Roots
-using SpecialFunctions
-#using StaticArrays
-#using StatsBase
-using StatsFuns
-using StatsPlots
+##@_using Roots
+@_using SpecialFunctions
+##@_using StaticArrays
+##@_using StatsBase
+@_using StatsFuns
+@_using StatsPlots
 default(fmt = :png, titlefontsize = 10, size = (400, 250))
-#using SymPy
+##@_using SymPy
 ```
 
 ```julia
