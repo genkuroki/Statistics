@@ -56,12 +56,12 @@ packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_di
 """必要ならPkg.assした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
     if pkg in packages_added
-        println("# $(pkg).jl is already added."); flush(stdout)
+        println("# $(pkg).jl is already added.")
     else
-        println("# $(pkg).jl is not added yet, so let's add it."); flush(stdout)
+        println("# $(pkg).jl is not added yet, so let's add it.")
         Pkg.add(pkg)
     end    
-    println("> using $(pkg)"); flush(stdout)
+    println("> using $(pkg)")
     @eval using $(Symbol(pkg))
 end
 
