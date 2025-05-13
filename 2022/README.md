@@ -62,6 +62,11 @@
 Jupyter notebookの実行のためには[Google Colab](https://colab.research.google.com/)が便利です. 
 ただし, [Google Colab](https://colab.research.google.com/)にアクセスする前に __Googleアカウントにログインしておいてください.__
 
+* 07-3 [ColabでJulia言語を使った統計学の勉強の仕方]()
+\[[Colab]()\]
+* 07-4 [ColabでJuliaを使うためのノートブック](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb?hl=ja#scrollTo=6a19f097)\]
+
 [WolframAlpha](https://www.wolframalpha.com/)も併用しています.
 
 __明らかな誤りをまだ大量に含んでいるものと思われます. ごめんなさい. 適切に訂正しながら読んでください. 随時訂正更新しています.__
