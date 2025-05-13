@@ -8,16 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia current stable release
     language: julia
-    name: julia-1.11
+    name: julia
 ---
 
 # 例：ベータ函数と二項分布の関係とその応用
 
 * 黒木玄
-* 2022-05-27～2022-06-08, 2024-01-06
-
+* 2022-05-27～2022-06-08, 2024-01-06, 2025-05-13
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -62,6 +61,32 @@ $
 <h1>目次<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係</a></span><ul class="toc-item"><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の証明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の証明</a></span></li><li><span><a href="#基本特殊函数ライブラリを使うと効率的に計算できる" data-toc-modified-id="基本特殊函数ライブラリを使うと効率的に計算できる-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>基本特殊函数ライブラリを使うと効率的に計算できる</a></span></li><li><span><a href="#ベータ分布と二項分布の累積分布函数の関係の別証明" data-toc-modified-id="ベータ分布と二項分布の累積分布函数の関係の別証明-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>ベータ分布と二項分布の累積分布函数の関係の別証明</a></span></li><li><span><a href="#累積分布函数と分位点函数について" data-toc-modified-id="累積分布函数と分位点函数について-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>累積分布函数と分位点函数について</a></span></li><li><span><a href="#パラメータに関する区間推定での利用の仕方" data-toc-modified-id="パラメータに関する区間推定での利用の仕方-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>パラメータに関する区間推定での利用の仕方</a></span></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>まとめ</a></span></li></ul></li><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間の定義" data-toc-modified-id="Clopper-Pearsonの信頼区間の定義-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間の定義</a></span></li><li><span><a href="#問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=100,-k=30-の95%Clopper-Pearson信頼区間-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>問題: n=100, k=30 の95%Clopper-Pearson信頼区間</a></span></li><li><span><a href="#問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間" data-toc-modified-id="問題:-n=400,-k=120-の95%-Clopper-Pearson信頼区間-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>問題: n=400, k=120 の95% Clopper-Pearson信頼区間</a></span></li></ul></li><li><span><a href="#関連の問題" data-toc-modified-id="関連の問題-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>関連の問題</a></span><ul class="toc-item"><li><span><a href="#問題:-Waldの信頼区間との比較" data-toc-modified-id="問題:-Waldの信頼区間との比較-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>問題: Waldの信頼区間との比較</a></span></li><li><span><a href="#Waldの信頼区間の基礎" data-toc-modified-id="Waldの信頼区間の基礎-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Waldの信頼区間の基礎</a></span></li><li><span><a href="#問題:-Waldの信頼区間が0～1の範囲をはみ出す場合" data-toc-modified-id="問題:-Waldの信頼区間が0～1の範囲をはみ出す場合-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>問題: Waldの信頼区間が0～1の範囲をはみ出す場合</a></span></li><li><span><a href="#問題:-Wilsonの信頼区間との比較" data-toc-modified-id="問題:-Wilsonの信頼区間との比較-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>問題: Wilsonの信頼区間との比較</a></span></li><li><span><a href="#Wilsonの信頼区間の基礎" data-toc-modified-id="Wilsonの信頼区間の基礎-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Wilsonの信頼区間の基礎</a></span></li><li><span><a href="#Sterneの信頼区間について" data-toc-modified-id="Sterneの信頼区間について-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Sterneの信頼区間について</a></span></li><li><span><a href="#問題:-Poisson分布とガンマ分布の関係" data-toc-modified-id="問題:-Poisson分布とガンマ分布の関係-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>問題: Poisson分布とガンマ分布の関係</a></span></li></ul></li><li><span><a href="#おまけ:-二項分布モデルのBayes統計との関係" data-toc-modified-id="おまけ:-二項分布モデルのBayes統計との関係-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>おまけ: 二項分布モデルのBayes統計との関係</a></span><ul class="toc-item"><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#事前分布が共役事前分布(ベータ分布)の場合" data-toc-modified-id="事前分布が共役事前分布(ベータ分布)の場合-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>事前分布が共役事前分布(ベータ分布)の場合</a></span></li><li><span><a href="#二項分布モデルでの片側P値のBayes統計での解釈" data-toc-modified-id="二項分布モデルでの片側P値のBayes統計での解釈-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>二項分布モデルでの片側P値のBayes統計での解釈</a></span></li><li><span><a href="#Pólyaの壺との関係" data-toc-modified-id="Pólyaの壺との関係-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Pólyaの壺との関係</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
+
+```julia
+import Pkg
+packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+# @show packages_added
+
+pkgs = [
+    "BenchmarkTools"
+    "Distributions"
+    "QuadGK"
+    "Roots"
+    "SpecialFunctions"
+    "StaticArrays"
+    "StatsFuns"
+    "StatsPlots"
+    "SymPy"
+]
+for pkg in pkgs
+    if pkg in packages_added
+        println("$(pkg).jl is already added.")
+    else
+        println("$(pkg).jl is not added yet, so let's add it.")
+        Pkg.add(pkg)
+    end
+end
+```
 
 ```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
