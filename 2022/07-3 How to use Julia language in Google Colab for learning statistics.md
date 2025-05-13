@@ -29,7 +29,7 @@ $
 \newcommand\X{{\mathscr X}}
 $
 
-このノートは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb?hl=ja).
+このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb?hl=ja).
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
