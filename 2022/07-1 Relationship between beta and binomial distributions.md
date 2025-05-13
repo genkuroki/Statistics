@@ -65,24 +65,25 @@ $
 ```julia
 import Pkg
 packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
-# @show packages_added
+##@show packages_added
 
 pkgs = [
     "BenchmarkTools"
     "Distributions"
-    "QuadGK"
-    "Roots"
+#    "QuadGK"
+#    "Roots"
     "SpecialFunctions"
-    "StaticArrays"
+#    "StaticArrays"
+#    "StatsBase"
     "StatsFuns"
     "StatsPlots"
-    "SymPy"
+#    "SymPy"
 ]
 for pkg in pkgs
     if pkg in packages_added
-        println("$(pkg).jl is already added.")
+        println("# $(pkg).jl is already added.")
     else
-        println("$(pkg).jl is not added yet, so let's add it.")
+        println("# $(pkg).jl is not added yet, so let's add it.")
         Pkg.add(pkg)
     end
 end
@@ -94,28 +95,28 @@ using BenchmarkTools
 using Distributions
 using LinearAlgebra
 using Printf
-using QuadGK
+#using QuadGK
 using Random
 Random.seed!(4649373)
-using Roots
+#using Roots
 using SpecialFunctions
-using StaticArrays
-using StatsBase
+#using StaticArrays
+#using StatsBase
 using StatsFuns
 using StatsPlots
 default(fmt = :png, titlefontsize = 10, size = (400, 250))
-using SymPy
+#using SymPy
 ```
 
 ```julia
 # Override https://github.com/jverzani/SymPyCore.jl/blob/main/src/SymPy/show_sympy.jl#L31-L34
-@eval SymPy begin
-function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
-    out = _sympy_.latex(↓(x), mode="inline",fold_short_frac=false)
-    out = replace(out, r"\\frac{"=>"\\dfrac{")
-    print(io, string(out))
-end
-end
+# @eval SymPy begin
+# function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
+#     out = _sympy_.latex(↓(x), mode="inline",fold_short_frac=false)
+#     out = replace(out, r"\\frac{"=>"\\dfrac{")
+#     print(io, string(out))
+# end
+# end
 ```
 
 ```julia
