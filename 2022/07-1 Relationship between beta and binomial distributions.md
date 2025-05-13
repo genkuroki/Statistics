@@ -75,12 +75,8 @@ function _using(pkg::AbstractString)
     println("> using $(pkg)")
     @eval using $(Symbol(pkg))
 end
-macro _using(pkg)
-    :(_using($(string(pkg))))
-end
-```
+macro _using(pkg) :(_using($(string(pkg)))) end
 
-```julia
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 @_using BenchmarkTools
 @_using Distributions

@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia current stable release
     language: julia
-    name: julia-1.11
+    name: julia
 ---
 
 # Julia言語を使った統計学の勉強の仕方
@@ -46,7 +46,23 @@ $
 <!-- #endregion -->
 
 ```julia
-using StatsPlots
+import Pkg
+packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+function _using(pkg::AbstractString)
+    if pkg in packages_added
+        println("# $(pkg).jl is already added.")
+    else
+        println("# $(pkg).jl is not added yet, so let's add it.")
+        Pkg.add(pkg)
+    end    
+    println("> using $(pkg)")
+    @eval using $(Symbol(pkg))
+end
+macro _using(pkg) :(_using($(string(pkg)))) end
+
+@_using Distributions
+@_using RDatasets
+@_using StatsPlots
 default(fmt = :png)
 ```
 
