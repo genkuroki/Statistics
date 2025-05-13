@@ -118,7 +118,7 @@ function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
     print(io, string(out))
 end
 end
-#=
+=#
 ```
 
 ```julia
