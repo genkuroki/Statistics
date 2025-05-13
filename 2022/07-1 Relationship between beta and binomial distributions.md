@@ -110,13 +110,15 @@ default(fmt = :png, titlefontsize = 10, size = (400, 250))
 
 ```julia
 # Override https://github.com/jverzani/SymPyCore.jl/blob/main/src/SymPy/show_sympy.jl#L31-L34
-# @eval SymPy begin
-# function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
-#     out = _sympy_.latex(↓(x), mode="inline",fold_short_frac=false)
-#     out = replace(out, r"\\frac{"=>"\\dfrac{")
-#     print(io, string(out))
-# end
-# end
+#=
+@eval SymPy begin
+function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
+    out = _sympy_.latex(↓(x), mode="inline",fold_short_frac=false)
+    out = replace(out, r"\\frac{"=>"\\dfrac{")
+    print(io, string(out))
+end
+end
+#=
 ```
 
 ```julia
