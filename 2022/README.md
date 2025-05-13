@@ -57,10 +57,10 @@
 [Julia言語](https://julialang.org/)を使って数値の計算やグラフの作画を行っています。必要最小限の使い方については次の資料を見て下さい:
 
 * 07-2 [Julia言語を使った統計学の勉強の仕方](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
-\[[Colab]()\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)\]
 
-Jupyter notebookの実行のためには[Colab](https://colab.research.google.com/)が便利です. 
-ただし, [Colab](https://colab.research.google.com/)にアクセスする前にGoogleアカウントにログインしておいてください.
+Jupyter notebookの実行のためには[Google Colab](https://colab.research.google.com/)が便利です. 
+ただし, [Google Colab](https://colab.research.google.com/)にアクセスする前に __Googleアカウントにログインしておいてください.__
 
 [WolframAlpha](https://www.wolframalpha.com/)も併用しています.
 
@@ -280,6 +280,7 @@ __定義された確率分布__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-2%20How%20to%20use%20Julia%20language%20for%20learning%20statistics.pdf)\]
 
