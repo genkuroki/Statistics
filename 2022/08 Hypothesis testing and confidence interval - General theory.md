@@ -1144,7 +1144,7 @@ $$
 以下の図を見れば, すべてのデータの数値 $x$ について信頼区間 $C_\alpha(x)$ を与えることと, すべてのパラメータの数値 $\theta=\theta_0$ についての棄却領域 $R_\alpha(\theta_0)$ を与えることが同じであることがわかる.  そして, 図中の赤の領域と青の領域の境界上でのP値 $\op{pvalue}(x|\theta_0)$ の値が有意水準 $\alpha$ になる.
 
 
-![HypothesisTesting-ConfidenceInterval.jpg](attachment:HypothesisTesting-ConfidenceInterval.jpg)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/HypothesisTesting-ConfidenceInterval.jpg">
 
 
 <span style="font-size: 110%; color: red;">__まとめ: 信頼区間と検定は表裏一体である.__</span>
@@ -1238,7 +1238,7 @@ julia> @rlibrary exactci # requires the package exactci of R.
 julia> binom_exact(6, 20; tsmethod = "central", plot = true)
 ```
 
-![binomi_exact_central.png](attachment:binomi_exact_central.png)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/binomi_exact_central.png">
 
 ```
 RObject{VecSxp}
@@ -1262,7 +1262,7 @@ probability of success
 julia> binom_exact(6, 20; tsmethod = "minlik", plot = true)
 ```
 
-![binom_exact_minlik.png](attachment:binom_exact_minlik.png)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/binom_exact_minlik.png">
 
 ```
 RObject{VecSxp}
@@ -1543,7 +1543,7 @@ $$
 __証明終__
 
 
-![NeymanPearsonLemma.jpg](attachment:NeymanPearsonLemma.jpg)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/NeymanPearsonLemma.jpg">
 
 
 ### 尤度比検定の例: 正規分布モデルの場合
