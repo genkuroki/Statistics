@@ -8,17 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia current stable release
     language: julia
-    name: julia-1.11
+    name: julia
 ---
 
-<!-- #region -->
 # P値と仮説検定と信頼区間: 母比率
 
 * 黒木玄
-* 2022-05-31～2022-06-14, 2024-01-06
-
+* 2022-05-31～2022-06-14, 2024-01-06, 2025-05-16
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -49,7 +47,6 @@ $
 \newcommand\SEhat{\widehat{\SE}}
 $
 
-
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
 
 * [Julia言語のインストールの仕方の一例](https://nbviewer.org/github/genkuroki/msfd28/blob/master/install.ipynb)
@@ -59,7 +56,8 @@ $
 このノートに書いてある式を文字通りにそのまま読んで正しいと思ってしまうとひどい目に会う可能性が高い. しかし, 数学が使われている文献には大抵の場合に文字通りに読むと間違っている式や主張が書いてあるので, 内容を理解した上で訂正しながら読んで利用しなければいけない. 実践的に数学を使う状況では他人が書いた式をそのまま信じていけない.
 
 このノートの内容よりもさらに詳しいノートを自分で作ると勉強になるだろう.  膨大な時間を取られることになるが, このノートの内容に関係することで飯を食っていく可能性がある人にはそのためにかけた時間は無駄にならないと思われる.
-<!-- #endregion -->
+
+このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb).
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
@@ -67,29 +65,53 @@ $
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
+import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト"""
+packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""必要ならPkg.assした後にusingしてくれる関数"""
+function _using(pkg::AbstractString)
+    if pkg in packages_added
+        println("# $(pkg).jl is already added.")
+    else
+        println("# $(pkg).jl is not added yet, so let's add it.")
+        Pkg.add(pkg)
+    end    
+    println("> using $(pkg)")
+    @eval using $(Symbol(pkg))
+end
+
+"""必要ならPkg.addした後にusingしてくれるマクロ"""
+macro _using(pkg) :(_using($(string(pkg)))) end
+
+isdir("images") || mkdir("images")
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
-using BenchmarkTools
-using DataFrames
-using Distributions
+##@_using BenchmarkTools
+##@_using DataFrames
+@_using Distributions
 using LinearAlgebra
 using Printf
-using QuadGK
-using RCall
+@_using QuadGK
+@_using RCall
 using Random
 Random.seed!(4649373)
-using Roots
-using SpecialFunctions
-using StaticArrays
-using StatsBase
-using StatsFuns
-using StatsPlots
+@_using Roots
+@_using SpecialFunctions
+@_using StaticArrays
+@_using StatsBase
+@_using StatsFuns
+@_using StatsPlots
 default(fmt = :png, size = (400, 250),
     titlefontsize = 10, plot_titlefontsize = 12)
-using SymPy
+##@_using SymPy
 ```
 
 ```julia
 # Override https://github.com/jverzani/SymPyCore.jl/blob/main/src/SymPy/show_sympy.jl#L31-L34
+#=
 @eval SymPy begin
 function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
     out = _sympy_.latex(↓(x), mode="inline",fold_short_frac=false)
@@ -97,6 +119,7 @@ function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
     print(io, string(out))
 end
 end
+=#
 ```
 
 ```julia
