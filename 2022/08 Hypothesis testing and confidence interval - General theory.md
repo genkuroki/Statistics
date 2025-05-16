@@ -72,6 +72,7 @@ end
 macro _using(pkg) :(_using($(string(pkg)))) end
 
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
+isdir("images") || mkdir("images")
 using Base.Threads
 ##@_using BenchmarkTools
 @_using Distributions
