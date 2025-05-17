@@ -70,11 +70,11 @@ $
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト"""
-const packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+_packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
 
 """必要ならPkg.addした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
-    if pkg in packages_added
+    if pkg in _packages_added
         println("# $(pkg).jl is already added.")
     else
         println("# $(pkg).jl is not added yet, so let's add it.")
