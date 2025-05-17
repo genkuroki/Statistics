@@ -44,7 +44,7 @@ import Pkg
 """すでにPkg.add済みのパッケージのリスト"""
 const packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
 
-"""必要ならPkg.assした後にusingしてくれる関数"""
+"""必要ならPkg.addした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
     if pkg in packages_added
         println("# $(pkg).jl is already added.")
