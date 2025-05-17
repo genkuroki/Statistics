@@ -42,7 +42,7 @@ $
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト"""
-packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+const packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
 
 """必要ならPkg.assした後にusingしてくれる関数"""
 function _using(pkg::AbstractString)
