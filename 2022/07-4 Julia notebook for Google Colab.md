@@ -15,8 +15,7 @@ jupyter:
 
 # ColabでJuliaを使うためのノートブック
 
-* 黒木玄
-* 2025-05-13
+このノートブックの内容については再配布・改変・部分的コピーその他すべてを自由に行って構いません.
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -39,48 +38,139 @@ __2025-05-13:__ 以下のセルを `@_using` の行のコメントアウトを�
 
 import Pkg
 
-"""すでにPkg.add済みのパッケージのリスト"""
+"""すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
 _packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
 
-"""必要ならPkg.addした後にusingしてくれる関数"""
-function _using(pkg::AbstractString)
-    if pkg in _packages_added
-        println("# $(pkg).jl is already added.")
-    else
-        println("# $(pkg).jl is not added yet, so let's add it.")
-        Pkg.add(pkg)
-    end    
-    println("> using $(pkg)")
-    @eval using $(Symbol(pkg))
+"""_packages_added内にないパッケージをPkg.addする"""
+add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
+    println(stderr, "# $(pkg).jl is not added yet, so let's add it.")
+    Pkg.add(pkg)
 end
 
-"""必要ならPkg.addした後にusingしてくれるマクロ"""
-macro _using(pkg) :(_using($(string(pkg)))) end
+"""expr::Exprからusing内の`.`を含まないモジュール名を抽出"""
+function find_using_pkgs(expr::Expr)
+    pkgs = String[]
+    function traverse(expr::Expr)
+        if expr.head == :using
+            for arg in expr.args
+                if arg.head == :. && length(arg.args) == 1
+                    push!(pkgs, string(arg.args[1]))
+                elseif arg.head == :(:) && length(arg.args[1].args) == 1
+                    push!(pkgs, string(arg.args[1].args[1]))
+                end
+            end
+        else
+            for arg in expr.args arg isa Expr && traverse(arg) end
+        end
+    end
+    traverse(expr)
+    pkgs
+end
+
+"""必要そうなPkg.addを追加するマクロ"""
+macro autoadd(expr)
+    pkgs = find_using_pkgs(expr)
+    :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
+end
 
 # 以下は黒木玄がよく使っているパッケージ達
 # 例えばQuadGKパッケージ(数値積分のパッケージ)の使い方は
 # QuadGK.jl をインターネットで検索すれば得られる.
+
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using LinearAlgebra
 using Printf
 using Random
 Random.seed!(4649373)
-##@_using BenchmarkTools
-@_using Distributions
-##@_using Optim
-##@_using QuadGK
-##@_using RDatasets
-##@_using Roots
-##@_using StatsBase
-##@_using StatsFuns
-##@_using SpecialFunctions
-@_using StatsPlots
+
+@autoadd begin
+using Distributions
+using StatsPlots
 default(fmt=:png, legendfontsize=12)
-##@_using SymPy
+#using BenchmarkTools
+#using Optim
+#using QuadGK
+#using RDatasets
+#using Roots
+#using StatsBase
+#using StatsFuns
+#using SpecialFunctions
+#using SymPy
+end
 ```
 
-QuadGK.jlパッケージについて検索: https://www.google.com/search?q=QuadGK.jl
+[Julia言語](https://julialang.org/)については以下の検索で色々学べる.
 
+* Julia言語のドキュメント: https://docs.julialang.org/en/v1/
+* Julia言語について検索: https://www.google.com/search?q=Julia%E8%A8%80%E8%AA%9E
+* Distributions.jlパッケージについて検索: https://www.google.com/search?q=Distributions.jl
+* Plots.jlパッケージについて検索: https://www.google.com/search?q=Plots.jl
+* StatsPlots.jlパッケージについて検索: https://www.google.com/search?q=StatsPlots.jl
+* BenchmarkTools.jlパッケージについて検索: https://www.google.com/search?q=BenchmarkTools.jl
+* Optim.jlパッケージについて検索: https://www.google.com/search?q=Optim.jl
+* QuadGK.jlパッケージについて検索: https://www.google.com/search?q=QuadGK.jl
+* RDatasets.jlパッケージについて検索: https://www.google.com/search?q=RDatasets.jl
+* Roots.jlパッケージについて検索: https://www.google.com/search?q=Roots.jl
+* StatsBase.jlパッケージについて検索: https://www.google.com/search?q=StatsBase.jl
+* StatsFuns.jlパッケージについて検索: https://www.google.com/search?q=StatsFuns.jl
+* SpecialFunctions.jlパッケージについて検索: https://www.google.com/search?q=SpecialFunctions.jl
+* SymPy.jlパッケージについて検索: https://www.google.com/search?q=SymPy.jl
+
+<!-- #region -->
+## @autoadd マクロの使い方
+
+例えば, パッケージA.jlやB.jlをインストール前(Pkg.add前)であるとき, 
+
+```julia
+using A
+using B: b1, b2
+```
+
+を実行しようとするとエラーになってしまう. しかし,
+
+```julia
+@autoadd using A
+@autoadd using B: b1, b2
+
+```
+
+または
+
+```julia
+@autoadd begin
+using A
+using B: b1, b2
+end
+```
+
+を実行すれば, 自動的にパッケージA.jlやB.jlがインストールされてから, using達が実行される.
+
+以下のように `@macroexpand` を使えば具体的に何が実行されるかを確認できる.
+<!-- #endregion -->
+
+```julia
+(@macroexpand @autoadd using A) |> Base.remove_linenums!
+```
+
+```julia
+(@macroexpand @autoadd using A, B, C) |> Base.remove_linenums!
+```
+
+```julia
+(@macroexpand @autoadd using A: a1, a2, @a3) |> Base.remove_linenums!
+```
+
+```julia
+(@macroexpand @autoadd begin
+using A: a1
+using A.B
+using A.C: c1, c2
+#using D
+using E, A.F, G
+using H: h1, h2
+using I
+end) |> Base.remove_linenums!
+```
 
 ## ランダムウォーク
 
@@ -119,7 +209,7 @@ plot()
 for W in Ws
     plot!([0; W]; label="", lw=0.3, alpha=0.5)
 end
-plot!(n ->  2sqrt(n)*sigma, 0, nmax; label="±2√n σ", c=:red)
+plot!(n -> +2sqrt(n)*sigma, 0, nmax; label="±2√n σ", c=:red)
 plot!(n -> -2sqrt(n)*sigma, 0, nmax; label="", c=:red)
 ```
 

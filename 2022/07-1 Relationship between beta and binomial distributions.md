@@ -69,40 +69,60 @@ $
 
 import Pkg
 
-"""すでにPkg.add済みのパッケージのリスト"""
+"""すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
 _packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
 
-"""必要ならPkg.addした後にusingしてくれる関数"""
-function _using(pkg::AbstractString)
-    if pkg in _packages_added
-        println("# $(pkg).jl is already added.")
-    else
-        println("# $(pkg).jl is not added yet, so let's add it.")
-        Pkg.add(pkg)
-    end    
-    println("> using $(pkg)")
-    @eval using $(Symbol(pkg))
+"""_packages_added内にないパッケージをPkg.addする"""
+add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
+    println(stderr, "# $(pkg).jl is not added yet, so let's add it.")
+    Pkg.add(pkg)
 end
 
-"""必要ならPkg.addした後にusingしてくれるマクロ"""
-macro _using(pkg) :(_using($(string(pkg)))) end
+"""expr::Exprからusing内の`.`を含まないモジュール名を抽出"""
+function find_using_pkgs(expr::Expr)
+    pkgs = String[]
+    function traverse(expr::Expr)
+        if expr.head == :using
+            for arg in expr.args
+                if arg.head == :. && length(arg.args) == 1
+                    push!(pkgs, string(arg.args[1]))
+                elseif arg.head == :(:) && length(arg.args[1].args) == 1
+                    push!(pkgs, string(arg.args[1].args[1]))
+                end
+            end
+        else
+            for arg in expr.args arg isa Expr && traverse(arg) end
+        end
+    end
+    traverse(expr)
+    pkgs
+end
+
+"""必要そうなPkg.addを追加するマクロ"""
+macro autoadd(expr)
+    pkgs = find_using_pkgs(expr)
+    :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
+end
 
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
-@_using BenchmarkTools
-@_using Distributions
 using LinearAlgebra
 using Printf
-##@_using QuadGK
 using Random
 Random.seed!(4649373)
-##@_using Roots
-@_using SpecialFunctions
-##@_using StaticArrays
-##@_using StatsBase
-@_using StatsFuns
-@_using StatsPlots
+
+@autoadd begin
+using BenchmarkTools
+using Distributions
+#using QuadGK
+#using Roots
+using SpecialFunctions
+#using StaticArrays
+#using StatsBase
+using StatsFuns
+using StatsPlots
 default(fmt = :png, titlefontsize = 10, size = (400, 250))
-##@_using SymPy
+#using SymPy
+end
 ```
 
 ```julia
