@@ -8,17 +8,15 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia 1.11.5
     language: julia
     name: julia-1.11
 ---
 
-<!-- #region -->
 # P値と仮説検定と信頼区間: 母平均
 
 * 黒木玄
-* 2022-05-31～2022-06-18, 2024-01-06, 2024-06-12
-
+* 2022-05-31～2022-06-18, 2024-01-06, 2024-06-12, 2025-05-19
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -53,7 +51,6 @@ $
 \newcommand\SEhat{\widehat{\SE}}
 $
 
-
 このノートでは[Julia言語](https://julialang.org/)を使用している: 
 
 * [Julia言語のインストールの仕方の一例](https://nbviewer.org/github/genkuroki/msfd28/blob/master/install.ipynb)
@@ -63,7 +60,8 @@ $
 このノートに書いてある式を文字通りにそのまま読んで正しいと思ってしまうとひどい目に会う可能性が高い. しかし, 数学が使われている文献には大抵の場合に文字通りに読むと間違っている式や主張が書いてあるので, 内容を理解した上で訂正しながら読んで利用しなければいけない. 実践的に数学を使う状況では他人が書いた式をそのまま信じていけない.
 
 このノートの内容よりもさらに詳しいノートを自分で作ると勉強になるだろう.  膨大な時間を取られることになるが, このノートの内容に関係することで飯を食っていく可能性がある人にはそのためにかけた時間は無駄にならないと思われる.
-<!-- #endregion -->
+
+このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb).
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
@@ -71,30 +69,73 @@ $
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
+import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
+_packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""_packages_added内にないパッケージをPkg.addする"""
+add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
+    println(stderr, "# $(pkg).jl is not added yet, so let's add it.")
+    Pkg.add(pkg)
+end
+
+"""expr::Exprからusing内の`.`を含まないモジュール名を抽出"""
+function find_using_pkgs(expr::Expr)
+    pkgs = String[]
+    function traverse(expr::Expr)
+        if expr.head == :using
+            for arg in expr.args
+                if arg.head == :. && length(arg.args) == 1
+                    push!(pkgs, string(arg.args[1]))
+                elseif arg.head == :(:) && length(arg.args[1].args) == 1
+                    push!(pkgs, string(arg.args[1].args[1]))
+                end
+            end
+        else
+            for arg in expr.args arg isa Expr && traverse(arg) end
+        end
+    end
+    traverse(expr)
+    pkgs
+end
+
+"""必要そうなPkg.addを追加するマクロ"""
+macro autoadd(expr)
+    pkgs = find_using_pkgs(expr)
+    :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
+end
+
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using Base.Threads
-using BenchmarkTools
-using DataFrames
-using Distributions
 using LinearAlgebra
-using Memoization
 using Printf
-using QuadGK
-using RCall
 using Random
 Random.seed!(4649373)
-using Roots
-using SpecialFunctions
-using StaticArrays
+
+@autoadd begin
+#using BenchmarkTools
+using DataFrames
+using Distributions
+using Memoization
+using QuadGK
+using RCall
+#using Roots
+#using SpecialFunctions
+#using StaticArrays
 using StatsBase
 using StatsFuns
 using StatsPlots
 default(fmt = :png, size = (400, 250),
     titlefontsize = 10, plot_titlefontsize = 12)
-using SymPy
+#using SymPy
+end
 ```
 
 ```julia
+#=
 # Override https://github.com/jverzani/SymPyCore.jl/blob/main/src/SymPy/show_sympy.jl#L31-L34
 @eval SymPy begin
 function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
@@ -103,6 +144,7 @@ function Base.show(io::IO,  ::MIME"text/latex", x::SymbolicObject)
     print(io, string(out))
 end
 end
+=#
 ```
 
 ```julia
