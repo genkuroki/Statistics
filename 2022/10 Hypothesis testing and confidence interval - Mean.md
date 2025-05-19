@@ -8,9 +8,9 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.5
+    display_name: Julia current stable release
     language: julia
-    name: julia-1.11
+    name: julia
 ---
 
 # P値と仮説検定と信頼区間: 母平均
