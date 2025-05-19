@@ -108,6 +108,7 @@ macro autoadd(expr)
     :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
 end
 
+isdir("images") || mkdir("images")
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using Base.Threads
 using LinearAlgebra
