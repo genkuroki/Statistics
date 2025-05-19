@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.11.2
+    display_name: Julia 1.11.5
     language: julia
     name: julia-1.11
 ---
@@ -16,7 +16,7 @@ jupyter:
 # まとめ
 
 * 黒木玄
-* 2022-07-20～2022-07-23, 2023-08-02, 2024-01-06, 2024-07-17
+* 2022-07-20～2022-07-23, 2023-08-02, 2024-01-06, 2024-07-17, 2025-05-19
 $
 \newcommand\ds{\displaystyle}
 \newcommand\op{\operatorname}
@@ -122,35 +122,81 @@ $
 
 このノートの内容よりもさらに詳しいノートを自分で作ると勉強になるだろう.  膨大な時間を取られることになるが, このノートの内容に関係することで飯を食っていく可能性がある人にはそのためにかけた時間は無駄にならないと思われる.
 
+このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb).
+
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#二項分布モデルでのClopper-Pearsonの信頼区間" data-toc-modified-id="二項分布モデルでのClopper-Pearsonの信頼区間-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>二項分布モデルでのClopper-Pearsonの信頼区間</a></span><ul class="toc-item"><li><span><a href="#Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明" data-toc-modified-id="Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Clopper-Pearsonの信頼区間を例に信頼区間の解釈の仕方について説明</a></span></li><li><span><a href="#二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方" data-toc-modified-id="二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>二項分布モデルのClopper-Pearsonの信頼区間の効率的な計算の仕方</a></span></li><li><span><a href="#二項分布モデルのBayes統計" data-toc-modified-id="二項分布モデルのBayes統計-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>二項分布モデルのBayes統計</a></span></li><li><span><a href="#P値とBayes統計の関係" data-toc-modified-id="P値とBayes統計の関係-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>P値とBayes統計の関係</a></span></li><li><span><a href="#復習:-二項分布とベータ分布の関係の証明" data-toc-modified-id="復習:-二項分布とベータ分布の関係の証明-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>復習: 二項分布とベータ分布の関係の証明</a></span><ul class="toc-item"><li><span><a href="#両辺を-p--で微分して確認する方法" data-toc-modified-id="両辺を-p--で微分して確認する方法-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>両辺を p  で微分して確認する方法</a></span></li><li><span><a href="#ベータ分布の一様分布の順序統計量の分布として解釈を使う方法" data-toc-modified-id="ベータ分布の一様分布の順序統計量の分布として解釈を使う方法-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>ベータ分布の一様分布の順序統計量の分布として解釈を使う方法</a></span></li></ul></li></ul></li><li><span><a href="#P値函数について" data-toc-modified-id="P値函数について-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>P値函数について</a></span><ul class="toc-item"><li><span><a href="#P値はモデルのパラメータ値とデータの数値の相性の良さ(整合性,-適合度)の指標の1つ" data-toc-modified-id="P値はモデルのパラメータ値とデータの数値の相性の良さ(整合性,-適合度)の指標の1つ-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値はモデルのパラメータ値とデータの数値の相性の良さ(整合性, 適合度)の指標の1つ</a></span></li><li><span><a href="#P値は信頼区間を考えたいすべてのパラメータ値について定義されている" data-toc-modified-id="P値は信頼区間を考えたいすべてのパラメータ値について定義されている-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>P値は信頼区間を考えたいすべてのパラメータ値について定義されている</a></span></li><li><span><a href="#分割表の場合のP値函数" data-toc-modified-id="分割表の場合のP値函数-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>分割表の場合のP値函数</a></span></li><li><span><a href="#P値函数から信頼区間が定義される" data-toc-modified-id="P値函数から信頼区間が定義される-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>P値函数から信頼区間が定義される</a></span></li><li><span><a href="#2×2の分割表のP値と信頼区間とP値函数の例" data-toc-modified-id="2×2の分割表のP値と信頼区間とP値函数の例-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>2×2の分割表のP値と信頼区間とP値函数の例</a></span></li><li><span><a href="#2×2の分割表での検定ではどれを使うべきか" data-toc-modified-id="2×2の分割表での検定ではどれを使うべきか-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>2×2の分割表での検定ではどれを使うべきか</a></span></li><li><span><a href="#P値函数と最尤法の関係" data-toc-modified-id="P値函数と最尤法の関係-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>P値函数と最尤法の関係</a></span></li><li><span><a href="#以上のまとめの図" data-toc-modified-id="以上のまとめの図-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>以上のまとめの図</a></span></li><li><span><a href="#おまけ:-Bayes統計の方法を使った場合" data-toc-modified-id="おまけ:-Bayes統計の方法を使った場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>おまけ: Bayes統計の方法を使った場合</a></span></li></ul></li><li><span><a href="#Welchの-t-検定について" data-toc-modified-id="Welchの-t-検定について-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Welchの t 検定について</a></span><ul class="toc-item"><li><span><a href="#Welchの-t-検定のP値と信頼区間の定義" data-toc-modified-id="Welchの-t-検定のP値と信頼区間の定義-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Welchの t 検定のP値と信頼区間の定義</a></span></li><li><span><a href="#Welchの-t-検定のP値や信頼区間の計算例" data-toc-modified-id="Welchの-t-検定のP値や信頼区間の計算例-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Welchの t 検定のP値や信頼区間の計算例</a></span><ul class="toc-item"><li><span><a href="#WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="WolframAlphaによるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>WolframAlphaによるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li><li><span><a href="#Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例" data-toc-modified-id="Julia言語によるWelchの-t-検定のP値と信頼区間の計算の必修問題の解答例-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Julia言語によるWelchの t 検定のP値と信頼区間の計算の必修問題の解答例</a></span></li></ul></li></ul></li><li><span><a href="#数学的な補足:-大数の法則と中心極限定理について" data-toc-modified-id="数学的な補足:-大数の法則と中心極限定理について-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>数学的な補足: 大数の法則と中心極限定理について</a></span><ul class="toc-item"><li><span><a href="#二項分布の大数の法則" data-toc-modified-id="二項分布の大数の法則-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>二項分布の大数の法則</a></span></li><li><span><a href="#二項分布の中心極限定理" data-toc-modified-id="二項分布の中心極限定理-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>二項分布の中心極限定理</a></span></li><li><span><a href="#他の分布の場合" data-toc-modified-id="他の分布の場合-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>他の分布の場合</a></span><ul class="toc-item"><li><span><a href="#例:-Poisson分布" data-toc-modified-id="例:-Poisson分布-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>例: Poisson分布</a></span></li><li><span><a href="#例:-Gamma分布" data-toc-modified-id="例:-Gamma分布-4.3.2"><span class="toc-item-num">4.3.2&nbsp;&nbsp;</span>例: Gamma分布</a></span></li></ul></li><li><span><a href="#標本分布の場合" data-toc-modified-id="標本分布の場合-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>標本分布の場合</a></span></li><li><span><a href="#再掲:-大数の法則と中心極限定理のイメージ" data-toc-modified-id="再掲:-大数の法則と中心極限定理のイメージ-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>再掲: 大数の法則と中心極限定理のイメージ</a></span></li><li><span><a href="#統計学の基礎になる確率論の三種の神器" data-toc-modified-id="統計学の基礎になる確率論の三種の神器-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>統計学の基礎になる確率論の三種の神器</a></span></li><li><span><a href="#Kullback-Leibler情報量に関するSanovの定理の数値例" data-toc-modified-id="Kullback-Leibler情報量に関するSanovの定理の数値例-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Kullback-Leibler情報量に関するSanovの定理の数値例</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
+import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
+_packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""_packages_added内にないパッケージをPkg.addする"""
+add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
+    println(stderr, "# $(pkg).jl is not added yet, so let's add it.")
+    Pkg.add(pkg)
+end
+
+"""expr::Exprからusing内の`.`を含まないモジュール名を抽出"""
+function find_using_pkgs(expr::Expr)
+    pkgs = String[]
+    function traverse(expr::Expr)
+        if expr.head == :using
+            for arg in expr.args
+                if arg.head == :. && length(arg.args) == 1
+                    push!(pkgs, string(arg.args[1]))
+                elseif arg.head == :(:) && length(arg.args[1].args) == 1
+                    push!(pkgs, string(arg.args[1].args[1]))
+                end
+            end
+        else
+            for arg in expr.args arg isa Expr && traverse(arg) end
+        end
+    end
+    traverse(expr)
+    pkgs
+end
+
+"""必要そうなPkg.addを追加するマクロ"""
+macro autoadd(expr)
+    pkgs = find_using_pkgs(expr)
+    :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
+end
+
+isdir("images") || mkdir("images")
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
 using Base.Threads
-using BenchmarkTools
-using DataFrames
-using Distributions
 using LinearAlgebra
-using Memoization
-using Optim
 using Printf
-using QuadGK
-using RCall
-@rimport stats as R
 using Random
 Random.seed!(4649373)
-using Roots
-using SpecialFunctions
-using StaticArrays
+
+@autoadd begin
+#using BenchmarkTools
+#using DataFrames
+using Distributions
+#using Memoization
+#using Optim
+using QuadGK
+using RCall
+#using Roots
+#using SpecialFunctions
+#using StaticArrays
 using StatsBase
-using StatsFuns
+#using StatsFuns
 using StatsPlots
 default(fmt = :png, size = (400, 250),
     titlefontsize = 10, guidefontsize=9, plot_titlefontsize = 12)
 using SymPy
+end
+
+@rimport stats as R
 ```
 
 ```julia
