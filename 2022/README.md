@@ -1,3 +1,32 @@
+# 資料の読み方の凡例
+
+資料のノートブックは以下のような形式で表示されている:
+
+__07-3 ColabでJulia言語を使った統計学の勉強の仕方?__
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]
+
+__07-4 ColabでJuliaを使うためのノートブック__
+
+* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
+* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)\]
+
+__資料の閲覧の仕方:__
+
+* 綺麗に整形された結果をブラウザで閲覧： \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]をクリック
+* Google Colabを使ってノートブックを実行： Googleアカウントにログインした状態で\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]をクリック
+  * 実際に実行： Colabで ランタイム → すべてのセルを実行
+  * 内容を変更したり, 内容を追加した結果を各セルごとに実行できる.
+  * 変更結果のコピーを自分のGoogleドライブに保存： ファイル → コピーをドライブに保存
+* PDF版をダウンロード： \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]をクリック
+
 # 数理統計学2022目次
 
 * <a href="#01-bernoulli試行と関連確率分布">01 Bernoulli試行と関連確率分布</a>
@@ -362,6 +391,7 @@ __追加資料__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/10%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Mean.pdf)\]
 
@@ -388,6 +418,7 @@ __作成された動画__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/11%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20proportions.pdf)\]
 
@@ -448,6 +479,7 @@ __注意するべきポイントは `using Distributions, Roots` を忘れない
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/12%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Two%20means.pdf)\]
 
@@ -469,6 +501,7 @@ __作成された動画__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/13%20How%20to%20avoid%20misuse.ipynb)\]
 * [pdf]()
 \[[download]()\]
 
@@ -491,6 +524,7 @@ P値に関する誤用を避けるために最初に読むべき基本文献は
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/14%20Regression.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/14%20Regression.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/14%20Regression.pdf)\]
 
@@ -527,6 +561,7 @@ __作成された動画__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/15%20Summary.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/15%20Summary.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/15%20Summary.pdf)\]
 
