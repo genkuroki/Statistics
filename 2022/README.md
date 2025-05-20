@@ -2,7 +2,7 @@
 
 資料のノートブックは以下のような形式で表示されている:
 
-__07-3 ColabでJulia言語を使った統計学の勉強の仕方?__
+__07-3 ColabでJulia言語を使った統計学の勉強の仕方__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
