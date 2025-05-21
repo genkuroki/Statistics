@@ -101,11 +101,12 @@ __明らかな誤りをまだ大量に含んでいるものと思われます. �
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/01%20Bernoulli%20trial%20and%20related%20distributions.pdf)\]
-* [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20Bernoulli%E8%A9%A6%E8%A1%8C%E3%81%A8%E9%96%A2%E9%80%A3%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83.pdf)
+* [hand-written note 1](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20Bernoulli%E8%A9%A6%E8%A1%8C%E3%81%A8%E9%96%A2%E9%80%A3%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20Bernoulli%E8%A9%A6%E8%A1%8C%E3%81%A8%E9%96%A2%E9%80%A3%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83.pdf)\]
-* [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20%E8%BF%BD%E5%8A%A0%20Bernoulli%E8%A9%A6%E8%A1%8C%E9%96%A2%E9%80%A3%E5%88%86%E5%B8%83%E3%81%AE%E5%9B%B3.pdf)
+* [hand-written note 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20%E8%BF%BD%E5%8A%A0%20Bernoulli%E8%A9%A6%E8%A1%8C%E9%96%A2%E9%80%A3%E5%88%86%E5%B8%83%E3%81%AE%E5%9B%B3.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A601%20%E8%BF%BD%E5%8A%A0%20Bernoulli%E8%A9%A6%E8%A1%8C%E9%96%A2%E9%80%A3%E5%88%86%E5%B8%83%E3%81%AE%E5%9B%B3.pdf)\]
 
 __定義された確率分布__
@@ -129,11 +130,12 @@ __定義された確率分布__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.ipynb)
 \[[nbvewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/02%20Gaussian%20integrals%2C%20Gamma%20and%20Beta%20functions.pdf)\]
-* [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20Gauss%E7%A9%8D%E5%88%86%E3%80%81%E3%82%AB%E3%82%99%E3%83%B3%E3%83%9E%E5%87%BD%E6%95%B0%E3%80%81%E3%83%98%E3%82%99%E3%83%BC%E3%82%BF%E5%87%BD%E6%95%B0.pdf)
+* [hand-written note 1](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20Gauss%E7%A9%8D%E5%88%86%E3%80%81%E3%82%AB%E3%82%99%E3%83%B3%E3%83%9E%E5%87%BD%E6%95%B0%E3%80%81%E3%83%98%E3%82%99%E3%83%BC%E3%82%BF%E5%87%BD%E6%95%B0.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20Gauss%E7%A9%8D%E5%88%86%E3%80%81%E3%82%AB%E3%82%99%E3%83%B3%E3%83%9E%E5%87%BD%E6%95%B0%E3%80%81%E3%83%98%E3%82%99%E3%83%BC%E3%82%BF%E5%87%BD%E6%95%B0.pdf)\]
-* [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20%E3%81%BE%E3%81%A8%E3%82%81%20%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0%E9%81%94%E3%81%AE%E7%8B%AC%E7%AB%8B%E6%80%A7%E3%81%A8%E5%88%86%E5%B8%83%E5%8F%8E%E6%9D%9F.pdf)
+* [hand-written note 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20%E3%81%BE%E3%81%A8%E3%82%81%20%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0%E9%81%94%E3%81%AE%E7%8B%AC%E7%AB%8B%E6%80%A7%E3%81%A8%E5%88%86%E5%B8%83%E5%8F%8E%E6%9D%9F.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A602%20%E3%81%BE%E3%81%A8%E3%82%81%20%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0%E9%81%94%E3%81%AE%E7%8B%AC%E7%AB%8B%E6%80%A7%E3%81%A8%E5%88%86%E5%B8%83%E5%8F%8E%E6%9D%9F.pdf)\]
 
 __定義された確率分布__
@@ -155,6 +157,7 @@ __定義された確率分布__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/03%20Interpretation%20of%20probability%20distributions.pdf)\]
 * [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A603%20%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83%E9%81%94%E3%81%AE%E8%A7%A3%E9%87%88.pdf)
@@ -175,6 +178,7 @@ __定義された確率分布__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/04%20Distribution%20of%20samples.pdf)\]
 * [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A604%20%E6%A8%99%E6%9C%AC%E5%88%86%E5%B8%83.pdf)
@@ -202,6 +206,7 @@ __作成された動画__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/05%20Central%20limit%20theorem.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/05%20Central%20limit%20theorem.pdf)\]
 * [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A605%20%E5%A4%A7%E6%95%B0%E3%81%AE%E6%B3%95%E5%89%87%E3%81%A8%E4%B8%AD%E5%BF%83%E6%A5%B5%E9%99%90%E5%AE%9A%E7%90%86.pdf)
@@ -270,6 +275,7 @@ __正規分布で近似される確率分布の数値例__
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/06%20Conditional%20distribution%2C%20likelihood%2C%20estimation%2C%20and%20summary.pdf)\]
 * [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/%E6%95%B0%E7%90%86%E7%B5%B1%E8%A8%88%E5%AD%A606%20%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83%E3%80%81%E5%B0%A4%E5%BA%A6%E3%80%81%E6%8E%A8%E5%AE%9A%E3%80%81%E8%A6%81%E7%B4%84.pdf)
