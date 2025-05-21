@@ -16,7 +16,7 @@ jupyter:
 # 確率分布達の解釈
 
 * 黒木玄
-* 2022-04-11～2022-06-08, 2022-08-10, 2023-03-18, 2024-01-06, 2024-10-30
+* 2022-04-11～2022-06-08, 2022-08-10, 2023-03-18, 2024-01-06, 2024-10-30, 2025-05-20
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -38,6 +38,8 @@ $
 
 このノートの内容よりもさらに詳しいノートを自分で作ると勉強になるだろう.  膨大な時間を取られることになるが, このノートの内容に関係することで飯を食っていく可能性がある人にはそのためにかけた時間は無駄にならないと思われる.
 
+このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/03%20Interpretation%20of%20probability%20distributions.ipynb).
+
 
 以下の図の内容を理解できればこのノートの内容をかなりよく理解できたことになる.
 
@@ -56,21 +58,66 @@ $
 <!-- #endregion -->
 
 ```julia
+# Google Colabと自分のパソコンの両方で使えるようにするための工夫
+
+import Pkg
+
+"""すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
+_packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+
+"""_packages_added内にないパッケージをPkg.addする"""
+add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
+    println(stderr, "# $(pkg).jl is not added yet, so let's add it.")
+    Pkg.add(pkg)
+end
+
+"""expr::Exprからusing内の`.`を含まないモジュール名を抽出"""
+function find_using_pkgs(expr::Expr)
+    pkgs = String[]
+    function traverse(expr::Expr)
+        if expr.head == :using
+            for arg in expr.args
+                if arg.head == :. && length(arg.args) == 1
+                    push!(pkgs, string(arg.args[1]))
+                elseif arg.head == :(:) && length(arg.args[1].args) == 1
+                    push!(pkgs, string(arg.args[1].args[1]))
+                end
+            end
+        else
+            for arg in expr.args arg isa Expr && traverse(arg) end
+        end
+    end
+    traverse(expr)
+    pkgs
+end
+
+"""必要そうなPkg.addを追加するマクロ"""
+macro autoadd(expr)
+    pkgs = find_using_pkgs(expr)
+    :(add_pkg_if_not_added_yet.($(pkgs)); $expr)
+end
+
+isdir("images") || mkdir("images")
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
-using BenchmarkTools
-using Distributions
+using Base.Threads
+using LinearAlgebra
 using Printf
-using QuadGK
 using Random
 Random.seed!(4649373)
-using Roots
+
+@autoadd begin
+#using BenchmarkTools
+using Distributions
+#using QuadGK
+#using Roots
 using SpecialFunctions
-using StaticArrays
-using StatsBase
-using StatsFuns
+#using StaticArrays
+#using StatsBase
+#using StatsFuns
 using StatsPlots
 default(fmt = :png, titlefontsize = 10, size = (400, 250))
 using SymPy
+end
 ```
 
 ```julia
