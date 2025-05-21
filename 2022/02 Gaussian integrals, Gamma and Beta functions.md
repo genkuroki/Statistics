@@ -3581,7 +3581,7 @@ __解答終__
 
 以下は論文 [Dirichlet (1839)](http://portail.mathdoc.fr/JMPA/afficher_notice.php?id=JMPA_1839_1_4_A11_0)の最後のページより. 
 
-![Dirichlet1839.png](attachment:Dirichlet1839.png)
+<img src="https://github.com/genkuroki/Statistics/raw/master/2022/images/Dirichlet1839.png">
 
 これを見れば上の解答例によって, Dirichlet氏の1839年の論文の結果がぴったり再現されていることが分かる. ただし, 上で $x_1,x_2,\ldots,x_n$ と書いたところを, Dirichlet氏の時代には $x,y,z,\ldots$ のように書くことが普通であった.  しかし, 以上を見れば, 19世紀のフランス語で書かれた数学の論文を現代の我々も結構読めそうなことがわかると思う. 
 
