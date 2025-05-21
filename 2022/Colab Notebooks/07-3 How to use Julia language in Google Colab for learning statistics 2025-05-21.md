@@ -82,7 +82,7 @@ end
 using Distributions
 using RDatasets
 using StatsPlots
-default(fmt = :png)
+default(fmt=:png, size=(400, 250), titlefontsize=10)
 end
 ```
 
