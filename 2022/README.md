@@ -6,20 +6,20 @@ https://github.com/genkuroki/Statistics/blob/master/2022/README.md
 
 資料のノートブックは以下のような形式で表示されている:
 
-__07-3 ColabでJulia言語を使った統計学の勉強の仕方__
-
-* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
+>__07-3 ColabでJulia言語を使った統計学の勉強の仕方__
+>
+>* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
-* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)
+>* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]
-
-__07-4 ColabでJuliaを使うためのノートブック__
-
-* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
+>
+>__07-4 ColabでJuliaを使うためのノートブック__
+>
+>* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]
-* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)
+>* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)\]
 
 __資料の閲覧の仕方:__
