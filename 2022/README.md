@@ -4,16 +4,8 @@ https://github.com/genkuroki/Statistics/blob/master/2022/README.md
 
 # 資料の読み方の凡例
 
-資料のノートブックは以下のような形式で表示されている:
+資料のノートブックへのリンクは以下のような形式で表示されている:
 
->__07-3 ColabでJulia言語を使った統計学の勉強の仕方__
->
->* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)
-\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
-\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]
->* [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)
-\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]
->
 >__07-4 ColabでJuliaを使うためのノートブック__
 >
 >* [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)
@@ -24,13 +16,13 @@ https://github.com/genkuroki/Statistics/blob/master/2022/README.md
 
 __資料の閲覧の仕方:__
 
-* 綺麗に整形された結果をブラウザで閲覧： \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]をクリック
-* Google Colabを使ってノートブックを実行： Googleアカウントにログインした状態で\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.ipynb)\]をクリック
+* 綺麗に整形された結果をブラウザで閲覧： \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]をクリック
+* Google Colabを使ってノートブックを実行： Googleアカウントにログインした状態で\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb)\]をクリック
   * 実際にすべてを実行： Colabで ランタイム → すべてのセルを実行
   * 内容を変更したり, 内容を追加した結果を各セルごとに実行できる.
   * 変更結果のコピーを自分のGoogleドライブに保存： ファイル → コピーをドライブに保存
   * ノートブックのコピーはGoogleドライブの<a href="https://drive.google.com/drive/my-drive">マイドライブ</a>のColab Notebooksフォルダに保存される.
-* PDF版をダウンロード： \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-3%20How%20to%20use%20Julia%20language%20in%20Google%20Colab%20for%20learning%20statistics.pdf)\]をクリック
+* PDF版をダウンロード： \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.pdf)\]をクリック
 
 # 数理統計学2022目次
 
@@ -57,7 +49,7 @@ __資料の閲覧の仕方:__
 * [Statistics2022.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/Statistics2022.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/Statistics2022.pdf)\]
 * [Statistics2022handwritten.pdf](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/Statistics2022handwritten.pdf) \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/Statistics2022handwritten.pdf)\]
 
-これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている. ファイル名に2022とあるので2022年の資料だと思う人もいるかもしれないが, 2023年以降も少しずつ書き変えている.
+これはおまけで作っているPDFファイルなので更新は遅れる予定.  以下の個別のPDFファイルの方が常に新しいバージョンになっている. ファイル名に2022とあるので2022年の資料だと思う人もいるかもしれないが, 2023年以降にかなり書き変えられている.
 
 このファイルのipynb版とpdf版:
 
