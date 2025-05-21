@@ -357,6 +357,16 @@ __関連講義動画__
 
 この講義動画は「[P値に関するASA声明](https://www.biometrics.gr.jp/news/all/ASA.pdf)」の考え方の非常に良い解説になっている.
 
+__関連音声概要集__
+
+以下の場所で公開してある音声概要集の01番から06番までを聴けば, P値の使い方に関する最新の知見を得ることができる(1倍速で1時間程度).
+
+* https://genkuroki.github.io/audio/
+
+大事なポイントは, 仮説検定の結果については, それをそのまま最終判断とするのではなく, 参考情報の1つとみなし, あらゆる情報を総合して最終判断を下すことである.  そのとき, 仮説検定の「棄却するか否か」の二値的情報よりもデータの値とモデルのcompatibility(相性の良さ)の連続的程度を表すP値の方が有用である.
+
+__問題:__ 音声概要の元になった論文をダウンロードし, <a href="https://notebooklm.google.com/">Google NotebookLM</a>にソースとしてアップロードして, AIとのチャットを通してその内容について学んでみよ.  論文から情報を得る経験は早ければ早いほどよい.
+
 ### 09 P値と仮説検定と信頼区間(2) 母比率
 
 * [Jupyter notebook](https://github.com/genkuroki/Statistics/blob/master/2022/09%20Hypothesis%20testing%20and%20confidence%20interval%20-%20Proportion.ipynb)
