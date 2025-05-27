@@ -349,6 +349,8 @@ __定義された確率分布__
 * [Jupyter notebook 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)
 \[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)\]
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)\]
+* [pdf 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/08_P-value_and_confidence_interval.pdf)\]
 
 __P値函数__ の概念が最も重要である.
 
