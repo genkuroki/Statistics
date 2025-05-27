@@ -344,6 +344,11 @@ __定義された確率分布__
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.ipynb)\]
 * [pdf](https://github.com/genkuroki/Statistics/blob/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/08%20Hypothesis%20testing%20and%20confidence%20interval%20-%20General%20theory.pdf)\]
+* [hand-written note](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/数理統計学08%20P値と信頼区間とは何か.pdf)
+\[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/数理統計学08%20P値と信頼区間とは何か.pdf)\]
+* [Jupyter notebook 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)
+\[[nbviewer](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)\]
+\[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)\]
 
 __P値函数__ の概念が最も重要である.
 
