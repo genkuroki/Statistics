@@ -149,6 +149,11 @@ function pvalue_wilson(k, n, theta)
     2ccdf(Normal(0, 1), abs(z))
 end
 
+# 学習のためにはこういう素朴なプロットでも十分な場合が多い.
+k, n = 60, 100
+plot(theta -> pvalue_wilson(k, n, theta), 0, 1)
+
+# %%
 function plot_pvalue_wilson(k, n; c=1, kwargs...)
     plot(theta -> pvalue_wilson(k, n, theta), 0, 1; label="pvalue_wilson(k, n, θ)", c)
     plot!(xtick=0:0.1:1, ytick=0:0.05:1)
@@ -165,6 +170,11 @@ function likelihood_wilson(k, n, theta)
     pdf(Normal(0, 1), abs(z))
 end
 
+# 学習のためにはこういう素朴なプロットでも十分な場合が多い.
+k, n = 60, 100
+plot(theta -> likelihood_wilson(k, n, theta), 0, 1)
+
+# %%
 function plot_likelihood_wilson(k, n; c=2, kwargs...)
     plot(theta -> likelihood_wilson(k, n, theta), 0, 1; label="likelihood_wilson(k, n, θ)", c)
     plot!(xtick=0:0.1:1)
