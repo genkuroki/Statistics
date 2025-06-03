@@ -16,7 +16,7 @@ jupyter:
 # ColabでJulia言語を使った統計学の勉強の仕方
 
 * 黒木玄
-* 2025-05-13
+* 2025-05-13, 2025-06-03
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -80,7 +80,7 @@ end
 using Distributions
 using RDatasets
 using StatsPlots
-default(fmt = :png)
+default(fmt=:png, size=(400, 250), titlefontsize=12)
 end
 ```
 
@@ -172,8 +172,8 @@ plot!(x -> exp(-x^2/2)/sqrt(2pi), -4, 4; label="", lw=3)
 
 ```julia
 import Pkg
-Pkg.add("StatsPlots")
-using StatsPlots
+Pkg.add("Distributions")
+using Distributions
 ```
 
 このノートブックでは最初のセルでこれと同等のことを実行できるようにしてあるので, 最初のセルを実行しておけばよい.
