@@ -31,7 +31,7 @@ $
 このノートブックは[Google Colabで実行できる](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/07-4%20Julia%20notebook%20for%20Google%20Colab.ipynb).
 
 
-__2025-05-13:__ 以下のセルを `@_using` の行のコメントアウトを全部外してからGoogle Colabで実行すると5分から6分程度かかるようである.  その待ち時間に耐え切れないと感じる人は自分のパソコン上にJuliaをJupyter上で実行する環境を作ればよい.  コンピュータの取り扱いの初心者のうちはその作業は非常に難しいと感じるかもしれないが, 適当に検索したり, AIに質問したりすればできるはずである.
+__注意:__ 以下のセルを `using` の行のコメントアウトを全部外してからGoogle Colabで実行すると5分から6分程度かかるようである.  その待ち時間に耐え切れないと感じる人は自分のパソコン上にJuliaをJupyter上で実行する環境を作ればよい.  コンピュータの取り扱いの初心者のうちはその作業は非常に難しいと感じるかもしれないが, 適当に検索したり, AIに質問したりすればできるはずである.
 
 ```julia jupyter={"outputs_hidden": true} tags=[]
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
