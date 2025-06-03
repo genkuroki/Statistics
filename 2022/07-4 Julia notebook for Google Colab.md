@@ -40,7 +40,8 @@ __注意警告:__ すべてのセルを実行する前に少し下の方にあ�
 using Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
-_packages_added = [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]
+_packages_added = [sort!(readdir(Sys.STDLIB)); 
+    [info.name for (uuid, info) in Pkg.dependencies() if info.is_direct_dep]]
 
 """_packages_added内にないパッケージをPkg.addする"""
 add_pkg_if_not_added_yet(pkg) = if !(pkg in _packages_added)
@@ -112,12 +113,12 @@ __注意:__ 以下のセルを `using` の行のコメントアウトを全部�
 # QuadGK.jl をインターネットで検索すれば得られる.
 
 ENV["LINES"], ENV["COLUMNS"] = 100, 100
+
+@autoadd begin
 using LinearAlgebra
 using Printf
 using Random
 Random.seed!(4649373)
-
-@autoadd begin
 using Distributions
 using StatsPlots
 default(fmt=:png, legendfontsize=12, titlefontsize=12)
