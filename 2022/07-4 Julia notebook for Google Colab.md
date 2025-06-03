@@ -85,9 +85,9 @@ macro usingdocstringtranslation()
         translationurl = "https://github.com/AtelierArith/DocStrBankExperimental.jl/releases/download/full-ja/translation.zip"
         #translationurl = "https://github.com/AtelierArith/DocStrBankExperimental.jl/releases/download/stats-ja/translation.zip"
         scratchspaces_dir = joinpath(DEPOT_PATH[1], "scratchspaces", "d404e13b-1f8e-41a5-a26a-0b758a0c6c97")
-        translatio_dir = joinpath(scratchspaces_dir, "translation")
-        if isdir(translatio_dir)
-            println(stderr, "Directory $translatio_dir already exists.")
+        translation_dir = joinpath(scratchspaces_dir, "translation")
+        if isdir(translation_dir)
+            println(stderr, "Directory $translation_dir already exists.")
             println(stderr, "To download and extract translation.zip again, the directory must be deleted.")
         else
             println(stderr, "translation.zip to be downloaded will be extracted into $translation_dir.")
