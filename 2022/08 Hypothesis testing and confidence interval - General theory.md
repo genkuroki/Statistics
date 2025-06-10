@@ -45,7 +45,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画とお勧め文献" data-toc-modified-id="お勧め解説動画とお勧め文献-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画とお勧め文献</a></span><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#お勧め文献:-P値に関するASA声明" data-toc-modified-id="お勧め文献:-P値に関するASA声明-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>お勧め文献: P値に関するASA声明</a></span></li></ul></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#S値" data-toc-modified-id="S値-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>S値</a></span></li><li><span><a href="#仮説検定" data-toc-modified-id="仮説検定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>仮説検定</a></span></li><li><span><a href="#「統計的有意性」(statisitical-significance)の廃止の提案" data-toc-modified-id="「統計的有意性」(statisitical-significance)の廃止の提案-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>「統計的有意性」(statisitical significance)の廃止の提案</a></span></li><li><span><a href="#仮説検定の結果の扱い方に関するより詳しい解説" data-toc-modified-id="仮説検定の結果の扱い方に関するより詳しい解説-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>仮説検定の結果の扱い方に関するより詳しい解説</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである" data-toc-modified-id="「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである</a></span></li><li><span><a href="#&quot;comaptibilty&quot;解釈に関する文献" data-toc-modified-id="&quot;comaptibilty&quot;解釈に関する文献-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>"comaptibilty"解釈に関する文献</a></span></li><li><span><a href="#数学的な注意:-nuisanceパラメータがある場合" data-toc-modified-id="数学的な注意:-nuisanceパラメータがある場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>数学的な注意: nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#実際に使われるP値の構成" data-toc-modified-id="実際に使われるP値の構成-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>実際に使われるP値の構成</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#「データの値以上に極端な値」の意味の定義の仕方" data-toc-modified-id="「データの値以上に極端な値」の意味の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>「データの値以上に極端な値」の意味の定義の仕方</a></span></li><li><span><a href="#例(二項分布モデルの場合)" data-toc-modified-id="例(二項分布モデルの場合)-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>例(二項分布モデルの場合)</a></span></li><li><span><a href="#例(正規分布の標本分布モデルの場合)" data-toc-modified-id="例(正規分布の標本分布モデルの場合)-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>例(正規分布の標本分布モデルの場合)</a></span></li><li><span><a href="#P値は帰無仮説下の統計モデルのデータの値との相性の良さ(compatibility)の指標" data-toc-modified-id="P値は帰無仮説下の統計モデルのデータの値との相性の良さ(compatibility)の指標-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>P値は帰無仮説下の統計モデルのデータの値との相性の良さ(compatibility)の指標</a></span></li></ul></li><li><span><a href="#検定" data-toc-modified-id="検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#第一種の過誤(αエラー)" data-toc-modified-id="第一種の過誤(αエラー)-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>第一種の過誤(αエラー)</a></span><ul class="toc-item"><li><span><a href="#第一種の過誤(αエラー)の定義" data-toc-modified-id="第一種の過誤(αエラー)の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>第一種の過誤(αエラー)の定義</a></span></li><li><span><a href="#第一種の過誤(αエラー)の確率" data-toc-modified-id="第一種の過誤(αエラー)の確率-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>第一種の過誤(αエラー)の確率</a></span></li><li><span><a href="#二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ" data-toc-modified-id="二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ</a></span></li></ul></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間</a></span><ul class="toc-item"><li><span><a href="#信頼区間のP値もしくは検定を用いた定義" data-toc-modified-id="信頼区間のP値もしくは検定を用いた定義-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>信頼区間のP値もしくは検定を用いた定義</a></span></li><li><span><a href="#信頼区間の使い方" data-toc-modified-id="信頼区間の使い方-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>信頼区間の使い方</a></span></li></ul></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span><ul class="toc-item"><li><span><a href="#検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合" data-toc-modified-id="検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性について書かれた教科書の例" data-toc-modified-id="信頼区間と検定の表裏一体性について書かれた教科書の例-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性について書かれた教科書の例</a></span></li><li><span><a href="#仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率" data-toc-modified-id="仮説-$\theta=\theta_0$-下の統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>仮説 $\theta=\theta_0$ 下の統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率</a></span></li><li><span><a href="#二項分布モデルでのP値函数の視覚化" data-toc-modified-id="二項分布モデルでのP値函数の視覚化-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>二項分布モデルでのP値函数の視覚化</a></span></li></ul></li><li><span><a href="#統計モデルやP値函数が「よい」かどうかの判断基準達" data-toc-modified-id="統計モデルやP値函数が「よい」かどうかの判断基準達-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>統計モデルやP値函数が「よい」かどうかの判断基準達</a></span><ul class="toc-item"><li><span><a href="#計算方法はシンプルな方がよい" data-toc-modified-id="計算方法はシンプルな方がよい-8.1"><span class="toc-item-num">8.1&nbsp;&nbsp;</span>計算方法はシンプルな方がよい</a></span></li><li><span><a href="#頑健な方がよい" data-toc-modified-id="頑健な方がよい-8.2"><span class="toc-item-num">8.2&nbsp;&nbsp;</span>頑健な方がよい</a></span></li><li><span><a href="#第一種の過誤の確率は有意水準に近い方がよい" data-toc-modified-id="第一種の過誤の確率は有意水準に近い方がよい-8.3"><span class="toc-item-num">8.3&nbsp;&nbsp;</span>第一種の過誤の確率は有意水準に近い方がよい</a></span></li><li><span><a href="#第一種の過誤の確率は有意水準以下である方がよい" data-toc-modified-id="第一種の過誤の確率は有意水準以下である方がよい-8.4"><span class="toc-item-num">8.4&nbsp;&nbsp;</span>第一種の過誤の確率は有意水準以下である方がよい</a></span></li><li><span><a href="#検出力は高い方がよい" data-toc-modified-id="検出力は高い方がよい-8.5"><span class="toc-item-num">8.5&nbsp;&nbsp;</span>検出力は高い方がよい</a></span></li></ul></li><li><span><a href="#Neyman-Pearsonの仮説検定" data-toc-modified-id="Neyman-Pearsonの仮説検定-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Neyman-Pearsonの仮説検定</a></span><ul class="toc-item"><li><span><a href="#パラメータを持たない2つの統計モデルに関する仮説検定" data-toc-modified-id="パラメータを持たない2つの統計モデルに関する仮説検定-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>パラメータを持たない2つの統計モデルに関する仮説検定</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#Neyman-Pearsonの補題の証明" data-toc-modified-id="Neyman-Pearsonの補題の証明-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Neyman-Pearsonの補題の証明</a></span></li><li><span><a href="#尤度比検定の例:-正規分布モデルの場合" data-toc-modified-id="尤度比検定の例:-正規分布モデルの場合-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>尤度比検定の例: 正規分布モデルの場合</a></span></li><li><span><a href="#Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題" data-toc-modified-id="Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題</a></span></li><li><span><a href="#このノートの立場" data-toc-modified-id="このノートの立場-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>このノートの立場</a></span></li></ul></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-10"><span class="toc-item-num">10&nbsp;&nbsp;</span>よくある誤解</a></span><ul class="toc-item"><li><span><a href="#P値の定義と使い方の復習" data-toc-modified-id="P値の定義と使い方の復習-10.1"><span class="toc-item-num">10.1&nbsp;&nbsp;</span>P値の定義と使い方の復習</a></span></li><li><span><a href="#問題:-P値に関するよくある誤解" data-toc-modified-id="問題:-P値に関するよくある誤解-10.2"><span class="toc-item-num">10.2&nbsp;&nbsp;</span>問題: P値に関するよくある誤解</a></span></li><li><span><a href="#信頼区間の定義の復習と使い方の復習" data-toc-modified-id="信頼区間の定義の復習と使い方の復習-10.3"><span class="toc-item-num">10.3&nbsp;&nbsp;</span>信頼区間の定義の復習と使い方の復習</a></span></li><li><span><a href="#問題:-信頼区間に関するよく見る誤解" data-toc-modified-id="問題:-信頼区間に関するよく見る誤解-10.4"><span class="toc-item-num">10.4&nbsp;&nbsp;</span>問題: 信頼区間に関するよく見る誤解</a></span></li><li><span><a href="#平均の信頼区間達の視覚化" data-toc-modified-id="平均の信頼区間達の視覚化-10.5"><span class="toc-item-num">10.5&nbsp;&nbsp;</span>平均の信頼区間達の視覚化</a></span><ul class="toc-item"><li><span><a href="#正規分布の標本達から得られる平均の信頼区間達" data-toc-modified-id="正規分布の標本達から得られる平均の信頼区間達-10.5.1"><span class="toc-item-num">10.5.1&nbsp;&nbsp;</span>正規分布の標本達から得られる平均の信頼区間達</a></span></li><li><span><a href="#ガンマ分布の標本から得られる平均の信頼区間達" data-toc-modified-id="ガンマ分布の標本から得られる平均の信頼区間達-10.5.2"><span class="toc-item-num">10.5.2&nbsp;&nbsp;</span>ガンマ分布の標本から得られる平均の信頼区間達</a></span></li><li><span><a href="#対数正規分布の標本達から得られる平均の信頼区間達" data-toc-modified-id="対数正規分布の標本達から得られる平均の信頼区間達-10.5.3"><span class="toc-item-num">10.5.3&nbsp;&nbsp;</span>対数正規分布の標本達から得られる平均の信頼区間達</a></span></li></ul></li><li><span><a href="#問題解答例:-P値に関するよくある誤解" data-toc-modified-id="問題解答例:-P値に関するよくある誤解-10.6"><span class="toc-item-num">10.6&nbsp;&nbsp;</span>問題解答例: P値に関するよくある誤解</a></span></li><li><span><a href="#問題解答例:-信頼区間に関するよく見る誤解" data-toc-modified-id="問題解答例:-信頼区間に関するよく見る誤解-10.7"><span class="toc-item-num">10.7&nbsp;&nbsp;</span>問題解答例: 信頼区間に関するよく見る誤解</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#お勧め解説動画とお勧め文献" data-toc-modified-id="お勧め解説動画とお勧め文献-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>お勧め解説動画とお勧め文献</a></span><ul class="toc-item"><li><span><a href="#お勧め解説動画" data-toc-modified-id="お勧め解説動画-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>お勧め解説動画</a></span></li><li><span><a href="#お勧め文献:-P値に関するASA声明" data-toc-modified-id="お勧め文献:-P値に関するASA声明-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>お勧め文献: P値に関するASA声明</a></span></li></ul></li><li><span><a href="#まとめ" data-toc-modified-id="まとめ-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>まとめ</a></span><ul class="toc-item"><li><span><a href="#P値" data-toc-modified-id="P値-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>P値</a></span></li><li><span><a href="#S値" data-toc-modified-id="S値-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>S値</a></span></li><li><span><a href="#仮説検定" data-toc-modified-id="仮説検定-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>仮説検定</a></span></li><li><span><a href="#「統計的有意性」(statisitical-significance)の廃止の提案" data-toc-modified-id="「統計的有意性」(statisitical-significance)の廃止の提案-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>「統計的有意性」(statisitical significance)の廃止の提案</a></span></li><li><span><a href="#仮説検定の結果の扱い方に関するより詳しい解説" data-toc-modified-id="仮説検定の結果の扱い方に関するより詳しい解説-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>仮説検定の結果の扱い方に関するより詳しい解説</a></span></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>信頼区間</a></span></li><li><span><a href="#「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである" data-toc-modified-id="「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>「信頼区間」の「信頼」(confidence)は「相性」(compatibility)で置き換えるべきである</a></span></li><li><span><a href="#&quot;comaptibilty&quot;解釈に関する文献" data-toc-modified-id="&quot;comaptibilty&quot;解釈に関する文献-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>"comaptibilty"解釈に関する文献</a></span></li><li><span><a href="#数学的な注意:-nuisanceパラメータがある場合" data-toc-modified-id="数学的な注意:-nuisanceパラメータがある場合-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>数学的な注意: nuisanceパラメータがある場合</a></span></li></ul></li><li><span><a href="#実際に使われるP値の構成" data-toc-modified-id="実際に使われるP値の構成-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>実際に使われるP値の構成</a></span><ul class="toc-item"><li><span><a href="#統計モデルの設定" data-toc-modified-id="統計モデルの設定-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>統計モデルの設定</a></span></li><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#「データの値以上に極端な値」の意味の定義の仕方" data-toc-modified-id="「データの値以上に極端な値」の意味の定義の仕方-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>「データの値以上に極端な値」の意味の定義の仕方</a></span></li><li><span><a href="#例(二項分布モデルの場合)" data-toc-modified-id="例(二項分布モデルの場合)-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>例(二項分布モデルの場合)</a></span></li><li><span><a href="#例(正規分布の標本分布モデルの場合)" data-toc-modified-id="例(正規分布の標本分布モデルの場合)-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>例(正規分布の標本分布モデルの場合)</a></span></li><li><span><a href="#P値は検定仮説の下での統計モデルのデータの値との相性の良さ(compatibility)の指標" data-toc-modified-id="P値は検定仮説の下での統計モデルのデータの値との相性の良さ(compatibility)の指標-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>P値は検定仮説の下での統計モデルのデータの値との相性の良さ(compatibility)の指標</a></span></li></ul></li><li><span><a href="#検定" data-toc-modified-id="検定-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>検定</a></span></li><li><span><a href="#第一種の過誤(αエラー)" data-toc-modified-id="第一種の過誤(αエラー)-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>第一種の過誤(αエラー)</a></span><ul class="toc-item"><li><span><a href="#第一種の過誤(αエラー)の定義" data-toc-modified-id="第一種の過誤(αエラー)の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>第一種の過誤(αエラー)の定義</a></span></li><li><span><a href="#第一種の過誤(αエラー)の確率" data-toc-modified-id="第一種の過誤(αエラー)の確率-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>第一種の過誤(αエラー)の確率</a></span></li><li><span><a href="#二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ" data-toc-modified-id="二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>二項分布モデルの4種のP値に関する第一種の過誤の確率のグラフ</a></span></li></ul></li><li><span><a href="#信頼区間" data-toc-modified-id="信頼区間-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>信頼区間</a></span><ul class="toc-item"><li><span><a href="#信頼区間のP値もしくは検定を用いた定義" data-toc-modified-id="信頼区間のP値もしくは検定を用いた定義-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>信頼区間のP値もしくは検定を用いた定義</a></span></li><li><span><a href="#信頼区間の使い方" data-toc-modified-id="信頼区間の使い方-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>信頼区間の使い方</a></span></li></ul></li><li><span><a href="#信頼区間と検定の表裏一体性" data-toc-modified-id="信頼区間と検定の表裏一体性-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性</a></span><ul class="toc-item"><li><span><a href="#検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合" data-toc-modified-id="検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>検定における棄却領域の合併と信頼区間全体の合併は互いに相手の補集合</a></span></li><li><span><a href="#信頼区間と検定の表裏一体性について書かれた教科書の例" data-toc-modified-id="信頼区間と検定の表裏一体性について書かれた教科書の例-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>信頼区間と検定の表裏一体性について書かれた教科書の例</a></span></li><li><span><a href="#仮説-$\theta=\theta_0$-の下での統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率" data-toc-modified-id="仮説-$\theta=\theta_0$-の下での統計モデル内でパラメータ値-$\theta=\theta_0$-が信頼区間に含まれる確率-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>仮説 $\theta=\theta_0$ の下での統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率</a></span></li><li><span><a href="#二項分布モデルでのP値函数の視覚化" data-toc-modified-id="二項分布モデルでのP値函数の視覚化-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>二項分布モデルでのP値函数の視覚化</a></span></li></ul></li><li><span><a href="#統計モデルやP値函数が「よい」かどうかの判断基準達" data-toc-modified-id="統計モデルやP値函数が「よい」かどうかの判断基準達-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>統計モデルやP値函数が「よい」かどうかの判断基準達</a></span><ul class="toc-item"><li><span><a href="#計算方法はシンプルな方がよい" data-toc-modified-id="計算方法はシンプルな方がよい-8.1"><span class="toc-item-num">8.1&nbsp;&nbsp;</span>計算方法はシンプルな方がよい</a></span></li><li><span><a href="#頑健な方がよい" data-toc-modified-id="頑健な方がよい-8.2"><span class="toc-item-num">8.2&nbsp;&nbsp;</span>頑健な方がよい</a></span></li><li><span><a href="#第一種の過誤の確率は有意水準に近い方がよい" data-toc-modified-id="第一種の過誤の確率は有意水準に近い方がよい-8.3"><span class="toc-item-num">8.3&nbsp;&nbsp;</span>第一種の過誤の確率は有意水準に近い方がよい</a></span></li><li><span><a href="#第一種の過誤の確率は有意水準以下である方がよい" data-toc-modified-id="第一種の過誤の確率は有意水準以下である方がよい-8.4"><span class="toc-item-num">8.4&nbsp;&nbsp;</span>第一種の過誤の確率は有意水準以下である方がよい</a></span></li><li><span><a href="#検出力は高い方がよい" data-toc-modified-id="検出力は高い方がよい-8.5"><span class="toc-item-num">8.5&nbsp;&nbsp;</span>検出力は高い方がよい</a></span></li></ul></li><li><span><a href="#Neyman-Pearsonの仮説検定" data-toc-modified-id="Neyman-Pearsonの仮説検定-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Neyman-Pearsonの仮説検定</a></span><ul class="toc-item"><li><span><a href="#パラメータを持たない2つの統計モデルに関する仮説検定" data-toc-modified-id="パラメータを持たない2つの統計モデルに関する仮説検定-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>パラメータを持たない2つの統計モデルに関する仮説検定</a></span></li><li><span><a href="#Neyman-Pearsonの補題" data-toc-modified-id="Neyman-Pearsonの補題-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Neyman-Pearsonの補題</a></span></li><li><span><a href="#Neyman-Pearsonの補題の証明" data-toc-modified-id="Neyman-Pearsonの補題の証明-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Neyman-Pearsonの補題の証明</a></span></li><li><span><a href="#尤度比検定の例:-正規分布モデルの場合" data-toc-modified-id="尤度比検定の例:-正規分布モデルの場合-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>尤度比検定の例: 正規分布モデルの場合</a></span></li><li><span><a href="#Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題" data-toc-modified-id="Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>Neyman-Pearsonの仮説検定に関する極端な解釈の普及の問題</a></span></li><li><span><a href="#このノートの立場" data-toc-modified-id="このノートの立場-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>このノートの立場</a></span></li></ul></li><li><span><a href="#よくある誤解" data-toc-modified-id="よくある誤解-10"><span class="toc-item-num">10&nbsp;&nbsp;</span>よくある誤解</a></span><ul class="toc-item"><li><span><a href="#P値の定義と使い方の復習" data-toc-modified-id="P値の定義と使い方の復習-10.1"><span class="toc-item-num">10.1&nbsp;&nbsp;</span>P値の定義と使い方の復習</a></span></li><li><span><a href="#問題:-P値に関するよくある誤解" data-toc-modified-id="問題:-P値に関するよくある誤解-10.2"><span class="toc-item-num">10.2&nbsp;&nbsp;</span>問題: P値に関するよくある誤解</a></span></li><li><span><a href="#信頼区間の定義の復習と使い方の復習" data-toc-modified-id="信頼区間の定義の復習と使い方の復習-10.3"><span class="toc-item-num">10.3&nbsp;&nbsp;</span>信頼区間の定義の復習と使い方の復習</a></span></li><li><span><a href="#問題:-信頼区間に関するよく見る誤解" data-toc-modified-id="問題:-信頼区間に関するよく見る誤解-10.4"><span class="toc-item-num">10.4&nbsp;&nbsp;</span>問題: 信頼区間に関するよく見る誤解</a></span></li><li><span><a href="#平均の信頼区間達の視覚化" data-toc-modified-id="平均の信頼区間達の視覚化-10.5"><span class="toc-item-num">10.5&nbsp;&nbsp;</span>平均の信頼区間達の視覚化</a></span><ul class="toc-item"><li><span><a href="#正規分布の標本達から得られる平均の信頼区間達" data-toc-modified-id="正規分布の標本達から得られる平均の信頼区間達-10.5.1"><span class="toc-item-num">10.5.1&nbsp;&nbsp;</span>正規分布の標本達から得られる平均の信頼区間達</a></span></li><li><span><a href="#ガンマ分布の標本から得られる平均の信頼区間達" data-toc-modified-id="ガンマ分布の標本から得られる平均の信頼区間達-10.5.2"><span class="toc-item-num">10.5.2&nbsp;&nbsp;</span>ガンマ分布の標本から得られる平均の信頼区間達</a></span></li><li><span><a href="#対数正規分布の標本達から得られる平均の信頼区間達" data-toc-modified-id="対数正規分布の標本達から得られる平均の信頼区間達-10.5.3"><span class="toc-item-num">10.5.3&nbsp;&nbsp;</span>対数正規分布の標本達から得られる平均の信頼区間達</a></span></li></ul></li><li><span><a href="#問題解答例:-P値に関するよくある誤解" data-toc-modified-id="問題解答例:-P値に関するよくある誤解-10.6"><span class="toc-item-num">10.6&nbsp;&nbsp;</span>問題解答例: P値に関するよくある誤解</a></span></li><li><span><a href="#問題解答例:-信頼区間に関するよく見る誤解" data-toc-modified-id="問題解答例:-信頼区間に関するよく見る誤解-10.7"><span class="toc-item-num">10.7&nbsp;&nbsp;</span>問題解答例: 信頼区間に関するよく見る誤解</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -847,7 +847,7 @@ __注意:__ この節の内容はこのノートの内容を超えて先走っ�
 
 その場合にはパラメータ $\theta$ の値を決めても, 統計モデルの確率分布は唯一つに決まらず, パラメータ $\eta$ の分だけ不定になる.
 
-P値の定義は「データの値 $x$ 以上に極端な値が帰無仮説 $\theta=\theta_0$ の下での統計モデル内で生じる確率もしくはその近似値」であった.  帰無仮説 $\theta=\theta_0$ で統計モデルの確率分布が唯一つに決まらない場合にはこのP値の定義を単純に適用することが不可能になる.
+P値の定義は「データの値 $x$ 以上に極端な値が検定仮説 $\theta=\theta_0$ の下での統計モデル内で生じる確率もしくはその近似値」であった.  検定仮説 $\theta=\theta_0$ で統計モデルの確率分布が唯一つに決まらない場合にはこのP値の定義を単純に適用することが不可能になる.
 
 このような状況のときに, 余計なパラメータ $\eta$ を __nuisanceパラメータ__ (ニューサンスパラメータ, 局外パラメータ,　撹乱パラメータ, 迷惑パラメータ)と呼ぶ(nuisanceは迷惑や妨害を意味する名詞). 
 
@@ -893,14 +893,14 @@ __例 (正規分布の標本分布モデル):__
 
 を次によって定める:
 
-　　__データの値 $x$ 以上に極端な値が仮説 $\theta=\theta_0$ 下の統計モデル内で生じる確率もしくはその近似値.__
+　　__データの値 $x$ 以上に極端な値が仮説 $\theta=\theta_0$ の下での統計モデル内で生じる確率もしくはその近似値.__
 
-「仮説 $\theta=\theta_0$ 下の統計モデル内におけるデータの値 $x$ 以上に極端な値」の定義は目的ごとに別に与えられる.  その概略については後の方の説明を参照せよ.
+「仮説 $\theta=\theta_0$ の下での統計モデル内におけるデータの値 $x$ 以上に極端な値」の定義は目的ごとに別に与えられる.  その概略については後の方の説明を参照せよ.
 
-仮説 $\theta=\theta_0$ は __帰無仮説__ (null hypothesis)と呼ばれることが多いが, このノートでは単に「仮説」と呼ぶことが多い.
+仮説 $\theta=\theta_0$ は __帰無仮説__ (null hypothesis)と呼ばれることが多いが, このノートでは「検定仮説」もしくは単に「仮説」と呼ぶことが多い.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: P値＝帰無仮説下のモデル内でデータの値以上に極端な値が生じる確率(の近似値)__</span>
+<span style="font-size: 120%; color: red;">__まとめ: P値＝検定仮説の下でのモデル内でデータの値以上に極端な値が生じる確率(の近似値)__</span>
 
 
 __補足:__ 「$x$ が $x'$ 以上に極端な値である」という条件は __反射性__(reflexivity)と __推移性__ (transitivity)と __比較可能性__(comparability)の3つの条件を満たしていることを要請する. すなわち「$x$ が $x'$ 以上に極端な値である」ことを $x\succcurlyeq x'$ と書くと, 以下が成立していると仮定する:
@@ -918,15 +918,15 @@ __注意:__ 以下の説明は抽象的過ぎて分かりにくいので, 後の
 
 P値の定義を確定させるためには, データの値 $x$ とパラメータの数値 $\theta = \theta_0$ が与えられたとき, 統計モデルとそのパラメータ値が与える確率分布に従う確率変数 $X$ の値がデータの値 $x_0$ 以上に極端な値であることの定義を, 統計分析の目的に合わせて適切に設定する必要がある.
 
-「仮説 $\theta=\theta_0$ 下の統計モデルに従う確率変数 $X$ がデータの値 $x$ 以上に極端な値であること」の定義として, 以下のような条件がよく使われる:
+「仮説 $\theta=\theta_0$ の下での統計モデルに従う確率変数 $X$ がデータの値 $x$ 以上に極端な値であること」の定義として, 以下のような条件がよく使われる:
 
 (0) $X \ge x$ (または $X \le x$).  
 
 この(0)の条件は例えばχ²検定達で使われる.
 
-さらにこの(0)の条件は帰無仮説 $\theta \le \theta_0$ を($\theta$ の値を $\theta_0$ 以上のどれかとする)を対立仮説 $\theta > \theta_0$ ($\theta$ の値を $\theta_0$ 未満のどれかとする)と比較する __片側検定__ で使用される.
+さらにこの(0)の条件は検定仮説 $\theta \le \theta_0$ を($\theta$ の値を $\theta_0$ 以上のどれかとする)を対立仮説 $\theta > \theta_0$ ($\theta$ の値を $\theta_0$ 未満のどれかとする)と比較する __片側検定__ で使用される.
 
-しかし, 主に使われるのは(一部に見かけ上の例外もある(例: χ²検定達)), 帰無仮説 $\theta = \theta_0$ を対立仮説 $\theta \ne \theta_0$ ($\theta$ の値を $\theta_0$ 以外のどれかの値とする)と比較する __両側検定__ の場合である.  以下はすべて両側検定の場合である.  (用語「対立仮説」についてはNeyman-Pearsonの仮説検定の節を参照せよ.)
+しかし, 主に使われるのは(一部に見かけ上の例外もある(例: χ²検定達)), 検定仮説 $\theta = \theta_0$ を対立仮説 $\theta \ne \theta_0$ ($\theta$ の値を $\theta_0$ 以外のどれかの値とする)と比較する __両側検定__ の場合である.  以下はすべて両側検定の場合である.  (用語「対立仮説」についてはNeyman-Pearsonの仮説検定の節を参照せよ.)
 
 (1) $X \ge x$ と $X \le x$ の確率が小さい方の条件. (この場合にP値はその確率の2倍にする.)
 
@@ -945,13 +945,13 @@ $X$ が実数値の確率変数ではなく, $\R^n$ 値の確率変数の場合�
 
 __注意:__ 以下の文章による説明はわかりにくいので, 下の方に用意してある図を先に見た方が良いかもしれない.
 
-データの値「$n$ 回中 $k$ 回成功」と成功確率パラメータの数値 $p=p_0$ が与えられているとし, 仮説 $p=p_0$ 下の二項分布 $\op{Binomial}(n, p_0)$ に従う確率変数 $K$ を用意する:
+データの値「$n$ 回中 $k$ 回成功」と成功確率パラメータの数値 $p=p_0$ が与えられているとし, 仮説 $p=p_0$ の下での二項分布 $\op{Binomial}(n, p_0)$ に従う確率変数 $K$ を用意する:
 
 $$
 K \sim \op{Binomial}(n, p_0).
 $$
 
-このとき, 「仮説 $p=p_0$ 下の二項分布モデル内での成功回数 $K$ の値がデータの値 $k$ 以上に極端であること」を以下のように, 互いに同値でない様々な方法で定義できる:
+このとき, 「仮説 $p=p_0$ の下での二項分布モデル内での成功回数 $K$ の値がデータの値 $k$ 以上に極端であること」を以下のように, 互いに同値でない様々な方法で定義できる:
 
 (0) $K \ge k$ (もしくは $K\le k$)という条件で「$k$ 以上に極端」の意味を定義する. この定義はぞれぞれ仮説 $p\le p_0$ (もしくは $p \ge p_0$)の __片側検定__ (one-tailed test, one-sided test) で使われる. 
 
@@ -969,7 +969,7 @@ $$
 
 という条件で「$k$ 以上に極端」の意味を定義する. すなわち, 
 
-　　仮説 $p=p_0$ 下の統計モデル内でデータの値 $k$ 以上に確率的に珍しいこと
+　　仮説 $p=p_0$ の下での統計モデル内でデータの値 $k$ 以上に確率的に珍しいこと
 
 を「$k$ 以上に極端」の定義とする.
 
@@ -1001,11 +1001,11 @@ $$
 
 $$
 \chi^2 = \sum \frac
-{(\text{現実における観測値} - \text{帰無仮説下の統計モデル内での期待値})^2}
-{\text{帰無仮説下の統計モデル内での期待値}}
+{(\text{現実における観測値} - \text{検定仮説の下での統計モデル内での期待値})^2}
+{\text{検定仮説の下での統計モデル内での期待値}}
 $$
 
-の特別な場合に過ぎない. 上の場合に「現実における観測地」は $n$ 回中の成功回数 $k$ と失敗回数 $n-k$ であり, 「帰無仮説下の統計モデル内での期待値」は成功回数の期待値 $np_0$ と失敗回数の期待値 $n(1-p_0)$ である.  (より進んだ注意: Pearsonのχ²統計量はスコア検定における検定統計量になっている.)
+の特別な場合に過ぎない. 上の場合に「現実における観測地」は $n$ 回中の成功回数 $k$ と失敗回数 $n-k$ であり, 「検定仮説下の統計モデル内での期待値」は成功回数の期待値 $np_0$ と失敗回数の期待値 $n(1-p_0)$ である.  (より進んだ注意: Pearsonのχ²統計量はスコア検定における検定統計量になっている.)
 
 (4) __Waldの信頼区間の場合:__ 上の(3)における右辺の分母の $p_0$ をパラメータの推定量 $\hat{p} = k/n$ で置き換えて得られる次の条件で「データの値以上に極端であること」を定義することもある:
 
@@ -1059,7 +1059,7 @@ $$
 
 これが便利なのは, 仮説 $\mu = \mu_0$ の下での正規分布の標本分布モデル内で, __分散パラメータ $\sigma^2$ がどんな値であっても,__  確率変数 $T(X|\mu_0)$ が自由度 $n-1$ の $t$ 分布に従うからである.
 
-__注意:__ 統計モデルが $\theta$ 以外にパラメータ $\eta$ を持っていて, 帰無仮説 $\theta=\theta_0$ を課しても, パラメータ $\eta$ の分だけ統計モデルの確率分布が唯一つに決まらないとき, $\eta$ を __nuisanceパラメータ__  (ニューサンスパラメータ, 局外パラメータ,　撹乱パラメータ, 迷惑パラメータ)と呼ぶ.  上の例では分散パラメータ $\sigma^2$ がnuisanceパラメータになっている.  そして, 上の例はnuisanceパラメータの問題をシンプルに解決できる稀有な場合になっている.
+__注意:__ 統計モデルが $\theta$ 以外にパラメータ $\eta$ を持っていて, 検定仮説 $\theta=\theta_0$ を課しても, パラメータ $\eta$ の分だけ統計モデルの確率分布が唯一つに決まらないとき, $\eta$ を __nuisanceパラメータ__  (ニューサンスパラメータ, 局外パラメータ,　撹乱パラメータ, 迷惑パラメータ)と呼ぶ.  上の例では分散パラメータ $\sigma^2$ がnuisanceパラメータになっている.  そして, 上の例はnuisanceパラメータの問題をシンプルに解決できる稀有な場合になっている.
 
 ```julia
 illustrate_ttest()
@@ -1075,16 +1075,16 @@ __問題:__ サイズ $n=11$ のデータ
 と仮説 $\mu = 7$ について, 標本平均 $\bar{x}$ と不偏分散 $s^2$ と $t = (\bar{x}-\mu)/\sqrt{s^2/2}$ を自分で計算してみて, 上の計算例と一致することを確認せよ.  さらに, インターネットで検索して, $t$ 検定のP値を求める方法を調べ, 実際に計算してみて, 上の計算例と一致することを確認せよ.
 
 
-### P値は帰無仮説下の統計モデルのデータの値との相性の良さ(compatibility)の指標
+### P値は検定仮説の下での統計モデルのデータの値との相性の良さ(compatibility)の指標
 
-__データの値 $x$ から計算される帰無仮説 $\theta = \theta_0$ のP値は, データの値 $x$ と仮説 $\theta=\theta_0$ の下での統計モデルの相性の良さ(compatibility)の指標である__.
+__データの値 $x$ から計算される検定仮説 $\theta = \theta_0$ のP値は, データの値 $x$ と仮説 $\theta=\theta_0$ の下での統計モデルの相性の良さ(compatibility)の指標である__.
 
-P値が小さいとき, 仮説 $\theta=\theta_0$ 下の統計モデルとデータの値 $x$ があまり整合していないと考える.
+P値が小さいとき, 仮説 $\theta=\theta_0$ の下での統計モデルとデータの値 $x$ があまり整合していないと考える.
 
 これがP値の基本的な使い方である.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: P値はデータの値と帰無仮説下のモデルの相性の良さ(compatibility)の指標.__</span>
+<span style="font-size: 120%; color: red;">__まとめ: P値はデータの値と検定仮説の下でのモデルの相性の良さ(compatibility)の指標.__</span>
 
 
 ## 検定
@@ -1093,9 +1093,9 @@ P値が小さいとき, 仮説 $\theta=\theta_0$ 下の統計モデルとデー�
 
 さらに __有意水準__ と呼ばれる __閾値__(いきち, しきいち) $0 \le \alpha \le 1$ が与えられていると仮定する.  $\alpha$ は目的に合わせて適当に小さな値としておく.  (有意水準として $5\%$ がよく用いられているが, そのことに科学的な合理性はない.)
 
-データの値 $x$ とパラメータの数値 $\theta=\theta_0$ が与えられているとき, (帰無)仮説 $\theta = \theta_0$ のP値を求め,  P値が $\alpha$ 未満になるとき, 仮説 $\theta = \theta_0$ 下の統計モデルは __棄却__ (reject)されたという.  (実際には「帰無仮説は棄却された」と略した言い方をすることが多い.)
+データの値 $x$ とパラメータの数値 $\theta=\theta_0$ が与えられているとき, 仮説 $\theta = \theta_0$ のP値を求め,  P値が $\alpha$ 未満になるとき, 使用している統計モデルの下で仮説 $\theta = \theta_0$ は __棄却__ (reject)されたという.  (「帰無仮説は棄却された」と言うことが多い.)
 
-この手続きを __仮説検定__ (Hypothesis tesitng)もしくは単に __検定__ (test)と呼ぶ.
+この手続きを __仮説検定__ (hypothesis tesitng)もしくは単に __検定__ (test)と呼ぶ.
 
 すなわち, 検定とは, __ある閾値を設けて, データの値との相性の良さ(compatibility)の指標が閾値未満のモデルのパラメータの値を捨て去る手続き__ のことである.
 
@@ -1116,18 +1116,18 @@ $X$ はパラメータの数値を $\theta=\theta_0$ に設定した統計モデ
 
 データの値がその確率変数 $X$ の値であるときの仮説 $\theta = \theta_0$ のP値が有意水準 $\alpha$ 未満になる確率を仮説 $\theta = \theta_0$ に関する __第一種の過誤の確率__ または __αエラーの確率__ と呼ぶ.
 
-すなわち, 仮説 $\theta = \theta_0$ 下の統計モデル内部において, その仮説 $\theta = \theta_0$ が検定の手続きで棄却されてしまうことを __第一種の過誤__ (Type I error, αエラー, α-error)と呼び, その確率を __第一種の過誤の確率__ と呼ぶ.
+すなわち, 仮説 $\theta = \theta_0$ の下での統計モデル内部において, その仮説 $\theta = \theta_0$ が検定の手続きで棄却されてしまうことを __第一種の過誤__ (type I error, αエラー, α-error)と呼び, その確率を __第一種の過誤の確率__ と呼ぶ.
 
 第一種の過誤は検定する仮説 $\theta=\theta_0$ が成立しているモデル内部においてその仮説が棄却されてしまうことを意味しており, その確率は小さい方がよい.  しかし, 第一種の過誤の確率を小さくすることが原因で生じる害(後で述べる検出力の低下)もあるので, 目的に合わせてバランスを取ることが必要である.
 
-__注意:__ 第一種の過誤は「無実のものを有罪にしてしまう誤り」に例えられることがある.
+__注意:__ 第一種の過誤は「無実のものを有罪にしてしまう誤り」に例えられることがある. しかし, 現実の問題では仮説を否定し難くすることが必ずしも正しいとは限らないので注意が必要である. 例えば「害がない」という仮説を否定し難くすることは害を見逃す確率を増やすので危険である. 
 
 __注意:__ 第一種の過誤は統計モデルが自分自身を確率的に否定してしまうことであると言うこともできる.
 
 __注意:__ 現実世界から得たデータの値 $x$ は値が確定した定数だが, 数学的フィクションである統計モデル内ではデータの値が確率変数 $X$ としてランダムに生成されていると考えることができる.  多くの教科書でこの辺について誤解に誘導するような説明があるので注意して欲しい.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: 第一種の過誤＝帰無仮説下の統計モデル内で帰無仮説が棄却されること.__</span>
+<span style="font-size: 120%; color: red;">__まとめ: 第一種の過誤＝検定仮説の下での統計モデル内でその検定仮説自体が棄却されてしまうこと.__</span>
 
 
 ### 第一種の過誤(αエラー)の確率
@@ -1172,7 +1172,7 @@ $$
 
 __証明終__
 
-__注意:__ 上の問題の結果は, 仮説 $\theta=\theta_0$ 下の統計モデル内部において, 同仮説 $\theta=\theta_0$ のP値の分布が一様分布で近似されることを意味している. 次の節の計算例を参照せよ.
+__注意:__ 上の問題の結果は, 仮説 $\theta=\theta_0$ の下での統計モデル内部において, 同仮説 $\theta=\theta_0$ のP値の分布が一様分布で近似されることを意味している. 次の節の計算例を参照せよ.
 
 __注意:__ 実際にはP値を基本に忠実でない方法で定義することもあり, 上の定理の証明が適用できない場合もあるのだが, 検定の理論では第一種の過誤の確率が有意水準に近くなることを要請することが普通である.
 
@@ -1186,7 +1186,7 @@ __注意:__ 実際にはP値を基本に忠実でない方法で定義するこ�
 
 二項分布モデルの4種のP値について, $0$ から $1$ のあいだの有意水準 $\alpha$ 達について第一種の過誤の確率を計算してグラフを描いてみよう.
 
-そのグラフは, 仮説 $p=p_0$ 下の二項分布モデル内部における同仮説 $p=p_0$ のP値の分布の累積分布函数のグラフだと言ってよいので, そのグラフが「45度線」に近ければ近いほど, その分布は一様分布に近いということになる.
+そのグラフは, 仮説 $p=p_0$ の下での二項分布モデル内部における同仮説 $p=p_0$ のP値の分布の累積分布函数のグラフだと言ってよいので, そのグラフが「45度線」に近ければ近いほど, その分布は一様分布に近いということになる.
 
 ```julia
 plot_sim_binomtest(20, 0.3)
@@ -1200,7 +1200,7 @@ plot_sim_binomtest(100, 0.3)
 plot_sim_binomtest(1000, 0.3)
 ```
 
-確かに二項分布モデルの4種のP値の帰無仮説下の二項分布内での累積分布函数は, 確かに45度線を近似していることが分かる.  このことはそのP値の分布が一様分布で近似されることを意味している.
+確かに二項分布モデルの4種のP値の検定仮説の下での二項分布内での累積分布函数は, 確かに45度線を近似していることが分かる.  このことはそのP値の分布が一様分布で近似されることを意味している.
 
 
 ## 信頼区間
@@ -1208,9 +1208,9 @@ plot_sim_binomtest(1000, 0.3)
 
 ### 信頼区間のP値もしくは検定を用いた定義
 
-有意水準 $\alpha$ の検定の手続きをパラメータ $\theta$ のすべての値に適用したとき, 棄却されなかったパラメータ値全体の集合をパラメータ $\theta$ に関する __信頼度__ (信頼係数) $1-\alpha$ の __信頼区間__ (confidence interval)と呼ぶ. ($\alpha = 5\%$ のとき, 信頼度 $1-\alpha$ の信頼区間を $95\%$ 信頼区間と呼ぶことが多い.)
+有意水準 $\alpha$ の検定の手続きをパラメータ $\theta$ のすべての値に適用したとき, 棄却されなかったパラメータ値全体の集合をパラメータ $\theta$ に関する__信頼水準__ (__信頼度__, __信頼係数__) $1-\alpha$ の __信頼区間__ (confidence interval)と呼ぶ. ($\alpha = 5\%$ のとき, 信頼度 $1-\alpha$ の信頼区間を $95\%$ 信頼区間と呼ぶことが多い.)
 
-有意水準 $\alpha$ の検定の手続きでパラメータの値 $\theta=\theta_0$ が棄却されることは, 仮説 $\theta=\theta_0$ 下の統計モデルとデータの値 $x$ との相性の良さの指標(P値)が有意水準 $\alpha$ 未満になることであった.  そのような状況を
+有意水準 $\alpha$ の検定の手続きでパラメータの値 $\theta=\theta_0$ が棄却されることは, 仮説 $\theta=\theta_0$ の下での統計モデルとデータの値 $x$ との相性の良さの指標(P値)が有意水準 $\alpha$ 未満になることであった.  そのような状況を
 
 * 仮説 $\theta=\theta_0$ の下での統計モデルとデータの値 $x$ の相性が悪い
 
@@ -1301,17 +1301,17 @@ $$
 <span style="font-size: 110%; color: red;">__まとめ: 信頼区間と検定が表裏一体であることは有名な教科書群に書いてある.__</span>
 
 
-### 仮説 $\theta=\theta_0$ 下の統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率
+### 仮説 $\theta=\theta_0$ の下での統計モデル内でパラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率
 
 $(x, \theta_0)$ がこの図中の(信頼区間を含む)青の領域の点であることは, 仮説 $\theta = \theta_0$ がデータの値 $x$ によって棄却されないことと同値であり, さらに, データの値 $x$ から決まる信頼区間にパラメータ値 $\theta = \theta_0$ が含まれることとも同値である.
 
-$X$ がパラメータ値 $\theta=\theta_0$ の統計モデルに従う確率変数であると仮定する. $X$ は仮説 $\theta=\theta_0$ 下の統計モデル内で生成された仮想的なデータの値だと考えられる.
+$X$ がパラメータ値 $\theta=\theta_0$ の統計モデルに従う確率変数であると仮定する. $X$ は仮説 $\theta=\theta_0$ の下での統計モデル内で生成された仮想的なデータの値だと考えられる.
 
 P値の定義より $\op{pvalue}(X|\theta_0) < \alpha$ となる確率は $\alpha$ もしくはその近似になるので,  $\op{pvalue}(X|\theta_0) \ge \alpha$ となる確率は $1-\alpha$ もしくはその近似値になる.
 
-そして, $\op{pvalue}(X|\theta_0) \ge \alpha$ という条件は仮説 $\theta=\theta_0$ 下の統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間に $\theta_0$ が含まれることと同値である.
+そして, $\op{pvalue}(X|\theta_0) \ge \alpha$ という条件は仮説 $\theta=\theta_0$ の下での統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間に $\theta_0$ が含まれることと同値である.
 
-ゆえに, 仮説 $\theta=\theta_0$ 下の統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間にパラメータ値 $\theta=\theta_0$ が含まれる確率は $1-\alpha$ またはその近似値になる.
+ゆえに, 仮説 $\theta=\theta_0$ の下での統計モデル内で生成されたデータの値 $X$ から決まる信頼度 $1-\alpha$ の信頼区間にパラメータ値 $\theta=\theta_0$ が含まれる確率は $1-\alpha$ またはその近似値になる.
 
 例えば, 大雑把に言うと, $95\%$ 信頼区間に統計モデル内でデータを生成したパラメータ値が含まれる確率は $95\%$ またはその近似値になる.
 
@@ -1322,7 +1322,7 @@ __注意:__ 「$95\%$ 信頼区間の $95\%$ は確率ではなく, 割合であ
 __注意:__ 「$95\%$ 信頼区間の $95\%$ は確率ではなく, 割合である」と言いたい人達は, データの値 $x$ はすでに確定した数値になっており, 確率的に揺らがないので, データの値 $x$ から計算される信頼区間も確率的に揺らがないので, パラメータ値 $\theta=\theta_0$ が信頼区間に含まれる確率を考えることはできない, というようなことを言いたいのかもしれないが, 上の説明を読めば分かるように的を外している.  $95\%$ 信頼区間の $95\%$ は数学的フィクションであるモデル内確率であり, モデル内で生成されたデータの値は確率変数になっている.  現実とモデルを混同するという典型的に非科学的な考え方に陥っている疑いもある.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: 仮説 $\theta=\theta_0$ 下の統計モデル内部において, 信頼区間がパラメータ値 $\theta=\theta_0$ を含む確率は信頼度 $1-\alpha$ に等しい, もしくはそれに近い値になる.__</span>
+<span style="font-size: 120%; color: red;">__まとめ: 仮説 $\theta=\theta_0$ の下での統計モデル内部において, 信頼区間がパラメータ値 $\theta=\theta_0$ を含む確率は信頼度 $1-\alpha$ に等しい, もしくはそれに近い値になる.__</span>
 
 これも証明するべきことではなく, 「要請」だと考えた方がよい.
 
@@ -1531,15 +1531,15 @@ plot_sim_binomtest(1000, 0.2; xmax=0.1, L=10^6)
 
 大雑把に言うと, 仮説 $\theta=\theta_0$ のP値の __検出力__ (power)はその仮説 $\theta=\theta_0$ と別の仮説 $\theta=\theta_1$ との分解能を意味する.
 
-その文脈で別の仮説 $\theta=\theta_1$ を帰無仮説 $\theta=\theta_0$ の __対立仮説__ (alternative hypothesis)と呼ぶ.
+その文脈で別の仮説 $\theta=\theta_1$ を検定仮説 $\theta=\theta_0$ の __対立仮説__ (alternative hypothesis)と呼ぶ.
 
-帰無仮説 $\theta=\theta_0$ のP値の対立仮説 $\theta=\theta_1 (\ne\theta_0)$ に関する __検出力__ (power)は
+検定仮説 $\theta=\theta_0$ のP値の対立仮説 $\theta=\theta_1 (\ne\theta_0)$ に関する __検出力__ (power)は
 
-* 対立仮説 $\theta=\theta_1$ 下の統計モデル内部で帰無仮説 $\theta=\theta_0$ のP値が有意水準 $\alpha$ 未満になる確率
+* 対立仮説 $\theta=\theta_1$ の下での統計モデル内部で検定仮説 $\theta=\theta_0$ のP値が有意水準 $\alpha$ 未満になる確率
 
 と定義される.  すなわち, 
 
-* $X$ を対立仮説 $\theta=\theta_1$ 下の統計モデルに従う確率変数とし, データの値を $X$ としたとき仮説 $\theta=\theta_0$ が有意水準 $\alpha$ で棄却される確率
+* $X$ を対立仮説 $\theta=\theta_1$ の下での統計モデルに従う確率変数とし, データの値を $X$ としたとき仮説 $\theta=\theta_0$ が有意水準 $\alpha$ で棄却される確率
 
 をそのように呼ぶ.  
 
@@ -1550,10 +1550,10 @@ plot_sim_binomtest(1000, 0.2; xmax=0.1, L=10^6)
 検出力については次の節も参照せよ.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: 検出力＝対立仮説下の統計モデル内で帰無仮説が棄却される確率.__</span>
+<span style="font-size: 120%; color: red;">__まとめ: 検出力＝対立仮説の下での統計モデル内で検定仮説が棄却される確率.__</span>
 
 
-<span style="font-size: 100%; color: red;">__復習: 有意水準 ≈ 第一種の過誤の確率＝帰無仮説下の統計モデル内で帰無仮説が棄却される確率.__</span>
+<span style="font-size: 100%; color: red;">__復習: 有意水準 ≈ 第一種の過誤の確率＝検定仮説の下での統計モデル内でその検定仮説自体が棄却されてしまう確率.__</span>
 
 
 ## Neyman-Pearsonの仮説検定
@@ -1586,9 +1586,9 @@ $$
 対立仮説の検出力がより高い検定法は __より強力__(more powerful)であるという.
 
 
-<span style="font-size: 120%; color: red;">__まとめ: 検出力＝power＝対立仮説下の統計モデル内で帰無仮説が棄却される確率.__</span>
+<span style="font-size: 120%; color: red;">__まとめ: 検出力＝power＝対立仮説の下での統計モデル内で帰無仮説が棄却される確率.__</span>
 
-<span style="font-size: 100%; color: red;">__復習: 第一種の過誤の確率＝帰無仮説下の統計モデル内で帰無仮説が棄却される確率.__</span>
+<span style="font-size: 100%; color: red;">__復習: 第一種の過誤の確率＝帰無仮説の下での統計モデル内で帰無仮説が棄却される確率.__</span>
 
 
 ### Neyman-Pearsonの補題
@@ -1787,7 +1787,7 @@ __補足:__ 上で引用した論文の著者のLehmann氏([Erich Leo Lehmann (1
 
 __補足:__ このノートでは「検定の手続きが1か0かの最終的判断を強いる」という極端な解釈を「統計学は科学的お墨付きを得るための手段ではない」という言い方でも明瞭に否定している.
 
-__補足:__ このノートで採用したP値を「仮説 $\theta=\theta_0$ 下の統計モデルとデータの値 $x$ の相性の良さ(compatibility)の指標」とみなす考え方はFisherの有意性検定の考え方に近いように思われる. そして, それと同時に, Neyman-Pearson的に対立仮説の検出力も重要であるという立場も採用している(その縛り抜きには無意味な検定法を排除できない). 
+__補足:__ このノートで採用したP値を「仮説 $\theta=\theta_0$ の下での統計モデルとデータの値 $x$ の相性の良さ(compatibility)の指標」とみなす考え方はFisherの有意性検定の考え方に近いように思われる. そして, それと同時に, Neyman-Pearson的に対立仮説の検出力も重要であるという立場も採用している(その縛り抜きには無意味な検定法を排除できない). 
 
 __補足:__ P値に関する「第一種の過誤の確率が有意水準 $\alpha$ に近い方がよい」という基準は「検出力が高い方がよい」という基準と密接に関係している. 実際, 保守的過ぎる検定法は検出力が低くなってしまいがちである.
 
@@ -1863,11 +1863,11 @@ P値函数のグラフの例とR言語による描き方に関する解説が以
 
 現実世界から得るデータ $x$ の生成のされ方に関するパラメータ $\theta$ を持つ統計モデルが与えられているとき, データの値 $x$ に関する仮説 $\theta=\theta_0$ のP値は
 
-* 仮説 $\theta = \theta_0$ 下の統計モデル内部でデータの値 $x$ 以上に極端な値が生成される確率もしくはその近似値
+* 仮説 $\theta = \theta_0$ の下での統計モデル内部でデータの値 $x$ 以上に極端な値が生成される確率もしくはその近似値
 
 と定義されるのであった. (「数値 $x$ 以上に極端な値」の意味は別に定義しなければいけない.)
 
-そして, そのようにして計算されるP値は, __仮説 $\theta = \theta_0$ 下の統計モデルとデータの値の相性の良さ(comaptibility)の指標__ として使われ, 適当な閾値(有意水準)を設けて, P値が小さすぎる場合には「相性が悪い」と判定するのであった(これが検定の手続き).
+そして, そのようにして計算されるP値は, __仮説 $\theta = \theta_0$ の下での統計モデルとデータの値の相性の良さ(comaptibility)の指標__ として使われ, 適当な閾値(有意水準)を設けて, P値が小さすぎる場合には「相性が悪い」と判定するのであった(これが検定の手続き).
 
 
 ### 問題: P値に関するよくある誤解
@@ -2046,9 +2046,9 @@ plot_sim_ttest(; dist, n = 1000, L = 10^6)
 
 はすべて誤りである. 各々についてコメントしておこう.
 
-(1) P値の定義と全然違う. P値の定義は「仮説 $\theta=\theta_0$ 下の統計モデル内でデータの値以上に極端な値が生じる確率またはその近似値」であった.
+(1) P値の定義と全然違う. P値の定義は「仮説 $\theta=\theta_0$ の下での統計モデル内でデータの値以上に極端な値が生じる確率またはその近似値」であった.
 
-P値は「データの値と仮説 $\theta=\theta_0$ 下の統計モデルの相性の良さ(compatibility)の指標」として使われる.  統計モデル全体とデータの相性の良さ(compatibility)を見ているのであり, 仮説 $\theta=\theta_0$ 単体との相性の良さを見ているのではない.
+P値は「データの値と仮説 $\theta=\theta_0$ の下での統計モデルの相性の良さ(compatibility)の指標」として使われる.  統計モデル全体とデータの相性の良さ(compatibility)を見ているのであり, 仮説 $\theta=\theta_0$ 単体との相性の良さを見ているのではない.
 
 (2) 検定の手続きで, P値が有意水準より小さいときには, 仮説 $\theta=\theta_0$ だけが疑わしいと考えるのではなく, 統計モデルの前提の全体のどれかも疑わしいと考える必要がある.
 
@@ -2073,7 +2073,7 @@ __解答終__
 
 はどちらも誤りもしくは杜撰な考え方である.
 
-(1) 仮説 $\theta = \theta_0$ 下の統計モデル内部で生成された仮想的なデータの値(確率変数になる)に関するパラメータ $\theta$ に関する $95\%$ 信頼区間に $\theta_0$ が含まれる確率は $95\%$ またはそれに近い値になる.
+(1) 仮説 $\theta = \theta_0$ の下での統計モデル内部で生成された仮想的なデータの値(確率変数になる)に関するパラメータ $\theta$ に関する $95\%$ 信頼区間に $\theta_0$ が含まれる確率は $95\%$ またはそれに近い値になる.
 
 このように $95\%$ 信頼区間の $95\%$ は統計モデル内部での確率になっていると解釈される. ゆえに「確率ではない」と言ってしまうと自明に誤りになる.
 
