@@ -198,6 +198,11 @@ mykurtosis(dist::MixtureModel{Univariate, Continuous}) =
 ```
 
 ```julia
+rawtick(tick=Any[0.5, 0.7, 1, 1.5, 2, 3, 5, 7, 10, 20]) = (tick, string.(tick))
+plot(x -> x^4*exp(-x), 0.4, 30; label="", xscale=:log10, xtick=rawtick())
+```
+
+```julia
 oddsratiohat(a, b, c, d) = safediv(a*d, b*c)
 stderr_logoddsratiohat(a, b, c, d) = √(1/a + 1/b + 1/c + 1/d)
 
@@ -998,9 +1003,13 @@ a, b, c, d = 49, 965, 26, 854
 plot(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald P-value func.")
 vline!([oddsratiohat(a,b,c,d)]; label="ORhat = (ad)/(bc)", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
-plot!(; ytick=0:0.1:1)
+plot!(; xtick=rawtick(Any[0.5, 0.7, 1, 1.5, 2, 3]), ytick=0:0.1:1)
+plot!(; xscale=:log10, legend=:topleft)
 title!("a, b, c, d = $a, $b, $c, $d")
 ```
+
+__注意:__ オッズ比ORに関する横軸は対数スケールになっている.
+
 
 このようにWald版P値函数は, $\omega = \ORhat = (ad)/(bc)$ で最大値の $1$ になり, 「とんがり帽子」型のグラフになる.
 
@@ -1361,12 +1370,15 @@ a, b, c, d = 49, 965, 26, 854
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald P-value func.")
+plot(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 4; label="Wald P-value func.")
 vline!([riskratiohat(a,b,c,d)]; label="RRhat = (a/m)/(c/n)", ls=:dash)
 plot!(; xguide="RR = ρ", yguide="P-value")
-plot!(; ytick=0:0.1:1)
+plot!(; xtick=rawtick(Any[0.5, 0.7, 1, 1.5, 2, 3]), ytick=0:0.1:1)
+plot!(; xscale=:log10, legend=:topleft)
 title!("a, m, c, n = $a, $(a+b), $c, $(c+d)")
 ```
+
+__注意:__ リスク比RRに関する横軸は対数スケールになっている.
 
 <!-- #region -->
 #### R言語によるWald版のリスク比に関する信頼区間の計算の仕方
@@ -2245,14 +2257,18 @@ Wald版のP値函数のグラフと重ねてプロットすると次のように
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.7, 3.5;
+plot(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.4, 4;
     label="Pearson χ² P-value func.")
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5;
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.4, 4;
     label="Wald P-value func.", ls=:dash)
 plot!(; xguide="OR = ω", yguide="P-value")
-plot!(; ytick=0:0.1:1)
+plot!(; xtick=rawtick(Any[0.5, 0.7, 1, 1.5, 2, 3]), ytick=0:0.1:1)
+plot!(; xscale=:log10, legend=:topleft)
 title!("a, b, c, d = $a, $b, $c, $d")
 ```
+
+__注意:__ オッズ比ORに関する横軸は対数スケールになっている.
+
 
 この場合には $a,b,c,d$ が十分に大きいので, ほぼぴったり重なっている!
 
@@ -2988,9 +3004,13 @@ a, b, c, d = 49, 965, 26, 854
 plot(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), 0.5, 3.5; label="Pearson χ² P-value func.")
 plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), 0.5, 3.5; label="Wald P-value func.", ls=:dash)
 plot!(; xguide="RR = ρ", yguide="P-value")
-plot!(; ytick=0:0.1:1)
+plot!(; xtick=rawtick(), ytick=0:0.1:1)
+plot!(; xscale=:log10, legend=:topleft)
 title!("a, b, c, d = $a, $b, $c, $d")
 ```
+
+__注意:__ リスク比RRに関する横軸は対数スケールになっている.
+
 
 この場合には $a,b,c,d$ が十分に大きいので, ほぼぴったり重なっている!
 
@@ -3192,15 +3212,19 @@ a, b, c, d = 49, 965, 26, 854
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.5, 3.5; label="Fisher (Sterne)")
-plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.5, 3.5; label="Fisher (CP)", ls=:dash)
-plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.5, 3.5; label="Pearson χ²", ls=:dashdot)
-plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.5, 3.5; label="Wald", ls=:dot)
+plot(ω -> pvalue_or_sterne(a,b,c,d; ω), 0.7, 3.5; label="Fisher (Sterne)")
+plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), 0.7, 3.5; label="Fisher (CP)", ls=:dash)
+plot!(ω -> pvalue_or_pearson_chisq(a,b,c,d; ω), 0.7, 3.5; label="Pearson χ²", ls=:dashdot)
+plot!(ω -> pvalue_or_wald(a,b,c,d; ω), 0.7, 3.5; label="Wald", ls=:dot)
 plot!(; xguide="OR = ω", yguide="P-value")
-plot!(; ytick=0:0.1:1)
+plot!(; xtick=rawtick(), ytick=0:0.1:1)
+plot!(; xscale=:log10)
 title!("a, b, c, d = $a, $b, $c, $d")
 plot!(size=(600, 300))
 ```
+
+__注意:__ オッズ比ORに関する横軸は対数スケールになっている.
+
 
 Wald型とPearson型のP値函数はほぼぴったり一致している.
 
@@ -3474,6 +3498,24 @@ __注意:__ これは乱数生成による Monte Carlo 法によるP値の計算
 * [イベルメクチン論文の図の再現](https://github.com/genkuroki/public/blob/main/0029/Supplementary%20Appendix%20Figure%20S6.ipynb)
 
 ```julia
+xs_default = Any[
+    0.001, 0.0015, 0.002, 0.003, 0.005, 0.007,
+    0.01, 0.015, 0.02, 0.03, 0.05, 0.07,
+    0.1, 0.15, 0.2, 0.3, 0.5, 0.7,
+    1, 1.5, 2, 3, 5, 7,
+    10, 15, 20, 30, 50, 70,
+    100, 150, 200, 300, 500, 700
+]
+
+function logtick(xmin, xmax; xs=xs_default) 
+    tick = xs[xmin .≤ xs .≤ xmax]
+    (tick, string.(tick))
+end
+
+logtick(0.5, 10)
+```
+
+```julia
 """Bayes版P値函数達を作る函数"""
 function make_pvalue_or_rr_bayes(a, b, c, d; M=10^6, conjprior=(1, 1))
     α, β = conjprior
@@ -3491,7 +3533,7 @@ end
 function plot_pvalue_functions(a, b, c, d;
         xlim_or=Tuple(confint_or_pearson_chisq(a, b, c, d; α=1e-3)),
         xlim_rr=Tuple(confint_rr_pearson_chisq(a, b, c, d; α=1e-3)),
-        M=10^6, conjprior=(1, 1), kwargs...)
+        xs=xs_default, M=10^6, conjprior=(1, 1), kwargs...)
     pvalue_or_bayes, pvalue_rr_bayes = make_pvalue_or_rr_bayes(a, b, c, d; M, conjprior)
 
     P = plot()
@@ -3501,7 +3543,8 @@ function plot_pvalue_functions(a, b, c, d;
     #plot!(ω -> pvalue_or_sterne(a,b,c,d; ω), xlim_or...; label="Fisher (Sterne)")
     #plot!(ω -> pvalue_or_clopper_pearson(a,b,c,d; ω), xlim_or...; label="Fisher (CP)")
     plot!(; xguide="OR = ω", yguide="P-value")
-    plot!(; ytick=0:0.1:1)
+    plot!(; xtick=logtick(xlim_or...; xs), ytick=0:0.1:1)
+    plot!(; xscale=:log10)
     title!("a, b, c, d = $a, $b, $c, $d")
 
     Q = plot()
@@ -3509,7 +3552,8 @@ function plot_pvalue_functions(a, b, c, d;
     plot!(ρ -> pvalue_rr_wald(a,b,c,d; ρ), xlim_rr...; label="Wald", ls=:dashdot)
     plot!(ρ -> pvalue_rr_pearson_chisq(a,b,c,d; ρ), xlim_rr...; label="Pearson χ²", ls=:dash)
     plot!(; xguide="RR = ρ", yguide="P-value")
-    plot!(; ytick=0:0.1:1)
+    plot!(; xtick=logtick(xlim_or...; xs), ytick=0:0.1:1)
+    plot!(; xscale=:log10)
     title!("a, b, c, d = $a, $b, $c, $d")
 
     plot(P, Q; size=(800, 250),
@@ -3522,8 +3566,11 @@ end
 
 ```julia
 a, b, c, d = 49, 965, 26, 854
-plot_pvalue_functions(a, b, c, d)
+plot_pvalue_functions(a, b, c, d; xs=Any[0.8, 1, 1.2, 1.5, 1.8, 2, 2.4, 3])
 ```
+
+__注意:__ オッズ比ORとリスク比RRに関する横軸は対数スケールにしてある.
+
 
 このように, Bayes版P値函数は通常のWald版およびPearsonのχ²検定版のP値函数によく一致している.
 
@@ -3539,6 +3586,9 @@ plot_pvalue_functions(a, b, c, d; conjprior=(1, 1))
 a, b, c, d = 10, 3, 5, 9
 plot_pvalue_functions(a, b, c, d; conjprior=(1/3, 1/3))
 ```
+
+__注意:__ オッズ比ORとリスク比RRに関する横軸は対数スケールにしてある.
+
 
 事前分布を $\Beta(1/3, 1/3)$ にした方がよく一致する理由は, Bayes版P値函数として, 等裾区間(とうきょくかん, equal-tailed interval, ETI)な信用区間を与えるものを採用したからである.  Bayes版P値函数を最高密度区間(highest density interval, HDI)の信用区間を与えるものを採用すれば, 一様事前分布 $\Beta(1,1)$ での一致が良くなる.
 
@@ -3570,8 +3620,11 @@ __この論文ではリスク比の区間推定方法としてちょうど上で
 
 ```julia
 a, b, c, d = 100, 579, 111, 568
-plot_pvalue_functions(a, b, c, d)
+plot_pvalue_functions(a, b, c, d; xs=Any[0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3])
 ```
+
+__注意:__ オッズ比ORとリスク比RRに関する横軸は対数スケールになっている.
+
 
 論文ではBayes統計の方法を使って区間推定しているが, P値函数達に関するこのグラフを見れば分かるように, この場合には, Bayes統計版ではないWald版やPearsonのχ²検定版の信頼区間を使っても同じ結果が得られる.
 
