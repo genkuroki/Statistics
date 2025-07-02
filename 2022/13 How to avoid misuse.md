@@ -910,6 +910,8 @@ $$
 
 * Dominic Lusinchi, “President” Landon and the 1936 Literary Digest Poll: Were automobile and telephone owners to blame?, Social Science History, 2012. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
 
+* Peverill Squire, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly, 1988. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
+
 リテラリ―・ダイジェスト誌の予想が失敗した理由は__無回答バイアス__ ([non-response bias](https://en.wikipedia.org/wiki/Participation_bias))であったと考えられている.
 
 すなわち, ルーズベルト候補の支持者達のアンケートに答える割合は低く, ランドン候補の支持者達は答える割合は高く, アンケートに答えた人達の中ではランドン候補が優勢になってしまったということが, 予測失敗の主な原因らしい.
@@ -997,6 +999,7 @@ $$ -->
 しかし, 上の文献には俗説が書かれているので取り扱いには注意が必要である. その点については次の論文を参照して欲しい:
 
 * Dominic Lusinchi, “President” Landon and the 1936 Literary Digest Poll: Were automobile and telephone owners to blame?, Social Science History, 2012. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
+* Peverill Squire, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly, 1988. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
 
 ウィキペディアでの説明も参考になる:
 
