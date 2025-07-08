@@ -102,7 +102,7 @@ $
 
 <!-- #region toc=true -->
 <h1>目次<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予測の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予測の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#選挙の予測に関する参考文献" data-toc-modified-id="選挙の予測に関する参考文献-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>選挙の予測に関する参考文献</a></span></li></ul></li><li><span><a href="#2つのグループを比較するときの注意" data-toc-modified-id="2つのグループを比較するときの注意-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>2つのグループを比較するときの注意</a></span><ul class="toc-item"><li><span><a href="#データは偏っていることが多い" data-toc-modified-id="データは偏っていることが多い-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>データは偏っていることが多い</a></span></li><li><span><a href="#2つのグループを比較するときの注意に関する参考資料" data-toc-modified-id="2つのグループを比較するときの注意に関する参考資料-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>2つのグループを比較するときの注意に関する参考資料</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用" data-toc-modified-id="P値や信頼区間の誤用-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値や信頼区間の誤用</a></span><ul class="toc-item"><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#P値の正しい使い方" data-toc-modified-id="P値の正しい使い方-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>P値の正しい使い方</a></span></li><li><span><a href="#復習:-累積分布函数-cdf-と分位点函数-quantile-の定義" data-toc-modified-id="復習:-累積分布函数-cdf-と分位点函数-quantile-の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>復習: 累積分布函数 cdf と分位点函数 quantile の定義</a></span></li><li><span><a href="#信頼区間の定義" data-toc-modified-id="信頼区間の定義-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>信頼区間の定義</a></span></li><li><span><a href="#信頼区間の正しい解釈の仕方" data-toc-modified-id="信頼区間の正しい解釈の仕方-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>信頼区間の正しい解釈の仕方</a></span></li><li><span><a href="#P値の誤用の例" data-toc-modified-id="P値の誤用の例-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>P値の誤用の例</a></span><ul class="toc-item"><li><span><a href="#P値は仮説が正しい確率ではない" data-toc-modified-id="P値は仮説が正しい確率ではない-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>P値は仮説が正しい確率ではない</a></span></li><li><span><a href="#単独のP値のみを使って重要な決定をしてはいけない" data-toc-modified-id="単独のP値のみを使って重要な決定をしてはいけない-5.6.2"><span class="toc-item-num">5.6.2&nbsp;&nbsp;</span>単独のP値のみを使って重要な決定をしてはいけない</a></span></li><li><span><a href="#扱う仮説達の中で正しいものの割合も重要" data-toc-modified-id="扱う仮説達の中で正しいものの割合も重要-5.6.3"><span class="toc-item-num">5.6.3&nbsp;&nbsp;</span>扱う仮説達の中で正しいものの割合も重要</a></span></li><li><span><a href="#すべてを正直に報告しなければいけない" data-toc-modified-id="すべてを正直に報告しなければいけない-5.6.4"><span class="toc-item-num">5.6.4&nbsp;&nbsp;</span>すべてを正直に報告しなければいけない</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用に関する参考資料" data-toc-modified-id="P値や信頼区間の誤用に関する参考資料-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>P値や信頼区間の誤用に関する参考資料</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#データ全体の様子を適切なグラフ作画によって確認せよ！" data-toc-modified-id="データ全体の様子を適切なグラフ作画によって確認せよ！-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>データ全体の様子を適切なグラフ作画によって確認せよ！</a></span><ul class="toc-item"><li><span><a href="#Anscombeの例" data-toc-modified-id="Anscombeの例-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Anscombeの例</a></span></li><li><span><a href="#問題:-Anscombeの例" data-toc-modified-id="問題:-Anscombeの例-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>問題: Anscombeの例</a></span></li><li><span><a href="#データサウルス" data-toc-modified-id="データサウルス-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>データサウルス</a></span></li><li><span><a href="#問題:-データサウルス" data-toc-modified-id="問題:-データサウルス-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>問題: データサウルス</a></span></li><li><span><a href="#箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること" data-toc-modified-id="箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>箱ひげ図は十分に大きなサイズの単峰型のデータにのみ使用すること</a></span></li><li><span><a href="#不適切な箱ひげ図の例" data-toc-modified-id="不適切な箱ひげ図の例-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>不適切な箱ひげ図の例</a></span></li><li><span><a href="#箱ひげ図などの正しい使い方" data-toc-modified-id="箱ひげ図などの正しい使い方-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>箱ひげ図などの正しい使い方</a></span></li><li><span><a href="#ゴリラ" data-toc-modified-id="ゴリラ-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>ゴリラ</a></span></li><li><span><a href="#問題:-ゴリラ" data-toc-modified-id="問題:-ゴリラ-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>問題: ゴリラ</a></span></li></ul></li><li><span><a href="#印象操作のためにグラフを利用しない" data-toc-modified-id="印象操作のためにグラフを利用しない-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>印象操作のためにグラフを利用しない</a></span><ul class="toc-item"><li><span><a href="#3次元円グラフは絶対に避ける" data-toc-modified-id="3次元円グラフは絶対に避ける-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>3次元円グラフは絶対に避ける</a></span></li></ul></li><li><span><a href="#無作為抽出の失敗に注意を払う" data-toc-modified-id="無作為抽出の失敗に注意を払う-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>無作為抽出の失敗に注意を払う</a></span><ul class="toc-item"><li><span><a href="#1936年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1936年のアメリカ大統領選挙の結果の予測の失敗-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>1936年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#1948年のアメリカ大統領選挙の結果の予測の失敗" data-toc-modified-id="1948年のアメリカ大統領選挙の結果の予測の失敗-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>1948年のアメリカ大統領選挙の結果の予測の失敗</a></span></li><li><span><a href="#選挙の予測に関する参考文献" data-toc-modified-id="選挙の予測に関する参考文献-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>選挙の予測に関する参考文献</a></span></li></ul></li><li><span><a href="#2つのグループを比較するときの注意" data-toc-modified-id="2つのグループを比較するときの注意-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>2つのグループを比較するときの注意</a></span><ul class="toc-item"><li><span><a href="#データは偏っていることが多い" data-toc-modified-id="データは偏っていることが多い-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>データは偏っていることが多い</a></span></li><li><span><a href="#2つのグループを比較するときの注意に関する参考資料" data-toc-modified-id="2つのグループを比較するときの注意に関する参考資料-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>2つのグループを比較するときの注意に関する参考資料</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用" data-toc-modified-id="P値や信頼区間の誤用-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>P値や信頼区間の誤用</a></span><ul class="toc-item"><li><span><a href="#P値の定義" data-toc-modified-id="P値の定義-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>P値の定義</a></span></li><li><span><a href="#P値の正しい使い方" data-toc-modified-id="P値の正しい使い方-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>P値の正しい使い方</a></span></li><li><span><a href="#復習:-累積分布函数-cdf-と分位点函数-quantile-の定義" data-toc-modified-id="復習:-累積分布函数-cdf-と分位点函数-quantile-の定義-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>復習: 累積分布函数 cdf と分位点函数 quantile の定義</a></span></li><li><span><a href="#信頼区間の定義" data-toc-modified-id="信頼区間の定義-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>信頼区間の定義</a></span></li><li><span><a href="#信頼区間の正しい解釈の仕方" data-toc-modified-id="信頼区間の正しい解釈の仕方-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>信頼区間の正しい解釈の仕方</a></span></li><li><span><a href="#P値の誤用の例" data-toc-modified-id="P値の誤用の例-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>P値の誤用の例</a></span><ul class="toc-item"><li><span><a href="#P値は仮説が正しい確率ではない" data-toc-modified-id="P値は仮説が正しい確率ではない-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>P値は仮説が正しい確率ではない</a></span></li><li><span><a href="#単独のP値のみを使って重要な決定をしてはいけない" data-toc-modified-id="単独のP値のみを使って重要な決定をしてはいけない-5.6.2"><span class="toc-item-num">5.6.2&nbsp;&nbsp;</span>単独のP値のみを使って重要な決定をしてはいけない</a></span></li><li><span><a href="#扱う仮説達の中で正しいものの割合も重要" data-toc-modified-id="扱う仮説達の中で正しいものの割合も重要-5.6.3"><span class="toc-item-num">5.6.3&nbsp;&nbsp;</span>扱う仮説達の中で正しいものの割合も重要</a></span></li><li><span><a href="#実際の検出力が低くなったせいで再現率が低くなる場合がある" data-toc-modified-id="実際の検出力が低くなったせいで再現率が低くなる場合がある-5.6.4"><span class="toc-item-num">5.6.4&nbsp;&nbsp;</span>実際の検出力が低くなったせいで再現率が低くなる場合がある</a></span></li><li><span><a href="#すべてを正直に報告しなければいけない" data-toc-modified-id="すべてを正直に報告しなければいけない-5.6.5"><span class="toc-item-num">5.6.5&nbsp;&nbsp;</span>すべてを正直に報告しなければいけない</a></span></li></ul></li><li><span><a href="#P値や信頼区間の誤用に関する参考資料" data-toc-modified-id="P値や信頼区間の誤用に関する参考資料-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>P値や信頼区間の誤用に関する参考資料</a></span></li></ul></li></ul></div>
 <!-- #endregion -->
 
 ```julia
@@ -910,15 +910,40 @@ $$
 
 * Dominic Lusinchi, “President” Landon and the 1936 Literary Digest Poll: Were automobile and telephone owners to blame?, Social Science History, 2012. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
 
-* Peverill Squire, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly, 1988. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
-
 リテラリ―・ダイジェスト誌の予想が失敗した理由は__無回答バイアス__ ([non-response bias](https://en.wikipedia.org/wiki/Participation_bias))であったと考えられている.
 
-すなわち, ルーズベルト候補の支持者達のアンケートに答える割合は低く, ランドン候補の支持者達は答える割合は高く, アンケートに答えた人達の中ではランドン候補が優勢になってしまったということが, 予測失敗の主な原因らしい.
+上の論文では1937年のギャラップ社の調査結果のデータから, リテラリ―・ダイジェスト誌のアンケートが送付された人達の中で, アンケートを回答した人達と回答しなかった人達ではどちらをどれだけ支持しているかが違っていた(次の表は上の論文のTable 2より):
 
-アンケート調査結果の偏りは, アンケートを募った対象が偏っていることだけではなく, アンケートに答える傾向が強い人達が偏っていることによっても生じる.
+| | 回答した (23.8%) | 回答しなかった (76.2%) | 全体 (100%) |
+| :--- | :---: | :---: | :---: |
+| ルーズベルト | 42.9% | 60.9% | 56.6% |
+| ランドン     | 57.1% | 39.1% | 43.4% |
+
+この表を誰を支持したかで分類し直すと次のようになる:
+
+| | ルーズベルト | ランドン |
+| :--- | :---: | :---: |
+| 回答した       | 18.0% | 31.3% |
+| 回答しなかった | 82.0% | 68.7% | 
+| 全体           | 56.6% | 43.4% |
+
+以上の表より以下が読み取れる.
+
+* リテラリ―・ダイジェスト誌のアンケートが送付された人達全体では, ルーズベルト候補の支持者の割合の方が高かった.
+* しかし, ランドン候補支持者達のアンケートの回答率の方が高かったせいで, アンケートに回答した人達の中ではランドン候補が優勢になってしまった.
+
+このようにアンケート調査結果の偏りは, アンケートを募った対象が偏っていることだけではなく, アンケートに答える傾向が強い人達が偏っていることによっても生じる.
 
 この事例から, たとえサイズが200万を軽く超える __ビッグデータ__ であっても, その内訳が偏っているならば, そのデータを使った予測は大外れしてしまうことがわかる.
+
+```julia
+@show 0.238 * 0.429 + 0.762 * 0.609
+@show 0.238 * 0.429 / (0.238 * 0.429 + 0.762 * 0.609)
+@show 0.762 * 0.609 / (0.238 * 0.429 + 0.762 * 0.609)
+@show 0.238 * 0.571 + 0.762 * 0.391
+@show 0.238 * 0.571 / (0.238 * 0.571 + 0.762 * 0.391)
+@show 0.762 * 0.391 / (0.238 * 0.571 + 0.762 * 0.391);
+```
 
 ```julia
 @time setprecision(50) do
@@ -1000,6 +1025,8 @@ $$ -->
 
 * Dominic Lusinchi, “President” Landon and the 1936 Literary Digest Poll: Were automobile and telephone owners to blame?, Social Science History, 2012. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
 * Peverill Squire, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly, 1988. \[[Google Scholar](https://scholar.google.co.jp/scholar?cluster=5805358583625636408)\]
+
+前者の論文には後者の分析をより精密にした結果が含まれている.
 
 ウィキペディアでの説明も参考になる:
 
@@ -1416,8 +1443,25 @@ plot(w -> R_1(α, β, w), 0, 1; label="")
 plot!(xtick=0:0.05:1, ytick=0:0.05:1, xrotation=30)
 plot!(xguide="w", yguide="R₁")
 plot!(size=(600, 400))
-title!("R₁ for α=$α, 1-β=$(1-β)")
+title!("R₁ for α=$(round(α; sigdigits=3)), 1-β=$(round(1-β; sigdigits=3))")
 ```
+
+#### 実際の検出力が低くなったせいで再現率が低くなる場合がある
+
+上の理想化された設定においてテストする薬が実際に効く場合であっても, 検出力 $1-\beta$ の確率でしか薬が効くと判定されない.
+
+再現実験では, すでに得られている効果の大きさの点推定値を使って, 検出力を例えば $80\%$ になるような標本サイズを計算してそのサイズのデータを取得することが多い. しかし, すでに得られている効果の大きさの推定値が過大評価になっていて, 実際の効果の大きさが想定よりも小さい場合には, そのようにして求めた標本サイズでの検出力は $80\%$ よりも低い値になってしまう.  そのような場合には再現確率は想定よりも低くなってしまう.
+
+標本サイズが小さくてかつP値も小さい場合には数学的必然として効果の大きさの点推定値は大きくなってしまう. だから, 小さ過ぎる標本サイズと小さなP値の組み合わせの報告における効果の大きさの点推定値は過大評価になってしまいがちである.  そのような効果の大きさの推定値を用いて検出力 $80\%$ が保証される標本サイズを求めると, 本当に必要な標本サイズよりも小さくなってしまい, 再現実験にも失敗する確率が高まる.
+
+こういう類のことが「再現性の危機」に関する議論で無視されていることが多いという問題については次の論文を参照せよ.
+
+* Carol Ting and Sander Greenland, Forcing a deterministic frame on probabilistic phenomena: a communication blind spot in media coverage of the “replication crisis”, Science Communication, 2024. [Google Scholar](https://scholar.google.co.jp/scholar?cluster=6028850411184048306)
+
+「再現性の危機」については杜撰な議論が横行しているので注意が必要である.  特に「1つの研究だけで科学的に確立された結果が得られるのではない」という科学的な常識が無視されていることが問題である.  この点については次の「再現性を期待しなければ再現性危機は存在しない」論文を参照せよ:
+
+* Valentin Amrhein,David Trafimow, and Sander Greenland, Inferential Statistics as Descriptive Statistics: There Is No Replication Crisis if We Don’t Expect Replication, The American Statistician, Volume 73, 2019. [Google Scholar](https://scholar.google.co.jp/scholar?cluster=3023429090384832581)
+
 
 #### すべてを正直に報告しなければいけない
 
