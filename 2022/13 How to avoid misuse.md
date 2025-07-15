@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -558,6 +558,7 @@ risk_ratio_example2;
 [Anscombeの例](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)については
 
 * [「標本分布について」のノート](https://nbviewer.org/github/genkuroki/Statistics/blob/master/2022/04%20Distribution%20of%20samples.ipynb)
+* [アンスコムの例 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%82%B9%E3%82%B3%E3%83%A0%E3%81%AE%E4%BE%8B)
 
 の必修問題を参照せよ.
 
@@ -565,7 +566,7 @@ risk_ratio_example2;
 Anscombe_quartet
 ```
 
-4つのデータの標本平均 $\xbar$, $\ybar$ と不偏分散 $s_x^2$, $s_y^2$ と不偏共分散 $s_{xy}$ はほぼ一致し, その結果, 回帰直線 $y = \hat\alpha + \hat\beta x$ もほぼ一致する.
+4つのデータの標本平均 $\xbar$, $\ybar$ と不偏共分散 $s_x^2$, $s_y^2$ と不偏共分散 $s_{xy}$ はほぼ一致し, その結果, 回帰直線 $y = \hat\alpha + \hat\beta x$ もほぼ一致する.
 
 このようなデータの場合にコンピュータで回帰直線だけを計算してしまうと, 不適切な回帰分析をしてしまう可能性がある. 
 
