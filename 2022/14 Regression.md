@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -268,7 +268,7 @@ $$
 
 $x=(x_1,\ldots,x_n)$ がない場合として回帰ではない統計モデルが得られる.
 
-__例:__ 比率の信頼区間の計算で使われる統計モデルは, 二項分布モデル
+__例:__ 母比率の信頼区間の計算で使われる統計モデルは, 二項分布モデル
 
 $$
 P(k|n,p) = \binom{n}{k} p^k(1-p)^{n-k}  \quad (k=0,1,\ldots,n)
@@ -276,7 +276,7 @@ $$
 
 であった.  この場合には $y$ にあたる変数が $k$ で, $x$ にあたる変数はない.
 
-__例:__ 平均の信頼区間の $t$ 分布を使った計算法の基礎になる統計モデルは, 正規分布の標本分布
+__例:__ 母平均の信頼区間の $t$ 分布を使った計算法の基礎になる統計モデルは, 正規分布の標本分布
 
 $$
 \begin{aligned}
