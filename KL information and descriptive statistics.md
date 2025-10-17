@@ -1,25 +1,26 @@
 ---
 jupyter:
   jupytext:
+    cell_metadata_json: true
     formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.2.1
+      format_version: '1.3'
+      jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia 1.6.0-rc1 depwarn -O3
+    display_name: Julia
     language: julia
-    name: julia-1.6-depwarn-o3
+    name: julia
 ---
 
 # Kullback-Leibler情報量と記述統計
 
 黒木玄
 
-2019-09-13～2019-09-23, 2019-10-15, 2020-01-03, 2020-11-02
+2019-09-13～2019-09-23, 2019-10-15, 2020-01-03, 2020-11-02, 2025-10-17
 
-* Copyright 2019, 2020 Gen Kuroki
+* Copyright 2019, 2020, 2025 Gen Kuroki
 * License: [MIT](https://opensource.org/licenses/MIT)
 
 このファイルのJupyter notebook版は
@@ -75,36 +76,39 @@ default(:bglegend, plot_color(default(:bg), 0.5))
 default(:fglegend, plot_color(ifelse(isdark(plot_color(default(:bg))), :white, :black), 0.6));
 pal = palette(:default)
 
-pyplotclf() = if backend() == Plots.PyPlotBackend(); PyPlot.clf(); end 
+# pyplotclf() = if backend() == Plots.PyPlotBackend(); PyPlot.clf(); end 
 
-function retina(P::Plots.Plot; scale=3)
-    Q = deepcopy(P)
-    Q[:dpi] = round(Int, scale*P[:dpi])
-    base64 = base64encode(show, MIME("image/png"), Q)
-    mime = "image/png"
-    width = P[:size][1]
-    display("text/html", """<img width=$(width) src="data:$(mime);base64,$(base64)"/>""")
-    pyplotclf()
-end
+# function retina(P::Plots.Plot; scale=3)
+#     Q = deepcopy(P)
+#     Q[:dpi] = round(Int, scale*P[:dpi])
+#     base64 = base64encode(show, MIME("image/png"), Q)
+#     mime = "image/png"
+#     width = P[:size][1]
+#     display("text/html", """<img width=$(width) src="data:$(mime);base64,$(base64)"/>""")
+#     pyplotclf()
+# end
+#
+retina(P::Plots.Plot; scale=3) = P
 
-retina(; scale=3) = (P -> retina(P; scale=scale))
+retina(; scale=3) = identity
 
-function retinasavefig(P::Plots.Plot, fn::AbstractString; scale=3)
-    Q = deepcopy(P)
-    Q[:dpi] = round(Int, scale*P[:dpi])
-    savefig(Q, fn)
-    pyplotclf()
-end
+# function retinasavefig(P::Plots.Plot, fn::AbstractString; scale=3)
+#     Q = deepcopy(P)
+#     Q[:dpi] = round(Int, scale*P[:dpi])
+#     savefig(Q, fn)
+#     pyplotclf()
+# end
 
-function retinasavedisp(P::Plots.Plot, fn::AbstractString; scale=3)
-    retinasavefig(P, fn; scale=scale)
-    displayfile("image/png", fn; tag="img width=$(P[:size][1])")
-    pyplotclf()
-end
+# function retinasavedisp(P::Plots.Plot, fn::AbstractString; scale=3)
+#     retinasavefig(P, fn; scale=scale)
+#     displayfile("image/png", fn; tag="img width=$(P[:size][1])")
+#     pyplotclf()
+# end
 
-retinasavedisp(fn::AbstractString; scale=3) = (P -> retinasavedisp(P, fn; scale=scale))
+# retinasavedisp(fn::AbstractString; scale=3) = (P -> retinasavedisp(P, fn; scale=scale))
 
-pyplot(fmt=:auto, size=(400, 250), titlefontsize=10)
+#pyplot(fmt=:auto, size=(400, 250), titlefontsize=10)
+default(fmt=:png, size=(500, 340), titlefontsize=14, legendfontsize=14)
 
 using Random
 using QuadGK
@@ -184,7 +188,7 @@ g(y) = n*log(n) - n - y^2/2
 y = range(-3, 3, length=400)
 plot(title="\$n = $n\$", ylim=(5901, 5911), ytick=5901:5911)
 plot!(y, @.(f(n + √n*y)), label=L"f(n+\sqrt{n}\,y)", lw=1.5)
-plot!(y, g.(y), label=L"n\,\log\,n - n - y^2/2\$", lw=1.5, ls=:dash) |> retina
+plot!(y, g.(y), label=L"n\,\log\,n - n - y^2/2", lw=1.5, ls=:dash) |> retina
 ```
 
 確かによく一致している. $y<0$ で $f$ より $n\log n - n - y^2/2$ が大きく, $y>0$ ではその逆になる.  実際に積分すると, その違いが互いに打ち消し合うことによって精度が上がる仕組みになっている.
@@ -228,7 +232,7 @@ $$
 n!\prod_{i=1}^r \frac{p_i^{k_i}}{k_i!}.
 $$
 
-$\sum_{i=1}^r k_i = n$ などが成立していることに注意せよ. $q_i\geqq 0$, $\sum_{i=1}^r q_i=1$ を満たす固定された $q_i$ 達を与えて, 
+$\sum_{i=1}^r k_i = n$ などが成立していることに注意せよ. $q_i\ge 0$, $\sum_{i=1}^r q_i=1$ を満たす固定された $q_i$ 達を与えて, 
 
 $$
 k_i \approx n q_i
@@ -537,21 +541,22 @@ ns = [10;10;10;10;10:3:300;300;300;300;300]
     X = @view XX[1:n]
 
     normal_gdist = fit_mle(Normal, X)
-    P1 = histogram(X; normed=true, bins=range(0, 5, step=0.25), alpha=0.5, label="sample")
+    P1 = histogram(X; normed=true, bins=0:0.25:5, alpha=0.5, label="sample")
     plot!(x -> pdf(normal_gdist, x); label="normal approx")
     plot!(legend=false, xlim=(-0.5, 5), ylim=(0, 1.2))
 
-    loglik(μ, σ) = sum(logpdf(Normal(μ, σ), x) for x in X)
+    loglik(μ, σ) = loglikelihood(Normal(μ, σ), X)
     μ = range(0, 2, length=200)
     σ = range(0.1, 1.5, length=200)
-    P2 = heatmap(μ, σ, exp.(loglik.(μ', σ)); xlabel="mu", ylabel="sigma",
+    maxloglik = maximum(loglik.(μ', σ))
+    P2 = heatmap(μ, σ, exp.(loglik.(μ', σ) .- maxloglik); xlabel="mu", ylabel="sigma",
         size=(300, 320), colorbar=false, title="n = $n")
-    
-    plot(P1, P2, size=(600, 250))
+
+    plot(P1, P2; size=(600, 250), bottommargin=4Plots.mm)
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/lik_normal.gif", fps=10)
-displayfile("image/gif", "images/lik_normal.gif")
+#displayfile("image/gif", "images/lik_normal.gif")
 ```
 
 ## 中央値
@@ -559,11 +564,11 @@ displayfile("image/gif", "images/lik_normal.gif")
 
 ### 中央値の定義
 
-確率変数 $X$ の中央値 $a_0$ は $P(X \leqq a_0)\leqq 1/2$ かつ $P(X \geqq a_0)\geqq 1/2$ という条件で定義される.
+確率変数 $X$ の中央値 $a_0$ は $P(X \le a_0)\ge 1/2$ かつ $P(X \ge a_0)\ge 1/2$ という条件で定義される.
 
 例えば, $P(X < a_0) = 0.3$, $P(X = a_0) = 0.3$, $P(X > a_0)=0.4$ のとき, $a_0$ は確率変数 $X$ の中央値になる.
 
-中央値は一意的に決まるとは限らない. 例えば $1,2,3,4,5,6$ のどれかの値に等確率でなる確率変数 $X$ の中央値に $a_0$ がなるための必要十分条件は $3\leqq a_0\leqq 4$ である.  $a_0=3$ のとき $P(X\leqq a_0) = 3/6 = 1/2$ かつ $P(X\geqq a_0) = 4/6 > 1/2$ となる.
+中央値は一意的に決まるとは限らない. 例えば $1,2,3,4,5,6$ のどれかの値に等確率でなる確率変数 $X$ の中央値に $a_0$ がなるための必要十分条件は $3\le a_0\le 4$ である.  $a_0=3$ のとき $P(X\le a_0) = 3/6 = 1/2$ かつ $P(X\ge a_0) = 4/6 > 1/2$ となる.
 
 確率変数 $X$ の中央値 $a_0$ について $P(X=a_0) = 0$ ならば, $P(X < a_0) = P(X > a_0) = 1/2$ となる.  逆にこの条件が満たされるとき, $a_0$ は $P(X=a_0)=0$ となるような $X$ の中央値になる.
 
@@ -572,17 +577,17 @@ displayfile("image/gif", "images/lik_normal.gif")
 
 **定理:** 確率変数 $X$ の中央値 $a_0$ は $a$ の函数 $E[|X-a|]$ を $a=a_0$ で最小化する.
 
-**証明:** 実数 $a_0$ は確率変数 $X$ の中央値であると仮定する. すなわち, $P(X\leqq a_0)\geqq 1/2$ かつ $P(X\geqq a_0)\geqq 1/2$ であると仮定する. 
+**証明:** 実数 $a_0$ は確率変数 $X$ の中央値であると仮定する. すなわち, $P(X\le a_0)\ge 1/2$ かつ $P(X\ge a_0)\ge 1/2$ であると仮定する. 
 
-$P(X=a_0)=0$ ならば $r = 1/2$ とおき, $P(x=a_0)>0$ ならば $P(X < a_0) + r P(X = a_0) = 1/2$ となるように実数 $r$ を定める. このとき, $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ となる.  さらに, $P(X < a_0) + P(X = a_0) \geqq 1/2$ と $P(X < a_0) + r P(X = a_0) = 1/2$ の差を考えることによって, $(1 - r)P(X = a_0)\geqq 0$ を得るので, $r\leqq 1$ となることがわかる.  同様に, $P(X > a_0) + P(X = a_0) \geqq 1/2$ と $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ の差を考えることによって, $r P(X = a_0)\geqq 0$ を得るので, $r\geqq 0$ となることもわかる.  これで,
+$P(X=a_0)=0$ ならば $r = 1/2$ とおき, $P(x=a_0)>0$ ならば $P(X < a_0) + r P(X = a_0) = 1/2$ となるように実数 $r$ を定める. このとき, $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ となる.  さらに, $P(X < a_0) + P(X = a_0) \ge 1/2$ と $P(X < a_0) + r P(X = a_0) = 1/2$ の差を考えることによって, $(1 - r)P(X = a_0)\ge 0$ を得るので, $r\le 1$ となることがわかる.  同様に, $P(X > a_0) + P(X = a_0) \ge 1/2$ と $P(X > a_0) + (1 - r)P(X = a_0) = 1/2$ の差を考えることによって, $r P(X = a_0)\ge 0$ を得るので, $r\ge 0$ となることもわかる.  これで,
 
 $$
-0\leqq r \leqq 1, \quad
+0\le r \le 1, \quad
 P(X < a_0) + r P(X = a_0) = 1/2, \quad
 P(X > a_0) + (1 - r)P(X = a_0) = 1/2
 $$
 
-が成立するようにできた.  $r=1$ ならば $P(X\geqq a_0)=P(X<a_0)=1/2$ となり, $r=0$ ならば $P(X\leqq a_0)=P(X>a_0)=1/2$ となることにも注意せよ.
+が成立するようにできた.  $r=1$ ならば $P(X\ge a_0)=P(X<a_0)=1/2$ となり, $r=0$ ならば $P(X\le a_0)=P(X>a_0)=1/2$ となることにも注意せよ.
 
 記号 $1_A$ で $X$ に関する条件 $A$ を満たすとき $1$ になり, そうでないとき $0$ になる $X$ の函数を表す.  このとき, 上の段落の結果より, 
 
@@ -641,7 +646,7 @@ $$
 ゆえに
 
 $$
-E[|X-a|] - E[|X - a_0|] = 2E[(X - a)(1_{a<X<a_0} + (1-r) 1_{X=a_0})] \geqq 0.
+E[|X-a|] - E[|X - a_0|] = 2E[(X - a)(1_{a<X<a_0} + (1-r) 1_{X=a_0})] \ge 0.
 $$
 
 (ii) $a > a_0$ と仮定する. このとき
@@ -666,7 +671,7 @@ $$
 ゆえに
 
 $$
-E[|X-a|] - E[|X - a_0|] = 2E[-(X - a)(1_{a_0<X<a} + r 1_{X=a_0})] \geqq 0.
+E[|X-a|] - E[|X - a_0|] = 2E[-(X - a)(1_{a_0<X<a} + r 1_{X=a_0})] \ge 0.
 $$
 
 以上によって,  実数 $a_0$ が確率変数 $X$ の中央値ならば $a$ の函数 $E[|X-a|]$ が $a=a_0$ で最小になることがわかった. $\QED$
@@ -679,13 +684,13 @@ $$
 **補題:** 可積分な確率変数 $X$ について, 任意の実数 $a,b$ について次の公式が成立する:
 
 $$
-E[|X-b|] - E[|X-a|] = \int_a^b (P(X\leqq t) - P(X\geqq t))\,dt.
+E[|X-b|] - E[|X-a|] = \int_a^b (P(X\le t) - P(X\ge t))\,dt.
 $$
 
 **証明:** $t, X$ に関する条件 $A$ が成立するときに $1$, そうでないとき $0$ になる $t, X$ の函数を $1_A$ と書くことにする.
 
 $$
-P(X\leqq t) - P(X\geqq t) = E[1_{X\leqq t} - 1_{X\geqq t}]
+P(X\le t) - P(X\ge t) = E[1_{X\le t} - 1_{X\ge t}]
 $$
 
 であることと, $x$ が正, 負のときそれぞれ $1$, $-1$ になる $\sign(x)$ について, 
@@ -698,7 +703,7 @@ $$
 
 $$
 \begin{aligned}
-|X - b| - |X - a| &= \int_a^b \sign(t - X)\,dt = \int_a^b(1_{X\leqq t} - 1_{X\geqq t})\,dt
+|X - b| - |X - a| &= \int_a^b \sign(t - X)\,dt = \int_a^b(1_{X\le t} - 1_{X\ge t})\,dt
 \end
 {aligned}
 $$
@@ -712,74 +717,74 @@ $$
 
 $$
 E[|X-b|] - E[|X-a|] = 
-\int_a^b (P(X\leqq t) - P(X\geqq t))\,dt =
-\int_b^a (P(X\geqq t) - P(X\leqq t))\,dt.
+\int_a^b (P(X\le t) - P(X\ge t))\,dt =
+\int_b^a (P(X\ge t) - P(X\le t))\,dt.
 $$
 
-$t$ の函数として $f(t) = P(X\leqq t) - P(X\geqq t)$ は広義単調増加函数であり, $-f(t)=P(X\geqq t) - P(X\leqq t)$ は広義単調減少函数であることに注意せよ.
+$t$ の函数として $f(t) = P(X\le t) - P(X\ge t)$ は広義単調増加函数であり, $-f(t)=P(X\ge t) - P(X\le t)$ は広義単調減少函数であることに注意せよ.
 
-$a$ は $X$ の中央値だと仮定する: $P(X\leqq a)\geqq 1/2$, $P(X\geqq a)\geqq 1/2$. 
+$a$ は $X$ の中央値だと仮定する: $P(X\le a)\ge 1/2$, $P(X\ge a)\ge 1/2$. 
 
 (i) $a<b$ のとき, $a<t<b$ ならば
 
 $$
-P(X\leqq t) \geqq P(X\leqq a) \geqq 1/2, \quad
-P(X\geqq t) \leqq P(X > a) \leqq 1/2
+P(X\le t) \ge P(X\le a) \ge 1/2, \quad
+P(X\ge t) \le P(X > a) \le 1/2
 $$
 
 なので
 
 $$
-f(t) = P(X\leqq t) - P(X\geqq t) \geqq 1/2 - 1/2 = 0
+f(t) = P(X\le t) - P(X\ge t) \ge 1/2 - 1/2 = 0
 $$
 
-となるから, $E[|X-b|] - E[|X-a|] = \int_a^b (P(X\leqq t) - P(X\geqq t))\,dt \geqq 0$ となる. 
+となるから, $E[|X-b|] - E[|X-a|] = \int_a^b (P(X\le t) - P(X\ge t))\,dt \ge 0$ となる. 
 
 (ii) $b<a$ のとき, $b<t<a$ ならば
 
 $$
-P(X\geqq t) \geqq P(X\geqq a) \geqq 1/2, \quad
-P(X\leqq t) \leqq P(X < a) \leqq 1/2
+P(X\ge t) \ge P(X\ge a) \ge 1/2, \quad
+P(X\le t) \le P(X < a) \le 1/2
 $$
 
 なので
 
 $$ -
-f(t) = P(X\geqq t) - P(X\leqq t) \geqq 1/2 - 1/2 = 0
+f(t) = P(X\ge t) - P(X\le t) \ge 1/2 - 1/2 = 0
 $$
 
-となるから, $E[|X-b|] - E[|X-a|] = \int_b^a (P(X\geqq t) - P(X\leqq t))\,dt \geqq 0$ となる. 
+となるから, $E[|X-b|] - E[|X-a|] = \int_b^a (P(X\ge t) - P(X\le t))\,dt \ge 0$ となる. 
 
 これで, 中央値 $a$ に関する $E[|X-a|]$ が $E[|X-b|]$ の中で最小になることがわかった.
 
 逆の対偶を証明するために, $a$ は $X$ の中央値ではないと仮定する. 
 
-$t$ の函数として $P(X\leqq t)$ は右連続であり(右から $t$ に近付くときに連続), $P(X\geqq t)$ は左連続であることに注意せよ.
+$t$ の函数として $P(X\le t)$ は右連続であり(右から $t$ に近付くときに連続), $P(X\ge t)$ は左連続であることに注意せよ.
 
-(i) $P(X\leqq a)<1/2$ と仮定する. このとき, 
-
-$$
-f(t) = P(X\leqq t) - P(X\geqq t) \leqq P(X\leqq t) - P(X > t) = 2P(X\leqq t) - 1
-$$
-
-より, $f(a) < 0$ となる. さらに $P(X\leqq t)$ の $t$ に関する右連続性より, ある実数 $b > a$ で $f(b) < 0$ となるものが存在することがわかる. $f(t)$ は広義単調増加函数なので, そのとき,
+(i) $P(X\le a)<1/2$ と仮定する. このとき, 
 
 $$
-E[|X-b|] - E[|X-a|] = \int_a^b f(t)\,dt \leqq (b-a)f(b) < 0
+f(t) = P(X\le t) - P(X\ge t) \le P(X\le t) - P(X > t) = 2P(X\le t) - 1
+$$
+
+より, $f(a) < 0$ となる. さらに $P(X\le t)$ の $t$ に関する右連続性より, ある実数 $b > a$ で $f(b) < 0$ となるものが存在することがわかる. $f(t)$ は広義単調増加函数なので, そのとき,
+
+$$
+E[|X-b|] - E[|X-a|] = \int_a^b f(t)\,dt \le (b-a)f(b) < 0
 $$
 
 となり, $E[|X-a|]$ は $E[|X-b|]$ 達の中で最小にならない.
 
-(ii) $P(X\geqq a)<1/2$ と仮定する. このとき, 
+(ii) $P(X\ge a)<1/2$ と仮定する. このとき, 
 
 $$ -
-f(t) = P(X\geqq t) - P(X\leqq t) \leqq P(X\geqq t) - P(X < t) = 2P(X\geqq t) - 1
+f(t) = P(X\ge t) - P(X\le t) \le P(X\ge t) - P(X < t) = 2P(X\ge t) - 1
 $$
 
-より, $-f(a) < 0$ となる. さらに $P(X\geqq t)$ の $t$ に関する左連続性より, ある実数 $b < a$ で $f(b) < 0$ となるものが存在することがわかる. $-f(t)$ は広義単調減少函数なので, そのとき,
+より, $-f(a) < 0$ となる. さらに $P(X\ge t)$ の $t$ に関する左連続性より, ある実数 $b < a$ で $f(b) < 0$ となるものが存在することがわかる. $-f(t)$ は広義単調減少函数なので, そのとき,
 
 $$
-E[|X-b|] - E[|X-a|] = \int_b^a (-f(t))\,dt \leqq (a-b)f(b) < 0
+E[|X-b|] - E[|X-a|] = \int_b^a (-f(t))\,dt \le (a-b)f(b) < 0
 $$
 
 となり, $E[|X-a|]$ は $E[|X-b|]$ 達の中で最小にならない.
@@ -871,21 +876,22 @@ ns = [10;10;10;10;10;10:10:1000;1000;1000;1000;1000]
     a_hat = median(X)
     b_hat = mean(abs(x - a_hat) for x in X)
     laplace_gdist = Laplace(a_hat, b_hat)
-    P1 = histogram(X; bins=range(0, 4, step=0.2), normed=true, alpha=0.5, label="sample")
+    P1 = histogram(X; bins=0:0.2:4, normed=true, alpha=0.5, label="sample")
     plot!(x -> pdf(laplace_gdist, x), -1, 4; label="Laplace approx")
     plot!(legend=false, xlim=(-1, 4), ylim=(0, 1.5))
 
     loglik(a, b) = sum(logpdf(Laplace(a, b), x) for x in X)
     a = range(0.5, 1.5, length=200)
     b = range(0.1, 1.0, length=200)
-    P2 = heatmap(a, b, exp.(loglik.(a', b)); xlabel="a", ylabel="b",
+    maxloglik = maximum(loglik.(a', b))
+    P2 = heatmap(a, b, exp.(loglik.(a', b) .- maxloglik); xlabel="a", ylabel="b",
         size=(300, 320), colorbar=false, title="n = $n")
     
     plot(P1, P2, size=(600, 250))
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/lik_laplace.gif", fps=10)
-displayfile("image/gif", "images/lik_laplace.gif")
+#displayfile("image/gif", "images/lik_laplace.gif")
 ```
 
 ## 最頻値
@@ -979,20 +985,20 @@ plot(ε, y; size=(400, 300), legend=false, ylim=(0, 24), xlabel="epsilon", ylabe
 
 ```julia
 a = range(extrema(X)..., length=2000)
-@time anim = @animate for ε in range(0.1, 3.0, step=0.1)
+@time anim = @animate for ε in 0.1:0.1:3.0
     a_hat = a[findmax(L.(a; ε=ε))[2]]    
     plot(a, L.(a; ε=ε), legend=:topright, label="kde", ylim=(0.0, 0.1))
     vline!([a_hat], label="a_hat")
     title!("epsilon = $ε")
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/mode_estimation.gif", fps=5)
-displayfile("image/gif", "images/mode_estimation.gif")
+#displayfile("image/gif", "images/mode_estimation.gif")
 ```
 
 ## 加法平均と乗法平均
 
-正の実数上の確率分布 $q(x)$ を考える. $x\leqq 0$ のとき $q(x)=0$ と仮定しておく.
+正の実数上の確率分布 $q(x)$ を考える. $x\le 0$ のとき $q(x)=0$ と仮定しておく.
 
 分布 $q(x)$ の平均と対数平均をそれぞれ $\mu_0$, $\log\lambda_0$ と書いておく:
 
@@ -1001,7 +1007,7 @@ $$
 \log\lambda_0 = \int q(x)\log x\,dx.
 $$
 
-Jensenの不等式より, $\log\mu_0\geqq \log\lambda_0$.  $\lambda_0$ は分布 $q(x)$ の「相乗平均」とでも呼べそうな量になっている.
+Jensenの不等式より, $\log\mu_0\ge \log\lambda_0$.  $\lambda_0$ は分布 $q(x)$ の「相乗平均」とでも呼べそうな量になっている.
 
 
 ### ガンマ分布モデルの汎化誤差
@@ -1012,7 +1018,7 @@ $$
 p(x) = p(x|\alpha,\theta) = \frac{1}{\Gamma(\alpha)\theta^\alpha}e^{-x/\theta}x^{\alpha-1}
 $$
 
-と書ける. $x\leqq 0$ のとき $p(x|\alpha,\theta)=0$ と仮定しておく. このとき,
+と書ける. $x\le 0$ のとき $p(x|\alpha,\theta)=0$ と仮定しておく. このとき,
 
 $$
 -\log p(x|\alpha,\theta) = \log\Gamma(\alpha) + \alpha\log\theta + \frac{x}{\theta}-(\alpha-1)\log x
@@ -1127,21 +1133,22 @@ ns = [fill(10, 10); 10:3:300; 300; fill(300, 10)]
     X = @view XX[1:n]
 
     dist_g = fit_mle(Gamma, X)
-    P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
+    P1 = histogram(X; normed=true, bins=0:0.25:8, alpha=0.5, label="sample")
     plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, θ) = sum(logpdf(Gamma(α, θ), x) for x in X)
     α = range(0.1, 13, length=200)
     θ = range(0.1, 2.0, length=200)
-    P2 = heatmap(α, θ, exp.(loglik.(α', θ)); xlabel="alpha", ylabel="theta",
+    maxloglik = maximum(loglik.(α', θ))
+    P2 = heatmap(α, θ, exp.(loglik.(α', θ) .- maxloglik); xlabel="alpha", ylabel="theta",
         size=(300, 320), colorbar=false, title="n = $n")
     
     plot(P1, P2, size=(600, 250))
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/lik_gamma.gif", fps=10)
-displayfile("image/gif", "images/lik_gamma.gif")
+#displayfile("image/gif", "images/lik_gamma.gif")
 ```
 
 ```julia
@@ -1157,21 +1164,22 @@ ns = [fill(10, 10); 10:3:300; 300; fill(300, 10)]
     X = @view XX[1:n]
 
     dist_g = fit_mle(Gamma, X)
-    P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
+    P1 = histogram(X; normed=true, bins=0:0.25:8, alpha=0.5, label="sample")
     plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 0.5))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
     α = range(0.1, 12, length=200)
     μ = range(1.5, 4, length=200)
-    P2 = heatmap(α, μ, exp.(loglik.(α', μ)); xlabel="alpha", ylabel="mu",
+    maxloglik = maximum(loglik.(α', μ))
+    P2 = heatmap(α, μ, exp.(loglik.(α', μ) .- maxloglik); xlabel="alpha", ylabel="mu",
         size=(300, 320), colorbar=false, title="n = $n")
     
     plot(P1, P2, size=(600, 250))
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/lik_gamma2.gif", fps=10)
-displayfile("image/gif", "images/lik_gamma2.gif")
+#displayfile("image/gif", "images/lik_gamma2.gif")
 ```
 
 ```julia
@@ -1187,21 +1195,22 @@ ns = [fill(3, 6); 4;4;4;4;5;5;5;6;6;6;7;7;8;8;9;9; 10:20; 23:3:100; 110:10:300 ;
     X = @view XX[1:n]
 
     dist_g = fit_mle(Gamma, X)
-    P1 = histogram(X; normed=true, bins=range(0, 8, step=0.25), alpha=0.5, label="sample")
+    P1 = histogram(X; normed=true, bins=0:0.25:8, alpha=0.5, label="sample")
     plot!(x -> pdf(dist_g, x), 0, 8; label="Gamma approx")
     plot!(legend=false, xlim=(0, 8), ylim=(0, 1.2))
 
     loglik(α, μ) = sum(logpdf(Gamma(α, μ/α), x) for x in X)
     α = range(0.5, 50, length=200)
     μ = range(1.5, 4, length=200)
-    P2 = heatmap(α, μ, exp.(loglik.(α', μ)); xlabel="alpha", ylabel="mu",
+    maxloglik = maximum(loglik.(α', μ))
+    P2 = heatmap(α, μ, exp.(loglik.(α', μ) .- maxloglik); xlabel="alpha", ylabel="mu",
         size=(300, 320), colorbar=false, title="n = $n")
     
     plot(P1, P2, size=(600, 250))
 end
-pyplotclf()
+#pyplotclf()
 gif(anim, "images/lik_gamma3.gif", fps=3)
-displayfile("image/gif", "images/lik_gamma3.gif")
+#displayfile("image/gif", "images/lik_gamma3.gif")
 ```
 
 ```julia
