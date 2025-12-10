@@ -108,6 +108,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""

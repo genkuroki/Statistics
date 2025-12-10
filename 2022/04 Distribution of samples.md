@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -50,6 +50,7 @@ __このノートはかなり長大なものになったが, 内容的には資�
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -4851,7 +4852,8 @@ function plot_X̄_and_SX²(dist; n = 10, L = 5000,
     
     X̄ = Vector{Float64}(undef, L)
     S² = similar(X̄)
-    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L
         X = rand!(dist, tmp[Threads.threadid()])
         X̄[i] = mean(X)
@@ -5478,7 +5480,8 @@ function plot_X̄_S²_T(dist; n = 10, L = 10^6, kwargs...)
     Z = Vector{Float64}(undef, L)
     Y = similar(Z)
     T = similar(Z)
-    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L
         X = rand!(dist, tmp[Threads.threadid()])
         X̄ = mean(X)

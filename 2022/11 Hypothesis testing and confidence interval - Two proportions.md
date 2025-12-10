@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -100,6 +100,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -2647,7 +2648,8 @@ __注意:__ 以上の議論をさらに一般化するとPearsonのχ²統計量
 function plot_wilks_theorem(logmle1, logmle0, randsample0, tmpsample0, df;
         L=10^5, bin=:auto, kwargs...)
     loglikrat = similar(zeros(), L)
-    tmp = [tmpsample0() for _ in 1:nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [tmpsample0() for _ in 1:nth]
     @threads for i in 1:L
         X = randsample0(tmp[threadid()])
         loglikrat[i] = 2(logmle1(X) - logmle0(X))

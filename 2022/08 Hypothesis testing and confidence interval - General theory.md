@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -51,6 +51,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -530,7 +531,8 @@ end
 
 function sim_ttest(; dist=Normal(), n=20, μ=mean(dist), L=10^5)
     pvals = Vector{Float64}(undef, L)
-    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{eltype(dist)}(undef, n) for _ in 1:nth]
     @threads for i in 1:L
         X = rand!(dist, tmp[threadid()])
         pvals[i] = pvalue_t(X, μ)

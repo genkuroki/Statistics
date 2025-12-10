@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -50,6 +50,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -638,7 +639,8 @@ $\bar{X}$ と $X\sim\op{Cauchy}()$ の特性函数が等しいので $\bar{X}\si
 ```julia
 function plot_cauchy(n; dist=Cauchy(), L=10^6, xlim=(-10, 10), kwargs...)
     X̄ = Vector{Float64}(undef, L)
-    tmp = [Vector{Float64}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{Float64}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L
         X = rand!(dist, tmp[Threads.threadid()])
         X̄[i] = mean(X)
@@ -718,7 +720,8 @@ plot_law_of_large_numbers_6x3(Beta(4, 6), 2^10;
 ```julia
 function plot_polyaurn(n, α, β, bin=:auto; L=10^6, kwargs...)
     X̄ = Vector{Float64}(undef, L)
-    tmp = [Vector{Int}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{Int}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L
         p = rand(Beta(α, β))
         X = rand!(Bernoulli(p), tmp[Threads.threadid()])
@@ -2552,7 +2555,8 @@ function plot_central_limit_theorem(dist, n;
     # Z_n = √n(X̄_n - μ)/σ を大量に計算することを並列化で実行
     # このような計算には並列化が非常に有効である
     Zns = Vector{Float64}(undef, L)
-    tmp = [Vector{Float64}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{Float64}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L # Threads.@threads マクロで並列化
         X = rand!(dist, tmp[Threads.threadid()]) # rand!を使ってアロケーションを節約
         Zns[i] = √n*(mean(X) - μ)/σ
@@ -2845,7 +2849,8 @@ function check_deltamethod_for_S(dist, n; L=10^7)
     @show n
     
     S = Vector{Float64}(undef, L)
-    tmp = [Vector{Float64}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{Float64}(undef, n) for _ in 1:nth]
     Threads.@threads for i in 1:L
         X = rand!(dist, tmp[Threads.threadid()])
         S[i] = std(X)

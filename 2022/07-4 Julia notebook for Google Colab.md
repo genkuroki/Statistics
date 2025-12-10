@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -37,6 +37,7 @@ __注意警告:__ すべてのセルを実行する前に少し下の方にあ�
 ```julia jupyter={"outputs_hidden": true} tags=[] id="fbfd965f" colab={"base_uri": "https://localhost:8080/"} outputId="01a1f70c-2f36-40b7-972f-82504f121c20"
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 using Pkg
 
 """すでにPkg.add済みのパッケージのリスト"""

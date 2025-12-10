@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -60,6 +60,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -2052,7 +2053,8 @@ __注意:__ 上の $G'(t)$ の計算は最後の等号を除けば任意の函�
 ```julia
 function sim_uniformbeta(n; L = 10^6)
     T = Matrix{Float64}(undef, n, L) # 順序統計量の乱数を保存する2次元行列
-    tmp = [Vector{Float64}(undef, n) for _ in 1:Threads.nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmp = [Vector{Float64}(undef, n) for _ in 1:nth]
     Threads.@threads for j in 1:L
         t = rand!(tmp[Threads.threadid()]) # 一様乱数をn個生成
         T[:, j] .= sort!(t) # 小さい順序にソートして順序統計量の乱数を作る

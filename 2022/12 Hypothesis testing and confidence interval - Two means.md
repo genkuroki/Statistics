@@ -8,7 +8,7 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.10.3
   kernelspec:
-    display_name: Julia current stable release
+    display_name: Julia
     language: julia
     name: julia
 ---
@@ -108,6 +108,7 @@ $
 ```julia
 # Google Colabと自分のパソコンの両方で使えるようにするための工夫
 
+haskey(ENV, "COLAB_GPU") && (ENV["JULIA_PKG_PRECOMPILE_AUTO"] = "0")
 import Pkg
 
 """すでにPkg.add済みのパッケージのリスト (高速化のために用意)"""
@@ -380,8 +381,9 @@ function plot_welch(;
     pval = similar(zeros(), L)
     T = similar(zeros(), L)
     df = similar(zeros(), L)
-    tmpx = [similar(zeros(), m) for _ in 1:nthreads()]
-    tmpy = [similar(zeros(), n) for _ in 1:nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmpx = [similar(zeros(), m) for _ in 1:nth]
+    tmpy = [similar(zeros(), n) for _ in 1:nth]
     @threads for i in 1:L
         x = rand!(distx, tmpx[threadid()])
         y = rand!(disty, tmpy[threadid()])
@@ -472,8 +474,9 @@ function plot_student(;
     pval_welch = similar(zeros(), L)
     T_student = similar(zeros(), L)
     T_welch = similar(zeros(), L)
-    tmpx = [similar(zeros(), m) for _ in 1:nthreads()]
-    tmpy = [similar(zeros(), n) for _ in 1:nthreads()]
+    nth = Threads.nthreads(:interactive) + Threads.nthreads(:default)
+    tmpx = [similar(zeros(), m) for _ in 1:nth]
+    tmpy = [similar(zeros(), n) for _ in 1:nth]
     @threads for i in 1:L
         x = rand!(distx, tmpx[threadid()])
         y = rand!(disty, tmpy[threadid()])
