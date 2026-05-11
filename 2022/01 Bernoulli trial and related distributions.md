@@ -16,7 +16,7 @@ jupyter:
 # Bernoulli試行と関連確率分布
 
 * 黒木玄
-* 2022-04-09～2022-05-31, 2023-03-21, 2024-01-06, 2025-05-20
+* 2022-04-09～2022-05-31, 2023-03-21, 2024-01-06, 2025-05-20, 2026-04-21
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -2075,13 +2075,13 @@ $$
 E[g(Y)] =
 \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty g(z^2)\,e^{-z^2/2}\,dz =
 \frac{2}{\sqrt{2\pi}} \int_0^\infty g(z^2)\,e^{-z^2/2}\,dz =
-\frac{1}{\sqrt{2\pi}} \int_0^\infty g(y)\,e^{-y}y^{-1/2}\,dy.
+\frac{1}{\sqrt{2\pi}} \int_0^\infty g(y)\,e^{-y/2}y^{-1/2}\,dy.
 $$
 
 ゆえに $Y = Z^2$ は確率密度函数
 
 $$
-p_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-y}y^{-1/2} \quad (y > 0)
+p_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-y/2}y^{-1/2} \quad (y > 0)
 $$
 
 を持つ.  この確率密度函数で定義される連続分布は __自由度1のχ²分布__ (カイ二乗分布)と呼ばれている.
