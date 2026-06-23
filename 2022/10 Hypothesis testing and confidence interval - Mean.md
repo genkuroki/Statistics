@@ -16,7 +16,7 @@ jupyter:
 # P値と仮説検定と信頼区間: 母平均
 
 * 黒木玄
-* 2022-05-31～2022-06-18, 2024-01-06, 2024-06-12, 2025-05-19, 2025-06-25
+* 2022-05-31～2022-06-18, 2024-01-06, 2024-06-12, 2025-05-19, 2025-06-25, 2026-06-23
 $
 \newcommand\op{\operatorname}
 \newcommand\R{{\mathbb R}}
@@ -121,7 +121,6 @@ Random.seed!(4649373)
 #using BenchmarkTools
 using DataFrames
 using Distributions
-using Memoization
 using QuadGK
 using RCall
 #using Roots
@@ -174,11 +173,11 @@ mykurtosis(dist::MixtureModel{Univariate, Continuous}) =
 ```julia
 pdflog(dist, x) = exp(logpdf(dist, exp(x)) + x)
 
-@memoize function logmean(dist; a=-1e2, b=1e2)
+function logmean(dist; a=-1e2, b=1e2)
     quadgk(x -> x * pdflog(dist, x), a, b)[1]
 end
 
-@memoize function logvar(dist; a=-1e2, b=1e2)
+function logvar(dist; a=-1e2, b=1e2)
     μ = logmean(dist; a, b)
     quadgk(x -> (x - μ)^2 * pdflog(dist, x), a, b)[1]
 end
@@ -474,6 +473,8 @@ $$
 2(1 - \cdf(\Normal(0,1), |t(\mu_0)|)).
 $$
 
+<br><br>
+
 <!-- #region -->
 ### 標本平均と不偏分散に関する中心極限定理と大数の法則の可視化
 
@@ -669,16 +670,22 @@ $$
 \{\, \mu_0\in\R \mid \pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha\,\}.
 $$
 
-そして,
+そして, $\quantile$ (分位点関数)が $\cdf$ (累積分布函数)の逆函数であることより,
 
 $$
 \begin{aligned}
 &
 \pvalue_{\Normal}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha
 \\ &\iff
-1 - \cdf(\Normal(0,1), |t(\mu_0)|)) \ge \alpha/2
+2(1 - \cdf(\Normal(0,1), |t(\mu_0)|)) \ge \alpha
 \\ &\iff
-|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le z_{\alpha/2}
+1 - \cdf(\Normal(0,1), |t(\mu_0)|) \ge \alpha/2
+\\ &\iff
+\cdf(\Normal(0,1), |t(\mu_0)|)) \le 1 - \alpha/2
+\\ &\iff
+|t(\mu_0)| \le \quantile(\Normal(0,1), 1-\alpha/2)
+\\ &\iff
+|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le z_{\alpha/2} = \quantile(\Normal(0,1), 1-\alpha/2)
 \\ &\iff
 \bar{x} - z_{\alpha/2} \sqrt{s^2/n} \le \mu_0 \le
 \bar{x} + z_{\alpha/2} \sqrt{s^2/n}.
@@ -736,7 +743,7 @@ $$
 \frac{(n-1)S^2}{\sigma^2} \sim \Chisq(n-1).
 $$
 
-詳しくは「標本分布について」のノートの「正規分布の標本分布の場合」の節を参照せよ.  自由度 $n-1$ のχ²分布の密度函数を作るために必要な, $u=s^2$ とおいたときの因子 $u^{(n-1)/2-1} は
+詳しくは「標本分布について」のノートの「正規分布の標本分布の場合」の節を参照せよ.  自由度 $n-1$ のχ²分布の密度函数を作るために必要な, $u=s^2$ とおいたときの因子 $u^{(n-1)/2-1}$ は
 
 $$
 dy_1\cdots dy_{n-1} \propto
@@ -1035,16 +1042,22 @@ $$
 \{\, \mu_0\in\R \mid \pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha\,\}.
 $$
 
-そして,
+そして, $\quantile$ (分位点関数)が $\cdf$ (累積分布関数)の逆関数であることより, 
 
 $$
 \begin{aligned}
 &
 \pvalue_{\TDist}(\bar{x}, s^2|n, \mu=\mu_0) \ge \alpha
 \\ &\iff
-1 - \cdf(\TDist(n-1), |t(\mu_0)|)) \ge \alpha/2
+2(1 - \cdf(\TDist(n-1), |t(\mu_0)|)) \ge \alpha
 \\ &\iff
-|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le t_{n-1,\alpha/2}
+1 - \cdf(\TDist(n-1), |t(\mu_0)|) \ge \alpha/2
+\\ &\iff
+\cdf(\TDist(n-1), |t(\mu_0)|)) \le 1 - \alpha/2
+\\ &\iff
+|t(\mu_0)| \le \quantile(\Normal(0,1), 1 - \alpha/2)
+\\ &\iff
+|t(\mu_0)| = \frac{|\bar{x} - \mu_0|}{\sqrt{s^2/n}} \le t_{n-1,\alpha/2} = \quantile(\Normal(0,1), 1 - \alpha/2)
 \\ &\iff
 \bar{x} - t_{n-1,\alpha/2} \sqrt{s^2/n} \le \mu_0 \le
 \bar{x} + t_{n-1,\alpha/2} \sqrt{s^2/n}.
@@ -1148,7 +1161,7 @@ var(13.7, 12.9, 4.4, 5.2, 3.1, 2.9, 7.2, 10.3, 4.7, 4.6, 3.6) → [実行](https
 
 quantile(TDistribution(10), 0.975) → [実行](https://www.wolframalpha.com/input?i=quantile%28TDistribution%2810%29%2C+0.975%29)
 
-6.6 - 2.22814 sqrt(15.35/11), 6.6 - 2.22814 sqrt(15.35/11)  → [実行](https://www.wolframalpha.com/input?i=6.6+-+2.22814+sqrt%2815.35%2F11%29%2C+6.6+-+2.22814+sqrt%2815.35%2F11%29)
+6.6 - 2.22814 sqrt(15.35/11), 6.6 + 2.22814 sqrt(15.35/11)  → [実行](https://www.wolframalpha.com/input?i=6.6+-+2.22814+sqrt%2815.35%2F11%29%2C+6.6+%2B+2.22814+sqrt%2815.35%2F11%29)
 
 
 #### Julia言語での母平均に関するP値と信頼区間の計算例
