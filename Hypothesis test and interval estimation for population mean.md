@@ -1,12 +1,13 @@
 ---
 jupyter:
   jupytext:
+    cell_metadata_json: true
     formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.2.1
+      format_version: '1.3'
+      jupytext_version: 1.10.3
   kernelspec:
     display_name: Julia 1.4.1
     language: julia
