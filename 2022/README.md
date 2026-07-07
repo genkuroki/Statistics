@@ -351,6 +351,9 @@ __定義された確率分布__
 \[[Colab](https://colab.research.google.com/github/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.ipynb)\]
 * [pdf 2](https://github.com/genkuroki/Statistics/blob/master/2022/handwritten/08_P-value_and_confidence_interval.pdf)
 \[[download](https://github.com/genkuroki/Statistics/raw/master/2022/handwritten/08_P-value_and_confidence_interval.pdf)\]
+* P値に関する最新の解説(2026-01-01): 
+  * [ipynb](https://github.com/genkuroki/public/blob/main/0055/binomial%20P-values.ipynb) \[[nbviewer](https://nbviewer.org/github/genkuroki/public/blob/main/0055/binomial%20P-values.ipynb)\] \[[html](https://raw.githack.com/genkuroki/public/main/0055/binomial%20P-values.html)\]
+  * [pdf](https://github.com/genkuroki/public/blob/main/0055/binomial%20P-values.pdf) \[[download](https://github.com/genkuroki/public/raw/main/0055/binomial%20P-values.pdf)\]
 
 __P値函数__ の概念が最も重要である.
 
